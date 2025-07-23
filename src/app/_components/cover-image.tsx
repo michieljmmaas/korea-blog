@@ -1,3 +1,5 @@
+"use client";
+import { CldImage } from 'next-cloudinary';
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,15 +12,14 @@ type Props = {
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
-    <Image
-      src={src}
-      alt={`Cover Image for ${title}`}
-      className={cn("shadow-sm w-full", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
-      })}
-      width={1300}
-      height={630}
-    />
+   <CldImage
+      src="cld-sample-5" // Use this sample image or upload your own via the Media Explorer
+      width="500" // Transform the image: auto-crop to square aspect_ratio
+      height="500"
+      crop={{
+        type: 'auto',
+        source: true
+      }} alt={'alt'}    />
   );
   return (
     <div className="sm:mx-0">
