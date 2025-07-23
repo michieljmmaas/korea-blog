@@ -1,9 +1,12 @@
 {
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/process-images.js",
+    "predev": "node scripts/process-images.js",
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "process-images": "node scripts/process-images.js"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -13,7 +16,8 @@
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
