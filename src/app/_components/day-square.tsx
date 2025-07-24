@@ -50,7 +50,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
   return (
     <div className="relative">
       <Link
-        href={`/day/${dayInfo.day}`}
+        href={`/day/${dayInfo.frontmatter.date}`}
         className="group relative block"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
