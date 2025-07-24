@@ -1,8 +1,9 @@
 "use client";
-import { CldImage } from 'next-cloudinary';
+
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
 
 type Props = {
   title: string;
@@ -10,12 +11,22 @@ type Props = {
   slug?: string;
 };
 
+
+const CldImage = dynamic(
+  () => import('next-cloudinary').then(mod => mod.CldImage),
+  { 
+    ssr: false,
+    loading: () => <div className="w-[1500px] h-[500px] bg-gray-200 animate-pulse" />
+  }
+);
+
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
    <CldImage
-      src="cld-sample-5" // Use this sample image or upload your own via the Media Explorer
-      width="500" // Transform the image: auto-crop to square aspect_ratio
+      src={src} // Use this sample image or upload your own via the Media Explorer
+      width="1500" // Transform the image: auto-crop to square aspect_ratio
       height="500"
+      priority={true}
       crop={{
         type: 'auto',
         source: true

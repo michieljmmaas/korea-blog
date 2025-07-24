@@ -1,7 +1,7 @@
 ---
 title: "This is a new post"
 excerpt: "Werkt het als ik dit doe?"
-coverImage: "/assets/blog/compressed/2025-07-23/foo.jpg"
+coverImage: "https://res.cloudinary.com/depmp8u0n/image/upload/v1753252529/cld-sample-5.jpg"
 date: "2025-07-23T00:00:00.000"
 author:
   name: Michiel Maas
