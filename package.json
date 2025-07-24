@@ -1,12 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/process-images.js",
-    "predev": "node scripts/process-images.js",
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "process-images": "node scripts/process-images.js"
+    "start": "next start"
   },
   "dependencies": {
     "classnames": "^2.5.1",
