@@ -1,4 +1,3 @@
-// components/WeekdayHeaders.tsx
 interface WeekdayHeadersProps {
   size: 'small' | 'medium' | 'large';
 }
