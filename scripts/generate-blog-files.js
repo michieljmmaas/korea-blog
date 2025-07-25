@@ -147,12 +147,6 @@ function readSeedFile() {
     
     // Validate seed entries
     for (const entry of seedData) {
-      if (!entry.id || !entry.date) {
-        console.error('❌ Each seed entry must have "id" and "date" fields');
-        console.log('Invalid entry:', entry);
-        process.exit(1);
-      }
-      
       // Validate date format
       const date = new Date(entry.date);
       if (isNaN(date.getTime())) {

@@ -6,7 +6,7 @@ const path = require('path');
 // Configuration
 const CONFIG = {
   startDate: '2025-09-25', // Thursday - adjust to your actual start date
-  totalDays: 70,
+  totalDays: 71,
   outputDir: './scripts', // Directory where markdown files will be created
 };
 
@@ -44,9 +44,75 @@ function generateBlogFiles() {
 
   let daysConfig = [];
 
+
+  let locationSeed = {
+    0: "Nederland",
+    29: "Busan",
+    30: "Busan",
+    31: "Busan",
+    32: "Busan",
+    43: "Japan",
+    44: "Japan",
+    45: "Japan",
+    46: "Japan",
+    47: "Japan",
+    55: "Taiwan",
+    55: "Taiwan",
+    56: "Taiwan",
+    57: "Taiwan",
+    58: "Taiwan",
+    59: "Taiwan",
+    60: "Taiwan",
+    61: "Taiwan",
+    62: "Taiwan",
+    63: "Hong Kong",
+    64: "Hong Kong",
+    65: "Hong Kong",
+    66: "Hong Kong",
+    67: "Hong Kong",
+    68: "Hong Kong",
+    69: "Hong Kong",
+    70: "Hong Kong",
+  };
+
+  let travelSeed = {
+    1: true,
+    28: true,
+    42: true,
+    47: true,
+    56: true,
+    63: true,
+    70: true,
+  };
+
+  let workSeed = {
+    12: true,
+    13: true,
+    14: true,
+    18: true,
+    19: true,
+    20: true,
+    26: true,
+    27: true,
+    28: true,
+    33: true,
+    34: true,
+    35: true,
+    39: true,
+    40: true,
+    41: true,
+    52: true,
+    48: true,
+    49: true,
+    50: true,
+    53: true,
+    54: true,
+  };
+
+
   
   for (let i = 0; i < CONFIG.totalDays; i++) {
-    const dayNumber = i + 1;
+    const dayNumber = i;
 
     const currentDate = new Date(startDate);
     currentDate.setDate(startDate.getDate() + i);
@@ -54,12 +120,13 @@ function generateBlogFiles() {
     daysConfig.push({
       "id": dayNumber,
       "date": formatDate(currentDate),
-      "location": "Seoul",
-      "work": false,
+      "location": locationSeed[i] ?? "Seoul",
+      "work": workSeed[i] ?? false,
+      "travel": travelSeed[i] ?? false
     })
 
 
-    const fileName = `seed..json`;
+    const fileName = `seed.json`;
     const filePath = path.join(CONFIG.outputDir, fileName);
 
     let content = JSON.stringify(daysConfig);
@@ -72,9 +139,6 @@ function generateBlogFiles() {
       console.error(`❌ Failed to create ${fileName}:`, error.message);
     }
   }
-
-
-  
 }
 
 // Run the generator
