@@ -11,7 +11,7 @@ export interface TripDay {
 }
 
 export interface GridSettings {
-  squareSize: 'small';
+  squareSize: 'small' | 'medium' | 'large';
   totalDays: number;
   startDate: Date;
 }
