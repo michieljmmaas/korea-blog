@@ -41,4 +41,5 @@ export interface BlogPostFrontmatter {
     lat: number | null;
     lng: number | null;
   };
+  work: boolean;
 }

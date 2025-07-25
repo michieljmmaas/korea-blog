@@ -101,7 +101,7 @@ function generateBlogFiles() {
     39: true,
     40: true,
     41: true,
-    52: true,
+    42: true,
     48: true,
     49: true,
     50: true,
