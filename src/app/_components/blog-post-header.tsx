@@ -7,7 +7,7 @@ interface BlogPostHeaderProps {
 
 export default function BlogPostHeader({ frontmatter }: BlogPostHeaderProps) {
   const totalExpenses = Object.values(frontmatter.expenses).reduce((sum, expense) => sum + expense, 0);
-  
+
   return (
     <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl p-8 mb-8">
       <div className="max-w-4xl mx-auto">
@@ -82,7 +82,7 @@ export default function BlogPostHeader({ frontmatter }: BlogPostHeaderProps) {
         )}
 
         {/* Tags */}
-        {frontmatter.tags.length > 0 && (
+        {Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0 && (
           <div className="mt-4">
             <div className="flex flex-wrap justify-center gap-2">
               {frontmatter.tags.map((tag, index) => (
