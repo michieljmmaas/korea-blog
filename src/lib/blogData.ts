@@ -21,7 +21,7 @@ export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings
       const dateString = file.replace('.md', '');
       const date = new Date(dateString);
       
-      if (!isNaN(date.getTime()) && frontmatter.day) {
+      if (!isNaN(date.getTime())) {
         days.push({
           day: frontmatter.day,
           date: date,

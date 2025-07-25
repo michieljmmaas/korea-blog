@@ -15,18 +15,33 @@ const sizeClasses = {
   large: 'w-24 h-24 text-lg'
 };
 
-const getWeatherIcon = (weather: string) => {
-  const weatherLower = weather.toLowerCase();
-  if (weatherLower.includes('sun') || weatherLower.includes('clear')) {
-    return <Sun className="w-3 h-3" />;
+// Function to get color based on location
+const getLocationColor = (location: string): string => {
+  if (!location) return 'bg-gradient-to-br from-blue-500 to-indigo-600'; // default
+  
+  const loc = location.toLowerCase().trim();
+  
+  if (loc.includes('japan') || loc.includes('tokyo') || loc.includes('osaka') || loc.includes('kyoto')) {
+    return 'bg-gradient-to-br from-purple-500 to-purple-700';
   }
-  if (weatherLower.includes('rain') || weatherLower.includes('storm')) {
-    return <CloudRain className="w-3 h-3" />;
+  if (loc.includes('seoul')) {
+    return 'bg-gradient-to-br from-blue-500 to-blue-700';
   }
-  if (weatherLower.includes('cloud') || weatherLower.includes('overcast')) {
-    return <Cloud className="w-3 h-3" />;
+  if (loc.includes('busan')) {
+    return 'bg-gradient-to-br from-red-500 to-red-700';
   }
-  return null;
+  if (loc.includes('taiwan') || loc.includes('taipei')) {
+    return 'bg-gradient-to-br from-green-500 to-green-700';
+  }
+  if (loc.includes('hong kong')) {
+    return 'bg-gradient-to-br from-emerald-500 to-emerald-700';
+  }
+  if (loc.includes('nederland') || loc.includes('netherlands') || loc.includes('amsterdam') || loc.includes('rotterdam')) {
+    return 'bg-gradient-to-br from-orange-500 to-orange-700';
+  }
+  
+  // Default color if location doesn't match any of the above
+  return 'bg-gradient-to-br from-blue-500 to-indigo-600';
 };
 
 const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size }) => {
@@ -42,10 +57,13 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
   if (!dayInfo) return null;
 
   const hasLocation = dayInfo.frontmatter.location && dayInfo.frontmatter.location.trim() !== '';
-  const hasWeather = dayInfo.frontmatter.weather && dayInfo.frontmatter.weather.trim() !== '';
   const hasPhotos = dayInfo.frontmatter.photos && dayInfo.frontmatter.photos.length > 0;
   const isFeatured = dayInfo.frontmatter.featured;
-  const isDraft = dayInfo.frontmatter.draft;
+  // const isDraft = dayInfo.frontmatter.draft;
+  const isDraft = false;
+
+  // Get the appropriate color based on location
+  const locationColor = getLocationColor(dayInfo.frontmatter.location);
 
   return (
     <div className="relative">
@@ -60,7 +78,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
             ? 'bg-gradient-to-br from-gray-400 to-gray-500' 
             : isFeatured 
               ? 'bg-gradient-to-br from-yellow-500 to-orange-600'
-              : 'bg-gradient-to-br from-blue-500 to-indigo-600'
+              : locationColor
         } rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer flex flex-col items-center justify-center text-white relative overflow-hidden`}>
           
           {/* Background pattern */}
@@ -81,11 +99,6 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
           {/* Status indicators */}
           <div className="absolute top-1 left-1 flex flex-col space-y-1 z-10">
             {hasLocation && <MapPin className="w-3 h-3 opacity-70" />}
-            {hasWeather && (
-              <div className="opacity-70">
-                {getWeatherIcon(dayInfo.frontmatter.weather)}
-              </div>
-            )}
           </div>
           
           {/* Photo indicator */}
@@ -93,10 +106,10 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
             <Camera className="absolute bottom-1 right-1 w-3 h-3 opacity-60" />
           )}
           
-          {/* Draft indicator */}
+          {/* Draft indicator
           {isDraft && (
             <div className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full opacity-80"></div>
-          )}
+          )} */}
           
           {/* Featured star */}
           {isFeatured && !isDraft && (
@@ -115,9 +128,6 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
             <div className="font-semibold">{dayInfo.fullDate}</div>
             {hasLocation && (
               <div className="text-xs opacity-90">📍 {dayInfo.frontmatter.location}</div>
-            )}
-            {hasWeather && (
-              <div className="text-xs opacity-90">🌤️ {dayInfo.frontmatter.weather}</div>
             )}
             {dayInfo.frontmatter.highlights.length > 0 && (
               <div className="text-xs opacity-90">✨ {dayInfo.frontmatter.highlights.length} highlights</div>

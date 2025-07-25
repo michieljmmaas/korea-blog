@@ -1,5 +1,6 @@
 import { getBlogPosts } from '../../lib/blogData';
 import ClientGrid from '../_components/client-grid';
+import { TripDay } from '../types';
 
 export default async function TripGridPage() {
   const { days, initialSettings } = await getBlogPosts();
