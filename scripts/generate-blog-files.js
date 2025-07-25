@@ -5,9 +5,8 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-  startDate: '2025-09-25', // Thursday - adjust to your actual start date
-  totalDays: 70,
-  outputDir: './blog-posts', // Directory where markdown files will be created
+  seedFile: path.join(__dirname, 'seed.json'), // seed.json in the scripts directory
+  outputDir: path.join(__dirname, '..', 'blog-posts'), // blog-posts in the root directory
 };
 
 /**
@@ -38,20 +37,30 @@ function getDayOfWeek(date) {
 }
 
 /**
- * Creates the markdown content with gray matter frontmatter
+ * Creates the markdown content with gray matter frontmatter using seed data
  */
-function createMarkdownContent(dayNumber, date) {
+function createMarkdownContent(seedEntry) {
+  const date = new Date(seedEntry.date);
   const displayDate = formatDisplayDate(date);
   const dayOfWeek = getDayOfWeek(date);
   
+  // Determine initial mood and tags based on work status
+  const initialMood = seedEntry.work ? "productive" : "adventurous";
+  const initialTags = seedEntry.work ? ["work", "productivity"] : ["travel", "exploration"];
+  
+  // Add location tag if provided
+  if (seedEntry.location && seedEntry.location.trim() !== '') {
+    initialTags.push(seedEntry.location.toLowerCase().replace(/\s+/g, '-'));
+  }
+  
   return `---
-title: "Day ${dayNumber}: ${displayDate}"
-date: "${formatDate(date)}"
-day: ${dayNumber}
+title: "Day ${seedEntry.id}: ${displayDate}"
+date: "${seedEntry.date}"
+day: ${seedEntry.id}
 dayOfWeek: "${dayOfWeek}"
-location: ""
+location: "${seedEntry.location || ''}"
 weather: ""
-mood: ""
+mood: "${initialMood}"
 highlights: []
 photos: []
 expenses:
@@ -61,15 +70,19 @@ expenses:
   activities: 0
   shopping: 0
   other: 0
-tags: []
+tags: ${JSON.stringify(initialTags)}
 featured: false
-draft: false
+draft: true
 coordinates:
   lat: null
   lng: null
+work: ${seedEntry.work || false}
 ---
 
-# Day ${dayNumber}: ${displayDate}
+# Day ${seedEntry.id}: ${displayDate}
+
+${seedEntry.location ? `📍 **Location:** ${seedEntry.location}` : ''}
+${seedEntry.work ? '💼 **Work Day**' : '🎒 **Adventure Day**'}
 
 ## Morning
 
@@ -79,10 +92,90 @@ coordinates:
 
 ## Reflections
 
+${seedEntry.work ? `## Work Notes
+
+## Tasks Completed
+
+## Productivity Tips
+` : `## Adventure Highlights
+
+## Cultural Discoveries
+
+## Food & Experiences
+`}
+
 ## Photos
 
 ## Tomorrow's Plans
 `;
+}
+
+/**
+ * Reads and parses the seed JSON file
+ */
+function readSeedFile() {
+  try {
+    const seedPath = path.resolve(CONFIG.seedFile);
+    
+    if (!fs.existsSync(seedPath)) {
+      console.error(`❌ Seed file not found: ${seedPath}`);
+      console.log(`\n💡 Create a seed.json file with entries like:`);
+      console.log(`[
+  {
+    "id": 1,
+    "date": "2024-03-07",
+    "location": "Seoul",
+    "work": false
+  },
+  {
+    "id": 2,
+    "date": "2024-03-08",
+    "location": "Busan",
+    "work": true
+  }
+]`);
+      process.exit(1);
+    }
+    
+    const seedContent = fs.readFileSync(seedPath, 'utf8');
+    const seedData = JSON.parse(seedContent);
+    
+    if (!Array.isArray(seedData)) {
+      console.error('❌ Seed file must contain an array of entries');
+      process.exit(1);
+    }
+    
+    // Validate seed entries
+    for (const entry of seedData) {
+      if (!entry.id || !entry.date) {
+        console.error('❌ Each seed entry must have "id" and "date" fields');
+        console.log('Invalid entry:', entry);
+        process.exit(1);
+      }
+      
+      // Validate date format
+      const date = new Date(entry.date);
+      if (isNaN(date.getTime())) {
+        console.error(`❌ Invalid date format in entry ${entry.id}: ${entry.date}`);
+        console.log('Use YYYY-MM-DD format');
+        process.exit(1);
+      }
+    }
+    
+    // Sort by id to ensure proper order
+    seedData.sort((a, b) => a.id - b.id);
+    
+    return seedData;
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.error(`❌ Seed file not found: ${CONFIG.seedFile}`);
+    } else if (error instanceof SyntaxError) {
+      console.error('❌ Invalid JSON in seed file:', error.message);
+    } else {
+      console.error('❌ Error reading seed file:', error.message);
+    }
+    process.exit(1);
+  }
 }
 
 /**
@@ -96,19 +189,23 @@ function ensureDirectoryExists(dirPath) {
 }
 
 /**
- * Main function to generate all blog post files
+ * Main function to generate all blog post files from seed data
  */
 function generateBlogFiles() {
-  console.log('🚀 Starting blog post generation...\n');
+  console.log('🚀 Starting blog post generation from seed file...\n');
   
-  // Parse start date
-  const startDate = new Date(CONFIG.startDate);
+  // Read seed data
+  const seedData = readSeedFile();
+  console.log(`📖 Loaded ${seedData.length} entries from seed file`);
   
-  // Validate start date
-  if (isNaN(startDate.getTime())) {
-    console.error('❌ Invalid start date format. Please use YYYY-MM-DD format.');
-    process.exit(1);
-  }
+  // Show summary of seed data
+  const workDays = seedData.filter(entry => entry.work).length;
+  const adventureDays = seedData.length - workDays;
+  const locations = [...new Set(seedData.map(entry => entry.location).filter(Boolean))];
+  
+  console.log(`   🎒 Adventure days: ${adventureDays}`);
+  console.log(`   💼 Work days: ${workDays}`);
+  console.log(`   📍 Locations: ${locations.join(', ')}\n`);
   
   // Ensure output directory exists
   ensureDirectoryExists(CONFIG.outputDir);
@@ -116,29 +213,54 @@ function generateBlogFiles() {
   // Generate files
   let successCount = 0;
   let skipCount = 0;
+  let updateCount = 0;
   
-  for (let i = 0; i < CONFIG.totalDays; i++) {
-    const dayNumber = i + 1;
-    const currentDate = new Date(startDate);
-    currentDate.setDate(startDate.getDate() + i);
-    
-    const fileName = `${formatDate(currentDate)}.md`;
+  for (const seedEntry of seedData) {
+    const fileName = `${seedEntry.date}.md`;
     const filePath = path.join(CONFIG.outputDir, fileName);
     
-    // // Check if file already exists
-    // if (fs.existsSync(filePath)) {
-    //   console.log(`⏭️  Skipping Day ${dayNumber} (${fileName}) - file already exists`);
-    //   skipCount++;
-    //   continue;
-    // }
+    // Check if file already exists
+    if (fs.existsSync(filePath)) {
+      console.log(`⚠️  File exists for Day ${seedEntry.id} (${fileName})`);
+      
+      // Option to update existing files with new seed data (preserving content)
+      try {
+        const existingContent = fs.readFileSync(filePath, 'utf8');
+        const frontmatterMatch = existingContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+        
+        if (frontmatterMatch) {
+          // Create new content with updated frontmatter but preserve body
+          const [, , existingBody] = frontmatterMatch;
+          const newContent = createMarkdownContent(seedEntry);
+          const newFrontmatterMatch = newContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+          
+          if (newFrontmatterMatch) {
+            const [, newFrontmatter] = newFrontmatterMatch;
+            const updatedContent = `---\n${newFrontmatter}\n---\n${existingBody}`;
+            
+            fs.writeFileSync(filePath, updatedContent, 'utf8');
+            console.log(`   ✅ Updated frontmatter for Day ${seedEntry.id}`);
+            updateCount++;
+            continue;
+          }
+        }
+        
+        console.log(`   ⏭️  Skipping Day ${seedEntry.id} - keeping existing file`);
+        skipCount++;
+        continue;
+      } catch (error) {
+        console.error(`   ❌ Error updating ${fileName}:`, error.message);
+        continue;
+      }
+    }
     
-    // Create markdown content
-    const content = createMarkdownContent(dayNumber, currentDate);
+    // Create new markdown content
+    const content = createMarkdownContent(seedEntry);
     
     try {
       // Write file
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`✅ Created Day ${dayNumber}: ${fileName}`);
+      console.log(`✅ Created Day ${seedEntry.id}: ${fileName} (${seedEntry.location || 'No location'}, ${seedEntry.work ? 'Work' : 'Adventure'})`);
       successCount++;
     } catch (error) {
       console.error(`❌ Failed to create ${fileName}:`, error.message);
@@ -148,17 +270,18 @@ function generateBlogFiles() {
   // Summary
   console.log(`\n📊 Generation Summary:`);
   console.log(`   ✅ Created: ${successCount} files`);
+  console.log(`   🔄 Updated: ${updateCount} files`);
   console.log(`   ⏭️  Skipped: ${skipCount} files`);
   console.log(`   📁 Location: ${path.resolve(CONFIG.outputDir)}`);
   
-  if (successCount > 0) {
+  if (successCount > 0 || updateCount > 0) {
     console.log(`\n🎉 Blog post files generated successfully!`);
     console.log(`\n💡 Tips:`);
-    console.log(`   • Edit the gray matter fields at the top of each file`);
-    console.log(`   • Add your content below the frontmatter`);
-    console.log(`   • Use the 'highlights' array for key moments`);
-    console.log(`   • Add photo filenames to the 'photos' array`);
-    console.log(`   • Update location and coordinates for mapping`);
+    console.log(`   • Files are created as drafts (draft: true)`);
+    console.log(`   • Work days get productivity-focused templates`);
+    console.log(`   • Adventure days get travel-focused templates`);
+    console.log(`   • Location and work status are pre-filled from seed data`);
+    console.log(`   • Update seed.json and re-run to update frontmatter`);
   }
 }
 
@@ -167,32 +290,44 @@ function generateBlogFiles() {
  */
 function showUsage() {
   console.log(`
-🌏 South Korea Blog Post Generator
+🌏 South Korea Blog Post Generator (Seed-based)
 
 Usage: node generate-blog-files.js [options]
 
 Configuration:
-  Start Date: ${CONFIG.startDate}
-  Total Days: ${CONFIG.totalDays}
+  Seed File: ${CONFIG.seedFile}
   Output Dir: ${CONFIG.outputDir}
 
-To customize, edit the CONFIG object at the top of this script.
+Seed JSON Format:
+[
+  {
+    "id": 1,
+    "date": "2024-03-07",
+    "location": "Seoul",
+    "work": false
+  },
+  {
+    "id": 2, 
+    "date": "2024-03-08",
+    "location": "Busan",
+    "work": true
+  }
+]
 
-Gray Matter Fields:
-  • title: Auto-generated title with day and date
-  • date: ISO date format (YYYY-MM-DD)  
-  • day: Trip day number (1-70)
-  • dayOfWeek: Day name (Monday, Tuesday, etc.)
-  • location: City/area you're visiting
-  • weather: Weather description
-  • mood: Your mood/feelings for the day
-  • highlights: Array of key moments/activities
-  • photos: Array of photo filenames
-  • expenses: Object with different expense categories
-  • tags: Array of tags for categorization
-  • featured: Boolean for featured posts
-  • draft: Boolean to mark drafts
-  • coordinates: Lat/lng for mapping integration
+Required Fields:
+  • id: Trip day number
+  • date: Date in YYYY-MM-DD format
+
+Optional Fields:
+  • location: City/area name
+  • work: Boolean for work vs adventure days
+
+Features:
+  • Pre-populates frontmatter from seed data
+  • Different templates for work vs adventure days
+  • Updates existing files' frontmatter while preserving content
+  • Validates dates and data structure
+  • Auto-generates tags based on location and work status
 `);
 }
 
