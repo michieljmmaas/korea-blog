@@ -1,9 +1,7 @@
 "use client";
 
-import cn from "classnames";
 import Link from "next/link";
-import Image from "next/image";
-import dynamic from 'next/dynamic';
+import { Image, ImageKitProvider } from '@imagekit/next';
 
 type Props = {
   title: string;
@@ -12,25 +10,18 @@ type Props = {
 };
 
 
-const CldImage = dynamic(
-  () => import('next-cloudinary').then(mod => mod.CldImage),
-  { 
-    ssr: false,
-    loading: () => <div className="w-[1500px] h-[500px] bg-gray-200 animate-pulse" />
-  }
-);
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, slug }: Props) => {
   const image = (
-   <CldImage
-      src={src} // Use this sample image or upload your own via the Media Explorer
-      width="1500" // Transform the image: auto-crop to square aspect_ratio
-      height="500"
-      priority={true}
-      crop={{
-        type: 'auto',
-        source: true
-      }} alt={'alt'}    />
+    <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
+      <Image
+        src="/2025-09-26/art.heic"
+        width={2000}
+        height={1000}
+        alt="Picture of the author"
+        transformation={[{ width: 2000, height: 1000 }]}
+      />
+    </ImageKitProvider>
   );
   return (
     <div className="sm:mx-0">
