@@ -7,6 +7,18 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // Location-based background colors
+    'bg-indigo-600',   // work
+    'bg-purple-600',   // japan
+    'bg-blue-600',     // seoul
+    'bg-red-600',      // busan
+    'bg-green-600',    // taiwan
+    'bg-emerald-600',  // hong kong
+    'bg-orange-600',   // netherlands
+    'bg-gray-600',     // default
+    'bg-yellow-500',   // featured
+  ],
   theme: {
     extend: {
       backgroundImage: {
