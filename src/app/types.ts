@@ -7,11 +7,10 @@ export interface TripDay {
   frontmatter: BlogPostFrontmatter;
   content: string;
   fileName: string;
-  
 }
 
 export interface GridSettings {
-  squareSize: 'small' | 'medium' | 'large';
+  squareSize: 'small';
   totalDays: number;
   startDate: Date;
 }
