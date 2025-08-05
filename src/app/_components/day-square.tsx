@@ -108,14 +108,11 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
         shadow-sm 
         relative 
         overflow-hidden
-        transition-all 
-        duration-200
         ${isDraft
             ? 'opacity-50 hover:opacity-60 cursor-not-allowed'
-            : 'hover:shadow-md hover:scale-102 cursor-pointer'
+            : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1 cursor-pointer'
           }
-        hover:-translate-y-1
-        ${hasImage ? 'p-1' : 'flex flex-col items-center justify-center'}
+        ${hasImage ? 'p-2' : 'flex flex-col items-center justify-center'}
       `}>
 
           {hasImage ? (
