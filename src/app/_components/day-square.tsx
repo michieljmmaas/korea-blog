@@ -53,7 +53,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
 
   if (isEmpty) {
     return (
-      <div className={`${sizeClasses[size]} bg-gray-100 rounded-lg border border-gray-200`}>
+      <div className={`${sizeClasses[size]} bg-gray-100 rounded-sm border border-gray-200`}>
       </div>
     );
   }
@@ -105,7 +105,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
           <div className={`${sizeClasses[size]} ${isFeatured
               ? 'bg-yellow-500'
               : locationColor
-            } rounded-lg shadow-sm hover:shadow-md hover:scale-102 hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col items-center justify-center text-white relative`}>
+            } rounded-sm shadow-sm hover:shadow-md hover:scale-102 hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col items-center justify-center text-white relative`}>
 
             {/* Day number */}
             <div className="font-semibold">

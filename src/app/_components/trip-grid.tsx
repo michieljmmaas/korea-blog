@@ -51,7 +51,7 @@ const TripGrid: React.FC<TripGridProps> = ({ days, settings }) => {
     <div className="bg-white rounded-xl shadow-lg p-2">
       <WeekdayHeaders size={settings.squareSize} />
       
-      <div className="space-y-2">
+      <div className="space-y-1">
         {weekGrid.map((week, weekIndex) => (
           <div key={weekIndex} className="grid grid-cols-7 gap-1">
             {week.map((dayInfo, dayIndex) => (
