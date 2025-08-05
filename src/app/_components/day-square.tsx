@@ -10,7 +10,7 @@ interface DaySquareProps {
 }
 
 const sizeClasses = {
-  small: 'w-16 h-16 text-sm',
+  small: 'w-full h-20 text-base',
   medium: 'w-20 h-20 text-base',
   large: 'w-24 h-24 text-lg'
 };
@@ -63,7 +63,8 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
   const hasLocation = dayInfo.frontmatter.location && dayInfo.frontmatter.location.trim() !== '';
   const hasPhotos = dayInfo.frontmatter.photos && dayInfo.frontmatter.photos.length > 0;
   const isFeatured = dayInfo.frontmatter.featured;
-  const isDraft = dayInfo.frontmatter.draft;
+  // const isDraft = dayInfo.frontmatter.draft;
+  const isDraft = false;
   const isWork = dayInfo.frontmatter.work;
 
   // Get the appropriate color based on location
@@ -87,11 +88,11 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
             </div>
 
             {/* Date - only show on medium/large sizes */}
-            {size !== 'small' && (
-              <div className="text-xs opacity-80 mt-1">
-                {dayInfo.formattedDate}
-              </div>
-            )}
+            {/* {size !== 'small' && ( */}
+            <div className="text-xs opacity-80 mt-1">
+              {dayInfo.formattedDate}
+            </div>
+            {/* )} */}
           </div>
         </div>
       ) : (

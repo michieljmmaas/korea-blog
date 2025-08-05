@@ -34,14 +34,6 @@ export default function ClientGrid({ days, initialSettings }: ClientGridProps) {
 
         
         <TripGrid days={processedDays} settings={processedSettings} />
-
-        {/* Footer */}
-        <div className="text-center mt-8 text-gray-600">
-          <p className="flex items-center justify-center gap-2">
-            <Camera className="w-5 h-5" />
-            Click on any day to view photos and stories from that adventure
-          </p>
-        </div>
       </div>
     </div>
   );
