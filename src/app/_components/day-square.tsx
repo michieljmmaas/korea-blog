@@ -29,7 +29,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
   // const isDraft = false;
   const isWork = dayInfo.frontmatter.work;
 
-  const dateString = dayInfo.date.toISOString().split('T')[0];
+  const dateString = dayInfo.formattedDate
 
   const imageLocation = "/" + dateString + "/thumb.heic";
 

@@ -33,14 +33,14 @@ function ensureDirectoryExists(dirPath) {
  */
 function generateBlogFiles() {
   console.log('🚀 Starting blog post seed...\n');
-  
+
   // Parse start date
   const startDate = new Date(CONFIG.startDate);
-  
-  
+
+
   // Ensure output directory exists
   ensureDirectoryExists(CONFIG.outputDir);
-  
+
 
   let daysConfig = [];
 
@@ -105,12 +105,15 @@ function generateBlogFiles() {
     48: true,
     49: true,
     50: true,
-    53: true,
-    54: true,
+    21: true,
+    36: true,
   };
 
+    let draftSeed = {
+    1: false,
+    2: false,
+  };
 
-  
   for (let i = 0; i < CONFIG.totalDays; i++) {
     const dayNumber = i;
 
@@ -122,7 +125,8 @@ function generateBlogFiles() {
       "date": formatDate(currentDate),
       "location": locationSeed[i] ?? "Seoul",
       "work": workSeed[i] ?? false,
-      "travel": travelSeed[i] ?? false
+      "travel": travelSeed[i] ?? false,
+      "draft": draftSeed[i] ?? true,
     })
 
 
@@ -131,7 +135,7 @@ function generateBlogFiles() {
 
     let content = JSON.stringify(daysConfig);
 
-    
+
     try {
       // Write file
       fs.writeFileSync(filePath, content, 'utf8');

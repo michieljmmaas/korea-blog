@@ -10,13 +10,6 @@ const CONFIG = {
 };
 
 /**
- * Formats a date to YYYY-MM-DD
- */
-function formatDate(date) {
-  return date.toISOString().split('T')[0];
-}
-
-/**
  * Formats a date for display
  */
 function formatDisplayDate(date) {
@@ -43,36 +36,24 @@ function createMarkdownContent(seedEntry) {
   const date = new Date(seedEntry.date);
   const displayDate = formatDisplayDate(date);
   const dayOfWeek = getDayOfWeek(date);
-  
+
   // Determine initial mood and tags based on work status
-  const initialMood = seedEntry.work ? "productive" : "adventurous";
   const initialTags = seedEntry.work ? ["work", "productivity"] : ["travel", "exploration"];
-  
+
   // Add location tag if provided
   if (seedEntry.location && seedEntry.location.trim() !== '') {
     initialTags.push(seedEntry.location.toLowerCase().replace(/\s+/g, '-'));
   }
-  
+
   return `---
 title: "Day ${seedEntry.id}: ${displayDate}"
 date: "${seedEntry.date}"
 day: ${seedEntry.id}
 dayOfWeek: "${dayOfWeek}"
 location: "${seedEntry.location || ''}"
-weather: ""
-mood: "${initialMood}"
-highlights: []
 photos: []
-expenses:
-  accommodation: 0
-  food: 0
-  transport: 0
-  activities: 0
-  shopping: 0
-  other: 0
 tags: ${JSON.stringify(initialTags)}
-featured: false
-draft: true
+draft: ${seedEntry.draft || false}
 coordinates:
   lat: null
   lng: null
@@ -84,29 +65,9 @@ work: ${seedEntry.work || false}
 ${seedEntry.location ? `📍 **Location:** ${seedEntry.location}` : ''}
 ${seedEntry.work ? '💼 **Work Day**' : '🎒 **Adventure Day**'}
 
-## Morning
+## What do I do today?
 
-## Afternoon
 
-## Evening
-
-## Reflections
-
-${seedEntry.work ? `## Work Notes
-
-## Tasks Completed
-
-## Productivity Tips
-` : `## Adventure Highlights
-
-## Cultural Discoveries
-
-## Food & Experiences
-`}
-
-## Photos
-
-## Tomorrow's Plans
 `;
 }
 
@@ -116,7 +77,7 @@ ${seedEntry.work ? `## Work Notes
 function readSeedFile() {
   try {
     const seedPath = path.resolve(CONFIG.seedFile);
-    
+
     if (!fs.existsSync(seedPath)) {
       console.error(`❌ Seed file not found: ${seedPath}`);
       console.log(`\n💡 Create a seed.json file with entries like:`);
@@ -136,15 +97,15 @@ function readSeedFile() {
 ]`);
       process.exit(1);
     }
-    
+
     const seedContent = fs.readFileSync(seedPath, 'utf8');
     const seedData = JSON.parse(seedContent);
-    
+
     if (!Array.isArray(seedData)) {
       console.error('❌ Seed file must contain an array of entries');
       process.exit(1);
     }
-    
+
     // Validate seed entries
     for (const entry of seedData) {
       // Validate date format
@@ -155,10 +116,10 @@ function readSeedFile() {
         process.exit(1);
       }
     }
-    
+
     // Sort by id to ensure proper order
     seedData.sort((a, b) => a.id - b.id);
-    
+
     return seedData;
   } catch (error) {
     if (error.code === 'ENOENT') {
@@ -187,58 +148,58 @@ function ensureDirectoryExists(dirPath) {
  */
 function generateBlogFiles() {
   console.log('🚀 Starting blog post generation from seed file...\n');
-  
+
   // Read seed data
   const seedData = readSeedFile();
   console.log(`📖 Loaded ${seedData.length} entries from seed file`);
-  
+
   // Show summary of seed data
   const workDays = seedData.filter(entry => entry.work).length;
   const adventureDays = seedData.length - workDays;
   const locations = [...new Set(seedData.map(entry => entry.location).filter(Boolean))];
-  
+
   console.log(`   🎒 Adventure days: ${adventureDays}`);
   console.log(`   💼 Work days: ${workDays}`);
   console.log(`   📍 Locations: ${locations.join(', ')}\n`);
-  
+
   // Ensure output directory exists
   ensureDirectoryExists(CONFIG.outputDir);
-  
+
   // Generate files
   let successCount = 0;
   let skipCount = 0;
   let updateCount = 0;
-  
+
   for (const seedEntry of seedData) {
     const fileName = `${seedEntry.date}.md`;
     const filePath = path.join(CONFIG.outputDir, fileName);
-    
+
     // Check if file already exists
     if (fs.existsSync(filePath)) {
       console.log(`⚠️  File exists for Day ${seedEntry.id} (${fileName})`);
-      
+
       // Option to update existing files with new seed data (preserving content)
       try {
         const existingContent = fs.readFileSync(filePath, 'utf8');
         const frontmatterMatch = existingContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-        
+
         if (frontmatterMatch) {
           // Create new content with updated frontmatter but preserve body
           const [, , existingBody] = frontmatterMatch;
           const newContent = createMarkdownContent(seedEntry);
           const newFrontmatterMatch = newContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-          
+
           if (newFrontmatterMatch) {
             const [, newFrontmatter] = newFrontmatterMatch;
             const updatedContent = `---\n${newFrontmatter}\n---\n${existingBody}`;
-            
+
             fs.writeFileSync(filePath, updatedContent, 'utf8');
             console.log(`   ✅ Updated frontmatter for Day ${seedEntry.id}`);
             updateCount++;
             continue;
           }
         }
-        
+
         console.log(`   ⏭️  Skipping Day ${seedEntry.id} - keeping existing file`);
         skipCount++;
         continue;
@@ -247,10 +208,10 @@ function generateBlogFiles() {
         continue;
       }
     }
-    
+
     // Create new markdown content
     const content = createMarkdownContent(seedEntry);
-    
+
     try {
       // Write file
       fs.writeFileSync(filePath, content, 'utf8');
@@ -260,14 +221,14 @@ function generateBlogFiles() {
       console.error(`❌ Failed to create ${fileName}:`, error.message);
     }
   }
-  
+
   // Summary
   console.log(`\n📊 Generation Summary:`);
   console.log(`   ✅ Created: ${successCount} files`);
   console.log(`   🔄 Updated: ${updateCount} files`);
   console.log(`   ⏭️  Skipped: ${skipCount} files`);
   console.log(`   📁 Location: ${path.resolve(CONFIG.outputDir)}`);
-  
+
   if (successCount > 0 || updateCount > 0) {
     console.log(`\n🎉 Blog post files generated successfully!`);
     console.log(`\n💡 Tips:`);

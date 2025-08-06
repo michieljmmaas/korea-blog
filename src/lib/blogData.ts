@@ -3,6 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import { parseMarkdown } from '../../utils/markdownParser';
 
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+
+
 export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings: GridSettings }> {
   const blogPostsDir = path.join(process.cwd(), 'blog-posts');
   
@@ -25,10 +30,7 @@ export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings
         days.push({
           day: frontmatter.day,
           date: date,
-          formattedDate: date.toLocaleDateString('en-US', { 
-            month: 'short', 
-            day: 'numeric' 
-          }),
+          formattedDate: formatDate(date),
           fullDate: date.toLocaleDateString('en-US', { 
             weekday: 'long',
             year: 'numeric',

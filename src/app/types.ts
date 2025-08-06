@@ -21,20 +21,8 @@ export interface BlogPostFrontmatter {
   day: number;
   dayOfWeek: string;
   location: string;
-  weather: string;
-  mood: string;
-  highlights: string[];
   photos: string[];
-  expenses: {
-    accommodation: number;
-    food: number;
-    transport: number;
-    activities: number;
-    shopping: number;
-    other: number;
-  };
   tags: string[];
-  featured: boolean;
   draft: boolean;
   coordinates: {
     lat: number | null;
