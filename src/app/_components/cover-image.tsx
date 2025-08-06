@@ -19,7 +19,7 @@ const CoverImage = ({ title, slug }: Props) => {
         width={2000}
         height={1000}
         alt="Picture of the author"
-        transformation={[{ width: 2000, height: 1000 }]}
+        transformation={[{ width: 1000, height: 500 }]}
       />
     </ImageKitProvider>
   );
