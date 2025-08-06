@@ -110,10 +110,8 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size })
           ) : (
             <>
               {/* Placeholder area with icon */}
-              <div className="flex-1 bg-gray-100 rounded-t-sm flex items-center justify-center">
-                <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <CameraOff />
-                </svg>
+              <div className="flex-1 bg-gray-200 rounded-t-sm flex items-center justify-center">
+                  <CameraOff fill="black"/>
               </div>
             </>
           )}
