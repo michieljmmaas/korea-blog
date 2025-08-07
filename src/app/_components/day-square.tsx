@@ -2,15 +2,16 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { TripDay } from '../types';
 import { getLocationColor } from '../../../utils/locationColors';
-import { ImageKitProvider, Image } from '@imagekit/next';
 import { CameraOff } from 'lucide-react';
+import Image from 'next/image';
 
 interface DaySquareProps {
   dayInfo?: TripDay;
   isEmpty?: boolean;
+  thumbnailSrc?: string; // Add this prop
 }
 
-const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false }) => {
+const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   if (isEmpty) {
@@ -29,8 +30,6 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false }) => {
   const isWork = dayInfo.frontmatter.work;
 
   const dateString = dayInfo.formattedDate
-
-  const imageLocation = "/" + dateString + "/thumb.heic";
 
   // Get the appropriate color based on location
   const locationColor = getLocationColor(dayInfo.frontmatter.location, isWork);
@@ -54,23 +53,20 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false }) => {
     </div>
   );
 
-  const hasImage = !isDraft;
+  const hasImage = !isDraft && thumbnailSrc;
 
   const renderImage = () => {
     if (!hasImage) return null;
 
     return (
-      <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
-        <Image
-          src={imageLocation}
-          width={400}
-          height={400}
-          alt={`Day ${dayInfo.day} - ${dayInfo.frontmatter.location || 'Travel day'}`}
-          transformation={[{ named: 'travel_grid_thumb' }]}
-          className="w-full h-full object-cover rounded-sm"
-          loading="lazy"
-        />
-      </ImageKitProvider>
+      <Image
+        src={thumbnailSrc}
+        width={400}
+        height={400}
+        alt={`Day ${dayInfo.day} - ${dayInfo.frontmatter.location || 'Travel day'}`}
+        className="w-full h-full object-cover rounded-sm"
+        loading="lazy"
+      />
     );
   };
 
