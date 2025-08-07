@@ -7,6 +7,10 @@ on:
       - 'scripts/generate-thumbnails.ts'
       - '.github/workflows/thumbnails.yml'
 
+
+permissions:
+  contents: write
+
 jobs:
   thumbnails:
     runs-on: ubuntu-latest
