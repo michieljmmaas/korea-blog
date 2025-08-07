@@ -48,7 +48,6 @@ export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings
     days.sort((a, b) => a.day - b.day);
     
     const initialSettings: GridSettings = {
-      squareSize: 'small',
       totalDays: days.length,
       startDate: days.length > 0 ? days[0].date : new Date()
     };
@@ -63,7 +62,6 @@ export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings
     return {
       days: [],
       initialSettings: {
-        squareSize: 'small' as const,
         totalDays: 0,
         startDate: new Date()
       }

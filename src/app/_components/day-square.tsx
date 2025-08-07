@@ -8,10 +8,9 @@ import { CameraOff } from 'lucide-react';
 interface DaySquareProps {
   dayInfo?: TripDay;
   isEmpty?: boolean;
-  size: 'small';
 }
 
-const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false, size }) => {
+const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, isEmpty = false }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   if (isEmpty) {
