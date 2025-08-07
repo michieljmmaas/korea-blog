@@ -1,15 +1,40 @@
-# .github/workflows/thumbnails.yml
-name: Generate Thumbnails
+name: Generate Thumbnails and Deploy
+
 on:
   push:
-    paths: ['blog-posts/**']
-  
+    paths:
+      - 'blog-posts/**'
+      - 'scripts/generate-thumbnails.ts'
+      - '.github/workflows/thumbnails.yml'
+
 jobs:
   thumbnails:
     runs-on: ubuntu-latest
+    env:
+      IMAGEKIT_URL_ENDPOINT: ${{ secrets.IMAGEKIT_URL_ENDPOINT }}
+      IMAGE_KIT_PRIVATE_KEY: ${{ secrets.IMAGE_KIT_PRIVATE_KEY }}
+      IMAGE_KIT_PUBLIC_KEY: ${{ secrets.IMAGE_KIT_PUBLIC_KEY }}
     steps:
-      - uses: actions/checkout@v3
-      - run: npm run thumbnails
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate thumbnails
+        run: npm run thumbnails
+
+      - name: Commit updated thumbnails
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update thumbnails'
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
