@@ -20,12 +20,17 @@ export interface BlogPostFrontmatter {
   day: number;
   dayOfWeek: string;
   location: string;
-  photos: string[];
+  photos: number[];
   tags: string[];
   draft: boolean;
   coordinates: {
     lat: number | null;
     lng: number | null;
   };
+  stats: {
+    kimbap: number;
+    commits: number;
+    cultural: number;
+  }
   work: boolean;
 }
