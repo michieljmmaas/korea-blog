@@ -38,7 +38,7 @@ function createMarkdownContent(seedEntry) {
   const dayOfWeek = getDayOfWeek(date);
 
   // Determine initial mood and tags based on work status
-  const initialTags = seedEntry.work ? ["work", "productivity"] : ["travel", "exploration"];
+  const initialTags = seedEntry.work ? ["work"] : ["exploration"];
 
   // Add location tag if provided
   if (seedEntry.location && seedEntry.location.trim() !== '') {
@@ -52,6 +52,10 @@ day: ${seedEntry.id}
 dayOfWeek: "${dayOfWeek}"
 location: "${seedEntry.location || ''}"
 photos: []
+stats:
+  kimbap: 0
+  commits: 0
+  cultural: 0
 tags: ${JSON.stringify(initialTags)}
 draft: ${seedEntry.draft || false}
 coordinates:
