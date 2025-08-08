@@ -14,12 +14,19 @@ interface ImageCarouselProps {
 const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
 
-  const goToPrevious = () => {
+  const goToPrevious = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const goToNext = () => {
+  const goToNext = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
@@ -31,11 +38,23 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
     setIsModalOpen(false);
   };
 
-  // Handle escape key to close modal
+  // Handle escape key and arrow keys
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       closeModal();
+    } else if (e.key === 'ArrowLeft') {
+      goToPrevious();
+    } else if (e.key === 'ArrowRight') {
+      goToNext();
     }
+  };
+
+  const handleImageLoad = (imageIndex: number) => {
+    setImageLoading(prev => ({ ...prev, [imageIndex]: false }));
+  };
+
+  const handleImageLoadStart = (imageIndex: number) => {
+    setImageLoading(prev => ({ ...prev, [imageIndex]: true }));
   };
 
   if (images.length === 0) {
@@ -49,24 +68,54 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
   return (
     <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
       <div className="relative group">
-        <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg bg-surface-secondary">
+        <div 
+          className="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg bg-surface-secondary cursor-pointer"
+          onClick={openModal}
+        >
+          {/* Loading indicator */}
+          {imageLoading[currentIndex] && (
+            <div className="absolute inset-0 flex items-center justify-center bg-surface-secondary z-10">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-text-primary"></div>
+            </div>
+          )}
+          
           <Image
             src={`/${date}/photos/${images[currentIndex]}.heic`}
             width={800}
             height={400}
             alt={`${alt} ${currentIndex + 1}`}
             className="w-full h-full object-cover transition-all duration-300"
-            transformation={[{ width: 800, height: 400, crop: "maintain_ratio" }]}
+            transformation={[{ 
+              named: "carousel-optimized" // Using named transformation - see suggestion below
+            }]}
+            onLoad={() => handleImageLoad(currentIndex)}
+            onLoadStart={() => handleImageLoadStart(currentIndex)}
+            priority={currentIndex === 0} // LCP optimization for first image
           />
           
-          {/* Navigation arrows */}
+          {/* Larger navigation areas - invisible clickable zones */}
+          {images.length > 1 && (
+            <>
+              <div
+                onClick={goToPrevious}
+                className="absolute left-0 top-0 w-1/3 h-full z-20 cursor-pointer"
+              />
+              
+              <div
+                onClick={goToNext}
+                className="absolute right-0 top-0 w-1/3 h-full z-20 cursor-pointer"
+              />
+            </>
+          )}
+          
+          {/* Navigation arrows - visual indicators only */}
           {images.length > 1 && (
             <>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={goToPrevious}
-                className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none"
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -75,7 +124,7 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
                 variant="ghost"
                 size="sm"
                 onClick={goToNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none"
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -86,8 +135,11 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
           <Button
             variant="ghost"
             size="sm"
-            onClick={openModal}
-            className="absolute bottom-2 right-2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+            onClick={(e) => {
+              e.stopPropagation();
+              openModal();
+            }}
+            className="absolute bottom-2 right-2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30"
           >
             <Expand className="h-4 w-4" />
           </Button>
@@ -112,13 +164,13 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
       {/* Custom Modal */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
           onClick={closeModal}
           onKeyDown={handleKeyDown}
           tabIndex={-1}
         >
           <div 
-            className="relative max-w-7xl max-h-[95vh] p-4"
+            className="relative max-w-[95vw] max-h-[95vh] p-4"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -126,47 +178,60 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
               variant="ghost"
               size="sm"
               onClick={closeModal}
-              className="absolute -top-2 -right-2 z-10 h-8 w-8 p-0 bg-black/50 hover:bg-black/70 text-white rounded-full"
+              className="absolute -top-2 -right-2 z-10 h-10 w-10 p-0 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20"
             >
-              <X className="h-4 w-4" />
+              <X className="h-5 w-5" />
             </Button>
             
-            {/* Full size image */}
+            {/* Modal loading indicator */}
+            {imageLoading[currentIndex] && (
+              <div className="absolute inset-0 flex items-center justify-center z-5">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+              </div>
+            )}
+            
+            {/* Full size image - preserving aspect ratio */}
             <Image
               src={`/${date}/photos/${images[currentIndex]}.heic`}
-              width={1920}
-              height={1080}
+              width={1600} // Max dimension for largest side
+              height={1600} // Same max for both orientations
               alt={`${alt} ${currentIndex + 1} - Full size`}
-              className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
-              transformation={[{ width: 1920, height: 1080, crop: "maintain_ratio" }]}
+              className="w-auto h-auto max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              transformation={[
+                { named: "modal-full-aspect" } // Using named transformation - see suggestion below
+              ]}
+              onLoad={() => handleImageLoad(currentIndex)}
+              onLoadStart={() => handleImageLoadStart(currentIndex)}
             />
             
-            {/* Modal navigation arrows */}
+            {/* Large navigation areas in modal */}
             {images.length > 1 && (
               <>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToPrevious();
-                  }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                <div
+                  onClick={goToPrevious}
+                  className="absolute left-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-start pl-4 z-20"
                 >
-                  <ChevronLeft className="h-5 w-5" />
-                </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-12 w-12 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm opacity-60 hover:opacity-100 transition-opacity pointer-events-none"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </Button>
+                </div>
                 
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToNext();
-                  }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                <div
+                  onClick={goToNext}
+                  className="absolute right-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-end pr-4 z-20"
                 >
-                  <ChevronRight className="h-5 w-5" />
-                </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-12 w-12 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm opacity-60 hover:opacity-100 transition-opacity pointer-events-none"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </Button>
+                </div>
               </>
             )}
           </div>
