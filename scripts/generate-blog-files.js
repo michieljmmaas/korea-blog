@@ -56,6 +56,7 @@ stats:
   kimbap: 0
   commits: 0
   cultural: 0
+  steps: 0
 tags: ${JSON.stringify(initialTags)}
 draft: ${seedEntry.draft || false}
 coordinates:
