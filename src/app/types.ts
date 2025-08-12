@@ -34,3 +34,15 @@ export interface BlogPostFrontmatter {
   }
   work: boolean;
 }
+
+
+export interface WeekData {
+  title: string;
+  publishdate: string;
+  photos: number[];
+  tags: string[];
+  draft: boolean;
+  days: string[];
+  content: string;
+  slug: string; // week-0, week-1, etc.
+}
