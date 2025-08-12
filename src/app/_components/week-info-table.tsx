@@ -1,12 +1,21 @@
 "use client";
 
+import { useEffect, useState } from 'react';
 import DaySquare from "@/app/_components/day-square";
 import { WeekData } from '@/app/types';
 
 // Week Info Table Component
 export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayPosts: any[] }) {
-  const startDate = new Date(week.days[0]);
-  const endDate = new Date(week.days[week.days.length - 1]);
+  const [dateRange, setDateRange] = useState<string>('');
+  
+  useEffect(() => {
+    const startDate = new Date(week.days[0]);
+    const endDate = new Date(week.days[week.days.length - 1]);
+    
+    // Use consistent US locale formatting to avoid hydration mismatch
+    const formattedRange = `${startDate.toLocaleDateString('en-US')} - ${endDate.toLocaleDateString('en-US')}`;
+    setDateRange(formattedRange);
+  }, [week.days]);
   
   return (
     <div className="bg-card rounded-lg border p-6">
@@ -15,7 +24,7 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
         <div>
           <div className="text-sm text-muted-foreground">Duration</div>
           <div className="font-medium">
-            {startDate.toLocaleDateString()} - {endDate.toLocaleDateString()}
+            {dateRange || 'Loading...'}
           </div>
         </div>
         <div>
