@@ -57,7 +57,7 @@ const TripGrid: React.FC<TripGridProps> = ({ days, settings }) => {
             {week.map((dayInfo, dayIndex) => (
               <DaySquare
                 key={`${weekIndex}-${dayIndex}`}
-                dayInfo={dayInfo || undefined}
+                dayInfo={dayInfo?.frontmatter || undefined}
                 isEmpty={!dayInfo}
                 thumbnailSrc={`/thumbnails/${dayInfo?.frontmatter.date}.webp`}
               />

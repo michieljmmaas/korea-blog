@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import DaySquare from "@/app/_components/day-square";
-import { WeekData } from '@/app/types';
+import { BlogPostFrontmatter, TripDay, WeekData } from '@/app/types';
 
 // Week Info Table Component
-export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayPosts: any[] }) {
+export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayPosts: BlogPostFrontmatter[] }) {
   const [dateRange, setDateRange] = useState<string>('');
   
   useEffect(() => {
@@ -22,28 +22,14 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
       <h2 className="text-lg font-semibold mb-4">Week Overview</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <div className="text-sm text-muted-foreground">Duration</div>
+          <div className="text-sm text-muted-foreground">Span</div>
           <div className="font-medium">
-            {dateRange || 'Loading...'}
+            <span className="text-text-primary font-mono text-base">{dateRange || 'Loading...'}</span>
           </div>
         </div>
         <div>
-          <div className="text-sm text-muted-foreground">Days</div>
-          <div className="font-medium">{week.days.length} days</div>
-        </div>
-        <div>
-          <div className="text-sm text-muted-foreground">Status</div>
-          <div className="font-medium">
-            {week.draft ? (
-              <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">
-                Draft
-              </span>
-            ) : (
-              <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
-                Published
-              </span>
-            )}
-          </div>
+          <div className="text-sm text-muted-foreground">Aandere data</div>
+          <div className="font-medium">Foo</div>
         </div>
         <div>
           <div className="text-sm text-muted-foreground">Tags</div>
@@ -58,6 +44,10 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
             ))}
           </div>
         </div>
+        <div>
+          <div className="text-sm text-muted-foreground">Grafiek data</div>
+          <div className="font-medium">linkje voor grafiek</div>
+        </div>
       </div>
       
       {/* Days breakdown using DaySquare */}
@@ -65,8 +55,7 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
         <div className="text-sm text-muted-foreground mb-2">Days Covered</div>
         <div className="grid grid-cols-7 gap-1">
           {week.days.map((day) => {
-            const dayPost = dayPosts.find(post => post?.frontmatter?.date === day);
-            
+            const dayPost = dayPosts.find(post => post?.date === day);
             return (
               <DaySquare
                 key={day}

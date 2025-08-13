@@ -6,6 +6,7 @@ import { PostBody } from "@/app/_components/post-body";
 import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekPosts';
 import WeekInfoTable from '@/app/_components/week-info-table';
+import { BlogPostFrontmatter } from '@/app/types';
 
 interface WeekPageProps {
   params: Promise<{
@@ -69,19 +70,10 @@ export default async function WeekPage({ params }: WeekPageProps) {
   const previousWeek = weekId > 0 ? await WeekDataService.getWeekById(weekId - 1) : null;
   const nextWeek = await WeekDataService.getWeekById(weekId + 1);
 
-  // Get day posts for this week (you'll need to implement getBlogPost or similar)
-  // This assumes you have a function to get individual day posts
-  const { getBlogPost } = await import('@/lib/blogPost');
-  const dayPosts = await Promise.all(
-    week.days.map(async (day) => {
-      try {
-        // Assuming your day posts are stored with date as slug
-        return await getBlogPost(day);
-      } catch {
-        return null;
-      }
-    })
-  );
+  const { getBlogPostsForDates } = await import('@/lib/blogPost');
+  const dayPosts = await getBlogPostsForDates(week.days);
+
+
 
   // Format previous/next for TravelBlogHeader
   const previousPost = previousWeek ? {
@@ -119,8 +111,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
           />
         </div>
 
-        {/* Week Info Table */}
-        <WeekInfoTable week={week} dayPosts={dayPosts} />
+        {dayPosts &&
+          <WeekInfoTable week={week} dayPosts={dayPosts} />
+        }
 
         {/* Week Content */}
         <div className="flex-1 min-h-0 pt-6">

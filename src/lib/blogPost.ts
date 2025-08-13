@@ -11,20 +11,28 @@ export interface BlogPost {
   slug: string;
 }
 
-export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostsForDates(dates: string[]): Promise<BlogPostFrontmatter[]> {
+  return Promise.all(
+    dates.map(async (day) => {
+      return getBlogPost(day).then(data => data.frontmatter);
+    }));
+}
+
+
+export async function getBlogPost(slug: string): Promise<BlogPost> {
   try {
     const blogPostsDir = path.join(process.cwd(), 'blog-posts');
     const fileName = `${slug}.md`;
     const filePath = path.join(blogPostsDir, fileName);
-    
+
     // Check if file exists
     if (!fs.existsSync(filePath)) {
-      return null;
+      throw new Error("Post does not exist");
     }
-    
+
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { frontmatter, content } = parseMarkdown(fileContent);
-    
+
     return {
       frontmatter: frontmatter as BlogPostFrontmatter,
       content,
@@ -32,8 +40,8 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       slug
     };
   } catch (error) {
-    console.error('Error reading blog post:', error);
-    return null;
+    throw new Error("Error reading blog post");
+    // return null;
   }
 }
 
@@ -41,7 +49,7 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
   try {
     const blogPostsDir = path.join(process.cwd(), 'blog-posts');
     const files = fs.readdirSync(blogPostsDir);
-    
+
     return files
       .filter(file => file.endsWith('.md'))
       .map(file => file.replace('.md', ''));
@@ -59,7 +67,7 @@ export async function getAdjacentPosts(currentDay: number): Promise<{
   try {
     const slugs = await getAllBlogPostSlugs();
     const posts: Array<{ day: number; slug: string; title: string }> = [];
-    
+
     for (const slug of slugs) {
       const post = await getBlogPost(slug);
       if (post) {
@@ -70,12 +78,12 @@ export async function getAdjacentPosts(currentDay: number): Promise<{
         });
       }
     }
-    
+
     // Sort by day
     posts.sort((a, b) => a.day - b.day);
-    
+
     const currentIndex = posts.findIndex(post => post.day === currentDay);
-    
+
     return {
       previousPost: currentIndex > 0 ? posts[currentIndex - 1] : null,
       nextPost: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null

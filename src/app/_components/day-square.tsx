@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { TripDay } from '../types';
+import { BlogPostFrontmatter, TripDay } from '../types';
 import { getLocationColor } from '../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
 
 interface DaySquareProps {
-  dayInfo?: TripDay;
+  dayInfo?: BlogPostFrontmatter;
   isEmpty?: boolean;
   thumbnailSrc?: string; // Add this prop
 }
@@ -23,16 +23,16 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
 
   if (!dayInfo) return null;
 
-  const hasLocation = dayInfo.frontmatter.location && dayInfo.frontmatter.location.trim() !== '';
-  const hasPhotos = dayInfo.frontmatter.photos && dayInfo.frontmatter.photos.length > 0;
-  const isDraft = dayInfo.frontmatter.draft;
+  const hasLocation = dayInfo.location && dayInfo.location.trim() !== '';
+  const hasPhotos = dayInfo.photos && dayInfo.photos.length > 0;
+  const isDraft = dayInfo.draft;
   // const isDraft = false;
-  const isWork = dayInfo.frontmatter.work;
+  const isWork = dayInfo.work;
 
-  const dateString = dayInfo.formattedDate
+  const dateString = dayInfo.date
 
   // Get the appropriate color based on location
-  const locationColor = getLocationColor(dayInfo.frontmatter.location, isWork);
+  const locationColor = getLocationColor(dayInfo.location, isWork);
 
 
   const publishedToolTip = (
@@ -40,7 +40,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
       <div className="font-medium">{dateString}</div>
       {hasLocation && (
         <div className="text-xs text-gray-300 mt-1">
-          {dayInfo.frontmatter.location}
+          {dayInfo.location}
         </div>
       )}
       {isWork && (
@@ -63,7 +63,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         src={thumbnailSrc}
         width={400}
         height={400}
-        alt={`Day ${dayInfo.day} - ${dayInfo.frontmatter.location || 'Travel day'}`}
+        alt={`Day ${dayInfo.day} - ${dayInfo.location || 'Travel day'}`}
         className="w-full h-full object-cover rounded-sm"
         loading="lazy"
       />
@@ -73,7 +73,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   return (
     <div className="relative">
       <Link
-        href={isDraft ? '#' : `/day/${dayInfo.frontmatter.date}`}
+        href={isDraft ? '#' : `/day/${dayInfo.date}`}
         className="block"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
