@@ -49,6 +49,17 @@ const config: Config = {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
         md: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
+      container: {
+        center: true,
+        padding: '1.25rem', // px-5
+        screens: {
+          sm: '640px',
+          md: '800px',   // wider than default
+          lg: '1200px',
+          xl: '1400px',
+          '2xl': '1600px',
+        },
+      },
     },
   },
   plugins: [],
