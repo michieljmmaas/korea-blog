@@ -1,4 +1,5 @@
 ---
+index: 4
 title: 'Week 5: Oct 24 - Oct 30'
 publishdate: '2025-10-30'
 photos: []

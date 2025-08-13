@@ -1,7 +1,8 @@
 ---
+index: 0
 title: 'Week 1: Sep 26 - Oct 2'
 publishdate: '2025-10-02'
-photos: []
+photos: [1, 2, 3]
 tags:
   - exploration
   - seoul

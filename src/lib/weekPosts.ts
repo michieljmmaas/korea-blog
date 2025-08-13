@@ -22,6 +22,7 @@ export class WeekDataService {
             const { data, content } = matter(fileContent);
 
             return {
+                index: data.index,
                 title: data.title || '',
                 publishdate: data.publishdate || '',
                 photos: data.photos || [],

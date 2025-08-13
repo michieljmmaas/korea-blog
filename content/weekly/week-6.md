@@ -1,4 +1,5 @@
 ---
+index: 6
 title: 'Week 7: Nov 7 - Nov 13'
 publishdate: '2025-11-13'
 photos: []

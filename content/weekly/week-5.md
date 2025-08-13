@@ -1,4 +1,5 @@
 ---
+index: 5
 title: 'Week 6: Oct 31 - Nov 6'
 publishdate: '2025-11-06'
 photos: []

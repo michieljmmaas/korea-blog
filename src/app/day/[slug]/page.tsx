@@ -21,6 +21,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const photos = post.frontmatter.photos.map((number: Number) => `/${post.frontmatter.date}/photos/${number}.heic`);
+  photos.unshift(`/${post.frontmatter.date}/thumb.heic`);
+
   const content = await markdownToHtml(post.content || "");
   const { previousPost, nextPost } = await getAdjacentPosts(post.frontmatter.day);
 
@@ -35,8 +38,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Image Carousel */}
         <div className="py-6">
           <ImageCarousel
-            images={post.frontmatter.photos}
-            date="2025-09-29"
+            images={photos}
             alt="Travel photos from Seoul"
           />
         </div>

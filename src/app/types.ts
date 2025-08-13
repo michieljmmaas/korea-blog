@@ -37,6 +37,7 @@ export interface BlogPostFrontmatter {
 
 
 export interface WeekData {
+  index: number;
   title: string;
   publishdate: string;
   photos: number[];

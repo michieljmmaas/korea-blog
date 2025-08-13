@@ -1,4 +1,5 @@
 ---
+index: 1
 title: 'Week 2: Oct 3 - Oct 9'
 publishdate: '2025-10-09'
 photos: []

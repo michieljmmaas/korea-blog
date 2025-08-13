@@ -16,7 +16,7 @@ interface WeekPageProps {
 // Generate static params for all weeks
 export async function generateStaticParams() {
   const weekCount = await WeekDataService.getWeekCount();
-  
+
   return Array.from({ length: weekCount }, (_, i) => ({
     weekId: i.toString(),
   }));
@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: WeekPageProps): Promise<Metad
   const { weekId: weekIdStr } = await params;
   const weekId = parseInt(weekIdStr, 10);
   const week = await WeekDataService.getWeekById(weekId);
-  
+
   if (!week) {
     return {
       title: 'Week Not Found',
     };
   }
-  
+
   return {
     title: week.title,
     description: `Travel blog week ${weekId} covering ${week.days.length} days`,
@@ -50,23 +50,25 @@ export async function generateMetadata({ params }: WeekPageProps): Promise<Metad
 export default async function WeekPage({ params }: WeekPageProps) {
   const { weekId: weekIdStr } = await params;
   const weekId = parseInt(weekIdStr, 10);
-  
+
+
+
   if (isNaN(weekId) || weekId < 0) {
     notFound();
   }
-  
+
   const week = await WeekDataService.getWeekById(weekId);
-  
+
   if (!week) {
     notFound();
   }
-  
+
   const content = await markdownToHtml(week.content || "");
-  
+
   // Get adjacent weeks for navigation
   const previousWeek = weekId > 0 ? await WeekDataService.getWeekById(weekId - 1) : null;
   const nextWeek = await WeekDataService.getWeekById(weekId + 1);
-  
+
   // Get day posts for this week (you'll need to implement getBlogPost or similar)
   // This assumes you have a function to get individual day posts
   const { getBlogPost } = await import('@/lib/blogPost');
@@ -80,7 +82,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
       }
     })
   );
-  
+
   // Format previous/next for TravelBlogHeader
   const previousPost = previousWeek ? {
     slug: `week-${weekId - 1}`,
@@ -89,7 +91,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
       day: weekId - 1
     }
   } : null;
-  
+
   const nextPost = nextWeek ? {
     slug: `week-${weekId + 1}`,
     frontmatter: {
@@ -97,7 +99,10 @@ export default async function WeekPage({ params }: WeekPageProps) {
       day: weekId + 1
     }
   } : null;
-  
+
+  const photos = week.photos.map((number: Number) => `/weeks/${week.index}/photos/${number}.heic`);
+  photos.unshift(`/weeks/${week.index}/thumb.heic`);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* <TravelBlogHeader
@@ -109,8 +114,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
         {/* Image Carousel */}
         <div className="py-6">
           <ImageCarousel
-            images={week.photos}
-            date={week.publishdate}
+            images={photos}
             alt={`Travel photos from ${week.title}`}
           />
         </div>

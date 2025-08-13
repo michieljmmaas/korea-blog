@@ -1,4 +1,5 @@
 ---
+index: 9
 title: 'Week 10: Nov 28 - Dec 4'
 publishdate: '2025-12-04'
 photos: []

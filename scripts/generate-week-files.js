@@ -93,6 +93,7 @@ async function generateWeeklyPosts() {
 
             // Create frontmatter
             const frontmatter = {
+                index,
                 title,
                 publishdate: endPost.date, // Use last day as publish date
                 photos: [],

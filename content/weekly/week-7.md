@@ -1,4 +1,5 @@
 ---
+index: 7
 title: 'Week 8: Nov 14 - Nov 20'
 publishdate: '2025-11-20'
 photos: []

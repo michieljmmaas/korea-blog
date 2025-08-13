@@ -6,12 +6,11 @@ import { ImageKitProvider, Image } from "@imagekit/next";
 import { Button } from "./ui/button";
 
 interface ImageCarouselProps {
-  images: number[];
-  date: string; // Format: "2025-09-29"
+  images: string[];
   alt?: string;
 }
 
-const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProps) => {
+const ImageCarousel = ({ images, alt = "Travel photo" }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
@@ -80,7 +79,7 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
           )}
           
           <Image
-            src={`/${date}/photos/${images[currentIndex]}.heic`}
+            src={images[currentIndex]}
             width={800}
             height={400}
             alt={`${alt} ${currentIndex + 1}`}
@@ -192,7 +191,7 @@ const ImageCarousel = ({ images, date, alt = "Travel photo" }: ImageCarouselProp
             
             {/* Full size image - preserving aspect ratio */}
             <Image
-              src={`/${date}/photos/${images[currentIndex]}.heic`}
+              src={images[currentIndex]}
               width={1600} // Max dimension for largest side
               height={1600} // Same max for both orientations
               alt={`${alt} ${currentIndex + 1} - Full size`}
