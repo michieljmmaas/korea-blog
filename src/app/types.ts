@@ -47,3 +47,8 @@ export interface WeekData {
   content: string;
   slug: string; // week-0, week-1, etc.
 }
+
+export interface PostLinkInfo {
+  slug: string; 
+  title: string;
+}

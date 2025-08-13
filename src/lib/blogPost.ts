@@ -70,7 +70,7 @@ export async function getAdjacentPosts(currentDay: number): Promise<{
 
     for (const slug of slugs) {
       const post = await getBlogPost(slug);
-      if (post) {
+      if (post && post.frontmatter.draft === false) {
         posts.push({
           day: post.frontmatter.day,
           slug,

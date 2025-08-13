@@ -39,6 +39,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Day Info Table */}
         <DayInfoTable
           frontmatter={post.frontmatter}
+          previousPost={previousPost}
+          nextPost={nextPost}
         />
 
         {/* Day Text */}

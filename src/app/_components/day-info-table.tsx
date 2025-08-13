@@ -1,22 +1,35 @@
 import { getLocationColor } from "../../../utils/locationColors";
-import { BlogPostFrontmatter } from "../types";
+import { BlogPostFrontmatter, PostLinkInfo } from "../types";
 import Image from 'next/image';
 import kimbapIcon from "../../../public/assets/blog/svg-icons/kimbap.svg";
 import gitIcon from "../../../public/assets/blog/svg-icons/git.svg";
 import culturalIcon from "../../../public/assets/blog/svg-icons/cultural.svg";
+import ArrowButton from "./arrow-button";
 
 
 interface DayInfoTableProps {
-    frontmatter: BlogPostFrontmatter
+    frontmatter: BlogPostFrontmatter;
+    previousPost: PostLinkInfo | null;
+    nextPost: PostLinkInfo | null;
 }
 
 
 const DayInfoTable = (props: DayInfoTableProps) => {
     const { location, work, date, tags, stats } = props.frontmatter;
+    const { previousPost, nextPost } = props;
     const locationColor = getLocationColor(location, work);
 
     return (
         <div className="flex gap-6 py-6 items-start">
+            {/* Previous Post Button */}
+            <div className="flex items-center">
+                <ArrowButton 
+                    direction="left" 
+                    post={previousPost} 
+                    disabled={!previousPost} 
+                />
+            </div>
+
             {/* Basic Info - 25% */}
             <div className="w-1/4 space-y-4">
                 <div className="flex items-center justify-between py-2 border-b border-border">
@@ -53,7 +66,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 <div className="grid grid-cols-3 gap-4 items-stretch">
                     <div className="text-center p-4 bg-surface-secondary rounded-lg flex flex-col justify-between min-h-[120px]">
                         <div className="flex justify-center mb-3 flex-1">
-                            <Image src={kimbapIcon} alt="Kimbap icon" className="w-full h-full max-w-32 max-h-32 object-contain" />
+                            <Image src={kimbapIcon} alt="Kimbap icon" className="w-full h-full max-w-24 max-h-32 object-contain" />
                         </div>
                         <div>
                             <div className="text-2xl font-bold text-text-primary mb-1">{stats.kimbap}</div>
@@ -63,7 +76,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
 
                     <div className="text-center p-4 bg-surface-secondary rounded-lg flex flex-col justify-between min-h-[120px]">
                         <div className="flex justify-center mb-3 flex-1">
-                            <Image src={culturalIcon} alt="Cultural icon" className="w-full h-full max-w-32 max-h-32 object-contain" />
+                            <Image src={culturalIcon} alt="Cultural icon" className="w-full h-full max-w-24 max-h-32 object-contain" />
                         </div>
                         <div>
                             <div className="text-2xl font-bold text-text-primary mb-1">{stats.cultural}</div>
@@ -73,7 +86,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
 
                     <div className="text-center p-4 bg-surface-secondary rounded-lg flex flex-col justify-between min-h-[120px]">
                         <div className="flex justify-center mb-3 flex-1">
-                            <Image src={gitIcon} alt="Git icon" className="w-full h-full max-w-32 max-h-32 object-contain" />
+                            <Image src={gitIcon} alt="Git icon" className="w-full h-full max-w-32 max-h-24 object-contain" />
                         </div>
                         <div>
                             <div className="text-2xl font-bold text-text-primary mb-1">{stats.commits}</div>
@@ -82,7 +95,17 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                     </div>
                 </div>
             </div>
+
+            {/* Next Post Button */}
+            <div className="flex items-center">
+                <ArrowButton 
+                    direction="right" 
+                    post={nextPost} 
+                    disabled={!nextPost} 
+                />
+            </div>
         </div>
     );
 };
+
 export default DayInfoTable;
