@@ -7,6 +7,8 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekPosts';
 import WeekInfoTable from '@/app/_components/week-info-table';
 import { BlogPostFrontmatter } from '@/app/types';
+import Header from '@/app/_components/header';
+import Container from '@/app/_components/container';
 
 interface WeekPageProps {
   params: Promise<{
@@ -97,11 +99,6 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* <TravelBlogHeader
-        previousPost={previousPost}
-        nextPost={nextPost}
-      /> */}
-
       <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
         {/* Image Carousel */}
         <div className="py-6">
@@ -112,6 +109,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
         </div>
 
         {dayPosts &&
+
           <WeekInfoTable week={week} dayPosts={dayPosts} />
         }
 

@@ -1,7 +1,5 @@
 import DayInfoTable from "@/app/_components/day-info-table";
-import DayText from "@/app/_components/day-text";
 import ImageCarousel from "@/app/_components/image-carousel";
-import TravelBlogHeader from "@/app/_components/travel-blog-header";
 import { notFound } from 'next/navigation';
 import { getBlogPost, getAdjacentPosts } from '../../../lib/blogPost';
 import markdownToHtml from '@/lib/markdownToHtml';
@@ -29,11 +27,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <TravelBlogHeader
-        previousPost={previousPost}
-        nextPost={nextPost}
-      />
-
       <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
         {/* Image Carousel */}
         <div className="py-6">

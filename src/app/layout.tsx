@@ -4,6 +4,9 @@ import { Inter } from "next/font/google";
 import cn from "classnames";
 
 import "./globals.css";
+import Container from "./_components/container";
+import Header from "./_components/header";
+import Footer from "./_components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,7 +61,29 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <div className="min-h-screen">{children}</div>
+        <div className="grid grid-rows-[auto_1fr_auto] h-screen">
+          {/* Fixed Header */}
+          <header>
+            <Container>
+              <Header />
+            </Container>
+          </header>
+
+          {/* Scrollable Main Content */}
+          <main className="overflow-y-auto">
+            <Container>
+              {children}
+            </Container>
+          </main>
+
+          {/* Fixed Footer */}
+          <footer>
+            <Container>
+              <Footer />
+            </Container>
+          </footer>
+        </div>
+
       </body>
     </html>
   );
