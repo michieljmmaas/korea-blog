@@ -37,7 +37,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
 
                 {/* Stats Grid */}
                 <div className="flex-1 flex items-center justify-end">
-                    <div className="w-1/3">
+                    <div className="">
                         <StatsGrid stats={stats} />
                     </div>
                 </div>
