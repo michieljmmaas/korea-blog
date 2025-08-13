@@ -1,35 +1,27 @@
 "use client"
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import { ImageKitProvider, Image } from "@imagekit/next";
-import { Button } from "./ui/button";
+import { X} from "lucide-react";
 
-interface ImageCarouselProps {
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+interface SwiperImageCarouselProps {
   images: string[];
   alt?: string;
 }
 
-const ImageCarousel = ({ images, alt = "Travel photo" }: ImageCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarouselProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
+  const [currentModalIndex, setCurrentModalIndex] = useState(0);
 
-  const goToPrevious = (e?: React.MouseEvent) => {
-    if (e) {
-      e.stopPropagation();
-    }
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const goToNext = (e?: React.MouseEvent) => {
-    if (e) {
-      e.stopPropagation();
-    }
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const openModal = () => {
+  const openModal = (index: number) => {
+    setCurrentModalIndex(index);
     setIsModalOpen(true);
   };
 
@@ -37,7 +29,14 @@ const ImageCarousel = ({ images, alt = "Travel photo" }: ImageCarouselProps) => 
     setIsModalOpen(false);
   };
 
-  // Handle escape key and arrow keys
+  const goToPrevious = () => {
+    setCurrentModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       closeModal();
@@ -48,196 +47,145 @@ const ImageCarousel = ({ images, alt = "Travel photo" }: ImageCarouselProps) => 
     }
   };
 
-  const handleImageLoad = (imageIndex: number) => {
-    setImageLoading(prev => ({ ...prev, [imageIndex]: false }));
-  };
-
-  const handleImageLoadStart = (imageIndex: number) => {
-    setImageLoading(prev => ({ ...prev, [imageIndex]: true }));
-  };
-
   if (images.length === 0) {
     return (
-      <div className="relative h-64 bg-surface-secondary rounded-lg flex items-center justify-center">
-        <p className="text-text-secondary">No images available</p>
+      <div className="relative h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+        <p className="text-gray-500">No images available</p>
       </div>
     );
   }
 
   return (
     <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
-      <div className="relative group">
-        <div 
-          className="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg bg-surface-secondary cursor-pointer"
-          onClick={openModal}
+      <div className="w-full mx-auto">
+        {/* Main Carousel */}
+        <Swiper
+          spaceBetween={10}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          modules={[Navigation, Pagination]}
+          className="w-full h-64 sm:h-80 md:h-96 rounded-lg"
         >
-          {/* Loading indicator */}
-          {imageLoading[currentIndex] && (
-            <div className="absolute inset-0 flex items-center justify-center bg-surface-secondary z-10">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-text-primary"></div>
-            </div>
-          )}
-          
-          <Image
-            src={images[currentIndex]}
-            width={800}
-            height={400}
-            alt={`${alt} ${currentIndex + 1}`}
-            className="w-full h-full object-cover transition-all duration-300"
-            transformation={[{ 
-              named: "carousel-optimized" // Using named transformation - see suggestion below
-            }]}
-            onLoad={() => handleImageLoad(currentIndex)}
-            onLoadStart={() => handleImageLoadStart(currentIndex)}
-            priority={currentIndex === 0} // LCP optimization for first image
-          />
-          
-          {/* Larger navigation areas - invisible clickable zones */}
-          {images.length > 1 && (
-            <>
-              <div
-                onClick={goToPrevious}
-                className="absolute left-0 top-0 w-1/3 h-full z-20 cursor-pointer"
-              />
-              
-              <div
-                onClick={goToNext}
-                className="absolute right-0 top-0 w-1/3 h-full z-20 cursor-pointer"
-              />
-            </>
-          )}
-          
-          {/* Navigation arrows - visual indicators only */}
-          {images.length > 1 && (
-            <>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={goToPrevious}
-                className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none"
+          {images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <div 
+                className="w-full h-full cursor-pointer"
+                onClick={() => openModal(index)}
               >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={goToNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-            </>
-          )}
-          
-          {/* Expand button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={(e) => {
-              e.stopPropagation();
-              openModal();
-            }}
-            className="absolute bottom-2 right-2 h-8 w-8 p-0 bg-overlay/20 hover:bg-overlay/40 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30"
+                <Image
+                  src={image}
+                  width={800}
+                  height={400}
+                  alt={`${alt} ${index + 1}`}
+                  className="w-full h-full object-cover rounded-lg"
+                  transformation={[{
+                    named: "carousel-optimized"
+                  }]}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* High-Res Modal */}
+        {isModalOpen && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeModal}
+            onKeyDown={handleKeyDown}
+            tabIndex={-1}
           >
-            <Expand className="h-4 w-4" />
-          </Button>
-        </div>
-      
-        {/* Image indicators */}
-        {images.length > 1 && (
-          <div className="flex justify-center gap-2 mt-3">
-            {images.map((_, index) => (
+            <div 
+              className="relative max-w-[95vw] max-h-[95vh] p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
               <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                  index === currentIndex ? "bg-text-primary" : "bg-border"
-                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeModal();
+                }}
+                className="absolute -top-2 -right-2 z-50 h-10 w-10 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+              
+              {/* High resolution image */}
+              <Image
+                src={images[currentModalIndex]}
+                width={1600}
+                height={1600}
+                alt={`${alt} ${currentModalIndex + 1} - Full size`}
+                className="w-auto h-auto max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+                transformation={[
+                  { named: "modal-full-aspect" }
+                ]}
               />
-            ))}
+              
+              {/* Navigation in modal */}
+              {images.length > 1 && (
+                <>
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToPrevious();
+                    }}
+                    className="absolute left-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-start pl-4 z-20"
+                  >
+                  </div>
+                  
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToNext();
+                    }}
+                    className="absolute right-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-end pr-4 z-20"
+                  >
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         )}
-      </div>
 
-      {/* Custom Modal */}
-      {isModalOpen && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-          onClick={closeModal}
-          onKeyDown={handleKeyDown}
-          tabIndex={-1}
-        >
-          <div 
-            className="relative max-w-[95vw] max-h-[95vh] p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={closeModal}
-              className="absolute -top-2 -right-2 z-10 h-10 w-10 p-0 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20"
-            >
-              <X className="h-5 w-5" />
-            </Button>
-            
-            {/* Modal loading indicator */}
-            {imageLoading[currentIndex] && (
-              <div className="absolute inset-0 flex items-center justify-center z-5">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
-              </div>
-            )}
-            
-            {/* Full size image - preserving aspect ratio */}
-            <Image
-              src={images[currentIndex]}
-              width={1600} // Max dimension for largest side
-              height={1600} // Same max for both orientations
-              alt={`${alt} ${currentIndex + 1} - Full size`}
-              className="w-auto h-auto max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-              transformation={[
-                { named: "modal-full-aspect" } // Using named transformation - see suggestion below
-              ]}
-              onLoad={() => handleImageLoad(currentIndex)}
-              onLoadStart={() => handleImageLoadStart(currentIndex)}
-            />
-            
-            {/* Large navigation areas in modal */}
-            {images.length > 1 && (
-              <>
-                <div
-                  onClick={goToPrevious}
-                  className="absolute left-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-start pl-4 z-20"
-                >
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-12 w-12 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm opacity-60 hover:opacity-100 transition-opacity pointer-events-none"
-                  >
-                    <ChevronLeft className="h-6 w-6" />
-                  </Button>
-                </div>
-                
-                <div
-                  onClick={goToNext}
-                  className="absolute right-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-end pr-4 z-20"
-                >
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-12 w-12 p-0 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm opacity-60 hover:opacity-100 transition-opacity pointer-events-none"
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </Button>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      )}
+<style jsx global>{`
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: white !important;
+            background: none !important;
+            width: 40px !important;
+            height: 40px !important;
+            margin-top: -20px !important;
+            border-radius: 0 !important;
+          }
+          
+          .swiper-button-next::before,
+          .swiper-button-prev::before {
+            display: none !important;
+          }
+          
+          .swiper-button-next:after,
+          .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold !important;
+            background: none !important;
+          }
+          
+          .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5) !important;
+          }
+          
+          .swiper-pagination-bullet-active {
+            background: white !important;
+          }
+        `}</style>
+      </div>
     </ImageKitProvider>
   );
 };
 
-export default ImageCarousel;
+export default SwiperImageCarousel;
