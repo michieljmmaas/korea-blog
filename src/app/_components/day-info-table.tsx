@@ -53,7 +53,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden py-4 space-y-4 border border-border rounded-lg p-4 sticky top-0 bg-white z-10 shadow-sm">
+            <div className="md:hidden py-4 space-y-4 border border-border rounded-lg p-4 top-0 bg-white z-10 shadow-sm">
                 {/* Basic Info - Date and Location on same line */}
                 <div className="flex items-center justify-between">
                     <span className="text-text-primary font-mono text-sm">{date}</span>
