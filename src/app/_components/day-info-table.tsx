@@ -10,94 +10,56 @@ interface DayInfoTableProps {
 }
 
 const DayInfoTable = (props: DayInfoTableProps) => {
-    const { location, work, date, tags, stats } = props.frontmatter;
+    const { location, work, date, stats } = props.frontmatter;
     const { previousPost, nextPost } = props;
     const locationColor = getLocationColor(location, work);
 
     return (
         <>
             {/* Desktop Layout */}
-            <div className="hidden md:flex gap-6 py-6 items-stretch">
+            <div className="hidden md:flex gap-6 py-6 items-center border border-border rounded-lg p-4 sticky top-0 bg-white z-10">
                 {/* Previous Post Button */}
-                <ArrowButton 
-                    direction="left" 
-                    post={previousPost} 
-                    disabled={!previousPost} 
-                />
+                <div className="flex items-center">
+                    <ArrowButton 
+                        direction="left" 
+                        post={previousPost} 
+                        disabled={!previousPost} 
+                    />
+                </div>
 
-                {/* Basic Info - 25% */}
-                <div className="w-1/4 space-y-4">
-                    <div className="flex items-center justify-between py-2 border-b border-border">
-                        <span className="text-text-secondary text-base font-medium">Date</span>
-                        <span className="text-text-primary font-mono text-base">{date}</span>
+                {/* Basic Info - Date and Location on same line */}
+                <div className="flex items-center gap-6">
+                    <span className="text-text-primary font-mono text-base">{date}</span>
+                    <div className={`px-3 py-2 rounded-lg text-sm font-medium text-white ${locationColor}`}>
+                        {location}
                     </div>
-
-                    <div className="flex items-center justify-between py-2 border-b border-border">
-                        <span className="text-text-secondary text-base font-medium">Location</span>
-                        <div className={`px-3 py-2 rounded-lg text-sm font-medium text-white ${locationColor}`}>
-                            {location}
-                        </div>
-                    </div>
-
-                    {tags.length > 0 && (
-                        <div className="py-2">
-                            <span className="text-text-secondary text-base font-medium block mb-2">Tags</span>
-                            <div className="flex flex-wrap gap-1">
-                                {tags.map((tag, index) => (
-                                    <span
-                                        key={index}
-                                        className="px-2 py-1 bg-surface-secondary text-text-secondary text-sm rounded-full"
-                                    >
-                                        #{tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
                 </div>
 
                 {/* Stats Grid */}
-                <StatsGrid stats={stats} />
+                <div className="flex-1 flex items-center justify-end">
+                    <div className="w-1/3">
+                        <StatsGrid stats={stats} />
+                    </div>
+                </div>
 
                 {/* Next Post Button */}
-                <ArrowButton 
-                    direction="right" 
-                    post={nextPost} 
-                    disabled={!nextPost} 
-                />
+                <div className="flex items-center">
+                    <ArrowButton 
+                        direction="right" 
+                        post={nextPost} 
+                        disabled={!nextPost} 
+                    />
+                </div>
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden py-4 space-y-4">
-                {/* Basic Info */}
-                <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 border-b border-border">
-                        <span className="text-text-secondary text-sm font-medium">Date</span>
-                        <span className="text-text-primary font-mono text-sm">{date}</span>
+            <div className="md:hidden py-4 space-y-4 border border-border rounded-lg p-4 sticky top-0 bg-white z-10 shadow-sm">
+                {/* Basic Info - Date and Location on same line */}
+                <div className="flex items-center justify-between">
+                    <span className="text-text-primary font-mono text-sm">{date}</span>
+                    <div className={`px-2 py-1 rounded-lg text-xs font-medium text-white ${locationColor}`}>
+                        {location}
                     </div>
-
-                    <div className="flex items-center justify-between py-2 border-b border-border">
-                        <span className="text-text-secondary text-sm font-medium">Location</span>
-                        <div className={`px-2 py-1 rounded-lg text-xs font-medium text-white ${locationColor}`}>
-                            {location}
-                        </div>
-                    </div>
-
-                    {tags.length > 0 && (
-                        <div className="py-2">
-                            <span className="text-text-secondary text-sm font-medium block mb-2">Tags</span>
-                            <div className="flex flex-wrap gap-1">
-                                {tags.map((tag, index) => (
-                                    <span
-                                        key={index}
-                                        className="px-2 py-1 bg-surface-secondary text-text-secondary text-xs rounded-full"
-                                    >
-                                        #{tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
                 </div>
 
                 {/* Stats Grid */}

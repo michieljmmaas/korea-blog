@@ -9,19 +9,18 @@ interface ArrowButtonProps {
 
 const ArrowButton = ({ direction, post, disabled }: ArrowButtonProps) => {
     const buttonClasses = `
-        flex items-center justify-center rounded-lg border transition-colors
-        h-full min-h-[200px] px-4
-        md:h-full md:min-h-[200px] md:px-4
-        max-md:h-12 max-md:min-h-[48px] max-md:px-3 max-md:w-full
+        flex items-center justify-center rounded-lg transition-colors
+        h-12 min-h-[48px] px-3
+        md:h-16 md:min-h-[64px] md:px-4
         ${disabled 
-            ? 'border-border bg-surface-secondary text-text-secondary cursor-not-allowed opacity-50' 
-            : 'border-border bg-surface hover:bg-surface-secondary text-text-primary hover:text-text-primary hover:border-text-secondary'
+            ? 'bg-surface-secondary text-text-secondary cursor-not-allowed opacity-50' 
+            : 'bg-surface hover:bg-surface-secondary text-text-primary hover:text-text-primary hover:border-text-secondary'
         }
     `;
 
     const arrowIcon = (
         <svg 
-            className="w-5 h-5 md:w-6 md:h-6" 
+            className="w-4 h-4 md:w-5 md:h-5" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
