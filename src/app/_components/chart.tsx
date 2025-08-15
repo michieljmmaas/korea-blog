@@ -224,7 +224,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         />
                         <YAxis stroke="#666" fontSize={12} />
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend />
 
                         {/* Lines for each stat */}
                         <Line
@@ -269,7 +268,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                     {([
                         {
                             key: 'kimbap',
-                            label: 'Kimbap',
+                            label: 'Kimbap Eaten',
                             color: '#f8333c',
                             bgColor: 'kimbap-bg',
                             textColor: 'kimbap-text',
@@ -277,7 +276,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         },
                         {
                             key: 'cultural',
-                            label: 'Sights seen',
+                            label: 'Sights Seen',
                             color: '#2b9eb3',
                             bgColor: 'cultural-bg',
                             textColor: 'cultural-text',
@@ -285,7 +284,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         },
                         {
                             key: 'worked',
-                            label: 'Worked',
+                            label: 'Hours Worked',
                             color: '#fcab10',
                             bgColor: 'worked-bg',
                             textColor: 'worked-text',
@@ -293,7 +292,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         },
                         {
                             key: 'steps',
-                            label: 'Steps taken',
+                            label: 'Steps Taken',
                             color: '#44af69',
                             bgColor: 'steps-bg',
                             textColor: 'steps-text',
