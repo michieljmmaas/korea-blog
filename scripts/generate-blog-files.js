@@ -29,8 +29,9 @@ function getDayOfWeek(date) {
   return days[date.getDay()];
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+
+function getRandomInt(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /**
@@ -49,10 +50,10 @@ function createMarkdownContent(seedEntry) {
     initialTags.push(seedEntry.location.toLowerCase().replace(/\s+/g, '-'));
   }
 
-  const randomKimbap = getRandomInt(3);
-  const randomWorked = getRandomInt(5);
-  const randomCultural = getRandomInt(8);
-  const randomSteps = getRandomInt(10) * 1000;
+  const randomKimbap = getRandomInt(1, 4);
+  const randomWorked = getRandomInt(0, 8);
+  const randomCultural = getRandomInt(2, 5);
+  const randomSteps = getRandomInt(3, 10) * 1000;
 
 
 

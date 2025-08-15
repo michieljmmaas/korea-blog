@@ -31,6 +31,7 @@ export interface BlogPostFrontmatter {
     kimbap: number;
     commits: number;
     cultural: number;
+    worked: number;
     steps: number;
   }
   work: boolean;
