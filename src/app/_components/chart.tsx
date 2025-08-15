@@ -84,6 +84,29 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
+    // Add this function before the useEffect hooks
+    const aggregateByWeeks = (data: DayData[]): DayData[] => {
+        const weeks: DayData[] = [];
+
+        for (let i = 0; i < data.length; i += 7) {
+            const weekData = data.slice(i, i + 7);
+            const weekNumber = Math.floor(i / 7) + 1;
+
+            // Get the last day's values (since it's cumulative data)
+            const lastDay = weekData[weekData.length - 1];
+
+            weeks.push({
+                date: `Week ${weekNumber}`,
+                kimbap: lastDay.kimbap,
+                cultural: lastDay.cultural,
+                steps: lastDay.steps,
+                worked: lastDay.worked
+            });
+        }
+
+        return weeks;
+    };
+
     // Load the JSON data
     useEffect(() => {
         const loadData = async (): Promise<void> => {
@@ -111,7 +134,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
         if (chartData.length === 0) return;
 
         if (showFullData) {
-            setDisplayData(chartData);
+            // Aggregate by weeks for zoomed out view
+            setDisplayData(aggregateByWeeks(chartData));
         } else {
             // Calculate week window (7 days per week)
             const startIndex = Math.max(0, (currentWeek - 1) * 7);
@@ -125,8 +149,11 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
         setShowFullData(!showFullData);
     };
 
-    // Format date for display (show only day/month)
+    // Format date for display
     const formatDate = (dateStr: string): string => {
+        if (dateStr.startsWith('Week ')) {
+            return dateStr; // Return "Week 1", "Week 2", etc.
+        }
         const date = new Date(dateStr);
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
@@ -159,7 +186,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         return (
                             <p key={index} style={{ color: entry.color }} className="text-sm">
                                 {`${entry.name}: +${dailyIncrease.toLocaleString()}`}
-                                {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1">(first day)</span>}
+                                {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1"></span>}
                             </p>
                         );
                     })}
