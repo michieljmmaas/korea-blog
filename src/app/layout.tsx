@@ -75,13 +75,6 @@ export default function RootLayout({
               {children}
             </Container>
           </main>
-
-          {/* Fixed Footer */}
-          <footer>
-            <Container>
-              <Footer />
-            </Container>
-          </footer>
         </div>
 
       </body>
