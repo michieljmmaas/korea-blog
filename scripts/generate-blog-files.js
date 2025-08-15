@@ -29,6 +29,10 @@ function getDayOfWeek(date) {
   return days[date.getDay()];
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 /**
  * Creates the markdown content with gray matter frontmatter using seed data
  */
@@ -45,6 +49,13 @@ function createMarkdownContent(seedEntry) {
     initialTags.push(seedEntry.location.toLowerCase().replace(/\s+/g, '-'));
   }
 
+  const randomKimbap = getRandomInt(3);
+  const randomWorked = getRandomInt(5);
+  const randomCultural = getRandomInt(8);
+  const randomSteps = getRandomInt(10) * 1000;
+
+
+
   return `---
 title: "Day ${seedEntry.id}: ${displayDate}"
 date: "${seedEntry.date}"
@@ -53,11 +64,11 @@ dayOfWeek: "${dayOfWeek}"
 location: "${seedEntry.location || ''}"
 photos: []
 stats:
-  kimbap: 0
+  kimbap: ${randomKimbap}
   commits: 0
-  worked: 0
-  cultural: 0
-  steps: 0
+  worked: ${randomWorked}
+  cultural: ${randomCultural}
+  steps: ${randomSteps}
 tags: ${JSON.stringify(initialTags)}
 draft: ${seedEntry.draft || false}
 coordinates:

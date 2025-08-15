@@ -104,14 +104,14 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
               Statistics Dashboard
             </h3>
             <p className="text-sm text-gray-600">
-              Week {week.index} vacation progress overview
+              Week {week.index + 1} vacation progress overview
             </p>
           </div>
           
           {/* Chart Component */}
           {isChartExpanded && (
             <div className="animate-in fade-in-50 duration-300">
-              <VacationStatsChart weekNumber={week.index} />
+              <VacationStatsChart weekNumber={week.index + 1} />
             </div>
           )}
         </div>
