@@ -230,33 +230,33 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                         <Line
                             type="monotone"
                             dataKey="kimbap"
-                            stroke="#dc2626"
+                            stroke="#f8333c"
                             strokeWidth={2}
-                            dot={{ fill: '#dc2626', strokeWidth: 2, r: 4 }}
+                            dot={{ fill: '#f8333c', strokeWidth: 2, r: 4 }}
                             name="Kimbap"
                         />
                         <Line
                             type="monotone"
                             dataKey="cultural"
-                            stroke="#2563eb"
+                            stroke="#2b9eb3"
                             strokeWidth={2}
-                            dot={{ fill: '#2563eb', strokeWidth: 2, r: 4 }}
-                            name="Cultural"
+                            dot={{ fill: '#2b9eb3', strokeWidth: 2, r: 4 }}
+                            name="Sights"
                         />
                         <Line
                             type="monotone"
                             dataKey="worked"
-                            stroke="#d97706"
+                            stroke="#fcab10"
                             strokeWidth={2}
-                            dot={{ fill: '#d97706', strokeWidth: 2, r: 4 }}
+                            dot={{ fill: '#fcab10', strokeWidth: 2, r: 4 }}
                             name="Worked"
                         />
                         <Line
                             type="monotone"
                             dataKey="steps"
-                            stroke="#7c3aed"
+                            stroke="#44af69"
                             strokeWidth={2}
-                            dot={{ fill: '#7c3aed', strokeWidth: 2, r: 4 }}
+                            dot={{ fill: '#44af69', strokeWidth: 2, r: 4 }}
                             name="Steps"
                         />
                     </LineChart>
@@ -267,10 +267,38 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
             {displayData.length > 0 && (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {([
-                        { key: 'kimbap', label: 'Kimbap eaten', color: '#dc2626', bgColor: 'bg-red-100', textColor: 'text-red-800', svgPath: kimbapIcon, iconAlt: "Kimbap eaten" },
-                        { key: 'cultural', label: 'Sights seen', color: '#2563eb', bgColor: 'bg-blue-100', textColor: 'text-blue-800', svgPath: culturalIcon, iconAlt: "Sights seen" },
-                        { key: 'worked', label: 'Hours worked', color: '#d97706', bgColor: 'bg-amber-100', textColor: 'text-amber-800', svgPath: workIcon, iconAlt: "Hours worked" },
-                        { key: 'steps', label: 'Steps taken', color: '#7c3aed', bgColor: 'bg-violet-100', textColor: 'text-violet-800', svgPath: stepsIcon, iconAlt: "Steps taken" }
+                        {
+                            key: 'kimbap',
+                            label: 'Kimbap',
+                            color: '#f8333c',
+                            bgColor: 'kimbap-bg',
+                            textColor: 'kimbap-text',
+                            svgPath: kimbapIcon
+                        },
+                        {
+                            key: 'cultural',
+                            label: 'Sights seen',
+                            color: '#2b9eb3',
+                            bgColor: 'cultural-bg',
+                            textColor: 'cultural-text',
+                            svgPath: culturalIcon
+                        },
+                        {
+                            key: 'worked',
+                            label: 'Worked',
+                            color: '#fcab10',
+                            bgColor: 'worked-bg',
+                            textColor: 'worked-text',
+                            svgPath: workIcon
+                        },
+                        {
+                            key: 'steps',
+                            label: 'Steps taken',
+                            color: '#44af69',
+                            bgColor: 'steps-bg',
+                            textColor: 'steps-text',
+                            svgPath: stepsIcon
+                        }
                     ] as StatConfig[]).map(stat => {
                         const lastValue = displayData[displayData.length - 1]?.[stat.key] || 0;
                         return (
