@@ -110,7 +110,7 @@ function extractBlogStats() {
       cumulativeKimbap += day.kimbap;
       cumulativeCommits += day.commits;
       cumulativeCultural += day.cultural;
-      cumulativeSteps += day.steps / 1000;
+      cumulativeSteps += day.steps;
       cumulativeWorked += day.worked;
       
       return {

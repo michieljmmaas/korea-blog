@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import kimbapIcon from "../../../public/assets/blog/svg-icons/kimbap.svg";
 import workIcon from "../../../public/assets/blog/svg-icons/worked.svg";
 import culturalIcon from "../../../public/assets/blog/svg-icons/cultural.svg";
@@ -131,17 +131,38 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
 
-    // Custom tooltip
+    // Custom tooltip showing daily increases
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
+            // Find the current day's index in the display data
+            const currentIndex = displayData.findIndex(day => day.date === label);
+            const currentDay = displayData[currentIndex];
+            const previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
+
+            // Map chart names to data keys
+            const nameToKey: { [key: string]: keyof DayData } = {
+                'Kimbap Eaten': 'kimbap',
+                'Sights Seen': 'cultural',
+                'Hours Worked': 'worked',
+                'Steps Taken': 'steps'
+            };
+
             return (
                 <div className="bg-white p-4 border border-gray-300 rounded-lg shadow-lg">
                     <p className="font-semibold text-gray-800">{`Date: ${label}`}</p>
-                    {payload.map((entry, index) => (
-                        <p key={index} style={{ color: entry.color }} className="text-sm">
-                            {`${entry.name}: ${entry.value.toLocaleString()}`}
-                        </p>
-                    ))}
+                    {payload.map((entry, index) => {
+                        const dataKey = nameToKey[entry.name];
+                        const currentValue = currentDay?.[dataKey] as number || 0;
+                        const previousValue = previousDay?.[dataKey] as number || 0;
+                        const dailyIncrease = currentIndex === 0 ? currentValue : currentValue - previousValue;
+
+                        return (
+                            <p key={index} style={{ color: entry.color }} className="text-sm">
+                                {`${entry.name}: +${dailyIncrease.toLocaleString()}`}
+                                {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1">(first day)</span>}
+                            </p>
+                        );
+                    })}
                 </div>
             );
         }
@@ -222,7 +243,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                             stroke="#666"
                             fontSize={12}
                         />
-                        <YAxis stroke="#666" fontSize={12} />
+                        <YAxis yAxisId="left" stroke="#666" fontSize={12} />
+                        <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} />
                         <Tooltip content={<CustomTooltip />} />
 
                         {/* Lines for each stat */}
@@ -232,7 +254,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                             stroke="#f8333c"
                             strokeWidth={2}
                             dot={{ fill: '#f8333c', strokeWidth: 2, r: 4 }}
-                            name="Kimbap"
+                            name="Kimbap Eaten"
+                            yAxisId="right"
                         />
                         <Line
                             type="monotone"
@@ -240,7 +263,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                             stroke="#2b9eb3"
                             strokeWidth={2}
                             dot={{ fill: '#2b9eb3', strokeWidth: 2, r: 4 }}
-                            name="Sights"
+                            name="Sights Seen"
+                            yAxisId="right"
                         />
                         <Line
                             type="monotone"
@@ -248,7 +272,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                             stroke="#fcab10"
                             strokeWidth={2}
                             dot={{ fill: '#fcab10', strokeWidth: 2, r: 4 }}
-                            name="Worked"
+                            name="Hours Worked"
+                            yAxisId="right"
                         />
                         <Line
                             type="monotone"
@@ -256,7 +281,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                             stroke="#44af69"
                             strokeWidth={2}
                             dot={{ fill: '#44af69', strokeWidth: 2, r: 4 }}
-                            name="Steps"
+                            name="Steps Taken"
+                            yAxisId="left"
                         />
                     </LineChart>
                 </ResponsiveContainer>

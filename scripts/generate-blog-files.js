@@ -53,7 +53,7 @@ function createMarkdownContent(seedEntry) {
   const randomKimbap = getRandomInt(1, 4);
   const randomWorked = getRandomInt(0, 8);
   const randomCultural = getRandomInt(2, 5);
-  const randomSteps = getRandomInt(3, 10) * 1000;
+  const randomSteps = getRandomInt(5000, 10000) ;
 
 
 
