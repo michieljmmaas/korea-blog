@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getBlogPost, getAdjacentPosts } from '../../../lib/blogPost';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { PostBody } from "@/app/_components/post-body";
+import Tags from "@/app/_components/tags";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -42,6 +43,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           previousPost={previousPost}
           nextPost={nextPost}
         />
+
+        {/* Tags */}
+        <div className="flex-1 min-h-0 pt-6">
+          <Tags tags={post.frontmatter.tags} />
+        </div>
 
         {/* Day Text */}
         <div className="flex-1 min-h-0 pt-6">
