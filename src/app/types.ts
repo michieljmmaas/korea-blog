@@ -54,3 +54,9 @@ export interface PostLinkInfo {
   slug: string; 
   title: string;
 }
+
+export interface WeekLinkInfo {
+  week: number; 
+  slug: string, 
+  isDraft: boolean;
+}

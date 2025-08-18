@@ -2,12 +2,20 @@
 
 import { useEffect, useState } from 'react';
 import DaySquare from "@/app/_components/day-square";
-import { BlogPostFrontmatter, TripDay, WeekData } from '@/app/types';
+import { BlogPostFrontmatter, TripDay, WeekData, WeekLinkInfo } from '@/app/types';
 import VacationStatsChart from './chart';
 import Tags from './tags';
+import ArrowButton from './arrow-button';
+
+interface WeekInfoProps {
+  week: WeekData;
+  dayPosts: BlogPostFrontmatter[];
+  previousPost: WeekLinkInfo | null;
+  nextPost: WeekLinkInfo | null;
+}
 
 // Week Info Table Component
-export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayPosts: BlogPostFrontmatter[] }) {
+export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }: WeekInfoProps) {
   const [dateRange, setDateRange] = useState<string>('');
   const [isChartExpanded, setIsChartExpanded] = useState<boolean>(false);
 
@@ -20,12 +28,21 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
     setDateRange(formattedRange);
   }, [week.days]);
 
+
   const toggleChart = (): void => {
     setIsChartExpanded(!isChartExpanded);
   };
 
   return (
     <div className="bg-card rounded-lg border p-6 transition-all duration-300 ease-in-out">
+      <div className="flex items-center">
+        <ArrowButton
+          direction="left"
+          slug={previousPost?.slug}
+          disabled={previousPost?.isDraft}
+        />
+      </div>
+
       <h2 className="text-lg font-semibold mb-4">Week {week.index + 1}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -99,6 +116,13 @@ export default function WeekInfoTable({ week, dayPosts }: { week: WeekData; dayP
             </div>
           )}
         </div>
+      </div>
+      <div className="flex items-center">
+        <ArrowButton
+          direction="right"
+          slug={nextPost?.slug}
+          disabled={nextPost?.isDraft}
+        />
       </div>
     </div>
   );

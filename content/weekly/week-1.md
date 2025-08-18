@@ -7,7 +7,7 @@ tags:
   - exploration
   - seoul
   - work
-draft: true
+draft: false
 days:
   - '2025-10-03'
   - '2025-10-04'

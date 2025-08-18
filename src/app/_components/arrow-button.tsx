@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import { PostLinkInfo } from '../types';
 
 interface ArrowButtonProps {
     direction: 'left' | 'right';
-    post: PostLinkInfo | null;
-    disabled: boolean;
+    slug: string | undefined;
+    disabled: boolean | undefined;
 }
 
-const ArrowButton = ({ direction, post, disabled }: ArrowButtonProps) => {
+const ArrowButton = ({ direction, slug, disabled }: ArrowButtonProps) => {
     const buttonClasses = `
         flex items-center justify-center rounded-lg transition-colors
         h-12 min-h-[48px] px-3
@@ -34,7 +33,7 @@ const ArrowButton = ({ direction, post, disabled }: ArrowButtonProps) => {
         </svg>
     );
 
-    if (disabled || !post) {
+    if (disabled || !slug) {
         return (
             <div className={buttonClasses}>
                 {arrowIcon}
@@ -43,7 +42,7 @@ const ArrowButton = ({ direction, post, disabled }: ArrowButtonProps) => {
     }
 
     return (
-        <Link href={post.slug} className={buttonClasses}>
+        <Link href={slug} className={buttonClasses}>
             {arrowIcon}
         </Link>
     );

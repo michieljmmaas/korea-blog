@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { WeekData } from '@/app/types';
+import { WeekData, WeekLinkInfo } from '@/app/types';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content/weekly');
 
@@ -97,4 +97,30 @@ export class WeekDataService {
         const filePath = path.join(CONTENT_DIR, filename);
         return fs.existsSync(filePath);
     }
+
+
+    // Get adjacent posts for navigation
+    static async getAdjacentWeeks(weekIndex: number): Promise<{
+      previousPost: WeekLinkInfo | null;
+      nextPost: WeekLinkInfo | null;
+    }> {
+      try {
+        const weeks = await this.getAllWeeks();
+    
+        const previousWeekFind = weeks[weekIndex - 1] ?? {week: -1, draft: true, slug: ""};
+        const prevWeek = previousWeekFind && {week: previousWeekFind.index, isDraft: previousWeekFind.draft, slug: `${previousWeekFind.index}`};
+        const nextWeekFind = weeks[weekIndex + 1] ?? {week: 11, draft: true, slug: ""};;
+        const nextWeek = nextWeekFind && {week: nextWeekFind.index, isDraft: nextWeekFind.draft, slug: `${nextWeekFind.index}`};
+    
+        return {
+          previousPost: prevWeek,
+          nextPost: nextWeek,
+        };f
+      } catch (error) {
+        console.error('Error getting adjacent posts:', error);
+        return { previousPost: null, nextPost: null };
+      }
+    }
+
+
 }

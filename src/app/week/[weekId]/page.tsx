@@ -67,32 +67,11 @@ export default async function WeekPage({ params }: WeekPageProps) {
   }
 
   const content = await markdownToHtml(week.content || "");
-
-  // Get adjacent weeks for navigation
-  const previousWeek = weekId > 0 ? await WeekDataService.getWeekById(weekId - 1) : null;
-  const nextWeek = await WeekDataService.getWeekById(weekId + 1);
-
+  
   const { getBlogPostsForDates } = await import('@/lib/blogPost');
   const dayPosts = await getBlogPostsForDates(week.days);
 
-
-
-  // Format previous/next for TravelBlogHeader
-  const previousPost = previousWeek ? {
-    slug: `week-${weekId - 1}`,
-    frontmatter: {
-      title: previousWeek.title,
-      day: weekId - 1
-    }
-  } : null;
-
-  const nextPost = nextWeek ? {
-    slug: `week-${weekId + 1}`,
-    frontmatter: {
-      title: nextWeek.title,
-      day: weekId + 1
-    }
-  } : null;
+  const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
 
   const photos = week.photos.map((number: Number) => `/weeks/${week.index}/photos/${number}.heic`);
   photos.unshift(`/weeks/${week.index}/thumb.heic`);
@@ -109,8 +88,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
         </div>
 
         {dayPosts &&
-
-          <WeekInfoTable week={week} dayPosts={dayPosts} />
+          <WeekInfoTable week={week} dayPosts={dayPosts} nextPost={nextPost} previousPost={previousPost} />
         }
 
         {/* Week Content */}

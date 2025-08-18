@@ -20,10 +20,10 @@ const DayInfoTable = (props: DayInfoTableProps) => {
             <div className="hidden md:flex gap-6 py-6 items-center border border-border rounded-lg p-4 sticky top-2 bg-white z-10 scroll-p-2">
                 {/* Previous Post Button */}
                 <div className="flex items-center">
-                    <ArrowButton 
-                        direction="left" 
-                        post={previousPost} 
-                        disabled={!previousPost} 
+                    <ArrowButton
+                        direction="left"
+                        slug={previousPost?.slug}
+                        disabled={!previousPost}
                     />
                 </div>
 
@@ -44,10 +44,10 @@ const DayInfoTable = (props: DayInfoTableProps) => {
 
                 {/* Next Post Button */}
                 <div className="flex items-center">
-                    <ArrowButton 
-                        direction="right" 
-                        post={nextPost} 
-                        disabled={!nextPost} 
+                    <ArrowButton
+                        direction="right"
+                        slug={nextPost?.slug}
+                        disabled={!nextPost}
                     />
                 </div>
             </div>
@@ -68,17 +68,17 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 {/* Mobile Navigation */}
                 <div className="flex justify-between gap-4 pt-4">
                     <div className="flex-1">
-                        <ArrowButton 
-                            direction="left" 
-                            post={previousPost} 
-                            disabled={!previousPost} 
+                        <ArrowButton
+                            direction="left"
+                            slug={previousPost?.slug}
+                            disabled={!previousPost}
                         />
                     </div>
                     <div className="flex-1">
-                        <ArrowButton 
-                            direction="right" 
-                            post={nextPost} 
-                            disabled={!nextPost} 
+                        <ArrowButton
+                            direction="right"
+                            slug={nextPost?.slug}
+                            disabled={!nextPost}
                         />
                     </div>
                 </div>
