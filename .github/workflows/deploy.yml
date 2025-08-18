@@ -1,0 +1,54 @@
+name: Deploy to Vercel
+
+on:
+  # Triggered by the thumbnails workflow
+  repository_dispatch:
+    types: [deploy-request]
+  
+  # Allow manual triggering from the GitHub UI
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - preview
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          # Use the ref from the triggering event if available, otherwise use default
+          ref: ${{ github.event.client_payload.ref || github.ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.environment }}" == "preview" ]]; then
+            vercel --yes --token ${{ secrets.VERCEL_TOKEN }}
+          else
+            vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+          fi
+
+      - name: Comment deployment status
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "Deployment triggered by: ${{ github.event.client_payload.triggered_by }}"
+          echo "Deployed commit: ${{ github.event.client_payload.sha }}"

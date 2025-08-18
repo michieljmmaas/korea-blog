@@ -1,4 +1,4 @@
-name: Generate Thumbnails and Deploy
+name: Generate Thumbnails
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
       - 'blog-posts/**'
       - 'scripts/generate-thumbnails.ts'
       - '.github/workflows/thumbnails.yml'
-
 
 permissions:
   contents: write
@@ -38,7 +37,14 @@ jobs:
         with:
           commit_message: 'Update thumbnails'
 
-      - name: Deploy to Vercel
-        run: |
-          npm install -g vercel
-          vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+      - name: Trigger deployment
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-request
+          client-payload: |
+            {
+              "triggered_by": "thumbnails",
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}"
+            }
