@@ -165,6 +165,53 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
           </div>
         </div>
 
+        {/* Mobile Stats Button and Cards */}
+        <div className="mt-5">
+          <button
+            onClick={toggleChart}
+            className="font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 text-left flex items-center gap-2"
+          >
+            <span>{isChartExpanded ? 'Hide Stats' : 'Show Statistics'}</span>
+            <svg
+              className={`w-4 h-4 transition-transform duration-200 ${isChartExpanded ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Expandable Stats Cards Section - Mobile Only */}
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${isChartExpanded ? 'max-h-[400px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+            }`}
+        >
+          <div className="border-t border-gray-200 pt-6">
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Statistics Summary
+              </h3>
+              <p className="text-sm text-gray-600">
+                Week {week.index + 1} vacation progress overview
+              </p>
+            </div>
+
+            {/* Stats Cards Component - Mobile */}
+            {isChartExpanded && (
+              <div className="animate-in fade-in-50 duration-300">
+                <VacationStatsChart weekNumber={week.index + 1} />
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Navigation arrows */}
         <div className="flex justify-between items-center mt-4">
           <ArrowButton
@@ -178,8 +225,6 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
             disabled={nextPost?.isDraft}
           />
         </div>
-
-        {/* Chart section is hidden on mobile as requested */}
       </div>
     </div>
   );

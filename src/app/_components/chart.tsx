@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import kimbapIcon from "../../../public/assets/blog/svg-icons/kimbap.svg";
-import workIcon from "../../../public/assets/blog/svg-icons/worked.svg";
-import culturalIcon from "../../../public/assets/blog/svg-icons/cultural.svg";
-import stepsIcon from "../../../public/assets/blog/svg-icons/steps.svg";
+import StatsSummaryCards from './chart-stats';
 
 // Type definitions
 interface StatsData {
@@ -64,16 +61,6 @@ interface TooltipProps {
         value: number;
     }>;
     label?: string;
-}
-
-interface StatConfig {
-    key: keyof StatsData;
-    label: string;
-    color: string;
-    bgColor: string;
-    textColor: string;
-    svgPath: string;
-    iconAlt: string;
 }
 
 const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 }) => {
@@ -196,17 +183,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
         return null;
     };
 
-    // SVG Icon component
-    const SvgIcon: React.FC<{ statName: string; className?: string }> = ({ statName, className = "w-6 h-6" }) => {
-        return (
-            <img
-                src={`/public/assets/blog/svg-icons/${statName}.svg`}
-                alt={statName}
-                className={className}
-            />
-        );
-    };
-
     if (loading) {
         return (
             <div className="w-full h-96 flex items-center justify-center bg-gray-50 rounded-lg">
@@ -227,8 +203,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
 
     return (
         <div className="w-full space-y-4">
-            {/* Header */}
-            <div className="flex items-center justify-between flex-wrap gap-4">
+            {/* Header - Hidden on mobile */}
+            <div className="hidden md:flex items-center justify-between flex-wrap gap-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                     Vacation Stats - Cumulative Progress
                 </h2>
@@ -244,8 +220,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                 </div>
             </div>
 
-            {/* Chart info */}
-            <div className="flex items-center justify-between text-sm text-gray-600">
+            {/* Chart info - Hidden on mobile */}
+            <div className="hidden md:flex items-center justify-between text-sm text-gray-600">
                 <span>
                     {showFullData
                         ? `Showing all ${chartData.length} days`
@@ -259,8 +235,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                 </span>
             </div>
 
-            {/* Chart */}
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
+            {/* Chart - Hidden on mobile */}
+            <div className="hidden md:block bg-white p-4 rounded-lg border border-gray-200">
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart data={displayData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -315,63 +291,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
                 </ResponsiveContainer>
             </div>
 
-            {/* Stats summary */}
-            {displayData.length > 0 && (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {([
-                        {
-                            key: 'kimbap',
-                            label: 'Kimbap Eaten',
-                            color: '#f8333c',
-                            bgColor: 'kimbap-bg',
-                            textColor: 'kimbap-text',
-                            svgPath: kimbapIcon
-                        },
-                        {
-                            key: 'cultural',
-                            label: 'Sights Seen',
-                            color: '#2b9eb3',
-                            bgColor: 'cultural-bg',
-                            textColor: 'cultural-text',
-                            svgPath: culturalIcon
-                        },
-                        {
-                            key: 'worked',
-                            label: 'Hours Worked',
-                            color: '#fcab10',
-                            bgColor: 'worked-bg',
-                            textColor: 'worked-text',
-                            svgPath: workIcon
-                        },
-                        {
-                            key: 'steps',
-                            label: 'Steps Taken',
-                            color: '#44af69',
-                            bgColor: 'steps-bg',
-                            textColor: 'steps-text',
-                            svgPath: stepsIcon
-                        }
-                    ] as StatConfig[]).map(stat => {
-                        const lastValue = displayData[displayData.length - 1]?.[stat.key] || 0;
-                        return (
-                            <div key={stat.key} className={`p-3 rounded-lg ${stat.bgColor}`}>
-                                <div className="flex items-center justify-between">
-                                    <Image
-                                        src={stat.svgPath}
-                                        alt={stat.label}
-                                        title={stat.iconAlt}
-                                        className="w-10 h-10 object-contain"
-                                    />
-                                    <span className="text-2xl font-bold">
-                                        {stat.key === 'steps' ? lastValue.toLocaleString() : lastValue}
-                                    </span>
-                                </div>
-                                <div className={`text-sm font-medium mt-1 ${stat.textColor}`}>{stat.label}</div>
-                            </div>
-                        );
-                    })}
-                </div>
-            )}
+            {/* Stats summary - now using the extracted component */}
+            <StatsSummaryCards displayData={displayData} />
         </div>
     );
 };
