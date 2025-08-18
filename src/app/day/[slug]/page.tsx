@@ -1,10 +1,10 @@
-import DayInfoTable from "@/app/_components/day-info-table";
-import ImageCarousel from "@/app/_components/image-carousel";
+import DayInfoTable from "@/app/_components/day/day-info-table";
+import ImageCarousel from "@/app/_components/common/image-carousel";
 import { notFound } from 'next/navigation';
 import { getBlogPost, getAdjacentPosts } from '../../../lib/blogPost';
 import markdownToHtml from '@/lib/markdownToHtml';
-import { PostBody } from "@/app/_components/post-body";
-import Tags from "@/app/_components/tags";
+import { PostBody } from "@/app/_components/common/post-body";
+import Tags from "@/app/_components/common/tags";
 
 interface BlogPostPageProps {
   params: Promise<{

@@ -9,11 +9,6 @@ export interface TripDay {
   fileName: string;
 }
 
-export interface GridSettings {
-  totalDays: number;
-  startDate: Date;
-}
-
 export interface BlogPostFrontmatter {
   title: string;
   date: string;

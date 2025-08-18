@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { BlogPostFrontmatter, TripDay } from '../types';
-import { getLocationColor } from '../../../utils/locationColors';
+import { BlogPostFrontmatter } from '../../types';
+import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
 

@@ -1,14 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import TravelBlogHeader from "@/app/_components/travel-blog-header";
-import ImageCarousel from "@/app/_components/image-carousel";
-import { PostBody } from "@/app/_components/post-body";
+import ImageCarousel from "@/app/_components/common/image-carousel";
+import { PostBody } from "@/app/_components/common/post-body";
 import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekPosts';
-import WeekInfoTable from '@/app/_components/week-info-table';
-import { BlogPostFrontmatter } from '@/app/types';
-import Header from '@/app/_components/header';
-import Container from '@/app/_components/container';
+import WeekInfoTable from '@/app/_components/week/week-info-table';
 
 interface WeekPageProps {
   params: Promise<{

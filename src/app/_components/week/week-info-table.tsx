@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import DaySquare from "@/app/_components/day-square";
-import { BlogPostFrontmatter, TripDay, WeekData, WeekLinkInfo } from '@/app/types';
-import VacationStatsChart from './chart';
-import Tags from './tags';
-import ArrowButton from './arrow-button';
+import DaySquare from "@/app/_components/grid/day-square";
+import { BlogPostFrontmatter, WeekData, WeekLinkInfo } from '@/app/types';
+import Tags from '../common/tags';
+import ArrowButton from '../common/arrow-button';
+import VacationStatsChart from './chart/chart';
 
 interface WeekInfoProps {
   week: WeekData;

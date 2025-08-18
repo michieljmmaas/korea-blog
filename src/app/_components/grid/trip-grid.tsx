@@ -1,14 +1,13 @@
 // components/TripGrid.tsx
-import { TripDay, GridSettings } from '../types';
+import { TripDay } from '../../types';
 import DaySquare from './day-square';
 import WeekdayHeaders from './weekday-headers';
 
 interface TripGridProps {
   days: TripDay[];
-  settings: GridSettings;
 }
 
-const TripGrid: React.FC<TripGridProps> = ({ days, settings }) => {
+const TripGrid: React.FC<TripGridProps> = ({ days }) => {
   // Create grid starting from Monday, with Thursday as first trip day
   const createWeekGrid = () => {
     const grid: (TripDay | null)[][] = [];

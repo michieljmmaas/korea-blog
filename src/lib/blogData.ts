@@ -1,4 +1,4 @@
-import { BlogPostFrontmatter, GridSettings, TripDay } from '@/app/types';
+import { BlogPostFrontmatter, TripDay } from '@/app/types';
 import fs from 'fs';
 import path from 'path';
 import { parseMarkdown } from '../../utils/markdownParser';
@@ -8,7 +8,7 @@ function formatDate(date: Date): string {
 }
 
 
-export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings: GridSettings }> {
+export async function getBlogPosts(): Promise<TripDay[]> {
   const blogPostsDir = path.join(process.cwd(), 'blog-posts');
   
   try {
@@ -47,24 +47,10 @@ export async function getBlogPosts(): Promise<{ days: TripDay[]; initialSettings
     // Sort by day number
     days.sort((a, b) => a.day - b.day);
     
-    const initialSettings: GridSettings = {
-      totalDays: days.length,
-      startDate: days.length > 0 ? days[0].date : new Date()
-    };
-    
-    return {
-      days,
-      initialSettings
-    };
+    return days;
   } catch (error) {
     console.error('Error reading blog posts:', error);
     
-    return {
-      days: [],
-      initialSettings: {
-        totalDays: 0,
-        startDate: new Date()
-      }
-    };
+    return [];
   }
 }

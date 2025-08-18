@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import kimbapIcon from "../../../public/assets/blog/svg-icons/kimbap.svg";
-import workIcon from "../../../public/assets/blog/svg-icons/worked.svg";
-import culturalIcon from "../../../public/assets/blog/svg-icons/cultural.svg";
-import stepsIcon from "../../../public/assets/blog/svg-icons/steps.svg";
+import kimbapIcon from "../../../../../public/assets/blog/svg-icons/kimbap.svg";
+import workIcon from "../../../../../public/assets/blog/svg-icons/worked.svg";
+import culturalIcon from "../../../../../public/assets/blog/svg-icons/cultural.svg";
+import stepsIcon from "../../../../../public/assets/blog/svg-icons/steps.svg";
 
 // Type definitions
 interface StatsData {
