@@ -8,16 +8,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    // Location-based background colors
-    'bg-indigo-600',   // work
-    'bg-purple-600',   // japan
-    'bg-blue-600',     // seoul
-    'bg-red-600',      // busan
-    'bg-green-600',    // taiwan
-    'bg-emerald-600',  // hong kong
-    'bg-orange-600',   // netherlands
-    'bg-gray-600',     // default
-    'bg-yellow-500',   // featured
+    // Pattern matching for background colors
+    {
+      pattern: /bg-(indigo|purple|blue|red|green|emerald|orange|gray|yellow)-(100|500|600|800)/,
+    },
+    // Pattern matching for text colors
+    {
+      pattern: /text-(indigo|purple|blue|red|green|emerald|orange|gray|yellow)-(100|500|600|800)/,
+    }
   ],
   theme: {
     extend: {
