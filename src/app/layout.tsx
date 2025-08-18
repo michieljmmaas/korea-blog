@@ -6,7 +6,6 @@ import cn from "classnames";
 import "./globals.css";
 import Container from "./_components/layout/container";
 import Header from "./_components/layout/header";
-import Footer from "./_components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

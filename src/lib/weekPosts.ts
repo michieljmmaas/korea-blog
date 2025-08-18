@@ -115,7 +115,7 @@ export class WeekDataService {
         return {
           previousPost: prevWeek,
           nextPost: nextWeek,
-        };f
+        };
       } catch (error) {
         console.error('Error getting adjacent posts:', error);
         return { previousPost: null, nextPost: null };
