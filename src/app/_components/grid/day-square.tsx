@@ -29,7 +29,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   const dateString = dayInfo.date
 
   // Get the appropriate color based on location
-  const locationColor = getLocationColor(dayInfo.location, isWork);
+  const locationColor = getLocationColor(dayInfo.location);
 
 
   const publishedToolTip = (

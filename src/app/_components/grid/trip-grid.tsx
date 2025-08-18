@@ -47,7 +47,7 @@ const TripGrid: React.FC<TripGridProps> = ({ days }) => {
   const weekGrid = createWeekGrid();
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-2">
+    <div className="bg-white border border-border rounded-lg p-2">
       <WeekdayHeaders />
       
       <div className="space-y-1">

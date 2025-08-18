@@ -1,10 +1,6 @@
 // utils/locationColors.ts
 
-export const getLocationColor = (location: string, isWork: boolean): string => {
-  if (isWork === true) {
-    return 'bg-indigo-600';
-  }
-
+export const getLocationColor = (location: string): string => {
   if (!location) return 'bg-gray-600'; // default
 
   const loc = location.toLowerCase().trim();

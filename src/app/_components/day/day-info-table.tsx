@@ -10,9 +10,9 @@ interface DayInfoTableProps {
 }
 
 const DayInfoTable = (props: DayInfoTableProps) => {
-    const { location, work, date, stats } = props.frontmatter;
+    const { location, date, stats } = props.frontmatter;
     const { previousPost, nextPost } = props;
-    const locationColor = getLocationColor(location, work);
+    const locationColor = getLocationColor(location);
 
     return (
         <>

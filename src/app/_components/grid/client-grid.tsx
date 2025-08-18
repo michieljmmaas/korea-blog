@@ -1,6 +1,7 @@
 'use client';
 
 import { TripDay } from '../../types';
+import Legend from './legend';
 import TripGrid from './trip-grid';
 
 interface ClientGridProps {
@@ -19,6 +20,7 @@ export default function ClientGrid({ days }: ClientGridProps) {
   return (
     <div className="mt-4">
       <div className="max-w-6xl mx-auto">
+        <Legend />
         <TripGrid days={processedDays} />
       </div>
     </div>
