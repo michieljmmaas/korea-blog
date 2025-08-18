@@ -70,7 +70,7 @@ export default function RootLayout({
           </header>
 
           {/* Scrollable Main Content */}
-          <main className="overflow-y-auto">
+          <main className="overflow-y-auto scrollbar-hide">
             <Container>
               {children}
             </Container>
