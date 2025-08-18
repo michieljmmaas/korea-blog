@@ -17,6 +17,7 @@ export interface BlogPostFrontmatter {
   location: string;
   photos: number[];
   tags: string[];
+  description: string;
   draft: boolean;
   coordinates: {
     lat: number | null;

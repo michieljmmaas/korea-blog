@@ -23,10 +23,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
 
   if (!dayInfo) return null;
 
-  const hasLocation = dayInfo.location && dayInfo.location.trim() !== '';
-  const hasPhotos = dayInfo.photos && dayInfo.photos.length > 0;
   const isDraft = dayInfo.draft;
-  // const isDraft = false;
   const isWork = dayInfo.work;
 
   const dateString = dayInfo.date
@@ -38,11 +35,10 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   const publishedToolTip = (
     <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-3 py-2 rounded text-sm whitespace-nowrap z-20 shadow-lg max-w-xs">
       <div className="font-medium">{dateString}</div>
-      {hasLocation && (
-        <div className="text-xs text-gray-300 mt-1">
-          {dayInfo.location}
-        </div>
-      )}
+
+      <div className="text-m text-gray-300 mt-1">
+        {dayInfo.description}
+      </div>
       {isWork && (
         <div className="text-xs text-blue-300 mt-1">
           Work day
@@ -106,7 +102,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
             <>
               {/* Placeholder area with icon */}
               <div className="flex-1 bg-gray-200 rounded-t-sm flex items-center justify-center">
-                  <CameraOff fill="black"/>
+                <CameraOff fill="black" />
               </div>
             </>
           )}

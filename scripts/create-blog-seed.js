@@ -46,7 +46,7 @@ function generateBlogFiles() {
 
 
   let locationSeed = {
-    0: "Nederland",
+    0: "Netherlands",
     29: "Busan",
     30: "Busan",
     31: "Busan",
@@ -109,12 +109,19 @@ function generateBlogFiles() {
     36: true,
   };
 
-    let draftSeed = {
+  let draftSeed = {
+    0: false,
     1: false,
     2: false,
     3: false,
     4: false,
     5: false,
+    6: false,
+    7: false,
+  };
+
+    let photoSeed = {
+    4: [1,2,3],
   };
 
   for (let i = 0; i < CONFIG.totalDays; i++) {
@@ -130,6 +137,7 @@ function generateBlogFiles() {
       "work": workSeed[i] ?? false,
       "travel": travelSeed[i] ?? false,
       "draft": draftSeed[i] ?? true,
+      "photos": photoSeed[i] ?? [],
     })
 
 

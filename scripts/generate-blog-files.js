@@ -63,14 +63,15 @@ date: "${seedEntry.date}"
 day: ${seedEntry.id}
 dayOfWeek: "${dayOfWeek}"
 location: "${seedEntry.location || ''}"
-photos: []
+photos: ${JSON.stringify(seedEntry.photos) || []}
+description: ""
 stats:
   kimbap: ${randomKimbap}
   commits: 0
   worked: ${randomWorked}
   cultural: ${randomCultural}
   steps: ${randomSteps}
-tags: ${JSON.stringify(initialTags)}
+tags: []
 draft: ${seedEntry.draft || false}
 coordinates:
   lat: null
