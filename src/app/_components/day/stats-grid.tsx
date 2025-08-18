@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import kimbapIcon from "../../../../../public/assets/blog/svg-icons/kimbap.svg";
-import workIcon from "../../../../../public/assets/blog/svg-icons/worked.svg";
-import culturalIcon from "../../../../../public/assets/blog/svg-icons/cultural.svg";
-import stepsIcon from "../../../../../public/assets/blog/svg-icons/steps.svg";
+import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
+import workIcon from "../../../../public/assets/blog/svg-icons/worked.svg";
+import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
+import stepsIcon from "../../../../public/assets/blog/svg-icons/steps.svg";
 
 interface StatsGridProps {
     stats: {
@@ -18,7 +18,7 @@ const StatsGrid = ({ stats }: StatsGridProps) => {
     return (
         <div className="w-full">
             <div className="grid grid-cols-4 gap-1 md:gap-2">
-                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1">
+                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 kimbap-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.kimbap}</div>
                     <Image 
                         src={kimbapIcon} 
@@ -28,7 +28,7 @@ const StatsGrid = ({ stats }: StatsGridProps) => {
                     />
                 </div>
 
-                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1">
+                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 cultural-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.cultural}</div>
                     <Image 
                         src={culturalIcon} 
@@ -38,7 +38,7 @@ const StatsGrid = ({ stats }: StatsGridProps) => {
                     />
                 </div>
 
-                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1">
+                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 worked-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.worked}</div>
                     <Image 
                         src={workIcon} 
@@ -48,7 +48,7 @@ const StatsGrid = ({ stats }: StatsGridProps) => {
                     />
                 </div>
 
-                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1">
+                <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 steps-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.steps.toLocaleString()}</div>
                     <Image 
                         src={stepsIcon} 

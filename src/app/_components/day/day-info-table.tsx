@@ -1,7 +1,7 @@
 import { getLocationColor } from "../../../../utils/locationColors";
 import { BlogPostFrontmatter, PostLinkInfo } from "../../types";
 import ArrowButton from "../common/arrow-button"; // Adjust path as needed
-import StatsGrid from "../week/chart/stats-grid"; // Adjust path as needed
+import StatsGrid from "./stats-grid"; // Adjust path as needed
 
 interface DayInfoTableProps {
     frontmatter: BlogPostFrontmatter;
