@@ -61,6 +61,7 @@ function createMarkdownContent(seedEntry) {
 title: "Day ${seedEntry.id}: ${displayDate}"
 date: "${seedEntry.date}"
 day: ${seedEntry.id}
+icon: "${seedEntry.icon || ""}"
 dayOfWeek: "${dayOfWeek}"
 location: "${seedEntry.location || ''}"
 photos: ${JSON.stringify(seedEntry.photos) || []}

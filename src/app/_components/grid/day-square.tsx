@@ -5,6 +5,7 @@ import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
 import workIcon from "../../../../public/assets/blog/svg-icons/worked.svg";
+import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 
 interface DaySquareProps {
   dayInfo?: BlogPostFrontmatter;
@@ -41,21 +42,30 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   // Function to determine which icons to show based on dayInfo
   const getIcons = (dayInfo: BlogPostFrontmatter): IconConfig[] => {
     const icons: IconConfig[] = [];
-    
+
     // Add work icon if it's a work day
     if (dayInfo.work) {
       icons.push({
         src: workIcon,
         alt: "Work day",
-        title: "Hours worked",
+        title: "Work day",
         size: 16
       });
     }
-    
+
+    if (dayInfo.icon === "music") {
+      icons.push({
+        src: musicIcon,
+        alt: "Kpop",
+        title: "Kpop",
+        size: 16
+      });
+    }
+
     // Add more icons based on other properties
     // Example: if (dayInfo.hasVideo) icons.push({ src: videoIcon, alt: "Video", title: "Has video content" });
     // Example: if (dayInfo.isSpecial) icons.push({ src: specialIcon, alt: "Special", title: "Special day" });
-    
+
     return icons;
   };
 

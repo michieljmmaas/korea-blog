@@ -13,6 +13,7 @@ export interface BlogPostFrontmatter {
   title: string;
   date: string;
   day: number;
+  icon: string;
   dayOfWeek: string;
   location: string;
   photos: number[];

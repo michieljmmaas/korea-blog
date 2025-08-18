@@ -120,8 +120,15 @@ function generateBlogFiles() {
     7: false,
   };
 
-    let photoSeed = {
-    4: [1,2,3],
+  let photoSeed = {
+    4: [1, 2, 3],
+  };
+
+  let iconSeed = {
+    24: "music",
+    58: "music",
+    64: "music",
+    65: "music",
   };
 
   for (let i = 0; i < CONFIG.totalDays; i++) {
@@ -138,6 +145,7 @@ function generateBlogFiles() {
       "travel": travelSeed[i] ?? false,
       "draft": draftSeed[i] ?? true,
       "photos": photoSeed[i] ?? [],
+      "icon": iconSeed[i] ?? [],
     })
 
 
