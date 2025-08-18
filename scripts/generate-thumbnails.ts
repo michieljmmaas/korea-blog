@@ -50,7 +50,7 @@ const generateSafeFilename = (key: string): string => {
 // Main function to download all thumbnails
 const generateThumbnails = async (): Promise<void> => {
   try {
-    const {days, initialSettings} = await getBlogPosts();
+    const days = await getBlogPosts();
     const thumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails');
     const thumbnailMap: Record<string, string> = {};
     
