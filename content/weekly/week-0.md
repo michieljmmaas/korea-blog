@@ -6,7 +6,7 @@ photos: [1, 2, 3]
 tags:
   - exploration
   - seoul
-draft: true
+draft: false
 days:
   - '2025-09-26'
   - '2025-09-27'
