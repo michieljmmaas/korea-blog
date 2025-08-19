@@ -1,6 +1,7 @@
 import { WeekData } from '@/app/types';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
+import { getLocationColor } from '../../../../utils/locationColors';
 
 
 interface WeekCardProps {
@@ -29,9 +30,11 @@ export default function WeekCard({ week }: WeekCardProps) {
         return `${formatDate(firstDay)} - ${formatDate(lastDay)}`;
     };
 
+    const locationColor = getLocationColor(week.location);
+
 
     const WeekCard = (
-        <div className={`bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
+        <div className={`bg-white rounded-sm shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
             ? 'opacity-60 cursor-not-allowed'
             : 'hover:-translate-y-1 cursor-pointer'
             }`}>
@@ -57,8 +60,8 @@ export default function WeekCard({ week }: WeekCardProps) {
             </div>
 
             {/* Bottom bar */}
-            <div className="p-3 md:p-4 bg-white">
-                <div className={`font-semibold text-base md:text-lg ${isDraft ? 'text-gray-500' : 'text-gray-900'
+            <div className={`p-2 md:p-2 ${locationColor} `}>
+                <div className={`font-semibold text-base md:text-lg text-white ${isDraft ? 'text-gray-500' : 'text-gray-900'
                     }`}>
                     Week {week.index}: {formatDateRange(week.days)}
                 </div>

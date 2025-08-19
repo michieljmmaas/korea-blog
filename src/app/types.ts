@@ -41,6 +41,7 @@ export interface WeekData {
   publishdate: string;
   photos: number[];
   tags: string[];
+  location: string;
   draft: boolean;
   days: string[];
   content: string;

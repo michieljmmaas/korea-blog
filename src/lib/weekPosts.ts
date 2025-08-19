@@ -1,3 +1,4 @@
+import { getLocationColor } from './../../utils/locationColors';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -29,6 +30,7 @@ export class WeekDataService {
                 tags: data.tags || [],
                 draft: data.draft ?? true,
                 days: data.days || [],
+                location: data.location,
                 content,
                 slug: `week-${weekId}`,
             };
