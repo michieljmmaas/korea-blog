@@ -5,7 +5,7 @@ publishdate: '2025-09-25'
 photos: [1,2,3]
 tags: []
 location: Netherlands
-draft: true
+draft: false
 days:
   - '2025-09-25'
 ---

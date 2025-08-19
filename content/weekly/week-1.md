@@ -5,7 +5,7 @@ publishdate: '2025-10-02'
 photos: []
 tags: []
 location: Seoul
-draft: true
+draft: false
 days:
   - '2025-09-26'
   - '2025-09-27'

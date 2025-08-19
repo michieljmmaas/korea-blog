@@ -5,8 +5,8 @@
       "kimbap": 1,
       "commits": 0,
       "worked": 0,
-      "cultural": 5,
-      "steps": 5062,
+      "cultural": 4,
+      "steps": 9133,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -17,9 +17,9 @@
       "date": "2025-09-27",
       "kimbap": 2,
       "commits": 0,
-      "worked": 0,
-      "cultural": 2,
-      "steps": 8883,
+      "worked": 6,
+      "cultural": 5,
+      "steps": 7391,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -28,11 +28,11 @@
     },
     {
       "date": "2025-09-28",
-      "kimbap": 1,
+      "kimbap": 2,
       "commits": 0,
-      "worked": 6,
-      "cultural": 2,
-      "steps": 7139,
+      "worked": 3,
+      "cultural": 3,
+      "steps": 6260,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -41,11 +41,11 @@
     },
     {
       "date": "2025-09-29",
-      "kimbap": 3,
+      "kimbap": 4,
       "commits": 0,
-      "worked": 0,
+      "worked": 5,
       "cultural": 5,
-      "steps": 6700,
+      "steps": 5289,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -54,11 +54,11 @@
     },
     {
       "date": "2025-09-30",
-      "kimbap": 1,
+      "kimbap": 3,
       "commits": 0,
-      "worked": 6,
-      "cultural": 2,
-      "steps": 8002,
+      "worked": 0,
+      "cultural": 3,
+      "steps": 8067,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -67,11 +67,11 @@
     },
     {
       "date": "2025-10-01",
-      "kimbap": 4,
+      "kimbap": 2,
       "commits": 0,
-      "worked": 7,
-      "cultural": 2,
-      "steps": 7063,
+      "worked": 3,
+      "cultural": 4,
+      "steps": 5819,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -83,8 +83,8 @@
       "kimbap": 1,
       "commits": 0,
       "worked": 7,
-      "cultural": 5,
-      "steps": 8919,
+      "cultural": 3,
+      "steps": 6468,
       "tags": 0,
       "coordinates": 0,
       "lat": 0,
@@ -97,57 +97,57 @@
       "date": "2025-09-26",
       "kimbap": 1,
       "commits": 0,
-      "cultural": 5,
-      "steps": 5062,
+      "cultural": 4,
+      "steps": 9133,
       "worked": 0
     },
     {
       "date": "2025-09-27",
       "kimbap": 3,
       "commits": 0,
-      "cultural": 7,
-      "steps": 13945,
-      "worked": 0
+      "cultural": 9,
+      "steps": 16524,
+      "worked": 6
     },
     {
       "date": "2025-09-28",
-      "kimbap": 4,
+      "kimbap": 5,
       "commits": 0,
-      "cultural": 9,
-      "steps": 21084,
-      "worked": 6
+      "cultural": 12,
+      "steps": 22784,
+      "worked": 9
     },
     {
       "date": "2025-09-29",
-      "kimbap": 7,
+      "kimbap": 9,
       "commits": 0,
-      "cultural": 14,
-      "steps": 27784,
-      "worked": 6
+      "cultural": 17,
+      "steps": 28073,
+      "worked": 14
     },
     {
       "date": "2025-09-30",
-      "kimbap": 8,
+      "kimbap": 12,
       "commits": 0,
-      "cultural": 16,
-      "steps": 35786,
-      "worked": 12
+      "cultural": 20,
+      "steps": 36140,
+      "worked": 14
     },
     {
       "date": "2025-10-01",
-      "kimbap": 12,
+      "kimbap": 14,
       "commits": 0,
-      "cultural": 18,
-      "steps": 42849,
-      "worked": 19
+      "cultural": 24,
+      "steps": 41959,
+      "worked": 17
     },
     {
       "date": "2025-10-02",
-      "kimbap": 13,
+      "kimbap": 15,
       "commits": 0,
-      "cultural": 23,
-      "steps": 51768,
-      "worked": 26
+      "cultural": 27,
+      "steps": 48427,
+      "worked": 24
     }
   ],
   "summary": {
@@ -157,18 +157,18 @@
       "end": "2025-10-02"
     },
     "totals": {
-      "kimbap": 13,
+      "kimbap": 15,
       "commits": 0,
-      "cultural": 23,
-      "steps": 51768,
-      "worked": 26
+      "cultural": 27,
+      "steps": 48427,
+      "worked": 24
     },
     "averages": {
-      "kimbap": "1.86",
+      "kimbap": "2.14",
       "commits": "0.00",
-      "cultural": "3.29",
-      "steps": 7395,
-      "worked": "3.71"
+      "cultural": "3.86",
+      "steps": 6918,
+      "worked": "3.43"
     }
   }
 }

@@ -6,6 +6,7 @@ import { BlogPostFrontmatter, WeekData, WeekLinkInfo } from '@/app/types';
 import Tags from '../common/tags';
 import ArrowButton from '../common/arrow-button';
 import VacationStatsChart from './chart/chart';
+import WeekdayHeaders from '../grid/weekday-headers';
 
 interface WeekInfoProps {
   week: WeekData;
@@ -35,24 +36,24 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
   // Helper function to generate a full week array with placeholders
   const generateFullWeek = () => {
     const fullWeek = [];
-    
+
     // If we have fewer than 7 days, we need to add placeholders
     if (week.days.length < 7) {
       // Calculate how many placeholder days we need at the beginning
       const placeholderCount = 7 - week.days.length;
-      
+
       // Add placeholder days (null values)
       for (let i = 0; i < placeholderCount; i++) {
         fullWeek.push(null);
       }
-      
+
       // Add the actual days
       fullWeek.push(...week.days);
     } else {
       // If we have 7 days, use them as-is
       fullWeek.push(...week.days);
     }
-    
+
     return fullWeek;
   };
 
@@ -71,7 +72,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
 
         {/* Main Widget Content */}
         <div className="flex-1 mx-6">
-          <h2 className="text-lg font-semibold mb-4">Week {week.index + 1}</h2>
+          <h2 className="text-lg font-semibold mb-4">Week {week.index}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <div className="text-sm text-muted-foreground">Span</div>
@@ -82,9 +83,11 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
             <Tags tags={week.tags} />
           </div>
 
+
           {/* Days breakdown using DaySquare */}
           <div className="mt-4">
             <div className="text-sm text-muted-foreground mb-2">Days Covered</div>
+            <WeekdayHeaders startDay="FRI"/>
             <div className="grid grid-cols-7 gap-1">
               {fullWeekDays.map((day, index) => {
                 const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
@@ -100,53 +103,55 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
             </div>
           </div>
 
-          <div className="mt-5">
-            <button
-              onClick={toggleChart}
-              className="font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 text-left flex items-center gap-2"
-            >
-              <span>{isChartExpanded ? 'Hide Chart' : 'Show Statistics'}</span>
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isChartExpanded ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          {week.index !== 0 && (
+            <div className="mt-5">
+              <button
+                onClick={toggleChart}
+                className="font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 text-left flex items-center gap-2"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* Expandable Chart Section */}
-          <div
-            className={`overflow-hidden transition-all duration-500 ease-in-out ${isChartExpanded ? 'max-h-[800px] opacity-100 mt-6' : 'max-h-0 opacity-0'
-              }`}
-          >
-            <div className="border-t border-gray-200 pt-6">
-              <div className="mb-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  Statistics Dashboard
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Week {week.index + 1} vacation progress overview
-                </p>
-              </div>
-
-              {/* Chart Component */}
-              {isChartExpanded && (
-                <div className="animate-in fade-in-50 duration-300">
-                  <VacationStatsChart weekNumber={week.index + 1} />
-                </div>
-              )}
+                <span>{isChartExpanded ? 'Hide Chart' : 'Show Statistics'}</span>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${isChartExpanded ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
             </div>
-          </div>
-        </div>
+          )}
+          {week.index !== 0 && (
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${isChartExpanded ? 'max-h-[800px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+                }`}
+            >
+              <div className="border-t border-gray-200 pt-6">
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Statistics Dashboard
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Week {week.index} vacation progress overview
+                  </p>
+                </div>
 
+                {/* Chart Component */}
+                {isChartExpanded && (
+                  <div className="animate-in fade-in-50 duration-300">
+                    <VacationStatsChart weekNumber={week.index} />
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+        </div>
         {/* Right Arrow Button */}
         <ArrowButton
           direction="right"
@@ -158,7 +163,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
       {/* Mobile Layout */}
       <div className="md:hidden p-4">
         {/* Main Content */}
-        <h2 className="text-lg font-semibold mb-4 text-center">Week {week.index + 1}</h2>
+        <h2 className="text-lg font-semibold mb-4 text-center">Week {week.index}</h2>
 
         <div className="space-y-4">
           <div>
@@ -186,7 +191,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
                   isEmpty={!dayPost}
                   thumbnailSrc={dayPost ? `/thumbnails/${day}.webp` : undefined}
                 />
-              );
+              )
             })}
           </div>
         </div>
@@ -225,14 +230,14 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
                 Statistics Summary
               </h3>
               <p className="text-sm text-gray-600">
-                Week {week.index + 1} vacation progress overview
+                Week {week.index} vacation progress overview
               </p>
             </div>
 
             {/* Stats Cards Component - Mobile */}
             {isChartExpanded && (
               <div className="animate-in fade-in-50 duration-300">
-                <VacationStatsChart weekNumber={week.index + 1} />
+                <VacationStatsChart weekNumber={week.index} />
               </div>
             )}
           </div>
@@ -253,5 +258,5 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
         </div>
       </div>
     </div>
-  );
+  )
 }
