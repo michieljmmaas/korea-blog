@@ -1,40 +1,35 @@
 ---
 index: 1
-title: 'Week 2: Oct 3 - Oct 9'
-publishdate: '2025-10-09'
+title: 'Week 1: Sep 26 - Oct 2'
+publishdate: '2025-10-02'
 photos: []
-tags:
-  - exploration
-  - seoul
-  - work
-draft: false
+tags: []
+location: Seoul
+draft: true
 days:
-  - '2025-10-03'
-  - '2025-10-04'
-  - '2025-10-05'
-  - '2025-10-06'
-  - '2025-10-07'
-  - '2025-10-08'
-  - '2025-10-09'
+  - '2025-09-26'
+  - '2025-09-27'
+  - '2025-09-28'
+  - '2025-09-29'
+  - '2025-09-30'
+  - '2025-10-01'
+  - '2025-10-02'
 ---
-# Week 2: Oct 2 - Oct 8
+# Week 1: Sep 26 - Oct 2
 
 ## Summary
 
-This week covered 7 days from 02/10/2025 to 08/10/2025.
-
-**Locations visited:** Seoul  
-**Work days:** 2/7
+This week covered 7 days from 26/09/2025 to 02/10/2025.
 
 ### Daily Breakdown
 
-**2025-10-02** (Thursday) - Seoul - Thursday, October 2, 2025
-**2025-10-03** (Friday) - Seoul - Friday, October 3, 2025
-**2025-10-04** (Saturday) - Seoul - Saturday, October 4, 2025
-**2025-10-05** (Sunday) - Seoul - Sunday, October 5, 2025
-**2025-10-06** (Monday) - Seoul - Monday, October 6, 2025
-**2025-10-07** (Tuesday) - 💼 Seoul - Tuesday, October 7, 2025
-**2025-10-08** (Wednesday) - 💼 Seoul - Wednesday, October 8, 2025
+**2025-09-26** (Friday) -  - Friday, September 26, 2025
+**2025-09-27** (Saturday) -  - Saturday, September 27, 2025
+**2025-09-28** (Sunday) -  - Sunday, September 28, 2025
+**2025-09-29** (Monday) -  - Monday, September 29, 2025
+**2025-09-30** (Tuesday) -  - Tuesday, September 30, 2025
+**2025-10-01** (Wednesday) -  - Wednesday, October 1, 2025
+**2025-10-02** (Thursday) -  - Thursday, October 2, 2025
 
 ### Highlights
 

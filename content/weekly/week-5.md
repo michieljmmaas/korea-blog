@@ -1,40 +1,35 @@
 ---
 index: 5
-title: 'Week 6: Oct 31 - Nov 6'
-publishdate: '2025-11-06'
+title: 'Week 5: Oct 24 - Oct 30'
+publishdate: '2025-10-30'
 photos: []
-tags:
-  - exploration
-  - seoul
-  - work
+tags: []
+location: Busan
 draft: true
 days:
-  - '2025-10-31'
-  - '2025-11-01'
-  - '2025-11-02'
-  - '2025-11-03'
-  - '2025-11-04'
-  - '2025-11-05'
-  - '2025-11-06'
+  - '2025-10-24'
+  - '2025-10-25'
+  - '2025-10-26'
+  - '2025-10-27'
+  - '2025-10-28'
+  - '2025-10-29'
+  - '2025-10-30'
 ---
-# Week 6: Oct 30 - Nov 5
+# Week 5: Oct 24 - Oct 30
 
 ## Summary
 
-This week covered 7 days from 30/10/2025 to 05/11/2025.
-
-**Locations visited:** Seoul  
-**Work days:** 5/7
+This week covered 7 days from 24/10/2025 to 30/10/2025.
 
 ### Daily Breakdown
 
-**2025-10-30** (Thursday) - 💼 Seoul - Thursday, October 30, 2025
-**2025-10-31** (Friday) - 💼 Seoul - Friday, October 31, 2025
-**2025-11-01** (Saturday) - Seoul - Saturday, November 1, 2025
-**2025-11-02** (Sunday) - Seoul - Sunday, November 2, 2025
-**2025-11-03** (Monday) - 💼 Seoul - Monday, November 3, 2025
-**2025-11-04** (Tuesday) - 💼 Seoul - Tuesday, November 4, 2025
-**2025-11-05** (Wednesday) - 💼 Seoul - Wednesday, November 5, 2025
+**2025-10-24** (Friday) -  - Friday, October 24, 2025
+**2025-10-25** (Saturday) -  - Saturday, October 25, 2025
+**2025-10-26** (Sunday) -  - Sunday, October 26, 2025
+**2025-10-27** (Monday) -  - Monday, October 27, 2025
+**2025-10-28** (Tuesday) -  - Tuesday, October 28, 2025
+**2025-10-29** (Wednesday) -  - Wednesday, October 29, 2025
+**2025-10-30** (Thursday) -  - Thursday, October 30, 2025
 
 ### Highlights
 

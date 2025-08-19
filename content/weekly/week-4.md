@@ -1,41 +1,35 @@
 ---
 index: 4
-title: 'Week 5: Oct 24 - Oct 30'
-publishdate: '2025-10-30'
+title: 'Week 4: Oct 17 - Oct 23'
+publishdate: '2025-10-23'
 photos: []
-tags:
-  - busan
-  - exploration
-  - seoul
-  - work
+tags: []
+location: Seoul
 draft: true
 days:
-  - '2025-10-24'
-  - '2025-10-25'
-  - '2025-10-26'
-  - '2025-10-27'
-  - '2025-10-28'
-  - '2025-10-29'
-  - '2025-10-30'
+  - '2025-10-17'
+  - '2025-10-18'
+  - '2025-10-19'
+  - '2025-10-20'
+  - '2025-10-21'
+  - '2025-10-22'
+  - '2025-10-23'
 ---
-# Week 5: Oct 23 - Oct 29
+# Week 4: Oct 17 - Oct 23
 
 ## Summary
 
-This week covered 7 days from 23/10/2025 to 29/10/2025.
-
-**Locations visited:** Seoul, Busan  
-**Work days:** 3/7
+This week covered 7 days from 17/10/2025 to 23/10/2025.
 
 ### Daily Breakdown
 
-**2025-10-23** (Thursday) - 💼 Seoul - Thursday, October 23, 2025
-**2025-10-24** (Friday) - Busan - Friday, October 24, 2025
-**2025-10-25** (Saturday) - Busan - Saturday, October 25, 2025
-**2025-10-26** (Sunday) - Busan - Sunday, October 26, 2025
-**2025-10-27** (Monday) - Busan - Monday, October 27, 2025
-**2025-10-28** (Tuesday) - 💼 Seoul - Tuesday, October 28, 2025
-**2025-10-29** (Wednesday) - 💼 Seoul - Wednesday, October 29, 2025
+**2025-10-17** (Friday) -  - Friday, October 17, 2025
+**2025-10-18** (Saturday) -  - Saturday, October 18, 2025
+**2025-10-19** (Sunday) -  - Sunday, October 19, 2025
+**2025-10-20** (Monday) -  - Monday, October 20, 2025
+**2025-10-21** (Tuesday) -  - Tuesday, October 21, 2025
+**2025-10-22** (Wednesday) -  - Wednesday, October 22, 2025
+**2025-10-23** (Thursday) -  - Thursday, October 23, 2025
 
 ### Highlights
 

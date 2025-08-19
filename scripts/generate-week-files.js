@@ -22,24 +22,53 @@ async function getBlogPosts(directory = './blog-posts') {
     }
 
     posts.sort((a, b) => new Date(a.date) - new Date(b.date));
-    posts.shift();
     return posts;
-}
-
-function chunkArray(array, size) {
-    const chunks = [];
-    for (let i = 0; i < array.length; i += size) {
-        chunks.push(array.slice(i, i + size));
-    }
-    return chunks;
 }
 
 function formatDate(date) {
     return date.toISOString().split('T')[0];
 }
 
+function groupPostsByWeek(posts) {
+    const groups = [];
+
+    // Week 0: only 2025-09-25
+    const week0Posts = posts.filter(post => post.date === '2025-09-25');
+    if (week0Posts.length > 0) {
+        groups.push(week0Posts);
+    }
+
+    // Week 1 and beyond: 7-day chunks starting from 2025-09-26
+    const remainingPosts = posts.filter(post => post.date > '2025-09-25');
+
+    if (remainingPosts.length > 0) {
+        // Simple chunking of remaining posts into groups of 7
+        for (let i = 0; i < remainingPosts.length; i += 7) {
+            const chunk = remainingPosts.slice(i, i + 7);
+            groups.push(chunk);
+        }
+    }
+
+    return groups;
+}
+
 async function generateWeeklyPosts() {
     try {
+        // Preset locations for each week (you can modify these as needed)
+        const weekLocations = {
+            0: "Netherlands",
+            1: "Seoul",
+            2: "Seoul",
+            3: "Seoul",
+            4: "Seoul",
+            5: "Busan",
+            6: "Seoul",
+            7: "Tokyo",
+            8: "Seoul",
+            9: "Taiwan",
+            10: "Hong Kong",
+        };
+
         // Get all blog posts sorted by date
         const posts = await getBlogPosts();
 
@@ -50,8 +79,8 @@ async function generateWeeklyPosts() {
 
         console.log(`Found ${posts.length} blog posts`);
 
-        // Group posts into chunks of 7 days
-        const weeklyChunks = chunkArray(posts, 7);
+        // Group posts by custom week logic
+        const weeklyChunks = groupPostsByWeek(posts);
 
         console.log(`Creating ${weeklyChunks.length} weekly files`);
 
@@ -64,12 +93,11 @@ async function generateWeeklyPosts() {
         }
 
         weeklyChunks.forEach((weekPosts, index) => {
-            const weekNumber = index + 1;
+            const weekNumber = index;
 
             // Generate filename
-            const filename = `week-${weekNumber - 1}.md`; // week-0, week-1, etc.
+            const filename = `week-${weekNumber}.md`; // week-0, week-1, etc.
             const filepath = path.join(outputDir, filename);
-
 
             // Get start and end dates from the actual posts
             const startPost = weekPosts[0];
@@ -78,7 +106,12 @@ async function generateWeeklyPosts() {
             const endDate = new Date(endPost.date);
 
             // Generate title based on the week
-            const title = `Week ${weekNumber}: ${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+            let title;
+            if (weekNumber === 0) {
+                title = `Week 0: ${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+            } else {
+                title = `Week ${weekNumber}: ${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+            }
 
             // Get all unique tags from posts in this week
             const allTags = new Set();
@@ -91,13 +124,17 @@ async function generateWeeklyPosts() {
             // Get all dates from this week's posts
             const days = weekPosts.map(post => post.date).sort();
 
-            // Create frontmatter
+            // Get preset location for this week
+            const weekLocation = weekLocations[weekNumber] || "Unknown";
+
+            // Create frontmatter with preset location
             const frontmatter = {
                 index,
                 title,
                 publishdate: endPost.date, // Use last day as publish date
                 photos: [],
                 tags: Array.from(allTags).sort(),
+                location: weekLocation, // Single preset location value
                 draft: true,
                 days
             };
@@ -106,14 +143,10 @@ async function generateWeeklyPosts() {
             const dailyBreakdown = weekPosts.map(post => {
                 const postDate = new Date(post.date);
                 const dayName = postDate.toLocaleDateString('en-US', { weekday: 'long' });
-                const location = post.location || 'Unknown';
-                const workDay = post.work ? '💼 ' : '';
 
-                return `**${post.date}** (${dayName}) - ${workDay}${location}${post.title ? ` - ${post.title.split(':')[1]?.trim() || post.title}` : ''}`;
+                return `**${post.date}** (${dayName}) - ${post.title ? ` - ${post.title.split(':')[1]?.trim() || post.title}` : ''}`;
             }).join('\n');
 
-            const workDays = weekPosts.filter(post => post.work).length;
-            const locations = [...new Set(weekPosts.map(post => post.location).filter(Boolean))];
 
             // Check if file exists and preserve existing content
             let existingContent = '';
@@ -124,14 +157,13 @@ async function generateWeeklyPosts() {
             }
 
             // Use existing content if available, otherwise create template
-            const content = existingContent || `# ${title}
+            const dateRange = weekPosts.length > 1 ? ` from ${startDate.toLocaleDateString()} to ${endDate.toLocaleDateString()}` : ` on ${startDate.toLocaleDateString()}`;
+
+            const content = `# ${title}
 
 ## Summary
 
-This week covered ${weekPosts.length} days from ${startDate.toLocaleDateString()} to ${endDate.toLocaleDateString()}.
-
-**Locations visited:** ${locations.join(', ')}  
-**Work days:** ${workDays}/${weekPosts.length}
+This week covered ${weekPosts.length} day${weekPosts.length > 1 ? 's' : ''}${dateRange}.
 
 ### Daily Breakdown
 
@@ -146,12 +178,11 @@ ${dailyBreakdown}
 <!-- Add weekly reflection here -->
 `;
 
-
             // Write file
             const fileContent = matter.stringify(content, frontmatter);
             fs.writeFileSync(filepath, fileContent);
 
-            console.log(`Generated: ${filename} (${weekPosts.length} days: ${startPost.date} to ${endPost.date})`);
+            console.log(`Generated: ${filename} (${weekPosts.length} day${weekPosts.length > 1 ? 's' : ''}: ${startPost.date}${weekPosts.length > 1 ? ` to ${endPost.date}` : ''})`);
         });
 
         console.log(`\nGenerated ${weeklyChunks.length} weekly blog posts in ${outputDir}`);
