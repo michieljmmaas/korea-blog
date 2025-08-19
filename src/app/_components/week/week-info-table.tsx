@@ -32,6 +32,32 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
     setIsChartExpanded(!isChartExpanded);
   };
 
+  // Helper function to generate a full week array with placeholders
+  const generateFullWeek = () => {
+    const fullWeek = [];
+    
+    // If we have fewer than 7 days, we need to add placeholders
+    if (week.days.length < 7) {
+      // Calculate how many placeholder days we need at the beginning
+      const placeholderCount = 7 - week.days.length;
+      
+      // Add placeholder days (null values)
+      for (let i = 0; i < placeholderCount; i++) {
+        fullWeek.push(null);
+      }
+      
+      // Add the actual days
+      fullWeek.push(...week.days);
+    } else {
+      // If we have 7 days, use them as-is
+      fullWeek.push(...week.days);
+    }
+    
+    return fullWeek;
+  };
+
+  const fullWeekDays = generateFullWeek();
+
   return (
     <div className="bg-card rounded-lg border transition-all duration-300 ease-in-out">
       {/* Desktop Layout */}
@@ -60,11 +86,11 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
           <div className="mt-4">
             <div className="text-sm text-muted-foreground mb-2">Days Covered</div>
             <div className="grid grid-cols-7 gap-1">
-              {week.days.map((day) => {
-                const dayPost = dayPosts.find(post => post?.date === day);
+              {fullWeekDays.map((day, index) => {
+                const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
                 return (
                   <DaySquare
-                    key={day}
+                    key={day || `placeholder-${index}`}
                     dayInfo={dayPost || undefined}
                     isEmpty={!dayPost}
                     thumbnailSrc={dayPost ? `/thumbnails/${day}.webp` : undefined}
@@ -151,11 +177,11 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
         <div className="mt-6">
           <div className="text-sm text-muted-foreground mb-3">Days Covered</div>
           <div className="grid grid-cols-7 gap-1">
-            {week.days.map((day) => {
-              const dayPost = dayPosts.find(post => post?.date === day);
+            {fullWeekDays.map((day, index) => {
+              const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
               return (
                 <DaySquare
-                  key={day}
+                  key={day || `placeholder-mobile-${index}`}
                   dayInfo={dayPost || undefined}
                   isEmpty={!dayPost}
                   thumbnailSrc={dayPost ? `/thumbnails/${day}.webp` : undefined}

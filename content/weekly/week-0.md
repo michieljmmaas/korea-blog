@@ -2,7 +2,7 @@
 index: 0
 title: 'Week 0: Sep 25'
 publishdate: '2025-09-25'
-photos: []
+photos: [1,2,3]
 tags: []
 location: Netherlands
 draft: true
