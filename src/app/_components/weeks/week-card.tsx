@@ -32,6 +32,14 @@ export default function WeekCard({ week }: WeekCardProps) {
 
     const locationColor = getLocationColor(week.location);
 
+    let description = "";
+    if (week.index === 0) {
+        description = "The weeks before";
+    } else {
+        description = `Week ${week.index}: ${formatDateRange(week.days)}}`
+    }
+
+
 
     const WeekCard = (
         <div className={`bg-white rounded-sm shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
@@ -60,10 +68,16 @@ export default function WeekCard({ week }: WeekCardProps) {
             </div>
 
             {/* Bottom bar */}
-            <div className={`p-2 md:p-2 ${locationColor} `}>
-                <div className={`font-semibold text-base md:text-lg text-white ${isDraft ? 'text-gray-500' : 'text-gray-900'
+            <div className="p-2 md:p-4 bg-white flex items-center justify-between">
+                {/* Description - left aligned */}
+                <div className={`font-semibold text-base md:text-lg ${isDraft ? 'text-gray-500' : 'text-gray-900'
                     }`}>
-                    Week {week.index}: {formatDateRange(week.days)}
+                    {description}
+                </div>
+                
+                {/* Location - right aligned in colored div */}
+                <div className={`${locationColor} px-2 py-1 rounded text-white text-sm font-medium`}>
+                    {week.location}
                 </div>
             </div>
         </div>
