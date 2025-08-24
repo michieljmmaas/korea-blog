@@ -1,15 +1,11 @@
 ---
-slug: post-1
-title: Blog Post 1
-description: Description for blog post 1
+slug: how-its-made
+title: How it's made
+description: I'll tell you what tools I used to make this custom blog! 
 publishdate: '2025-08-25'
 draft: false
 tags: ["Programming"]
 ---
-# Blog Post 1
-
-Write your content here for blog post 1.
-
 ## Section 1
 
 Content goes here.

@@ -3,6 +3,7 @@ import { getBlogPost, getRelatedBlogPosts } from '@/lib/blogService';
 import BlogPostHeader from '@/app/_components/blog/blog-post-header';
 import RelatedPosts from '@/app/_components/blog/related-posts';
 import { PostBody } from '@/app/_components/common/post-body';
+import markdownToHtml from '@/lib/markdownToHtml';
 
 interface BlogPostPageProps {
     params: {
@@ -17,17 +18,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         const post = await getBlogPost(slug);
         const relatedPosts = await getRelatedBlogPosts(slug);
 
+        const content = await markdownToHtml(post.content || "");
+
+
+
         return (
             <div className="min-h-screen">
-                <article className="max-w-4xl mx-auto bg-white">
+                <article className="">
                     <BlogPostHeader post={post} />
-                    <div className="px-8 py-8">
-                        <PostBody content={post.content} />
-                    </div>
+                    <PostBody content={content} />
                 </article>
 
                 {relatedPosts.length > 0 && (
-                    <div className="max-w-4xl mx-auto mt-12 px-8">
+                    <div className="max-w-4xl mr-auto">
                         <RelatedPosts posts={relatedPosts} />
                     </div>
                 )}

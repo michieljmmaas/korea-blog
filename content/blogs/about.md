@@ -1,7 +1,7 @@
 ---
-slug: post-2
-title: Blog Post 2
-description: Description for blog post 2
+slug: about
+title: About this blog
+description: Who did I make this blog for?
 publishdate: '2025-08-26'
 draft: false
 tags: ["Programming"]
