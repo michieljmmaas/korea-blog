@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { BlogPost } from '@/app/types';
 import TagList from './tag-list';
-import { ImageKitImage } from '../common/image-kit-image';
 import Image from 'next/image';
 
 interface BlogPostCardProps {
@@ -17,8 +16,6 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
         month: 'short',
         day: 'numeric'
     });
-
-    const imageSource = "/blogs/" + post.slug + "/thumb.heic";
 
     return (
         <Link href={`/blogs/${slug}`} className="group block">
