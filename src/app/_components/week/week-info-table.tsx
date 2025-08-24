@@ -59,6 +59,17 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
 
   const fullWeekDays = generateFullWeek();
 
+  // Check if dayPosts data is ready - prevent rendering until we have the data
+  const isDataReady = dayPosts && dayPosts.length >= 0; // Allow for empty array but not undefined
+
+  // Helper function to safely get thumbnail src with error suppression
+  const getThumbnailSrc = (day: string | null, dayPost: DayFrontmatter | null | undefined) => {
+    if (!dayPost || !day) return undefined;
+    
+    // Return the thumbnail path - let the DaySquare component handle loading/errors
+    return `/thumbnails/${day}.webp`;
+  };
+
   return (
     <div className="bg-card rounded-lg border transition-all duration-300 ease-in-out">
       {/* Desktop Layout */}
@@ -89,17 +100,29 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
             <div className="text-sm text-muted-foreground mb-2">Days Covered</div>
             <WeekdayHeaders startDay="FRI"/>
             <div className="grid grid-cols-7 gap-1">
-              {fullWeekDays.map((day, index) => {
+              {isDataReady ? fullWeekDays.map((day, index) => {
                 const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
+                const thumbnailSrc = getThumbnailSrc(day, dayPost);
+                
                 return (
                   <DaySquare
                     key={day || `placeholder-${index}`}
                     dayInfo={dayPost || undefined}
                     isEmpty={!dayPost}
-                    thumbnailSrc={dayPost ? `/thumbnails/${day}.webp` : undefined}
+                    thumbnailSrc={thumbnailSrc}
                   />
                 );
-              })}
+              }) : (
+                // Show loading placeholders
+                fullWeekDays.map((day, index) => (
+                  <div 
+                    key={day || `loading-${index}`}
+                    className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200 animate-pulse"
+                  >
+                    <div className="h-full bg-gray-200 rounded-sm"></div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
 
@@ -182,17 +205,29 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
         <div className="mt-6">
           <div className="text-sm text-muted-foreground mb-3">Days Covered</div>
           <div className="grid grid-cols-7 gap-1">
-            {fullWeekDays.map((day, index) => {
+            {isDataReady ? fullWeekDays.map((day, index) => {
               const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
+              const thumbnailSrc = getThumbnailSrc(day, dayPost);
+              
               return (
                 <DaySquare
                   key={day || `placeholder-mobile-${index}`}
                   dayInfo={dayPost || undefined}
                   isEmpty={!dayPost}
-                  thumbnailSrc={dayPost ? `/thumbnails/${day}.webp` : undefined}
+                  thumbnailSrc={thumbnailSrc}
                 />
-              )
-            })}
+              );
+            }) : (
+              // Show loading placeholders for mobile
+              fullWeekDays.map((day, index) => (
+                <div 
+                  key={day || `loading-mobile-${index}`}
+                  className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200 animate-pulse"
+                >
+                  <div className="h-full bg-gray-200 rounded-sm"></div>
+                </div>
+              ))
+            )}
           </div>
         </div>
 
