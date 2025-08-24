@@ -1,4 +1,4 @@
-import { DayFrontmatter } from "@/app/types";
+import { BlogPostFrontmatter } from "@/app/types";
 
 export interface ImageMapping {
   [photoId: string]: {
@@ -25,11 +25,11 @@ const IMAGEKIT_CONFIG = {
 /**
  * Creates an image mapping for a given week's photos
  */
-export function createImageMapping(day: DayFrontmatter): ImageMapping {
+export function createImageMapping(blog: BlogPostFrontmatter): ImageMapping {
   const mapping: ImageMapping = {};
 
-  day.photos.forEach(photoId => {
-    const basePath = `/${day.date}/photos/${photoId}.heic`;
+  blog.photos.forEach(photoId => {
+    const basePath = `/blogs/${blog.slug}/photos/${photoId}.heic`;
 
     mapping[photoId] = {
       // Portrait version - good for images taller than wide
@@ -37,7 +37,7 @@ export function createImageMapping(day: DayFrontmatter): ImageMapping {
       // Landscape version - good for images wider than tall or full-width display
       landscape: `${IMAGEKIT_CONFIG.endpoint}${basePath}?tr=n-${IMAGEKIT_CONFIG.transformations.landscape}`,
       // Alt text using week context
-      alt: `Photo ${photoId} from ${day.date}`
+      alt: `Photo ${photoId} from ${blog.slug}`
     };
   });
 

@@ -4,6 +4,7 @@ import RelatedPosts from '@/app/_components/blog/related-posts';
 import { PostBody } from '@/app/_components/common/post-body';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { Draft } from '@/app/_components/common/draft';
+import { createImageMapping } from '../../../../utils/createBlogImageMap';
 
 interface BlogPostPageProps {
     params: Promise<{
@@ -24,7 +25,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 
     const relatedPosts = await getRelatedBlogPosts(slug);
-    const content = await markdownToHtml(post.content || "");
+    const mapping = createImageMapping(post.frontmatter);
+    const content = await markdownToHtml(post.content || "", mapping);
 
     return (
         <div className="min-h-screen">

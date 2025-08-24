@@ -1,7 +1,7 @@
 import { WeekData } from "@/app/types";
 
 export interface ImageMapping {
-    [photoId: number]: {
+    [photoId: string]: {
         portrait: string;
         landscape: string;
         alt: string;

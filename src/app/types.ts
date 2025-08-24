@@ -69,6 +69,7 @@ export interface BlogPostFrontmatter {
   publishdate: string;
   draft: boolean;
   tags: string[];
+  photos: string[];
 }
 
 export interface BlogPost {

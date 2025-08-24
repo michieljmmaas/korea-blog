@@ -27,10 +27,10 @@ const dayNames: { [key: string]: string } = {
 };
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
-  const imgRegex = /<Img\s+(\d+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/>/g;
+  const imgRegex = /<Img\s+([\w-]+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/?>/g;
 
   return markdown.replace(imgRegex, (match, photoIdStr, orientation, altText) => {
-    const photoId = parseInt(photoIdStr, 10);
+    const photoId = photoIdStr;
     const imageData = imageMapping[photoId];
 
     if (!imageData) {
@@ -49,22 +49,6 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
   });
 }
 
-function processCustomDayLinks(markdown: string, dayLinkMapping: DayLinkMapping): string {
-  // Regex to match <Mon >, <Tue >, etc. (note the space before >)
-  const dayRegex = /<(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s*>/g;
-
-  return markdown.replace(dayRegex, (match, dayAbbrev) => {
-    // Check if we have a mapping for this day
-    if (dayLinkMapping[dayAbbrev]) {
-      const { fullName, url } = dayLinkMapping[dayAbbrev];
-      return `<a href="${url}" class="dayLink">${fullName}</a>`;
-    }
-
-    // Fallback: use default full name without link if no mapping provided
-    const fullName = dayNames[dayAbbrev] || dayAbbrev;
-    return `<span class="dayLink">${fullName}</span>`;
-  });
-}
 
 export default async function markdownToHtml(
   markdown: string,

@@ -4,6 +4,7 @@ title: About this blog
 description: Who did I make this blog for?
 publishdate: '2025-08-26'
 draft: false
+photos: []
 tags: ["Programming"]
 ---
 # Blog Post 2
