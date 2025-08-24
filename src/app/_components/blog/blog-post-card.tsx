@@ -17,19 +17,20 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
         day: 'numeric'
     });
 
-    const source = "/blogs/" + post.slug + "/thumb.heic";
+    const imageSource = "/blogs/" + post.slug + "/thumb.heic";
 
     return (
-        <Link href={`/blog/${slug}`} className="group block">
+        <Link href={`/blogs/${slug}`} className="group block">
             <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1">
                 {/* Thumbnail */}
                 <div className="relative h-48 w-full overflow-hidden">
                     <ImageKitImage
-                        source={source}
+                        source={imageSource}
                         alt={frontmatter.title}
                         fill={true}
                         sizes="(max-width: 768px) 100vw, 50vw"  // Add this line
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover"
+                        priority={false}
                     />
                 </div>
 
