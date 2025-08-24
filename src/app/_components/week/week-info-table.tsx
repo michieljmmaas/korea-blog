@@ -62,13 +62,13 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
   // Check if dayPosts data is ready - prevent rendering until we have the data
   const isDataReady = dayPosts && dayPosts.length >= 0; // Allow for empty array but not undefined
 
-  // Helper function to safely get thumbnail src with error suppression
   const getThumbnailSrc = (day: string | null, dayPost: DayFrontmatter | null | undefined) => {
     if (!dayPost || !day) return undefined;
-    
-    // Return the thumbnail path - let the DaySquare component handle loading/errors
-    return `/thumbnails/${day}.webp`;
+
+    // fallback: only generate if you’re sure the file exists
+    return `/thumbnails/days/${day}.webp`;
   };
+
 
   return (
     <div className="bg-card rounded-lg border transition-all duration-300 ease-in-out">
@@ -98,12 +98,12 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
           {/* Days breakdown using DaySquare */}
           <div className="mt-4">
             <div className="text-sm text-muted-foreground mb-2">Days Covered</div>
-            <WeekdayHeaders startDay="FRI"/>
+            <WeekdayHeaders startDay="FRI" />
             <div className="grid grid-cols-7 gap-1">
               {isDataReady ? fullWeekDays.map((day, index) => {
                 const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
                 const thumbnailSrc = getThumbnailSrc(day, dayPost);
-                
+
                 return (
                   <DaySquare
                     key={day || `placeholder-${index}`}
@@ -115,7 +115,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
               }) : (
                 // Show loading placeholders
                 fullWeekDays.map((day, index) => (
-                  <div 
+                  <div
                     key={day || `loading-${index}`}
                     className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200 animate-pulse"
                   >
@@ -167,7 +167,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
                 {/* Chart Component */}
                 {isChartExpanded && (
                   <div className="animate-in fade-in-50 duration-300">
-                    <VacationStatsChart weekNumber={week.index} location={week.location}/>
+                    <VacationStatsChart weekNumber={week.index} location={week.location} />
                   </div>
                 )}
               </div>
@@ -207,28 +207,37 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
           <div className="grid grid-cols-7 gap-1">
             {isDataReady ? fullWeekDays.map((day, index) => {
               const dayPost = day ? dayPosts.find(post => post?.date === day) : null;
-              const thumbnailSrc = getThumbnailSrc(day, dayPost);
-              
+
+              if (!dayPost) {
+                // Render a placeholder instead of DaySquare
+                return (
+                  <div
+                    key={day || `placeholder-${index}`}
+                    className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200"
+                  />
+                );
+              }
+
+              // Only render DaySquare when we have a valid dayPost
               return (
                 <DaySquare
-                  key={day || `placeholder-mobile-${index}`}
-                  dayInfo={dayPost || undefined}
-                  isEmpty={!dayPost}
-                  thumbnailSrc={thumbnailSrc}
+                  key={dayPost.date}
+                  dayInfo={dayPost}
+                  isEmpty={false}
+                  thumbnailSrc={`/thumbnails/${dayPost.date}.webp`}
                 />
               );
             }) : (
-              // Show loading placeholders for mobile
+              // Loading placeholders
               fullWeekDays.map((day, index) => (
-                <div 
-                  key={day || `loading-mobile-${index}`}
+                <div
+                  key={day || `loading-${index}`}
                   className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200 animate-pulse"
-                >
-                  <div className="h-full bg-gray-200 rounded-sm"></div>
-                </div>
+                />
               ))
             )}
           </div>
+
         </div>
 
         {/* Mobile Stats Button and Cards */}

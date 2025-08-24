@@ -4,6 +4,9 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekService';
 import WeekInfoTable from '@/app/_components/week/week-info-table';
 import { Draft } from '@/app/_components/common/draft';
+import { getBlogPostsForDates } from '@/lib/dayService';
+
+
 
 interface WeekPageProps {
   params: Promise<{
@@ -37,8 +40,6 @@ export default async function WeekPage({ params }: WeekPageProps) {
   }
 
   const content = await markdownToHtml(week.content || "");
-
-  const { getBlogPostsForDates } = await import('@/lib/dayService');
   const dayPosts = await getBlogPostsForDates(week.days);
 
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
