@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { BlogPostFrontmatter } from '../../types';
+import { DayFrontmatter } from '../../types';
 import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
@@ -8,7 +8,7 @@ import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 
 interface DaySquareProps {
-  dayInfo?: BlogPostFrontmatter;
+  dayInfo?: DayFrontmatter;
   isEmpty?: boolean;
   thumbnailSrc?: string;
 }
@@ -40,7 +40,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   const locationColor = getLocationColor(dayInfo.location);
 
   // Function to determine which icons to show based on dayInfo
-  const getIcons = (dayInfo: BlogPostFrontmatter): IconConfig[] => {
+  const getIcons = (dayInfo: DayFrontmatter): IconConfig[] => {
     const icons: IconConfig[] = [];
 
     // Add work icon if it's a work day

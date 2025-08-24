@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import DaySquare from "@/app/_components/grid/day-square";
-import { BlogPostFrontmatter, WeekData, WeekLinkInfo } from '@/app/types';
+import { DayFrontmatter, WeekData, WeekLinkInfo } from '@/app/types';
 import Tags from '../common/tags';
 import ArrowButton from '../common/arrow-button';
 import VacationStatsChart from './chart/chart';
@@ -10,7 +10,7 @@ import WeekdayHeaders from '../grid/weekday-headers';
 
 interface WeekInfoProps {
   week: WeekData;
-  dayPosts: BlogPostFrontmatter[];
+  dayPosts: DayFrontmatter[];
   previousPost: WeekLinkInfo | null;
   nextPost: WeekLinkInfo | null;
 }

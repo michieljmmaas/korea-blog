@@ -4,12 +4,12 @@ export interface TripDay {
   date: Date;
   formattedDate: string;
   fullDate: string;
-  frontmatter: BlogPostFrontmatter;
+  frontmatter: DayFrontmatter;
   content: string;
   fileName: string;
 }
 
-export interface BlogPostFrontmatter {
+export interface DayFrontmatter {
   title: string;
   date: string;
   day: number;
@@ -61,3 +61,5 @@ export interface WeekLinkInfo {
 }
 
 export type CityLocation = 'Netherlands' | 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan';
+
+// export type BlogPost

@@ -1,4 +1,4 @@
-import { BlogPostFrontmatter, TripDay } from '@/app/types';
+import { DayFrontmatter, TripDay } from '@/app/types';
 import fs from 'fs';
 import path from 'path';
 import { parseMarkdown } from '../../utils/markdownParser';
@@ -37,7 +37,7 @@ export async function getBlogPosts(): Promise<TripDay[]> {
             month: 'long', 
             day: 'numeric' 
           }),
-          frontmatter: frontmatter as BlogPostFrontmatter,
+          frontmatter: frontmatter as DayFrontmatter,
           content: content,
           fileName: file
         });
@@ -56,13 +56,13 @@ export async function getBlogPosts(): Promise<TripDay[]> {
 }
 
 export interface BlogPost {
-  frontmatter: BlogPostFrontmatter;
+  frontmatter: DayFrontmatter;
   content: string;
   fileName: string;
   slug: string;
 }
 
-export async function getBlogPostsForDates(dates: string[]): Promise<BlogPostFrontmatter[]> {
+export async function getBlogPostsForDates(dates: string[]): Promise<DayFrontmatter[]> {
   return Promise.all(
     dates.map(async (day) => {
       return getBlogPost(day).then(data => data.frontmatter);
@@ -85,7 +85,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
     const { frontmatter, content } = parseMarkdown(fileContent);
 
     return {
-      frontmatter: frontmatter as BlogPostFrontmatter,
+      frontmatter: frontmatter as DayFrontmatter,
       content,
       fileName,
       slug
