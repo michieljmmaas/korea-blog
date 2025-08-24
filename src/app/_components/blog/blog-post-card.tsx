@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { BlogPost } from '@/app/types';
 import TagList from './tag-list';
 import { ImageKitImage } from '../common/image-kit-image';
+import Image from 'next/image';
 
 interface BlogPostCardProps {
     post: BlogPost;
@@ -24,12 +25,12 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1">
                 {/* Thumbnail */}
                 <div className="relative h-48 w-full overflow-hidden">
-                    <ImageKitImage
-                        source={imageSource}
-                        alt={frontmatter.title}
-                        fill={true}
-                        sizes="(max-width: 768px) 100vw, 50vw"  // Add this line
+                    <Image
+                        src={`/thumbnails/blogs/${frontmatter.slug}.webp`}
+                        alt={frontmatter.slug}
+                        fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"  // Add this line
                         priority={false}
                     />
                 </div>

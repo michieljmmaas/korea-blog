@@ -4,6 +4,7 @@ import path from 'path';
 import https from 'https';
 import { getBlogPosts } from '../src/lib/dayService';
 import { WeekDataService } from '@/lib/weekService';
+import { getAllRelevantBlogPosts } from '@/lib/blogService'; // Add this import
 
 // Function to generate ImageKit URL
 const generateImageKitUrl = (imagePath: string, transformation: string = 'travel_grid_thumb'): string => {
@@ -152,6 +153,71 @@ const downloadWeeklyThumbnails = async (): Promise<Record<string, string>> => {
   return thumbnailMap;
 };
 
+// Download blog post thumbnails
+const downloadBlogPostThumbnails = async (): Promise<Record<string, string>> => {
+  console.log('🔄 Starting blog post thumbnail downloads...');
+  
+  const blogPosts = await getAllRelevantBlogPosts();
+  const blogThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'blogs');
+  const thumbnailMap: Record<string, string> = {};
+  
+  // Ensure blog thumbnails directory exists
+  if (!fs.existsSync(blogThumbnailsDir)) {
+    fs.mkdirSync(blogThumbnailsDir, { recursive: true });
+  }
+  
+  // Process each blog post
+  for (const post of blogPosts) {
+    const slug = post.frontmatter.slug;
+    
+    // Extract image path from the thumbnail URL
+    // Assuming thumbnail is something like: "/images/thumbnails/post-1.jpg"
+    // or an ImageKit URL, we need to get the path part
+    let imageLocation = "/blogs/" + post.frontmatter.slug + "/thumb.heic";
+    
+    // If it's already a local path (starts with /), extract the relative path
+    if (imageLocation.startsWith('/')) {
+      imageLocation = imageLocation.replace('/images/', '');
+    }
+    // If it's a full ImageKit URL, extract the path after the domain
+    else if (imageLocation.includes('ik.imagekit.io')) {
+      const url = new URL(imageLocation);
+      imageLocation = url.pathname.substring(1); // Remove leading slash
+    }
+    
+    const safeFilename = generateSafeFilename(slug);
+    const localPath = path.join(blogThumbnailsDir, safeFilename);
+    const publicPath = `/thumbnails/blogs/${safeFilename}`;
+    
+    // Skip if file already exists
+    if (fs.existsSync(localPath)) {
+      console.log(`⏭️  Skipping blog post ${slug} (already exists)`);
+      thumbnailMap[slug] = publicPath;
+      continue;
+    }
+    
+    try {
+      // Use the blog_card_thumb transformation
+      const imageUrl = generateImageKitUrl(imageLocation, 'blog_card_thumb');
+      
+      console.log(`⬇️  Downloading blog post thumbnail for ${slug}...`);
+      await downloadImage(imageUrl, localPath);
+      
+      thumbnailMap[slug] = publicPath;
+      console.log(`✅ Downloaded blog post ${slug}`);
+      
+      // Small delay to be nice to ImageKit
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+    } catch (error) {
+      console.error(`❌ Failed to download blog post thumbnail for ${slug}:`, error);
+      // Continue with other images
+    }
+  }
+  
+  return thumbnailMap;
+};
+
 // Main function to download all thumbnails
 const generateThumbnails = async (): Promise<void> => {
   try {
@@ -168,17 +234,24 @@ const generateThumbnails = async (): Promise<void> => {
     // Download weekly thumbnails
     const weeklyThumbnailMap = await downloadWeeklyThumbnails();
     
+    // Download blog post thumbnails
+    const blogThumbnailMap = await downloadBlogPostThumbnails();
+    
     // Save mapping files for quick lookups (optional)
     const dailyMapPath = path.join(thumbnailsDir, 'daily-thumbnail-map.json');
     const weeklyMapPath = path.join(thumbnailsDir, 'weekly-thumbnail-map.json');
+    const blogMapPath = path.join(thumbnailsDir, 'blog-thumbnail-map.json');
     
     fs.writeFileSync(dailyMapPath, JSON.stringify(dailyThumbnailMap, null, 2));
     fs.writeFileSync(weeklyMapPath, JSON.stringify(weeklyThumbnailMap, null, 2));
+    fs.writeFileSync(blogMapPath, JSON.stringify(blogThumbnailMap, null, 2));
     
     console.log(`\n🎉 Downloaded ${Object.keys(dailyThumbnailMap).length} daily thumbnails`);
     console.log(`🎉 Downloaded ${Object.keys(weeklyThumbnailMap).length} weekly thumbnails`);
+    console.log(`🎉 Downloaded ${Object.keys(blogThumbnailMap).length} blog post thumbnails`);
     console.log(`📁 Daily thumbnails saved to: ${path.join(thumbnailsDir, 'days')}`);
     console.log(`📁 Weekly thumbnails saved to: ${path.join(thumbnailsDir, 'weeks')}`);
+    console.log(`📁 Blog thumbnails saved to: ${path.join(thumbnailsDir, 'blogs')}`);
     
   } catch (error) {
     console.error('❌ Error generating thumbnails:', error);
@@ -191,4 +264,4 @@ if (require.main === module) {
   generateThumbnails();
 }
 
-export { generateThumbnails, downloadDailyThumbnails, downloadWeeklyThumbnails };
+export { generateThumbnails, downloadDailyThumbnails, downloadWeeklyThumbnails, downloadBlogPostThumbnails };
