@@ -1,36 +1,50 @@
 import Image from 'next/image';
 
+import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
+import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tokyo.svg";
+import kimbapTaiwanIcon from "../../../../public/assets/blog/svg-icons/kimbap-taiwan.svg";
+import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/kimbap-hong-kong.svg";
+import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
+import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
+import stepsIcon from "../../../../public/assets/blog/svg-icons/steps.svg";
+import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
+import culturalTokyoIcon from "../../../../public/assets/blog/svg-icons/cultural-tokyo.svg";
+import culturalTaiwanIcon from "../../../../public/assets/blog/svg-icons/cultural-taiwan.svg";
+import culturalHongKongIcon from "../../../../public/assets/blog/svg-icons/cultural-hong-kong.svg";
+import { CityLocation } from '@/app/types';
+
+
 // Base icon paths (location-independent)
 const BASE_ICON_PATHS: Record<string, string> = {
-  work: 'work.svg',
-  music: 'music.svg',
-  steps: 'steps.svg',
+  work: workIcon,
+  music: musicIcon,
+  steps: stepsIcon,
 };
 
 // Location-specific icon paths
 const LOCATION_SPECIFIC_ICONS: Record<string, Record<string, string>> = {
   kimbap: {
-    Seoul: 'kimbap.svg',
-    Busan: 'kimbap.svg',
-    Tokyo: 'sushi.svg',
-    'Hong Kong': 'dimsum.svg',
-    Taiwan: 'xiaolongbao.svg',
+    Seoul: kimbapIcon,
+    Busan: kimbapIcon,
+    Tokyo: kimbapTokyoIcon,
+    'Hong Kong': kimbapHongKongIcon,
+    Taiwan: kimbapTaiwanIcon,
   },
   cultural: {
-    Seoul: 'cultural.svg',
-    Busan: 'cultural-korea.svg',
-    Tokyo: 'cultural-japan.svg',
-    'Hong Kong': 'cultural-hongkong.svg',
-    Taiwan: 'cultural-taiwan.svg',
+    Seoul: culturalIcon,
+    Busan: culturalIcon,
+    Tokyo: culturalTokyoIcon,
+    'Hong Kong': culturalHongKongIcon,
+    Taiwan: culturalTaiwanIcon,
   },
 };
 
 // Default title maps - "info" mode (general description)
 const TITLE_INFO_MAP: Record<string, string> = {
   work: 'Work',
-  music: 'Music',
-  cultural: 'Cultural Activity',
-  kimbap: 'Food',
+  music: 'K-POP',
+  cultural: 'Cultural',
+  kimbap: 'Kimbap',
   steps: 'Walking',
 };
 
@@ -38,8 +52,8 @@ const TITLE_INFO_MAP: Record<string, string> = {
 const TITLE_STAT_MAP: Record<string, string> = {
   work: 'Hours worked',
   music: 'Songs listened',
-  cultural: 'Cultural sites visited',
-  kimbap: 'Meals eaten',
+  cultural: 'Sights seen',
+  kimbap: 'Kimap eaten',
   steps: 'Steps taken',
 };
 
@@ -76,12 +90,11 @@ type BaseIconName = keyof typeof BASE_ICON_PATHS;
 type LocationSpecificIconName = keyof typeof LOCATION_SPECIFIC_ICONS;
 type IconName = BaseIconName | LocationSpecificIconName;
 type TitleMode = 'info' | 'stat';
-type Location = 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan';
 
 interface IconFactoryProps {
   name: IconName;
   size?: IconSize;
-  location?: Location;
+  location?: CityLocation; // Accept both CityLocation type and generic string
   titleMode?: TitleMode;
   alt?: string;
   title?: string; // Custom title override
@@ -133,9 +146,7 @@ export default function IconFactory({
     return titleMap[name] || name;
   };
 
-  const iconImage = getIconPath();
-  const pathPrefix = "assets/blog/svg-icons/";
-  const iconPath = pathPrefix + iconImage;
+  const iconPath = getIconPath();
   
   // Check if icon exists
   if (!iconPath) {
@@ -171,5 +182,5 @@ export default function IconFactory({
 }
 
 // Export types and constants for use elsewhere
-export type { IconName, IconSize, TitleMode, Location };
+export type { IconName, IconSize, TitleMode, CityLocation };
 export { BASE_ICON_PATHS, LOCATION_SPECIFIC_ICONS, TITLE_INFO_MAP, TITLE_STAT_MAP };

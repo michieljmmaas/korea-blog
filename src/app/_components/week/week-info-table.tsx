@@ -144,7 +144,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
                 {/* Chart Component */}
                 {isChartExpanded && (
                   <div className="animate-in fade-in-50 duration-300">
-                    <VacationStatsChart weekNumber={week.index} />
+                    <VacationStatsChart weekNumber={week.index} location={week.location}/>
                   </div>
                 )}
               </div>
@@ -237,7 +237,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
             {/* Stats Cards Component - Mobile */}
             {isChartExpanded && (
               <div className="animate-in fade-in-50 duration-300">
-                <VacationStatsChart weekNumber={week.index} />
+                <VacationStatsChart weekNumber={week.index} location={week.location} />
               </div>
             )}
           </div>

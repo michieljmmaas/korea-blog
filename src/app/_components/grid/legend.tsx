@@ -1,7 +1,5 @@
 import { getLocationColor } from "../../../../utils/locationColors";
-import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
-import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
-import Image from 'next/image';
+import IconFactory from "../common/icon-factory";
 
 
 export default function Legend() {
@@ -15,8 +13,8 @@ export default function Legend() {
     ];
 
     const iconItems = [
-        { name: "Work day", icon: workIcon },
-        { name: "K-pop", icon: musicIcon },
+        { title: "Work day", name: "work" },
+        { title: "K-pop", name: "music" },
     ];
 
     return (
@@ -39,14 +37,13 @@ export default function Legend() {
                 <div className="flex gap-3">
                     {iconItems.map((item, index) => (
                         <div key={index} className="flex items-center gap-1 cursor-pointer hover:opacity-70 transition-opacity">
-                            <Image
-                                src={item.icon}
-                                width={20}
-                                height={20}
-                                alt={item.name}
+                            <IconFactory
+                                name={item.name}
+                                size="sm"
+                                titleMode="info"
                             />
                             <span className="text-xs font-sans text-foreground font-mono uppercase">
-                                {item.name}
+                                {item.title}
                             </span>
                         </div>
                     ))}

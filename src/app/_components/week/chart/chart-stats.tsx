@@ -1,9 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
-import kimbapIcon from "../../../../../public/assets/blog/svg-icons/kimbap.svg";
-import workIcon from "../../../../../public/assets/blog/svg-icons/work.svg";
-import culturalIcon from "../../../../../public/assets/blog/svg-icons/cultural.svg";
-import stepsIcon from "../../../../../public/assets/blog/svg-icons/steps.svg";
+import IconFactory from '../../common/icon-factory';
+import { CityLocation } from '@/app/types';
+import { getFoodName } from '../../../../../utils/foodName';
 
 // Type definitions
 interface StatsData {
@@ -27,23 +25,26 @@ interface StatConfig {
     color: string;
     bgColor: string;
     textColor: string;
-    svgPath: string;
+    iconName: string;
     iconAlt: string;
 }
 
 interface StatsSummaryCardsProps {
     displayData: DayData[];
+    location: CityLocation;
 }
 
-const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) => {
+const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData, location }) => {
+    const foodName = getFoodName(location) + " Eaten";
+
     const statsConfig: StatConfig[] = [
         {
             key: 'kimbap',
-            label: 'Kimbap Eaten',
+            label: foodName,
             color: '#f8333c',
             bgColor: 'kimbap-bg',
             textColor: 'kimbap-text',
-            svgPath: kimbapIcon,
+            iconName: "kimbap",
             iconAlt: 'Kimbap icon'
         },
         {
@@ -52,7 +53,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) =>
             color: '#2b9eb3',
             bgColor: 'cultural-bg',
             textColor: 'cultural-text',
-            svgPath: culturalIcon,
+            iconName: "cultural",
             iconAlt: 'Cultural sight icon'
         },
         {
@@ -61,7 +62,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) =>
             color: '#fcab10',
             bgColor: 'worked-bg',
             textColor: 'worked-text',
-            svgPath: workIcon,
+            iconName: "work",
             iconAlt: 'Work icon'
         },
         {
@@ -70,7 +71,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) =>
             color: '#44af69',
             bgColor: 'steps-bg',
             textColor: 'steps-text',
-            svgPath: stepsIcon,
+            iconName: "steps",
             iconAlt: 'Steps icon'
         }
     ];
@@ -79,6 +80,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) =>
         return null;
     }
 
+
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {statsConfig.map(stat => {
@@ -86,11 +88,11 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData }) =>
                 return (
                     <div key={stat.key} className={`p-3 rounded-lg ${stat.bgColor}`}>
                         <div className="flex items-center justify-between">
-                            <Image
-                                src={stat.svgPath}
-                                alt={stat.label}
-                                title={stat.iconAlt}
-                                className="w-10 h-10 object-contain"
+                            <IconFactory
+                                name={stat.iconName}
+                                size="lg"
+                                titleMode="stat"
+                                location={location}
                             />
                             <span className="text-2xl font-bold">
                                 {stat.key === 'steps' ? lastValue.toLocaleString() : lastValue}

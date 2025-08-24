@@ -27,8 +27,8 @@ export default async function Weeks() {
                     } else {
                         return (
                             <Link
-                                key={week.slug}
-                                href={`/weeks/${week.slug}`}
+                                key={week.index}
+                                href={`${week.index}`}
                                 className="group block"
                             >
                                 <WeekCard week={week} />

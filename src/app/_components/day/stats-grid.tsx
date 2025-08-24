@@ -1,8 +1,5 @@
-import Image from 'next/image';
-import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
-import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
-import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
-import stepsIcon from "../../../../public/assets/blog/svg-icons/steps.svg";
+import IconFactory, {IconName} from '../common/icon-factory';
+import { CityLocation } from '@/app/types';
 
 interface StatsGridProps {
     stats: {
@@ -12,50 +9,52 @@ interface StatsGridProps {
         worked: number;
         steps: number;
     };
+    location: CityLocation;
 }
 
-const StatsGrid = ({ stats }: StatsGridProps) => {
+const StatsGrid = ({ stats, location }: StatsGridProps) => {
+
     return (
         <div className="w-full">
             <div className="grid grid-cols-4 gap-1 md:gap-2">
                 <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 kimbap-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.kimbap}</div>
-                    <Image 
-                        src={kimbapIcon} 
-                        alt="Kimbap icon" 
-                        title="Kimbap Eaten"
-                        className="w-10 h-10 object-contain" 
-                    />
+                        <IconFactory
+                            name="kimbap"
+                            location={location}
+                            size="lg"
+                            titleMode="stat"
+                        />
                 </div>
 
                 <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 cultural-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.cultural}</div>
-                    <Image 
-                        src={culturalIcon} 
-                        alt="Cultural icon" 
-                        title="Sights Seen"
-                        className="w-10 h-10 object-contain" 
-                    />
+                    <IconFactory
+                            name="cultural"
+                            location={location}
+                            size="lg"
+                            titleMode="stat"
+                        />
                 </div>
 
                 <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 worked-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.worked}</div>
-                    <Image 
-                        src={workIcon} 
-                        alt="Programmer" 
-                        title="Hours worked"
-                        className="w-10 h-10 object-contain" 
-                    />
+                    <IconFactory
+                            name="work"
+                            location={location}
+                            size="lg"
+                            titleMode="stat"
+                        />
                 </div>
 
                 <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 steps-bg">
                     <div className="text-sm md:text-lg font-bold text-text-primary">{stats.steps.toLocaleString()}</div>
-                    <Image 
-                        src={stepsIcon} 
-                        alt="Steps icon" 
-                        title="Steps Walked"
-                        className="w-10 h-10 object-contain" 
-                    />
+                    <IconFactory
+                            name="steps"
+                            location={location}
+                            size="lg"
+                            titleMode="stat"
+                        />
                 </div>
             </div>
         </div>

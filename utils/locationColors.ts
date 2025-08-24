@@ -1,6 +1,8 @@
 // utils/locationColors.ts
 
-export const getLocationColor = (location: string): string => {
+import { CityLocation } from "@/app/types";
+
+export const getLocationColor = (location: CityLocation): string => {
   if (!location) return 'bg-gray-600'; // default
 
   const loc = location.toLowerCase().trim();

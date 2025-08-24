@@ -1,5 +1,5 @@
 import { getLocationColor } from "../../../../utils/locationColors";
-import { BlogPostFrontmatter, PostLinkInfo } from "../../types";
+import { BlogPostFrontmatter, CityLocation, PostLinkInfo } from "../../types";
 import ArrowButton from "../common/arrow-button"; // Adjust path as needed
 import StatsGrid from "./stats-grid"; // Adjust path as needed
 
@@ -38,7 +38,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 {/* Stats Grid */}
                 <div className="flex-1 flex items-center justify-end">
                     <div className="">
-                        <StatsGrid stats={stats} />
+                        <StatsGrid stats={stats} location={props.frontmatter.location as CityLocation}/>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 </div>
 
                 {/* Stats Grid */}
-                <StatsGrid stats={stats} />
+                <StatsGrid stats={stats} location={props.frontmatter.location}/>
 
                 {/* Mobile Navigation */}
                 <div className="flex justify-between gap-4 pt-4">

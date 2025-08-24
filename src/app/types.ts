@@ -15,7 +15,7 @@ export interface BlogPostFrontmatter {
   day: number;
   icon: string;
   dayOfWeek: string;
-  location: string;
+  location: CityLocation;
   photos: number[];
   tags: string[];
   description: string;
@@ -41,7 +41,7 @@ export interface WeekData {
   publishdate: string;
   photos: number[];
   tags: string[];
-  location: string;
+  location: CityLocation;
   draft: boolean;
   days: string[];
   content: string;
@@ -59,3 +59,5 @@ export interface WeekLinkInfo {
   slug: string, 
   isDraft: boolean;
 }
+
+export type CityLocation = 'Netherlands' | 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan';

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import StatsSummaryCards from './chart-stats';
+import { CityLocation } from '@/app/types';
 
 // Type definitions
 interface StatsData {
@@ -51,6 +52,7 @@ interface BlogStatsData {
 
 interface VacationStatsChartProps {
     weekNumber?: number;
+    location: CityLocation;
 }
 
 interface TooltipProps {
@@ -63,7 +65,7 @@ interface TooltipProps {
     label?: string;
 }
 
-const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 }) => {
+const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1, location }) => {
     const [chartData, setChartData] = useState<DayData[]>([]);
     const [displayData, setDisplayData] = useState<DayData[]>([]);
     const [showFullData, setShowFullData] = useState<boolean>(false);
@@ -292,7 +294,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1 
             </div>
 
             {/* Stats summary - now using the extracted component */}
-            <StatsSummaryCards displayData={displayData} />
+            <StatsSummaryCards displayData={displayData} location={location}/>
         </div>
     );
 };

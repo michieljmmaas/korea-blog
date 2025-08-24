@@ -2,7 +2,7 @@ import { WeekData } from '@/app/types';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
 import { getLocationColor } from '../../../../utils/locationColors';
-import IconFactory, { IconName, Location } from '../common/icon-factory';
+import IconFactory, { IconName } from '../common/icon-factory';
 
 interface WeekCardProps {
     week: WeekData;
@@ -62,7 +62,7 @@ export default function WeekCard({ week }: WeekCardProps) {
                 {/* Draft indicator */}
                 {isDraft && (
                     <div className="h-full bg-gray-200 rounded-t-sm flex items-center justify-center">
-                        <CameraOff fill="black" opacity="60"/>
+                        <CameraOff fill="black" opacity="60" />
                     </div>
                 )}
             </div>
@@ -74,7 +74,7 @@ export default function WeekCard({ week }: WeekCardProps) {
                     }`}>
                     {description}
                 </div>
-                
+
                 {/* Right side: Icons and Location */}
                 <div className="flex items-center gap-2">
                     {/* Icons using IconFactory */}
@@ -82,12 +82,12 @@ export default function WeekCard({ week }: WeekCardProps) {
                         <IconFactory
                             key={iconIndex}
                             name={iconName as IconName}
-                            location={week.location as Location}
+                            location={week.location}
                             size="sm"
                             titleMode="stat" // Use "stat" for activity counts, "info" for general description
                         />
                     ))}
-                    
+
                     {/* Location - right aligned in colored div */}
                     <div className={`${locationColor} px-2 py-1 rounded text-white text-sm font-medium`}>
                         {week.location}
