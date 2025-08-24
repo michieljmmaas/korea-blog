@@ -13,18 +13,25 @@ async function generateBlogPosts() {
 
         console.log(`Creating 20 blog post files`);
 
+        let date = new Date();
+
         // Generate 20 numbered files
         for (let i = 1; i <= 20; i++) {
             const filename = `${i}.md`;
             const filepath = path.join(outputDir, filename);
+
+            date.setDate(date.getDate() + 1)
+
+
 
             // Create frontmatter
             const frontmatter = {
                 slug: `post-${i}`,
                 title: `Blog Post ${i}`,
                 description: `Description for blog post ${i}`,
-                publishdate: new Date().toISOString().split('T')[0], 
+                publishdate: date.toISOString().split('T')[0], 
                 draft: true,
+                tags: [],
                 // thumbnail: `/images/thumbnails/post-${i}.jpg`
             };
 

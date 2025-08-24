@@ -64,7 +64,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const content = await markdownToHtml(week.content || "");
   
-  const { getBlogPostsForDates } = await import('@/lib/blogPost');
+  const { getBlogPostsForDates } = await import('@/lib/dayService');
   const dayPosts = await getBlogPostsForDates(week.days);
 
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);

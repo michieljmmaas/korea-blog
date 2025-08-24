@@ -1,4 +1,4 @@
-import { getBlogPosts } from '../../lib/blogData';
+import { getBlogPosts } from '../../lib/dayService';
 import ClientGrid from '../_components/grid/client-grid';
 
 export default async function TripGridPage() {

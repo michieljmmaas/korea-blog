@@ -2,7 +2,7 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
-import { getBlogPosts } from '../src/lib/blogData';
+import { getBlogPosts } from '../src/lib/dayService';
 import { WeekDataService } from '@/lib/weekPosts';
 
 // Function to generate ImageKit URL
