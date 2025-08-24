@@ -85,6 +85,7 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
                     named: "carousel-optimized"
                   }]}
                   loading={index === 0 ? "eager" : "lazy"}
+                  priority={index === 0}
                 />
               </div>
             </SwiperSlide>

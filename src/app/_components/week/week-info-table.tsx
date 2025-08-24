@@ -224,7 +224,7 @@ export default function WeekInfoTable({ week, dayPosts, previousPost, nextPost }
                   key={dayPost.date}
                   dayInfo={dayPost}
                   isEmpty={false}
-                  thumbnailSrc={`/thumbnails/${dayPost.date}.webp`}
+                  thumbnailSrc={`/thumbnails/days/${dayPost.date}.webp`}
                 />
               );
             }) : (

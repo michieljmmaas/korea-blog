@@ -14,16 +14,8 @@ icons: []
 
 ## Summary
 
-This week covered 1 day on 25/09/2025.
+This  was a fun week. 
 
-### Daily Breakdown
+<Img 3/>
 
-**2025-09-25** (Thursday) -  - Thursday, September 25, 2025
-
-### Highlights
-
-<!-- Add weekly highlights here -->
-
-## Reflection
-
-<!-- Add weekly reflection here -->
+More information after this
