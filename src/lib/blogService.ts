@@ -1,22 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { parseMarkdown } from '../../utils/markdownParser';
+import { BlogPost, BlogPostFrontmatter } from '@/app/types';
 
-export interface BlogPostFrontmatter {
-  slug: string;
-  title: string;
-  description: string;
-  publishdate: string;
-  draft: boolean;
-  thumbnail: string;
-}
-
-export interface BlogPost {
-  frontmatter: BlogPostFrontmatter;
-  content: string;
-  fileName: string;
-  slug: string;
-}
 
 function formatDate(dateString: string): Date {
   return new Date(dateString);
@@ -27,7 +13,7 @@ function formatDate(dateString: string): Date {
  */
 export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/posts');
+    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
     const files = fs.readdirSync(blogPostsDir);
     const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
     
@@ -70,7 +56,7 @@ export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
  */
 export async function getBlogPost(slug: string): Promise<BlogPost> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/posts');
+    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
     
     // Try to find file by slug in frontmatter
     const files = fs.readdirSync(blogPostsDir);
@@ -130,7 +116,7 @@ export async function getMostRecentBlogPost(): Promise<BlogPost | null> {
  */
 export async function getAllBlogPostSlugs(): Promise<string[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/posts');
+    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
     const files = fs.readdirSync(blogPostsDir);
     const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
     
@@ -152,57 +138,39 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
   }
 }
 
-/**
- * Get adjacent posts for navigation
- */
-export async function getAdjacentPosts(currentSlug: string): Promise<{
-  previousPost: { slug: string; title: string } | null;
-  nextPost: { slug: string; title: string } | null;
-}> {
-  try {
-    const posts = await getAllRelevantBlogPosts();
-    
-    if (posts.length === 0) {
-      return { previousPost: null, nextPost: null };
-    }
-    
-    const currentIndex = posts.findIndex(post => post.slug === currentSlug);
-    
-    if (currentIndex === -1) {
-      return { previousPost: null, nextPost: null };
-    }
-    
-    return {
-      previousPost: currentIndex > 0 ? {
-        slug: posts[currentIndex - 1].slug,
-        title: posts[currentIndex - 1].frontmatter.title
-      } : null,
-      nextPost: currentIndex < posts.length - 1 ? {
-        slug: posts[currentIndex + 1].slug,
-        title: posts[currentIndex + 1].frontmatter.title
-      } : null
-    };
-  } catch (error) {
-    console.error('Error getting adjacent posts:', error);
-    return { previousPost: null, nextPost: null };
-  }
-}
 
-/**
- * Get blog posts by publish date range
- */
-export async function getBlogPostsByDateRange(startDate: string, endDate: string): Promise<BlogPost[]> {
+export async function getRelatedBlogPosts(currentSlug: string): Promise<BlogPost[]> {
   try {
-    const allPosts = await getAllRelevantBlogPosts();
-    const start = formatDate(startDate);
-    const end = formatDate(endDate);
+    // Get current post to find its tags
+    const currentPost = await getBlogPost(currentSlug);
+    const currentTags = currentPost.frontmatter.tags || [];
     
-    return allPosts.filter(post => {
-      const postDate = formatDate(post.frontmatter.publishdate);
-      return postDate >= start && postDate <= end;
+    if (currentTags.length === 0) {
+      return [];
+    }
+    
+    // Get all published posts except the current one
+    const allPosts = await getAllRelevantBlogPosts();
+    const otherPosts = allPosts.filter(post => post.slug !== currentSlug);
+    
+    // Find posts with matching tags
+    const relatedPosts = otherPosts.filter(post => {
+      const postTags = post.frontmatter.tags || [];
+      // Check if there's at least one matching tag
+      return postTags.some(tag => currentTags.includes(tag));
     });
+    
+    // If we have 2 or fewer related posts, return them all
+    if (relatedPosts.length <= 2) {
+      return relatedPosts;
+    }
+    
+    // If we have more than 2, randomly select 2
+    const shuffled = relatedPosts.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 2);
+    
   } catch (error) {
-    console.error('Error getting blog posts by date range:', error);
+    console.error('Error getting related blog posts:', error);
     return [];
   }
 }

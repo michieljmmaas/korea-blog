@@ -62,4 +62,18 @@ export interface WeekLinkInfo {
 
 export type CityLocation = 'Netherlands' | 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan';
 
-// export type BlogPost
+export interface BlogPostFrontmatter {
+  slug: string;
+  title: string;
+  description: string;
+  publishdate: string;
+  draft: boolean;
+  tags: string[];
+}
+
+export interface BlogPost {
+  frontmatter: BlogPostFrontmatter;
+  content: string;
+  fileName: string;
+  slug: string;
+}
