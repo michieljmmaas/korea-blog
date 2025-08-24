@@ -6,6 +6,7 @@ import WeekInfoTable from '@/app/_components/week/week-info-table';
 import { Draft } from '@/app/_components/common/draft';
 import { getBlogPostsForDates } from '@/lib/dayService';
 import { createImageMapping } from "../../../../utils/createWeekImageMap";
+import { WeekData } from "@/app/types";
 
 
 
@@ -42,8 +43,21 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const imageMapping = createImageMapping(week);
 
+  function simpleReplace(markdown: string, week: WeekData): string {
+    return markdown
+      .replaceAll('<Fri>', `<a href="${"../day/" + week.days[0]}" class="dayLink">Friday</a>`)
+      .replaceAll('<Sat>', `<a href="${"../day/" + week.days[1]}" class="dayLink">Saterday</a>`)
+      .replaceAll('<Sun>', `<a href="${"../day/" + week.days[2]}" class="dayLink">Sunday</a>`)
+      .replaceAll('<Mon>', `<a href="${"../day/" + week.days[3]}" class="dayLink">Monday</a>`)
+      .replaceAll('<Tue>', `<a href="${"../day/" + week.days[4]}" class="dayLink">Tuesday</a>`)
+      .replaceAll('<Wed>', `<a href="${"../day/" + week.days[5]}" class="dayLink">Wednesday</a>`)
+      .replaceAll('<Thu>', `<a href="${"../day/" + week.days[6]}" class="dayLink">Thursday</a>`)
+  }
 
-  const content = await markdownToHtml(week.content || "", imageMapping);
+  const processedContent = simpleReplace(week.content || "", week);
+
+
+  const content = await markdownToHtml(processedContent || "", imageMapping);
   const dayPosts = await getBlogPostsForDates(week.days);
 
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);

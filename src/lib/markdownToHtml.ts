@@ -1,11 +1,30 @@
 /**
- * Updated markdown processor with HTML support
+ * Updated markdown processor with ImageKit integration and day links
  */
 import { remark } from "remark";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import { ImageMapping } from "../../utils/createWeekImageMap";
+
+// Interface for day link mapping
+export interface DayLinkMapping {
+  [dayAbbrev: string]: {
+    fullName: string;
+    url: string;
+  };
+}
+
+// Day abbreviation to full name mapping
+const dayNames: { [key: string]: string } = {
+  'Mon': 'Monday',
+  'Tue': 'Tuesday',
+  'Wed': 'Wednesday',
+  'Thu': 'Thursday',
+  'Fri': 'Friday',
+  'Sat': 'Saturday',
+  'Sun': 'Sunday'
+};
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
   const imgRegex = /<Img\s+(\d+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/>/g;
@@ -24,23 +43,43 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
     const alt = altText || imageData.alt;
     const orientationClass = usePortrait ? 'portrait' : 'landscape';
 
-    // Return HTML with CSS classes
     return `<div class="imageContainer ${orientationClass}">
   <img src="${imageUrl}" alt="${alt}" loading="lazy" />
 </div>`;
   });
 }
 
-export default async function markdownToHtml(markdown: string, imageMapping: ImageMapping) {
-  // Process custom image tags first
-  const processedMarkdown = processCustomImages(markdown, imageMapping);
+function processCustomDayLinks(markdown: string, dayLinkMapping: DayLinkMapping): string {
+  // Regex to match <Mon >, <Tue >, etc. (note the space before >)
+  const dayRegex = /<(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s*>/g;
+
+  return markdown.replace(dayRegex, (match, dayAbbrev) => {
+    // Check if we have a mapping for this day
+    if (dayLinkMapping[dayAbbrev]) {
+      const { fullName, url } = dayLinkMapping[dayAbbrev];
+      return `<a href="${url}" class="dayLink">${fullName}</a>`;
+    }
+
+    // Fallback: use default full name without link if no mapping provided
+    const fullName = dayNames[dayAbbrev] || dayAbbrev;
+    return `<span class="dayLink">${fullName}</span>`;
+  });
+}
+
+export default async function markdownToHtml(
+  markdown: string,
+  imageMapping: ImageMapping,
+) {
+
+  // Then process custom image tags
+  let processedMarkdown = processCustomImages(markdown, imageMapping);
 
   // Process markdown with HTML support
   const result = await remark()
     .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw) // This allows HTML to pass through
+    .use(rehypeRaw)
     .use(rehypeStringify)
     .process(processedMarkdown);
-    
+
   return result.toString();
 }

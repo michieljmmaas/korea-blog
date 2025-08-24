@@ -18,24 +18,10 @@ icons: []
 ---
 # Week 1: Sep 26 - Oct 2
 
-## Summary
+On <Fri> we arrived in Amsterdam. <Sat> was rainy but <Sun> was perfect!
 
-This week covered 7 days from 26/09/2025 to 02/10/2025.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget turpis sed arcu interdum tincidunt. Suspendisse potenti. Duis laoreet neque elit, eget egestas justo laoreet porta. Integer eu nulla at sapien dictum fringilla. Pellentesque blandit ultricies sem, sit amet ornare dolor ullamcorper nec. Suspendisse pretium ullamcorper turpis, eu dignissim dui pulvinar quis. Nam id risus venenatis, elementum orci vel, commodo metus. Fusce non mauris quis mauris lacinia tincidunt iaculis at mauris. Cras laoreet hendrerit elementum.
 
-### Daily Breakdown
+<Tue>
 
-**2025-09-26** (Friday) -  - Friday, September 26, 2025
-**2025-09-27** (Saturday) -  - Saturday, September 27, 2025
-**2025-09-28** (Sunday) -  - Sunday, September 28, 2025
-**2025-09-29** (Monday) -  - Monday, September 29, 2025
-**2025-09-30** (Tuesday) -  - Tuesday, September 30, 2025
-**2025-10-01** (Wednesday) -  - Wednesday, October 1, 2025
-**2025-10-02** (Thursday) -  - Thursday, October 2, 2025
-
-### Highlights
-
-<!-- Add weekly highlights here -->
-
-## Reflection
-
-<!-- Add weekly reflection here -->
+Nulla non orci in arcu volutpat efficitur. Morbi vitae mollis velit, vitae tempor metus. Quisque leo ligula, suscipit sit amet laoreet nec, faucibus ac massa. Morbi suscipit, nulla id pharetra tincidunt, augue nisl aliquam sapien, id tempor nunc ante non ligula. Donec in bibendum lorem. Aenean nunc dui, consequat <Mon> ut nisl quis, tristique gravida enim. Quisque aliquet, orci ac lobortis egestas, velit leo interdum lectus, eu gravida lacus nisi in purus. Proin eget fermentum massa, in finibus tellus.
