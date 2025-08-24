@@ -1,44 +1,45 @@
-import { notFound } from 'next/navigation';
 import { getBlogPost, getRelatedBlogPosts } from '@/lib/blogService';
 import BlogPostHeader from '@/app/_components/blog/blog-post-header';
 import RelatedPosts from '@/app/_components/blog/related-posts';
 import { PostBody } from '@/app/_components/common/post-body';
 import markdownToHtml from '@/lib/markdownToHtml';
+import { Draft } from '@/app/_components/common/draft';
 
 interface BlogPostPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+    params: Promise<{
+        slug: string;
+    }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug } = await params;
 
-    try {
-        const post = await getBlogPost(slug);
-        const relatedPosts = await getRelatedBlogPosts(slug);
+    const post = await getBlogPost(slug);
 
-        const content = await markdownToHtml(post.content || "");
-
-
-
+    if (!post || post.frontmatter.draft) {
         return (
-            <div className="min-h-screen">
-                <article className="">
-                    <BlogPostHeader post={post} />
-                    <PostBody content={content} />
-                </article>
-
-                {relatedPosts.length > 0 && (
-                    <div className="max-w-4xl mr-auto">
-                        <RelatedPosts posts={relatedPosts} />
-                    </div>
-                )}
-            </div>
+            <Draft />
         );
-    } catch (error) {
-        notFound();
     }
+
+
+    const relatedPosts = await getRelatedBlogPosts(slug);
+    const content = await markdownToHtml(post.content || "");
+
+    return (
+        <div className="min-h-screen">
+            <article className="">
+                <BlogPostHeader post={post} />
+                <PostBody content={content} />
+            </article>
+
+            {relatedPosts.length > 0 && (
+                <div className="max-w-4xl mr-auto">
+                    <RelatedPosts posts={relatedPosts} />
+                </div>
+            )}
+        </div>
+    );
 }
 
 // Generate static params for all blog posts

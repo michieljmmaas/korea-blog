@@ -1,10 +1,9 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import ImageCarousel from "@/app/_components/common/image-carousel";
 import { PostBody } from "@/app/_components/common/post-body";
 import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekService';
 import WeekInfoTable from '@/app/_components/week/week-info-table';
+import { Draft } from '@/app/_components/common/draft';
 
 interface WeekPageProps {
   params: Promise<{
@@ -21,31 +20,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Generate metadata
-export async function generateMetadata({ params }: WeekPageProps): Promise<Metadata> {
-  const { weekId: weekIdStr } = await params;
-  const weekId = parseInt(weekIdStr, 10);
-  const week = await WeekDataService.getWeekById(weekId);
-
-  if (!week) {
-    return {
-      title: 'Week Not Found',
-    };
-  }
-
-  return {
-    title: week.title,
-    description: `Travel blog week ${weekId} covering ${week.days.length} days`,
-    openGraph: {
-      title: week.title,
-      description: `Travel blog week ${weekId} covering ${week.days.length} days`,
-      type: 'article',
-      publishedTime: week.publishdate,
-      tags: week.tags,
-    },
-  };
-}
-
 export default async function WeekPage({ params }: WeekPageProps) {
   const { weekId: weekIdStr } = await params;
   const weekId = parseInt(weekIdStr, 10);
@@ -53,17 +27,17 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
 
   if (isNaN(weekId) || weekId < 0) {
-    notFound();
+    return (<Draft />)
   }
 
   const week = await WeekDataService.getWeekById(weekId);
 
-  if (!week) {
-    notFound();
+  if (!week || week.draft === true) {
+    return (<Draft />)
   }
 
   const content = await markdownToHtml(week.content || "");
-  
+
   const { getBlogPostsForDates } = await import('@/lib/dayService');
   const dayPosts = await getBlogPostsForDates(week.days);
 

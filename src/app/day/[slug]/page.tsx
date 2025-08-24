@@ -1,10 +1,10 @@
 import DayInfoTable from "@/app/_components/day/day-info-table";
 import ImageCarousel from "@/app/_components/common/image-carousel";
-import { notFound } from 'next/navigation';
 import { getBlogPost, getAdjacentPosts } from '../../../lib/dayService';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
+import { Draft } from "@/app/_components/common/draft";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -17,7 +17,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getBlogPost(slug);
 
   if (!post) {
-    notFound();
+    return (<Draft />)
+  }
+
+  if (post.frontmatter.draft === true) {
+    return (<Draft />)
   }
 
   const photos = post.frontmatter.photos.map((number: Number) => `/${post.frontmatter.date}/photos/${number}.heic`);
