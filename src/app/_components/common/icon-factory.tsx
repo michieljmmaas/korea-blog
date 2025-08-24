@@ -150,7 +150,6 @@ export default function IconFactory({
   
   // Check if icon exists
   if (!iconPath) {
-    console.warn(`Icon "${name}" not found for location "${location}"`);
     return null;
   }
 

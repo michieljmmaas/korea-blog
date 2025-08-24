@@ -6,9 +6,9 @@ import { PostBody } from '@/app/_components/common/post-body';
 import markdownToHtml from '@/lib/markdownToHtml';
 
 interface BlogPostPageProps {
-    params: {
-        slug: string;
-    };
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
