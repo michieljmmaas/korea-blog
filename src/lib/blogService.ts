@@ -143,6 +143,7 @@ export async function getRelatedBlogPosts(currentSlug: string): Promise<BlogPost
   try {
     // Get current post to find its tags
     const currentPost = await getBlogPost(currentSlug);
+
     const currentTags = currentPost.frontmatter.tags || [];
     
     if (currentTags.length === 0) {
