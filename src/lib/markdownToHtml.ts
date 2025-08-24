@@ -5,7 +5,7 @@ import { remark } from "remark";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
-import { ImageMapping } from "../../utils/createWeekImageMap";
+import { ImageMapping } from "../../utils/createImageMap";
 
 // Interface for day link mapping
 export interface DayLinkMapping {

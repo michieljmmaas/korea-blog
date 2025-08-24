@@ -5,7 +5,7 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
 import { Draft } from "@/app/_components/common/draft";
-import { createImageMapping } from "../../../../utils/createDayImageMap";
+import { createForDay } from '../../../../utils/createImageMap';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -30,7 +30,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const photos = post.frontmatter.photos.map((number: Number) => `/${post.frontmatter.date}/photos/${number}.heic`);
     photos.unshift(`/${post.frontmatter.date}/thumb.heic`);
 
-    const map = createImageMapping(post.frontmatter);
+    const map = createForDay(post.frontmatter);
 
     const content = await markdownToHtml(post.content || "", map);
     const { previousPost, nextPost } = await getAdjacentPosts(post.frontmatter.day);

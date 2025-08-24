@@ -5,7 +5,7 @@ import { WeekDataService } from '@/lib/weekService';
 import WeekInfoTable from '@/app/_components/week/week-info-table';
 import { Draft } from '@/app/_components/common/draft';
 import { getBlogPostsForDates } from '@/lib/dayService';
-import { createImageMapping } from "../../../../utils/createWeekImageMap";
+import { createForWeek } from '../../../../utils/createImageMap';
 import { WeekData } from "@/app/types";
 
 
@@ -41,7 +41,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
     return (<Draft />)
   }
 
-  const imageMapping = createImageMapping(week);
+  const imageMapping = createForWeek(week);
 
   function simpleReplace(markdown: string, week: WeekData): string {
     return markdown
