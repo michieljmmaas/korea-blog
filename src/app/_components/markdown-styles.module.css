@@ -1,18 +1,86 @@
+/* Update your markdown-styles.module.css with this version */
+
 .markdown {
-  @apply text-lg leading-relaxed;
+  font-size: 1.125rem;
+  line-height: 1.625;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  font-size: 1.875rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.375;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.375;
+}
+
+/* More specific targeting for images */
+.markdown div[class*="imageContainer"] {
+  text-align: center;
+  margin: 2rem 0;
+  display: block;
+  width: 100%;
+}
+
+.markdown div[class*="imageContainer"] img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.markdown div[class*="imageContainer"] img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Portrait vs Landscape specific styling */
+.markdown div[class*="portrait"] {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.markdown div[class*="landscape"] {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Alternative: Target all images in the markdown that aren't in standard p tags */
+.markdown > div img,
+.markdown div img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .markdown div[class*="imageContainer"] {
+    margin: 1rem 0;
+  }
+  
+  .markdown div[class*="imageContainer"] img {
+    border-radius: 0.25rem;
+  }
 }

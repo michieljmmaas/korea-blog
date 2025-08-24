@@ -1,37 +1,46 @@
 /**
- * Updated markdown processor with ImageKit integration
+ * Updated markdown processor with HTML support
  */
-import { WeekData } from "@/app/types";
 import { remark } from "remark";
-import html from "remark-html";
-import { createImageMapping, ImageMapping } from "../../utils/createWeekImageMap";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
+import { ImageMapping } from "../../utils/createWeekImageMap";
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
-
-  // Enhanced regex to support orientation specification
-  // <Img 1 /> - defaults to landscape
-  // <Img 1 portrait /> - uses portrait transformation
-  // <Img 1 alt="Custom alt" /> - custom alt text
-  // <Img 1 portrait alt="Custom alt" />
   const imgRegex = /<Img\s+(\d+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/>/g;
 
   return markdown.replace(imgRegex, (match, photoIdStr, orientation, altText) => {
     const photoId = parseInt(photoIdStr, 10);
     const imageData = imageMapping[photoId];
 
-    // Determine which URL to use
+    if (!imageData) {
+      console.warn(`Image ${photoId} not found in mapping`);
+      return `<!-- Image ${photoId} not found -->`;
+    }
+
     const usePortrait = orientation === 'portrait';
     const imageUrl = usePortrait ? imageData.portrait : imageData.landscape;
     const alt = altText || imageData.alt;
+    const orientationClass = usePortrait ? 'portrait' : 'landscape';
 
-    return `![${alt}](${imageUrl})`;
+    // Return HTML with CSS classes
+    return `<div class="imageContainer ${orientationClass}">
+  <img src="${imageUrl}" alt="${alt}" loading="lazy" />
+</div>`;
   });
 }
 
 export default async function markdownToHtml(markdown: string, imageMapping: ImageMapping) {
-  // Process custom image tags with week context
+  // Process custom image tags first
   const processedMarkdown = processCustomImages(markdown, imageMapping);
 
-  const result = await remark().use(html).process(processedMarkdown);
+  // Process markdown with HTML support
+  const result = await remark()
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw) // This allows HTML to pass through
+    .use(rehypeStringify)
+    .process(processedMarkdown);
+    
   return result.toString();
 }
