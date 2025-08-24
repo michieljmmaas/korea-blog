@@ -1,5 +1,5 @@
 import { getLocationColor } from "../../../../utils/locationColors";
-import workIcon from "../../../../public/assets/blog/svg-icons/worked.svg";
+import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 import Image from 'next/image';
 

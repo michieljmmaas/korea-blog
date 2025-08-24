@@ -4,7 +4,7 @@ import { BlogPostFrontmatter } from '../../types';
 import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
-import workIcon from "../../../../public/assets/blog/svg-icons/worked.svg";
+import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 
 interface DaySquareProps {

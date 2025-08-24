@@ -136,7 +136,8 @@ async function generateWeeklyPosts() {
                 tags: Array.from(allTags).sort(),
                 location: weekLocation, // Single preset location value
                 draft: true,
-                days
+                days,
+                icons: [],
             };
 
             // Generate daily breakdown content

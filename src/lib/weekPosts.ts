@@ -1,4 +1,3 @@
-import { getLocationColor } from './../../utils/locationColors';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -33,6 +32,7 @@ export class WeekDataService {
                 location: data.location,
                 content,
                 slug: `week-${weekId}`,
+                icons: data.icons
             };
         } catch (error) {
             console.error(`Error reading week ${weekId}:`, error);

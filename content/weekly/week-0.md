@@ -8,6 +8,7 @@ location: Netherlands
 draft: false
 days:
   - '2025-09-25'
+icons: []
 ---
 # Week 0: Sep 25
 

@@ -2,7 +2,7 @@ import { WeekData } from '@/app/types';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
 import { getLocationColor } from '../../../../utils/locationColors';
-
+import IconFactory, { IconName, Location } from '../common/icon-factory';
 
 interface WeekCardProps {
     week: WeekData;
@@ -36,7 +36,7 @@ export default function WeekCard({ week }: WeekCardProps) {
     if (week.index === 0) {
         description = "The weeks before";
     } else {
-        description = `Week ${week.index}: ${formatDateRange(week.days)}}`
+        description = `Week ${week.index}: ${formatDateRange(week.days)}`
     }
 
 
@@ -75,9 +75,23 @@ export default function WeekCard({ week }: WeekCardProps) {
                     {description}
                 </div>
                 
-                {/* Location - right aligned in colored div */}
-                <div className={`${locationColor} px-2 py-1 rounded text-white text-sm font-medium`}>
-                    {week.location}
+                {/* Right side: Icons and Location */}
+                <div className="flex items-center gap-2">
+                    {/* Icons using IconFactory */}
+                    {week.icons && week.icons.map((iconName, iconIndex) => (
+                        <IconFactory
+                            key={iconIndex}
+                            name={iconName as IconName}
+                            location={week.location as Location}
+                            size="sm"
+                            titleMode="stat" // Use "stat" for activity counts, "info" for general description
+                        />
+                    ))}
+                    
+                    {/* Location - right aligned in colored div */}
+                    <div className={`${locationColor} px-2 py-1 rounded text-white text-sm font-medium`}>
+                        {week.location}
+                    </div>
                 </div>
             </div>
         </div>

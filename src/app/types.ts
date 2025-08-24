@@ -45,7 +45,8 @@ export interface WeekData {
   draft: boolean;
   days: string[];
   content: string;
-  slug: string; // week-0, week-1, etc.
+  slug: string;
+  icons: string[];
 }
 
 export interface PostLinkInfo {
