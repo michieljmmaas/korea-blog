@@ -1,10 +1,10 @@
 import { getLocationColor } from "../../../../utils/locationColors";
-import IconFactory from "../common/icon-factory";
+import IconFactory, { CityLocation } from "../common/icon-factory";
 
 
 export default function Legend() {
     const legendItems = [
-        { name: "The Netherlands" },
+        { name: "Netherlands" },
         { name: "Seoul" },
         { name: "Busan" },
         { name: "Tokyo" },
@@ -24,7 +24,7 @@ export default function Legend() {
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                     {legendItems.map((item, index) => (
                         <div key={index} className="flex items-center gap-2">
-                            <div className={`w-3 h-3 ${getLocationColor(item.name)}`}></div>
+                            <div className={`w-3 h-3 ${getLocationColor(item.name as CityLocation)}`}></div>
                             <span className={`text-xs font-sans uppercase tracking-wide ${item.name === "Upcoming" ? "text-muted-foreground" : "text-foreground"
                                 }`}>
                                 {item.name}

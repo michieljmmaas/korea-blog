@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import https from 'https';
 import { getBlogPosts } from '../src/lib/dayService';
-import { WeekDataService } from '@/lib/weekPosts';
+import { WeekDataService } from '@/lib/weekService';
 
 // Function to generate ImageKit URL
 const generateImageKitUrl = (imagePath: string, transformation: string = 'travel_grid_thumb'): string => {

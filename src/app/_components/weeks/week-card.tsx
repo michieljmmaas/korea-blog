@@ -1,14 +1,15 @@
 import { WeekData } from '@/app/types';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
-import { getLocationColor } from '../../../../utils/locationColors';
 import IconFactory, { IconName } from '../common/icon-factory';
+import { LocationSticker } from '../common/location-sticker';
 
 interface WeekCardProps {
     week: WeekData;
+    priorty: boolean;
 }
 
-export default function WeekCard({ week }: WeekCardProps) {
+export default function WeekCard({ week, priorty }: WeekCardProps) {
 
     const isDraft = week.draft;
     const index = week.index;
@@ -29,8 +30,6 @@ export default function WeekCard({ week }: WeekCardProps) {
 
         return `${formatDate(firstDay)} - ${formatDate(lastDay)}`;
     };
-
-    const locationColor = getLocationColor(week.location);
 
     let description = "";
     if (week.index === 0) {
@@ -55,7 +54,7 @@ export default function WeekCard({ week }: WeekCardProps) {
                         fill
                         className="object-cover"
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1200px"
-                        priority={index === 0}
+                        priority={priorty}
                     />
                 )}
 
@@ -87,11 +86,7 @@ export default function WeekCard({ week }: WeekCardProps) {
                             titleMode="stat" // Use "stat" for activity counts, "info" for general description
                         />
                     ))}
-
-                    {/* Location - right aligned in colored div */}
-                    <div className={`${locationColor} px-2 py-1 rounded text-white text-sm font-medium`}>
-                        {week.location}
-                    </div>
+                    <LocationSticker location={week.location} />
                 </div>
             </div>
         </div>

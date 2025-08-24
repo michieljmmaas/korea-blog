@@ -1,6 +1,6 @@
-import { getLocationColor } from "../../../../utils/locationColors";
 import { DayFrontmatter, CityLocation, PostLinkInfo } from "../../types";
 import ArrowButton from "../common/arrow-button"; // Adjust path as needed
+import { LocationSticker } from "../common/location-sticker";
 import StatsGrid from "./stats-grid"; // Adjust path as needed
 
 interface DayInfoTableProps {
@@ -12,7 +12,6 @@ interface DayInfoTableProps {
 const DayInfoTable = (props: DayInfoTableProps) => {
     const { location, date, stats } = props.frontmatter;
     const { previousPost, nextPost } = props;
-    const locationColor = getLocationColor(location);
 
     return (
         <>
@@ -30,15 +29,13 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 {/* Basic Info - Date and Location on same line */}
                 <div className="flex items-center gap-6">
                     <span className="text-text-primary font-mono text-base">{date}</span>
-                    <div className={`px-3 py-2 rounded-lg text-sm font-medium text-white ${locationColor}`}>
-                        {location}
-                    </div>
+                    <LocationSticker location={location} />
                 </div>
 
                 {/* Stats Grid */}
                 <div className="flex-1 flex items-center justify-end">
                     <div className="">
-                        <StatsGrid stats={stats} location={props.frontmatter.location as CityLocation}/>
+                        <StatsGrid stats={stats} location={props.frontmatter.location as CityLocation} />
                     </div>
                 </div>
 
@@ -57,13 +54,11 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                 {/* Basic Info - Date and Location on same line */}
                 <div className="flex items-center justify-between">
                     <span className="text-text-primary font-mono text-sm">{date}</span>
-                    <div className={`px-2 py-1 rounded-lg text-xs font-medium text-white ${locationColor}`}>
-                        {location}
-                    </div>
+                    <LocationSticker location={location} />
                 </div>
 
                 {/* Stats Grid */}
-                <StatsGrid stats={stats} location={props.frontmatter.location}/>
+                <StatsGrid stats={stats} location={props.frontmatter.location} />
 
                 {/* Mobile Navigation */}
                 <div className="flex justify-between gap-4 pt-4">

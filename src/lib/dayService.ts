@@ -110,6 +110,30 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
   }
 }
 
+/**
+ * Get the latest day (highest date) that is not a draft
+ */
+export async function getLatestDay(): Promise<TripDay | null> {
+  try {
+    const days = await getBlogPosts();
+    
+    // Filter out drafts and find the one with highest date
+    const publishedDays = days.filter(day => day.frontmatter.draft === false);
+    
+    if (publishedDays.length === 0) {
+      return null;
+    }
+
+    // Find day with highest date
+    return publishedDays.reduce((latest, current) => {
+      return current.date > latest.date ? current : latest;
+    });
+  } catch (error) {
+    console.error('Error getting latest day:', error);
+    return null;
+  }
+}
+
 // Get adjacent posts for navigation
 export async function getAdjacentPosts(currentDay: number): Promise<{
   previousPost: { day: number; slug: string; title: string } | null;

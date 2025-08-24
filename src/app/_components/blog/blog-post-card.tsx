@@ -48,12 +48,12 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
                         {frontmatter.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 truncate">
                         {frontmatter.description}
                     </p>
 

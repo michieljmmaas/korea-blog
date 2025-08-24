@@ -100,6 +100,29 @@ export class WeekDataService {
         return fs.existsSync(filePath);
     }
 
+    /**
+     * Get the latest week (highest index) that is not a draft
+     */
+    static async getLatestWeek(): Promise<WeekData | null> {
+        try {
+            const weeks = await this.getAllWeeks();
+            
+            // Filter out drafts and find the one with highest index
+            const publishedWeeks = weeks.filter(week => !week.draft);
+            
+            if (publishedWeeks.length === 0) {
+                return null;
+            }
+
+            // Find week with highest index
+            return publishedWeeks.reduce((latest, current) => {
+                return current.index > latest.index ? current : latest;
+            });
+        } catch (error) {
+            console.error('Error getting latest week:', error);
+            return null;
+        }
+    }
 
     // Get adjacent posts for navigation
     static async getAdjacentWeeks(weekIndex: number): Promise<{
@@ -123,6 +146,5 @@ export class WeekDataService {
         return { previousPost: null, nextPost: null };
       }
     }
-
 
 }

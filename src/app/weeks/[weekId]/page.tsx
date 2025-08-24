@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import ImageCarousel from "@/app/_components/common/image-carousel";
 import { PostBody } from "@/app/_components/common/post-body";
 import markdownToHtml from '@/lib/markdownToHtml';
-import { WeekDataService } from '@/lib/weekPosts';
+import { WeekDataService } from '@/lib/weekService';
 import WeekInfoTable from '@/app/_components/week/week-info-table';
 
 interface WeekPageProps {

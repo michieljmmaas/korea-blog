@@ -1,4 +1,4 @@
-import { WeekDataService } from '@/lib/weekPosts';
+import { WeekDataService } from '@/lib/weekService';
 import Link from 'next/link';
 import WeekCard from '../_components/weeks/week-card';
 import Legend from '../_components/grid/legend';
@@ -21,7 +21,7 @@ export default async function Weeks() {
                     if (isDraft) {
                         return (
                             <div key={week.slug}>
-                                <WeekCard week={week} />
+                                <WeekCard week={week} priorty={week.index === 0} />
                             </div>
                         );
                     } else {
@@ -31,7 +31,7 @@ export default async function Weeks() {
                                 href={`${week.index}`}
                                 className="group block"
                             >
-                                <WeekCard week={week} />
+                                <WeekCard week={week} priorty={week.index === 0} />
                             </Link>
                         );
                     }

@@ -1,30 +1,64 @@
-import Container from "@/app/_components/layout/container";
-import { HeroPost } from "@/app/_components/old/hero-post";
-import { Intro } from "@/app/_components/old/intro";
-import { MoreStories } from "@/app/_components/old/more-stories";
-import { getAllPosts } from "@/lib/api";
+import { WeekDataService } from "@/lib/weekService";
+import { getMostRecentBlogPost } from '@/lib/blogService';
+import { getLatestDay } from '@/lib/dayService';
+import WeekCard from "./_components/weeks/week-card";
+import BlogPostCard from "./_components/blog/blog-post-card";
+import DayCard from "./_components/day/day-card";
+import Link from "next/link";
+import HeaderLink from "./_components/layout/Link";
 
-export default function Index() {
-  const allPosts = getAllPosts();
+export default async function Index() {
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
+  const latestWeek = await WeekDataService.getLatestWeek();
+  const latestBlogPost = await getMostRecentBlogPost();
+  const latestDay = await getLatestDay();
 
   return (
-    <main>
-      <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-    </main>
+    <div className="space-y-6">
+      {/* Latest Week - Full Width */}
+      {latestWeek && (
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h2 className="text-lg font-semibold mb-4">Latest week</h2>
+          <WeekCard week={latestWeek} priorty={true}/>
+          <div className="pt-4">
+            <HeaderLink
+              title="See more weeks --->"
+              pathname="/weeks"
+              currentPathName={""} />
+          </div>
+        </div>
+      )}
+
+      {/* Latest Day and Blog Post Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        {/* Latest Day - Left */}
+        {latestDay && (
+          <div className="border border-gray-200 rounded-lg p-4">
+            <h2 className="text-lg font-semibold mb-4">Latest day</h2>
+            <DayCard day={latestDay} />
+            <div className="pt-4">
+              <HeaderLink
+                title="See more days --->"
+                pathname="/grid"
+                currentPathName={""} />
+            </div>
+          </div>
+        )}
+
+        {/* Latest Blog Post - Right */}
+        {latestBlogPost && (
+          <div className="border border-gray-200 rounded-lg p-4">
+            <h2 className="text-lg font-semibold mb-4">Latest blog post</h2>
+            <BlogPostCard post={latestBlogPost} />
+            <div className="pt-4">
+              <HeaderLink
+                title="See more blogposts --->"
+                pathname="/blogs"
+                currentPathName={""} />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
