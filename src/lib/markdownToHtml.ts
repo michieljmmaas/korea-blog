@@ -8,9 +8,10 @@ import rehypeStringify from "rehype-stringify";
 import { ImageMapping } from "../../utils/createImageMap";
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
-  const imgRegex = /<Img\s+([\w-]+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/?>/g;
+  // Updated regex to capture desc attribute
+  const imgRegex = /<Img\s+([\w-]+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?(?:\s+desc="([^"]*)")?\s*\/?>/g;
 
-  return markdown.replace(imgRegex, (match, photoIdStr, orientation, altText) => {
+  return markdown.replace(imgRegex, (match, photoIdStr, orientation, altText, description) => {
     const photoId = photoIdStr;
     const imageData = imageMapping[photoId];
 
@@ -31,6 +32,7 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
       data-alt="${alt}" 
       data-orientation="${orientationClass}"
       data-photo-id="${photoId}"
+      data-description="${description || ''}"
     ></div>`;
   });
 }

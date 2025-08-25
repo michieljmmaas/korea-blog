@@ -32,6 +32,7 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
       const src = placeholder.getAttribute('data-src');
       const alt = placeholder.getAttribute('data-alt');
       const orientation = placeholder.getAttribute('data-orientation') as 'portrait' | 'landscape';
+      const description = placeholder.getAttribute('data-description');
       
       if (src && alt) {
         // Create a new div to mount the React component
@@ -44,7 +45,8 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
           <SingleImageWithModal 
             src={src} 
             alt={alt} 
-            orientation={orientation || 'landscape'} 
+            orientation={orientation || 'landscape'}
+            description={description || undefined}
           />
         );
         

@@ -1,19 +1,21 @@
 "use client"
 
 import { useState } from "react";
-import { ImageKitProvider } from "@imagekit/next";
+import { ImageKitProvider, Image } from "@imagekit/next";
 import ImageModal from "./image-modal";
 
 interface SingleImageWithModalProps {
   src: string;
   alt: string;
   orientation?: 'portrait' | 'landscape';
+  description?: string;
 }
 
 const SingleImageWithModal = ({ 
   src, 
   alt, 
-  orientation = 'landscape' 
+  orientation = 'landscape',
+  description 
 }: SingleImageWithModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -47,6 +49,13 @@ const SingleImageWithModal = ({
             style={{ cursor: 'pointer' }}
           />
         </div>
+
+        {/* Description */}
+        {description && (
+          <div className="image-description">
+            {description}
+          </div>
+        )}
 
         <ImageModal
           images={[baseImageUrl]} // Pass base URL without named transformation
