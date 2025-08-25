@@ -6,7 +6,7 @@ const path = require('path');
 // Configuration
 const CONFIG = {
   seedFile: path.join(__dirname, 'seed.json'), // seed.json in the scripts directory
-  outputDir: path.join(__dirname, '..', 'blog-posts'), // blog-posts in the root directory
+  outputDir: path.join(__dirname, '..', 'content/days'),
 };
 
 /**

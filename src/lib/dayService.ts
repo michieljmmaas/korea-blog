@@ -9,7 +9,7 @@ function formatDate(date: Date): string {
 
 
 export async function getBlogPosts(): Promise<TripDay[]> {
-  const blogPostsDir = path.join(process.cwd(), 'blog-posts');
+  const blogPostsDir = path.join(process.cwd(), 'content/days');
   
   try {
     const files = fs.readdirSync(blogPostsDir);
@@ -72,7 +72,7 @@ export async function getBlogPostsForDates(dates: string[]): Promise<DayFrontmat
 
 export async function getBlogPost(slug: string): Promise<BlogPost> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'blog-posts');
+    const blogPostsDir = path.join(process.cwd(), 'content/days');
     const fileName = `${slug}.md`;
     const filePath = path.join(blogPostsDir, fileName);
 
@@ -98,7 +98,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
 
 export async function getAllBlogPostSlugs(): Promise<string[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'blog-posts');
+    const blogPostsDir = path.join(process.cwd(), 'content/days');
     const files = fs.readdirSync(blogPostsDir);
 
     return files

@@ -3,7 +3,7 @@ name: Generate Thumbnails
 on:
   push:
     paths:
-      - 'blog-posts/**'
+      - 'content/days/**'
       - 'scripts/generate-thumbnails.ts'
       - '.github/workflows/thumbnails.yml'
 

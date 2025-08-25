@@ -42,11 +42,10 @@ function parseGrayMatter(content) {
 
 // Main function to process all blog posts
 function extractBlogStats() {
-    const blogPostsDir = './blog-posts';
+    const blogPostsDir = './conent/days';
     const outputFile = './public/blog-stats.json';
 
     try {
-        // Check if the blog-posts directory exists
         if (!fs.existsSync(blogPostsDir)) {
             console.error(`Directory ${blogPostsDir} does not exist!`);
             return;

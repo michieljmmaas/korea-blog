@@ -4,7 +4,7 @@ const matter = require('gray-matter');
 
 // Assuming you have your getBlogPosts function available
 // If not, here's a basic implementation:
-async function getBlogPosts(directory = './blog-posts') {
+async function getBlogPosts(directory = './content/days') {
     const files = fs.readdirSync(directory);
     const posts = [];
 
