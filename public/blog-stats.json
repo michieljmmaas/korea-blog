@@ -90,6 +90,19 @@
       "lat": 0,
       "lng": 0,
       "work": 0
+    },
+    {
+      "date": "2025-10-03",
+      "kimbap": 2,
+      "commits": 0,
+      "worked": 1,
+      "cultural": 3,
+      "steps": 8309,
+      "tags": 0,
+      "coordinates": 0,
+      "lat": 0,
+      "lng": 0,
+      "work": 0
     }
   ],
   "cumulative": [
@@ -148,27 +161,35 @@
       "cultural": 27,
       "steps": 48427,
       "worked": 24
+    },
+    {
+      "date": "2025-10-03",
+      "kimbap": 17,
+      "commits": 0,
+      "cultural": 30,
+      "steps": 56736,
+      "worked": 25
     }
   ],
   "summary": {
-    "totalDays": 7,
+    "totalDays": 8,
     "dateRange": {
       "start": "2025-09-26",
-      "end": "2025-10-02"
+      "end": "2025-10-03"
     },
     "totals": {
-      "kimbap": 15,
+      "kimbap": 17,
       "commits": 0,
-      "cultural": 27,
-      "steps": 48427,
-      "worked": 24
+      "cultural": 30,
+      "steps": 56736,
+      "worked": 25
     },
     "averages": {
-      "kimbap": "2.14",
+      "kimbap": "2.13",
       "commits": "0.00",
-      "cultural": "3.86",
-      "steps": 6918,
-      "worked": "3.43"
+      "cultural": "3.75",
+      "steps": 7092,
+      "worked": "3.13"
     }
   }
 }
