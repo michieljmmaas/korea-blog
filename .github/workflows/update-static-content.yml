@@ -4,8 +4,6 @@ on:
   push:
     paths:
       - 'content/**'
-      - 'scripts/generate-thumbnails.ts'
-      - '.github/workflows/thumbnails.yml'
 
 permissions:
   contents: write
@@ -30,17 +28,23 @@ jobs:
         run: npm ci
 
       - name: Generate thumbnails
+        id: generate-thumbnails
+        continue-on-error: false
         run: npm run thumbnails
 
       - name: Update stats
+        id: generate-thumbnails
+        continue-on-error: false
         run: npm run extract-stats
 
-      - name: Commit updated thumbnails
+      - name: Commit updated thumbnails and charts
+        if: steps.generate-thumbnails.outcome == 'success' && steps.update-stats.outcome == 'success'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Update thumbnails'
+          commit_message: 'Update thumbnails and/or chart data'
 
       - name: Trigger deployment
+        if: steps.generate-thumbnails.outcome == 'success' && steps.update-stats.outcome == 'success'
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
