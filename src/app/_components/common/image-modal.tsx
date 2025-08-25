@@ -1,0 +1,162 @@
+"use client"
+
+import { useState, useEffect } from "react";
+import { ImageKitProvider, Image } from "@imagekit/next";
+import { X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+
+interface ImageModalProps {
+  images: string[];
+  currentIndex: number;
+  isOpen: boolean;
+  onClose: () => void;
+  onNext?: () => void;
+  onPrevious?: () => void;
+  alt?: string;
+}
+
+const ImageModal = ({ 
+  images, 
+  currentIndex, 
+  isOpen, 
+  onClose, 
+  onNext, 
+  onPrevious, 
+  alt = "Image" 
+}: ImageModalProps) => {
+  const [isImageLoading, setIsImageLoading] = useState(false);
+  const [showLoadingIndicator, setShowLoadingIndicator] = useState(false);
+  
+  const hasMultipleImages = images.length > 1;
+  const showNavigation = hasMultipleImages && onNext && onPrevious;
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsImageLoading(true);
+      setShowLoadingIndicator(false);
+      // Show loading indicator after 1 second delay
+      const timer = setTimeout(() => {
+        setShowLoadingIndicator(true);
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, currentIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+      
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowLeft' && onPrevious) {
+        onPrevious();
+      } else if (e.key === 'ArrowRight' && onNext) {
+        onNext();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose, onNext, onPrevious]);
+
+  const handleImageLoad = () => {
+    setIsImageLoading(false);
+    setShowLoadingIndicator(false);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+        onClick={onClose}
+      >
+        <div className="relative flex items-center justify-center w-full h-full max-w-[95vw] max-h-[95vh]">
+          
+          {/* Close button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            className="absolute top-4 right-4 z-50 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+          >
+            <X className="h-6 w-6" />
+          </button>
+          
+          {/* Left Arrow Button - Only show for multiple images */}
+          {showNavigation && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrevious!();
+              }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+          )}
+          
+          {/* Right Arrow Button - Only show for multiple images */}
+          {showNavigation && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext!();
+              }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          )}
+
+          {/* Image Container */}
+          <div 
+            className="relative flex items-center justify-center w-full h-full px-20 py-20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* High resolution image */}
+            <div className="relative max-w-full max-h-full flex items-center justify-center">
+              <Image
+                src={images[currentIndex]}
+                width={900}
+                height={0}
+                alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - Full size`}
+                className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 ${
+                  isImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
+                }`}
+                transformation={[
+                  { 
+                    width: 1400,
+                    quality: 90
+                  }
+                ]}
+                onLoad={handleImageLoad}
+              />
+              
+              {/* Loading Spinner Overlay */}
+              {isImageLoading && showLoadingIndicator && (
+                <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
+                  <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
+                    <Loader2 className="h-6 w-6 text-white animate-spin" />
+                    <p className="text-white text-xs">Loading...</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* Image Counter - Only show for multiple images */}
+          {hasMultipleImages && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-40 px-3 py-1 bg-black/70 text-white text-sm rounded-full border border-white/20 backdrop-blur-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
+          )}
+        </div>
+      </div>
+    </ImageKitProvider>
+  );
+};
+
+export default ImageModal;

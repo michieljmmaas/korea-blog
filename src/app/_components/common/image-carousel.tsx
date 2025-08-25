@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ImageKitProvider, Image } from "@imagekit/next";
-import { X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import ImageModal from "./image-modal";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,66 +20,22 @@ interface SwiperImageCarouselProps {
 const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarouselProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentModalIndex, setCurrentModalIndex] = useState(0);
-  const [isModalImageLoading, setIsModalImageLoading] = useState(false);
-  const [showLoadingIndicator, setShowLoadingIndicator] = useState(false);
 
   const openModal = (index: number) => {
     setCurrentModalIndex(index);
     setIsModalOpen(true);
-    setIsModalImageLoading(true);
-    // Show loading indicator after 1 second delay
-    setTimeout(() => {
-      setShowLoadingIndicator(true);
-    }, 1000);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsModalImageLoading(false);
-    setShowLoadingIndicator(false);
   };
 
   const goToPrevious = () => {
-    setCurrentModalIndex((prev) => {
-      setIsModalImageLoading(true);
-      setShowLoadingIndicator(false);
-      // Show loading indicator after 1 second delay
-      setTimeout(() => {
-        if (isModalImageLoading) {
-          setShowLoadingIndicator(true);
-        }
-      }, 1000);
-      return prev === 0 ? images.length - 1 : prev - 1;
-    });
+    setCurrentModalIndex((prev) => prev === 0 ? images.length - 1 : prev - 1);
   };
 
   const goToNext = () => {
-    setCurrentModalIndex((prev) => {
-      setIsModalImageLoading(true);
-      setShowLoadingIndicator(false);
-      // Show loading indicator after 1 second delay
-      setTimeout(() => {
-        if (isModalImageLoading) {
-          setShowLoadingIndicator(true);
-        }
-      }, 1000);
-      return prev === images.length - 1 ? 0 : prev + 1;
-    });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeModal();
-    } else if (e.key === 'ArrowLeft') {
-      goToPrevious();
-    } else if (e.key === 'ArrowRight') {
-      goToNext();
-    }
-  };
-
-  const handleModalImageLoad = () => {
-    setIsModalImageLoading(false);
-    setShowLoadingIndicator(false);
+    setCurrentModalIndex((prev) => prev === images.length - 1 ? 0 : prev + 1);
   };
 
   if (images.length === 0) {
@@ -130,7 +87,7 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
             </SwiperSlide>
           ))}
           
-          {/* Custom Navigation Buttons - More Prominent */}
+          {/* Custom Navigation Buttons */}
           <div className="swiper-button-prev-custom absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 backdrop-blur-sm border border-white/20">
             <ChevronLeft className="w-5 h-5 text-white" />
           </div>
@@ -138,102 +95,20 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
             <ChevronRight className="w-5 h-5 text-white" />
           </div>
           
-          {/* Custom Pagination - More Prominent */}
+          {/* Custom Pagination */}
           <div className="swiper-pagination-custom absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2"></div>
         </Swiper>
 
-        {/* High-Res Modal */}
-        {isModalOpen && (
-          <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
-            onClick={closeModal}
-            onKeyDown={handleKeyDown}
-            tabIndex={-1}
-          >
-            <div className="relative flex items-center justify-center w-full h-full max-w-[95vw] max-h-[95vh]">
-              
-              {/* Close button */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeModal();
-                }}
-                className="absolute top-4 right-4 z-50 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
-              >
-                <X className="h-6 w-6" />
-              </button>
-              
-              {/* Left Arrow Button - Outside Image */}
-              {images.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToPrevious();
-                  }}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-              )}
-              
-              {/* Right Arrow Button - Outside Image */}
-              {images.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToNext();
-                  }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              )}
-
-              {/* Image Container */}
-              <div 
-                className="relative flex items-center justify-center w-full h-full px-20 py-20"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* High resolution image */}
-                <div className="relative max-w-full max-h-full flex items-center justify-center">
-                  <Image
-                    src={images[currentModalIndex]}
-                    width={900}
-                    height={0}
-                    alt={`${alt} ${currentModalIndex + 1} - Full size`}
-                    className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 ${
-                      isModalImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
-                    }`}
-                    transformation={[
-                      { 
-                        width: 1400,
-                        quality: 90
-                      }
-                    ]}
-                    onLoad={handleModalImageLoad}
-                  />
-                  
-                  {/* Loading Spinner Overlay - Appears after 1 second delay */}
-                  {isModalImageLoading && showLoadingIndicator && (
-                    <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
-                      <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
-                        <Loader2 className="h-6 w-6 text-white animate-spin" />
-                        <p className="text-white text-xs">Loading...</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-              
-              {/* Image Counter */}
-              {images.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-40 px-3 py-1 bg-black/70 text-white text-sm rounded-full border border-white/20 backdrop-blur-sm">
-                  {currentModalIndex + 1} / {images.length}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
+        {/* Modal */}
+        <ImageModal
+          images={images}
+          currentIndex={currentModalIndex}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          onNext={goToNext}
+          onPrevious={goToPrevious}
+          alt={alt}
+        />
 
         <style jsx global>{`
           /* Custom pagination styling */

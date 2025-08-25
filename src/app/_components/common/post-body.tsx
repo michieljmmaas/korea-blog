@@ -1,4 +1,5 @@
 import markdownStyles from "./../markdown-styles.module.css";
+import BlogContentProcessor from "./blog-content-processor";
 
 type Props = {
   content: string;
@@ -7,9 +8,9 @@ type Props = {
 export function PostBody({ content }: Props) {
   return (
     <div className="max-w"> {/* Larger, aligned to left with margin */}
-      <div
+      <BlogContentProcessor
+        htmlContent={content}
         className={markdownStyles["markdown"] + " markdown"}
-        dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>
   );

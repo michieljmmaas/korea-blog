@@ -1,30 +1,11 @@
 /**
- * Updated markdown processor with ImageKit integration and day links
+ * Updated markdown processor with ImageKit integration and modal support
  */
 import { remark } from "remark";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import { ImageMapping } from "../../utils/createImageMap";
-
-// Interface for day link mapping
-export interface DayLinkMapping {
-  [dayAbbrev: string]: {
-    fullName: string;
-    url: string;
-  };
-}
-
-// Day abbreviation to full name mapping
-const dayNames: { [key: string]: string } = {
-  'Mon': 'Monday',
-  'Tue': 'Tuesday',
-  'Wed': 'Wednesday',
-  'Thu': 'Thursday',
-  'Fri': 'Friday',
-  'Sat': 'Saturday',
-  'Sun': 'Sunday'
-};
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
   const imgRegex = /<Img\s+([\w-]+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?\s*\/?>/g;
@@ -43,19 +24,22 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
     const alt = altText || imageData.alt;
     const orientationClass = usePortrait ? 'portrait' : 'landscape';
 
-    return `<div class="imageContainer ${orientationClass}">
-  <img src="${imageUrl}" alt="${alt}" loading="lazy" />
-</div>`;
+    // Generate a placeholder div with data attributes for React component replacement
+    return `<div 
+      class="modal-image-placeholder" 
+      data-src="${imageUrl}" 
+      data-alt="${alt}" 
+      data-orientation="${orientationClass}"
+      data-photo-id="${photoId}"
+    ></div>`;
   });
 }
-
 
 export default async function markdownToHtml(
   markdown: string,
   imageMapping: ImageMapping,
 ) {
-
-  // Then process custom image tags
+  // Process custom image tags
   let processedMarkdown = processCustomImages(markdown, imageMapping);
 
   // Process markdown with HTML support
