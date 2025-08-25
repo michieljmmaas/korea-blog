@@ -3,7 +3,7 @@ name: Generate Thumbnails
 on:
   push:
     paths:
-      - 'content/days/**'
+      - 'content/**'
       - 'scripts/generate-thumbnails.ts'
       - '.github/workflows/thumbnails.yml'
 
@@ -31,6 +31,9 @@ jobs:
 
       - name: Generate thumbnails
         run: npm run thumbnails
+
+      - name: Update stats
+        run: npm run extract-stats
 
       - name: Commit updated thumbnails
         uses: stefanzweifel/git-auto-commit-action@v4

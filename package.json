@@ -5,7 +5,9 @@
     "build": "next build",
     "start": "next start",
     "thumbnails": "tsx scripts/generate-thumbnails.ts",
+    "extract-stats": "node scripts/extract-stats.js",
     "thumbnails:watch": "chokidar 'src/content/**/*.{md,mdx}' -c 'npm run thumbnails'"
+
   },
   "dependencies": {
     "@imagekit/next": "^2.1.2",

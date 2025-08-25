@@ -42,7 +42,7 @@ function parseGrayMatter(content) {
 
 // Main function to process all blog posts
 function extractBlogStats() {
-    const blogPostsDir = './conent/days';
+    const blogPostsDir = './content/days';
     const outputFile = './public/blog-stats.json';
 
     try {
