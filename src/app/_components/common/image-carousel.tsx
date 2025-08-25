@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ImageKitProvider, Image } from "@imagekit/next";
-import { X} from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,22 +19,51 @@ interface SwiperImageCarouselProps {
 const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarouselProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentModalIndex, setCurrentModalIndex] = useState(0);
+  const [isModalImageLoading, setIsModalImageLoading] = useState(false);
+  const [showLoadingIndicator, setShowLoadingIndicator] = useState(false);
 
   const openModal = (index: number) => {
     setCurrentModalIndex(index);
     setIsModalOpen(true);
+    setIsModalImageLoading(true);
+    // Show loading indicator after 1 second delay
+    setTimeout(() => {
+      setShowLoadingIndicator(true);
+    }, 1000);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setIsModalImageLoading(false);
+    setShowLoadingIndicator(false);
   };
 
   const goToPrevious = () => {
-    setCurrentModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentModalIndex((prev) => {
+      setIsModalImageLoading(true);
+      setShowLoadingIndicator(false);
+      // Show loading indicator after 1 second delay
+      setTimeout(() => {
+        if (isModalImageLoading) {
+          setShowLoadingIndicator(true);
+        }
+      }, 1000);
+      return prev === 0 ? images.length - 1 : prev - 1;
+    });
   };
 
   const goToNext = () => {
-    setCurrentModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentModalIndex((prev) => {
+      setIsModalImageLoading(true);
+      setShowLoadingIndicator(false);
+      // Show loading indicator after 1 second delay
+      setTimeout(() => {
+        if (isModalImageLoading) {
+          setShowLoadingIndicator(true);
+        }
+      }, 1000);
+      return prev === images.length - 1 ? 0 : prev + 1;
+    });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -45,6 +74,11 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
     } else if (e.key === 'ArrowRight') {
       goToNext();
     }
+  };
+
+  const handleModalImageLoad = () => {
+    setIsModalImageLoading(false);
+    setShowLoadingIndicator(false);
   };
 
   if (images.length === 0) {
@@ -61,13 +95,18 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
         {/* Main Carousel */}
         <Swiper
           spaceBetween={10}
-          navigation={true}
+          navigation={{
+            enabled: true,
+            prevEl: '.swiper-button-prev-custom',
+            nextEl: '.swiper-button-next-custom',
+          }}
           pagination={{
             clickable: true,
+            el: '.swiper-pagination-custom',
           }}
           loop={true}
           modules={[Navigation, Pagination]}
-          className="w-full h-64 sm:h-80 md:h-96 rounded-lg"
+          className="w-full h-64 sm:h-80 md:h-96 rounded-lg relative"
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
@@ -90,98 +129,135 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
               </div>
             </SwiperSlide>
           ))}
+          
+          {/* Custom Navigation Buttons - More Prominent */}
+          <div className="swiper-button-prev-custom absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 backdrop-blur-sm border border-white/20">
+            <ChevronLeft className="w-5 h-5 text-white" />
+          </div>
+          <div className="swiper-button-next-custom absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 backdrop-blur-sm border border-white/20">
+            <ChevronRight className="w-5 h-5 text-white" />
+          </div>
+          
+          {/* Custom Pagination - More Prominent */}
+          <div className="swiper-pagination-custom absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2"></div>
         </Swiper>
 
         {/* High-Res Modal */}
         {isModalOpen && (
           <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
             onClick={closeModal}
             onKeyDown={handleKeyDown}
             tabIndex={-1}
           >
-            <div 
-              className="relative max-w-[95vw] max-h-[95vh] p-4"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative flex items-center justify-center w-full h-full max-w-[95vw] max-h-[95vh]">
+              
               {/* Close button */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   closeModal();
                 }}
-                className="absolute -top-2 -right-2 z-50 h-10 w-10 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors"
+                className="absolute top-4 right-4 z-50 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
               >
-                <X className="h-5 w-5" />
+                <X className="h-6 w-6" />
               </button>
               
-              {/* High resolution image */}
-              <Image
-                src={images[currentModalIndex]}
-                width={1600}
-                height={1600}
-                alt={`${alt} ${currentModalIndex + 1} - Full size`}
-                className="w-auto h-auto max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-                transformation={[
-                  { named: "modal-full-aspect" }
-                ]}
-              />
-              
-              {/* Navigation in modal */}
+              {/* Left Arrow Button - Outside Image */}
               {images.length > 1 && (
-                <>
-                  <div
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToPrevious();
-                    }}
-                    className="absolute left-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-start pl-4 z-20"
-                  >
-                  </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPrevious();
+                  }}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+              )}
+              
+              {/* Right Arrow Button - Outside Image */}
+              {images.length > 1 && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNext();
+                  }}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              )}
+
+              {/* Image Container */}
+              <div 
+                className="relative flex items-center justify-center w-full h-full px-16 py-16 sm:px-20 sm:py-20"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* High resolution image */}
+                <div className="relative max-w-full max-h-full flex items-center justify-center">
+                  <Image
+                    src={images[currentModalIndex]}
+                    width={1400}
+                    height={0}
+                    alt={`${alt} ${currentModalIndex + 1} - Full size`}
+                    className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 ${
+                      isModalImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
+                    }`}
+                    transformation={[
+                      { 
+                        width: 1400,
+                        quality: 90
+                      }
+                    ]}
+                    onLoad={handleModalImageLoad}
+                  />
                   
-                  <div
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToNext();
-                    }}
-                    className="absolute right-0 top-0 w-1/3 h-full cursor-pointer flex items-center justify-end pr-4 z-20"
-                  >
-                  </div>
-                </>
+                  {/* Loading Spinner Overlay - Appears after 1 second delay */}
+                  {isModalImageLoading && showLoadingIndicator && (
+                    <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
+                      <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
+                        <Loader2 className="h-6 w-6 text-white animate-spin" />
+                        <p className="text-white text-xs">Loading...</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              {/* Image Counter */}
+              {images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-40 px-3 py-1 bg-black/70 text-white text-sm rounded-full border border-white/20 backdrop-blur-sm">
+                  {currentModalIndex + 1} / {images.length}
+                </div>
               )}
             </div>
           </div>
         )}
 
-<style jsx global>{`
-          .swiper-button-next,
-          .swiper-button-prev {
-            color: white !important;
-            background: none !important;
-            width: 40px !important;
-            height: 40px !important;
-            margin-top: -20px !important;
-            border-radius: 0 !important;
+        <style jsx global>{`
+          /* Custom pagination styling */
+          .swiper-pagination-custom .swiper-pagination-bullet {
+            width: 12px !important;
+            height: 12px !important;
+            background: rgba(255, 255, 255, 0.4) !important;
+            border: 2px solid rgba(255, 255, 255, 0.6) !important;
+            opacity: 1 !important;
+            margin: 0 6px !important;
+            transition: all 0.3s ease !important;
           }
           
-          .swiper-button-next::before,
-          .swiper-button-prev::before {
-            display: none !important;
-          }
-          
-          .swiper-button-next:after,
-          .swiper-button-prev:after {
-            font-size: 20px !important;
-            font-weight: bold !important;
-            background: none !important;
-          }
-          
-          .swiper-pagination-bullet {
-            background: rgba(255, 255, 255, 0.5) !important;
-          }
-          
-          .swiper-pagination-bullet-active {
+          .swiper-pagination-custom .swiper-pagination-bullet-active {
             background: white !important;
+            border-color: white !important;
+            transform: scale(1.2) !important;
+          }
+          
+          /* Hide default navigation and pagination since we're using custom ones */
+          .swiper-button-next,
+          .swiper-button-prev,
+          .swiper-pagination {
+            display: none !important;
           }
         `}</style>
       </div>
