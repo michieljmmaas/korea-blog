@@ -1,4 +1,4 @@
-name: Generate Thumbnails
+name: Update static content
 
 on:
   push:
