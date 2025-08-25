@@ -33,7 +33,7 @@ jobs:
         run: npm run thumbnails
 
       - name: Update stats
-        id: static-generate-thumbnails
+        id: static-generate-stats
         continue-on-error: false
         run: npm run extract-stats
 
