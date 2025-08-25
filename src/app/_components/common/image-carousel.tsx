@@ -191,14 +191,14 @@ const SwiperImageCarousel = ({ images, alt = "Travel photo" }: SwiperImageCarous
 
               {/* Image Container */}
               <div 
-                className="relative flex items-center justify-center w-full h-full px-16 py-16 sm:px-20 sm:py-20"
+                className="relative flex items-center justify-center w-full h-full px-20 py-20"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* High resolution image */}
                 <div className="relative max-w-full max-h-full flex items-center justify-center">
                   <Image
                     src={images[currentModalIndex]}
-                    width={1400}
+                    width={900}
                     height={0}
                     alt={`${alt} ${currentModalIndex + 1} - Full size`}
                     className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 ${
