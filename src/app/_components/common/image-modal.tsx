@@ -145,7 +145,7 @@ const ImageModal = ({
               mode: "reset"
             }}
             limitToBounds={false}
-            centerOnInit={true}
+            centerOnInit={false}
             centerZoomedOut={true}
             smooth={true}
             disabled={false}
@@ -155,70 +155,59 @@ const ImageModal = ({
               // Reset transform when image changes
             }}
           >
-            {({ resetTransform }) => {
-              // Reset transform when image changes
-              useEffect(() => {
-                resetTransform(0);
-              }, [currentIndex, resetTransform]);
+            {/* Zoom Controls */}
+            <ResetControl />
 
-              return (
-                <>
-                  {/* Zoom Controls */}
-                  <ResetControl />
+            {/* Image Container */}
+            <TransformComponent
+              wrapperClass="!w-full !h-full flex items-center justify-center px-12 py-16 sm:px-16 sm:py-20 md:px-20 md:py-20"
+              contentClass="!w-auto !h-auto flex items-center justify-center"
+            >
+              <div
+                className="relative flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* High resolution image */}
+                <div className="relative">
+                  <Image
+                    src={images[currentIndex]}
+                    width={1200}
+                    height={800}
+                    alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - Full size`}
+                    className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 select-none ${isImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
+                      }`}
+                    style={{
+                      maxWidth: '90vw',
+                      maxHeight: '90vh',
+                      width: 'auto',
+                      height: 'auto',
+                      userSelect: 'none',
+                      WebkitUserSelect: 'none',
+                      MozUserSelect: 'none',
+                      msUserSelect: 'none'
+                    }}
+                    transformation={[
+                      {
+                        width: 1600,
+                        quality: 90
+                      }
+                    ]}
+                    onLoad={handleImageLoad}
+                    draggable={false}
+                  />
 
-                  {/* Image Container */}
-                  <TransformComponent
-                    wrapperClass="!w-full !h-full flex items-center justify-center px-12 py-16 sm:px-16 sm:py-20 md:px-20 md:py-20"
-                    contentClass="!w-auto !h-auto flex items-center justify-center"
-                  >
-                    <div
-                      className="relative flex items-center justify-center"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {/* High resolution image */}
-                      <div className="relative">
-                        <Image
-                          src={images[currentIndex]}
-                          width={1200}
-                          height={800}
-                          alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - Full size`}
-                          className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 select-none ${isImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
-                            }`}
-                          style={{
-                            maxWidth: '90vw',
-                            maxHeight: '90vh',
-                            width: 'auto',
-                            height: 'auto',
-                            userSelect: 'none',
-                            WebkitUserSelect: 'none',
-                            MozUserSelect: 'none',
-                            msUserSelect: 'none'
-                          }}
-                          transformation={[
-                            {
-                              width: 1600,
-                              quality: 90
-                            }
-                          ]}
-                          onLoad={handleImageLoad}
-                          draggable={false}
-                        />
-
-                        {/* Loading Spinner Overlay */}
-                        {isImageLoading && showLoadingIndicator && (
-                          <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
-                            <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
-                              <Loader2 className="h-6 w-6 text-white animate-spin" />
-                              <p className="text-white text-xs">Loading...</p>
-                            </div>
-                          </div>
-                        )}
+                  {/* Loading Spinner Overlay */}
+                  {isImageLoading && showLoadingIndicator && (
+                    <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
+                      <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
+                        <Loader2 className="h-6 w-6 text-white animate-spin" />
+                        <p className="text-white text-xs">Loading...</p>
                       </div>
                     </div>
-                  </TransformComponent>
-                </>
-              );
-            }}
+                  )}
+                </div>
+              </div>
+            </TransformComponent>
           </TransformWrapper>
 
           {/* Image Counter - Only show for multiple images */}
