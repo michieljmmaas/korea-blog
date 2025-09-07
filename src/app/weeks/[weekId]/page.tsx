@@ -7,6 +7,8 @@ import { Draft } from '@/app/_components/common/draft';
 import { getBlogPostsForDates } from '@/lib/dayService';
 import { createForWeek } from '../../../../utils/createImageMap';
 import { WeekData } from "@/app/types";
+import RelatedPosts from "@/app/_components/blog/related-posts";
+import { getBlogpostsForWeek } from "@/lib/blogService";
 
 
 
@@ -56,9 +58,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const processedContent = simpleReplace(week.content || "", week);
 
-
   const content = await markdownToHtml(processedContent || "", imageMapping);
   const dayPosts = await getBlogPostsForDates(week.days);
+  const relatedPosts = await getBlogpostsForWeek(week);
 
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
 
@@ -79,10 +81,12 @@ export default async function WeekPage({ params }: WeekPageProps) {
         {dayPosts &&
           <WeekInfoTable week={week} dayPosts={dayPosts} nextPost={nextPost} previousPost={previousPost} />
         }
-
         {/* Week Content */}
         <div className="flex-1 min-h-0 pt-6">
           <PostBody content={content} />
+        </div>
+        <div className="max-w-4xl mr-auto">
+          <RelatedPosts posts={relatedPosts} />
         </div>
       </main>
     </div>

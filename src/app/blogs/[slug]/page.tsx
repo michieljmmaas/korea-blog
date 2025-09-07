@@ -24,7 +24,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
 
-    const relatedPosts = await getRelatedBlogPosts(slug);
+    const relatedPosts = await getRelatedBlogPosts(post);
     const mapping = createForBlog(post.frontmatter);
     const content = await markdownToHtml(post.content || "", mapping);
 

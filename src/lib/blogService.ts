@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { parseMarkdown } from '../../utils/markdownParser';
-import { BlogPost, BlogPostFrontmatter } from '@/app/types';
+import { BlogPost, BlogPostFrontmatter, WeekData } from '@/app/types';
+import { getAllPosts } from './api';
 
 
 function formatDate(dateString: string): Date {
@@ -41,7 +42,7 @@ export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
     posts.sort((a, b) => {
       const dateA = formatDate(a.frontmatter.publishdate);
       const dateB = formatDate(b.frontmatter.publishdate);
-      return dateA.getTime() - dateB.getTime();
+      return dateB.getTime() - dateA.getTime();
     });
 
     return posts;
@@ -137,16 +138,16 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
   }
 }
 
+export async function getBlogpostsForWeek(week: WeekData): Promise<BlogPost[]> {
+  const allBlogPosts = await getAllRelevantBlogPosts();
+  const dates = week.days;
+  const otherPosts = allBlogPosts.filter(post => dates.includes(post.frontmatter.publishdate));
+  return otherPosts.slice(0, 2);
+}
 
-export async function getRelatedBlogPosts(currentSlug: string): Promise<BlogPost[]> {
+
+export async function getRelatedBlogPosts(currentPost: BlogPost): Promise<BlogPost[]> {
   try {
-    // Get current post to find its tags
-    const currentPost = await getBlogPost(currentSlug);
-
-    if (!currentPost) {
-      return [];
-    }
-
     const currentTags = currentPost.frontmatter.tags || [];
 
     if (currentTags.length === 0) {
@@ -155,7 +156,7 @@ export async function getRelatedBlogPosts(currentSlug: string): Promise<BlogPost
 
     // Get all published posts except the current one
     const allPosts = await getAllRelevantBlogPosts();
-    const otherPosts = allPosts.filter(post => post.slug !== currentSlug);
+    const otherPosts = allPosts.filter(post => post.slug !== currentPost.slug);
 
     // Find posts with matching tags
     const relatedPosts = otherPosts.filter(post => {

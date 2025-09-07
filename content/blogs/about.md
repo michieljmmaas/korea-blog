@@ -2,7 +2,7 @@
 slug: about
 title: About this blog
 description: Who did I make this blog for?
-publishdate: '2025-08-26'
+publishdate: '2025-09-25'
 draft: false
 photos: []
 tags: ["Programming"]
