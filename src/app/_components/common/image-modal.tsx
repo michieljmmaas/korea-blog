@@ -72,7 +72,7 @@ const ImageModal = ({
         className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
         onClick={onClose}
       >
-        <div className="relative flex items-center justify-center w-full h-full max-w-[95vw] max-h-[95vh]">
+        <div className="relative flex items-center justify-center w-full h-full">
           
           {/* Close button */}
           <button
@@ -80,9 +80,9 @@ const ImageModal = ({
               e.stopPropagation();
               onClose();
             }}
-            className="absolute top-4 right-4 z-50 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 h-10 w-10 sm:h-12 sm:w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
           >
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
           
           {/* Left Arrow Button - Only show for multiple images */}
@@ -92,9 +92,9 @@ const ImageModal = ({
                 e.stopPropagation();
                 onPrevious!();
               }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-40 h-10 w-10 sm:h-12 sm:w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           )}
           
@@ -105,30 +105,36 @@ const ImageModal = ({
                 e.stopPropagation();
                 onNext!();
               }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 h-12 w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-40 h-10 w-10 sm:h-12 sm:w-12 bg-black/70 hover:bg-black/90 text-white rounded-full border border-white/20 flex items-center justify-center transition-colors backdrop-blur-sm"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           )}
 
           {/* Image Container */}
           <div 
-            className="relative flex items-center justify-center w-full h-full px-20 py-20"
+            className="relative flex items-center justify-center w-full h-full px-12 py-16 sm:px-16 sm:py-20 md:px-20 md:py-20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* High resolution image */}
-            <div className="relative max-w-full max-h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
               <Image
                 src={images[currentIndex]}
-                width={900}
-                height={0}
+                width={1200}
+                height={800}
                 alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - Full size`}
                 className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 ${
                   isImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
                 }`}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  width: 'auto',
+                  height: 'auto'
+                }}
                 transformation={[
                   { 
-                    width: 1400,
+                    width: 1600,
                     quality: 90
                   }
                 ]}
@@ -149,7 +155,7 @@ const ImageModal = ({
           
           {/* Image Counter - Only show for multiple images */}
           {hasMultipleImages && (
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-40 px-3 py-1 bg-black/70 text-white text-sm rounded-full border border-white/20 backdrop-blur-sm">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-40 px-3 py-1 bg-black/70 text-white text-sm rounded-full border border-white/20 backdrop-blur-sm">
               {currentIndex + 1} / {images.length}
             </div>
           )}
