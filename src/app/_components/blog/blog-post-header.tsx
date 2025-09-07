@@ -34,7 +34,7 @@ export default function BlogPostHeader({ post }: BlogPostHeaderProps) {
             </div>
 
             {/* Content Section */}
-            <div className="px-8 py-8">
+            <div className="px-2 py-2">
                 {/* Tags and Date */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                     <TagList tags={frontmatter.tags} />
