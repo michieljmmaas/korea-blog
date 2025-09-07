@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { previousPost, nextPost } = await getAdjacentPosts(post.frontmatter.day);
 
     return (
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="max-h-screen bg-background flex flex-col">
         <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
           {/* Image Carousel */}
           <div className="py-6">
@@ -54,12 +54,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           />
 
           {/* Tags */}
-          <div className="flex-1 min-h-0 pt-6">
+          <div className="pt-2">
             <Tags tags={post.frontmatter.tags} />
           </div>
 
           {/* Day Text */}
-          <div className="flex-1 min-h-0 pt-6">
+          <div className="pt-2">
             <PostBody content={content} />
           </div>
         </main>

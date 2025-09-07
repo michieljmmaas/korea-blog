@@ -50,7 +50,6 @@ export default function Tags({ tags }: TagProps) {
 
     return (
         <div>
-            <div className="text-sm text-muted-foreground">Tags</div>
             <div className="flex flex-wrap gap-1 mt-1">
                 {sortedTags.map((tag) => {
                     const config = tagConfig[tag as TagKey];

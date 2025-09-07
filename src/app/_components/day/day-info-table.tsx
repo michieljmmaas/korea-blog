@@ -1,7 +1,9 @@
+import { WeekDataService } from "@/lib/weekService";
 import { DayFrontmatter, CityLocation, PostLinkInfo } from "../../types";
 import ArrowButton from "../common/arrow-button"; // Adjust path as needed
 import { LocationSticker } from "../common/location-sticker";
 import StatsGrid from "./stats-grid"; // Adjust path as needed
+import HeaderLink from "../layout/Link";
 
 interface DayInfoTableProps {
     frontmatter: DayFrontmatter;
@@ -9,9 +11,20 @@ interface DayInfoTableProps {
     nextPost: PostLinkInfo | null;
 }
 
-const DayInfoTable = (props: DayInfoTableProps) => {
+export default async function DayInfoTable(props: DayInfoTableProps) {
     const { location, date, stats } = props.frontmatter;
     const { previousPost, nextPost } = props;
+
+    const week = await WeekDataService.getWeekForDay(props.frontmatter.day);
+
+    const weekLink = week ? (
+        <HeaderLink
+            pathname={`/weeks/${week.slug}`}
+            title={`Week ${week.week}`}
+            currentPathName="foo"
+            disabled={week.isDraft}
+        />
+    ) : null;
 
     return (
         <>
@@ -26,8 +39,9 @@ const DayInfoTable = (props: DayInfoTableProps) => {
                     />
                 </div>
 
-                {/* Basic Info - Date and Location on same line */}
+                {/* Basic Info - Week, Date and Location */}
                 <div className="flex items-center gap-6">
+                    {weekLink}
                     <span className="text-text-primary font-mono text-base">{date}</span>
                     <LocationSticker location={location} />
                 </div>
@@ -51,9 +65,12 @@ const DayInfoTable = (props: DayInfoTableProps) => {
 
             {/* Mobile Layout */}
             <div className="md:hidden py-4 space-y-4 border border-border rounded-lg p-4 top-0 bg-white z-10 shadow-sm">
-                {/* Basic Info - Date and Location on same line */}
+                {/* Basic Info - Week, Date and Location */}
                 <div className="flex items-center justify-between">
-                    <span className="text-text-primary font-mono text-sm">{date}</span>
+                    <div className="flex items-center gap-4">
+                        {weekLink}
+                        <span className="text-text-primary font-mono text-sm">{date}</span>
+                    </div>
                     <LocationSticker location={location} />
                 </div>
 
@@ -81,5 +98,3 @@ const DayInfoTable = (props: DayInfoTableProps) => {
         </>
     );
 };
-
-export default DayInfoTable;

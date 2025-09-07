@@ -106,10 +106,10 @@ export class WeekDataService {
     static async getLatestWeek(): Promise<WeekData | null> {
         try {
             const weeks = await this.getAllWeeks();
-            
+
             // Filter out drafts and find the one with highest index
             const publishedWeeks = weeks.filter(week => !week.draft);
-            
+
             if (publishedWeeks.length === 0) {
                 return null;
             }
@@ -126,25 +126,33 @@ export class WeekDataService {
 
     // Get adjacent posts for navigation
     static async getAdjacentWeeks(weekIndex: number): Promise<{
-      previousPost: WeekLinkInfo | null;
-      nextPost: WeekLinkInfo | null;
+        previousPost: WeekLinkInfo | null;
+        nextPost: WeekLinkInfo | null;
     }> {
-      try {
-        const weeks = await this.getAllWeeks();
-    
-        const previousWeekFind = weeks[weekIndex - 1] ?? {week: -1, draft: true, slug: ""};
-        const prevWeek = previousWeekFind && {week: previousWeekFind.index, isDraft: previousWeekFind.draft, slug: `${previousWeekFind.index}`};
-        const nextWeekFind = weeks[weekIndex + 1] ?? {week: 11, draft: true, slug: ""};;
-        const nextWeek = nextWeekFind && {week: nextWeekFind.index, isDraft: nextWeekFind.draft, slug: `${nextWeekFind.index}`};
-    
-        return {
-          previousPost: prevWeek,
-          nextPost: nextWeek,
-        };
-      } catch (error) {
-        console.error('Error getting adjacent posts:', error);
-        return { previousPost: null, nextPost: null };
-      }
+        try {
+            const weeks = await this.getAllWeeks();
+
+            const previousWeekFind = weeks[weekIndex - 1] ?? { week: -1, draft: true, slug: "" };
+            const prevWeek = previousWeekFind && { week: previousWeekFind.index, isDraft: previousWeekFind.draft, slug: `${previousWeekFind.index}` };
+            const nextWeekFind = weeks[weekIndex + 1] ?? { week: 11, draft: true, slug: "" };;
+            const nextWeek = nextWeekFind && { week: nextWeekFind.index, isDraft: nextWeekFind.draft, slug: `${nextWeekFind.index}` };
+
+            return {
+                previousPost: prevWeek,
+                nextPost: nextWeek,
+            };
+        } catch (error) {
+            console.error('Error getting adjacent posts:', error);
+            return { previousPost: null, nextPost: null };
+        }
+    }
+
+
+    // Get week for day
+    static async getWeekForDay(dayIndex: number): Promise<WeekLinkInfo | null> {
+        const weekNumner = Math.ceil(dayIndex / 7)
+        const week = await this.getWeekById(weekNumner);
+        return week && { week: week.index, isDraft: week.draft, slug: `${week.index}` };
     }
 
 }
