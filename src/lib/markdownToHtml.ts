@@ -1,7 +1,8 @@
 /**
- * Updated markdown processor with ImageKit integration and modal support
+ * Updated markdown processor with ImageKit integration, modal support, and GFM tables
  */
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
@@ -44,8 +45,9 @@ export default async function markdownToHtml(
   // Process custom image tags
   let processedMarkdown = processCustomImages(markdown, imageMapping);
 
-  // Process markdown with HTML support
+  // Process markdown with HTML support and GFM features (tables, strikethrough, etc.)
   const result = await remark()
+    .use(remarkGfm) // Add this for tables, strikethrough, task lists, etc.
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeStringify)
