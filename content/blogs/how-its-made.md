@@ -5,7 +5,7 @@ description: The tools I used to build this custom blog from scratch.
 publishdate: '2025-09-25'
 draft: false
 photos: ["foo", "bar"]
-tags: ["Programming"]
+tags: ["Programming", "Information"]
 thumb: thumb
 ---
 
@@ -20,7 +20,7 @@ I also checked out other blogging solutions like WordPress, BearBlog, Wix, Squar
 Then I realized: I’m a trained programmer. I could just build it myself!  
 
 # The Limitations
-My project came with a few interesting requirements.  
+My project came with a few interesting requirements.  A
 
 ### 1. Editable from my tablet
 I’ll have my work laptop with me on the trip, but I’d rather not use it for personal things like blogging. Instead, I plan to use my Samsung tablet. The catch is: I can’t really code on it. So editing should be limited to text writing and uploading images.  
