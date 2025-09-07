@@ -62,21 +62,53 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
       });
     }
 
-    // Add more icons based on other properties
-    // Example: if (dayInfo.hasVideo) icons.push({ src: videoIcon, alt: "Video", title: "Has video content" });
-    // Example: if (dayInfo.isSpecial) icons.push({ src: specialIcon, alt: "Special", title: "Special day" });
-
     return icons;
   };
 
   const icons = getIcons(dayInfo);
 
+  const renderIcons = (isTooltip: boolean = false) => {
+    if (icons.length === 0) return null;
+
+    const iconClasses = isTooltip
+      ? 'flex-shrink-0 opacity-100 brightness-0 invert' // White icons for tooltip
+      : `flex-shrink-0 ${!isDraft ? 'opacity-100 brightness-0' : 'opacity-50'}`; // Dark icons for overlay
+
+    const containerClasses = isTooltip
+      ? 'flex items-center space-x-1' // Inline for tooltip
+      : 'absolute top-1 right-1 flex items-center space-x-1 z-10'; // Positioned for overlay
+
+    return (
+      <div className={containerClasses}>
+        {icons.map((icon, index) => (
+          <Image
+            key={index}
+            src={icon.src}
+            alt={icon.alt}
+            title={icon.title}
+            width={icon.size || 16}
+            height={icon.size || 16}
+            className={iconClasses}
+            style={{
+              width: `${icon.size || 16}px`,
+              height: `${icon.size || 16}px`,
+            }}
+          />
+        ))}
+      </div>
+    );
+  };
+
   const publishedToolTip = (
-    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-3 py-2 rounded text-sm whitespace-nowrap z-20 shadow-lg max-w-xs">
-      <div className="font-medium">{dateString}</div>
+    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-3 py-2 rounded text-sm whitespace-nowrap z-20 shadow-lg max-w-sm">
+      <div className="flex items-center justify-between gap-2">
+        <div className="font-medium">{dateString}</div>
+        {/* Use shared render method for tooltip icons */}
+        {icons.length > 0 && renderIcons(true)}
+      </div>
 
       <div className="text-m text-gray-300 mt-1">
-        {dayInfo.description}
+        <p className='truncate'>{dayInfo.description}</p>
       </div>
       {/* Tooltip arrow */}
       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
@@ -142,30 +174,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
                 </div>
               </>
             )}
-
-            {/* Icons overlay - positioned in top right */}
-            {icons.length > 0 && (
-              <div className="absolute top-1 right-1 flex items-center space-x-1 z-10">
-                {icons.map((icon, index) => (
-                  <Image
-                    key={index}
-                    src={icon.src}
-                    alt={icon.alt}
-                    title={icon.title}
-                    width={icon.size || 16}
-                    height={icon.size || 16}
-                    className={`flex-shrink-0 ${!isDraft
-                        ? 'opacity-100 brightness-0'
-                        : 'opacity-50'
-                      }`}
-                    style={{
-                      width: `${icon.size || 16}px`,
-                      height: `${icon.size || 16}px`,
-                    }}
-                  />
-                ))}
-              </div>
-            )}
+            {renderIcons(false)}
           </div>
 
           {/* Bottom banner with day number only */}
