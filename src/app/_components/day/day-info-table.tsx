@@ -78,7 +78,7 @@ export default async function DayInfoTable(props: DayInfoTableProps) {
                 <StatsGrid stats={stats} location={props.frontmatter.location} />
 
                 {/* Mobile Navigation */}
-                <div className="flex justify-between gap-4 pt-4">
+                <div className="flex justify-between gap-4 pt-2">
                     <div className="flex-1">
                         <ArrowButton
                             direction="left"
