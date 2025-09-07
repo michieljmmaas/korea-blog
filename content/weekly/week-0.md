@@ -9,7 +9,7 @@ draft: false
 days:
   - '2025-09-25'
 icons: []
-thumb: 'thumb'
+thumb: 'room'
 ---
 # Week 0: Sep 25
 
