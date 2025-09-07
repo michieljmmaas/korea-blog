@@ -7,11 +7,11 @@ export default async function Weeks() {
 
 
     return (
-        <div>
+        <>
             <div className='sticky top-2 bg-white z-10 scroll-p-2'>
                 <Legend />
             </div>
-            <div className="flex flex-col gap-4 p-4 max-w-6xl mx-auto">
+            <div className="flex flex-col gap-4 p-2 max-w-6xl mx-auto">
                 {weekData.map((week, index) => {
                     return (
                         <div key={index}>
@@ -20,6 +20,6 @@ export default async function Weeks() {
                     )
                 })}
             </div>
-        </div>
+        </>
     );
 }

@@ -44,7 +44,7 @@ export default function WeekCard({ week, priorty }: WeekCardProps) {
             href={isDraft ? '#' : `/weeks/${week.index}`}
             className="group block"
         >
-            <div className={`bg-white rounded-sm shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
+            <div className={`bg-white rounded-md shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
                 ? 'opacity-60 cursor-not-allowed'
                 : 'hover:-translate-y-1 cursor-pointer'
                 }`}>
