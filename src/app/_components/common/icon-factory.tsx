@@ -4,6 +4,7 @@ import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
 import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tokyo.svg";
 import kimbapTaiwanIcon from "../../../../public/assets/blog/svg-icons/kimbap-taiwan.svg";
 import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/kimbap-hong-kong.svg";
+import kimbapNetherlandsIcon from "../../../../public/assets/blog/svg-icons/kimbap-netherlands.svg";
 import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
 import stepsIcon from "../../../../public/assets/blog/svg-icons/steps.svg";
@@ -11,6 +12,7 @@ import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 import culturalTokyoIcon from "../../../../public/assets/blog/svg-icons/cultural-tokyo.svg";
 import culturalTaiwanIcon from "../../../../public/assets/blog/svg-icons/cultural-taiwan.svg";
 import culturalHongKongIcon from "../../../../public/assets/blog/svg-icons/cultural-hong-kong.svg";
+import culturalNetherlandsIcon from "../../../../public/assets/blog/svg-icons/cultural-netherlands.svg";
 import { CityLocation } from '@/app/types';
 
 
@@ -25,17 +27,21 @@ const BASE_ICON_PATHS: Record<string, string> = {
 const LOCATION_SPECIFIC_ICONS: Record<string, Record<string, string>> = {
   kimbap: {
     Seoul: kimbapIcon,
+    Netherlands: kimbapNetherlandsIcon,
     Busan: kimbapIcon,
     Tokyo: kimbapTokyoIcon,
     'Hong Kong': kimbapHongKongIcon,
     Taiwan: kimbapTaiwanIcon,
+    Macao: kimbapTaiwanIcon,
   },
   cultural: {
     Seoul: culturalIcon,
+    Netherlands: culturalNetherlandsIcon,
     Busan: culturalIcon,
     Tokyo: culturalTokyoIcon,
     'Hong Kong': culturalHongKongIcon,
     Taiwan: culturalTaiwanIcon,
+    Macao: culturalTaiwanIcon,
   },
 };
 
@@ -71,6 +77,14 @@ const LOCATION_SPECIFIC_TITLES: Record<string, Record<string, { info: string; st
     Taiwan: {
       info: 'Xiaolongbao',
       stat: 'Xiaolongbao eaten',
+    },
+    Macao: {
+      info: 'Xiaolongbao',
+      stat: 'Xiaolongbao eaten',
+    },
+    Netherlands: {
+      info: 'Frikandelbroodjes',
+      stat: 'Frikandelbroodjes eaten',
     },
   },
   // Add more location-specific overrides as needed
@@ -121,12 +135,12 @@ export default function IconFactory({
       const locationPath = LOCATION_SPECIFIC_ICONS[name][location];
       if (locationPath) return locationPath;
     }
-    
+
     // Fall back to base icon
     if (BASE_ICON_PATHS[name]) {
       return BASE_ICON_PATHS[name];
     }
-    
+
     return null;
   };
 
@@ -147,23 +161,23 @@ export default function IconFactory({
   };
 
   const iconPath = getIconPath();
-  
+
   // Check if icon exists
   if (!iconPath) {
     return null;
   }
 
   // Use custom dimensions if provided, otherwise use preset size
-  const dimensions = customWidth && customHeight 
+  const dimensions = customWidth && customHeight
     ? { width: customWidth, height: customHeight }
     : ICON_SIZES[size];
 
   // Get the base className (only exists for preset sizes)
   const baseClassName = 'className' in dimensions ? dimensions.className : '';
-  
+
   // Combine size className with any custom className
-  const finalClassName = className 
-    ? `${baseClassName} ${className}` 
+  const finalClassName = className
+    ? `${baseClassName} ${className}`
     : `${baseClassName} object-contain`;
 
   const finalTitle = getTitle();
