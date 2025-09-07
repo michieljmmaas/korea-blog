@@ -47,6 +47,9 @@ function generateBlogFiles() {
 
   let locationSeed = {
     0: "Netherlands",
+    2: "Macao",
+    3: "Macao",
+    4: "Macao",
     29: "Busan",
     30: "Busan",
     31: "Busan",
@@ -118,6 +121,7 @@ function generateBlogFiles() {
     5: false,
     6: false,
     7: false,
+    8: false,
   };
 
   let photoSeed = {
@@ -125,6 +129,8 @@ function generateBlogFiles() {
   };
 
   let iconSeed = {
+    2: "music",
+    3: "music",
     24: "music",
     58: "music",
     64: "music",

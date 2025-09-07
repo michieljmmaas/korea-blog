@@ -10,11 +10,11 @@ const config: Config = {
   safelist: [
     // Pattern matching for background colors
     {
-      pattern: /bg-(indigo|purple|blue|red|green|emerald|orange|gray|yellow)-(100|500|600|800)/,
+      pattern: /bg-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber)-(100|300|400|500|600|800)/,
     },
     // Pattern matching for text colors
     {
-      pattern: /text-(indigo|purple|blue|red|green|emerald|orange|gray|yellow)-(100|500|600|800)/,
+      pattern: /text-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber)-(100|300|400|500|600|800)/,
     }
   ],
   theme: {

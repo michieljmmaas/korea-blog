@@ -145,7 +145,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
 
             {/* Icons overlay - positioned in top right */}
             {icons.length > 0 && (
-              <div className="absolute top-1 right-1 flex items-center space-x-1">
+              <div className="absolute top-1 right-1 flex items-center space-x-1 z-10">
                 {icons.map((icon, index) => (
                   <Image
                     key={index}
@@ -154,7 +154,10 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
                     title={icon.title}
                     width={icon.size || 16}
                     height={icon.size || 16}
-                    className="flex-shrink-0 opacity-50"
+                    className={`flex-shrink-0 ${!isDraft
+                        ? 'opacity-100 brightness-0'
+                        : 'opacity-50'
+                      }`}
                     style={{
                       width: `${icon.size || 16}px`,
                       height: `${icon.size || 16}px`,
