@@ -138,6 +138,7 @@ async function generateWeeklyPosts() {
                 draft: true,
                 days,
                 icons: [],
+                thumb: "thumb",
             };
 
             // Generate daily breakdown content

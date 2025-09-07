@@ -14,7 +14,8 @@ days:
   - '2025-10-14'
   - '2025-10-15'
   - '2025-10-16'
-icons: ['work', 'music']
+icons: []
+thumb: thumb
 ---
 # Week 3: Oct 10 - Oct 16
 

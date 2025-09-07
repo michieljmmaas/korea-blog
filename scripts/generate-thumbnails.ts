@@ -66,7 +66,7 @@ const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
   for (const post of days) {
     if (post.frontmatter.draft === false) {
       const dateString = post.frontmatter.date;
-      const imageLocation = dateString + "/thumb.heic";
+      const imageLocation = dateString + post.frontmatter.thumbnail;
       const safeFilename = generateSafeFilename(dateString);
       const localPath = path.join(dailyThumbnailsDir, safeFilename);
       const publicPath = `/thumbnails/days/${safeFilename}`;
@@ -120,7 +120,7 @@ const downloadWeeklyThumbnails = async (): Promise<Record<string, string>> => {
     }
 
     const weekIndex = week.index; // Adjust property name as needed based on your week data structure
-    const imageLocation = `weeks/${weekIndex}/thumb.heic`;
+    const imageLocation = `weeks/${weekIndex}/${week.thumb}`;
     const filename = `${weekIndex}.webp`;
     const localPath = path.join(weeklyThumbnailsDir, filename);
     const publicPath = `/thumbnails/weeks/${filename}`;
@@ -173,7 +173,7 @@ const downloadBlogPostThumbnails = async (): Promise<Record<string, string>> => 
     // Extract image path from the thumbnail URL
     // Assuming thumbnail is something like: "/images/thumbnails/post-1.jpg"
     // or an ImageKit URL, we need to get the path part
-    let imageLocation = "/blogs/" + post.frontmatter.slug + "/thumb.heic";
+    let imageLocation = "/blogs/" + post.frontmatter.slug + "/" + post.frontmatter.thumb;
     
     // If it's already a local path (starts with /), extract the relative path
     if (imageLocation.startsWith('/')) {

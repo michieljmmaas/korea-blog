@@ -32,6 +32,8 @@ async function generateBlogPosts() {
                 publishdate: date.toISOString().split('T')[0], 
                 draft: true,
                 tags: [],
+                thumb: "thumb",
+                photos: [],
                 // thumbnail: `/images/thumbnails/post-${i}.jpg`
             };
 

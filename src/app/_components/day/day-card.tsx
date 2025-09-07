@@ -14,7 +14,7 @@ interface DayCardProps {
 
 export default function DayCard({ day }: DayCardProps) {
     const { frontmatter } = day;
-    const imageSource = "/" + day.formattedDate + "/thumb.heic";
+    const imageSource = "days/" + day.formattedDate + "/" + day.frontmatter.thumbnail;
     const link = "/day/" + day.formattedDate;
 
     return (

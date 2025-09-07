@@ -14,7 +14,8 @@ days:
   - '2025-12-02'
   - '2025-12-03'
   - '2025-12-04'
-icons: ['music']
+icons: []
+thumb: thumb
 ---
 # Week 10: Nov 28 - Dec 4
 

@@ -16,10 +16,11 @@ export interface DayFrontmatter {
   icon: string;
   dayOfWeek: string;
   location: CityLocation;
-  photos: number[];
+  photos: string[];
   tags: string[];
   description: string;
   draft: boolean;
+  thumbnail: string;
   coordinates: {
     lat: number | null;
     lng: number | null;
@@ -38,8 +39,9 @@ export interface DayFrontmatter {
 export interface WeekData {
   index: number;
   title: string;
+  thumb: string;
   publishdate: string;
-  photos: number[];
+  photos: string[];
   tags: string[];
   location: CityLocation;
   draft: boolean;
@@ -70,6 +72,7 @@ export interface BlogPostFrontmatter {
   draft: boolean;
   tags: string[];
   photos: string[];
+  thumb: string;
 }
 
 export interface BlogPost {

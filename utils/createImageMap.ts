@@ -29,7 +29,7 @@ export function createForDay(day: DayFrontmatter): ImageMapping {
   const mapping: ImageMapping = {};
 
   day.photos.forEach(photoId => {
-    const basePath = `/${day.date}/photos/${photoId}.heic`;
+    const basePath = `/days/${day.date}/${photoId}`;
 
     mapping[photoId] = {
       // Portrait version - good for images taller than wide
@@ -51,7 +51,7 @@ export function createForWeek(weekData: WeekData): ImageMapping {
     const mapping: ImageMapping = {};
 
     weekData.photos.forEach(photoId => {
-        const basePath = `/weeks/${weekData.index}/photos/${photoId}.heic`;
+        const basePath = `/weeks/${weekData.index}/${photoId}`;
 
         mapping[photoId] = {
             // Portrait version - good for images taller than wide
@@ -73,7 +73,7 @@ export function createForBlog(blog: BlogPostFrontmatter): ImageMapping {
   const mapping: ImageMapping = {};
 
   blog.photos.forEach(photoId => {
-    const basePath = `/blogs/${blog.slug}/photos/${photoId}.heic`;
+    const basePath = `/blogs/${blog.slug}/${photoId}`;
 
     mapping[photoId] = {
       // Portrait version - good for images taller than wide

@@ -30,6 +30,7 @@ export class WeekDataService {
                 draft: data.draft ?? true,
                 days: data.days || [],
                 location: data.location,
+                thumb: data.thumb,
                 content,
                 slug: `week-${weekId}`,
                 icons: data.icons

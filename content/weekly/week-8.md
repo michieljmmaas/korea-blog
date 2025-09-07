@@ -15,6 +15,7 @@ days:
   - '2025-11-19'
   - '2025-11-20'
 icons: []
+thumb: thumb
 ---
 # Week 8: Nov 14 - Nov 20
 

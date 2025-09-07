@@ -64,8 +64,8 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
 
-  const photos = week.photos.map((number: Number) => `/weeks/${week.index}/photos/${number}.heic`);
-  photos.unshift(`/weeks/${week.index}/thumb.heic`);
+  const photos = week.photos.map((name: string) => `/weeks/${week.index}/${name}`);
+  photos.unshift(`/weeks/${week.index}/${week.thumb}`);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">

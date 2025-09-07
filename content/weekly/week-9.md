@@ -14,7 +14,8 @@ days:
   - '2025-11-25'
   - '2025-11-26'
   - '2025-11-27'
-icons: ['music']
+icons: []
+thumb: thumb
 ---
 # Week 9: Nov 21 - Nov 27
 

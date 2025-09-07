@@ -2,7 +2,7 @@
 index: 1
 title: 'Week 1: Sep 26 - Oct 2'
 publishdate: '2025-10-02'
-photos: []
+photos: [1, 2]
 tags: []
 location: Seoul
 draft: false
@@ -15,6 +15,7 @@ days:
   - '2025-10-01'
   - '2025-10-02'
 icons: ["music"]
+thumb: "thumb"
 ---
 # Week 1: Sep 26 - Oct 2
 

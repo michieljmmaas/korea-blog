@@ -27,8 +27,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       return (<Draft />)
     }
 
-    const photos = post.frontmatter.photos.map((number: Number) => `/${post.frontmatter.date}/photos/${number}.heic`);
-    photos.unshift(`/${post.frontmatter.date}/thumb.heic`);
+    const photos = post.frontmatter.photos.map((name: string) => `days/${post.frontmatter.date}/${name}`);
+    photos.unshift(`days/${post.frontmatter.date}/${post.frontmatter.thumbnail}`);
 
     const map = createForDay(post.frontmatter);
 

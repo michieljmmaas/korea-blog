@@ -73,6 +73,7 @@ stats:
   cultural: ${randomCultural}
   steps: ${randomSteps}
 tags: []
+thumbnail: "thumb"
 draft: ${seedEntry.draft || false}
 coordinates:
   lat: null

@@ -16,7 +16,7 @@ export default function BlogPostHeader({ post }: BlogPostHeaderProps) {
         day: 'numeric'
     });
 
-    const source = "/blogs/" + post.slug + "/thumb.heic";
+    const source = "/blogs/" + post.slug + "/" + post.frontmatter.thumb;
 
     return (
         <header className="w-full">

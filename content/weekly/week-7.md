@@ -14,7 +14,8 @@ days:
   - '2025-11-11'
   - '2025-11-12'
   - '2025-11-13'
-icons: ['work']
+icons: []
+thumb: thumb
 ---
 # Week 7: Nov 7 - Nov 13
 
