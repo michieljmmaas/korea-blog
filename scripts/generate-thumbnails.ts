@@ -66,7 +66,7 @@ const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
   for (const post of days) {
     if (post.frontmatter.draft === false) {
       const dateString = post.frontmatter.date;
-      const imageLocation = dateString + post.frontmatter.thumbnail;
+      const imageLocation = "days/" + dateString + "/" + post.frontmatter.thumbnail;
       const safeFilename = generateSafeFilename(dateString);
       const localPath = path.join(dailyThumbnailsDir, safeFilename);
       const publicPath = `/thumbnails/days/${safeFilename}`;
