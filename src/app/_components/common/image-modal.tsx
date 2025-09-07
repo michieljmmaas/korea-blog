@@ -141,7 +141,6 @@ const ImageModal = ({
             pinch={{ step: 5 }}
             doubleClick={{
               disabled: false,
-              step: 0.7,
               mode: "reset"
             }}
             limitToBounds={false}
