@@ -17,7 +17,7 @@ const Header = () => {
             className={`relative group transition-colors ${pathname === "/" ? "font-bold text-black" : ""
               }`}
           >
-            Seoullo
+            Seoulo
             <span className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"
               }`}></span>
           </Link>
