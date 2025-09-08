@@ -11,4 +11,6 @@ days:
 icons: []
 thumb: 'room'
 ---
-This spans the weeks before
+This spans the weeks before. 
+
+I will add more content later.
