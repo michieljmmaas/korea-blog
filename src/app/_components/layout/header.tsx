@@ -23,8 +23,8 @@ const Header = () => {
     <>
       <header className="mb-5 mt-8">
         <div className="flex items-center justify-between gap-4">
-          {/* Left side - Menu button (mobile) and Logo */}
-          <div className="flex items-center gap-4">
+          {/* Left side - Menu button (mobile), Logo, and Navigation */}
+          <div className="flex items-center gap-4 md:gap-8">
             {/* Hamburger Menu Button - Only visible on small screens */}
             <button
               onClick={toggleMenu}
@@ -50,16 +50,16 @@ const Header = () => {
               </Link>
               .
             </h2>
-          </div>
 
-          {/* Center - Navigation (hidden on small screens) */}
-          <nav className="hidden sm:flex items-center gap-2 md:gap-4 lg:gap-6 flex-1 justify-center max-w-lg">
-            <HeaderLink pathname={"/grid"} title={"Grid"} currentPathName={pathname}/>
-            <HeaderLink pathname={"/weeks"} title={"Weeks"} currentPathName={pathname}/>
-            <HeaderLink pathname={"/blogs"} title={"Blogs"} currentPathName={pathname}/>
-            <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname}/>
-            <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname}/>
-          </nav>
+            {/* Left - Navigation (hidden on small screens) */}
+            <nav className="hidden sm:flex items-center gap-2 md:gap-4 lg:gap-6">
+              <HeaderLink pathname={"/grid"} title={"Grid"} currentPathName={pathname}/>
+              <HeaderLink pathname={"/weeks"} title={"Weeks"} currentPathName={pathname}/>
+              <HeaderLink pathname={"/blogs"} title={"Blogs"} currentPathName={pathname}/>
+              <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname}/>
+              <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname}/>
+            </nav>
+          </div>
 
           {/* Right side - Profile Picture */}
           <div className="flex-shrink-0">
