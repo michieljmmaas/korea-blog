@@ -62,7 +62,7 @@ export interface WeekLinkInfo {
   isDraft: boolean;
 }
 
-export type CityLocation = 'Netherlands' | 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan' | 'Macao';
+export type CityLocation = 'Netherlands' | 'Seoul' | 'Busan' | 'Tokyo' | 'Hong Kong' | 'Taiwan' | 'Macau';
 
 export interface BlogPostFrontmatter {
   slug: string;

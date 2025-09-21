@@ -10,7 +10,7 @@ export const getLocationColor = (location: CityLocation): string => {
   if (loc.includes('japan') || loc.includes('tokyo') || loc.includes('osaka') || loc.includes('kyoto')) {
     return 'bg-purple-600';
   }
-  if (loc.includes('macao')) {
+  if (loc.includes('macau')) {
     return 'bg-amber-400';
   }
   if (loc.includes('seoul')) {

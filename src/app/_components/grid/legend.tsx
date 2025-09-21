@@ -5,7 +5,7 @@ import IconFactory, { CityLocation } from "../common/icon-factory";
 export default function Legend() {
     const legendItems = [
         { name: "Netherlands" },
-        { name: "Macao" },
+        { name: "Macau" },
         { name: "Seoul" },
         { name: "Busan" },
         { name: "Tokyo" },

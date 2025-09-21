@@ -47,9 +47,9 @@ function generateBlogFiles() {
 
   let locationSeed = {
     0: "Netherlands",
-    2: "Macao",
-    3: "Macao",
-    4: "Macao",
+    2: "Macau",
+    3: "Macau",
+    4: "Macau",
     29: "Busan",
     30: "Busan",
     31: "Busan",

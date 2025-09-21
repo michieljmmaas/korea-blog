@@ -32,7 +32,7 @@ const LOCATION_SPECIFIC_ICONS: Record<string, Record<string, string>> = {
     Tokyo: kimbapTokyoIcon,
     'Hong Kong': kimbapHongKongIcon,
     Taiwan: kimbapTaiwanIcon,
-    Macao: kimbapTaiwanIcon,
+    Macau: kimbapTaiwanIcon,
   },
   cultural: {
     Seoul: culturalIcon,
@@ -41,7 +41,7 @@ const LOCATION_SPECIFIC_ICONS: Record<string, Record<string, string>> = {
     Tokyo: culturalTokyoIcon,
     'Hong Kong': culturalHongKongIcon,
     Taiwan: culturalTaiwanIcon,
-    Macao: culturalTaiwanIcon,
+    Macau: culturalTaiwanIcon,
   },
 };
 
@@ -78,7 +78,7 @@ const LOCATION_SPECIFIC_TITLES: Record<string, Record<string, { info: string; st
       info: 'Xiaolongbao',
       stat: 'Xiaolongbao eaten',
     },
-    Macao: {
+    Macau: {
       info: 'Xiaolongbao',
       stat: 'Xiaolongbao eaten',
     },
