@@ -1,0 +1,70 @@
+foods:
+  - name: "Kimchi Jjigae"
+    tried: true
+    description: "A hearty Korean stew made with fermented kimchi, pork, and vegetables. The perfect comfort food for cold Seoul nights."
+    rating: 5
+    image: "kimchi-jjigae.jpg"
+    location: "Seoul, South Korea"
+    
+  - name: "Bulgogi"
+    tried: true
+    description: "Thinly sliced marinated beef grilled to perfection. Sweet, savory, and incredibly tender - a Korean BBQ classic."
+    rating: 5
+    image: "bulgogi.jpg"
+    location: "Seoul, South Korea"
+    
+  - name: "Bibimbap"
+    tried: true
+    description: "A colorful bowl of rice topped with seasoned vegetables, meat, and a fried egg. Each bite is a perfect harmony of flavors."
+    rating: 4
+    image: "bibimbap.jpg"
+    location: "Seoul, South Korea"
+    
+  - name: "Tteokbokki"
+    tried: false
+    description: ""
+    rating: 0
+    image: ""
+    location: "Seoul, South Korea"
+    
+  - name: "Korean Fried Chicken"
+    tried: false
+    description: ""
+    rating: 0
+    image: ""
+    location: "Seoul, South Korea"
+    
+  - name: "Japchae"
+    tried: true
+    description: "Sweet potato noodles stir-fried with vegetables and meat. The texture is unique and addictive!"
+    rating: 4
+    image: "japchae.jpg"
+    location: "Seoul, South Korea"
+    
+  - name: "Hotteok"
+    tried: false
+    description: ""
+    rating: 0
+    image: ""
+    location: "Seoul, South Korea"
+    
+  - name: "Samgyeopsal"
+    tried: true
+    description: "Thick-cut pork belly grilled at the table. The crispy exterior and tender interior made for an unforgettable meal."
+    rating: 5
+    image: "samgyeopsal.jpg"
+    location: "Seoul, South Korea"
+    
+  - name: "Naengmyeon"
+    tried: false
+    description: ""
+    rating: 0
+    image: ""
+    location: "Seoul, South Korea"
+    
+  - name: "Korean Corn Dogs"
+    tried: true
+    description: "Crispy corn dogs with various coatings - from potato cubes to rice puffs. A fun street food experience!"
+    rating: 3
+    image: "korean-corn-dogs.jpg"
+    location: "Seoul, South Korea"

@@ -81,3 +81,12 @@ export interface BlogPost {
   fileName: string;
   slug: string;
 }
+
+export interface Food {
+  name: string;
+  tried: boolean;
+  description: string;
+  rating: number;
+  image: string;
+  location: string;
+}

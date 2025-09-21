@@ -34,6 +34,7 @@ const Header = () => {
             <HeaderLink pathname={"/weeks"} title={"Weeks"} currentPathName={pathname}/>
             <HeaderLink pathname={"/blogs"} title={"Blogs"} currentPathName={pathname}/>
             <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname}/>
+            <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname}/>
           </nav>
         </div>
 
