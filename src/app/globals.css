@@ -44,3 +44,10 @@
 .steps-text {
     color: #2d8f47;
 }
+
+.emoji-flag {
+  display: inline-block;
+  width: 1em;       /* match current font size */
+  height: 1em;      /* keep square aspect */
+  vertical-align: -0.2em; /* nudge down so it aligns with baseline */
+}

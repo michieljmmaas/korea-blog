@@ -5,6 +5,8 @@ import { PostBody } from '@/app/_components/common/post-body';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { Draft } from '@/app/_components/common/draft';
 import { createForBlog } from '../../../../utils/createImageMap';
+import { processDayReferences } from '../../../../utils/updateDayReferences';
+import twemoji from "twemoji";
 
 interface BlogPostPageProps {
     params: Promise<{
@@ -26,7 +28,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const relatedPosts = await getRelatedBlogPosts(post);
     const mapping = createForBlog(post.frontmatter);
-    const content = await markdownToHtml(post.content || "", mapping);
+    const processedContent = await processDayReferences(post.content);
+    const content = await markdownToHtml(processedContent || "", mapping);
 
     return (
         <div className="min-h-screen">

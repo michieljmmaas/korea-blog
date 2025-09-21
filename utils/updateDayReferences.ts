@@ -1,4 +1,5 @@
 import { getBlogForNumber } from "@/lib/dayService";
+import twemoji from "twemoji";
 
 /**
  * Processes <Day X> references in markdown/HTML content and converts them to links
@@ -67,7 +68,14 @@ export async function processDayReferences(
         result = result.replace(original, replacement);
     }
 
-    return result;
+    const withFlags = twemoji.parse(result, {
+        folder: "svg",
+        ext: ".svg",
+        className: "emoji-flag"
+    });
+
+
+    return withFlags;
 }
 
 /**

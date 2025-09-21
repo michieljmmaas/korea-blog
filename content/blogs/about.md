@@ -37,3 +37,15 @@ From time to time, I’ll write blog posts on specific topics—like my accommod
 Read these if you’re interested in deeper dives or my thoughts on particular subjects.  
 
 You can find them in the **Blogs** section.  
+
+## Dates I am looking forward to:
+- <Day 2> and <Day 3> - TWICE Concerts 🎶 🧡 🩷
+- <Day 11> - Chuseok (Korean Thanksgiving) 🍂 🇰🇷
+- <Day 23> - TWICE Fanmeeting 🎶 🧡 🩷
+- <Day 29> - Start of my trip to Busan 🚆 🐟
+- <Day 34> - Dutch election day 🗳️ 🇳🇱
+- <Day 36> - Halloween  🎃 🕷️
+- <Day 43> - Start of my trip to Japan  🇯🇵 🍣
+- <Day 55> - Start of my trip to Taiwan 🇹🇼 🏞️
+- <Day 63> - Start of my trip to Hong Kong 🇭🇰 🌆
+- <Day 64> and <Day 65> - MAMA (Kpop festial) 🎶 🏆
