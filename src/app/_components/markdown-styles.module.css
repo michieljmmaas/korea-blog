@@ -239,6 +239,7 @@
   line-height: 1.375;
 }
 
+
 /* Day link styling - using :global() to target the dayLink class */
 .markdown :global(.dayLink) {
   position: relative;
@@ -249,16 +250,20 @@
   color: #6b7280;
   /* text-gray-500 */
   text-decoration: none;
-  transition: color 0.15s ease-in-out;
   display: inline-block;
 }
 
-.markdown :global(.dayLink:hover) {
+/* Interactive styles only for clickable links (a tags) */
+.markdown :global(a.dayLink) {
+  transition: color 0.15s ease-in-out;
+}
+
+.markdown :global(a.dayLink:hover) {
   color: #000000;
 }
 
-/* Sliding underline effect */
-.markdown :global(.dayLink::after) {
+/* Sliding underline effect only for clickable links */
+.markdown :global(a.dayLink::after) {
   content: '';
   position: absolute;
   bottom: 0;
@@ -270,18 +275,14 @@
   transition: width 0.3s ease-in-out;
 }
 
-.markdown :global(.dayLink:hover::after) {
+.markdown :global(a.dayLink:hover::after) {
   width: 100%;
 }
 
-/* For span dayLinks (non-clickable) */
+/* Draft days (span) - same appearance as links but no interactions */
 .markdown :global(span.dayLink) {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #d1d5db;
-  /* lighter gray */
-  font-style: italic;
-  display: inline;
+  /* Inherits the base .dayLink styles above */
+  /* No additional styling needed - will look identical to links */
 }
 
 /* Image container styles */

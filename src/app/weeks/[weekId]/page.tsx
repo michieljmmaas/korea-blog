@@ -9,6 +9,7 @@ import { createForWeek } from '../../../../utils/createImageMap';
 import { WeekData } from "@/app/types";
 import RelatedPosts from "@/app/_components/blog/related-posts";
 import { getBlogpostsForWeek } from "@/lib/blogService";
+import { processDayReferences } from "../../../../utils/updateDayReferences";
 
 
 
@@ -56,7 +57,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
       .replaceAll('<Thu>', `<a href="${"../day/" + week.days[6]}" class="dayLink">Thursday</a>`)
   }
 
-  const processedContent = simpleReplace(week.content || "", week);
+
+  const weekReplaced = simpleReplace(week.content || "", week);
+  const processedContent = await processDayReferences(weekReplaced);
 
   const content = await markdownToHtml(processedContent || "", imageMapping);
   const dayPosts = await getBlogPostsForDates(week.days);

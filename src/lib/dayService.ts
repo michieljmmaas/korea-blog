@@ -10,32 +10,32 @@ function formatDate(date: Date): string {
 
 export async function getBlogPosts(): Promise<TripDay[]> {
   const blogPostsDir = path.join(process.cwd(), 'content/days');
-  
+
   try {
     const files = fs.readdirSync(blogPostsDir);
     const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
-    
+
     const days: TripDay[] = [];
-    
+
     for (const file of markdownFiles) {
       const filePath = path.join(blogPostsDir, file);
       const fileContent = fs.readFileSync(filePath, 'utf8');
       const { frontmatter, content } = parseMarkdown(fileContent);
-      
+
       // Extract date from filename (YYYY-MM-DD.md)
       const dateString = file.replace('.md', '');
       const date = new Date(dateString);
-      
+
       if (!isNaN(date.getTime())) {
         days.push({
           day: frontmatter.day,
           date: date,
           formattedDate: formatDate(date),
-          fullDate: date.toLocaleDateString('en-US', { 
+          fullDate: date.toLocaleDateString('en-US', {
             weekday: 'long',
             year: 'numeric',
-            month: 'long', 
-            day: 'numeric' 
+            month: 'long',
+            day: 'numeric'
           }),
           frontmatter: frontmatter as DayFrontmatter,
           content: content,
@@ -43,14 +43,14 @@ export async function getBlogPosts(): Promise<TripDay[]> {
         });
       }
     }
-    
+
     // Sort by day number
     days.sort((a, b) => a.day - b.day);
-    
+
     return days;
   } catch (error) {
     console.error('Error reading blog posts:', error);
-    
+
     return [];
   }
 }
@@ -67,6 +67,12 @@ export async function getBlogPostsForDates(dates: string[]): Promise<DayFrontmat
     dates.map(async (day) => {
       return getBlogPost(day).then(data => data.frontmatter);
     }));
+}
+
+export async function getBlogForNumber(index: number): Promise<DayFrontmatter> {
+  const slugs = await getAllBlogPostSlugs();
+  const slug = slugs[index];
+  return getBlogPost(slug).then(data => data.frontmatter);
 }
 
 
@@ -116,10 +122,10 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
 export async function getLatestDay(): Promise<TripDay | null> {
   try {
     const days = await getBlogPosts();
-    
+
     // Filter out drafts and find the one with highest date
     const publishedDays = days.filter(day => day.frontmatter.draft === false);
-    
+
     if (publishedDays.length === 0) {
       return null;
     }
