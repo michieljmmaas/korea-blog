@@ -52,13 +52,13 @@ export interface WeekData {
 }
 
 export interface PostLinkInfo {
-  slug: string; 
+  slug: string;
   title: string;
 }
 
 export interface WeekLinkInfo {
-  week: number; 
-  slug: string, 
+  week: number;
+  slug: string,
   isDraft: boolean;
 }
 
@@ -83,10 +83,21 @@ export interface BlogPost {
 }
 
 export interface Food {
-  name: string;
+  nativeName: string;
+  phoneticName: string;
   tried: boolean;
   description: string;
   rating: number;
   image: string;
   location: string;
+  category: string;
+  review: string;
+}
+
+export interface LocationCategoryGroupedFoods {
+  location: string;
+  categories: {
+    category: string;
+    foods: Food[]
+  }[]
 }

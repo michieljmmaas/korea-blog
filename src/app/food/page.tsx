@@ -1,13 +1,13 @@
 import { FoodService } from "@/lib/foodService";
-import { FoodItem } from "../_components/food/food-item";
+import { FoodLocation } from "../_components/food/food-location";
 
 export default async function Food() {
-    const foods = await FoodService.getAllFoods();
+    const foods = await FoodService.getAllFoodsGrouped();
 
 
     return <div>
-        {foods.map((food) => (
-            <FoodItem key={food.name} food={food} />
+        {foods.map((locationGroupedFoods) => (
+            <FoodLocation key={locationGroupedFoods.location} locationData={locationGroupedFoods} />
         ))}
     </div>
 }

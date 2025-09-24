@@ -1,16 +1,10 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
-import { ChevronDown, Star, MapPin, CheckCircle2, Circle } from 'lucide-react';
+import { ChevronDown, Star, CheckCircle2, Circle } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-interface Food {
-  name: string;
-  tried: boolean;
-  description: string;
-  rating: number;
-  location: string;
-}
+import { Food } from '@/app/types';
+import SingleImageWithModal from '../common/single-image-with-modal';
 
 export const FoodItem = ({ food }: { food: Food }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,84 +15,109 @@ export const FoodItem = ({ food }: { food: Food }) => {
         key={i}
         className={cn(
           "h-4 w-4",
-          i < rating ? "fill-accent text-accent" : "text-muted-foreground"
+          i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
         )}
       />
     ));
   };
 
-  const toggleOpen = () => setIsOpen(!isOpen);
 
-  if (!food.tried) {
-    return (
-      <div className="transition-all duration-200 hover:shadow-md border border-border rounded-lg">
-        <div className="p-4">
-          <div className="flex items-center gap-3">
-            <Circle className="h-5 w-5 text-muted-foreground flex-shrink-0" />
-            <div className="flex-1">
-              <h3 className="font-medium text-foreground">{food.name}</h3>
-              <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                <MapPin className="h-3 w-3" />
-                {food.location}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const toggleOpen = () => {
+    if (food.review) {
+      setIsOpen(!isOpen);
+    }
+  };
+
 
   return (
-    <div className="transition-all duration-200 hover:shadow-md border border-border rounded-lg">
+    <div className="transition-all duration-400 border border-border rounded-lg">
       <div className="p-4 cursor-pointer" onClick={toggleOpen}>
         <div className="flex items-center gap-3">
-          <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0" />
+          {food.tried ? (
+            <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
+
+          ) : (
+            <Circle className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+          )}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="font-medium text-foreground">{food.name}</h3>
-              <span className="px-2 py-1 text-xs rounded-md bg-success/10 text-success border border-success/20">
-                Tried
-              </span>
+              <h3
+                className={cn(
+                  "font-medium",
+                  food.tried ? "text-green-600" : "text-foreground"
+                )}
+              >
+                {food.nativeName}
+              </h3>
+              {food.phoneticName && (
+                <span
+                  className={cn(
+                    "text-xs italic",
+                    food.tried ? "text-green-600" : "text-muted-foreground"
+                  )}
+                >
+                  ({food.phoneticName})
+                </span>
+              )}
             </div>
-            <p className="text-sm text-muted-foreground flex items-center gap-1">
-              <MapPin className="h-3 w-3" />
-              {food.location}
-            </p>
+            {food.description && (
+              <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                {food.description}
+              </p>
+            )}
           </div>
           <ChevronDown
             className={cn(
-              "h-4 w-4 text-muted-foreground transition-transform duration-200",
+              "h-4 w-4 text-muted-foreground transition-transform duration-400",
               isOpen && "transform rotate-180"
             )}
           />
         </div>
+
       </div>
-      
+
       <div
         className={cn(
-          "overflow-hidden transition-all duration-200 ease-in-out",
+          "overflow-hidden transition-all duration-400 ease-in-out",
           isOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="px-4 pb-4">
           <div className="pt-4 border-t border-border">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-foreground">Rating:</span>
-                <div className="flex items-center gap-1">
-                  {renderStars(food.rating)}
-                  <span className="text-sm text-muted-foreground ml-1">
-                    ({food.rating}/5)
-                  </span>
+            {food.image && (
+              <div className="mb-4 rounded-lg overflow-hidden bg-muted">
+                <img
+                  src={food.image}
+                  alt={food.nativeName}
+                  className="w-full h-48 sm:h-64 object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </div>
+            )}
+
+            <div className="space-y-4">
+              {food.review && (
+                <div>
+                  <h4 className="text-sm font-medium text-foreground mb-2">My Review:</h4>
+                  <div className="flex items-center gap-2 mb-2">
+                    {renderStars(food.rating)}
+                    <span className="text-sm text-muted-foreground">({food.rating}/5)</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {food.review}
+                  </p>
                 </div>
-              </div>
-              
-              <div>
-                <h4 className="text-sm font-medium text-foreground mb-2">My Review:</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {food.description}
-                </p>
-              </div>
+              )}
+
+              {food.image && (
+                <SingleImageWithModal
+                  src={"https://ik.imagekit.io/yyahqsrfe/food/" + food.image}
+                  alt={food.image}
+                  orientation={'landscape'}
+                />
+              )}
             </div>
           </div>
         </div>
