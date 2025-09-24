@@ -6,7 +6,8 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { Draft } from '@/app/_components/common/draft';
 import { createForBlog } from '../../../../utils/createImageMap';
 import { processDayReferences } from '../../../../utils/updateDayReferences';
-import twemoji from "twemoji";
+import { ScrollToTop } from '@/app/_components/common/scroll-to-top';
+import { BlogPostWrapper } from '@/app/_components/blog/blog-post-wrapper';
 
 interface BlogPostPageProps {
     params: Promise<{
@@ -32,18 +33,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const content = await markdownToHtml(processedContent || "", mapping);
 
     return (
-        <div className="min-h-screen">
-            <article className="">
-                <BlogPostHeader post={post} />
-                <PostBody content={content} />
-            </article>
+        <BlogPostWrapper>
+            <div className="min-h-screen">
+                <article className="">
+                    <BlogPostHeader post={post} />
+                    <PostBody content={content} />
+                </article>
 
-            {relatedPosts.length > 0 && (
-                <div className="max-w-4xl mr-auto">
-                    <RelatedPosts posts={relatedPosts} />
-                </div>
-            )}
-        </div>
+                {relatedPosts.length > 0 && (
+                    <div className="max-w-4xl mr-auto">
+                        <RelatedPosts posts={relatedPosts} />
+                    </div>
+                )}
+            </div>
+        </BlogPostWrapper>
     );
 }
 
