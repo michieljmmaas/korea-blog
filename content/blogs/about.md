@@ -38,6 +38,17 @@ Read these if you’re interested in deeper dives or my thoughts on particular s
 
 You can find them in the **Blogs** section.  
 
+## Food
+I also have a list of Foods I want to eat. When I have tried the food I will give it a score out of 5, and upload a picture of it. 
+
+You can find them in the **Food** section.  
+
+## Goals
+Lastly, I have some goals I want to achieve while I am in South Korea. I will cover the goals with a standard blogpost. 
+
+You can find them in the **Goals** section.  
+
+
 ## Dates I am looking forward to:
 - <Day 2> and <Day 3> - TWICE Concerts 🎶 🧡 🩷
 - <Day 11> - Chuseok (Korean Thanksgiving) 🍂 🇰🇷
