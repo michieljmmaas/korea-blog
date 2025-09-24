@@ -101,3 +101,9 @@ export interface LocationCategoryGroupedFoods {
     foods: Food[]
   }[]
 }
+
+export interface Goal {
+  text: string;
+  completed: boolean;
+  link: string;
+}

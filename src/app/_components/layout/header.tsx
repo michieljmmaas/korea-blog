@@ -53,11 +53,12 @@ const Header = () => {
 
             {/* Left - Navigation (hidden on small screens) */}
             <nav className="hidden sm:flex items-center gap-2 md:gap-4 lg:gap-6">
-              <HeaderLink pathname={"/grid"} title={"Grid"} currentPathName={pathname}/>
-              <HeaderLink pathname={"/weeks"} title={"Weeks"} currentPathName={pathname}/>
-              <HeaderLink pathname={"/blogs"} title={"Blogs"} currentPathName={pathname}/>
-              <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname}/>
-              <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname}/>
+              <HeaderLink pathname={"/grid"} title={"Grid"} currentPathName={pathname} />
+              <HeaderLink pathname={"/weeks"} title={"Weeks"} currentPathName={pathname} />
+              <HeaderLink pathname={"/blogs"} title={"Blogs"} currentPathName={pathname} />
+              <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname} />
+              <HeaderLink pathname={"/goals"} title={"Goals"} currentPathName={pathname} />
+              <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname} />
             </nav>
           </div>
 
@@ -81,11 +82,11 @@ const Header = () => {
       {/* Mobile Slide-out Menu */}
       <div className={`sm:hidden fixed inset-0 z-50 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         {/* Backdrop */}
-        <div 
+        <div
           className="absolute inset-0 bg-black bg-opacity-50"
           onClick={closeMenu}
         />
-        
+
         {/* Slide-out Menu */}
         <div className={`absolute top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           {/* Menu Header */}
@@ -105,40 +106,47 @@ const Header = () => {
           {/* Menu Content */}
           <nav className="p-4">
             <div className="flex flex-col space-y-4">
-              <Link 
-                href="/grid" 
+              <Link
+                href="/grid"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/grid" ? "bg-gray-100 text-black" : "text-gray-700"}`}
                 onClick={closeMenu}
               >
                 Grid
               </Link>
-              <Link 
-                href="/weeks" 
+              <Link
+                href="/weeks"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/weeks" ? "bg-gray-100 text-black" : "text-gray-700"}`}
                 onClick={closeMenu}
               >
                 Weeks
               </Link>
-              <Link 
-                href="/blogs" 
+              <Link
+                href="/blogs"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/blogs" ? "bg-gray-100 text-black" : "text-gray-700"}`}
                 onClick={closeMenu}
               >
                 Blogs
               </Link>
-              <Link 
-                href="/blogs/about" 
+              <Link
+                href="/blogs/about"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/blogs/about" ? "bg-gray-100 text-black" : "text-gray-700"}`}
                 onClick={closeMenu}
               >
                 About
               </Link>
-              <Link 
-                href="/food" 
+              <Link
+                href="/food"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/food" ? "bg-gray-100 text-black" : "text-gray-700"}`}
                 onClick={closeMenu}
               >
                 Food
+              </Link>
+              <Link
+                href="/goals"
+                className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/goal" ? "bg-gray-100 text-black" : "text-gray-700"}`}
+                onClick={closeMenu}
+              >
+                Goals
               </Link>
             </div>
           </nav>
