@@ -1,4 +1,4 @@
-'---
+---
 index: 0
 title: 'Week 0: Sep 25'
 publishdate: '2025-09-25'
