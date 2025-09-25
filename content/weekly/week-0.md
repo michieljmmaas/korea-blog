@@ -46,8 +46,6 @@ I woke up really early wednesday (like, 5:00 am). I was so stressed because ther
 
 But when after I started collected my books, I found the summaries and notes I made for my self when working trough my studybooks. Years of dilligent notetaking, and summarizing was finally paying of. Highlighting import rules, and using color coded booksmarks speed up the process immensely. People say sometimes say "This is problem for future me", in this case it was a gift from "past me". 
 
-<Img korean>
-
 This was immensely motivating, I hardly noticed my lack of sleep through the day. I was able to update my blog with all the final features easily, send out my last emails, did my final shopping, even the package with my new shoes arrived a day ahead of schedule! 
 
 I had bought tickets for a screening of the movie Yiyi in Lumen wednesday night. On tuesday I had toughts of cancelling my tickets to make up for my lost time. But arround dinner time was able to tick of my last to-do, and finally found some time to relax. I thought the movie was touching and funny, but in the end had I had some trouble with staying awake. 
