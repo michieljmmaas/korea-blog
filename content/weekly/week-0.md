@@ -2,7 +2,7 @@
 index: 0
 title: 'Week 0: Sep 25'
 publishdate: '2025-09-25'
-photos: ['planning', 'todo', 'twice-schedule', 'gate', 'kozijn', 'korean', 'yiyi']
+photos: ['planning', 'todo', 'twice-schedule', "gate", "kozijn", "korean", "yiyi"]
 tags: []
 location: Netherlands
 draft: false
