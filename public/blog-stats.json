@@ -1,22 +1,49 @@
 {
-  "daily": [],
-  "cumulative": [],
-  "summary": {
-    "totalDays": 0,
-    "dateRange": {},
-    "totals": {
-      "kimbap": 0,
+  "daily": [
+    {
+      "date": "2025-09-26",
+      "kimbap": 1,
+      "commits": 0,
+      "worked": 0,
+      "cultural": 0,
+      "steps": 3651,
+      "tags": 0,
+      "thumbnail": 0,
+      "coordinates": 0,
+      "lat": 0,
+      "lng": 0,
+      "work": 0
+    }
+  ],
+  "cumulative": [
+    {
+      "date": "2025-09-26",
+      "kimbap": 1,
       "commits": 0,
       "cultural": 0,
-      "steps": 0,
+      "steps": 3651,
+      "worked": 0
+    }
+  ],
+  "summary": {
+    "totalDays": 1,
+    "dateRange": {
+      "start": "2025-09-26",
+      "end": "2025-09-26"
+    },
+    "totals": {
+      "kimbap": 1,
+      "commits": 0,
+      "cultural": 0,
+      "steps": 3651,
       "worked": 0
     },
     "averages": {
-      "kimbap": "NaN",
-      "commits": "NaN",
-      "cultural": "NaN",
-      "steps": null,
-      "worked": "NaN"
+      "kimbap": "1.00",
+      "commits": "0.00",
+      "cultural": "0.00",
+      "steps": 3651,
+      "worked": "0.00"
     }
   }
 }
