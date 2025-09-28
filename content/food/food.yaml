@@ -10,12 +10,12 @@
 - nativeName: 김밥
   phoneticName: Gimbap
   description: Seaweed rice roll, similar to sushi
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: kim-bap
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'I will keeping eating these for as long as I am here. Will update the picture once I find the best one'
 - nativeName: 토스트
   phoneticName: Toseuteu
   description: Sweet or savory street toast
@@ -754,3 +754,23 @@
   location: Macau
   category: 🐔 Chicken
   review: ''
+- nativeName: 月饼
+  phoneticName: Yuèbǐng
+  description: Mooncake (traditional festival pastry with sweet or savory filling)
+  tried: true
+  rating: 3
+  image: mooncake
+  location: Macau
+  category: 🥮 Pastry
+  review: 'I had one with greenbean paste, and another with lotus seeds. Both strong flavors. Not really my style, but I see the potential.'
+
+- nativeName: 流沙包
+  phoneticName: Liúshā Bāo
+  description: Steamed bun with molten salted egg yolk filling
+  tried: true
+  rating: 2
+  image: egg-bao
+  location: Macau
+  category: 🍢 Street Food
+  review: 'I tought I was getting the one with porkshop ):. This just tasted weird.'
+
