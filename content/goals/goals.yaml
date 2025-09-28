@@ -1,6 +1,6 @@
 - text: "See TWICE live"
-  completed: false
-  link: ""
+  completed: true
+  link: "twice-in-macau"
 - text: "Attend an E-sports match live"
   completed: false
   link: null
