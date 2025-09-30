@@ -6,7 +6,6 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { Draft } from '@/app/_components/common/draft';
 import { createForBlog } from '../../../../utils/createImageMap';
 import { processDayReferences } from '../../../../utils/updateDayReferences';
-import { ScrollToTop } from '@/app/_components/common/scroll-to-top';
 import { BlogPostWrapper } from '@/app/_components/blog/blog-post-wrapper';
 
 interface BlogPostPageProps {
