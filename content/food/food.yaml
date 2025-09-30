@@ -160,6 +160,15 @@
   location: Seoul
   category: 🐮 Beef
   review: ''
+- nativeName:  돼지고기 김치볶음
+  phoneticName: Dwaejigogi Kimchi Bokkeum
+  description: Pork Belly Kimchi Stir Fry
+  tried: true
+  rating: 4
+  image: pork-kimchi-stirfry
+  location: Seoul
+  category: 🐷 Pork
+  review: 'The tasted really good, the onions were really crispy (I might also just have longed for a food meal finally)'
 - nativeName: 족발
   phoneticName: Jokbal
   description: Braised pig's trotters
@@ -721,39 +730,53 @@
 - nativeName: 豬扒包
   phoneticName: Zhūpá Bāo
   description: Pork chop bun
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: porkchop
   location: Macau
   category: 🍢 Street Food
-  review: ''
+  review: "As good as a deep-fried pork chop on a bun with some butter can be. I was missing a special sauce or spices to make it stand out."
+
+- nativeName: 杏仁餅
+  phoneticName: Xìngrén Bǐng
+  description: Almond cookie
+  tried: true
+  rating: 3
+  image: almond-cookie
+  location: Macau
+  category: 🍪 Snack
+  review: "A bit sandy and crumbly, but the big pieces of almond were a nice touch."
+
+- nativeName: 奶茶
+  phoneticName: Nǎichá
+  description: Milk tea with boba
+  tried: true
+  rating: 2
+  image: milktea
+  location: Macau
+  category: 🧋 Beverage
+  review: "Lactose-free milk with a strong English tea syrup and bubble tea pearls. Not really my favorite, but to be fair I don’t usually like beverages that much."
+
 - nativeName: 葡式蛋撻
   phoneticName: Portuguese Egg Tart
   description: Famous Macanese custard tart
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: egg-tart
   location: Macau
-  category: 🍨 Dessert
-  review: ''
-- nativeName: 水蟹粥
-  phoneticName: Shuǐ Xiè Zhōu
-  description: Crab congee
-  tried: false
-  rating: 0
-  image: null
-  location: Macau
-  category: 🍲 Soup
-  review: ''
+  category: 🥧 Pastry
+  review: "I thought this would taste like Pastei de Nata with a sweet custard filling, but instead it had an eggy filling that made it taste more like a sweet omelette."
+
 - nativeName: 非洲鶏
   phoneticName: Feizhou Ji
-  description: African chicken, Macanese specialty
-  tried: false
-  rating: 0
-  image: null
+  description: Macanese specialty, chicken pilav
+  tried: true
+  rating: 3
+  image: pilav
   location: Macau
   category: 🐔 Chicken
-  review: ''
+  review: "The chicken was really good, and the sauce was nice. But I was missing some vegetables and a little bit of heat, especially since there was a chili pepper on the menu."
+
 - nativeName: 月饼
   phoneticName: Yuèbǐng
   description: Mooncake (traditional festival pastry with sweet or savory filling)
@@ -761,9 +784,8 @@
   rating: 3
   image: mooncake
   location: Macau
-  category: 🥮 Pastry
-  review: 'I had one with greenbean paste, and another with lotus seeds. Both strong flavors. Not really my style, but I see the potential.'
-
+  category: 🥧 Pastry
+  review: 'I had one with greenbean paste, and another with lotus seeds. Both strong flavors. Not really my style, but I see the potential. (I tried some with a jam like filling too, those were much better)'
 - nativeName: 流沙包
   phoneticName: Liúshā Bāo
   description: Steamed bun with molten salted egg yolk filling
@@ -772,5 +794,5 @@
   image: egg-bao
   location: Macau
   category: 🍢 Street Food
-  review: 'I tought I was getting the one with porkshop ):. This just tasted weird.'
+  review: "I didn't expect there to be an egg filling. This tasted really weird."
 

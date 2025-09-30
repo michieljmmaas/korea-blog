@@ -4,24 +4,34 @@ import { useState } from "react";
 import { ImageKitProvider } from "@imagekit/next";
 import ImageModal from "./image-modal";
 
-interface SingleImageWithModalProps {
+interface CroppedImageWithModalProps {
   src: string;
   alt: string;
-  orientation?: 'portrait' | 'landscape';
   description?: string;
+  cropHeight?: number;
+  cropWidth?: number;
 }
 
-const SingleImageWithModal = ({ 
+const CroppedImageWithModal = ({ 
   src, 
   alt, 
-  orientation = 'landscape',
-  description 
-}: SingleImageWithModalProps) => {
+  description,
+  cropHeight = 300,
+  cropWidth = 600
+}: CroppedImageWithModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Extract base URL without transformation for modal
   const getBaseImageUrl = (url: string) => {
     return url.split('?tr=')[0]; // Remove the ?tr=... part
+  };
+
+  // Add ImageKit transformations for cropping
+  const getCroppedImageUrl = (url: string) => {
+    const baseUrl = getBaseImageUrl(url);
+    // Use ImageKit's crop transformation with focus on center
+    // h = height, w = width, c = crop mode, fo = focus
+    return `${baseUrl}?tr=h-${cropHeight},w-${cropWidth},c-maintain_ratio,fo-center`;
   };
 
   const openModal = () => {
@@ -33,20 +43,25 @@ const SingleImageWithModal = ({
   };
 
   const baseImageUrl = getBaseImageUrl(src);
+  const croppedImageUrl = getCroppedImageUrl(src);
 
   return (
     <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
-      <div className={`imageContainer ${orientation}`}>
+      <div className="imageContainer landscape">
         <div 
           className="cursor-pointer"
           onClick={openModal}
         >
-          {/* Use regular img tag to preserve the exact transformation in the URL */}
           <img
-            src={src}
+            src={croppedImageUrl}
             alt={alt}
             loading="lazy"
-            style={{ cursor: 'pointer' }}
+            style={{ 
+              cursor: 'pointer',
+              width: '100%',
+              height: 'auto',
+              display: 'block'
+            }}
           />
         </div>
 
@@ -58,7 +73,7 @@ const SingleImageWithModal = ({
         )}
 
         <ImageModal
-          images={[baseImageUrl]} // Pass base URL without named transformation
+          images={[baseImageUrl]}
           currentIndex={0}
           isOpen={isModalOpen}
           onClose={closeModal}
@@ -69,4 +84,4 @@ const SingleImageWithModal = ({
   );
 };
 
-export default SingleImageWithModal;
+export default CroppedImageWithModal;

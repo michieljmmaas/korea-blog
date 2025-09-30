@@ -12,7 +12,7 @@ interface LocationProps {
   initiallyCollapsed?: boolean;
 }
 
-export const FoodLocation = ({ locationData, initiallyCollapsed = false }: LocationProps) => {
+export const FoodLocation = ({ locationData, initiallyCollapsed = true }: LocationProps) => {
   const [isOpen, setIsOpen] = useState(!initiallyCollapsed);
 
   const toggleOpen = () => setIsOpen(!isOpen);
