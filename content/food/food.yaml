@@ -7,6 +7,15 @@
   location: Seoul
   category: 🍢 Street Food
   review: ''
+- nativeName: 오뎅
+  phoneticName: O-deng
+  description: Fishcake with a stew
+  tried: true
+  rating: 5
+  image: o-deng
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'This was absolutely delicious, even the broth was great!'
 - nativeName: 김밥
   phoneticName: Gimbap
   description: Seaweed rice roll, similar to sushi
@@ -55,12 +64,12 @@
 - nativeName: 떡볶이
   phoneticName: Tteokbokki
   description: Spicy rice cakes in chili sauce
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: togpokki
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'It was a bit doughy - I prefer the one I make at home.'
 - nativeName: 어묵
   phoneticName: Eomuk
   description: Fish cakes in broth
@@ -124,6 +133,15 @@
   location: Seoul
   category: 🍢 Street Food
   review: ''
+- nativeName: 해물파전
+  phoneticName: Haemul pajeon
+  description: Pajeon with seafood
+  tried: true
+  rating: 4
+  image: haemul-pajeon
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'I loved this! Way different from how I make it at home, this way is better. I waited a bit before eating it, which made it soggy, but if I had eaten it right there it would have been 5 stars!'
 - nativeName: 고구마
   phoneticName: Goguma
   description: Roasted sweet potato
