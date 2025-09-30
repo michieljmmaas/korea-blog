@@ -187,8 +187,6 @@ export default function IconFactory({
       src={iconPath}
       alt={alt || finalTitle}
       title={finalTitle}
-      width={dimensions.width}
-      height={dimensions.height}
       className={finalClassName}
     />
   );
