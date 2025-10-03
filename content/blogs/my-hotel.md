@@ -1,10 +1,10 @@
 ---
 slug: my-hotel
 title: My Hotel - Mangrove
-description: Where am I staying?
+description: My home for the next 8 weeks
 publishdate: '2025-10-02'
 draft: false
-tags: ["information"]
+tags: ["Information"]
 thumb: thumb
 photos: ["map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
 ---
