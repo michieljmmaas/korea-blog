@@ -1,6 +1,6 @@
 ---
 index: 0
-title: 'Week 0: Sep 25'
+title: 'The weeks before.'
 publishdate: '2025-09-25'
 photos: ['planning', 'todo', 'twice-schedule', "gate", "kozijn", "korean", "yiyi"]
 tags: []

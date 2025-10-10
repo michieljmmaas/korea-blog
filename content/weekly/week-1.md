@@ -1,6 +1,6 @@
 ---
 index: 1
-title: 'Week 1: Sep 26 - Oct 2'
+title: 'Week 1: Sep 26 - Oct 2 - TWICE, Seoul and a whole lot of kimbap.'
 publishdate: '2025-10-02'
 photos: ["family", "fanmeeting", "room", "twice", "singing", "kimbap", "meal", "lady", "palace", "gym", "wall"]
 tags: []
