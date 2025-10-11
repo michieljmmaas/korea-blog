@@ -18,7 +18,7 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
 
     if (!imageData) {
       console.warn(`Image ${photoId} not found in mapping`);
-      return `<!-- Image ${photoId} not found -->`;
+      return `<-- Image ${photoId} not found - Please tell me about it -->`;
     }
 
     const usePortrait = orientation === 'portrait';
