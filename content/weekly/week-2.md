@@ -69,5 +69,6 @@ I had planned to go on a hike on <Sat>, but the weather had other ideas. I’ve 
 ## What’s Next?
 Here’s what I’m looking forward to next week:  
 - <Day 15>: Visiting the ARARIO Museum  
-- <Day 16>: A hike, followed by a traditional sauna (attempt two)  
-- <Day 17>: Dinner with my new friends?  
+- <Day 16>: A date  
+- <Day 17>: A hike, followed by a traditional sauna (attempt two)  
+- <Day 19>: Dinner with my new friends?  
