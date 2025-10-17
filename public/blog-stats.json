@@ -251,6 +251,48 @@
       "lat": 0,
       "lng": 0,
       "work": 0
+    },
+    {
+      "date": "2025-10-14",
+      "kimbap": 2,
+      "commits": 0,
+      "worked": 4,
+      "cultural": 1,
+      "steps": 6751,
+      "tags": 0,
+      "thumbnail": 0,
+      "coordinates": 0,
+      "lat": 0,
+      "lng": 0,
+      "work": 0
+    },
+    {
+      "date": "2025-10-15",
+      "kimbap": 2,
+      "commits": 0,
+      "worked": 9,
+      "cultural": 2,
+      "steps": 6229,
+      "tags": 0,
+      "thumbnail": 0,
+      "coordinates": 0,
+      "lat": 0,
+      "lng": 0,
+      "work": 0
+    },
+    {
+      "date": "2025-10-16",
+      "kimbap": 3,
+      "commits": 0,
+      "worked": 9,
+      "cultural": 0,
+      "steps": 3879,
+      "tags": 0,
+      "thumbnail": 0,
+      "coordinates": 0,
+      "lat": 0,
+      "lng": 0,
+      "work": 0
     }
   ],
   "cumulative": [
@@ -397,27 +439,51 @@
       "cultural": 26,
       "steps": 210675,
       "worked": 40
+    },
+    {
+      "date": "2025-10-14",
+      "kimbap": 33,
+      "commits": 0,
+      "cultural": 27,
+      "steps": 217426,
+      "worked": 44
+    },
+    {
+      "date": "2025-10-15",
+      "kimbap": 35,
+      "commits": 0,
+      "cultural": 29,
+      "steps": 223655,
+      "worked": 53
+    },
+    {
+      "date": "2025-10-16",
+      "kimbap": 38,
+      "commits": 0,
+      "cultural": 29,
+      "steps": 227534,
+      "worked": 62
     }
   ],
   "summary": {
-    "totalDays": 18,
+    "totalDays": 21,
     "dateRange": {
       "start": "2025-09-26",
-      "end": "2025-10-13"
+      "end": "2025-10-16"
     },
     "totals": {
-      "kimbap": 31,
+      "kimbap": 38,
       "commits": 0,
-      "cultural": 26,
-      "steps": 210675,
-      "worked": 40
+      "cultural": 29,
+      "steps": 227534,
+      "worked": 62
     },
     "averages": {
-      "kimbap": "1.72",
+      "kimbap": "1.81",
       "commits": "0.00",
-      "cultural": "1.44",
-      "steps": 11704,
-      "worked": "2.22"
+      "cultural": "1.38",
+      "steps": 10835,
+      "worked": "2.95"
     }
   }
 }
