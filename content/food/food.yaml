@@ -70,15 +70,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'It was a bit doughy - I prefer the one I make at home.'
-- nativeName: 어묵
-  phoneticName: Eomuk
-  description: Fish cakes in broth
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
 - nativeName: 번데기
   phoneticName: Beondegi
   description: Silkworm pupae snack
@@ -154,15 +145,6 @@
 - nativeName: 갈비찜
   phoneticName: Galbi-jjim
   description: Braised short ribs
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐮 Beef
-  review: ''
-- nativeName: 불고기
-  phoneticName: Bulgogi
-  description: Marinated grilled beef
   tried: false
   rating: 0
   image: null
@@ -352,7 +334,7 @@
 - nativeName: 찜질방 계란
   phoneticName: Jjimjilbang Gyeran
   description: Korean sauna eggs slow-cooked in hot stones, resulting in a smoky flavor and brown shell
-  tried: false
+  tried: true
   rating: 3
   image: sauna-egg
   location: Seoul
@@ -377,7 +359,7 @@
   image: bbq
   location: Seoul
   category: 🐷 Pork
-  review: "This was really delicious! All you can eat with many option to choose from!"
+  review: "This was really delicious! I had many different dishes where all test great."
 
 - nativeName: 김치두부
   phoneticName: Kimchi Dubu

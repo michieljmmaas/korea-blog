@@ -25,7 +25,7 @@ I went into one of the sauna rooms to unwind and quickly felt some of the stress
 ## Food
 After that, I went to get some food at the canteen inside the bathhouse. They mostly sold snack food, but I got 순두부찌개 (sundubu-jjigae – soft tofu stew), another dish I’d wanted to try for a long time.  
 
-<Img cantine desc="Normally this kid isn't there I believe">
+<Img cantine desc="This kid wasn't there when I visited.">
 
 <Img food desc="You always get way more food than what’s on the picture. No complaints here!">
 
