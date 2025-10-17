@@ -1,6 +1,9 @@
 - text: "See TWICE live"
   completed: true
   link: "twice-in-macau"
+- text: "Go to a Korean sauna"
+  completed: true
+  link: "sauna"
 - text: "Attend an E-sports match live"
   completed: false
   link: null
@@ -11,9 +14,6 @@
   completed: false
   link: null
 - text: "Meet the 7/11 cashier from 3 years ago"
-  completed: false
-  link: null
-- text: "Go to a Korean sauna"
   completed: false
   link: null
 - text: "Attend a music show"
