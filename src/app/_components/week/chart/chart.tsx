@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import StatsSummaryCards from './chart-stats';
 import { CityLocation } from '@/app/types';
@@ -150,10 +149,10 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
     // Custom tooltip showing daily increases
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            // Find the current day's index in the display data
-            const currentIndex = displayData.findIndex(day => day.date === label);
-            const currentDay = displayData[currentIndex];
-            const previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
+            // Find the current day's index in the FULL chart data, not just display data
+            const currentIndex = chartData.findIndex(day => day.date === label);
+            const currentDay = chartData[currentIndex];
+            const previousDay = currentIndex > 0 ? chartData[currentIndex - 1] : null;
 
             // Map chart names to data keys
             const nameToKey: { [key: string]: keyof DayData } = {
@@ -174,7 +173,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
 
                         return (
                             <p key={index} style={{ color: entry.color }} className="text-sm">
-                                {`${entry.name}: +${dailyIncrease.toLocaleString()}`}
+                                {`${entry.name}: +${dailyIncrease.toLocaleString()} - (${currentValue})`}
                                 {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1"></span>}
                             </p>
                         );
