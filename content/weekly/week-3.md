@@ -1,6 +1,6 @@
 ---
 index: 3
-title: 'Week 3: Oct 10 - Oct 16: A hike, museums and meeting some people.'
+title: 'Week 3: Oct 10 - Oct 16: Hiking, museums and meeting new people.'
 publishdate: '2025-10-16'
 photos: ["arario", "art", "history", "food", "twice", "date", "stream", "view", "summit", "sauna", "starcraft", "work", "planning", "haircut", "bbq"]
 tags: []
