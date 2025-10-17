@@ -196,15 +196,6 @@
   location: Seoul
   category: 🐷 Pork
   review: ''
-- nativeName: 삼겹살
-  phoneticName: Samgyeopsal
-  description: Grilled pork belly
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐷 Pork
-  review: ''
 - nativeName: 보쌈
   phoneticName: Bossam
   description: Pork belly wraps with cabbage
@@ -244,12 +235,12 @@
 - nativeName: 치킨
   phoneticName: Chikin
   description: Korean fried chicken
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: chicken
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This was from a chain restaurant, so not all that exciting. I hope to find something better soon.'
 - nativeName: 깐풍기
   phoneticName: Kkanpunggi
   description: Garlic fried chicken
@@ -352,12 +343,51 @@
 - nativeName: 비빔밥
   phoneticName: Bibimbap
   description: Rice with vegetables and egg
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: bibimbap
   location: Seoul
   category: 🍚 Rice
-  review: ''
+  review: 'Pretty good, but I got a simple version with many goodies.'
+- nativeName: 찜질방 계란
+  phoneticName: Jjimjilbang Gyeran
+  description: Korean sauna eggs slow-cooked in hot stones, resulting in a smoky flavor and brown shell
+  tried: false
+  rating: 3
+  image: sauna-egg
+  location: Seoul
+  category: 🍢 Street Food
+  review: "Interesting flavor. Not good, not great."
+
+- nativeName: 갈비탕
+  phoneticName: Galbitang
+  description: Clear soup made with beef short ribs, radish, and glass noodles
+  tried: true
+  rating: 5
+  image: galbi-tang
+  location: Seoul
+  category: 🍲 Soup
+  review: "This was amazing! Pretty hard to get the meat of the bones, but the broth was amazing"
+
+- nativeName: 고기구이
+  phoneticName: Gogi Gui
+  description: Korean BBQ; grilled meat usually cooked at the table and enjoyed with side dishes
+  tried: true
+  rating: 5
+  image: bbq
+  location: Seoul
+  category: 🐷 Pork
+  review: "This was really delicious! All you can eat with many option to choose from!"
+
+- nativeName: 김치두부
+  phoneticName: Kimchi Dubu
+  description: Stir-fried kimchi served with slices of plain tofu
+  tried: true
+  rating: 4
+  image: kimchi-tofu
+  location: Seoul
+  category: 🥘 Stew
+  review: "A little simple, but the smooth tofu pairs really well with the pork and kimchi."
 - nativeName: 볶음밥
   phoneticName: Bokkeumbap
   description: Fried rice
@@ -379,12 +409,12 @@
 - nativeName: 순두부찌개
   phoneticName: Sundubu-jjigae
   description: Soft tofu stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: softtofu
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'This was better than expected, but the texture is not there for me! I understand now why they call it soft-tofu. '
 - nativeName: 김치찌개
   phoneticName: Kimchi-jjigae
   description: Kimchi stew
@@ -397,12 +427,12 @@
 - nativeName: 부대찌개
   phoneticName: Budae-jjigae
   description: Army base stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: army
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'This was really good, because I was really hungry. But I think I prefer my own recipe.'
 - nativeName: 마파두부
   phoneticName: Mapadubu
   description: Mapo tofu, spicy tofu dish
@@ -465,33 +495,6 @@
   image: null
   location: Seoul
   category: 🍲 Soup
-  review: ''
-- nativeName: 맥주
-  phoneticName: Mekju
-  description: Beer
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: 소주
-  phoneticName: Soju
-  description: Korean distilled spirit
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: 막걸리
-  phoneticName: Makgeolli
-  description: Traditional rice wine
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
   review: ''
 - nativeName: たこやき
   phoneticName: Takoyaki
