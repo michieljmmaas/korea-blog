@@ -1,12 +1,12 @@
 - nativeName: 핫도그
   phoneticName: Hotdogeu
   description: Korean-style corn dog
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: hotdog
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'Pretty good, but a bit dry. Maybe a 4 with mayonaise, but they only had mustard and ketchup.'
 - nativeName: 오뎅
   phoneticName: O-deng
   description: Fishcake with a stew
@@ -418,12 +418,12 @@
 - nativeName: 마파두부
   phoneticName: Mapadubu
   description: Mapo tofu, spicy tofu dish
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: mapo
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'I loved this more then I expected. But I would have liked some more vegetables and a little more sauce with this amount of rice.'
 - nativeName: 닭볶음탕
   phoneticName: Dakbokkeumtang
   description: Spicy braised chicken soup
