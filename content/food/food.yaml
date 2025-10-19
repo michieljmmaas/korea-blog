@@ -37,12 +37,12 @@
 - nativeName: 튀김
   phoneticName: Twigim
   description: Fried snacks
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: twigim
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'These were pretty nice, I liked the pepper the best. But some sauce is needed.'
 - nativeName: 순대
   phoneticName: Sundae
   description: Korean blood sausage
