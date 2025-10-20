@@ -58,8 +58,18 @@ const config: Config = {
           '2xl': '1600px',
         },
       },
+      animation: {
+        shimmer: 'shimmer 1s infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
     },
   },
   plugins: [],
+  
 };
 export default config;
