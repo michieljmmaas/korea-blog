@@ -42,7 +42,6 @@ You can find them in the **Blogs** section.
 - <Day 2> and <Day 3> - TWICE Concerts 🎶 🧡 🩷
 - <Day 11> - Chuseok (Korean Thanksgiving) 🍂 🇰🇷
 - <Day 23> - TWICE Fanmeeting 🎶 🧡 🩷
-- <Day 29> - Start of my trip to Busan 🚆 🐟
 - <Day 34> - Dutch election day 🗳️ 🇳🇱
 - <Day 36> - Halloween  🎃 🕷️
 - <Day 43> - Start of my trip to Japan  🇯🇵 🍣

@@ -4,7 +4,7 @@ title: 'Week 5: Oct 24 - Oct 30'
 publishdate: '2025-10-30'
 photos: []
 tags: []
-location: Busan
+location: Seoul
 draft: true
 days:
   - '2025-10-24'
