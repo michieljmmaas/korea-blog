@@ -262,12 +262,12 @@
 - nativeName: 짬뽕
   phoneticName: Jjamppong
   description: Spicy seafood noodle soup
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: jjampong
   location: Seoul
   category: 🐟 Fish
-  review: ''
+  review: 'This was amazingly good! I tried making it at home once, but this so much better. Perfect spice level, not too fishy!'
 - nativeName: 고등어
   phoneticName: Godeungeo
   description: Grilled mackerel
@@ -277,6 +277,42 @@
   location: Seoul
   category: 🐟 Fish
   review: ''
+- nativeName: 소세지빵
+  phoneticName: Soseji Bbang
+  description: Sausage bread — a soft bun baked with sausage and ketchup or mayonnaise
+  tried: true
+  rating: 3
+  image: sausage-bread
+  location: Seoul
+  category: 🍢 Street Food
+  review: "A bit too sweet for my liking. This is not a good replacement for a Frikandelbroodje"
+- nativeName: 새우깡
+  phoneticName: Sae-ukkang
+  description: Shrimp crackers — a crunchy, salty snack flavored with shrimp
+  tried: true
+  rating: 3
+  image: shrimp-chips
+  location: Seoul
+  category: 🍢 Street Food
+  review: "They taste okay, but I don't crave them like when I open a bag of Lay's Chips."
+- nativeName: 바나나 우유
+  phoneticName: Banana Uyoo
+  description: Sweet banana-flavored milk, one of Korea’s most beloved drinks
+  tried: true
+  rating: 1
+  image: banana-milk
+  location: Seoul
+  category: 🍢 Street Food
+  review: "Some how both the milk and the banana flavor are artificial. It was hard to finish actually."
+- nativeName: 소세지어묵
+  phoneticName: Soseji Eomuk
+  description: Fishcake wrapped sausage, a common Korean street food skewer
+  tried: true
+  rating: 3
+  image: null
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This tastes okay. Hearty, but a little spongy and greasy. I got three flavors, Sausage, Ricecake and cheese. None of these really was my favorite."
 - nativeName: 문어조림
   phoneticName: Muneo-jorim
   description: Braised octopus
@@ -326,11 +362,11 @@
   phoneticName: Bibimbap
   description: Rice with vegetables and egg
   tried: true
-  rating: 3
-  image: bibimbap
+  rating: 4
+  image: bbb-2
   location: Seoul
   category: 🍚 Rice
-  review: 'Pretty good, but I got a simple version with many goodies.'
+  review: 'This was a Jeonju Bibimbap, a regional specialy, and it was very good indeed.'
 - nativeName: 찜질방 계란
   phoneticName: Jjimjilbang Gyeran
   description: Korean sauna eggs slow-cooked in hot stones, resulting in a smoky flavor and brown shell
