@@ -96,7 +96,7 @@
   image: fish-bread
   location: Seoul
   category: 🍢 Street Food
-  review: 'They were fresh and hot! I kived the cream one better, but the red bean paste was not bad either!'
+  review: 'They were fresh and hot! I loved the cream one better, but the red bean paste was not bad either!'
 - nativeName: 닭꼬치
   phoneticName: Dak-kkochi
   description: Chicken skewers
@@ -181,12 +181,12 @@
 - nativeName: 보쌈
   phoneticName: Bossam
   description: Pork belly wraps with cabbage
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: bo-ssam
   location: Seoul
   category: 🐷 Pork
-  review: ''
+  review: 'The porkbelly was really good, way different from what I make at hope. Even the side dishes were top notch!'
 - nativeName: 탕수육
   phoneticName: Tangsuyuk
   description: Sweet and sour pork
