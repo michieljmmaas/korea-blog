@@ -91,12 +91,12 @@
 - nativeName: 붕어빵
   phoneticName: Bungeoppang
   description: Fish-shaped pastry with filling
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: fish-bread
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'They were fresh and hot! I kived the cream one better, but the red bean paste was not bad either!'
 - nativeName: 닭꼬치
   phoneticName: Dak-kkochi
   description: Chicken skewers
