@@ -7,7 +7,6 @@ export default function Legend() {
         { name: "Netherlands" },
         { name: "Macau" },
         { name: "Seoul" },
-        { name: "Busan" },
         { name: "Tokyo" },
         { name: "Taiwan" },
         { name: "Hong Kong" },
