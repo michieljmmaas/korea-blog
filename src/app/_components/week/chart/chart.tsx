@@ -146,13 +146,25 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
 
-    // Custom tooltip showing daily increases
+// Custom tooltip showing daily increases
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            // Find the current day's index in the FULL chart data, not just display data
-            const currentIndex = chartData.findIndex(day => day.date === label);
-            const currentDay = chartData[currentIndex];
-            const previousDay = currentIndex > 0 ? chartData[currentIndex - 1] : null;
+            // Check if we're in weekly aggregated view or daily view
+            const isWeeklyView = label?.startsWith('Week ');
+            
+            let currentDay, previousDay, currentIndex;
+            
+            if (isWeeklyView) {
+                // For weekly view, use displayData (which contains the aggregated weeks)
+                currentIndex = displayData.findIndex(day => day.date === label);
+                currentDay = displayData[currentIndex];
+                previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
+            } else {
+                // For daily view, use chartData for accurate daily increases
+                currentIndex = chartData.findIndex(day => day.date === label);
+                currentDay = chartData[currentIndex];
+                previousDay = currentIndex > 0 ? chartData[currentIndex - 1] : null;
+            }
 
             // Map chart names to data keys
             const nameToKey: { [key: string]: keyof DayData } = {
@@ -164,7 +176,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
 
             return (
                 <div className="bg-white p-4 border border-gray-300 rounded-lg shadow-lg">
-                    <p className="font-semibold text-gray-800">{`Date: ${label}`}</p>
+                    <p className="font-semibold text-gray-800">{`${isWeeklyView ? label : `Date: ${label}`}`}</p>
                     {payload.map((entry, index) => {
                         const dataKey = nameToKey[entry.name];
                         const currentValue = currentDay?.[dataKey] as number || 0;
