@@ -325,12 +325,12 @@
 - nativeName: 자장면
   phoneticName: Jajangmyeon
   description: Noodles with black bean sauce
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: Jajangmyeon
   location: Seoul
   category: 🍜 Noodles
-  review: ''
+  review: "This is pretty good, but a bit dull. It tastes like a very safe meal (like mac-and-cheese). But you can't beat it at that price!"
 - nativeName: 냉면
   phoneticName: Naengmyeon
   description: Cold buckwheat noodles
