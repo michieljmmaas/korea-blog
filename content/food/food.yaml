@@ -208,12 +208,12 @@
 - nativeName: 닭갈비
   phoneticName: Dakgalbi
   description: Stir-fried chicken with vegetables
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: chicken-galbi
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This is surprisingly similar to how I make my Togpokki at home, which is a completely different dish. It was good tough, but I was missching some more carbs in here.'
 - nativeName: 치킨
   phoneticName: Chikin
   description: Korean fried chicken
