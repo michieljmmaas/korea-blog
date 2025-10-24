@@ -132,7 +132,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         }
     }, [chartData, currentWeek, showFullData]);
 
-    // Toggle between week view and full view
+// Toggle between week view and full view
     const toggleView = (): void => {
         setShowFullData(!showFullData);
     };
@@ -145,6 +145,38 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         const date = new Date(dateStr);
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
+
+    // Calculate dynamic y-axis domains
+    const getAxisDomains = (): { left: [number, number]; right: [number, number] } | { left: undefined; right: undefined } => {
+        if (displayData.length === 0) {
+            return { left: undefined, right: undefined };
+        }
+
+        // For full view, use automatic range starting from 0
+        if (showFullData) {
+            return { left: undefined, right: undefined };
+        }
+
+        // For week view, calculate min/max with padding
+        const steps = displayData.map(d => d.steps);
+        const otherStats = displayData.flatMap(d => [d.kimbap, d.cultural, d.worked]);
+
+        const minSteps = Math.min(...steps);
+        const maxSteps = Math.max(...steps);
+        const minOther = Math.min(...otherStats);
+        const maxOther = Math.max(...otherStats);
+
+        // Add 10% padding
+        const stepsPadding = (maxSteps - minSteps) * 0.1;
+        const otherPadding = (maxOther - minOther) * 0.1;
+
+        return {
+            left: [Math.max(0, Math.floor(minSteps - stepsPadding)), Math.ceil(maxSteps + stepsPadding)],
+            right: [Math.max(0, Math.floor(minOther - otherPadding)), Math.ceil(maxOther + otherPadding)]
+        };
+    };
+
+    const axisDomains = getAxisDomains();
 
 // Custom tooltip showing daily increases
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
@@ -260,7 +292,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                             fontSize={12}
                         />
                         <YAxis yAxisId="left" stroke="#666" fontSize={12} />
-                        <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} />
+                        <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} domain={axisDomains.right} />
                         <Tooltip content={<CustomTooltip />} />
 
                         {/* Lines for each stat */}
