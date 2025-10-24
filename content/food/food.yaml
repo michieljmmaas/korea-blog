@@ -409,12 +409,12 @@
 - nativeName: 볶음밥
   phoneticName: Bokkeumbap
   description: Fried rice
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: bokkeum-bap
   location: Seoul
   category: 🍚 Rice
-  review: ''
+  review: "This was divine! I got an extra portion of the Jajang sauce, which isn't usually part of it, but was soo good!"
 - nativeName: 된장찌개
   phoneticName: Doenjang-jjigae
   description: Soybean paste stew
