@@ -19,3 +19,6 @@ Content goes here.
 ## Section 2
 
 More content goes here.
+
+
+At the end an Ahjosshi came up to me, and also clapped for me, I think in a gesture of 'thank you for joining us', which was a nice touch. 
