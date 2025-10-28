@@ -70,15 +70,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'It was a bit doughy - I prefer the one I make at home.'
-- nativeName: 번데기
-  phoneticName: Beondegi
-  description: Silkworm pupae snack
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
 - nativeName: 빙수
   phoneticName: Bingsu
   description: Shaved ice dessert with toppings
@@ -286,15 +277,6 @@
   location: Seoul
   category: 🐟 Fish
   review: 'This was amazingly good! I tried making it at home once, but this so much better. Perfect spice level, not too fishy!'
-- nativeName: 고등어
-  phoneticName: Godeungeo
-  description: Grilled mackerel
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐟 Fish
-  review: ''
 - nativeName: 소세지빵
   phoneticName: Soseji Bbang
   description: Sausage bread — a soft bun baked with sausage and ketchup or mayonnaise
@@ -331,15 +313,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: "This tastes okay. Hearty, but a little spongy and greasy. I got three flavors, Sausage, Ricecake and cheese. None of these really was my favorite."
-- nativeName: 문어조림
-  phoneticName: Muneo-jorim
-  description: Braised octopus
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐟 Fish
-  review: ''
 - nativeName: 자장면
   phoneticName: Jajangmyeon
   description: Noodles with black bean sauce
@@ -361,15 +334,6 @@
 - nativeName: 잡채
   phoneticName: Japchae
   description: Stir-fried glass noodles with vegetables
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍜 Noodles
-  review: ''
-- nativeName: 쫄면
-  phoneticName: Jjolmyeon
-  description: Chewy cold noodles with spicy sauce
   tried: false
   rating: 0
   image: null
@@ -577,15 +541,6 @@
   location: Tokyo
   category: 🍚 Rice
   review: ''
-- nativeName: ちらしずし
-  phoneticName: Chirashi Sushi
-  description: Bowl of sushi rice topped with sashimi
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍚 Rice
-  review: ''
 - nativeName: おやこどん
   phoneticName: Oyakodon
   description: Rice bowl with chicken and egg
@@ -602,8 +557,35 @@
   rating: 0
   image: null
   location: Tokyo
-  category: 🥘 Stew
+  category: 🍢 Street Food
   review: ''
+- nativeName: カツサンド
+  phoneticName: Katsu Sando
+  description: Deep-fried pork cutlet sandwich with soft white bread and tangy sauce
+  tried: false
+  rating: 0
+  image: null
+  location: Tokyo
+  category: 🍢 Street Food
+  review: ""
+- nativeName: とんかつカレー
+  phoneticName: Tonkatsu Karee
+  description: Fried pork cutlet served with Japanese curry and rice
+  tried: false
+  rating: 0
+  image: null
+  location: Tokyo
+  category: 🥘 Stew
+  review: ""
+- nativeName: うなぎごはん
+  phoneticName: Unagi Gohan
+  description: Grilled eel glazed with sweet soy sauce served over rice
+  tried: false
+  rating: 0
+  image: null
+  location: Tokyo
+  category: 🍚 Rice
+  review: ""
 - nativeName: ラーメン
   phoneticName: Ramen
   description: Noodle soup with various broths and toppings
@@ -649,15 +631,6 @@
   location: Tokyo
   category: 🍲 Soup
   review: ''
-- nativeName: まっちゃアイス
-  phoneticName: Matcha Aisu
-  description: Green tea ice cream
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍨 Dessert
-  review: ''
 - nativeName: どらやき
   phoneticName: Dorayaki
   description: Pancake sandwich with red bean paste
@@ -675,24 +648,6 @@
   image: null
   location: Tokyo
   category: 🍨 Dessert
-  review: ''
-- nativeName: さけ
-  phoneticName: Sake
-  description: Japanese rice wine
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: うめしゅ
-  phoneticName: Umeshu
-  description: Sweet plum wine
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍶 Alcohol
   review: ''
 - nativeName: 牛肉麵
   phoneticName: Niúròu Miàn
@@ -720,15 +675,6 @@
   image: null
   location: Taipei
   category: 🍢 Street Food
-  review: ''
-- nativeName: 珍珠奶茶
-  phoneticName: Zhēnzhū Nǎichá
-  description: Bubble milk tea
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
-  category: 🍨 Dessert
   review: ''
 - nativeName: 蚵仔煎
   phoneticName: Ō-á-chiān
@@ -765,24 +711,6 @@
   image: null
   location: Hong Kong
   category: 🍜 Noodles
-  review: ''
-- nativeName: 蛋撻
-  phoneticName: Daan Tat
-  description: Egg tart pastry
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
-  category: 🍨 Dessert
-  review: ''
-- nativeName: 奶茶
-  phoneticName: Naaih Cha
-  description: Hong Kong-style milk tea
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
-  category: 🍶 Alcohol
   review: ''
 - nativeName: 豬扒包
   phoneticName: Zhūpá Bāo
