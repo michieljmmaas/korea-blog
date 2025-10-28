@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ImageKitProvider, Image } from "@imagekit/next";
-import { X, ChevronLeft, ChevronRight, Loader2, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
-import { TransformWrapper, TransformComponent, useControls } from "react-zoom-pan-pinch";
+import { X, ChevronLeft, ChevronRight, Loader2, RotateCcw } from "lucide-react";
+import { TransformWrapper, TransformComponent, useControls, ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
 interface ImageModalProps {
   images: string[];
@@ -41,20 +41,30 @@ const ImageModal = ({
   onPrevious,
   alt = "Image"
 }: ImageModalProps) => {
-  const [isImageLoading, setIsImageLoading] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
   const [showLoadingIndicator, setShowLoadingIndicator] = useState(false);
+  const [highResLoaded, setHighResLoaded] = useState(false);
+  const transformRef = useRef<ReactZoomPanPinchRef | null>(null);
 
   const hasMultipleImages = images.length > 1;
   const showNavigation = hasMultipleImages && onNext && onPrevious;
 
+  // Reset transform when image changes
+  useEffect(() => {
+    if (isOpen && transformRef.current) {
+      transformRef.current.resetTransform();
+    }
+  }, [currentIndex, isOpen]);
+
   useEffect(() => {
     if (isOpen) {
       setIsImageLoading(true);
+      setHighResLoaded(false);
       setShowLoadingIndicator(false);
-      // Show loading indicator after 1 second delay
+      // Show loading indicator after 500ms delay
       const timer = setTimeout(() => {
         setShowLoadingIndicator(true);
-      }, 1000);
+      }, 500);
 
       return () => clearTimeout(timer);
     }
@@ -77,9 +87,13 @@ const ImageModal = ({
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose, onNext, onPrevious]);
 
-  const handleImageLoad = () => {
+  const handleMediumResLoad = () => {
     setIsImageLoading(false);
     setShowLoadingIndicator(false);
+  };
+
+  const handleHighResLoad = () => {
+    setHighResLoaded(true);
   };
 
   if (!isOpen) return null;
@@ -130,6 +144,7 @@ const ImageModal = ({
           )}
 
           <TransformWrapper
+            ref={transformRef}
             initialScale={1}
             minScale={0.5}
             maxScale={4}
@@ -144,65 +159,108 @@ const ImageModal = ({
               mode: "reset"
             }}
             limitToBounds={false}
-            centerOnInit={false}
+            centerOnInit={true}
             centerZoomedOut={true}
             smooth={true}
             disabled={false}
-            alignmentAnimation={{ disabled: true }}
-            velocityAnimation={{ disabled: true }}
-            onInit={() => {
-              // Reset transform when image changes
-            }}
+            alignmentAnimation={{ disabled: false }}
+            velocityAnimation={{ disabled: false }}
           >
             {/* Zoom Controls */}
             <ResetControl />
 
             {/* Image Container */}
             <TransformComponent
-              wrapperClass="!w-full !h-full flex items-center justify-center px-12 py-16 sm:px-16 sm:py-20 md:px-20 md:py-20"
-              contentClass="!w-auto !h-auto flex items-center justify-center"
+              wrapperClass="!w-full !h-full !flex !items-center !justify-center"
+              contentClass="!flex !items-center !justify-center"
             >
               <div
-                className="relative flex items-center justify-center"
+                className="flex items-center justify-center p-4 sm:p-8"
                 onClick={(e) => e.stopPropagation()}
+                style={{ 
+                  maxWidth: '100vw',
+                  maxHeight: '100vh'
+                }}
               >
-                {/* High resolution image */}
-                <div className="relative">
+                {/* Loading Spinner - Shows while medium res loads */}
+                {isImageLoading && showLoadingIndicator && (
+                  <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+                    <div className="flex flex-col items-center gap-3 bg-black/60 px-6 py-4 rounded-lg backdrop-blur-sm">
+                      <Loader2 className="h-8 w-8 text-white animate-spin" />
+                      <p className="text-white text-sm">Loading...</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Single container for both images to maintain same dimensions */}
+                <div className="relative inline-block">
+                  {/* Medium resolution image - loads fast */}
                   <Image
                     src={images[currentIndex]}
-                    width={1200}
-                    height={800}
-                    alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - Full size`}
-                    className={`max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl transition-all duration-300 select-none ${isImageLoading ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
-                      }`}
+                    width={1400}
+                    height={1000}
+                    alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''}`}
+                    className={`block select-none rounded-lg shadow-2xl transition-opacity duration-300 ${
+                      isImageLoading ? 'opacity-50' : highResLoaded ? 'opacity-0' : 'opacity-100'
+                    }`}
                     style={{
-                      maxWidth: '90vw',
-                      maxHeight: '90vh',
+                      maxWidth: 'calc(90vw - 8rem)',
+                      maxHeight: 'calc(85vh - 8rem)',
                       width: 'auto',
                       height: 'auto',
+                      objectFit: 'contain',
                       userSelect: 'none',
                       WebkitUserSelect: 'none',
                       MozUserSelect: 'none',
-                      msUserSelect: 'none'
+                      msUserSelect: 'none',
+                      display: 'block'
                     }}
                     transformation={[
                       {
-                        width: 1600,
-                        quality: 90
+                        width: 800,
+                        quality: 75,
+                        format: 'auto'
                       }
                     ]}
-                    onLoad={handleImageLoad}
+                    loading="eager"
+                    onLoad={handleMediumResLoad}
                     draggable={false}
                   />
 
-                  {/* Loading Spinner Overlay */}
-                  {isImageLoading && showLoadingIndicator && (
-                    <div className="absolute inset-0 flex items-center justify-center z-30 rounded-lg">
-                      <div className="flex flex-col items-center gap-3 bg-black/40 px-4 py-3 rounded-lg backdrop-blur-sm">
-                        <Loader2 className="h-6 w-6 text-white animate-spin" />
-                        <p className="text-white text-xs">Loading...</p>
-                      </div>
-                    </div>
+                  {/* High resolution image - loads in background, positioned absolutely on top */}
+                  {!isImageLoading && (
+                    <Image
+                      src={images[currentIndex]}
+                      width={1400}
+                      height={1000}
+                      alt={`${alt} ${hasMultipleImages ? currentIndex + 1 : ''} - High res`}
+                      className={`absolute top-0 left-0 block select-none rounded-lg shadow-2xl transition-opacity duration-700 ${
+                        highResLoaded ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      style={{
+                        maxWidth: 'calc(90vw - 8rem)',
+                        maxHeight: 'calc(85vh - 8rem)',
+                        width: 'auto',
+                        height: 'auto',
+                        objectFit: 'contain',
+                        userSelect: 'none',
+                        WebkitUserSelect: 'none',
+                        MozUserSelect: 'none',
+                        msUserSelect: 'none',
+                        display: 'block',
+                        pointerEvents: highResLoaded ? 'auto' : 'none'
+                      }}
+                      transformation={[
+                        {
+                          width: 1400,
+                          quality: 85,
+                          format: 'auto'
+                        }
+                      ]}
+                      loading="eager"
+                      onLoad={handleHighResLoad}
+                      draggable={false}
+                    />
                   )}
                 </div>
               </div>

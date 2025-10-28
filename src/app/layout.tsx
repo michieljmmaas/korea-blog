@@ -6,6 +6,7 @@ import cn from "classnames";
 import "./globals.css";
 import Container from "./_components/layout/container";
 import Header from "./_components/layout/header";
+import "yet-another-react-lightbox/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

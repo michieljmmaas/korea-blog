@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ImageKitProvider } from "@imagekit/next";
-import ImageModal from "./image-modal";
+import ImageModal from "./new-image-modal";
 
 interface CroppedImageWithModalProps {
   src: string;
