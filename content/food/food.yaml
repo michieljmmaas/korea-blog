@@ -106,6 +106,15 @@
   location: Seoul
   category: 🍢 Street Food
   review: ''
+- nativeName: 피자
+  phoneticName: Pi-dja
+  description: Korean pizza with strange toppings
+  tried: true
+  rating: 3
+  image: pizza
+  location: Seoul
+  category: 🍢 Street Food
+  review: "I had pizza with corn, shrimp and sauce. The dough wasn't all there, but the flavor was better than I expected. I ordered it mostly for the photocards." 
 - nativeName: 만두
   phoneticName: Mandu
   description: Korean dumplings
@@ -250,6 +259,15 @@
   location: Seoul
   category: 🐟 Fish
   review: ''
+- nativeName: 낙지볶음
+  phoneticName: Nakji-bokkeum
+  description: Spicy stir-fried octopus
+  tried: true
+  rating: 4
+  image: nakji-bokkeum
+  location: Seoul
+  category: 🐟 Fish
+  review: 'It was nice, but the texture was get strange after a while (served with 비빔밥)'
 - nativeName: 회
   phoneticName: Hwe
   description: Raw fish, sashimi style
@@ -394,8 +412,8 @@
   rating: 5
   image: bbq
   location: Seoul
-  category: 🐷 Pork
-  review: "This was really delicious! I had many different dishes where all test great."
+  category: 🐷 Pork 
+  review: "This was really delicious! I had many different dishes and they were all great!"
 
 - nativeName: 김치두부
   phoneticName: Kimchi Dubu
