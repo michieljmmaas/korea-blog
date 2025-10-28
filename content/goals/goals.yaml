@@ -11,8 +11,8 @@
   completed: true
   link: trot-festival
 - text: "Attend an E-sports match live"
-  completed: false
-  link: null
+  completed: true
+  link: starcraft-broodwar
 - text: "Itaewon K-pop Gay Club"
   completed: false
   link: null
