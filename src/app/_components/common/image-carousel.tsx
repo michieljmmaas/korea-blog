@@ -103,7 +103,6 @@ const SwiperImageCarousel = ({
           {/* Custom Pagination */}
           <div className="swiper-pagination-custom absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2"></div>
         </Swiper>
-        \
         <ImageModal
           images={images}
           currentIndex={currentModalIndex}
