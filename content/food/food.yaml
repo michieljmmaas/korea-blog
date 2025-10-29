@@ -190,12 +190,12 @@
 - nativeName: 탕수육
   phoneticName: Tangsuyuk
   description: Sweet and sour pork
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: tangsuyuuk
   location: Seoul
   category: 🐷 Pork
-  review: ''
+  review: 'Pretty good, but I had more hopes for it. The sauce was a bit too sweet.'
 - nativeName: 닭발
   phoneticName: Dakbal
   description: Spicy chicken feet
