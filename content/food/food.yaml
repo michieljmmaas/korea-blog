@@ -172,12 +172,12 @@
 - nativeName: 족발
   phoneticName: Jokbal
   description: Braised pig's trotters
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: jokbal
   location: Seoul
   category: 🐷 Pork
-  review: ''
+  review: 'This was delicious — the spicy sauce was great! But it was a little too fatty, and there was much to complement it.'
 - nativeName: 보쌈
   phoneticName: Bossam
   description: Pork belly wraps with cabbage
