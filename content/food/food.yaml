@@ -331,6 +331,15 @@
   location: Seoul
   category: 🍜 Noodles
   review: ''
+- nativeName: 칼국수
+  phoneticName: Kal-guksu
+  description: 'knife-cut noodles'
+  tried: true
+  rating: 3
+  image: kalguksu
+  location: Seoul
+  category: 🍜 Noodles
+  review: "This is a simple comfort dish. But has it was quite plane, and I have no nostaligia for it, so I wasn't all the impressive."
 - nativeName: 잡채
   phoneticName: Japchae
   description: Stir-fried glass noodles with vegetables
