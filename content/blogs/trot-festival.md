@@ -2,7 +2,7 @@
 slug: trot-festival
 title: Trot Music Festival
 description: A song contest with authentic Korean culture
-publishdate: '2025-10-25'
+publishdate: '2025-10-27'
 draft: false
 tags: ['culture']
 thumb: thumb

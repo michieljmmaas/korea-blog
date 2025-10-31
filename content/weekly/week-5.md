@@ -15,7 +15,7 @@ days:
   - '2025-10-29'
   - '2025-10-30'
 icons: []
-thumb: starcraft
+thumb: thumb
 ---
 ## At the Halfway Point
 As I’m writing this, I’ve officially reached the halfway point of my trip—five weeks done, five to go. With the last two spent traveling, The end feels both far away and close at the same time.  
