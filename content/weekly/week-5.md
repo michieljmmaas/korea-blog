@@ -76,3 +76,12 @@ I think the lack of sleep plays a big part in in too—like it usually does when
 <Img desk desc="Also—and I never thought I’d say this—but I’m getting pretty tired of convenience store gimbaps.">
 
 But maybe that’s not a bad thing. If I left still craving more, I’d probably feel unsatisfied—like I didn’t quite get what I came for. Feeling like I’ve seen and done enough means I actually *have*. The wanderlust fading away might just be a sign that it’s time to move on—and that I’m leaving this city exactly when I should.
+
+
+## What’s Next?
+Next week I'll be mostly busy with work, but there are still a few highlights to look forward to.
+
+- <Day 36>: **Halloween party** in Itaewon
+- <Day 37>: Shrine Festival
+- <Day 38>: Running the N-Seoul Tower Circuit
+- <Day 42>: Leaving for Tokyo
