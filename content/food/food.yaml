@@ -28,12 +28,12 @@
 - nativeName: 토스트
   phoneticName: Toseuteu
   description: Sweet or savory street toast
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: toast
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: "This taste so good! The egg, meat, sauce and pickles go so well together. But it is so filling, I can't believe we used to eat this for breakfast!"
 - nativeName: 튀김
   phoneticName: Twigim
   description: Fried snacks
@@ -226,12 +226,12 @@
 - nativeName: 깐풍기
   phoneticName: Kkanpunggi
   description: Garlic fried chicken
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: kkanpungi
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This tasted okay, very similar to what I one made at home. One of the pieces was cold in the middle, raising my suspicion or frozen chicken, which turned off the meal.'
 - nativeName: 간장게장
   phoneticName: Gejang
   description: Soy sauce marinated crab
