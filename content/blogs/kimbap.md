@@ -14,18 +14,18 @@ Wasn’t the sights, but that sweet seaweed roll.\
 Tuna, bulgogi, kimchi, or steak,\
 Every one so good, no choice a mistake.
 
-Good for breakfast, for lunch, or for dinner,\
+Good for breakfast, lunch, or dinner,\
 And for under two euros — what a winner.\
 Rice, veggies, and meat to munch,\
-With pickled radish adding that perfect amount of crunch.
+Pickled radish adding that perfect amount of crunch.
 
 You can eat it cold, lukewarm, or hot,\
 With a squeeze of mayo, or maybe not.\
 But leave it too long in the refrigerator,\
-And it turns from joy to a sad impostor.
+And it turns from joy to a sad immitator.
 
-I then tried a fresh kimbap, handmade and neat,\
-And my taste buds gasped — “Where have you been?” \
+But then I tried a fresh kimbap, handmade and neat,\
+my taste buds gasped — “Where have you been?” \
 Now the store ones feel like a washed-out sin,\
 Their magic gone stale, their glory obsolete.
 
