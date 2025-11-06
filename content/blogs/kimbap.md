@@ -14,28 +14,20 @@ Wasn’t the sights, but that sweet seaweed roll.\
 Tuna, bulgogi, kimchi, or steak,\
 Every one so good, no choice a mistake.
 
-<br>
-
 Good for breakfast, for lunch, or for dinner,\
 And for under two euros — what a winner.\
-Rice, seaweed, veggies, and meat to munch,\
+Rice, veggies, and meat to munch,\
 With pickled radish adding that perfect amount of crunch.
-
-<br>
 
 You can eat it cold, lukewarm, or hot,\
 With a squeeze of mayo, or maybe not.\
 But leave it too long in the refrigerator,\
 And it turns from joy to a sad impostor.
 
-<br>
-
 I then tried a fresh kimbap, handmade and neat,\
 And my taste buds gasped — “Where have you been?” \
 Now the store ones feel like a washed-out sin,\
 Their magic gone stale, their glory obsolete.
-
-<br>
 
 I mourn what’s gone — that cheap delight, \
 Two euros of joy, now bland and unfair.\
