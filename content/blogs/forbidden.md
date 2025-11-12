@@ -23,6 +23,7 @@ photos:
     "f-6",
     "f-7",
     "f-8",
+    "zombie",
   ]
 ---
 
@@ -79,3 +80,4 @@ Some signs don’t forbid anything, but their English translations can be quite 
 
 <Img 1 desc="I found this one in Macau, but it still counts!">
 
+<Img zombie desc="This was I found in Japan, but I thought was would fit here too!">
