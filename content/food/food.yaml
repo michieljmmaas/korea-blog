@@ -508,156 +508,142 @@
 - nativeName: たこやき
   phoneticName: Takoyaki
   description: Octopus balls, a popular street snack
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 1
+  image: takoyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'The balls were more squishy than I expected them to be. Also the brownsauce + mayonaise + bonito flakes left a bad taste in my mouth that lasted for way too long.'
 - nativeName: やきとり
   phoneticName: Yakitori
   description: Grilled chicken skewers
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: yakkitori
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'Probably my fault for getting them from the convience store, but I was not that impressed.'
 - nativeName: おこのみやき
   phoneticName: Okonomiyaki
   description: Savory pancake with toppings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: okinomiyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'There is somehting about the combination of the brown sauce, the mayonaise and the bonito flake that my tongue does not like. Once I scraped it off, it tasted fine.'
 - nativeName: ぎょうざ
   phoneticName: Gyoza
   description: Japanese pan-fried dumplings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gyoza-ramen
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'These were really good! I can taste that they were fresh. Would have like a little more crush tough'
 - nativeName: すし
   phoneticName: Sushi
   description: Vinegared rice with raw or cooked fish
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: sushi
   location: Tokyo
   category: 🍚 Rice
-  review: ''
-- nativeName: おやこどん
-  phoneticName: Oyakodon
-  description: Rice bowl with chicken and egg
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍚 Rice
-  review: ''
-- nativeName: てんぷら
-  phoneticName: Tempura
-  description: Deep-fried battered seafood and vegetables
-  tried: false
-  rating: 0
-  image: null
+  review: 'As you know, this stuff is amazing.'
+- nativeName: カレーパン
+  phoneticName: Kare Pan
+  description: Deep-fried bread filled with Japanese curry
+  tried: true
+  rating: 4
+  image: curry-bread
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: "I liked the curry filling in this one, more than the curry I got for the Katsu Karee. This was excellent, but only a little too simple."
+
+- nativeName: フルーツサンド
+  phoneticName: Fruits Sando
+  description: Soft white sandwich with whipped cream and fresh fruit
+  tried: true
+  rating: 3
+  image: fruit-sandi
+  location: Tokyo
+  category: 🍨 Dessert
+  review: "This is just an excuse to eat fruit with whipped cream. The white bread is only there so your hands don't get dirty, but that doesn't mean that it wasn't good."
+
+- nativeName: オムライス
+  phoneticName: Omuraisu
+  description: Fried rice wrapped in a soft omelet, topped with ketchup or demi-glace sauce
+  tried: true
+  rating: 5
+  image: omurice
+  location: Tokyo
+  category: 🍚 Rice
+  review: "This one was great! A simple meal, with some good flavors. I would have a preferred a little more demiglaze, but it was still fine!"
+
+- nativeName: 焼きそば
+  phoneticName: Yakisoba
+  description: Stir-fried noodles with vegetables and sweet-savory sauce
+  tried: true
+  rating: 4
+  image: yakisoba
+  location: Tokyo
+  category: 🍜 Noodles
+  review: "This was great, especially with the beer! Juicy meat, crunchy cabbage and a smokey sauce. I had the classic problem with a noodles dish where all the goodies sink to the bottom. If it was mixed better, this could have been a 5!"
+
+- nativeName: カツ丼
+  phoneticName: Katsudon
+  description: Rice bowl with chicken and fried pork cutlet
+  tried: true
+  rating: 5
+  image: katsu-don
+  location: Tokyo
+  category: 🍚 Rice
+  review: 'This was freaking great! The sauce, the crushy side of the katsu, with the soft egg. Yes please!'
 - nativeName: カツサンド
   phoneticName: Katsu Sando
   description: Deep-fried pork cutlet sandwich with soft white bread and tangy sauce
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: katsu-sando
   location: Tokyo
   category: 🍢 Street Food
-  review: ""
+  review: "This is just an excuse to eat a pork cutlet, but I'll take it! The soft white bread, without crust, is mostly there to make you feel better. I could have done with some sliced cabbage as well, for a crunch."
 - nativeName: とんかつカレー
   phoneticName: Tonkatsu Karee
   description: Fried pork cutlet served with Japanese curry and rice
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: katsu
   location: Tokyo
-  category: 🥘 Stew
-  review: ""
+  category: 🍚 Rice
+  review: "I was missing the vegetables in the curry, this made it little to simple for me. The cutlet was great though!"
 - nativeName: うなぎごはん
   phoneticName: Unagi Gohan
   description: Grilled eel glazed with sweet soy sauce served over rice
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: unagi
   location: Tokyo
   category: 🍚 Rice
-  review: ""
+  review: "I love unagi, so this was a treat! I splurged on the larger piece, and it was definitly worth it!"
 - nativeName: ラーメン
   phoneticName: Ramen
   description: Noodle soup with various broths and toppings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gyoza-ramen
   location: Tokyo
   category: 🍜 Noodles
-  review: ''
-- nativeName: うどん
-  phoneticName: Udon
-  description: Thick wheat noodles
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍜 Noodles
-  review: ''
-- nativeName: そば
-  phoneticName: Soba
-  description: Buckwheat noodles
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍜 Noodles
-  review: ''
-- nativeName: みそしる
-  phoneticName: Miso Shiru
-  description: Miso soup with tofu and seaweed
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍲 Soup
-  review: ''
-- nativeName: おでん
-  phoneticName: Oden
-  description: Stew with fishcakes, daikon, tofu, and eggs
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍲 Soup
-  review: ''
+  review: 'This dish feels so simple, as it is mostly warm flavorful water, but still it impressed me!'
 - nativeName: どらやき
   phoneticName: Dorayaki
   description: Pancake sandwich with red bean paste
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: dorayaki
   location: Tokyo
   category: 🍨 Dessert
-  review: ''
-- nativeName: だいふく
-  phoneticName: Daifuku
-  description: Mochi stuffed with sweet filling
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍨 Dessert
-  review: ''
+  review: 'I am not really a dessert person, and I was expecting this to be warm, but it was still pretty good!'
 - nativeName: 牛肉麵
   phoneticName: Niúròu Miàn
   description: Beef noodle soup
