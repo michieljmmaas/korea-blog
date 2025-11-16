@@ -103,10 +103,19 @@ function extractBlogStats() {
         const sortedDates = Object.keys(statsData).sort();
 
         // Format for chart: Array of objects (good for Recharts)
-        const chartData = sortedDates.map(date => ({
+        let chartData = sortedDates.map(date => ({
             date: date,
             ...statsData[date].stats
         }));
+
+        // Check if the last week is incomplete and remove it
+        const totalDays = chartData.length;
+        const daysInLastWeek = totalDays % 7;
+        
+        if (daysInLastWeek !== 0) {
+            console.log(`\n⚠️  Last week is incomplete (${daysInLastWeek} days), removing it from output`);
+            chartData = chartData.slice(0, totalDays - daysInLastWeek);
+        }
 
         // Cumulative data for progress tracking
         let cumulativeKimbap = 0;
@@ -139,8 +148,8 @@ function extractBlogStats() {
             summary: {
                 totalDays: chartData.length,
                 dateRange: {
-                    start: sortedDates[0],
-                    end: sortedDates[sortedDates.length - 1]
+                    start: chartData[0]?.date || '',
+                    end: chartData[chartData.length - 1]?.date || ''
                 },
                 totals: {
                     kimbap: chartData.reduce((sum, day) => sum + day.kimbap, 0),
@@ -150,11 +159,11 @@ function extractBlogStats() {
                     worked: chartData.reduce((sum, day) => sum + day.worked, 0)
                 },
                 averages: {
-                    kimbap: (chartData.reduce((sum, day) => sum + day.kimbap, 0) / chartData.length).toFixed(2),
-                    commits: (chartData.reduce((sum, day) => sum + day.commits, 0) / chartData.length).toFixed(2),
-                    cultural: (chartData.reduce((sum, day) => sum + day.cultural, 0) / chartData.length).toFixed(2),
-                    steps: Math.round(chartData.reduce((sum, day) => sum + day.steps, 0) / chartData.length),
-                    worked: (chartData.reduce((sum, day) => sum + day.worked, 0) / chartData.length).toFixed(2)
+                    kimbap: chartData.length > 0 ? (chartData.reduce((sum, day) => sum + day.kimbap, 0) / chartData.length).toFixed(2) : '0',
+                    commits: chartData.length > 0 ? (chartData.reduce((sum, day) => sum + day.commits, 0) / chartData.length).toFixed(2) : '0',
+                    cultural: chartData.length > 0 ? (chartData.reduce((sum, day) => sum + day.cultural, 0) / chartData.length).toFixed(2) : '0',
+                    steps: chartData.length > 0 ? Math.round(chartData.reduce((sum, day) => sum + day.steps, 0) / chartData.length) : 0,
+                    worked: chartData.length > 0 ? (chartData.reduce((sum, day) => sum + day.worked, 0) / chartData.length).toFixed(2) : '0'
                 }
             }
         };
@@ -165,6 +174,7 @@ function extractBlogStats() {
         console.log(`\n📊 Stats extraction complete!`);
         console.log(`- Processed: ${processedFiles} files`);
         console.log(`- Skipped: ${skippedFiles} files`);
+        console.log(`- Days included in output: ${chartData.length}`);
         console.log(`- Output: ${outputFile}`);
 
         // Display a sample of the data
