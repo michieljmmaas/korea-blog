@@ -21,16 +21,18 @@ const CroppedImageWithModal = ({
 }: CroppedImageWithModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Extract base URL without transformation for modal
-  const getBaseImageUrl = (url: string) => {
-    return url.split('?tr=')[0]; // Remove the ?tr=... part
+  // Extract just the path from ImageKit URL (remove domain and transformations)
+  const getImagePath = (url: string) => {
+    // Remove transformations first
+    const withoutTransforms = url.split('?tr=')[0];
+    // Remove the ImageKit domain to get just the path
+    const path = withoutTransforms.replace('https://ik.imagekit.io/yyahqsrfe/', '');
+    return path.startsWith('/') ? path : `/${path}`;
   };
 
   // Add ImageKit transformations for cropping
   const getCroppedImageUrl = (url: string) => {
-    const baseUrl = getBaseImageUrl(url);
-    // Use ImageKit's crop transformation with focus on center
-    // h = height, w = width, c = crop mode, fo = focus
+    const baseUrl = url.split('?tr=')[0]; // Remove existing transforms
     return `${baseUrl}?tr=h-${cropHeight},w-${cropWidth},c-maintain_ratio,fo-center`;
   };
 
@@ -42,7 +44,7 @@ const CroppedImageWithModal = ({
     setIsModalOpen(false);
   };
 
-  const baseImageUrl = getBaseImageUrl(src);
+  const imagePath = getImagePath(src);
   const croppedImageUrl = getCroppedImageUrl(src);
 
   return (
@@ -73,7 +75,7 @@ const CroppedImageWithModal = ({
         )}
 
         <ImageModal
-          images={[baseImageUrl]}
+          images={[imagePath]} // Pass just the path: "/food/hotdog"
           currentIndex={0}
           isOpen={isModalOpen}
           onClose={closeModal}
