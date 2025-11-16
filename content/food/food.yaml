@@ -55,12 +55,12 @@
 - nativeName: 호떡
   phoneticName: Hotteok
   description: Sweet filled pancake
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: hotdeok
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was actually really pleasant! A sweet cinnamon, sugar and honey filling, yes please!'
 - nativeName: 떡볶이
   phoneticName: Tteokbokki
   description: Spicy rice cakes in chili sauce
@@ -91,12 +91,12 @@
 - nativeName: 닭꼬치
   phoneticName: Dak-kkochi
   description: Chicken skewers
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: chicken-skewer
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was pretty good, the sauce was great, but in the end it just a piece of chicken.'
 - nativeName: 피자
   phoneticName: Pi-dja
   description: Korean pizza with strange toppings
@@ -136,12 +136,12 @@
 - nativeName: 고구마
   phoneticName: Goguma
   description: Roasted sweet potato
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: goguma
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'I was expecting very little, but this was a delight!  The filling was tender and sweet, and the skin was the perfect amount of chewy'
 - nativeName: 갈비찜
   phoneticName: Galbi-jjim
   description: Braised short ribs
@@ -199,12 +199,12 @@
 - nativeName: 닭발
   phoneticName: Dakbal
   description: Spicy chicken feet
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: feet
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'It is a novelty, but too much cartelige for me.'
 - nativeName: 닭갈비
   phoneticName: Dakgalbi
   description: Stir-fried chicken with vegetables
@@ -233,14 +233,43 @@
   category: 🐔 Chicken
   review: 'This tasted okay, very similar to what I one made at home. One of the pieces was cold in the middle, raising my suspicion or frozen chicken, which turned off the meal.'
 - nativeName: 간장게장
-  phoneticName: Gejang
+  phoneticName: Ganjang Gejang
   description: Soy sauce marinated crab
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: crab
   location: Seoul
   category: 🐟 Fish
-  review: ''
+  review: 'The actually crab was great, but getting out of the shell is the problem.'
+- nativeName: 탕후루
+  phoneticName: Tanghulu
+  description: Fruit skewers coated in a crisp sugar glaze
+  tried: true
+  rating: 3
+  image: tanghulu
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This is just an excuse to eat fruit. The sugar glaze was hard, but got a bit too sticky for my teeth"
+
+- nativeName: 닭강정
+  phoneticName: Dakgangjeong
+  description: Korean fried chicken with chewy rice cakes in a sweet-spicy sauce
+  tried: true
+  rating: 5
+  image: sweet-chick
+  location: Seoul
+  category: 🍢 Street Food
+  review: "The cicken was crispy, and ricecakes chewy, and the sauce was delicious. I could have gone a little spicier, but this was great!"
+
+- nativeName: 소떡소떡
+  phoneticName: So-tteok So-tteok
+  description: Skewered alternating sausage and rice cakes glazed in sweet-spicy sauce
+  tried: true
+  rating: 4
+  image: so-teok
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This is as good as chewy rices cakes, sausages and sweet sauce can be, pretty good!"
 - nativeName: 산낙지
   phoneticName: San-nakji
   description: Live octopus
@@ -427,12 +456,12 @@
 - nativeName: 김치찌개
   phoneticName: Kimchi-jjigae
   description: Kimchi stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 1
+  image: kimchi-jiggae
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'Too much kimchi'
 - nativeName: 부대찌개
   phoneticName: Budae-jjigae
   description: Army base stew
@@ -463,12 +492,12 @@
 - nativeName: 삼계탕
   phoneticName: Samgyetang
   description: Ginseng chicken soup
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: ginseng-soup
   location: Seoul
   category: 🍲 Soup
-  review: ''
+  review: "This was okay. It is classified as a health dish so it had some Interesting ingredients (raw ginger root, jujube and walnuts), which maybe leaned to much into it's presumtive healing abbilities."
 - nativeName: 감자탕
   phoneticName: Gamjatang
   description: Pork bone soup with potatoes
