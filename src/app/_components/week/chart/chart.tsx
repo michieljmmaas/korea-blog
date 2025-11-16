@@ -66,21 +66,20 @@ interface TooltipProps {
 
 const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1, location }) => {
     const [chartData, setChartData] = useState<DayData[]>([]);
+    const [dailyData, setDailyData] = useState<DayData[]>([]);
     const [displayData, setDisplayData] = useState<DayData[]>([]);
     const [showFullData, setShowFullData] = useState<boolean>(false);
     const [currentWeek] = useState<number>(weekNumber);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Add this function before the useEffect hooks
+    // Aggregate data by weeks for the full view
     const aggregateByWeeks = (data: DayData[]): DayData[] => {
         const weeks: DayData[] = [];
 
         for (let i = 0; i < data.length; i += 7) {
             const weekData = data.slice(i, i + 7);
             const weekNumber = Math.floor(i / 7) + 1;
-
-            // Get the last day's values (since it's cumulative data)
             const lastDay = weekData[weekData.length - 1];
 
             weeks.push({
@@ -105,8 +104,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 }
                 const data: BlogStatsData = await response.json();
 
-                // Use cumulative data for the "total so far" view
                 setChartData(data.cumulative || []);
+                setDailyData(data.daily || []);
                 setLoading(false);
             } catch (err: any) {
                 setError(err.message);
@@ -122,42 +121,35 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         if (chartData.length === 0) return;
 
         if (showFullData) {
-            // Aggregate by weeks for zoomed out view
             setDisplayData(aggregateByWeeks(chartData));
         } else {
-            // Calculate week window (7 days per week)
             const startIndex = Math.max(0, (currentWeek - 1) * 7);
             const endIndex = Math.min(chartData.length, currentWeek * 7);
             setDisplayData(chartData.slice(startIndex, endIndex));
         }
     }, [chartData, currentWeek, showFullData]);
 
-// Toggle between week view and full view
     const toggleView = (): void => {
         setShowFullData(!showFullData);
     };
 
-    // Format date for display
     const formatDate = (dateStr: string): string => {
         if (dateStr.startsWith('Week ')) {
-            return dateStr; // Return "Week 1", "Week 2", etc.
+            return dateStr;
         }
         const date = new Date(dateStr);
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
 
-    // Calculate dynamic y-axis domains
     const getAxisDomains = (): { left: [number, number]; right: [number, number] } | { left: undefined; right: undefined } => {
         if (displayData.length === 0) {
             return { left: undefined, right: undefined };
         }
 
-        // For full view, use automatic range starting from 0
         if (showFullData) {
             return { left: undefined, right: undefined };
         }
 
-        // For week view, calculate min/max with padding
         const steps = displayData.map(d => d.steps);
         const otherStats = displayData.flatMap(d => [d.kimbap, d.cultural, d.worked]);
 
@@ -166,7 +158,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         const minOther = Math.min(...otherStats);
         const maxOther = Math.max(...otherStats);
 
-        // Add 10% padding
         const stepsPadding = (maxSteps - minSteps) * 0.1;
         const otherPadding = (maxOther - minOther) * 0.1;
 
@@ -178,27 +169,22 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
 
     const axisDomains = getAxisDomains();
 
-// Custom tooltip showing daily increases
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            // Check if we're in weekly aggregated view or daily view
             const isWeeklyView = label?.startsWith('Week ');
             
             let currentDay, previousDay, currentIndex;
             
             if (isWeeklyView) {
-                // For weekly view, use displayData (which contains the aggregated weeks)
                 currentIndex = displayData.findIndex(day => day.date === label);
                 currentDay = displayData[currentIndex];
                 previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
             } else {
-                // For daily view, use chartData for accurate daily increases
                 currentIndex = chartData.findIndex(day => day.date === label);
                 currentDay = chartData[currentIndex];
                 previousDay = currentIndex > 0 ? chartData[currentIndex - 1] : null;
             }
 
-            // Map chart names to data keys
             const nameToKey: { [key: string]: keyof DayData } = {
                 'Kimbap Eaten': 'kimbap',
                 'Sights Seen': 'cultural',
@@ -218,7 +204,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                         return (
                             <p key={index} style={{ color: entry.color }} className="text-sm">
                                 {`${entry.name}: +${dailyIncrease.toLocaleString()} - (${currentValue})`}
-                                {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1"></span>}
                             </p>
                         );
                     })}
@@ -244,18 +229,14 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         );
     }
 
-    const maxWeek = Math.ceil(chartData.length / 7);
-
     return (
         <div className="w-full space-y-4">
-            {/* Header - Hidden on mobile */}
             <div className="hidden md:flex items-center justify-between flex-wrap gap-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                     Vacation Stats - Cumulative Progress
                 </h2>
 
                 <div className="flex items-center gap-4">
-                    {/* Toggle button */}
                     <button
                         onClick={toggleView}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
@@ -265,7 +246,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </div>
             </div>
 
-            {/* Chart info - Hidden on mobile */}
             <div className="hidden md:flex items-center justify-between text-sm text-gray-600">
                 <span>
                     {showFullData
@@ -280,7 +260,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </span>
             </div>
 
-            {/* Chart - Hidden on mobile */}
             <div className="hidden md:block bg-white p-4 rounded-lg border border-gray-200">
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart data={displayData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -295,7 +274,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                         <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} domain={axisDomains.right} />
                         <Tooltip content={<CustomTooltip />} />
 
-                        {/* Lines for each stat */}
                         <Line
                             type="monotone"
                             dataKey="kimbap"
@@ -336,8 +314,13 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </ResponsiveContainer>
             </div>
 
-            {/* Stats summary - now using the extracted component */}
-            <StatsSummaryCards displayData={displayData} location={location}/>
+            <StatsSummaryCards 
+                dailyData={dailyData}
+                cumulativeData={chartData}
+                currentWeek={currentWeek}
+                showFullData={showFullData}
+                location={location}
+            />
         </div>
     );
 };

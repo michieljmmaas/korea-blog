@@ -494,7 +494,7 @@
       "date": "2025-10-31",
       "kimbap": 2,
       "commits": 0,
-      "worked": 6,
+      "worked": 5,
       "cultural": 2,
       "steps": 18694,
       "tags": 0,
@@ -690,7 +690,7 @@
       "date": "2025-11-14",
       "kimbap": 0,
       "commits": 0,
-      "worked": 10,
+      "worked": 9,
       "cultural": 3,
       "steps": 12920,
       "tags": 0,
@@ -1002,7 +1002,7 @@
       "commits": 0,
       "cultural": 63,
       "steps": 393252,
-      "worked": 124
+      "worked": 123
     },
     {
       "date": "2025-11-01",
@@ -1010,7 +1010,7 @@
       "commits": 0,
       "cultural": 67,
       "steps": 409971,
-      "worked": 124
+      "worked": 123
     },
     {
       "date": "2025-11-02",
@@ -1018,7 +1018,7 @@
       "commits": 0,
       "cultural": 69,
       "steps": 434599,
-      "worked": 124
+      "worked": 123
     },
     {
       "date": "2025-11-03",
@@ -1026,7 +1026,7 @@
       "commits": 0,
       "cultural": 69,
       "steps": 437921,
-      "worked": 132
+      "worked": 131
     },
     {
       "date": "2025-11-04",
@@ -1034,7 +1034,7 @@
       "commits": 0,
       "cultural": 70,
       "steps": 443099,
-      "worked": 141
+      "worked": 140
     },
     {
       "date": "2025-11-05",
@@ -1042,7 +1042,7 @@
       "commits": 0,
       "cultural": 70,
       "steps": 444404,
-      "worked": 152
+      "worked": 151
     },
     {
       "date": "2025-11-06",
@@ -1050,7 +1050,7 @@
       "commits": 0,
       "cultural": 71,
       "steps": 452849,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-07",
@@ -1058,7 +1058,7 @@
       "commits": 0,
       "cultural": 78,
       "steps": 482861,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-08",
@@ -1066,7 +1066,7 @@
       "commits": 0,
       "cultural": 87,
       "steps": 512594,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-09",
@@ -1074,7 +1074,7 @@
       "commits": 0,
       "cultural": 92,
       "steps": 537608,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-10",
@@ -1082,7 +1082,7 @@
       "commits": 0,
       "cultural": 96,
       "steps": 559204,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-11",
@@ -1090,7 +1090,7 @@
       "commits": 0,
       "cultural": 96,
       "steps": 568266,
-      "worked": 154
+      "worked": 153
     },
     {
       "date": "2025-11-12",
@@ -1098,7 +1098,7 @@
       "commits": 0,
       "cultural": 96,
       "steps": 570150,
-      "worked": 161
+      "worked": 160
     },
     {
       "date": "2025-11-13",
@@ -1106,7 +1106,7 @@
       "commits": 0,
       "cultural": 98,
       "steps": 573523,
-      "worked": 171
+      "worked": 170
     },
     {
       "date": "2025-11-14",
@@ -1114,7 +1114,7 @@
       "commits": 0,
       "cultural": 101,
       "steps": 586443,
-      "worked": 181
+      "worked": 179
     },
     {
       "date": "2025-11-15",
@@ -1122,7 +1122,7 @@
       "commits": 0,
       "cultural": 105,
       "steps": 605610,
-      "worked": 181
+      "worked": 179
     }
   ],
   "summary": {
@@ -1136,14 +1136,14 @@
       "commits": 0,
       "cultural": 105,
       "steps": 605610,
-      "worked": 181
+      "worked": 179
     },
     "averages": {
       "kimbap": "2.31",
       "commits": "0.00",
       "cultural": "2.06",
       "steps": 11875,
-      "worked": "3.55"
+      "worked": "3.51"
     }
   }
 }

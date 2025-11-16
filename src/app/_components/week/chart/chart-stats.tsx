@@ -3,7 +3,6 @@ import IconFactory from '../../common/icon-factory';
 import { CityLocation } from '@/app/types';
 import { getFoodName } from '../../../../../utils/foodName';
 
-// Type definitions
 interface StatsData {
     kimbap: number;
     cultural: number;
@@ -30,11 +29,20 @@ interface StatConfig {
 }
 
 interface StatsSummaryCardsProps {
-    displayData: DayData[];
+    dailyData: DayData[];
+    cumulativeData: DayData[];
+    currentWeek: number;
+    showFullData: boolean;
     location: CityLocation;
 }
 
-const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData, location }) => {
+const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ 
+    dailyData, 
+    cumulativeData, 
+    currentWeek, 
+    showFullData, 
+    location 
+}) => {
     const foodName = getFoodName(location) + " Eaten";
 
     const statsConfig: StatConfig[] = [
@@ -76,15 +84,29 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData, loca
         }
     ];
 
-    if (displayData.length === 0) {
+    if (dailyData.length === 0 || cumulativeData.length === 0) {
         return null;
     }
 
+    const getStatValue = (key: keyof StatsData): number => {
+        if (showFullData) {
+            // Show total (max cumulative value) when viewing all data
+            const lastDay = cumulativeData[cumulativeData.length - 1];
+            return lastDay?.[key] || 0;
+        } else {
+            // Show weekly total (sum of daily values for that week)
+            const startIndex = Math.max(0, (currentWeek - 1) * 7);
+            const endIndex = Math.min(dailyData.length, currentWeek * 7);
+            const weekData = dailyData.slice(startIndex, endIndex);
+            
+            return weekData.reduce((sum, day) => sum + (day[key] || 0), 0);
+        }
+    };
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {statsConfig.map(stat => {
-                const lastValue = displayData[displayData.length - 1]?.[stat.key] || 0;
+                const value = getStatValue(stat.key);
                 return (
                     <div key={stat.key} className={`p-3 rounded-lg ${stat.bgColor}`}>
                         <div className="flex items-center justify-between">
@@ -95,7 +117,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({ displayData, loca
                                 location={location}
                             />
                             <span className="text-2xl font-bold">
-                                {stat.key === 'steps' ? lastValue.toLocaleString() : lastValue}
+                                {stat.key === 'steps' ? value.toLocaleString() : value}
                             </span>
                         </div>
                         <div className={`text-sm font-medium mt-1 ${stat.textColor}`}>{stat.label}</div>
