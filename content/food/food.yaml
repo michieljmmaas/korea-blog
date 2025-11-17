@@ -1,5 +1,5 @@
 - nativeName: 핫도그
-  phoneticName: Hotdogeu
+  phoneticName: Hatdogeu
   description: Korean-style corn dog
   tried: true
   rating: 3
@@ -7,6 +7,15 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'Pretty good, but a bit dry. Maybe a 4 with mayonaise, but they only had mustard and ketchup.'
+- nativeName: 감자핫도그
+  phoneticName: Gamja-Hatdogeu
+  description: Korean-style corn dog, with fries stuck to it
+  tried: true
+  rating: 4
+  image: gamja-hatdogu
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'I like this one better than the normal version, but I also was really hungry at the time of eating it.'
 - nativeName: 오뎅
   phoneticName: O-deng
   description: Fishcake with a stew
@@ -70,15 +79,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'It was a bit doughy - I prefer the one I make at home.'
-- nativeName: 빙수
-  phoneticName: Bingsu
-  description: Shaved ice dessert with toppings
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
 - nativeName: 붕어빵
   phoneticName: Bungeoppang
   description: Fish-shaped pastry with filling
@@ -115,15 +115,15 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'These were fine, the filling was good. But I prefer the crunchy variants as they have more texture.'
-- nativeName: 파전
-  phoneticName: Pajeon
-  description: Savory pancake with scallions
-  tried: false
-  rating: 0
-  image: null
+- nativeName: 빈대떡
+  phoneticName: Bindae-tteok
+  description: Bindae-tteok
+  tried: true
+  rating: 4
+  image: jeon
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was delicious! Crispy outside, gooey inside. I just needed a little more sauce for this.'
 - nativeName: 해물파전
   phoneticName: Haemul pajeon
   description: Pajeon with seafood
@@ -142,24 +142,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'I was expecting very little, but this was a delight!  The filling was tender and sweet, and the skin was the perfect amount of chewy'
-- nativeName: 갈비찜
-  phoneticName: Galbi-jjim
-  description: Braised short ribs
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐮 Beef
-  review: ''
-- nativeName: 곱창
-  phoneticName: Gopchang
-  description: Grilled beef intestines
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐮 Beef
-  review: ''
 - nativeName:  돼지고기 김치볶음
   phoneticName: Dwaejigogi Kimchi Bokkeum
   description: Pork Belly Kimchi Stir Fry
@@ -273,12 +255,12 @@
 - nativeName: 산낙지
   phoneticName: San-nakji
   description: Live octopus
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: sannakji
   location: Seoul
   category: 🐟 Fish
-  review: ''
+  review: 'It came out all wriggly, which was the most interesting part. The taste itself was really chewing, and eating it was hard because it kept getting stuck on the plate. 2 Starts for the taste, 1 star of the experience.'
 - nativeName: 낙지볶음
   phoneticName: Nakji-bokkeum
   description: Spicy stir-fried octopus
@@ -288,15 +270,6 @@
   location: Seoul
   category: 🐟 Fish
   review: 'It was nice, but the texture was get strange after a while (served with 비빔밥)'
-- nativeName: 회
-  phoneticName: Hwe
-  description: Raw fish, sashimi style
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐟 Fish
-  review: ''
 - nativeName: 짬뽕
   phoneticName: Jjamppong
   description: Spicy seafood noodle soup
