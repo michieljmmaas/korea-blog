@@ -109,12 +109,12 @@
 - nativeName: 만두
   phoneticName: Mandu
   description: Korean dumplings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: mandu
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'These were fine, the filling was good. But I prefer the crunchy variants as they have more texture.'
 - nativeName: 파전
   phoneticName: Pajeon
   description: Savory pancake with scallions
@@ -351,15 +351,6 @@
   location: Seoul
   category: 🍜 Noodles
   review: "This is pretty good, but a bit dull. It tastes like a very safe meal (like mac-and-cheese). But you can't beat it at that price!"
-- nativeName: 냉면
-  phoneticName: Naengmyeon
-  description: Cold buckwheat noodles
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍜 Noodles
-  review: ''
 - nativeName: 칼국수
   phoneticName: Kal-guksu
   description: 'knife-cut noodles'
@@ -369,15 +360,6 @@
   location: Seoul
   category: 🍜 Noodles
   review: "This is a simple comfort dish. But has it was quite plane, and I have no nostaligia for it, so I wasn't all the impressive."
-- nativeName: 잡채
-  phoneticName: Japchae
-  description: Stir-fried glass noodles with vegetables
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍜 Noodles
-  review: ''
 - nativeName: 비빔밥
   phoneticName: Bibimbap
   description: Rice with vegetables and egg
@@ -435,15 +417,6 @@
   location: Seoul
   category: 🍚 Rice
   review: "This was divine! I got an extra portion of the Jajang sauce, which isn't usually part of it, but was soo good!"
-- nativeName: 된장찌개
-  phoneticName: Doenjang-jjigae
-  description: Soybean paste stew
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🥘 Stew
-  review: ''
 - nativeName: 순두부찌개
   phoneticName: Sundubu-jjigae
   description: Soft tofu stew
@@ -480,15 +453,6 @@
   location: Seoul
   category: 🥘 Stew
   review: 'I loved this more then I expected. But I would have liked some more vegetables and a little more sauce with this amount of rice.'
-- nativeName: 닭볶음탕
-  phoneticName: Dakbokkeumtang
-  description: Spicy braised chicken soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
 - nativeName: 삼계탕
   phoneticName: Samgyetang
   description: Ginseng chicken soup
@@ -501,39 +465,12 @@
 - nativeName: 감자탕
   phoneticName: Gamjatang
   description: Pork bone soup with potatoes
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gamja-tang
   location: Seoul
   category: 🍲 Soup
-  review: ''
-- nativeName: 설렁탕
-  phoneticName: Seolleongtang
-  description: Beef bone soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
-- nativeName: 소꼬리탕
-  phoneticName: Sokkoritang
-  description: Oxtail soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
-- nativeName: 미역국
-  phoneticName: Miyeokguk
-  description: Seaweed soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
+  review: 'This was actually 뼈해장국밥, but it is close enough. It tastesd pretty good. Steamy, spicy and filled with umami. The worst part was trying to get the meat of the bones.'
 - nativeName: たこやき
   phoneticName: Takoyaki
   description: Octopus balls, a popular street snack
