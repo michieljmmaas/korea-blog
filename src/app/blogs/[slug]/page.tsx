@@ -5,7 +5,7 @@ import { PostBody } from '@/app/_components/common/post-body';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { Draft } from '@/app/_components/common/draft';
 import { createForBlog } from '../../../../utils/createImageMap';
-import { processDayReferences } from '../../../../utils/updateDayReferences';
+import { processBlogReferences, processDayReferences } from '../../../../utils/updateDayReferences';
 import { BlogPostWrapper } from '@/app/_components/blog/blog-post-wrapper';
 
 interface BlogPostPageProps {
@@ -29,7 +29,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const relatedPosts = await getRelatedBlogPosts(post);
     const mapping = createForBlog(post.frontmatter);
     const processedContent = await processDayReferences(post.content);
-    const content = await markdownToHtml(processedContent || "", mapping);
+    const processedContentTwo = await processBlogReferences(processedContent);
+    const content = await markdownToHtml(processedContentTwo || "", mapping);
 
     return (
         <BlogPostWrapper>

@@ -4,7 +4,7 @@ title: TWICE 10th ANIVERSARY FANMEETING - 10VE UNIVERSE
 description: The coolest event a ONCE could ever attend
 publishdate: '2025-10-18'
 draft: false
-tags: ['TWICE', 'K-pop']
+tags: ['TWICE', 'K-pop', 'highlight']
 thumb: sss
 photos: ["sss", "love", "c-1", "c-2", "c-3", "c-4", "c-5", "twively", "webp-lightstick", "c-bong", "jihyo-stan", "venue", "1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "21"] 
 ---
