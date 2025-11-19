@@ -1,6 +1,6 @@
 ---
 index: 7
-title: 'Week 7: Nov 7 - Nov 13: Shrines, Sushi and sleepless nights'
+title: 'Week 7: Nov 7 - Nov 13: Shrines, Sushi and Sleepless Nights'
 publishdate: '2025-11-13'
 photos: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
 tags: []

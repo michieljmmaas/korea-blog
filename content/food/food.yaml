@@ -52,15 +52,6 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'These were pretty nice, I liked the pepper the best. But some sauce is needed.'
-- nativeName: 순대
-  phoneticName: Sundae
-  description: Korean blood sausage
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
 - nativeName: 호떡
   phoneticName: Hotteok
   description: Sweet filled pancake
