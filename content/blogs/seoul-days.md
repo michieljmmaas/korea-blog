@@ -5,8 +5,8 @@ description: Looking back at the last 8 weeks
 publishdate: '2025-11-18'
 draft: false
 tags: ['highlight', 'experience']
-thumb: thumb
-photos: ['thumb', "trot", "game", "stage", "summit", "matrix"]
+thumb: best
+photos: ['best', "trot", "game", "stage", "summit", "matrix"]
 ---
 
 I’ve spent the last 8 weeks — with some small breaks — here in Seoul. I went on many different adventures, met great people, and ate some incredible food. Now that I’m leaving, let’s look back. Here are my 5 favourite days I’ve spent here. I’m mostly talking about the *specific* days; I’ll share my general thoughts in another blogpost.  
