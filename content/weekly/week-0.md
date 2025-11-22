@@ -1,6 +1,6 @@
 ---
 index: 0
-title: 'The weeks before.'
+title: 'The weeks before: Prepping, Planning and Too Much Painting'
 publishdate: '2025-09-25'
 photos: ['planning', 'todo', 'twice-schedule', "gate", "kozijn", "korean", "yiyi"]
 tags: []

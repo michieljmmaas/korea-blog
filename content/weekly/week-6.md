@@ -1,6 +1,6 @@
 ---
 index: 6
-title: 'Week 6: Oct 31 - Nov 6: Contemplation, Halloween and working overtime'
+title: 'Week 6: Oct 31 - Nov 6: Contemplation, Halloween and Working Overtime'
 publishdate: '2025-11-06'
 photos: ["halloween", "outfit", "arcade", "stream", "view", "shrine", "seoul-old", "seoul", "myeongdong", "tower", "ddp", "ramen", "chicken", "katherine", "office", "late"]
 tags: []

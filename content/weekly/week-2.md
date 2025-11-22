@@ -1,6 +1,6 @@
 ---
 index: 2
-title: 'Week 2: Oct 3 - Oct 9 - Suwon, Modern Art and getting back to work.'
+title: 'Week 2: Oct 3 - Oct 9 - Suwon, Modern Art and Getting Back to Work.'
 publishdate: '2025-10-09'
 photos: ["desk", "pagoda", "tv", "food", "gym", "rain", "rodin", "tiger", "chuseok", "ramyeon", "drinks"]
 tags: []

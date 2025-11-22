@@ -1,6 +1,6 @@
 ---
 index: 4
-title: 'Week 4: Oct 17 - Oct 23: TWICE, Friends and some good food.'
+title: 'Week 4: Oct 17 - Oct 23: TWICE, Friends and Some Good Food.'
 publishdate: '2025-10-23'
 photos: ["fanmeeting", "logo", "office", "voting", "embassey", "tickets", "lunch", "fish-bread", "movie", "popup", "katherine", "sooyeon", "work", "jajamyeon"]
 tags: []

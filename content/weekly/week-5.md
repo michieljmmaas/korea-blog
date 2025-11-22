@@ -1,6 +1,6 @@
 ---
 index: 5
-title: 'Week 5: Oct 24 - Oct 30: Starcraft, Themeparks and long hours at work.'
+title: 'Week 5: Oct 24 - Oct 30: Starcraft, Themeparks and Long Hours at Work.'
 publishdate: '2025-10-30'
 photos: ["assembly", "pizza", "market", "festival", "ddp", "castle", "lotte", "starcraft", "winner", "group", "tigers", "rollercoaster", "fireworks", "desk","jokbal", "work", "unforgiven"]
 tags: []
