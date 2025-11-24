@@ -6,7 +6,7 @@ import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
 import { Draft } from "@/app/_components/common/draft";
 import { createForDay } from '../../../../utils/createImageMap';
-import { processDayReferences } from "../../../../utils/updateDayReferences";
+import { processBlogReferences, processDayReferences } from "../../../../utils/updateDayReferences";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -32,7 +32,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const map = createForDay(post.frontmatter);
 
-    const processedContent = await processDayReferences(post.content);
+    const dayContent = await processDayReferences(post.content);
+    const processedContent = await processBlogReferences(dayContent);
     const content = await markdownToHtml(processedContent || "", map);
     const { previousPost, nextPost } = await getAdjacentPosts(post.frontmatter.day);
 
