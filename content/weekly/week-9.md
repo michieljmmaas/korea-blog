@@ -1,8 +1,8 @@
 ---
 index: 9
-title: 'Week 9: Nov 21 - Nov 27'
+title: 'Week 9: Nov 21 - Nov 27: Budhism, Dumplings, and a Distinct Culture'
 publishdate: '2025-11-27'
-photos: []
+photos: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
 tags: []
 location: Taiwan
 draft: true
@@ -15,28 +15,12 @@ days:
   - '2025-11-26'
   - '2025-11-27'
 icons: []
-thumb: thumb
+thumb: '13'
 ---
-# Week 9: Nov 21 - Nov 27
+Mind Dump: Rest will come later.
 
-## Summary
 
-This week covered 7 days from 21/11/2025 to 27/11/2025.
+## Hills:
 
-### Daily Breakdown
+### Alisan Park
 
-**2025-11-21** (Friday) -  - Friday, November 21, 2025
-**2025-11-22** (Saturday) -  - Saturday, November 22, 2025
-**2025-11-23** (Sunday) -  - Sunday, November 23, 2025
-**2025-11-24** (Monday) -  - Monday, November 24, 2025
-**2025-11-25** (Tuesday) -  - Tuesday, November 25, 2025
-**2025-11-26** (Wednesday) -  - Wednesday, November 26, 2025
-**2025-11-27** (Thursday) -  - Thursday, November 27, 2025
-
-### Highlights
-
-<!-- Add weekly highlights here -->
-
-## Reflection
-
-<!-- Add weekly reflection here -->
