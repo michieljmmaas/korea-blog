@@ -186,7 +186,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
             }
 
             const nameToKey: { [key: string]: keyof DayData } = {
-                'Kimbap Eaten': 'kimbap',
+                'Snacks Eaten': 'kimbap',
                 'Sights Seen': 'cultural',
                 'Hours Worked': 'worked',
                 'Steps Taken': 'steps'
@@ -280,7 +280,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                             stroke="#f8333c"
                             strokeWidth={2}
                             dot={{ fill: '#f8333c', strokeWidth: 2, r: 4 }}
-                            name="Kimbap Eaten"
+                            name="Snacks Eaten"
                             yAxisId="right"
                         />
                         <Line
