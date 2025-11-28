@@ -71,16 +71,16 @@ const LOCATION_SPECIFIC_TITLES: Record<string, Record<string, { info: string; st
       stat: 'Sushi eaten',
     },
     'Hong Kong': {
-      info: 'Dim Sum',
-      stat: 'Dim sum eaten',
+      info: 'Wonton',
+      stat: 'Wonton eaten',
     },
     Taiwan: {
       info: 'Xiaolongbao',
       stat: 'Xiaolongbao eaten',
     },
     Macau: {
-      info: 'Xiaolongbao',
-      stat: 'Xiaolongbao eaten',
+      info: 'Snacks',
+      stat: 'Snacks eaten',
     },
     Netherlands: {
       info: 'Frikandelbroodjes',
