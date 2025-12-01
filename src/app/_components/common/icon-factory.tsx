@@ -3,7 +3,7 @@ import Image from 'next/image';
 import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
 import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tokyo.svg";
 import kimbapTaiwanIcon from "../../../../public/assets/blog/svg-icons/kimbap-taiwan.svg";
-import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/kimbap-hong-kong.svg";
+import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/boba.svg";
 import kimbapNetherlandsIcon from "../../../../public/assets/blog/svg-icons/kimbap-netherlands.svg";
 import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
@@ -71,8 +71,8 @@ const LOCATION_SPECIFIC_TITLES: Record<string, Record<string, { info: string; st
       stat: 'Sushi eaten',
     },
     'Hong Kong': {
-      info: 'Wonton',
-      stat: 'Wonton eaten',
+      info: 'Sweet Teas',
+      stat: 'Sweet Teas drunk'
     },
     Taiwan: {
       info: 'Xiaolongbao',

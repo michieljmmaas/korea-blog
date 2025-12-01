@@ -4,7 +4,7 @@ export const getFoodName = (location: CityLocation): string => {
     if (location === "Tokyo") {
         return "Sushi";
     } else if (location === "Hong Kong") {
-        return "Wonton";
+        return "Sweet teas";
     } else if (location === "Taiwan") {
         return "Xiaolongbao";
     } else if (location === "Netherlands") {
