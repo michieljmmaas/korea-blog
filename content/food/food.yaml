@@ -1,633 +1,579 @@
 - nativeName: 핫도그
-  phoneticName: Hotdogeu
+  phoneticName: Hatdogeu
   description: Korean-style corn dog
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: hotdog
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'Pretty good, but a bit dry. Maybe a 4 with mayonaise, but they only had mustard and ketchup.'
+- nativeName: 감자핫도그
+  phoneticName: Gamja-Hatdogeu
+  description: Korean-style corn dog, with fries stuck to it
+  tried: true
+  rating: 4
+  image: gamja-hatdogu
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'I like this one better than the normal version, but I also was really hungry at the time of eating it.'
+- nativeName: 오뎅
+  phoneticName: O-deng
+  description: Fishcake with a stew
+  tried: true
+  rating: 5
+  image: o-deng
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'This was absolutely delicious, even the broth was great!'
 - nativeName: 김밥
   phoneticName: Gimbap
   description: Seaweed rice roll, similar to sushi
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: kim-bap
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'I will keeping eating these for as long as I am here. Will update the picture once I find the best one'
 - nativeName: 토스트
   phoneticName: Toseuteu
   description: Sweet or savory street toast
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: toast
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: "This taste so good! The egg, meat, sauce and pickles go so well together. But it is so filling, I can't believe we used to eat this for breakfast!"
 - nativeName: 튀김
   phoneticName: Twigim
   description: Fried snacks
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: twigim
   location: Seoul
   category: 🍢 Street Food
-  review: ''
-- nativeName: 순대
-  phoneticName: Sundae
-  description: Korean blood sausage
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
+  review: 'These were pretty nice, I liked the pepper the best. But some sauce is needed.'
 - nativeName: 호떡
   phoneticName: Hotteok
   description: Sweet filled pancake
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: hotdeok
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was actually really pleasant! A sweet cinnamon, sugar and honey filling, yes please!'
 - nativeName: 떡볶이
   phoneticName: Tteokbokki
   description: Spicy rice cakes in chili sauce
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: togpokki
   location: Seoul
   category: 🍢 Street Food
-  review: ''
-- nativeName: 어묵
-  phoneticName: Eomuk
-  description: Fish cakes in broth
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
-- nativeName: 번데기
-  phoneticName: Beondegi
-  description: Silkworm pupae snack
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
-- nativeName: 빙수
-  phoneticName: Bingsu
-  description: Shaved ice dessert with toppings
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍢 Street Food
-  review: ''
+  review: 'It was a bit doughy - I prefer the one I make at home.'
 - nativeName: 붕어빵
   phoneticName: Bungeoppang
   description: Fish-shaped pastry with filling
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: fish-bread
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'They were fresh and hot! I loved the cream one better, but the red bean paste was not bad either!'
 - nativeName: 닭꼬치
   phoneticName: Dak-kkochi
   description: Chicken skewers
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: chicken-skewer
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was pretty good, the sauce was great, but in the end it just a piece of chicken.'
+- nativeName: 피자
+  phoneticName: Pi-dja
+  description: Korean pizza with strange toppings
+  tried: true
+  rating: 3
+  image: pizza
+  location: Seoul
+  category: 🍢 Street Food
+  review: "I had pizza with corn, shrimp and sauce. The dough wasn't all there, but the flavor was better than I expected. I ordered it mostly for the photocards." 
 - nativeName: 만두
   phoneticName: Mandu
   description: Korean dumplings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: mandu
   location: Seoul
   category: 🍢 Street Food
-  review: ''
-- nativeName: 파전
-  phoneticName: Pajeon
-  description: Savory pancake with scallions
-  tried: false
-  rating: 0
-  image: null
+  review: 'These were fine, the filling was good. But I prefer the crunchy variants as they have more texture.'
+- nativeName: 빈대떡
+  phoneticName: Bindae-tteok
+  description: Bindae-tteok
+  tried: true
+  rating: 4
+  image: jeon
   location: Seoul
   category: 🍢 Street Food
-  review: ''
+  review: 'This was delicious! Crispy outside, gooey inside. I just needed a little more sauce for this.'
+- nativeName: 해물파전
+  phoneticName: Haemul pajeon
+  description: Pajeon with seafood
+  tried: true
+  rating: 4
+  image: haemul-pajeon
+  location: Seoul
+  category: 🍢 Street Food
+  review: 'I loved this! Way different from how I make it at home, this way is better. I waited a bit before eating it, which made it soggy, but if I had eaten it right there it would have been 5 stars!'
 - nativeName: 고구마
   phoneticName: Goguma
   description: Roasted sweet potato
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: goguma
   location: Seoul
   category: 🍢 Street Food
-  review: ''
-- nativeName: 갈비찜
-  phoneticName: Galbi-jjim
-  description: Braised short ribs
-  tried: false
-  rating: 0
-  image: null
+  review: 'I was expecting very little, but this was a delight!  The filling was tender and sweet, and the skin was the perfect amount of chewy'
+- nativeName:  돼지고기 김치볶음
+  phoneticName: Dwaejigogi Kimchi Bokkeum
+  description: Pork Belly Kimchi Stir Fry
+  tried: true
+  rating: 4
+  image: pork-kimchi-stirfry
   location: Seoul
-  category: 🐮 Beef
-  review: ''
-- nativeName: 불고기
-  phoneticName: Bulgogi
-  description: Marinated grilled beef
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐮 Beef
-  review: ''
-- nativeName: 곱창
-  phoneticName: Gopchang
-  description: Grilled beef intestines
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐮 Beef
-  review: ''
+  category: 🐷 Pork
+  review: 'The tasted really good, the onions were really crispy (I might also just have longed for a food meal finally)'
 - nativeName: 족발
   phoneticName: Jokbal
   description: Braised pig's trotters
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: jokbal
   location: Seoul
   category: 🐷 Pork
-  review: ''
-- nativeName: 삼겹살
-  phoneticName: Samgyeopsal
-  description: Grilled pork belly
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🐷 Pork
-  review: ''
+  review: 'This was delicious — the spicy sauce was great! But it was a little too fatty, and there was much to complement it.'
 - nativeName: 보쌈
   phoneticName: Bossam
   description: Pork belly wraps with cabbage
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: bo-ssam
   location: Seoul
   category: 🐷 Pork
-  review: ''
+  review: 'The porkbelly was really good, way different from what I make at hope. Even the side dishes were top notch!'
 - nativeName: 탕수육
   phoneticName: Tangsuyuk
   description: Sweet and sour pork
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: tangsuyuuk
   location: Seoul
   category: 🐷 Pork
-  review: ''
+  review: 'Pretty good, but I had more hopes for it. The sauce was a bit too sweet.'
 - nativeName: 닭발
   phoneticName: Dakbal
   description: Spicy chicken feet
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: feet
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'It is a novelty, but too much cartelige for me.'
 - nativeName: 닭갈비
   phoneticName: Dakgalbi
   description: Stir-fried chicken with vegetables
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: chicken-galbi
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This is surprisingly similar to how I make my Togpokki at home, which is a completely different dish. It was good tough, but I was missching some more carbs in here.'
 - nativeName: 치킨
   phoneticName: Chikin
   description: Korean fried chicken
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: chicken
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This was from a chain restaurant, so not all that exciting. I hope to find something better soon.'
 - nativeName: 깐풍기
   phoneticName: Kkanpunggi
   description: Garlic fried chicken
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: kkanpungi
   location: Seoul
   category: 🐔 Chicken
-  review: ''
+  review: 'This tasted okay, very similar to what I one made at home. One of the pieces was cold in the middle, raising my suspicion or frozen chicken, which turned off the meal.'
 - nativeName: 간장게장
-  phoneticName: Gejang
+  phoneticName: Ganjang Gejang
   description: Soy sauce marinated crab
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: crab
   location: Seoul
   category: 🐟 Fish
-  review: ''
+  review: 'The actually crab was great, but getting out of the shell is the problem.'
+- nativeName: 탕후루
+  phoneticName: Tanghulu
+  description: Fruit skewers coated in a crisp sugar glaze
+  tried: true
+  rating: 3
+  image: tanghulu
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This is just an excuse to eat fruit. The sugar glaze was hard, but got a bit too sticky for my teeth"
+
+- nativeName: 닭강정
+  phoneticName: Dakgangjeong
+  description: Korean fried chicken with chewy rice cakes in a sweet-spicy sauce
+  tried: true
+  rating: 5
+  image: sweet-chick
+  location: Seoul
+  category: 🍢 Street Food
+  review: "The cicken was crispy, and ricecakes chewy, and the sauce was delicious. I could have gone a little spicier, but this was great!"
+
+- nativeName: 소떡소떡
+  phoneticName: So-tteok So-tteok
+  description: Skewered alternating sausage and rice cakes glazed in sweet-spicy sauce
+  tried: true
+  rating: 4
+  image: so-teok
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This is as good as chewy rices cakes, sausages and sweet sauce can be, pretty good!"
 - nativeName: 산낙지
   phoneticName: San-nakji
   description: Live octopus
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: sannakji
   location: Seoul
   category: 🐟 Fish
-  review: ''
-- nativeName: 회
-  phoneticName: Hwe
-  description: Raw fish, sashimi style
-  tried: false
-  rating: 0
-  image: null
+  review: 'It came out all wriggly, which was the most interesting part. The taste itself was really chewing, and eating it was hard because it kept getting stuck on the plate. 2 Starts for the taste, 1 star of the experience.'
+- nativeName: 낙지볶음
+  phoneticName: Nakji-bokkeum
+  description: Spicy stir-fried octopus
+  tried: true
+  rating: 4
+  image: nakji-bokkeum
   location: Seoul
   category: 🐟 Fish
-  review: ''
+  review: 'It was nice, but the texture was get strange after a while (served with 비빔밥)'
 - nativeName: 짬뽕
   phoneticName: Jjamppong
   description: Spicy seafood noodle soup
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: jjampong
   location: Seoul
   category: 🐟 Fish
-  review: ''
-- nativeName: 고등어
-  phoneticName: Godeungeo
-  description: Grilled mackerel
-  tried: false
-  rating: 0
-  image: null
+  review: 'This was amazingly good! I tried making it at home once, but this so much better. Perfect spice level, not too fishy!'
+- nativeName: 소세지빵
+  phoneticName: Soseji Bbang
+  description: Sausage bread — a soft bun baked with sausage and ketchup or mayonnaise
+  tried: true
+  rating: 3
+  image: sausage-bread
   location: Seoul
-  category: 🐟 Fish
-  review: ''
-- nativeName: 문어조림
-  phoneticName: Muneo-jorim
-  description: Braised octopus
-  tried: false
-  rating: 0
-  image: null
+  category: 🍢 Street Food
+  review: "A bit too sweet for my liking. This is not a good replacement for a Frikandelbroodje"
+- nativeName: 새우깡
+  phoneticName: Sae-ukkang
+  description: Shrimp crackers — a crunchy, salty snack flavored with shrimp
+  tried: true
+  rating: 3
+  image: shrimp-chips
   location: Seoul
-  category: 🐟 Fish
-  review: ''
+  category: 🍢 Street Food
+  review: "They taste okay, but I don't crave them like when I open a bag of Lay's Chips."
+- nativeName: 바나나 우유
+  phoneticName: Banana Uyoo
+  description: Sweet banana-flavored milk, one of Korea’s most beloved drinks
+  tried: true
+  rating: 1
+  image: banana-milk
+  location: Seoul
+  category: 🍢 Street Food
+  review: "Some how both the milk and the banana flavor are artificial. It was hard to finish actually."
+- nativeName: 소세지어묵
+  phoneticName: Soseji Eomuk
+  description: Fishcake wrapped sausage, a common Korean street food skewer
+  tried: true
+  rating: 3
+  image: super-togg
+  location: Seoul
+  category: 🍢 Street Food
+  review: "This tastes okay. Hearty, but a little spongy and greasy. I got three flavors, Sausage, Ricecake and cheese. None of these really was my favorite."
 - nativeName: 자장면
   phoneticName: Jajangmyeon
   description: Noodles with black bean sauce
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: Jajangmyeon
   location: Seoul
   category: 🍜 Noodles
-  review: ''
-- nativeName: 냉면
-  phoneticName: Naengmyeon
-  description: Cold buckwheat noodles
-  tried: false
-  rating: 0
-  image: null
+  review: "This is pretty good, but a bit dull. It tastes like a very safe meal (like mac-and-cheese). But you can't beat it at that price!"
+- nativeName: 칼국수
+  phoneticName: Kal-guksu
+  description: 'knife-cut noodles'
+  tried: true
+  rating: 3
+  image: kalguksu
   location: Seoul
   category: 🍜 Noodles
-  review: ''
-- nativeName: 잡채
-  phoneticName: Japchae
-  description: Stir-fried glass noodles with vegetables
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍜 Noodles
-  review: ''
-- nativeName: 쫄면
-  phoneticName: Jjolmyeon
-  description: Chewy cold noodles with spicy sauce
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍜 Noodles
-  review: ''
+  review: "This is a simple comfort dish. But has it was quite plane, and I have no nostaligia for it, so I wasn't all the impressive."
 - nativeName: 비빔밥
   phoneticName: Bibimbap
   description: Rice with vegetables and egg
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: bbb-2
   location: Seoul
   category: 🍚 Rice
-  review: ''
+  review: 'This was a Jeonju Bibimbap, a regional specialy, and it was very good indeed.'
+- nativeName: 찜질방 계란
+  phoneticName: Jjimjilbang Gyeran
+  description: Korean sauna eggs slow-cooked in hot stones, resulting in a smoky flavor and brown shell
+  tried: true
+  rating: 3
+  image: sauna-egg
+  location: Seoul
+  category: 🍢 Street Food
+  review: "Interesting flavor. Not good, not great."
+
+- nativeName: 갈비탕
+  phoneticName: Galbitang
+  description: Clear soup made with beef short ribs, radish, and glass noodles
+  tried: true
+  rating: 5
+  image: galbi-tang
+  location: Seoul
+  category: 🍲 Soup
+  review: "This was amazing! Pretty hard to get the meat of the bones, but the broth was amazing"
+
+- nativeName: 고기구이
+  phoneticName: Gogi Gui
+  description: Korean BBQ; grilled meat usually cooked at the table and enjoyed with side dishes
+  tried: true
+  rating: 5
+  image: bbq
+  location: Seoul
+  category: 🐷 Pork 
+  review: "This was really delicious! I had many different dishes and they were all great!"
+
+- nativeName: 김치두부
+  phoneticName: Kimchi Dubu
+  description: Stir-fried kimchi served with slices of plain tofu
+  tried: true
+  rating: 4
+  image: kimchi-tofu
+  location: Seoul
+  category: 🥘 Stew
+  review: "A little simple, but the smooth tofu pairs really well with the pork and kimchi."
 - nativeName: 볶음밥
   phoneticName: Bokkeumbap
   description: Fried rice
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: bokkeum-bap
   location: Seoul
   category: 🍚 Rice
-  review: ''
-- nativeName: 된장찌개
-  phoneticName: Doenjang-jjigae
-  description: Soybean paste stew
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🥘 Stew
-  review: ''
+  review: "This was divine! I got an extra portion of the Jajang sauce, which isn't usually part of it, but was soo good!"
 - nativeName: 순두부찌개
   phoneticName: Sundubu-jjigae
   description: Soft tofu stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: softtofu
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'This was better than expected, but the texture is not there for me! I understand now why they call it soft-tofu. '
 - nativeName: 김치찌개
   phoneticName: Kimchi-jjigae
   description: Kimchi stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 1
+  image: kimchi-jiggae
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'Too much kimchi'
 - nativeName: 부대찌개
   phoneticName: Budae-jjigae
   description: Army base stew
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: army
   location: Seoul
   category: 🥘 Stew
-  review: ''
+  review: 'This was really good, because I was really hungry. But I think I prefer my own recipe.'
 - nativeName: 마파두부
   phoneticName: Mapadubu
   description: Mapo tofu, spicy tofu dish
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: mapo
   location: Seoul
   category: 🥘 Stew
-  review: ''
-- nativeName: 닭볶음탕
-  phoneticName: Dakbokkeumtang
-  description: Spicy braised chicken soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
+  review: 'I loved this more then I expected. But I would have liked some more vegetables and a little more sauce with this amount of rice.'
 - nativeName: 삼계탕
   phoneticName: Samgyetang
   description: Ginseng chicken soup
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: ginseng-soup
   location: Seoul
   category: 🍲 Soup
-  review: ''
+  review: "This was okay. It is classified as a health dish so it had some Interesting ingredients (raw ginger root, jujube and walnuts), which maybe leaned to much into it's presumtive healing abbilities."
 - nativeName: 감자탕
   phoneticName: Gamjatang
   description: Pork bone soup with potatoes
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gamja-tang
   location: Seoul
   category: 🍲 Soup
-  review: ''
-- nativeName: 설렁탕
-  phoneticName: Seolleongtang
-  description: Beef bone soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
-- nativeName: 소꼬리탕
-  phoneticName: Sokkoritang
-  description: Oxtail soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
-- nativeName: 미역국
-  phoneticName: Miyeokguk
-  description: Seaweed soup
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍲 Soup
-  review: ''
-- nativeName: 맥주
-  phoneticName: Mekju
-  description: Beer
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: 소주
-  phoneticName: Soju
-  description: Korean distilled spirit
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: 막걸리
-  phoneticName: Makgeolli
-  description: Traditional rice wine
-  tried: false
-  rating: 0
-  image: null
-  location: Seoul
-  category: 🍶 Alcohol
-  review: ''
+  review: 'This was actually 뼈해장국밥, but it is close enough. It tastesd pretty good. Steamy, spicy and filled with umami. The worst part was trying to get the meat of the bones.'
 - nativeName: たこやき
   phoneticName: Takoyaki
   description: Octopus balls, a popular street snack
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 1
+  image: takoyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'The balls were more squishy than I expected them to be. Also the brownsauce + mayonaise + bonito flakes left a bad taste in my mouth that lasted for way too long.'
 - nativeName: やきとり
   phoneticName: Yakitori
   description: Grilled chicken skewers
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: yakkitori
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'Probably my fault for getting them from the convience store, but I was not that impressed.'
 - nativeName: おこのみやき
   phoneticName: Okonomiyaki
   description: Savory pancake with toppings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: okinomiyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'There is somehting about the combination of the brown sauce, the mayonaise and the bonito flake that my tongue does not like. Once I scraped it off, it tasted fine.'
 - nativeName: ぎょうざ
   phoneticName: Gyoza
   description: Japanese pan-fried dumplings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gyoza-ramen
   location: Tokyo
   category: 🍢 Street Food
-  review: ''
+  review: 'These were really good! I can taste that they were fresh. Would have like a little more crush tough'
 - nativeName: すし
   phoneticName: Sushi
   description: Vinegared rice with raw or cooked fish
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 5
+  image: sushi
   location: Tokyo
   category: 🍚 Rice
-  review: ''
-- nativeName: ちらしずし
-  phoneticName: Chirashi Sushi
-  description: Bowl of sushi rice topped with sashimi
-  tried: false
-  rating: 0
-  image: null
+  review: 'As you know, this stuff is amazing.'
+- nativeName: カレーパン
+  phoneticName: Kare Pan
+  description: Deep-fried bread filled with Japanese curry
+  tried: true
+  rating: 4
+  image: curry-bread
+  location: Tokyo
+  category: 🍢 Street Food
+  review: "I liked the curry filling in this one, more than the curry I got for the Katsu Karee. This was excellent, but only a little too simple."
+
+- nativeName: フルーツサンド
+  phoneticName: Fruits Sando
+  description: Soft white sandwich with whipped cream and fresh fruit
+  tried: true
+  rating: 3
+  image: fruit-sandi
+  location: Tokyo
+  category: 🍨 Dessert
+  review: "This is just an excuse to eat fruit with whipped cream. The white bread is only there so your hands don't get dirty, but that doesn't mean that it wasn't good."
+
+- nativeName: オムライス
+  phoneticName: Omuraisu
+  description: Fried rice wrapped in a soft omelet, topped with ketchup or demi-glace sauce
+  tried: true
+  rating: 5
+  image: omurice
   location: Tokyo
   category: 🍚 Rice
-  review: ''
-- nativeName: おやこどん
-  phoneticName: Oyakodon
-  description: Rice bowl with chicken and egg
-  tried: false
-  rating: 0
-  image: null
+  review: "This one was great! A simple meal, with some good flavors. I would have a preferred a little more demiglaze, but it was still fine!"
+
+- nativeName: 焼きそば
+  phoneticName: Yakisoba
+  description: Stir-fried noodles with vegetables and sweet-savory sauce
+  tried: true
+  rating: 4
+  image: yakisoba
+  location: Tokyo
+  category: 🍜 Noodles
+  review: "This was great, especially with the beer! Juicy meat, crunchy cabbage and a smokey sauce. I had the classic problem with a noodles dish where all the goodies sink to the bottom. If it was mixed better, this could have been a 5!"
+
+- nativeName: カツ丼
+  phoneticName: Katsudon
+  description: Rice bowl with chicken and fried pork cutlet
+  tried: true
+  rating: 5
+  image: katsu-don
   location: Tokyo
   category: 🍚 Rice
-  review: ''
-- nativeName: てんぷら
-  phoneticName: Tempura
-  description: Deep-fried battered seafood and vegetables
-  tried: false
-  rating: 0
-  image: null
+  review: 'This was freaking great! The sauce, the crushy side of the katsu, with the soft egg. Yes please!'
+- nativeName: カツサンド
+  phoneticName: Katsu Sando
+  description: Deep-fried pork cutlet sandwich with soft white bread and tangy sauce
+  tried: true
+  rating: 4
+  image: katsu-sando
   location: Tokyo
-  category: 🥘 Stew
-  review: ''
+  category: 🍢 Street Food
+  review: "This is just an excuse to eat a pork cutlet, but I'll take it! The soft white bread, without crust, is mostly there to make you feel better. I could have done with some sliced cabbage as well, for a crunch."
+- nativeName: とんかつカレー
+  phoneticName: Tonkatsu Karee
+  description: Fried pork cutlet served with Japanese curry and rice
+  tried: true
+  rating: 3
+  image: katsu
+  location: Tokyo
+  category: 🍚 Rice
+  review: "I was missing the vegetables in the curry, this made it little to simple for me. The cutlet was great though!"
+- nativeName: うなぎごはん
+  phoneticName: Unagi Gohan
+  description: Grilled eel glazed with sweet soy sauce served over rice
+  tried: true
+  rating: 5
+  image: unagi
+  location: Tokyo
+  category: 🍚 Rice
+  review: "I love unagi, so this was a treat! I splurged on the larger piece, and it was definitly worth it!"
 - nativeName: ラーメン
   phoneticName: Ramen
   description: Noodle soup with various broths and toppings
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 4
+  image: gyoza-ramen
   location: Tokyo
   category: 🍜 Noodles
-  review: ''
-- nativeName: うどん
-  phoneticName: Udon
-  description: Thick wheat noodles
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍜 Noodles
-  review: ''
-- nativeName: そば
-  phoneticName: Soba
-  description: Buckwheat noodles
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍜 Noodles
-  review: ''
-- nativeName: みそしる
-  phoneticName: Miso Shiru
-  description: Miso soup with tofu and seaweed
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍲 Soup
-  review: ''
-- nativeName: おでん
-  phoneticName: Oden
-  description: Stew with fishcakes, daikon, tofu, and eggs
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍲 Soup
-  review: ''
-- nativeName: まっちゃアイス
-  phoneticName: Matcha Aisu
-  description: Green tea ice cream
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍨 Dessert
-  review: ''
+  review: 'This dish feels so simple, as it is mostly warm flavorful water, but still it impressed me!'
 - nativeName: どらやき
   phoneticName: Dorayaki
   description: Pancake sandwich with red bean paste
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: dorayaki
   location: Tokyo
   category: 🍨 Dessert
-  review: ''
-- nativeName: だいふく
-  phoneticName: Daifuku
-  description: Mochi stuffed with sweet filling
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍨 Dessert
-  review: ''
-- nativeName: さけ
-  phoneticName: Sake
-  description: Japanese rice wine
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍶 Alcohol
-  review: ''
-- nativeName: うめしゅ
-  phoneticName: Umeshu
-  description: Sweet plum wine
-  tried: false
-  rating: 0
-  image: null
-  location: Tokyo
-  category: 🍶 Alcohol
-  review: ''
+  review: 'I am not really a dessert person, and I was expecting this to be warm, but it was still pretty good!'
 - nativeName: 牛肉麵
   phoneticName: Niúròu Miàn
   description: Beef noodle soup
@@ -654,15 +600,6 @@
   image: null
   location: Taipei
   category: 🍢 Street Food
-  review: ''
-- nativeName: 珍珠奶茶
-  phoneticName: Zhēnzhū Nǎichá
-  description: Bubble milk tea
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
-  category: 🍨 Dessert
   review: ''
 - nativeName: 蚵仔煎
   phoneticName: Ō-á-chiān
@@ -700,57 +637,72 @@
   location: Hong Kong
   category: 🍜 Noodles
   review: ''
-- nativeName: 蛋撻
-  phoneticName: Daan Tat
-  description: Egg tart pastry
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
-  category: 🍨 Dessert
-  review: ''
-- nativeName: 奶茶
-  phoneticName: Naaih Cha
-  description: Hong Kong-style milk tea
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
-  category: 🍶 Alcohol
-  review: ''
 - nativeName: 豬扒包
   phoneticName: Zhūpá Bāo
   description: Pork chop bun
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 3
+  image: porkchop
   location: Macau
   category: 🍢 Street Food
-  review: ''
+  review: "As good as a deep-fried pork chop on a bun with some butter can be. I was missing a special sauce or spices to make it stand out."
+
+- nativeName: 杏仁餅
+  phoneticName: Xìngrén Bǐng
+  description: Almond cookie
+  tried: true
+  rating: 3
+  image: almond-cookie
+  location: Macau
+  category: 🍪 Snack
+  review: "A bit sandy and crumbly, but the big pieces of almond were a nice touch."
+
+- nativeName: 奶茶
+  phoneticName: Nǎichá
+  description: Milk tea with boba
+  tried: true
+  rating: 2
+  image: milktea
+  location: Macau
+  category: 🧋 Beverage
+  review: "Lactose-free milk with a strong English tea syrup and bubble tea pearls. Not really my favorite, but to be fair I don’t usually like beverages that much."
+
 - nativeName: 葡式蛋撻
   phoneticName: Portuguese Egg Tart
   description: Famous Macanese custard tart
-  tried: false
-  rating: 0
-  image: null
+  tried: true
+  rating: 2
+  image: egg-tart
   location: Macau
-  category: 🍨 Dessert
-  review: ''
-- nativeName: 水蟹粥
-  phoneticName: Shuǐ Xiè Zhōu
-  description: Crab congee
-  tried: false
-  rating: 0
-  image: null
-  location: Macau
-  category: 🍲 Soup
-  review: ''
+  category: 🥧 Pastry
+  review: "I thought this would taste like Pastei de Nata with a sweet custard filling, but instead it had an eggy filling that made it taste more like a sweet omelette."
+
 - nativeName: 非洲鶏
   phoneticName: Feizhou Ji
-  description: African chicken, Macanese specialty
-  tried: false
-  rating: 0
-  image: null
+  description: Macanese specialty, chicken pilav
+  tried: true
+  rating: 3
+  image: pilav
   location: Macau
   category: 🐔 Chicken
-  review: ''
+  review: "The chicken was really good, and the sauce was nice. But I was missing some vegetables and a little bit of heat, especially since there was a chili pepper on the menu."
+
+- nativeName: 月饼
+  phoneticName: Yuèbǐng
+  description: Mooncake (traditional festival pastry with sweet or savory filling)
+  tried: true
+  rating: 3
+  image: mooncake
+  location: Macau
+  category: 🥧 Pastry
+  review: 'I had one with greenbean paste, and another with lotus seeds. Both strong flavors. Not really my style, but I see the potential. (I tried some with a jam like filling too, those were much better)'
+- nativeName: 流沙包
+  phoneticName: Liúshā Bāo
+  description: Steamed bun with molten salted egg yolk filling
+  tried: true
+  rating: 2
+  image: egg-bao
+  location: Macau
+  category: 🍢 Street Food
+  review: "I didn't expect there to be an egg filling. This tasted really weird."
+

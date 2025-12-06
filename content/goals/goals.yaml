@@ -1,21 +1,15 @@
 - text: "See TWICE live"
-  completed: false
-  link: ""
-- text: "Attend an E-sports match live"
-  completed: false
-  link: null
-- text: "Itaewon K-pop Gay Club"
-  completed: false
-  link: null
-- text: "Have a 회식 style dinner"
-  completed: false
-  link: null
-- text: "Meet the 7/11 cashier from 3 years ago"
-  completed: false
-  link: null
+  completed: true
+  link: "twice-in-macau"
 - text: "Go to a Korean sauna"
-  completed: false
-  link: null
-- text: "Attend a music show"
-  completed: false
-  link: null
+  completed: true
+  link: "sauna"
+- text: "Attend the TWICE Fanmeeting"
+  completed: true
+  link: fanmeeting
+- text: "Attend a trot music party"
+  completed: true
+  link: trot-festival
+- text: "Attend an E-sports match live"
+  completed: true
+  link: starcraft-broodwar

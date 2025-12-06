@@ -23,6 +23,7 @@ interface IconConfig {
 
 const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   if (isEmpty) {
     return (
@@ -121,14 +122,27 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
     if (!hasImage) return null;
 
     return (
-      <Image
-        src={thumbnailSrc}
-        width={400}
-        height={400}
-        alt={`Day ${dayInfo.day} - ${dayInfo.location || 'Travel day'}`}
-        className="w-full h-full object-cover rounded-sm"
-        loading="lazy"
-      />
+      <div className="relative w-full h-full">
+        {/* Loading skeleton */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-t-sm">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-shimmer" />
+          </div>
+        )}
+        
+        {/* Actual image */}
+        <Image
+          src={thumbnailSrc}
+          width={400}
+          height={400}
+          alt={`Day ${dayInfo.day} - ${dayInfo.location || 'Travel day'}`}
+          className={`w-full h-full object-cover rounded-sm transition-opacity duration-300 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+        />
+      </div>
     );
   };
 

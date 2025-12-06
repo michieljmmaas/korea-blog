@@ -1,8 +1,8 @@
 ---
 index: 0
-title: 'Week 0: Sep 25'
+title: 'The weeks before: Prepping, Planning and Too Much Painting'
 publishdate: '2025-09-25'
-photos: ['planning', 'todo', 'twice-schedule', 'gate']
+photos: ['planning', 'todo', 'twice-schedule', "gate", "kozijn", "korean", "yiyi"]
 tags: []
 location: Netherlands
 draft: false
@@ -22,7 +22,7 @@ In the weeks leading up to my departure, I had a long list of things I needed—
 - Clean my room, wash clothes, tidy the house
 - Paint the window frames
 
-The Wednesday before my flight, I sat down to plan everything out carefully, making sure I had enough time to get it all done.
+Eight days before my flight, I sat down to plan everything out carefully, making sure I had enough time to get it all done.
 
 I also made time to see my friends and family to say goodbye. Ten weeks feels like a long time right now, but I’m sure it will fly by once I’ve landed.
 
@@ -37,3 +37,16 @@ Saturday wasn’t much better. I went to the shopping district near my house to 
 When I got home, though, I saw that TWICE (my favorite K-pop group) had announced their 10th anniversary schedule. They’re really going all out: a new album, a fan meeting, a pop-up store, a sitcom, and even a movie! How convenient that it all happens while I’ll be there.
 
 That evening, I spent three hours assembling a wooden model of Gwanghwamun (광화문)—a souvenir I had bought three years earlier (to the day!) on my last trip. I couldn’t bring myself to step on the plane while that model was still sitting unopened in its original packaging.
+
+## The Window Frame
+I really wanted to paint the window frame before I left. I expected it would take some time (sanding, painting, touch-ups etc.), but in reality it took way longer than expect. I also had to rearrange my entire room so I could reach it better. In the end I am happy with how it turned out, but it might have been a better idea to do this after the trip, when I had less of a time crunch. 
+
+## Breakthrough
+I woke up really early wednesday (like, 5:00 am). I was so stressed because there was so much stuff left that I had to do (printing out paperwork, add a foodlist to the blog, last minute shopping, making Korean cheat-sheets, and much more). A bit deflated I started with the Korean Cheats. I wanted some small pieces of paper with usefull Korean words and grammar that I could use to practice my Korean. My Korean studies to a backseat the past two month, so I expected that this, like all the other things this week, to take double the time I had alotted for it. 
+
+But when after I started collected my books, I found the summaries and notes I made for my self when working trough my studybooks. Years of dilligent notetaking, and summarizing was finally paying of. Highlighting import rules, and using color coded booksmarks speed up the process immensely. People say sometimes say "This is problem for future me", in this case it was a gift from "past me". 
+
+This was immensely motivating, I hardly noticed my lack of sleep through the day. I was able to update my blog with all the final features easily, send out my last emails, did my final shopping, even the package with my new shoes arrived a day ahead of schedule! 
+
+I had bought tickets for a screening of the movie Yiyi in Lumen wednesday night. On tuesday I had toughts of cancelling my tickets to make up for my lost time. But arround dinner time was able to tick of my last to-do, and finally found some time to relax. I thought the movie was touching and funny, but in the end had I had some trouble with staying awake. 
+

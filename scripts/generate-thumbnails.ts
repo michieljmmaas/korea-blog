@@ -92,7 +92,7 @@ const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
         
       } catch (error) {
         console.error(`❌ Failed to download daily thumbnail for ${dateString}:`, error);
-        // Continue with other images
+        throw error;
       }
     }
   }
@@ -146,7 +146,7 @@ const downloadWeeklyThumbnails = async (): Promise<Record<string, string>> => {
       
     } catch (error) {
       console.error(`❌ Failed to download weekly thumbnail for week ${weekIndex}:`, error);
-      // Continue with other images
+    process.exit(1);
     }
   }
   
@@ -211,7 +211,7 @@ const downloadBlogPostThumbnails = async (): Promise<Record<string, string>> => 
       
     } catch (error) {
       console.error(`❌ Failed to download blog post thumbnail for ${slug}:`, error);
-      // Continue with other images
+    process.exit(1);
     }
   }
   

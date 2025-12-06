@@ -4,7 +4,7 @@ title: About me
 description: A little bit about me
 publishdate: '2025-09-25'
 draft: false
-tags: ["information"]
+tags: ["Information"]
 thumb: "pic"
 photos: ["pic"]
 ---
@@ -18,4 +18,6 @@ About five years ago I fell deep into Korean culture — from learning the langu
 
 Right now, I’m living in Seoul until **November 19th**. If you’d like to meet up, explore the city together, or just chat about shared interests, feel free to reach out!
 
-(Insert Kakao info here 📱)
+* Kakaotalk id: MJMMaas
+* Phonenumber: 010 - 7329 6713 (Sorry, I can't text back or call)
+* email: michieljmmaas@gmail.com 

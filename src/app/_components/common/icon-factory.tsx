@@ -3,7 +3,7 @@ import Image from 'next/image';
 import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
 import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tokyo.svg";
 import kimbapTaiwanIcon from "../../../../public/assets/blog/svg-icons/kimbap-taiwan.svg";
-import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/kimbap-hong-kong.svg";
+import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/boba.svg";
 import kimbapNetherlandsIcon from "../../../../public/assets/blog/svg-icons/kimbap-netherlands.svg";
 import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
@@ -71,16 +71,16 @@ const LOCATION_SPECIFIC_TITLES: Record<string, Record<string, { info: string; st
       stat: 'Sushi eaten',
     },
     'Hong Kong': {
-      info: 'Dim Sum',
-      stat: 'Dim sum eaten',
+      info: 'Sweet Teas',
+      stat: 'Sweet Teas drunk'
     },
     Taiwan: {
       info: 'Xiaolongbao',
       stat: 'Xiaolongbao eaten',
     },
     Macau: {
-      info: 'Xiaolongbao',
-      stat: 'Xiaolongbao eaten',
+      info: 'Snacks',
+      stat: 'Snacks eaten',
     },
     Netherlands: {
       info: 'Frikandelbroodjes',
@@ -187,8 +187,6 @@ export default function IconFactory({
       src={iconPath}
       alt={alt || finalTitle}
       title={finalTitle}
-      width={dimensions.width}
-      height={dimensions.height}
       className={finalClassName}
     />
   );

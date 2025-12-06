@@ -30,13 +30,7 @@ export default function WeekCard({ week, priorty }: WeekCardProps) {
         return `${formatDate(firstDay)} - ${formatDate(lastDay)}`;
     };
 
-    let description = "";
-    if (week.index === 0) {
-        description = "The weeks before";
-    } else {
-        description = `Week ${week.index}: ${formatDateRange(week.days)}`
-    }
-
+    let description = week.title;
 
     const WeekCard = (
         <Link

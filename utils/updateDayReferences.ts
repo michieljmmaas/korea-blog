@@ -79,6 +79,27 @@ export async function processDayReferences(
 }
 
 /**
+ * Processes <Blog {slug} desc="Text for hyperlink"> references and converts them to links
+ * 
+ * @param content - The markdown or HTML string to process
+ * @param basePath - Optional base path for the links (defaults to "/blogs/")
+ * @returns The processed content with Blog references converted to links
+ */
+export function processBlogReferences(
+    content: string,
+    basePath: string = "/blogs/"
+): string {
+    // Regular expression to match <Blog {slug} desc="description text">
+    const blogPattern = /<Blog\s+([^\s]+)\s+desc="([^"]+)">/g;
+
+    const result = content.replace(blogPattern, (match, slug, description) => {
+        return `<a href="${basePath}${slug}" class="dayLink">${description}</a>`;
+    });
+
+    return result;
+}
+
+/**
  * Extracts all day numbers from <Day X> references in the content
  * Useful for batch processing or validation
  * 
@@ -95,6 +116,27 @@ export function extractDayNumbers(content: string): number[] {
     }
 
     return Array.from(dayNumbers).sort((a, b) => a - b);
+}
+
+/**
+ * Extracts all blog references from the content
+ * 
+ * @param content - The content to scan for blog references
+ * @returns Array of objects containing slug and description
+ */
+export function extractBlogReferences(content: string): Array<{ slug: string; description: string }> {
+    const blogPattern = /<Blog\s+([^\s]+)\s+desc="([^"]+)">/g;
+    const blogRefs: Array<{ slug: string; description: string }> = [];
+    let match;
+
+    while ((match = blogPattern.exec(content)) !== null) {
+        blogRefs.push({
+            slug: match[1],
+            description: match[2]
+        });
+    }
+
+    return blogRefs;
 }
 
 /**
@@ -143,4 +185,15 @@ export async function processDayReferencesWithCallback(
 export function hasDayReferences(content: string): boolean {
     const dayPattern = /<Day\s+(\d+)>/;
     return dayPattern.test(content);
+}
+
+/**
+ * Validates if blog references exist in the content
+ * 
+ * @param content - The content to check
+ * @returns Boolean indicating if any blog references were found
+ */
+export function hasBlogReferences(content: string): boolean {
+    const blogPattern = /<Blog\s+([^\s]+)\s+desc="[^"]+">/;
+    return blogPattern.test(content);
 }

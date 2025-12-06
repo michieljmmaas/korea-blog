@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import StatsSummaryCards from './chart-stats';
 import { CityLocation } from '@/app/types';
@@ -67,21 +66,20 @@ interface TooltipProps {
 
 const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1, location }) => {
     const [chartData, setChartData] = useState<DayData[]>([]);
+    const [dailyData, setDailyData] = useState<DayData[]>([]);
     const [displayData, setDisplayData] = useState<DayData[]>([]);
     const [showFullData, setShowFullData] = useState<boolean>(false);
     const [currentWeek] = useState<number>(weekNumber);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Add this function before the useEffect hooks
+    // Aggregate data by weeks for the full view
     const aggregateByWeeks = (data: DayData[]): DayData[] => {
         const weeks: DayData[] = [];
 
         for (let i = 0; i < data.length; i += 7) {
             const weekData = data.slice(i, i + 7);
             const weekNumber = Math.floor(i / 7) + 1;
-
-            // Get the last day's values (since it's cumulative data)
             const lastDay = weekData[weekData.length - 1];
 
             weeks.push({
@@ -106,8 +104,8 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 }
                 const data: BlogStatsData = await response.json();
 
-                // Use cumulative data for the "total so far" view
                 setChartData(data.cumulative || []);
+                setDailyData(data.daily || []);
                 setLoading(false);
             } catch (err: any) {
                 setError(err.message);
@@ -123,41 +121,72 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         if (chartData.length === 0) return;
 
         if (showFullData) {
-            // Aggregate by weeks for zoomed out view
             setDisplayData(aggregateByWeeks(chartData));
         } else {
-            // Calculate week window (7 days per week)
             const startIndex = Math.max(0, (currentWeek - 1) * 7);
             const endIndex = Math.min(chartData.length, currentWeek * 7);
             setDisplayData(chartData.slice(startIndex, endIndex));
         }
     }, [chartData, currentWeek, showFullData]);
 
-    // Toggle between week view and full view
     const toggleView = (): void => {
         setShowFullData(!showFullData);
     };
 
-    // Format date for display
     const formatDate = (dateStr: string): string => {
         if (dateStr.startsWith('Week ')) {
-            return dateStr; // Return "Week 1", "Week 2", etc.
+            return dateStr;
         }
         const date = new Date(dateStr);
         return `${date.getMonth() + 1}/${date.getDate()}`;
     };
 
-    // Custom tooltip showing daily increases
+    const getAxisDomains = (): { left: [number, number]; right: [number, number] } | { left: undefined; right: undefined } => {
+        if (displayData.length === 0) {
+            return { left: undefined, right: undefined };
+        }
+
+        if (showFullData) {
+            return { left: undefined, right: undefined };
+        }
+
+        const steps = displayData.map(d => d.steps);
+        const otherStats = displayData.flatMap(d => [d.kimbap, d.cultural, d.worked]);
+
+        const minSteps = Math.min(...steps);
+        const maxSteps = Math.max(...steps);
+        const minOther = Math.min(...otherStats);
+        const maxOther = Math.max(...otherStats);
+
+        const stepsPadding = (maxSteps - minSteps) * 0.1;
+        const otherPadding = (maxOther - minOther) * 0.1;
+
+        return {
+            left: [Math.max(0, Math.floor(minSteps - stepsPadding)), Math.ceil(maxSteps + stepsPadding)],
+            right: [Math.max(0, Math.floor(minOther - otherPadding)), Math.ceil(maxOther + otherPadding)]
+        };
+    };
+
+    const axisDomains = getAxisDomains();
+
     const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            // Find the current day's index in the display data
-            const currentIndex = displayData.findIndex(day => day.date === label);
-            const currentDay = displayData[currentIndex];
-            const previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
+            const isWeeklyView = label?.startsWith('Week ');
+            
+            let currentDay, previousDay, currentIndex;
+            
+            if (isWeeklyView) {
+                currentIndex = displayData.findIndex(day => day.date === label);
+                currentDay = displayData[currentIndex];
+                previousDay = currentIndex > 0 ? displayData[currentIndex - 1] : null;
+            } else {
+                currentIndex = chartData.findIndex(day => day.date === label);
+                currentDay = chartData[currentIndex];
+                previousDay = currentIndex > 0 ? chartData[currentIndex - 1] : null;
+            }
 
-            // Map chart names to data keys
             const nameToKey: { [key: string]: keyof DayData } = {
-                'Kimbap Eaten': 'kimbap',
+                'Snacks Eaten': 'kimbap',
                 'Sights Seen': 'cultural',
                 'Hours Worked': 'worked',
                 'Steps Taken': 'steps'
@@ -165,7 +194,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
 
             return (
                 <div className="bg-white p-4 border border-gray-300 rounded-lg shadow-lg">
-                    <p className="font-semibold text-gray-800">{`Date: ${label}`}</p>
+                    <p className="font-semibold text-gray-800">{`${isWeeklyView ? label : `Date: ${label}`}`}</p>
                     {payload.map((entry, index) => {
                         const dataKey = nameToKey[entry.name];
                         const currentValue = currentDay?.[dataKey] as number || 0;
@@ -174,8 +203,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
 
                         return (
                             <p key={index} style={{ color: entry.color }} className="text-sm">
-                                {`${entry.name}: +${dailyIncrease.toLocaleString()}`}
-                                {currentIndex === 0 && <span className="text-gray-500 text-xs ml-1"></span>}
+                                {`${entry.name}: +${dailyIncrease.toLocaleString()} - (${currentValue})`}
                             </p>
                         );
                     })}
@@ -201,18 +229,14 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
         );
     }
 
-    const maxWeek = Math.ceil(chartData.length / 7);
-
     return (
         <div className="w-full space-y-4">
-            {/* Header - Hidden on mobile */}
             <div className="hidden md:flex items-center justify-between flex-wrap gap-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                     Vacation Stats - Cumulative Progress
                 </h2>
 
                 <div className="flex items-center gap-4">
-                    {/* Toggle button */}
                     <button
                         onClick={toggleView}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
@@ -222,7 +246,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </div>
             </div>
 
-            {/* Chart info - Hidden on mobile */}
             <div className="hidden md:flex items-center justify-between text-sm text-gray-600">
                 <span>
                     {showFullData
@@ -237,7 +260,6 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </span>
             </div>
 
-            {/* Chart - Hidden on mobile */}
             <div className="hidden md:block bg-white p-4 rounded-lg border border-gray-200">
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart data={displayData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -249,17 +271,16 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                             fontSize={12}
                         />
                         <YAxis yAxisId="left" stroke="#666" fontSize={12} />
-                        <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} />
+                        <YAxis yAxisId="right" orientation="right" stroke="#666" fontSize={12} domain={axisDomains.right} />
                         <Tooltip content={<CustomTooltip />} />
 
-                        {/* Lines for each stat */}
                         <Line
                             type="monotone"
                             dataKey="kimbap"
                             stroke="#f8333c"
                             strokeWidth={2}
                             dot={{ fill: '#f8333c', strokeWidth: 2, r: 4 }}
-                            name="Kimbap Eaten"
+                            name="Snacks Eaten"
                             yAxisId="right"
                         />
                         <Line
@@ -293,8 +314,13 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
                 </ResponsiveContainer>
             </div>
 
-            {/* Stats summary - now using the extracted component */}
-            <StatsSummaryCards displayData={displayData} location={location}/>
+            <StatsSummaryCards 
+                dailyData={dailyData}
+                cumulativeData={chartData}
+                currentWeek={currentWeek}
+                showFullData={showFullData}
+                location={location}
+            />
         </div>
     );
 };

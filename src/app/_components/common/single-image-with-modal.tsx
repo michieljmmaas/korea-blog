@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react";
-import { ImageKitProvider, Image } from "@imagekit/next";
-import ImageModal from "./image-modal";
+import { ImageKitProvider } from "@imagekit/next";
+import ImageModal from "./new-image-modal";
 
 interface SingleImageWithModalProps {
   src: string;
@@ -19,9 +19,16 @@ const SingleImageWithModal = ({
 }: SingleImageWithModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Extract base URL without transformation for modal
-  const getBaseImageUrl = (url: string) => {
-    return url.split('?tr=')[0]; // Remove the ?tr=... part
+  // Extract the path from full ImageKit URL
+  const getImagePath = (url: string) => {
+    // If it's a full ImageKit URL, extract just the path
+    if (url.includes('ik.imagekit.io/yyahqsrfe')) {
+      // Remove base URL and any transformations
+      const path = url.replace('https://ik.imagekit.io/yyahqsrfe', '').split('?')[0];
+      return path;
+    }
+    // If it's already just a path, return as-is
+    return url.split('?')[0];
   };
 
   const openModal = () => {
@@ -32,7 +39,7 @@ const SingleImageWithModal = ({
     setIsModalOpen(false);
   };
 
-  const baseImageUrl = getBaseImageUrl(src);
+  const imagePath = getImagePath(src);
 
   return (
     <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
@@ -58,7 +65,7 @@ const SingleImageWithModal = ({
         )}
 
         <ImageModal
-          images={[baseImageUrl]} // Pass base URL without named transformation
+          images={[imagePath]} // Pass just the path (e.g., /days/2025-10-25/pizza)
           currentIndex={0}
           isOpen={isModalOpen}
           onClose={closeModal}
