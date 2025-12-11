@@ -6,6 +6,7 @@ import { Navigation, Pagination, Thumbs } from "swiper/modules";
 import { ImageKitProvider, Image } from "@imagekit/next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ImageModal from "./new-image-modal";
+import FadeInImage from "./fade-in-image";
 import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
@@ -141,24 +142,20 @@ const SwiperImageCarousel = ({
               <div
                 className={`cursor-pointer rounded-lg overflow-hidden transition-all duration-200 ${
                   activeIndex === index
-                    ? "ring-2 ring-blue-500 ring-offset-2"
+                    ? "ring-offset-2"
                     : "opacity-60 hover:opacity-100"
                 }`}
               >
-                <Image
-                  src={image}
-                  width={150}
-                  height={100}
-                  alt={`${alt} thumbnail ${index + 1}`}
-                  className="w-full h-16 sm:h-20 object-cover"
-                  transformation={[
-                    {
-                      height: "100",
-                      width: "150",
-                    },
-                  ]}
-                  loading="lazy"
-                />
+<FadeInImage
+  src={image}
+  width={150}
+  height={100}
+  alt={`${alt} thumbnail ${index + 1}`}
+  className="w-full h-16 sm:h-20 object-cover"
+  transformation={[{ height: "100", width: "150" }]}
+  loading="lazy"
+/>
+
               </div>
             </SwiperSlide>
           ))}
