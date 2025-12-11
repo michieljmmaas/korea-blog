@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
@@ -10,8 +9,7 @@ interface ImageModalProps {
   currentIndex: number;
   isOpen: boolean;
   onClose: () => void;
-  onNext?: () => void;
-  onPrevious?: () => void;
+  onIndexChange?: (index: number) => void;
   alt?: string;
 }
 
@@ -20,26 +18,9 @@ const ImageModal = ({
   currentIndex,
   isOpen,
   onClose,
-  onNext,
-  onPrevious,
+  onIndexChange,
   alt = "Image"
 }: ImageModalProps) => {
-  
-  // Handle keyboard navigation
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft' && onPrevious) {
-        onPrevious();
-      } else if (e.key === 'ArrowRight' && onNext) {
-        onNext();
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onNext, onPrevious]);
 
   // Convert image paths to ImageKit URLs with transformations
   const getImageKitUrl = (path: string, width: number, quality: number) => {
@@ -79,6 +60,14 @@ const ImageModal = ({
       close={onClose}
       slides={slides}
       index={currentIndex}
+      on={{
+        view: ({ index }) => {
+          // Notify parent component when the index changes
+          if (onIndexChange) {
+            onIndexChange(index);
+          }
+        },
+      }}
       plugins={[Zoom]}
       zoom={{
         maxZoomPixelRatio: 3,
