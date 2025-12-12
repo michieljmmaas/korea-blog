@@ -940,7 +940,7 @@
     },
     {
       "date": "2025-12-02",
-      "kimbap": 0,
+      "kimbap": 4,
       "commits": 0,
       "worked": 0,
       "cultural": 3,
@@ -968,13 +968,13 @@
     },
     {
       "date": "2025-12-04",
-      "kimbap": 0,
+      "kimbap": 3,
       "commits": 0,
       "worked": 0,
       "cultural": 0,
-      "steps": 0,
+      "steps": 15880,
       "tags": 0,
-      "thumbnail": 2,
+      "thumbnail": 8,
       "coordinates": 0,
       "lat": 0,
       "lng": 0,
@@ -1520,7 +1520,7 @@
     },
     {
       "date": "2025-12-02",
-      "kimbap": 212,
+      "kimbap": 216,
       "commits": 0,
       "cultural": 198,
       "steps": 982362,
@@ -1528,7 +1528,7 @@
     },
     {
       "date": "2025-12-03",
-      "kimbap": 212,
+      "kimbap": 216,
       "commits": 0,
       "cultural": 201,
       "steps": 996513,
@@ -1536,10 +1536,10 @@
     },
     {
       "date": "2025-12-04",
-      "kimbap": 212,
+      "kimbap": 219,
       "commits": 0,
       "cultural": 201,
-      "steps": 996513,
+      "steps": 1012393,
       "worked": 176
     }
   ],
@@ -1550,17 +1550,17 @@
       "end": "2025-12-04"
     },
     "totals": {
-      "kimbap": 212,
+      "kimbap": 219,
       "commits": 0,
       "cultural": 201,
-      "steps": 996513,
+      "steps": 1012393,
       "worked": 176
     },
     "averages": {
-      "kimbap": "3.03",
+      "kimbap": "3.13",
       "commits": "0.00",
       "cultural": "2.87",
-      "steps": 14236,
+      "steps": 14463,
       "worked": "2.51"
     }
   }
