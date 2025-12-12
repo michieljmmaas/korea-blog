@@ -577,66 +577,415 @@
 - nativeName: 牛肉麵
   phoneticName: Niúròu Miàn
   description: Beef noodle soup
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
+  tried: true
+  rating: 5
+  image: tw-beef-soup
+  location: Taiwan
   category: 🍜 Noodles
-  review: ''
+  review: 'This was divine. Rich flavour, nice sized portion. Definitly worth the wait!'
 - nativeName: 滷肉飯
   phoneticName: Lǔròu Fàn
   description: Braised pork over rice
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
+  tried: ture
+  rating: 3
+  image: braised-beef-rice
+  location: Taiwan
   category: 🍚 Rice
-  review: ''
+  review: 'Pretty good, but a bit plain? I would have liked some more sauce.'
 - nativeName: 小籠包
   phoneticName: Xiǎolóngbāo
   description: Soup dumplings
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
+  tried: true
+  rating: 5
+  image: xia-bao
+  location: Taiwan
+  category: 🥟 Dumplings
+  review: 'There is soup inside the dumplings, next to some meat. Be careful not to burn your tongue, and eat them in one go!'
+
+
+
+- nativeName: 蔥油餅
+  phoneticName: Cōngyóubǐng
+  description: Scallion pancakes
+  tried: true
+  rating: 5
+  image: scallion-pancakes
+  location: Taiwan
   category: 🍢 Street Food
-  review: ''
-- nativeName: 蚵仔煎
-  phoneticName: Ō-á-chiān
-  description: Oyster omelette
-  tried: false
-  rating: 0
-  image: null
-  location: Taipei
+  review: 'These were amazing. Great texture, and good seasoning. I kept comming back to these.'
+
+- nativeName: 珍珠奶茶
+  phoneticName: Zhēnzhū Nǎichá
+  description: Bubble tea
+  tried: true
+  rating: 4
+  image: tw-tea
+  location: Taiwan
+  category: 🧋 Drinks
+  review: 'I am getting the hang of it more. I need some more sugar, but the tapioca balls still are not doing it for me.'
+
+- nativeName: 餃子
+  phoneticName: Jiǎozi
+  description: Dumplings
+  tried: true
+  rating: 4
+  image: tw-dump
+  location: Taiwan
+  category: 🥟 Dumplings
+  review: 'Pretty good, I could taste that the dough was hand made! The sauce did wonders for me.'
+
+- nativeName: 胡椒餅
+  phoneticName: Hújiāobǐng
+  description: Stone Oven Baked Pepper bread
+  tried: true
+  rating: 4
+  image: tw-pepper-bun
+  location: Taiwan
   category: 🍢 Street Food
-  review: ''
-- nativeName: 燒賣
-  phoneticName: Siu Mai
-  description: Open-topped steamed pork dumpling
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
-  category: 🍢 Street Food
-  review: ''
+  review: 'These really good too, strong pepper flavour. But be careful when they are fresh out of the oven, because they are hot!'
+
+- nativeName: 叉燒
+  phoneticName: Chāshāo
+  description: Grilled Porkbelly
+  tried: true
+  rating: 3
+  image: tw-char
+  location: Taiwan
+  category: 🥩 Meat
+  review: 'Nice, but a bit pricy for me. Also I think it works better as part of a meal, not stand alone.'
+
 - nativeName: 叉燒包
-  phoneticName: Cha Siu Bao
-  description: Steamed BBQ pork buns
-  tried: false
-  rating: 0
-  image: null
-  location: Hong Kong
+  phoneticName: Chāshāobāo
+  description: Char Siu bun (Long Bao)
+  tried: true
+  rating: 2
+  image: tw-long-bao
+  location: Taiwan
+  category: 🍢 Street Food
+  review: 'This had some flavours I did not like. Corriander and some kind of picadily sauce, and the bun was to moist. No Thank you!'
+
+- nativeName: 紫米飯糰
+  phoneticName: Zǐmǐ Fàntuán
+  description: Purple sticky rice breakfast roll with pork floss and egg
+  tried: true
+  rating: 3
+  image: tw-sticky
+  location: Taiwan
   category: 🍚 Rice
-  review: ''
-- nativeName: 雲吞麵
-  phoneticName: Wonton Mein
-  description: Wonton noodle soup
-  tried: false
-  rating: 0
-  image: null
+  review: 'Not bad actually. Pretty filling and had some nice flavours. I feel it would be better fresh and warm.'
+
+- nativeName: 雞排
+  phoneticName: Jīpái
+  description: Taiwanese chicken steak
+  tried: true
+  rating: 3
+  image: tw-chick
+  location: Taiwan
+  category: 🍢 Street Food
+  review: 'It is just fried chicken, with some seasoning. Mine was a bit cold, and had to much bones in it.'
+
+- nativeName: 地瓜球
+  phoneticName: Dìguāqiú
+  description: Fried sweet potato balls
+  tried: true
+  rating: 4
+  image: tw-balls
+  location: Taiwan
+  category: 🍢 Street Food
+  review: 'Airy, chewy and sweet. Better than I expected, but I think it needs some sauce or powder sugar.'
+
+- nativeName: 糖醋魚
+  phoneticName: Tángcù Yú
+  description: Sweet and sour fried fish
+  tried: true
+  rating: 2
+  image: tw-fish
+  location: Taiwan
+  category: 🐟 Seafood
+  review: 'Too much sauce, not enough fish taste. The fried rice was better I say.'
+
+- nativeName: 蔥爆牛肉
+  phoneticName: Cōngbào Niúròu
+  description: Scallion beef stir-fry
+  tried: true
+  rating: 5
+  image: tw-beef-scallion
+  location: Taiwan
+  category: 🥩 Meat
+  review: 'This was excellent! Nice sauce and crunchy vegetables. This is how you are supposed to use ginger!'
+
+- nativeName: Mister Donut
+  phoneticName: Mister Donut
+  description: Mister Donut donut
+  tried: true
+  rating: 3
+  image: tw-donut
+  location: Taiwan
+  category: 🍞 Bakery
+  review: 'A little to mushy, for my taste. I thought it would be more airy. Maybe I got the wrong flavour?'
+
+- nativeName: 宮保雞丁
+  phoneticName: Gōngbǎo Jīdīng
+  description: Kung Pao chicken
+  tried: true
+  rating: 3
+  image: tw-kung-pao
+  location: Taiwan
+  category: 🥩 Meat
+  review: 'This was a bit watery too watery for my taste. The spice was also no spread, only in the peppers.'
+
+- nativeName: 火鍋
+  phoneticName: Huǒguō
+  description: Hot pot
+  tried: true
+  rating: 4
+  image: tw-hot-pot
+  location: Taiwan
+  category: 🍲 Hot Pot
+  review: 'This was fine. I did not know what half the things were, and it was quite a bit of work to cook everything my self. But in the end I had a nice stew, that I filled with rice. This was also in Alisan, so maybe I would have liked it more in the city?'
+
+- nativeName: 三杯雞
+  phoneticName: Sānbēi Jī
+  description: Three-cup chicken
+  tried: true
+  rating: 2
+  image: tw-three-cup
+  location: Taiwan
+  category: 🥩 Meat
+  review: "This wasn't all that special, and maybe even tasted a bit burnt? There was also entire to much bones left on the meat for me to enjoy it."
+
+- nativeName: 哈密瓜麵包
+  phoneticName: Hāmìguā Miànbāo
+  description: Melon bread
+  tried: true
+  rating: 4
+  image: tw-melon-bread
+  location: Taiwan
+  category: 🍞 Bakery
+  review: 'This was nice, fresh out of the oven with some butter. It was crunch, but maybe a little to warm to enjoy the flavors well? It was not that much better from what I had from the convience store.'
+
+- nativeName: 臭豆腐
+  phoneticName: Chòudòufu
+  description: Stinky tofu
+  tried: true
+  rating: -1
+  image: tw-stink-tofu
+  location: Taiwan
+  category: 🍢 Street Food
+  review: "This is the worst thing I've eaten on this trip. It was sour, salty and pungent. I had trouble keeping it down. DO NOT RECOMMEND!"
+
+- nativeName: 蘿蔔糕
+  phoneticName: Luóbogāo
+  description: Radish cake
+  tried: true
+  rating: 4
+  image: tw-raddish-cake
+  location: Taiwan
+  category: 🍳 Breakfast
+  review: "Nice and filling, and the radish is not too overwhelming. It is really dense, and it is straight to the point. This portion was maybe a little to big."
+
+- nativeName: 蛋餅夾油條
+  phoneticName: Dànbǐng Jiā Yóutiáo
+  description: Fried breadsticks wrapped in an egg crepe
+  tried: true
+  rating: 3
+  image: tw-egg-crepe
+  location: Taiwan
+  category: 🍳 Breakfast
+  review: 'Not entirely sure how to eat this, as it is way too big to fit into you mouth. So I had to unroll it and eat it, and the it is way less special. Just a thin omelette and fried airy breadsticks.'
+
+- nativeName: 鼎泰豐
+  phoneticName: Dǐng Tài Fēng
+  description: Din Tai Fung
+  tried: true
+  rating: 4
+  image: tw-dtf
+  location: Taiwan
+  category: 🍽️ Restaurant
+  review: "It is good, but I feel like I've had better. Maybe the restaurant experience is better, as this was just a little to wet for me at part. It is also pretty price compared to other foods here."
+
+
+- nativeName: 雲吞湯
+  phoneticName: Hûn-thn̂g-thng
+  description: Wonton soup
+  tried: true
+  rating: 3
+  image: hk-wonton
   location: Hong Kong
   category: 🍜 Noodles
-  review: ''
+  review: "I felt the noodles were a little to tough, and the wonton's them selves didn't add too much. But the borth was great!"
+
+- nativeName: 燒鵝
+  phoneticName: Sio-gô
+  description: Roast goose
+  tried: true
+  rating: 6
+  image: tw-goose
+  location: Hong Kong
+  category: 🥩 Meat
+  review: 'This was really nice! The skin was crispy, and the meat really juicy. Bonus point for there killing geese!'
+
+- nativeName: 蜜雪冰城珍珠奶茶
+  phoneticName: Bi̍t-seh-peng-siâ chin-chu-ling-tê
+  description: Mixue bubble tea
+  tried: true
+  rating: 5
+  image: hk-mix-tea
+  location: Hong Kong
+  category: 🧋 Drinks
+  review: 'This was delicous, and at an unbeatable price point! Be carefull with the caffience though.'
+
+- nativeName: 白切雞
+  phoneticName: Pe̍h-chhiat-ke
+  description: “Yellow chicken” / white-cut chicken
+  tried: true
+  rating: 4
+  image: hk-yellow-chicken
+  location: Hong Kong
+  category: 🥩 Meat
+  review: 'This was nice. The ginger and curry sauce were a nice touch. The meat was cold though, which was strange.'
+
+- nativeName: 蛋撻
+  phoneticName: Tāⁿ-tha̍h
+  description: Egg tart
+  tried: true
+  rating: 2
+  image: hk-egg-tart
+  location: Hong Kong
+  category: 🍞 Bakery
+  review: 'Again, I think I prefer the Pastei de Nata, this egg thing does not work for me'
+
+- nativeName: 叉燒包
+  phoneticName: Chha-sio-pau
+  description: Char Siu bun
+  tried: true
+  rating: 3
+  image: hk-bun
+  location: Hong Kong
+  category: 🍞 Bakery
+  review: "Too much bread, and not enough meat. The meat wasn't that good eaither" 
+
+- nativeName: 柚子蜜
+  phoneticName: Iū-chí-bi̍t
+  description: Pomelo sweet tea
+  tried: true
+  rating: 4
+  image: hk-pomello-tea
+  location: Hong Kong
+  category: 🧋 Drinks
+  review: 'This was pretty nice too! A little bitter, but that still very fruity!'
+
+- nativeName: 點心
+  phoneticName: Tiám-sim
+  description: Dim sum
+  tried: true
+  rating: 3
+  image: hk-dimsum
+  location: Hong Kong
+  category: 🥟 Dim Sum
+  review: "This was okay. I forgot we got food, and I had lunch before this, so I wans't all that hungry. It was also a bit soggy, from sitting there for a while. It had a meat bun, which was okay, soup dupmling, with was a bit squishy, and a jelly that was entirely too big."
+
+- nativeName: 雞蛋仔
+  phoneticName: Koe-tàn-á
+  description: Hong Kong egg waffle / egg puff
+  tried: true
+  rating: 3
+  image: hk-egg-waffle
+  location: Hong Kong
+  category: 🍞 Bakery
+  review: 'Airy, crispy. Nice, but not much substance.'
+
+- nativeName: 蜜雪冰城冰淇淋
+  phoneticName: Bi̍t-seh-peng-siâⁿ ping-kî-lim
+  description: Mixue ice cream
+  tried: true
+  rating: 5
+  image: hk-ice
+  location: Hong Kong
+  category: 🍦 Dessert
+  review: "Very nice and light. And for only €0,50 it's a steal!"
+
+- nativeName: 煲仔飯
+  phoneticName: Po-á-pn̄g
+  description: Clay pot rice
+  tried: true
+  rating: 3
+  image: hk-clay-pot
+  location: Hong Kong
+  category: 🍚 Rice
+  review: "A bit too hot, and again there were nasty bones I had to pick out."
+
+- nativeName: 沙嗲麵
+  phoneticName: Sa-te-mī
+  description: Satay noodle breakfast
+  tried: true
+  rating: 4
+  image: hk-satay
+  location: Hong Kong
+  category: 🍳 Breakfast
+  review: "This was pretty good actually. The noodles were light, and surprisingly good match with the eggs and toast!"
+
+- nativeName: 楊枝甘露
+  phoneticName: Iông-ki-cham-lō͘
+  description: Mango sago dessert drink
+  tried: true
+  rating: 2
+  image: mango-sago
+  location: Hong Kong
+  category: 🧋 Drinks
+  review: "This had a Michelin fieldguide star, but it was just bitter and weird. Not my style."
+
+- nativeName: 腸粉
+  phoneticName: Chiâⁿ-hún
+  description: Rice noodle rolls
+  tried: true
+  rating: 3
+  image: hk-rice-rolls
+  location: Hong Kong
+  category: 🍢 Street Food
+  review: "These were okay. The texture is a bit weird (like jelly), but I liked the sauce pairing."
+
+- nativeName: 粥
+  phoneticName: Chhók
+  description: Congee
+  tried: true
+  rating: 1
+  image: hk-congee
+  location: Hong Kong
+  category: 🍲 Soup
+  review: "This restaurant also had many Michelin nods, but this was not it. It was hot and flavourless. I tried added some condiments, but that made it worse. I order the one with eel, but the eel was not deboned, so I couldn't eat this. Not much to write home about."
+
+- nativeName: 咖喱魚蛋
+  phoneticName: Ka-lê hû-tàn
+  description: Curry fish balls
+  tried: true
+  rating: 2
+  image: hk-fish-balls
+  location: Hong Kong
+  category: 🍢 Street Food
+  review: "This was pretty borning. Frozen and deepfried, with out of the bottle sauce."
+
+- nativeName: 叉燒飯
+  phoneticName: Chha-sio-pn̄g
+  description: Char siu with braised meat, bok choy, and rice
+  tried: true
+  rating: 3
+  image: hk-rice-rice
+  location: Hong Kong
+  category: 🍚 Rice
+  review: "This is a standard dish, but I got it a 'brisk'-food restaurant. I was missing some sauce to tie this whole dish together."
+- nativeName: 火腿通心粉湯
+  phoneticName: Hoé-thui thong-sim-hún-thng
+  description: Macaroni breakfast soup with ham
+  tried: true
+  rating: 4
+  image: hk-macmac
+  location: Hong Kong
+  category: 🍳 Breakfast
+  review: 'This was surprisingly good! I tought the Macaroni would be borning, but the soup had a nice tang!'
+
+
+
 - nativeName: 豬扒包
   phoneticName: Zhūpá Bāo
   description: Pork chop bun
@@ -705,4 +1054,3 @@
   location: Macau
   category: 🍢 Street Food
   review: "I didn't expect there to be an egg filling. This tasted really weird."
-
