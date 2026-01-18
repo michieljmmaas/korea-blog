@@ -58,7 +58,7 @@ jobs:
 
       - name: Commit updated thumbnails and charts
         if: steps.static-generate-thumbnails.outcome == 'success' && steps.static-update-stats.outcome == 'success'
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'Update thumbnails and/or chart data'
 
