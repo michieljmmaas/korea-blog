@@ -24,14 +24,25 @@ export class GeoDataService {
         schema: yaml.JSON_SCHEMA, // Use JSON schema which doesn't auto-parse dates
       }) as GeoData;
 
-      let sortedObject: GeoData = {};
-      Object.keys(data)
+      // Convert time strings to Date objects
+      const processedData: GeoData = {};
+      Object.keys(data).forEach((dateKey) => {
+        processedData[dateKey] = data[dateKey].map((location) => ({
+          ...location,
+          //@ts-ignore
+          time: this.parseTimeString(location.time),
+        }));
+      });
+
+      // Sort by date keys
+      const sortedData: GeoData = {};
+      Object.keys(processedData)
         .sort()
         .forEach((key) => {
-          sortedObject[key] = data[key];
+          sortedData[key] = processedData[key];
         });
-      
-      return data || {};
+
+      return sortedData;
     } catch (error) {
       console.error("Error reading geodata file:", error);
       return {};
@@ -115,5 +126,17 @@ export class GeoDataService {
       console.error("Error getting total location count:", error);
       return 0;
     }
+  }
+
+  /**
+   * Parse time string to Date object
+   * @param timeStr - Time string in format "DD/MM/YYYY HH:MM"
+   */
+  private static parseTimeString(timeStr: string): Date {
+    // Format: "20/11/2025 02:41"
+    const [datePart, timePart] = timeStr.split(" ");
+    const [day, month, year] = datePart.split("/").map(Number);
+    const [hour, minute] = timePart.split(":").map(Number);
+    return new Date(year, month - 1, day, hour + 7, minute);
   }
 }

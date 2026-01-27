@@ -5,16 +5,6 @@
     time: "01/12/2025 00:15"
     description: ""
   - coordinates:
-      latitude: 22.3075819
-      longitude: 114.1724547
-    time: "01/12/2025 00:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3078535
-      longitude: 114.1724654
-    time: "01/12/2025 00:45"
-    description: ""
-  - coordinates:
       latitude: 22.3079973
       longitude: 114.1727595
     time: "01/12/2025 01:00"
@@ -45,19 +35,9 @@
     time: "01/12/2025 02:55"
     description: ""
   - coordinates:
-      latitude: 22.307765
-      longitude: 114.1724336
-    time: "01/12/2025 03:21"
-    description: ""
-  - coordinates:
       latitude: 22.3089217
       longitude: 114.1712171
     time: "01/12/2025 03:37"
-    description: ""
-  - coordinates:
-      latitude: 22.3090168
-      longitude: 114.1712044
-    time: "01/12/2025 03:53"
     description: ""
   - coordinates:
       latitude: 22.2792824
@@ -73,16 +53,6 @@
       latitude: 22.2814507
       longitude: 114.1537403
     time: "01/12/2025 04:39"
-    description: ""
-  - coordinates:
-      latitude: 22.281453
-      longitude: 114.1537386
-    time: "01/12/2025 04:39"
-    description: ""
-  - coordinates:
-      latitude: 22.2811131
-      longitude: 114.1539418
-    time: "01/12/2025 04:55"
     description: ""
   - coordinates:
       latitude: 22.2809152
@@ -110,11 +80,6 @@
     time: "01/12/2025 06:03"
     description: ""
   - coordinates:
-      latitude: 22.2855238
-      longitude: 114.1523087
-    time: "01/12/2025 06:18"
-    description: ""
-  - coordinates:
       latitude: 22.2861605
       longitude: 114.1524233
     time: "01/12/2025 06:34"
@@ -138,16 +103,6 @@
       latitude: 22.2866147
       longitude: 114.1620929
     time: "01/12/2025 07:12"
-    description: ""
-  - coordinates:
-      latitude: 22.2868371
-      longitude: 114.162131
-    time: "01/12/2025 07:36"
-    description: ""
-  - coordinates:
-      latitude: 22.2869232
-      longitude: 114.1621286
-    time: "01/12/2025 07:51"
     description: ""
   - coordinates:
       latitude: 22.2864195
@@ -215,11 +170,6 @@
     time: "01/12/2025 09:57"
     description: ""
   - coordinates:
-      latitude: 22.27756
-      longitude: 114.1588601
-    time: "01/12/2025 10:12"
-    description: ""
-  - coordinates:
       latitude: 22.27084097
       longitude: 114.1537854
     time: "01/12/2025 10:26"
@@ -235,11 +185,6 @@
     time: "01/12/2025 10:55"
     description: ""
   - coordinates:
-      latitude: 22.2704203
-      longitude: 114.1495568
-    time: "01/12/2025 11:11"
-    description: ""
-  - coordinates:
       latitude: 22.2713978
       longitude: 114.1500983
     time: "01/12/2025 11:30"
@@ -250,29 +195,9 @@
     time: "01/12/2025 11:47"
     description: ""
   - coordinates:
-      latitude: 22.2706395
-      longitude: 114.1497289
-    time: "01/12/2025 12:02"
-    description: ""
-  - coordinates:
-      latitude: 22.2706499
-      longitude: 114.1497221
-    time: "01/12/2025 12:18"
-    description: ""
-  - coordinates:
-      latitude: 22.27065
-      longitude: 114.1497124
-    time: "01/12/2025 12:33"
-    description: ""
-  - coordinates:
       latitude: 22.2711267
       longitude: 114.1500125
     time: "01/12/2025 12:48"
-    description: ""
-  - coordinates:
-      latitude: 22.2711436
-      longitude: 114.1503225
-    time: "01/12/2025 13:04"
     description: ""
   - coordinates:
       latitude: 22.27551581
@@ -285,18 +210,8 @@
     time: "01/12/2025 13:21"
     description: ""
   - coordinates:
-      latitude: 22.28013633
-      longitude: 114.1597766
-    time: "01/12/2025 13:21"
-    description: ""
-  - coordinates:
       latitude: 22.2793368
       longitude: 114.1658227
-    time: "01/12/2025 13:36"
-    description: ""
-  - coordinates:
-      latitude: 22.2791886
-      longitude: 114.1660808
     time: "01/12/2025 13:36"
     description: ""
   - coordinates:
@@ -305,49 +220,9 @@
     time: "01/12/2025 13:54"
     description: ""
   - coordinates:
-      latitude: 22.3078544
-      longitude: 114.1724336
-    time: "01/12/2025 13:56"
-    description: ""
-  - coordinates:
       latitude: 22.3076131
       longitude: 114.1725621
     time: "01/12/2025 14:09"
-    description: ""
-  - coordinates:
-      latitude: 22.3075766
-      longitude: 114.172589
-    time: "01/12/2025 14:11"
-    description: ""
-  - coordinates:
-      latitude: 22.307635
-      longitude: 114.1726757
-    time: "01/12/2025 14:24"
-    description: ""
-  - coordinates:
-      latitude: 22.307958
-      longitude: 114.1727233
-    time: "01/12/2025 14:39"
-    description: ""
-  - coordinates:
-      latitude: 22.3076429
-      longitude: 114.1725568
-    time: "01/12/2025 14:41"
-    description: ""
-  - coordinates:
-      latitude: 22.3077349
-      longitude: 114.1724805
-    time: "01/12/2025 14:55"
-    description: ""
-  - coordinates:
-      latitude: 22.3078047
-      longitude: 114.1724835
-    time: "01/12/2025 15:10"
-    description: ""
-  - coordinates:
-      latitude: 22.3078182
-      longitude: 114.1725369
-    time: "01/12/2025 15:25"
     description: ""
   - coordinates:
       latitude: 22.3075557
@@ -358,11 +233,6 @@
       latitude: 22.3076961
       longitude: 114.1725545
     time: "01/12/2025 15:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3078365
-      longitude: 114.1725438
-    time: "01/12/2025 16:11"
     description: ""
 2025-12-02:
   - coordinates:
@@ -386,51 +256,6 @@
     time: "02/12/2025 00:17"
     description: ""
   - coordinates:
-      latitude: 22.3074898
-      longitude: 114.1719966
-    time: "02/12/2025 00:17"
-    description: ""
-  - coordinates:
-      latitude: 22.3076757
-      longitude: 114.1724913
-    time: "02/12/2025 00:27"
-    description: ""
-  - coordinates:
-      latitude: 22.3076382
-      longitude: 114.172274
-    time: "02/12/2025 00:32"
-    description: ""
-  - coordinates:
-      latitude: 22.3076949
-      longitude: 114.1725829
-    time: "02/12/2025 00:42"
-    description: ""
-  - coordinates:
-      latitude: 22.3076383
-      longitude: 114.1725031
-    time: "02/12/2025 00:58"
-    description: ""
-  - coordinates:
-      latitude: 22.3076723
-      longitude: 114.1724657
-    time: "02/12/2025 01:04"
-    description: ""
-  - coordinates:
-      latitude: 22.3076978
-      longitude: 114.1725354
-    time: "02/12/2025 01:19"
-    description: ""
-  - coordinates:
-      latitude: 22.3078432
-      longitude: 114.1724281
-    time: "02/12/2025 01:24"
-    description: ""
-  - coordinates:
-      latitude: 22.3075086
-      longitude: 114.172458
-    time: "02/12/2025 01:35"
-    description: ""
-  - coordinates:
       latitude: 22.3075619
       longitude: 114.1735383
     time: "02/12/2025 01:46"
@@ -444,16 +269,6 @@
       latitude: 22.3065755
       longitude: 114.1722046
     time: "02/12/2025 01:47"
-    description: ""
-  - coordinates:
-      latitude: 22.306693
-      longitude: 114.1719558
-    time: "02/12/2025 02:02"
-    description: ""
-  - coordinates:
-      latitude: 22.3067008
-      longitude: 114.171966
-    time: "02/12/2025 02:09"
     description: ""
   - coordinates:
       latitude: 22.3052496
@@ -506,18 +321,8 @@
     time: "02/12/2025 03:25"
     description: ""
   - coordinates:
-      latitude: 22.2294361
-      longitude: 114.2421108
-    time: "02/12/2025 03:25"
-    description: ""
-  - coordinates:
       latitude: 22.23448822
       longitude: 114.2437311
-    time: "02/12/2025 03:41"
-    description: ""
-  - coordinates:
-      latitude: 22.2346551
-      longitude: 114.2438541
     time: "02/12/2025 03:41"
     description: ""
   - coordinates:
@@ -526,18 +331,8 @@
     time: "02/12/2025 03:57"
     description: ""
   - coordinates:
-      latitude: 22.2395176
-      longitude: 114.2419105
-    time: "02/12/2025 03:57"
-    description: ""
-  - coordinates:
       latitude: 22.2443286
       longitude: 114.2387803
-    time: "02/12/2025 04:13"
-    description: ""
-  - coordinates:
-      latitude: 22.2444298
-      longitude: 114.2387098
     time: "02/12/2025 04:13"
     description: ""
   - coordinates:
@@ -566,18 +361,8 @@
     time: "02/12/2025 05:05"
     description: ""
   - coordinates:
-      latitude: 22.2566148
-      longitude: 114.2295497
-    time: "02/12/2025 05:06"
-    description: ""
-  - coordinates:
       latitude: 22.25671189
       longitude: 114.2243157
-    time: "02/12/2025 05:34"
-    description: ""
-  - coordinates:
-      latitude: 22.2567142
-      longitude: 114.2243094
     time: "02/12/2025 05:34"
     description: ""
   - coordinates:
@@ -593,11 +378,6 @@
   - coordinates:
       latitude: 22.2576076
       longitude: 114.2111563
-    time: "02/12/2025 06:07"
-    description: ""
-  - coordinates:
-      latitude: 22.2575389
-      longitude: 114.2112185
     time: "02/12/2025 06:07"
     description: ""
   - coordinates:
@@ -631,11 +411,6 @@
     time: "02/12/2025 07:26"
     description: ""
   - coordinates:
-      latitude: 22.2408809
-      longitude: 114.2042193
-    time: "02/12/2025 07:27"
-    description: ""
-  - coordinates:
       latitude: 22.2380524
       longitude: 114.2055956
     time: "02/12/2025 07:47"
@@ -653,11 +428,6 @@
   - coordinates:
       latitude: 22.23073092
       longitude: 114.2057979
-    time: "02/12/2025 08:18"
-    description: ""
-  - coordinates:
-      latitude: 22.2307267
-      longitude: 114.205802
     time: "02/12/2025 08:18"
     description: ""
   - coordinates:
@@ -691,19 +461,9 @@
     time: "02/12/2025 09:19"
     description: ""
   - coordinates:
-      latitude: 22.21745034
-      longitude: 114.2046309
-    time: "02/12/2025 09:20"
-    description: ""
-  - coordinates:
       latitude: 22.2161247
       longitude: 114.2021253
     time: "02/12/2025 09:35"
-    description: ""
-  - coordinates:
-      latitude: 22.2158953
-      longitude: 114.2023287
-    time: "02/12/2025 09:36"
     description: ""
   - coordinates:
       latitude: 22.2150464
@@ -766,64 +526,9 @@
     time: "02/12/2025 11:28"
     description: ""
   - coordinates:
-      latitude: 22.3078424
-      longitude: 114.1725101
-    time: "02/12/2025 11:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3080144
-      longitude: 114.1727623
-    time: "02/12/2025 11:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3076718
-      longitude: 114.1731814
-    time: "02/12/2025 11:51"
-    description: ""
-  - coordinates:
-      latitude: 22.3078545
-      longitude: 114.1724693
-    time: "02/12/2025 12:03"
-    description: ""
-  - coordinates:
-      latitude: 22.307846
-      longitude: 114.172508
-    time: "02/12/2025 12:18"
-    description: ""
-  - coordinates:
-      latitude: 22.3075166
-      longitude: 114.1725951
-    time: "02/12/2025 12:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3078339
-      longitude: 114.1724744
-    time: "02/12/2025 12:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3078286
-      longitude: 114.1725189
-    time: "02/12/2025 13:03"
-    description: ""
-  - coordinates:
-      latitude: 22.3076687
-      longitude: 114.1726433
-    time: "02/12/2025 13:09"
-    description: ""
-  - coordinates:
       latitude: 22.3090299
       longitude: 114.1715764
     time: "02/12/2025 13:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3089557
-      longitude: 114.1712412
-    time: "02/12/2025 13:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3089988
-      longitude: 114.171122
-    time: "02/12/2025 13:55"
     description: ""
   - coordinates:
       latitude: 22.3083554
@@ -836,31 +541,6 @@
     time: "02/12/2025 14:13"
     description: ""
   - coordinates:
-      latitude: 22.3076168
-      longitude: 114.1725929
-    time: "02/12/2025 14:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3078448
-      longitude: 114.1725292
-    time: "02/12/2025 14:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3076182
-      longitude: 114.1726423
-    time: "02/12/2025 14:41"
-    description: ""
-  - coordinates:
-      latitude: 22.3076731
-      longitude: 114.172929
-    time: "02/12/2025 14:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3076467
-      longitude: 114.172902
-    time: "02/12/2025 15:12"
-    description: ""
-  - coordinates:
       latitude: 22.3076692
       longitude: 114.1731643
     time: "02/12/2025 15:27"
@@ -871,140 +551,20 @@
     time: "02/12/2025 15:42"
     description: ""
   - coordinates:
-      latitude: 22.307615
-      longitude: 114.1727547
-    time: "02/12/2025 15:57"
-    description: ""
-  - coordinates:
-      latitude: 22.3076406
-      longitude: 114.1727327
-    time: "02/12/2025 16:12"
-    description: ""
-  - coordinates:
       latitude: 22.3076747
       longitude: 114.1731829
     time: "02/12/2025 16:28"
-    description: ""
-  - coordinates:
-      latitude: 22.307639
-      longitude: 114.1728145
-    time: "02/12/2025 16:43"
     description: ""
   - coordinates:
       latitude: 22.3076567
       longitude: 114.1726889
     time: "02/12/2025 16:59"
     description: ""
-  - coordinates:
-      latitude: 22.3076395
-      longitude: 114.1729008
-    time: "02/12/2025 17:14"
-    description: ""
-  - coordinates:
-      latitude: 22.3080015
-      longitude: 114.1727531
-    time: "02/12/2025 17:21"
-    description: ""
-  - coordinates:
-      latitude: 22.3078588
-      longitude: 114.172454
-    time: "02/12/2025 17:37"
-    description: ""
-  - coordinates:
-      latitude: 22.3078183
-      longitude: 114.1724674
-    time: "02/12/2025 17:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3078454
-      longitude: 114.1724442
-    time: "02/12/2025 18:07"
-    description: ""
-  - coordinates:
-      latitude: 22.3077171
-      longitude: 114.1725211
-    time: "02/12/2025 18:23"
-    description: ""
-  - coordinates:
-      latitude: 22.3078417
-      longitude: 114.1725347
-    time: "02/12/2025 20:54"
-    description: ""
-  - coordinates:
-      latitude: 22.3076893
-      longitude: 114.1726001
-    time: "02/12/2025 23:52"
-    description: ""
 2025-12-03:
   - coordinates:
       latitude: 22.3077935
       longitude: 114.1725007
     time: "03/12/2025 01:24"
-    description: ""
-  - coordinates:
-      latitude: 22.307844
-      longitude: 114.1724626
-    time: "03/12/2025 01:39"
-    description: ""
-  - coordinates:
-      latitude: 22.3076374
-      longitude: 114.1727559
-    time: "03/12/2025 01:54"
-    description: ""
-  - coordinates:
-      latitude: 22.3078302
-      longitude: 114.1724436
-    time: "03/12/2025 01:54"
-    description: ""
-  - coordinates:
-      latitude: 22.3076113
-      longitude: 114.172434
-    time: "03/12/2025 02:09"
-    description: ""
-  - coordinates:
-      latitude: 22.308001
-      longitude: 114.172747
-    time: "03/12/2025 02:10"
-    description: ""
-  - coordinates:
-      latitude: 22.3075931
-      longitude: 114.1726286
-    time: "03/12/2025 02:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3079147
-      longitude: 114.1726707
-    time: "03/12/2025 02:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3076252
-      longitude: 114.1725595
-    time: "03/12/2025 02:40"
-    description: ""
-  - coordinates:
-      latitude: 22.30778
-      longitude: 114.1725599
-    time: "03/12/2025 02:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3077896
-      longitude: 114.1724934
-    time: "03/12/2025 02:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3076514
-      longitude: 114.1726905
-    time: "03/12/2025 02:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3076715
-      longitude: 114.1727436
-    time: "03/12/2025 03:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3076203
-      longitude: 114.1724896
-    time: "03/12/2025 03:13"
     description: ""
   - coordinates:
       latitude: 22.3080483
@@ -1015,26 +575,6 @@
       latitude: 22.3076623
       longitude: 114.1727615
     time: "03/12/2025 03:46"
-    description: ""
-  - coordinates:
-      latitude: 22.3076095
-      longitude: 114.172439
-    time: "03/12/2025 04:01"
-    description: ""
-  - coordinates:
-      latitude: 22.3076793
-      longitude: 114.1729978
-    time: "03/12/2025 04:14"
-    description: ""
-  - coordinates:
-      latitude: 22.3078285
-      longitude: 114.1723458
-    time: "03/12/2025 05:18"
-    description: ""
-  - coordinates:
-      latitude: 22.3076194
-      longitude: 114.1726307
-    time: "03/12/2025 05:40"
     description: ""
   - coordinates:
       latitude: 22.3057505
@@ -1072,11 +612,6 @@
     time: "03/12/2025 06:42"
     description: ""
   - coordinates:
-      latitude: 22.3026797
-      longitude: 114.1549632
-    time: "03/12/2025 06:44"
-    description: ""
-  - coordinates:
       latitude: 22.3017823
       longitude: 114.155255
     time: "03/12/2025 06:59"
@@ -1105,11 +640,6 @@
       latitude: 22.3019375
       longitude: 114.1551678
     time: "03/12/2025 08:38"
-    description: ""
-  - coordinates:
-      latitude: 22.3015075
-      longitude: 114.1552899
-    time: "03/12/2025 08:54"
     description: ""
   - coordinates:
       latitude: 22.3015387
@@ -1147,24 +677,9 @@
     time: "03/12/2025 09:54"
     description: ""
   - coordinates:
-      latitude: 22.2801036
-      longitude: 114.1828345
-    time: "03/12/2025 09:55"
-    description: ""
-  - coordinates:
-      latitude: 22.2800095
-      longitude: 114.1830415
-    time: "03/12/2025 10:11"
-    description: ""
-  - coordinates:
       latitude: 22.2799456
       longitude: 114.1829654
     time: "03/12/2025 10:26"
-    description: ""
-  - coordinates:
-      latitude: 22.2798961
-      longitude: 114.1830976
-    time: "03/12/2025 10:42"
     description: ""
   - coordinates:
       latitude: 22.2801071
@@ -1192,16 +707,6 @@
     time: "03/12/2025 11:51"
     description: ""
   - coordinates:
-      latitude: 22.2718127
-      longitude: 114.1809615
-    time: "03/12/2025 11:52"
-    description: ""
-  - coordinates:
-      latitude: 22.2718223
-      longitude: 114.181056
-    time: "03/12/2025 12:07"
-    description: ""
-  - coordinates:
       latitude: 22.2770235
       longitude: 114.1818572
     time: "03/12/2025 12:15"
@@ -1212,18 +717,8 @@
     time: "03/12/2025 12:22"
     description: ""
   - coordinates:
-      latitude: 22.27188797
-      longitude: 114.1812267
-    time: "03/12/2025 12:26"
-    description: ""
-  - coordinates:
       latitude: 22.2712263
       longitude: 114.1815069
-    time: "03/12/2025 12:56"
-    description: ""
-  - coordinates:
-      latitude: 22.271205
-      longitude: 114.1815193
     time: "03/12/2025 12:56"
     description: ""
   - coordinates:
@@ -1235,16 +730,6 @@
       latitude: 22.271832
       longitude: 114.1811175
     time: "03/12/2025 13:12"
-    description: ""
-  - coordinates:
-      latitude: 22.2715163
-      longitude: 114.1810948
-    time: "03/12/2025 13:27"
-    description: ""
-  - coordinates:
-      latitude: 22.2715648
-      longitude: 114.1810199
-    time: "03/12/2025 13:28"
     description: ""
   - coordinates:
       latitude: 22.2710291
@@ -1277,175 +762,20 @@
     time: "03/12/2025 14:28"
     description: ""
   - coordinates:
-      latitude: 22.3076509
-      longitude: 114.1724397
-    time: "03/12/2025 14:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3076613
-      longitude: 114.1727595
-    time: "03/12/2025 14:31"
-    description: ""
-  - coordinates:
-      latitude: 22.307601
-      longitude: 114.1724215
-    time: "03/12/2025 14:43"
-    description: ""
-  - coordinates:
-      latitude: 22.3076029
-      longitude: 114.1724368
-    time: "03/12/2025 14:58"
-    description: ""
-  - coordinates:
-      latitude: 22.3075914
-      longitude: 114.1724103
-    time: "03/12/2025 15:13"
-    description: ""
-  - coordinates:
-      latitude: 22.3076062
-      longitude: 114.1724514
-    time: "03/12/2025 15:29"
-    description: ""
-  - coordinates:
-      latitude: 22.307646
-      longitude: 114.1728091
-    time: "03/12/2025 15:32"
-    description: ""
-  - coordinates:
-      latitude: 22.3076281
-      longitude: 114.1726989
-    time: "03/12/2025 15:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3076347
-      longitude: 114.1727148
-    time: "03/12/2025 15:55"
-    description: ""
-  - coordinates:
-      latitude: 22.3076575
-      longitude: 114.1727115
-    time: "03/12/2025 15:59"
-    description: ""
-  - coordinates:
-      latitude: 22.3076387
-      longitude: 114.172689
-    time: "03/12/2025 16:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3075983
-      longitude: 114.1724243
-    time: "03/12/2025 16:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3076496
-      longitude: 114.1727131
-    time: "03/12/2025 16:45"
-    description: ""
-  - coordinates:
-      latitude: 22.3076066
-      longitude: 114.1724282
-    time: "03/12/2025 17:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3075974
-      longitude: 114.1724426
-    time: "03/12/2025 17:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3076281
-      longitude: 114.1724997
-    time: "03/12/2025 18:54"
-    description: ""
-  - coordinates:
-      latitude: 22.307593
-      longitude: 114.1724262
-    time: "03/12/2025 19:10"
-    description: ""
-  - coordinates:
-      latitude: 22.3076132
-      longitude: 114.1724893
-    time: "03/12/2025 19:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3076002
-      longitude: 114.1724262
-    time: "03/12/2025 19:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3076058
-      longitude: 114.1724408
-    time: "03/12/2025 19:55"
-    description: ""
-  - coordinates:
-      latitude: 22.307621
-      longitude: 114.1726118
-    time: "03/12/2025 20:53"
-    description: ""
-  - coordinates:
-      latitude: 22.3076542
-      longitude: 114.1727556
-    time: "03/12/2025 21:08"
-    description: ""
-  - coordinates:
-      latitude: 22.3075921
-      longitude: 114.1724204
-    time: "03/12/2025 21:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3075975
-      longitude: 114.1724204
-    time: "03/12/2025 21:55"
-    description: ""
-  - coordinates:
       latitude: 22.3076316
       longitude: 114.1730713
     time: "03/12/2025 22:21"
-    description: ""
-  - coordinates:
-      latitude: 22.307598
-      longitude: 114.1726819
-    time: "03/12/2025 23:00"
-    description: ""
-  - coordinates:
-      latitude: 22.3076606
-      longitude: 114.1730294
-    time: "03/12/2025 23:00"
     description: ""
   - coordinates:
       latitude: 22.3076133
       longitude: 114.1724471
     time: "03/12/2025 23:15"
     description: ""
-  - coordinates:
-      latitude: 22.3075992
-      longitude: 114.1724284
-    time: "03/12/2025 23:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3076216
-      longitude: 114.1724316
-    time: "03/12/2025 23:39"
-    description: ""
-  - coordinates:
-      latitude: 22.3076809
-      longitude: 114.1726708
-    time: "03/12/2025 23:46"
-    description: ""
-  - coordinates:
-      latitude: 22.3076621
-      longitude: 114.1727705
-    time: "03/12/2025 23:54"
-    description: ""
 2025-12-04:
   - coordinates:
       latitude: 22.3076078
       longitude: 114.1724304
     time: "04/12/2025 00:01"
-    description: ""
-  - coordinates:
-      latitude: 22.3075788
-      longitude: 114.1724119
-    time: "04/12/2025 00:11"
     description: ""
   - coordinates:
       latitude: 22.3057701
@@ -1518,21 +848,6 @@
     time: "04/12/2025 01:44"
     description: ""
   - coordinates:
-      latitude: 22.3102154
-      longitude: 113.9181466
-    time: "04/12/2025 01:59"
-    description: ""
-  - coordinates:
-      latitude: 22.3101967
-      longitude: 113.9181502
-    time: "04/12/2025 02:00"
-    description: ""
-  - coordinates:
-      latitude: 22.3102053
-      longitude: 113.9181605
-    time: "04/12/2025 02:15"
-    description: ""
-  - coordinates:
       latitude: 22.3100229
       longitude: 113.9175645
     time: "04/12/2025 02:37"
@@ -1563,24 +878,9 @@
     time: "04/12/2025 06:50"
     description: ""
   - coordinates:
-      latitude: 37.4572008
-      longitude: 126.4483331
-    time: "04/12/2025 06:52"
-    description: ""
-  - coordinates:
-      latitude: 37.4571532
-      longitude: 126.4483057
-    time: "04/12/2025 06:53"
-    description: ""
-  - coordinates:
       latitude: 37.4574417
       longitude: 126.4477758
     time: "04/12/2025 06:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4572665
-      longitude: 126.4475319
-    time: "04/12/2025 07:03"
     description: ""
   - coordinates:
       latitude: 37.4554768
@@ -1593,34 +893,9 @@
     time: "04/12/2025 07:07"
     description: ""
   - coordinates:
-      latitude: 37.4561639
-      longitude: 126.4451155
-    time: "04/12/2025 07:07"
-    description: ""
-  - coordinates:
-      latitude: 37.4562109
-      longitude: 126.4452819
-    time: "04/12/2025 07:09"
-    description: ""
-  - coordinates:
       latitude: 37.4496711
       longitude: 126.4508126
     time: "04/12/2025 07:13"
-    description: ""
-  - coordinates:
-      latitude: 37.4499176
-      longitude: 126.4507848
-    time: "04/12/2025 07:13"
-    description: ""
-  - coordinates:
-      latitude: 37.4498807
-      longitude: 126.4508051
-    time: "04/12/2025 07:15"
-    description: ""
-  - coordinates:
-      latitude: 37.4496149
-      longitude: 126.4509141
-    time: "04/12/2025 07:16"
     description: ""
   - coordinates:
       latitude: 37.450238
@@ -1638,16 +913,6 @@
     time: "04/12/2025 07:21"
     description: ""
   - coordinates:
-      latitude: 37.4505388
-      longitude: 126.4523286
-    time: "04/12/2025 07:21"
-    description: ""
-  - coordinates:
-      latitude: 37.450015
-      longitude: 126.4521524
-    time: "04/12/2025 07:22"
-    description: ""
-  - coordinates:
       latitude: 37.4496649
       longitude: 126.4515497
     time: "04/12/2025 07:23"
@@ -1655,11 +920,6 @@
   - coordinates:
       latitude: 37.4499504
       longitude: 126.4526525
-    time: "04/12/2025 07:23"
-    description: ""
-  - coordinates:
-      latitude: 37.4502494
-      longitude: 126.4522554
     time: "04/12/2025 07:23"
     description: ""
   - coordinates:
@@ -1673,11 +933,6 @@
     time: "04/12/2025 07:24"
     description: ""
   - coordinates:
-      latitude: 37.4497403
-      longitude: 126.4516412
-    time: "04/12/2025 07:24"
-    description: ""
-  - coordinates:
       latitude: 37.4495929
       longitude: 126.4509408
     time: "04/12/2025 07:25"
@@ -1686,16 +941,6 @@
       latitude: 37.4497356
       longitude: 126.4516561
     time: "04/12/2025 07:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4500481
-      longitude: 126.4519319
-    time: "04/12/2025 07:30"
-    description: ""
-  - coordinates:
-      latitude: 37.449614
-      longitude: 126.4518396
-    time: "04/12/2025 07:30"
     description: ""
   - coordinates:
       latitude: 37.4493362
@@ -1708,34 +953,14 @@
     time: "04/12/2025 07:32"
     description: ""
   - coordinates:
-      latitude: 37.449101
-      longitude: 126.4512121
-    time: "04/12/2025 07:32"
-    description: ""
-  - coordinates:
-      latitude: 37.4489886
-      longitude: 126.4516578
-    time: "04/12/2025 07:33"
-    description: ""
-  - coordinates:
       latitude: 37.4493424
       longitude: 126.4524071
     time: "04/12/2025 07:34"
     description: ""
   - coordinates:
-      latitude: 37.4491938
-      longitude: 126.4522906
-    time: "04/12/2025 07:35"
-    description: ""
-  - coordinates:
       latitude: 37.4491791
       longitude: 126.4517962
     time: "04/12/2025 07:36"
-    description: ""
-  - coordinates:
-      latitude: 37.4489401
-      longitude: 126.4519035
-    time: "04/12/2025 07:37"
     description: ""
   - coordinates:
       latitude: 37.449661
@@ -1745,11 +970,6 @@
   - coordinates:
       latitude: 37.449648
       longitude: 126.4528581
-    time: "04/12/2025 07:38"
-    description: ""
-  - coordinates:
-      latitude: 37.4498319
-      longitude: 126.452342
     time: "04/12/2025 07:38"
     description: ""
   - coordinates:
@@ -1763,16 +983,6 @@
     time: "04/12/2025 07:41"
     description: ""
   - coordinates:
-      latitude: 37.4497952
-      longitude: 126.4512676
-    time: "04/12/2025 07:42"
-    description: ""
-  - coordinates:
-      latitude: 37.4499573
-      longitude: 126.4507664
-    time: "04/12/2025 07:44"
-    description: ""
-  - coordinates:
       latitude: 37.4490985
       longitude: 126.4494598
     time: "04/12/2025 07:45"
@@ -1781,11 +991,6 @@
       latitude: 37.4493013
       longitude: 126.4500404
     time: "04/12/2025 07:46"
-    description: ""
-  - coordinates:
-      latitude: 37.4492562
-      longitude: 126.4502433
-    time: "04/12/2025 07:47"
     description: ""
   - coordinates:
       latitude: 37.4484568
@@ -1801,66 +1006,6 @@
       latitude: 37.4484666
       longitude: 126.4495551
     time: "04/12/2025 07:52"
-    description: ""
-  - coordinates:
-      latitude: 37.4483439
-      longitude: 126.4494971
-    time: "04/12/2025 07:58"
-    description: ""
-  - coordinates:
-      latitude: 37.4484032
-      longitude: 126.4496444
-    time: "04/12/2025 07:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4482803
-      longitude: 126.4495979
-    time: "04/12/2025 08:01"
-    description: ""
-  - coordinates:
-      latitude: 37.4484899
-      longitude: 126.4494605
-    time: "04/12/2025 08:05"
-    description: ""
-  - coordinates:
-      latitude: 37.4484607
-      longitude: 126.4495778
-    time: "04/12/2025 08:06"
-    description: ""
-  - coordinates:
-      latitude: 37.4484412
-      longitude: 126.4494721
-    time: "04/12/2025 08:15"
-    description: ""
-  - coordinates:
-      latitude: 37.4483378
-      longitude: 126.4494306
-    time: "04/12/2025 08:18"
-    description: ""
-  - coordinates:
-      latitude: 37.4484183
-      longitude: 126.4494782
-    time: "04/12/2025 08:24"
-    description: ""
-  - coordinates:
-      latitude: 37.4484092
-      longitude: 126.4496705
-    time: "04/12/2025 08:27"
-    description: ""
-  - coordinates:
-      latitude: 37.4484179
-      longitude: 126.4496265
-    time: "04/12/2025 08:27"
-    description: ""
-  - coordinates:
-      latitude: 37.4483442
-      longitude: 126.4494685
-    time: "04/12/2025 08:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4484139
-      longitude: 126.4495152
-    time: "04/12/2025 08:33"
     description: ""
   - coordinates:
       latitude: 37.4488764
@@ -1893,24 +1038,9 @@
     time: "04/12/2025 08:38"
     description: ""
   - coordinates:
-      latitude: 37.4480541
-      longitude: 126.4503329
-    time: "04/12/2025 08:38"
-    description: ""
-  - coordinates:
       latitude: 37.4488148
       longitude: 126.4512412
     time: "04/12/2025 08:41"
-    description: ""
-  - coordinates:
-      latitude: 37.4488218
-      longitude: 126.451504
-    time: "04/12/2025 08:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4488688
-      longitude: 126.4512347
-    time: "04/12/2025 08:44"
     description: ""
   - coordinates:
       latitude: 37.4490323
@@ -1943,24 +1073,9 @@
     time: "04/12/2025 08:47"
     description: ""
   - coordinates:
-      latitude: 37.4491289
-      longitude: 126.4518522
-    time: "04/12/2025 08:47"
-    description: ""
-  - coordinates:
       latitude: 37.4490324
       longitude: 126.4522515
     time: "04/12/2025 08:48"
-    description: ""
-  - coordinates:
-      latitude: 37.4490299
-      longitude: 126.4525637
-    time: "04/12/2025 08:49"
-    description: ""
-  - coordinates:
-      latitude: 37.4490712
-      longitude: 126.4520818
-    time: "04/12/2025 08:49"
     description: ""
   - coordinates:
       latitude: 37.4492471
@@ -1978,11 +1093,6 @@
     time: "04/12/2025 08:50"
     description: ""
   - coordinates:
-      latitude: 37.4497975
-      longitude: 126.4522857
-    time: "04/12/2025 08:51"
-    description: ""
-  - coordinates:
       latitude: 37.4496141
       longitude: 126.4535302
     time: "04/12/2025 08:51"
@@ -1998,28 +1108,13 @@
     time: "04/12/2025 08:52"
     description: ""
   - coordinates:
-      latitude: 37.4495139
-      longitude: 126.4531977
-    time: "04/12/2025 08:53"
-    description: ""
-  - coordinates:
       latitude: 37.4491267
       longitude: 126.4520645
     time: "04/12/2025 08:54"
     description: ""
   - coordinates:
-      latitude: 37.4489936
-      longitude: 126.4516423
-    time: "04/12/2025 08:55"
-    description: ""
-  - coordinates:
       latitude: 37.4489963
       longitude: 126.4512942
-    time: "04/12/2025 08:56"
-    description: ""
-  - coordinates:
-      latitude: 37.4488992
-      longitude: 126.4515389
     time: "04/12/2025 08:56"
     description: ""
   - coordinates:
@@ -2033,41 +1128,6 @@
     time: "04/12/2025 08:58"
     description: ""
   - coordinates:
-      latitude: 37.448816
-      longitude: 126.4512692
-    time: "04/12/2025 08:58"
-    description: ""
-  - coordinates:
-      latitude: 37.4488183
-      longitude: 126.4512957
-    time: "04/12/2025 08:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4489125
-      longitude: 126.451463
-    time: "04/12/2025 08:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4490708
-      longitude: 126.4515024
-    time: "04/12/2025 09:00"
-    description: ""
-  - coordinates:
-      latitude: 37.4487551
-      longitude: 126.4511407
-    time: "04/12/2025 09:00"
-    description: ""
-  - coordinates:
-      latitude: 37.4489883
-      longitude: 126.4516715
-    time: "04/12/2025 09:00"
-    description: ""
-  - coordinates:
-      latitude: 37.4490476
-      longitude: 126.4517239
-    time: "04/12/2025 09:04"
-    description: ""
-  - coordinates:
       latitude: 37.4491264
       longitude: 126.452077
     time: "04/12/2025 09:05"
@@ -2076,36 +1136,6 @@
       latitude: 37.4488714
       longitude: 126.4515127
     time: "04/12/2025 09:05"
-    description: ""
-  - coordinates:
-      latitude: 37.4490732
-      longitude: 126.4518731
-    time: "04/12/2025 09:07"
-    description: ""
-  - coordinates:
-      latitude: 37.4487448
-      longitude: 126.4512277
-    time: "04/12/2025 09:09"
-    description: ""
-  - coordinates:
-      latitude: 37.4490348
-      longitude: 126.4518017
-    time: "04/12/2025 09:11"
-    description: ""
-  - coordinates:
-      latitude: 37.4489875
-      longitude: 126.4516342
-    time: "04/12/2025 09:12"
-    description: ""
-  - coordinates:
-      latitude: 37.4490436
-      longitude: 126.4516917
-    time: "04/12/2025 09:14"
-    description: ""
-  - coordinates:
-      latitude: 37.4490299
-      longitude: 126.4518215
-    time: "04/12/2025 09:15"
     description: ""
   - coordinates:
       latitude: 37.4491282
@@ -2118,31 +1148,6 @@
     time: "04/12/2025 09:15"
     description: ""
   - coordinates:
-      latitude: 37.4487492
-      longitude: 126.4512254
-    time: "04/12/2025 09:16"
-    description: ""
-  - coordinates:
-      latitude: 37.4490181
-      longitude: 126.4516706
-    time: "04/12/2025 09:19"
-    description: ""
-  - coordinates:
-      latitude: 37.4489789
-      longitude: 126.4517033
-    time: "04/12/2025 09:21"
-    description: ""
-  - coordinates:
-      latitude: 37.4489878
-      longitude: 126.4516414
-    time: "04/12/2025 09:23"
-    description: ""
-  - coordinates:
-      latitude: 37.4488723
-      longitude: 126.4514441
-    time: "04/12/2025 09:27"
-    description: ""
-  - coordinates:
       latitude: 37.4491258
       longitude: 126.4520979
     time: "04/12/2025 09:28"
@@ -2153,23 +1158,8 @@
     time: "04/12/2025 09:28"
     description: ""
   - coordinates:
-      latitude: 37.4489843
-      longitude: 126.4516512
-    time: "04/12/2025 09:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4488698
-      longitude: 126.4514812
-    time: "04/12/2025 09:30"
-    description: ""
-  - coordinates:
       latitude: 37.4490433
       longitude: 126.4518637
-    time: "04/12/2025 09:32"
-    description: ""
-  - coordinates:
-      latitude: 37.4489747
-      longitude: 126.4515778
     time: "04/12/2025 09:32"
     description: ""
   - coordinates:
@@ -2183,16 +1173,6 @@
     time: "04/12/2025 09:35"
     description: ""
   - coordinates:
-      latitude: 37.4489969
-      longitude: 126.4512964
-    time: "04/12/2025 09:36"
-    description: ""
-  - coordinates:
-      latitude: 37.4491246
-      longitude: 126.4520656
-    time: "04/12/2025 09:37"
-    description: ""
-  - coordinates:
       latitude: 37.4484243
       longitude: 126.4516824
     time: "04/12/2025 09:37"
@@ -2201,141 +1181,6 @@
       latitude: 37.4489417
       longitude: 126.4516209
     time: "04/12/2025 09:42"
-    description: ""
-  - coordinates:
-      latitude: 37.4487353
-      longitude: 126.4512218
-    time: "04/12/2025 09:43"
-    description: ""
-  - coordinates:
-      latitude: 37.4487279
-      longitude: 126.4511293
-    time: "04/12/2025 09:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4490363
-      longitude: 126.4517996
-    time: "04/12/2025 09:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4490984
-      longitude: 126.4519878
-    time: "04/12/2025 09:47"
-    description: ""
-  - coordinates:
-      latitude: 37.4489869
-      longitude: 126.4516569
-    time: "04/12/2025 09:47"
-    description: ""
-  - coordinates:
-      latitude: 37.4489082
-      longitude: 126.4514512
-    time: "04/12/2025 09:48"
-    description: ""
-  - coordinates:
-      latitude: 37.4489086
-      longitude: 126.4515586
-    time: "04/12/2025 09:49"
-    description: ""
-  - coordinates:
-      latitude: 37.4490388
-      longitude: 126.4517881
-    time: "04/12/2025 09:50"
-    description: ""
-  - coordinates:
-      latitude: 37.4487256
-      longitude: 126.4511306
-    time: "04/12/2025 09:51"
-    description: ""
-  - coordinates:
-      latitude: 37.4488047
-      longitude: 126.4513179
-    time: "04/12/2025 09:53"
-    description: ""
-  - coordinates:
-      latitude: 37.4489856
-      longitude: 126.4516493
-    time: "04/12/2025 09:55"
-    description: ""
-  - coordinates:
-      latitude: 37.4491187
-      longitude: 126.4512594
-    time: "04/12/2025 09:57"
-    description: ""
-  - coordinates:
-      latitude: 37.4490725
-      longitude: 126.451887
-    time: "04/12/2025 09:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4489629
-      longitude: 126.4515975
-    time: "04/12/2025 09:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4489621
-      longitude: 126.4516506
-    time: "04/12/2025 10:00"
-    description: ""
-  - coordinates:
-      latitude: 37.448954
-      longitude: 126.4516455
-    time: "04/12/2025 10:01"
-    description: ""
-  - coordinates:
-      latitude: 37.4490181
-      longitude: 126.4516472
-    time: "04/12/2025 10:02"
-    description: ""
-  - coordinates:
-      latitude: 37.4489584
-      longitude: 126.4515787
-    time: "04/12/2025 10:04"
-    description: ""
-  - coordinates:
-      latitude: 37.4490591
-      longitude: 126.4518473
-    time: "04/12/2025 10:05"
-    description: ""
-  - coordinates:
-      latitude: 37.4490109
-      longitude: 126.4516598
-    time: "04/12/2025 10:06"
-    description: ""
-  - coordinates:
-      latitude: 37.4489745
-      longitude: 126.4516497
-    time: "04/12/2025 10:09"
-    description: ""
-  - coordinates:
-      latitude: 37.4489819
-      longitude: 126.4516287
-    time: "04/12/2025 10:11"
-    description: ""
-  - coordinates:
-      latitude: 37.4490374
-      longitude: 126.451779
-    time: "04/12/2025 10:12"
-    description: ""
-  - coordinates:
-      latitude: 37.4489693
-      longitude: 126.4515418
-    time: "04/12/2025 10:12"
-    description: ""
-  - coordinates:
-      latitude: 37.449032
-      longitude: 126.4516559
-    time: "04/12/2025 10:13"
-    description: ""
-  - coordinates:
-      latitude: 37.4490653
-      longitude: 126.4518543
-    time: "04/12/2025 10:14"
-    description: ""
-  - coordinates:
-      latitude: 37.4488988
-      longitude: 126.4515243
-    time: "04/12/2025 10:14"
     description: ""
   - coordinates:
       latitude: 37.448714
@@ -2348,86 +1193,6 @@
     time: "04/12/2025 10:18"
     description: ""
   - coordinates:
-      latitude: 37.4489661
-      longitude: 126.4514133
-    time: "04/12/2025 10:19"
-    description: ""
-  - coordinates:
-      latitude: 37.4489305
-      longitude: 126.4515784
-    time: "04/12/2025 10:20"
-    description: ""
-  - coordinates:
-      latitude: 37.4489464
-      longitude: 126.4516346
-    time: "04/12/2025 10:22"
-    description: ""
-  - coordinates:
-      latitude: 37.4490168
-      longitude: 126.4517538
-    time: "04/12/2025 10:23"
-    description: ""
-  - coordinates:
-      latitude: 37.4488187
-      longitude: 126.4513629
-    time: "04/12/2025 10:24"
-    description: ""
-  - coordinates:
-      latitude: 37.4489828
-      longitude: 126.451647
-    time: "04/12/2025 10:25"
-    description: ""
-  - coordinates:
-      latitude: 37.4490652
-      longitude: 126.4518493
-    time: "04/12/2025 10:26"
-    description: ""
-  - coordinates:
-      latitude: 37.4489018
-      longitude: 126.4513458
-    time: "04/12/2025 10:27"
-    description: ""
-  - coordinates:
-      latitude: 37.4489521
-      longitude: 126.4516183
-    time: "04/12/2025 10:28"
-    description: ""
-  - coordinates:
-      latitude: 37.448985
-      longitude: 126.451671
-    time: "04/12/2025 10:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4489929
-      longitude: 126.4516521
-    time: "04/12/2025 10:30"
-    description: ""
-  - coordinates:
-      latitude: 37.4489853
-      longitude: 126.4516495
-    time: "04/12/2025 10:31"
-    description: ""
-  - coordinates:
-      latitude: 37.44883
-      longitude: 126.4512148
-    time: "04/12/2025 10:32"
-    description: ""
-  - coordinates:
-      latitude: 37.4490723
-      longitude: 126.4518913
-    time: "04/12/2025 10:33"
-    description: ""
-  - coordinates:
-      latitude: 37.4490883
-      longitude: 126.4519987
-    time: "04/12/2025 10:34"
-    description: ""
-  - coordinates:
-      latitude: 37.4489826
-      longitude: 126.4512639
-    time: "04/12/2025 10:35"
-    description: ""
-  - coordinates:
       latitude: 37.4488081
       longitude: 126.4545274
     time: "04/12/2025 10:37"
@@ -2438,79 +1203,14 @@
     time: "04/12/2025 10:39"
     description: ""
   - coordinates:
-      latitude: 37.4490274
-      longitude: 126.4517847
-    time: "04/12/2025 10:40"
-    description: ""
-  - coordinates:
-      latitude: 37.4489244
-      longitude: 126.4512668
-    time: "04/12/2025 10:40"
-    description: ""
-  - coordinates:
-      latitude: 37.4488928
-      longitude: 126.4514336
-    time: "04/12/2025 10:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4489804
-      longitude: 126.4516256
-    time: "04/12/2025 10:45"
-    description: ""
-  - coordinates:
-      latitude: 37.4490818
-      longitude: 126.4519186
-    time: "04/12/2025 10:48"
-    description: ""
-  - coordinates:
-      latitude: 37.4490132
-      longitude: 126.4516678
-    time: "04/12/2025 10:48"
-    description: ""
-  - coordinates:
-      latitude: 37.4489942
-      longitude: 126.4517242
-    time: "04/12/2025 10:52"
-    description: ""
-  - coordinates:
-      latitude: 37.4490119
-      longitude: 126.4516607
-    time: "04/12/2025 10:52"
-    description: ""
-  - coordinates:
       latitude: 37.4489258
       longitude: 126.4511944
     time: "04/12/2025 10:54"
     description: ""
   - coordinates:
-      latitude: 37.4490017
-      longitude: 126.4516578
-    time: "04/12/2025 10:55"
-    description: ""
-  - coordinates:
-      latitude: 37.4489707
-      longitude: 126.4516726
-    time: "04/12/2025 10:55"
-    description: ""
-  - coordinates:
       latitude: 37.4490987
       longitude: 126.4520192
     time: "04/12/2025 10:58"
-    description: ""
-  - coordinates:
-      latitude: 37.4490347
-      longitude: 126.4518075
-    time: "04/12/2025 10:59"
-    description: ""
-  - coordinates:
-      latitude: 37.4491526
-      longitude: 126.4519544
-    time: "04/12/2025 11:03"
-    description: ""
-  - coordinates:
-      latitude: 37.4489621
-      longitude: 126.4516599
-    time: "04/12/2025 11:04"
     description: ""
   - coordinates:
       latitude: 37.4493108
@@ -2543,16 +1243,6 @@
     time: "04/12/2025 11:15"
     description: ""
   - coordinates:
-      latitude: 37.4475579
-      longitude: 126.4506093
-    time: "04/12/2025 11:16"
-    description: ""
-  - coordinates:
-      latitude: 37.447544
-      longitude: 126.4499945
-    time: "04/12/2025 11:16"
-    description: ""
-  - coordinates:
       latitude: 37.4482175
       longitude: 126.449412
     time: "04/12/2025 11:18"
@@ -2583,41 +1273,6 @@
     time: "04/12/2025 11:21"
     description: ""
   - coordinates:
-      latitude: 37.4490616
-      longitude: 126.4518999
-    time: "04/12/2025 11:23"
-    description: ""
-  - coordinates:
-      latitude: 37.4490587
-      longitude: 126.451855
-    time: "04/12/2025 11:25"
-    description: ""
-  - coordinates:
-      latitude: 37.4489923
-      longitude: 126.4516288
-    time: "04/12/2025 11:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4489521
-      longitude: 126.4516509
-    time: "04/12/2025 11:30"
-    description: ""
-  - coordinates:
-      latitude: 37.4490807
-      longitude: 126.451914
-    time: "04/12/2025 11:31"
-    description: ""
-  - coordinates:
-      latitude: 37.4490324
-      longitude: 126.4517746
-    time: "04/12/2025 11:33"
-    description: ""
-  - coordinates:
-      latitude: 37.4489963
-      longitude: 126.4516924
-    time: "04/12/2025 11:35"
-    description: ""
-  - coordinates:
       latitude: 37.449341
       longitude: 126.4530276
     time: "04/12/2025 11:36"
@@ -2626,26 +1281,6 @@
       latitude: 37.4490666
       longitude: 126.4518574
     time: "04/12/2025 11:37"
-    description: ""
-  - coordinates:
-      latitude: 37.4491018
-      longitude: 126.4519933
-    time: "04/12/2025 11:42"
-    description: ""
-  - coordinates:
-      latitude: 37.4490145
-      longitude: 126.4516504
-    time: "04/12/2025 11:43"
-    description: ""
-  - coordinates:
-      latitude: 37.4490153
-      longitude: 126.4516484
-    time: "04/12/2025 11:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4489004
-      longitude: 126.4515522
-    time: "04/12/2025 11:45"
     description: ""
   - coordinates:
       latitude: 37.4484921
@@ -2658,49 +1293,14 @@
     time: "04/12/2025 11:52"
     description: ""
   - coordinates:
-      latitude: 37.4489474
-      longitude: 126.4515874
-    time: "04/12/2025 11:53"
-    description: ""
-  - coordinates:
-      latitude: 37.4490901
-      longitude: 126.4519659
-    time: "04/12/2025 11:53"
-    description: ""
-  - coordinates:
       latitude: 37.4491729
       longitude: 126.4525868
-    time: "04/12/2025 11:55"
-    description: ""
-  - coordinates:
-      latitude: 37.4491204
-      longitude: 126.4520733
     time: "04/12/2025 11:55"
     description: ""
   - coordinates:
       latitude: 37.4489857
       longitude: 126.4517287
     time: "04/12/2025 11:56"
-    description: ""
-  - coordinates:
-      latitude: 37.4490962
-      longitude: 126.4519734
-    time: "04/12/2025 12:00"
-    description: ""
-  - coordinates:
-      latitude: 37.4490054
-      longitude: 126.4516159
-    time: "04/12/2025 12:01"
-    description: ""
-  - coordinates:
-      latitude: 37.4490435
-      longitude: 126.4518129
-    time: "04/12/2025 12:02"
-    description: ""
-  - coordinates:
-      latitude: 37.448978
-      longitude: 126.451711
-    time: "04/12/2025 12:07"
     description: ""
   - coordinates:
       latitude: 37.4484775
@@ -2713,29 +1313,9 @@
     time: "04/12/2025 12:09"
     description: ""
   - coordinates:
-      latitude: 37.4490909
-      longitude: 126.4511863
-    time: "04/12/2025 12:11"
-    description: ""
-  - coordinates:
       latitude: 37.4486405
       longitude: 126.4509747
     time: "04/12/2025 12:12"
-    description: ""
-  - coordinates:
-      latitude: 37.4488258
-      longitude: 126.4509622
-    time: "04/12/2025 12:12"
-    description: ""
-  - coordinates:
-      latitude: 37.4486327
-      longitude: 126.4509475
-    time: "04/12/2025 12:13"
-    description: ""
-  - coordinates:
-      latitude: 37.4490704
-      longitude: 126.4510072
-    time: "04/12/2025 12:13"
     description: ""
   - coordinates:
       latitude: 37.4492455
@@ -2748,34 +1328,14 @@
     time: "04/12/2025 12:17"
     description: ""
   - coordinates:
-      latitude: 37.4488445
-      longitude: 126.4520288
-    time: "04/12/2025 12:18"
-    description: ""
-  - coordinates:
       latitude: 37.4485295
       longitude: 126.4512184
     time: "04/12/2025 12:18"
     description: ""
   - coordinates:
-      latitude: 37.4485216
-      longitude: 126.4509689
-    time: "04/12/2025 12:19"
-    description: ""
-  - coordinates:
-      latitude: 37.4487882
-      longitude: 126.4515879
-    time: "04/12/2025 12:20"
-    description: ""
-  - coordinates:
       latitude: 37.4481633
       longitude: 126.4508631
     time: "04/12/2025 12:20"
-    description: ""
-  - coordinates:
-      latitude: 37.4483829
-      longitude: 126.4509128
-    time: "04/12/2025 12:21"
     description: ""
   - coordinates:
       latitude: 37.4786358
@@ -2786,11 +1346,6 @@
       latitude: 37.4686051
       longitude: 126.4329506
     time: "04/12/2025 12:39"
-    description: ""
-  - coordinates:
-      latitude: 37.4683632
-      longitude: 126.4329863
-    time: "04/12/2025 12:40"
     description: ""
   - coordinates:
       latitude: 37.4674847
@@ -2811,16 +1366,6 @@
       latitude: 37.4693529
       longitude: 126.4359469
     time: "04/12/2025 12:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4694039
-      longitude: 126.4360452
-    time: "04/12/2025 12:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4694794
-      longitude: 126.4361418
-    time: "04/12/2025 12:45"
     description: ""
   - coordinates:
       latitude: 37.4698954
@@ -2858,11 +1403,6 @@
     time: "04/12/2025 12:55"
     description: ""
   - coordinates:
-      latitude: 37.4673046
-      longitude: 126.4341237
-    time: "04/12/2025 12:58"
-    description: ""
-  - coordinates:
       latitude: 37.4666116
       longitude: 126.4341659
     time: "04/12/2025 13:00"
@@ -2871,16 +1411,6 @@
       latitude: 37.4663595
       longitude: 126.4335512
     time: "04/12/2025 13:00"
-    description: ""
-  - coordinates:
-      latitude: 37.4661347
-      longitude: 126.4331673
-    time: "04/12/2025 13:02"
-    description: ""
-  - coordinates:
-      latitude: 37.466478
-      longitude: 126.4335525
-    time: "04/12/2025 13:03"
     description: ""
   - coordinates:
       latitude: 37.4667511
@@ -2901,11 +1431,6 @@
       latitude: 37.4683454
       longitude: 126.4368562
     time: "04/12/2025 13:07"
-    description: ""
-  - coordinates:
-      latitude: 37.4685234
-      longitude: 126.4367787
-    time: "04/12/2025 13:15"
     description: ""
   - coordinates:
       latitude: 37.4683233
@@ -2933,24 +1458,9 @@
     time: "04/12/2025 13:19"
     description: ""
   - coordinates:
-      latitude: 37.4674564
-      longitude: 126.4351906
-    time: "04/12/2025 13:20"
-    description: ""
-  - coordinates:
-      latitude: 37.4671578
-      longitude: 126.4346827
-    time: "04/12/2025 13:21"
-    description: ""
-  - coordinates:
       latitude: 37.4662909
       longitude: 126.4334993
     time: "04/12/2025 13:22"
-    description: ""
-  - coordinates:
-      latitude: 37.4663234
-      longitude: 126.4335765
-    time: "04/12/2025 13:23"
     description: ""
   - coordinates:
       latitude: 37.4661607
@@ -2966,11 +1476,6 @@
       latitude: 37.4661657
       longitude: 126.4324591
     time: "04/12/2025 13:28"
-    description: ""
-  - coordinates:
-      latitude: 37.4661146
-      longitude: 126.4326667
-    time: "04/12/2025 13:29"
     description: ""
   - coordinates:
       latitude: 37.4661762
@@ -3003,21 +1508,6 @@
     time: "04/12/2025 13:38"
     description: ""
   - coordinates:
-      latitude: 37.4662045
-      longitude: 126.4309415
-    time: "04/12/2025 13:38"
-    description: ""
-  - coordinates:
-      latitude: 37.4660305
-      longitude: 126.4312287
-    time: "04/12/2025 13:39"
-    description: ""
-  - coordinates:
-      latitude: 37.4660354
-      longitude: 126.4311869
-    time: "04/12/2025 13:39"
-    description: ""
-  - coordinates:
       latitude: 37.4653753
       longitude: 126.4318985
     time: "04/12/2025 13:43"
@@ -3038,29 +1528,9 @@
     time: "04/12/2025 13:47"
     description: ""
   - coordinates:
-      latitude: 37.4661444
-      longitude: 126.4310688
-    time: "04/12/2025 13:49"
-    description: ""
-  - coordinates:
       latitude: 37.4661797
       longitude: 126.4309566
     time: "04/12/2025 13:51"
-    description: ""
-  - coordinates:
-      latitude: 37.4659237
-      longitude: 126.4312908
-    time: "04/12/2025 13:54"
-    description: ""
-  - coordinates:
-      latitude: 37.4660715
-      longitude: 126.4312226
-    time: "04/12/2025 13:56"
-    description: ""
-  - coordinates:
-      latitude: 37.4661459
-      longitude: 126.4309653
-    time: "04/12/2025 13:56"
     description: ""
   - coordinates:
       latitude: 37.4658449
@@ -3073,31 +1543,6 @@
     time: "04/12/2025 14:00"
     description: ""
   - coordinates:
-      latitude: 37.4659131
-      longitude: 126.4314061
-    time: "04/12/2025 14:02"
-    description: ""
-  - coordinates:
-      latitude: 37.4662351
-      longitude: 126.4305394
-    time: "04/12/2025 14:03"
-    description: ""
-  - coordinates:
-      latitude: 37.4661955
-      longitude: 126.4310628
-    time: "04/12/2025 14:08"
-    description: ""
-  - coordinates:
-      latitude: 37.4662413
-      longitude: 126.4311233
-    time: "04/12/2025 14:09"
-    description: ""
-  - coordinates:
-      latitude: 37.4661745
-      longitude: 126.431056
-    time: "04/12/2025 14:09"
-    description: ""
-  - coordinates:
       latitude: 37.4655384
       longitude: 126.4317691
     time: "04/12/2025 14:12"
@@ -3106,11 +1551,6 @@
       latitude: 37.4662128
       longitude: 126.4309963
     time: "04/12/2025 14:17"
-    description: ""
-  - coordinates:
-      latitude: 37.4659565
-      longitude: 126.4312451
-    time: "04/12/2025 14:20"
     description: ""
   - coordinates:
       latitude: 37.4666024
@@ -3123,36 +1563,6 @@
     time: "04/12/2025 14:22"
     description: ""
   - coordinates:
-      latitude: 37.4661459
-      longitude: 126.4311037
-    time: "04/12/2025 14:24"
-    description: ""
-  - coordinates:
-      latitude: 37.4664552
-      longitude: 126.4307668
-    time: "04/12/2025 14:24"
-    description: ""
-  - coordinates:
-      latitude: 37.4661369
-      longitude: 126.4310085
-    time: "04/12/2025 14:26"
-    description: ""
-  - coordinates:
-      latitude: 37.4659939
-      longitude: 126.4305214
-    time: "04/12/2025 14:27"
-    description: ""
-  - coordinates:
-      latitude: 37.4661787
-      longitude: 126.4304931
-    time: "04/12/2025 14:28"
-    description: ""
-  - coordinates:
-      latitude: 37.466112
-      longitude: 126.4311414
-    time: "04/12/2025 14:28"
-    description: ""
-  - coordinates:
       latitude: 37.4658124
       longitude: 126.4320548
     time: "04/12/2025 14:29"
@@ -3161,36 +1571,6 @@
       latitude: 37.4660719
       longitude: 126.4312187
     time: "04/12/2025 14:29"
-    description: ""
-  - coordinates:
-      latitude: 37.4661424
-      longitude: 126.4309546
-    time: "04/12/2025 14:31"
-    description: ""
-  - coordinates:
-      latitude: 37.4661959
-      longitude: 126.430957
-    time: "04/12/2025 14:35"
-    description: ""
-  - coordinates:
-      latitude: 37.4658881
-      longitude: 126.4315322
-    time: "04/12/2025 14:43"
-    description: ""
-  - coordinates:
-      latitude: 37.4659364
-      longitude: 126.4313044
-    time: "04/12/2025 14:44"
-    description: ""
-  - coordinates:
-      latitude: 37.4661329
-      longitude: 126.4311031
-    time: "04/12/2025 14:45"
-    description: ""
-  - coordinates:
-      latitude: 37.4661306
-      longitude: 126.4310027
-    time: "04/12/2025 14:45"
     description: ""
   - coordinates:
       latitude: 37.4666395
@@ -3218,11 +1598,6 @@
     time: "04/12/2025 14:54"
     description: ""
   - coordinates:
-      latitude: 37.4663947
-      longitude: 126.4307911
-    time: "04/12/2025 14:55"
-    description: ""
-  - coordinates:
       latitude: 37.4660931
       longitude: 126.4311241
     time: "04/12/2025 14:57"
@@ -3236,11 +1611,6 @@
       latitude: 37.465665
       longitude: 126.4312298
     time: "04/12/2025 15:15"
-    description: ""
-  - coordinates:
-      latitude: 37.46549702
-      longitude: 126.4308446
-    time: "04/12/2025 15:16"
     description: ""
   - coordinates:
       latitude: 37.4657807
@@ -3257,26 +1627,6 @@
       latitude: 52.310498
       longitude: 4.7613823
     time: "05/12/2025 05:30"
-    description: ""
-  - coordinates:
-      latitude: 52.310623
-      longitude: 4.7615157
-    time: "05/12/2025 05:30"
-    description: ""
-  - coordinates:
-      latitude: 52.3105608
-      longitude: 4.7613248
-    time: "05/12/2025 05:32"
-    description: ""
-  - coordinates:
-      latitude: 52.3104988
-      longitude: 4.7613268
-    time: "05/12/2025 05:34"
-    description: ""
-  - coordinates:
-      latitude: 52.3106669
-      longitude: 4.7612763
-    time: "05/12/2025 05:35"
     description: ""
   - coordinates:
       latitude: 52.3098346
@@ -3299,29 +1649,9 @@
     time: "05/12/2025 05:46"
     description: ""
   - coordinates:
-      latitude: 52.3102249
-      longitude: 4.7626215
-    time: "05/12/2025 05:46"
-    description: ""
-  - coordinates:
       latitude: 52.3095271
       longitude: 4.762429
     time: "05/12/2025 05:47"
-    description: ""
-  - coordinates:
-      latitude: 52.3091522
-      longitude: 4.7624735
-    time: "05/12/2025 05:47"
-    description: ""
-  - coordinates:
-      latitude: 52.3092477
-      longitude: 4.7625211
-    time: "05/12/2025 05:49"
-    description: ""
-  - coordinates:
-      latitude: 52.309209
-      longitude: 4.7624633
-    time: "05/12/2025 05:50"
     description: ""
   - coordinates:
       latitude: 52.3097103
@@ -3337,11 +1667,6 @@
       latitude: 52.3097081
       longitude: 4.7624094
     time: "05/12/2025 05:52"
-    description: ""
-  - coordinates:
-      latitude: 52.3095891
-      longitude: 4.7623958
-    time: "05/12/2025 05:55"
     description: ""
   - coordinates:
       latitude: 52.3088282
@@ -3364,24 +1689,9 @@
     time: "05/12/2025 06:00"
     description: ""
   - coordinates:
-      latitude: 52.309856
-      longitude: 4.7626897
-    time: "05/12/2025 06:01"
-    description: ""
-  - coordinates:
       latitude: 52.3092615
       longitude: 4.7619439
     time: "05/12/2025 06:05"
-    description: ""
-  - coordinates:
-      latitude: 52.3093802
-      longitude: 4.7612975
-    time: "05/12/2025 06:06"
-    description: ""
-  - coordinates:
-      latitude: 52.3096071
-      longitude: 4.7616073
-    time: "05/12/2025 06:06"
     description: ""
   - coordinates:
       latitude: 52.3084841
@@ -3428,166 +1738,11 @@
       longitude: 4.3102407
     time: "05/12/2025 06:51"
     description: ""
-  - coordinates:
-      latitude: 52.0429764
-      longitude: 4.3102329
-    time: "05/12/2025 07:56"
-    description: ""
-  - coordinates:
-      latitude: 52.0429922
-      longitude: 4.3102335
-    time: "05/12/2025 08:12"
-    description: ""
-  - coordinates:
-      latitude: 52.0431197
-      longitude: 4.3101656
-    time: "05/12/2025 08:13"
-    description: ""
-  - coordinates:
-      latitude: 52.0429868
-      longitude: 4.3102261
-    time: "05/12/2025 08:14"
-    description: ""
-  - coordinates:
-      latitude: 52.0430041
-      longitude: 4.3102218
-    time: "05/12/2025 08:29"
-    description: ""
-  - coordinates:
-      latitude: 52.0430051
-      longitude: 4.3102146
-    time: "05/12/2025 08:29"
-    description: ""
-  - coordinates:
-      latitude: 52.0430043
-      longitude: 4.3102326
-    time: "05/12/2025 08:44"
-    description: ""
-  - coordinates:
-      latitude: 52.0430061
-      longitude: 4.310216
-    time: "05/12/2025 08:59"
-    description: ""
-  - coordinates:
-      latitude: 52.043
-      longitude: 4.3102263
-    time: "05/12/2025 09:55"
-    description: ""
-  - coordinates:
-      latitude: 52.0430244
-      longitude: 4.3102566
-    time: "05/12/2025 10:55"
-    description: ""
-  - coordinates:
-      latitude: 52.0430149
-      longitude: 4.3102459
-    time: "05/12/2025 11:24"
-    description: ""
-  - coordinates:
-      latitude: 52.0430029
-      longitude: 4.3102209
-    time: "05/12/2025 13:07"
-    description: ""
-  - coordinates:
-      latitude: 52.0429841
-      longitude: 4.3102154
-    time: "05/12/2025 13:22"
-    description: ""
-  - coordinates:
-      latitude: 52.0429213
-      longitude: 4.3102501
-    time: "05/12/2025 20:41"
-    description: ""
-  - coordinates:
-      latitude: 52.0429605
-      longitude: 4.3102379
-    time: "05/12/2025 20:56"
-    description: ""
-  - coordinates:
-      latitude: 52.0429795
-      longitude: 4.3102483
-    time: "05/12/2025 21:12"
-    description: ""
-  - coordinates:
-      latitude: 52.0429641
-      longitude: 4.3102404
-    time: "05/12/2025 21:28"
-    description: ""
-  - coordinates:
-      latitude: 52.0429768
-      longitude: 4.3102686
-    time: "05/12/2025 21:44"
-    description: ""
-  - coordinates:
-      latitude: 52.0429769
-      longitude: 4.3102493
-    time: "05/12/2025 21:59"
-    description: ""
 2025-12-06:
   - coordinates:
       latitude: 52.0430169
       longitude: 4.3102252
     time: "06/12/2025 00:23"
-    description: ""
-  - coordinates:
-      latitude: 52.0430015
-      longitude: 4.3102411
-    time: "06/12/2025 00:38"
-    description: ""
-  - coordinates:
-      latitude: 52.0429933
-      longitude: 4.310223
-    time: "06/12/2025 00:54"
-    description: ""
-  - coordinates:
-      latitude: 52.0430163
-      longitude: 4.310232
-    time: "06/12/2025 01:30"
-    description: ""
-  - coordinates:
-      latitude: 52.043003
-      longitude: 4.3102032
-    time: "06/12/2025 03:29"
-    description: ""
-  - coordinates:
-      latitude: 52.0430033
-      longitude: 4.3102395
-    time: "06/12/2025 04:11"
-    description: ""
-  - coordinates:
-      latitude: 52.0429984
-      longitude: 4.31022
-    time: "06/12/2025 04:26"
-    description: ""
-  - coordinates:
-      latitude: 52.0430188
-      longitude: 4.3101908
-    time: "06/12/2025 04:42"
-    description: ""
-  - coordinates:
-      latitude: 52.0429908
-      longitude: 4.310244
-    time: "06/12/2025 04:57"
-    description: ""
-  - coordinates:
-      latitude: 52.0429699
-      longitude: 4.31022
-    time: "06/12/2025 05:12"
-    description: ""
-  - coordinates:
-      latitude: 52.0430348
-      longitude: 4.3102531
-    time: "06/12/2025 05:27"
-    description: ""
-  - coordinates:
-      latitude: 52.0430011
-      longitude: 4.3101995
-    time: "06/12/2025 05:42"
-    description: ""
-  - coordinates:
-      latitude: 52.0429952
-      longitude: 4.3102464
-    time: "06/12/2025 05:57"
     description: ""
 2025-11-20:
   - coordinates:
@@ -3611,11 +1766,6 @@
     time: "20/11/2025 03:11"
     description: ""
   - coordinates:
-      latitude: 22.6237771
-      longitude: 120.3028232
-    time: "20/11/2025 03:11"
-    description: ""
-  - coordinates:
       latitude: 22.62156013
       longitude: 120.2961535
     time: "20/11/2025 03:19"
@@ -3629,31 +1779,6 @@
       latitude: 22.6269125
       longitude: 120.2869526
     time: "20/11/2025 03:41"
-    description: ""
-  - coordinates:
-      latitude: 22.6269093
-      longitude: 120.2869309
-    time: "20/11/2025 03:43"
-    description: ""
-  - coordinates:
-      latitude: 22.6269096
-      longitude: 120.2869711
-    time: "20/11/2025 03:59"
-    description: ""
-  - coordinates:
-      latitude: 22.6271454
-      longitude: 120.2869745
-    time: "20/11/2025 04:24"
-    description: ""
-  - coordinates:
-      latitude: 22.6267332
-      longitude: 120.2865645
-    time: "20/11/2025 04:39"
-    description: ""
-  - coordinates:
-      latitude: 22.626893
-      longitude: 120.2867549
-    time: "20/11/2025 04:57"
     description: ""
   - coordinates:
       latitude: 22.6260121
@@ -3674,11 +1799,6 @@
       latitude: 22.6211749
       longitude: 120.2878529
     time: "20/11/2025 05:42"
-    description: ""
-  - coordinates:
-      latitude: 22.6212949
-      longitude: 120.2879419
-    time: "20/11/2025 06:06"
     description: ""
   - coordinates:
       latitude: 22.6177523
@@ -3741,11 +1861,6 @@
     time: "20/11/2025 08:14"
     description: ""
   - coordinates:
-      latitude: 22.6540348
-      longitude: 120.2878923
-    time: "20/11/2025 08:15"
-    description: ""
-  - coordinates:
       latitude: 22.6562676
       longitude: 120.2862689
     time: "20/11/2025 08:47"
@@ -3754,11 +1869,6 @@
       latitude: 22.6567206
       longitude: 120.286242
     time: "20/11/2025 09:08"
-    description: ""
-  - coordinates:
-      latitude: 22.6565565
-      longitude: 120.2861623
-    time: "20/11/2025 09:38"
     description: ""
   - coordinates:
       latitude: 22.660984
@@ -3784,11 +1894,6 @@
       latitude: 22.6822319
       longitude: 120.2932415
     time: "20/11/2025 10:59"
-    description: ""
-  - coordinates:
-      latitude: 22.682198
-      longitude: 120.2934879
-    time: "20/11/2025 11:00"
     description: ""
   - coordinates:
       latitude: 22.684018
@@ -3846,11 +1951,6 @@
     time: "20/11/2025 12:51"
     description: ""
   - coordinates:
-      latitude: 22.665981
-      longitude: 120.2998269
-    time: "20/11/2025 12:52"
-    description: ""
-  - coordinates:
       latitude: 22.6664451
       longitude: 120.2998415
     time: "20/11/2025 13:10"
@@ -3859,11 +1959,6 @@
       latitude: 22.6659813
       longitude: 120.2992856
     time: "20/11/2025 13:34"
-    description: ""
-  - coordinates:
-      latitude: 22.6658331
-      longitude: 120.2989731
-    time: "20/11/2025 13:50"
     description: ""
   - coordinates:
       latitude: 22.6573678
@@ -3876,11 +1971,6 @@
     time: "20/11/2025 14:04"
     description: ""
   - coordinates:
-      latitude: 22.6485721
-      longitude: 120.3033673
-    time: "20/11/2025 14:05"
-    description: ""
-  - coordinates:
       latitude: 22.6317653
       longitude: 120.3019255
     time: "20/11/2025 14:07"
@@ -3890,71 +1980,11 @@
       longitude: 120.3068712
     time: "20/11/2025 14:21"
     description: ""
-  - coordinates:
-      latitude: 22.6154886
-      longitude: 120.3068061
-    time: "20/11/2025 14:37"
-    description: ""
-  - coordinates:
-      latitude: 22.6154699
-      longitude: 120.3068227
-    time: "20/11/2025 14:37"
-    description: ""
-  - coordinates:
-      latitude: 22.6155335
-      longitude: 120.3068224
-    time: "20/11/2025 14:53"
-    description: ""
-  - coordinates:
-      latitude: 22.6154715
-      longitude: 120.3068478
-    time: "20/11/2025 15:15"
-    description: ""
-  - coordinates:
-      latitude: 22.6155875
-      longitude: 120.306843
-    time: "20/11/2025 23:45"
-    description: ""
 2025-11-21:
   - coordinates:
       latitude: 22.6155366
       longitude: 120.306875
     time: "21/11/2025 00:00"
-    description: ""
-  - coordinates:
-      latitude: 22.615428
-      longitude: 120.3068933
-    time: "21/11/2025 00:15"
-    description: ""
-  - coordinates:
-      latitude: 22.6155281
-      longitude: 120.306776
-    time: "21/11/2025 00:30"
-    description: ""
-  - coordinates:
-      latitude: 22.6154863
-      longitude: 120.3068058
-    time: "21/11/2025 00:45"
-    description: ""
-  - coordinates:
-      latitude: 22.615589
-      longitude: 120.306856
-    time: "21/11/2025 01:11"
-    description: ""
-  - coordinates:
-      latitude: 22.6155454
-      longitude: 120.3068145
-    time: "21/11/2025 01:25"
-    description: ""
-  - coordinates:
-      latitude: 22.6155486
-      longitude: 120.3067964
-    time: "21/11/2025 01:50"
-    description: ""
-  - coordinates:
-      latitude: 22.6155307
-      longitude: 120.3068194
-    time: "21/11/2025 02:11"
     description: ""
   - coordinates:
       latitude: 22.6137253
@@ -3972,11 +2002,6 @@
     time: "21/11/2025 02:26"
     description: ""
   - coordinates:
-      latitude: 22.6389948
-      longitude: 120.3026464
-    time: "21/11/2025 02:26"
-    description: ""
-  - coordinates:
       latitude: 22.6660886
       longitude: 120.3030068
     time: "21/11/2025 02:31"
@@ -3985,11 +2010,6 @@
       latitude: 22.6872794
       longitude: 120.3082424
     time: "21/11/2025 02:47"
-    description: ""
-  - coordinates:
-      latitude: 22.6872594
-      longitude: 120.3082063
-    time: "21/11/2025 02:48"
     description: ""
   - coordinates:
       latitude: 22.68171928
@@ -4052,16 +2072,6 @@
     time: "21/11/2025 04:20"
     description: ""
   - coordinates:
-      latitude: 22.7578698
-      longitude: 120.4399038
-    time: "21/11/2025 04:44"
-    description: ""
-  - coordinates:
-      latitude: 22.7576476
-      longitude: 120.4401987
-    time: "21/11/2025 05:01"
-    description: ""
-  - coordinates:
       latitude: 22.757604
       longitude: 120.4407025
     time: "21/11/2025 05:16"
@@ -4072,26 +2082,6 @@
     time: "21/11/2025 05:32"
     description: ""
   - coordinates:
-      latitude: 22.7576757
-      longitude: 120.4396488
-    time: "21/11/2025 05:47"
-    description: ""
-  - coordinates:
-      latitude: 22.7576849
-      longitude: 120.4396309
-    time: "21/11/2025 06:02"
-    description: ""
-  - coordinates:
-      latitude: 22.757656
-      longitude: 120.4396503
-    time: "21/11/2025 06:05"
-    description: ""
-  - coordinates:
-      latitude: 22.7578698
-      longitude: 120.4399038
-    time: "21/11/2025 06:29"
-    description: ""
-  - coordinates:
       latitude: 22.7569879
       longitude: 120.440388
     time: "21/11/2025 06:49"
@@ -4099,11 +2089,6 @@
   - coordinates:
       latitude: 22.7548206
       longitude: 120.4464696
-    time: "21/11/2025 07:11"
-    description: ""
-  - coordinates:
-      latitude: 22.7547917
-      longitude: 120.4464684
     time: "21/11/2025 07:11"
     description: ""
   - coordinates:
@@ -4167,11 +2152,6 @@
     time: "21/11/2025 08:37"
     description: ""
   - coordinates:
-      latitude: 22.6887025
-      longitude: 120.3099889
-    time: "21/11/2025 08:53"
-    description: ""
-  - coordinates:
       latitude: 22.6877711
       longitude: 120.3089364
     time: "21/11/2025 09:19"
@@ -4185,16 +2165,6 @@
       latitude: 22.6660886
       longitude: 120.3030068
     time: "21/11/2025 09:30"
-    description: ""
-  - coordinates:
-      latitude: 22.6485721
-      longitude: 120.3033673
-    time: "21/11/2025 09:34"
-    description: ""
-  - coordinates:
-      latitude: 22.6485721
-      longitude: 120.3033673
-    time: "21/11/2025 09:34"
     description: ""
   - coordinates:
       latitude: 22.6485721
@@ -4227,19 +2197,9 @@
     time: "21/11/2025 10:06"
     description: ""
   - coordinates:
-      latitude: 22.6229958
-      longitude: 120.3419152
-    time: "21/11/2025 10:06"
-    description: ""
-  - coordinates:
       latitude: 22.6232197
       longitude: 120.3429286
     time: "21/11/2025 10:21"
-    description: ""
-  - coordinates:
-      latitude: 22.6231721
-      longitude: 120.3429206
-    time: "21/11/2025 10:37"
     description: ""
   - coordinates:
       latitude: 22.6241608
@@ -4272,16 +2232,6 @@
     time: "21/11/2025 11:51"
     description: ""
   - coordinates:
-      latitude: 22.6326956
-      longitude: 120.3008973
-    time: "21/11/2025 11:56"
-    description: ""
-  - coordinates:
-      latitude: 22.6326395
-      longitude: 120.3004993
-    time: "21/11/2025 12:12"
-    description: ""
-  - coordinates:
       latitude: 22.6328573
       longitude: 120.3020139
     time: "21/11/2025 12:32"
@@ -4297,95 +2247,15 @@
     time: "21/11/2025 12:45"
     description: ""
   - coordinates:
-      latitude: 22.6139756
-      longitude: 120.3050642
-    time: "21/11/2025 12:49"
-    description: ""
-  - coordinates:
       latitude: 22.6156118
       longitude: 120.3067874
     time: "21/11/2025 13:04"
-    description: ""
-  - coordinates:
-      latitude: 22.6156115
-      longitude: 120.3068003
-    time: "21/11/2025 13:04"
-    description: ""
-  - coordinates:
-      latitude: 22.6156156
-      longitude: 120.3068464
-    time: "21/11/2025 13:19"
-    description: ""
-  - coordinates:
-      latitude: 22.6155103
-      longitude: 120.3068744
-    time: "21/11/2025 13:35"
-    description: ""
-  - coordinates:
-      latitude: 22.6155195
-      longitude: 120.3067855
-    time: "21/11/2025 13:50"
-    description: ""
-  - coordinates:
-      latitude: 22.6156058
-      longitude: 120.3067827
-    time: "21/11/2025 14:05"
-    description: ""
-  - coordinates:
-      latitude: 22.6155811
-      longitude: 120.3067987
-    time: "21/11/2025 14:20"
-    description: ""
-  - coordinates:
-      latitude: 22.6155975
-      longitude: 120.3067844
-    time: "21/11/2025 23:48"
     description: ""
 2025-11-22:
   - coordinates:
       latitude: 22.6157355
       longitude: 120.3066093
     time: "22/11/2025 00:08"
-    description: ""
-  - coordinates:
-      latitude: 22.6155667
-      longitude: 120.3067735
-    time: "22/11/2025 00:23"
-    description: ""
-  - coordinates:
-      latitude: 22.6155674
-      longitude: 120.3068023
-    time: "22/11/2025 01:15"
-    description: ""
-  - coordinates:
-      latitude: 22.6155579
-      longitude: 120.3068046
-    time: "22/11/2025 01:30"
-    description: ""
-  - coordinates:
-      latitude: 22.6155656
-      longitude: 120.3068039
-    time: "22/11/2025 01:55"
-    description: ""
-  - coordinates:
-      latitude: 22.6155183
-      longitude: 120.3067907
-    time: "22/11/2025 02:27"
-    description: ""
-  - coordinates:
-      latitude: 22.6155614
-      longitude: 120.3068088
-    time: "22/11/2025 02:35"
-    description: ""
-  - coordinates:
-      latitude: 22.6155697
-      longitude: 120.3067956
-    time: "22/11/2025 02:41"
-    description: ""
-  - coordinates:
-      latitude: 22.6155748
-      longitude: 120.3067876
-    time: "22/11/2025 02:47"
     description: ""
   - coordinates:
       latitude: 22.6136212
@@ -4443,16 +2313,6 @@
     time: "22/11/2025 04:54"
     description: ""
   - coordinates:
-      latitude: 22.6194369
-      longitude: 120.2701763
-    time: "22/11/2025 04:55"
-    description: ""
-  - coordinates:
-      latitude: 22.6194679
-      longitude: 120.2698415
-    time: "22/11/2025 04:57"
-    description: ""
-  - coordinates:
       latitude: 22.6137589
       longitude: 120.2688497
     time: "22/11/2025 05:03"
@@ -4466,11 +2326,6 @@
       latitude: 22.6119044
       longitude: 120.2678853
     time: "22/11/2025 05:28"
-    description: ""
-  - coordinates:
-      latitude: 22.6119075
-      longitude: 120.267874
-    time: "22/11/2025 05:43"
     description: ""
   - coordinates:
       latitude: 22.611529
@@ -4518,11 +2373,6 @@
     time: "22/11/2025 07:39"
     description: ""
   - coordinates:
-      latitude: 22.596061
-      longitude: 120.2793779
-    time: "22/11/2025 07:40"
-    description: ""
-  - coordinates:
       latitude: 22.574187
       longitude: 120.2965187
     time: "22/11/2025 07:59"
@@ -4533,18 +2383,8 @@
     time: "22/11/2025 08:04"
     description: ""
   - coordinates:
-      latitude: 22.5610346
-      longitude: 120.3042641
-    time: "22/11/2025 08:04"
-    description: ""
-  - coordinates:
       latitude: 22.5761853
       longitude: 120.294855
-    time: "22/11/2025 08:20"
-    description: ""
-  - coordinates:
-      latitude: 22.5762856
-      longitude: 120.2947583
     time: "22/11/2025 08:20"
     description: ""
   - coordinates:
@@ -4563,11 +2403,6 @@
     time: "22/11/2025 08:59"
     description: ""
   - coordinates:
-      latitude: 22.6137548
-      longitude: 120.2689241
-    time: "22/11/2025 09:00"
-    description: ""
-  - coordinates:
       latitude: 22.6126314
       longitude: 120.2682422
     time: "22/11/2025 09:16"
@@ -4583,11 +2418,6 @@
     time: "22/11/2025 09:43"
     description: ""
   - coordinates:
-      latitude: 22.6099173
-      longitude: 120.2678114
-    time: "22/11/2025 09:59"
-    description: ""
-  - coordinates:
       latitude: 22.6114408
       longitude: 120.267583
     time: "22/11/2025 10:14"
@@ -4596,11 +2426,6 @@
       latitude: 22.6140633
       longitude: 120.2695088
     time: "22/11/2025 10:30"
-    description: ""
-  - coordinates:
-      latitude: 22.6142827
-      longitude: 120.2699195
-    time: "22/11/2025 10:45"
     description: ""
   - coordinates:
       latitude: 22.6193515
@@ -4632,161 +2457,6 @@
       longitude: 120.3068557
     time: "22/11/2025 11:41"
     description: ""
-  - coordinates:
-      latitude: 22.6155938
-      longitude: 120.3067911
-    time: "22/11/2025 11:44"
-    description: ""
-  - coordinates:
-      latitude: 22.6154979
-      longitude: 120.3068604
-    time: "22/11/2025 11:56"
-    description: ""
-  - coordinates:
-      latitude: 22.6156011
-      longitude: 120.3067703
-    time: "22/11/2025 11:59"
-    description: ""
-  - coordinates:
-      latitude: 22.6155923
-      longitude: 120.3068216
-    time: "22/11/2025 11:59"
-    description: ""
-  - coordinates:
-      latitude: 22.6156018
-      longitude: 120.3067772
-    time: "22/11/2025 12:14"
-    description: ""
-  - coordinates:
-      latitude: 22.6155593
-      longitude: 120.3067656
-    time: "22/11/2025 12:17"
-    description: ""
-  - coordinates:
-      latitude: 22.6155197
-      longitude: 120.3067978
-    time: "22/11/2025 12:35"
-    description: ""
-  - coordinates:
-      latitude: 22.6155644
-      longitude: 120.3068016
-    time: "22/11/2025 12:36"
-    description: ""
-  - coordinates:
-      latitude: 22.6155644
-      longitude: 120.3068016
-    time: "22/11/2025 12:36"
-    description: ""
-  - coordinates:
-      latitude: 22.6155994
-      longitude: 120.3067716
-    time: "22/11/2025 12:51"
-    description: ""
-  - coordinates:
-      latitude: 22.615558
-      longitude: 120.3068065
-    time: "22/11/2025 13:06"
-    description: ""
-  - coordinates:
-      latitude: 22.6155871
-      longitude: 120.3067694
-    time: "22/11/2025 13:06"
-    description: ""
-  - coordinates:
-      latitude: 22.6154241
-      longitude: 120.3068218
-    time: "22/11/2025 13:12"
-    description: ""
-  - coordinates:
-      latitude: 22.6155743
-      longitude: 120.3067965
-    time: "22/11/2025 15:55"
-    description: ""
-  - coordinates:
-      latitude: 22.615562
-      longitude: 120.3067984
-    time: "22/11/2025 15:55"
-    description: ""
-  - coordinates:
-      latitude: 22.615562
-      longitude: 120.3067984
-    time: "22/11/2025 15:55"
-    description: ""
-  - coordinates:
-      latitude: 22.6155981
-      longitude: 120.3067778
-    time: "22/11/2025 16:10"
-    description: ""
-  - coordinates:
-      latitude: 22.6155965
-      longitude: 120.3067779
-    time: "22/11/2025 16:10"
-    description: ""
-  - coordinates:
-      latitude: 22.615603
-      longitude: 120.3067738
-    time: "22/11/2025 16:14"
-    description: ""
-  - coordinates:
-      latitude: 22.6155649
-      longitude: 120.3068785
-    time: "22/11/2025 16:14"
-    description: ""
-  - coordinates:
-      latitude: 22.6155555
-      longitude: 120.3067996
-    time: "22/11/2025 16:25"
-    description: ""
-  - coordinates:
-      latitude: 22.6155614
-      longitude: 120.3068003
-    time: "22/11/2025 16:40"
-    description: ""
-  - coordinates:
-      latitude: 22.6155879
-      longitude: 120.3067831
-    time: "22/11/2025 16:56"
-    description: ""
-  - coordinates:
-      latitude: 22.6155516
-      longitude: 120.3068099
-    time: "22/11/2025 22:58"
-    description: ""
-  - coordinates:
-      latitude: 22.6154902
-      longitude: 120.3071253
-    time: "22/11/2025 23:02"
-    description: ""
-  - coordinates:
-      latitude: 22.6154902
-      longitude: 120.3071253
-    time: "22/11/2025 23:05"
-    description: ""
-  - coordinates:
-      latitude: 22.6155556
-      longitude: 120.3068028
-    time: "22/11/2025 23:14"
-    description: ""
-  - coordinates:
-      latitude: 22.6156379
-      longitude: 120.3067564
-    time: "22/11/2025 23:29"
-    description: ""
-  - coordinates:
-      latitude: 22.6155498
-      longitude: 120.3068043
-    time: "22/11/2025 23:29"
-    description: ""
-  - coordinates:
-      latitude: 22.6156002
-      longitude: 120.3067717
-    time: "22/11/2025 23:44"
-    description: ""
-  - coordinates:
-      latitude: 22.6155965
-      longitude: 120.3067782
-    time: "22/11/2025 23:59"
-    description: ""
 2025-11-23:
   - coordinates:
       latitude: 22.6155975
@@ -4794,44 +2464,9 @@
     time: "23/11/2025 00:00"
     description: ""
   - coordinates:
-      latitude: 22.6155407
-      longitude: 120.3068276
-    time: "23/11/2025 00:00"
-    description: ""
-  - coordinates:
-      latitude: 22.6155983
-      longitude: 120.3067743
-    time: "23/11/2025 00:14"
-    description: ""
-  - coordinates:
-      latitude: 22.6155991
-      longitude: 120.3067772
-    time: "23/11/2025 00:24"
-    description: ""
-  - coordinates:
-      latitude: 22.6155763
-      longitude: 120.306806
-    time: "23/11/2025 00:24"
-    description: ""
-  - coordinates:
-      latitude: 22.6155537
-      longitude: 120.3067969
-    time: "23/11/2025 00:29"
-    description: ""
-  - coordinates:
-      latitude: 22.6155992
-      longitude: 120.3067731
-    time: "23/11/2025 00:45"
-    description: ""
-  - coordinates:
       latitude: 22.9029356
       longitude: 120.2973133
     time: "23/11/2025 02:10"
-    description: ""
-  - coordinates:
-      latitude: 22.9029356
-      longitude: 120.2973133
-    time: "23/11/2025 02:12"
     description: ""
   - coordinates:
       latitude: 23.3572259
@@ -4859,11 +2494,6 @@
     time: "23/11/2025 05:10"
     description: ""
   - coordinates:
-      latitude: 23.4687125
-      longitude: 120.7179305
-    time: "23/11/2025 05:12"
-    description: ""
-  - coordinates:
       latitude: 23.4909727
       longitude: 120.767349
     time: "23/11/2025 05:31"
@@ -4872,11 +2502,6 @@
       latitude: 23.512169
       longitude: 120.8035024
     time: "23/11/2025 06:09"
-    description: ""
-  - coordinates:
-      latitude: 23.5122858
-      longitude: 120.8038241
-    time: "23/11/2025 06:25"
     description: ""
   - coordinates:
       latitude: 23.5123631
@@ -4889,39 +2514,14 @@
     time: "23/11/2025 06:40"
     description: ""
   - coordinates:
-      latitude: 23.5102151
-      longitude: 120.8042922
-    time: "23/11/2025 06:40"
-    description: ""
-  - coordinates:
       latitude: 23.5109198
       longitude: 120.8041509
     time: "23/11/2025 06:59"
     description: ""
   - coordinates:
-      latitude: 23.5108455
-      longitude: 120.8041187
-    time: "23/11/2025 07:18"
-    description: ""
-  - coordinates:
       latitude: 23.5121305
       longitude: 120.8037871
     time: "23/11/2025 07:34"
-    description: ""
-  - coordinates:
-      latitude: 23.5121709
-      longitude: 120.8038342
-    time: "23/11/2025 07:50"
-    description: ""
-  - coordinates:
-      latitude: 23.5121183
-      longitude: 120.8037869
-    time: "23/11/2025 08:06"
-    description: ""
-  - coordinates:
-      latitude: 23.5121131
-      longitude: 120.8037829
-    time: "23/11/2025 08:06"
     description: ""
   - coordinates:
       latitude: 23.5106794
@@ -4969,139 +2569,14 @@
     time: "23/11/2025 09:55"
     description: ""
   - coordinates:
-      latitude: 23.5108243
-      longitude: 120.8046985
-    time: "23/11/2025 10:09"
-    description: ""
-  - coordinates:
       latitude: 23.5121191
       longitude: 120.8037846
     time: "23/11/2025 10:40"
     description: ""
   - coordinates:
-      latitude: 23.5121133
-      longitude: 120.8037849
-    time: "23/11/2025 10:41"
-    description: ""
-  - coordinates:
-      latitude: 23.5121169
-      longitude: 120.8037795
-    time: "23/11/2025 10:56"
-    description: ""
-  - coordinates:
-      latitude: 23.5121123
-      longitude: 120.8037834
-    time: "23/11/2025 11:05"
-    description: ""
-  - coordinates:
-      latitude: 23.5121123
-      longitude: 120.8037834
-    time: "23/11/2025 11:05"
-    description: ""
-  - coordinates:
-      latitude: 23.5121146
-      longitude: 120.8037807
-    time: "23/11/2025 11:13"
-    description: ""
-  - coordinates:
-      latitude: 23.5121159
-      longitude: 120.8037804
-    time: "23/11/2025 11:20"
-    description: ""
-  - coordinates:
-      latitude: 23.5121079
-      longitude: 120.8038089
-    time: "23/11/2025 11:35"
-    description: ""
-  - coordinates:
-      latitude: 23.5121129
-      longitude: 120.8037833
-    time: "23/11/2025 11:51"
-    description: ""
-  - coordinates:
-      latitude: 23.5121077
-      longitude: 120.8037777
-    time: "23/11/2025 13:07"
-    description: ""
-  - coordinates:
-      latitude: 23.5121077
-      longitude: 120.8037777
-    time: "23/11/2025 13:09"
-    description: ""
-  - coordinates:
-      latitude: 23.5121239
-      longitude: 120.8037992
-    time: "23/11/2025 13:25"
-    description: ""
-  - coordinates:
-      latitude: 23.5121387
-      longitude: 120.8037959
-    time: "23/11/2025 14:09"
-    description: ""
-  - coordinates:
-      latitude: 23.5121226
-      longitude: 120.8037998
-    time: "23/11/2025 14:24"
-    description: ""
-  - coordinates:
-      latitude: 23.5121139
-      longitude: 120.8037836
-    time: "23/11/2025 14:39"
-    description: ""
-  - coordinates:
-      latitude: 23.5121696
-      longitude: 120.8038388
-    time: "23/11/2025 14:54"
-    description: ""
-  - coordinates:
-      latitude: 23.5120244
-      longitude: 120.8038177
-    time: "23/11/2025 15:58"
-    description: ""
-  - coordinates:
-      latitude: 23.5121158
-      longitude: 120.8037783
-    time: "23/11/2025 18:22"
-    description: ""
-  - coordinates:
-      latitude: 23.5121133
-      longitude: 120.8037835
-    time: "23/11/2025 18:37"
-    description: ""
-  - coordinates:
-      latitude: 23.5121107
-      longitude: 120.8037822
-    time: "23/11/2025 21:07"
-    description: ""
-  - coordinates:
-      latitude: 23.512124
-      longitude: 120.8037911
-    time: "23/11/2025 21:22"
-    description: ""
-  - coordinates:
-      latitude: 23.5122905
-      longitude: 120.8038172
-    time: "23/11/2025 21:45"
-    description: ""
-  - coordinates:
-      latitude: 23.512229
-      longitude: 120.8040839
-    time: "23/11/2025 21:46"
-    description: ""
-  - coordinates:
       latitude: 23.5099709
       longitude: 120.804629
     time: "23/11/2025 22:01"
-    description: ""
-  - coordinates:
-      latitude: 23.5099727
-      longitude: 120.8046303
-    time: "23/11/2025 22:01"
-    description: ""
-  - coordinates:
-      latitude: 23.5102714
-      longitude: 120.8043637
-    time: "23/11/2025 22:17"
     description: ""
   - coordinates:
       latitude: 23.5134616
@@ -5124,29 +2599,9 @@
     time: "23/11/2025 22:47"
     description: ""
   - coordinates:
-      latitude: 23.5100845
-      longitude: 120.8229555
-    time: "23/11/2025 22:48"
-    description: ""
-  - coordinates:
       latitude: 23.5061579
       longitude: 120.8238606
     time: "23/11/2025 23:04"
-    description: ""
-  - coordinates:
-      latitude: 23.5061641
-      longitude: 120.8238542
-    time: "23/11/2025 23:20"
-    description: ""
-  - coordinates:
-      latitude: 23.5061637
-      longitude: 120.8238499
-    time: "23/11/2025 23:37"
-    description: ""
-  - coordinates:
-      latitude: 23.5062317
-      longitude: 120.823849
-    time: "23/11/2025 23:55"
     description: ""
 2025-11-24:
   - coordinates:
@@ -5163,21 +2618,6 @@
       latitude: 23.5118732
       longitude: 120.8229516
     time: "24/11/2025 00:30"
-    description: ""
-  - coordinates:
-      latitude: 23.511604
-      longitude: 120.8229851
-    time: "24/11/2025 00:45"
-    description: ""
-  - coordinates:
-      latitude: 23.5116042
-      longitude: 120.8229854
-    time: "24/11/2025 00:45"
-    description: ""
-  - coordinates:
-      latitude: 23.5118278
-      longitude: 120.8230914
-    time: "24/11/2025 01:01"
     description: ""
   - coordinates:
       latitude: 23.5165065
@@ -5215,11 +2655,6 @@
     time: "24/11/2025 02:04"
     description: ""
   - coordinates:
-      latitude: 23.5052906
-      longitude: 120.8031353
-    time: "24/11/2025 02:05"
-    description: ""
-  - coordinates:
       latitude: 23.5101962
       longitude: 120.8071283
     time: "24/11/2025 02:19"
@@ -5245,11 +2680,6 @@
     time: "24/11/2025 02:52"
     description: ""
   - coordinates:
-      latitude: 23.5166967
-      longitude: 120.8082315
-    time: "24/11/2025 02:53"
-    description: ""
-  - coordinates:
       latitude: 23.5190537
       longitude: 120.8072536
     time: "24/11/2025 03:08"
@@ -5270,19 +2700,9 @@
     time: "24/11/2025 03:48"
     description: ""
   - coordinates:
-      latitude: 23.5107932
-      longitude: 120.8047116
-    time: "24/11/2025 03:55"
-    description: ""
-  - coordinates:
       latitude: 23.5121077
       longitude: 120.8037711
     time: "24/11/2025 04:10"
-    description: ""
-  - coordinates:
-      latitude: 23.5121137
-      longitude: 120.8037834
-    time: "24/11/2025 04:46"
     description: ""
   - coordinates:
       latitude: 23.51196616
@@ -5293,26 +2713,6 @@
       latitude: 23.5085756
       longitude: 120.8014818
     time: "24/11/2025 05:10"
-    description: ""
-  - coordinates:
-      latitude: 23.5085705
-      longitude: 120.8014769
-    time: "24/11/2025 05:11"
-    description: ""
-  - coordinates:
-      latitude: 23.5085359
-      longitude: 120.8015251
-    time: "24/11/2025 05:27"
-    description: ""
-  - coordinates:
-      latitude: 23.508616
-      longitude: 120.8015506
-    time: "24/11/2025 05:53"
-    description: ""
-  - coordinates:
-      latitude: 23.5085601
-      longitude: 120.801067
-    time: "24/11/2025 06:09"
     description: ""
   - coordinates:
       latitude: 23.50516613
@@ -5390,11 +2790,6 @@
     time: "24/11/2025 08:47"
     description: ""
   - coordinates:
-      latitude: 23.4198219
-      longitude: 120.4092624
-    time: "24/11/2025 08:47"
-    description: ""
-  - coordinates:
       latitude: 23.42871498
       longitude: 120.3274854
     time: "24/11/2025 08:53"
@@ -5408,16 +2803,6 @@
       latitude: 23.4586605
       longitude: 120.3231476
     time: "24/11/2025 09:18"
-    description: ""
-  - coordinates:
-      latitude: 23.4586733
-      longitude: 120.3231406
-    time: "24/11/2025 09:18"
-    description: ""
-  - coordinates:
-      latitude: 23.4590327
-      longitude: 120.3231561
-    time: "24/11/2025 09:41"
     description: ""
   - coordinates:
       latitude: 23.4601089
@@ -5505,11 +2890,6 @@
     time: "24/11/2025 10:54"
     description: ""
   - coordinates:
-      latitude: 24.7801544
-      longitude: 121.0338988
-    time: "24/11/2025 10:54"
-    description: ""
-  - coordinates:
       latitude: 24.8114141
       longitude: 121.0408451
     time: "24/11/2025 10:58"
@@ -5559,226 +2939,11 @@
       longitude: 121.5315943
     time: "24/11/2025 12:01"
     description: ""
-  - coordinates:
-      latitude: 25.0506695
-      longitude: 121.5315961
-    time: "24/11/2025 12:01"
-    description: ""
-  - coordinates:
-      latitude: 25.0506741
-      longitude: 121.5316091
-    time: "24/11/2025 12:16"
-    description: ""
-  - coordinates:
-      latitude: 25.0506706
-      longitude: 121.5316001
-    time: "24/11/2025 12:24"
-    description: ""
-  - coordinates:
-      latitude: 25.0507057
-      longitude: 121.5316479
-    time: "24/11/2025 12:24"
-    description: ""
-  - coordinates:
-      latitude: 25.0506726
-      longitude: 121.5315949
-    time: "24/11/2025 12:32"
-    description: ""
-  - coordinates:
-      latitude: 25.0506566
-      longitude: 121.5316086
-    time: "24/11/2025 12:39"
-    description: ""
-  - coordinates:
-      latitude: 25.0506598
-      longitude: 121.5315953
-    time: "24/11/2025 12:39"
-    description: ""
-  - coordinates:
-      latitude: 25.0506754
-      longitude: 121.5316044
-    time: "24/11/2025 12:53"
-    description: ""
-  - coordinates:
-      latitude: 25.0506639
-      longitude: 121.5315962
-    time: "24/11/2025 12:55"
-    description: ""
-  - coordinates:
-      latitude: 25.0506875
-      longitude: 121.5315911
-    time: "24/11/2025 13:08"
-    description: ""
-  - coordinates:
-      latitude: 25.0506735
-      longitude: 121.5315938
-    time: "24/11/2025 13:10"
-    description: ""
-  - coordinates:
-      latitude: 25.0508261
-      longitude: 121.5316106
-    time: "24/11/2025 13:17"
-    description: ""
-  - coordinates:
-      latitude: 25.0506753
-      longitude: 121.5316015
-    time: "24/11/2025 14:30"
-    description: ""
-  - coordinates:
-      latitude: 25.0506813
-      longitude: 121.5315947
-    time: "24/11/2025 14:33"
-    description: ""
-  - coordinates:
-      latitude: 25.0506993
-      longitude: 121.5316544
-    time: "24/11/2025 14:49"
-    description: ""
-  - coordinates:
-      latitude: 25.0508271
-      longitude: 121.531709
-    time: "24/11/2025 15:04"
-    description: ""
-  - coordinates:
-      latitude: 25.0506911
-      longitude: 121.5316178
-    time: "24/11/2025 15:08"
-    description: ""
-  - coordinates:
-      latitude: 25.0506911
-      longitude: 121.5316178
-    time: "24/11/2025 15:10"
-    description: ""
-  - coordinates:
-      latitude: 25.0506626
-      longitude: 121.5315875
-    time: "24/11/2025 15:19"
-    description: ""
-  - coordinates:
-      latitude: 25.05067
-      longitude: 121.5315963
-    time: "24/11/2025 15:34"
-    description: ""
-  - coordinates:
-      latitude: 25.0506709
-      longitude: 121.5316116
-    time: "24/11/2025 15:50"
-    description: ""
-  - coordinates:
-      latitude: 25.0506596
-      longitude: 121.5315967
-    time: "24/11/2025 16:05"
-    description: ""
-  - coordinates:
-      latitude: 25.0506711
-      longitude: 121.5316019
-    time: "24/11/2025 16:20"
-    description: ""
-  - coordinates:
-      latitude: 25.0506539
-      longitude: 121.5315977
-    time: "24/11/2025 19:29"
-    description: ""
-  - coordinates:
-      latitude: 25.0506765
-      longitude: 121.5315938
-    time: "24/11/2025 20:15"
-    description: ""
-  - coordinates:
-      latitude: 25.050683
-      longitude: 121.531597
-    time: "24/11/2025 20:30"
-    description: ""
-  - coordinates:
-      latitude: 25.0506778
-      longitude: 121.5315946
-    time: "24/11/2025 20:46"
-    description: ""
-  - coordinates:
-      latitude: 25.0506796
-      longitude: 121.5315997
-    time: "24/11/2025 23:04"
-    description: ""
-  - coordinates:
-      latitude: 25.0506854
-      longitude: 121.5315903
-    time: "24/11/2025 23:14"
-    description: ""
-  - coordinates:
-      latitude: 25.0506801
-      longitude: 121.5315885
-    time: "24/11/2025 23:19"
-    description: ""
-  - coordinates:
-      latitude: 25.0506778
-      longitude: 121.5315962
-    time: "24/11/2025 23:29"
-    description: ""
-  - coordinates:
-      latitude: 25.0506617
-      longitude: 121.531591
-    time: "24/11/2025 23:35"
-    description: ""
-  - coordinates:
-      latitude: 25.0506693
-      longitude: 121.5315934
-    time: "24/11/2025 23:50"
-    description: ""
 2025-11-25:
   - coordinates:
       latitude: 25.0506705
       longitude: 121.5315912
     time: "25/11/2025 00:05"
-    description: ""
-  - coordinates:
-      latitude: 25.0506741
-      longitude: 121.5315987
-    time: "25/11/2025 00:16"
-    description: ""
-  - coordinates:
-      latitude: 25.0506694
-      longitude: 121.531592
-    time: "25/11/2025 00:20"
-    description: ""
-  - coordinates:
-      latitude: 25.0506573
-      longitude: 121.5316059
-    time: "25/11/2025 00:45"
-    description: ""
-  - coordinates:
-      latitude: 25.0506573
-      longitude: 121.5316059
-    time: "25/11/2025 00:47"
-    description: ""
-  - coordinates:
-      latitude: 25.0506679
-      longitude: 121.5315916
-    time: "25/11/2025 00:56"
-    description: ""
-  - coordinates:
-      latitude: 25.0506698
-      longitude: 121.5315908
-    time: "25/11/2025 01:11"
-    description: ""
-  - coordinates:
-      latitude: 25.0506574
-      longitude: 121.5316033
-    time: "25/11/2025 02:48"
-    description: ""
-  - coordinates:
-      latitude: 25.0506771
-      longitude: 121.5316103
-    time: "25/11/2025 02:53"
-    description: ""
-  - coordinates:
-      latitude: 25.0506725
-      longitude: 121.5315987
-    time: "25/11/2025 02:53"
-    description: ""
-  - coordinates:
-      latitude: 25.0506792
-      longitude: 121.5315906
-    time: "25/11/2025 02:58"
     description: ""
   - coordinates:
       latitude: 25.05989296
@@ -5806,11 +2971,6 @@
     time: "25/11/2025 03:40"
     description: ""
   - coordinates:
-      latitude: 25.1023724
-      longitude: 121.5482999
-    time: "25/11/2025 03:41"
-    description: ""
-  - coordinates:
       latitude: 25.1020638
       longitude: 121.5479467
     time: "25/11/2025 03:57"
@@ -5829,11 +2989,6 @@
       latitude: 25.102551
       longitude: 121.5491522
     time: "25/11/2025 04:51"
-    description: ""
-  - coordinates:
-      latitude: 25.1025703
-      longitude: 121.5490886
-    time: "25/11/2025 05:08"
     description: ""
   - coordinates:
       latitude: 25.1027125
@@ -5859,11 +3014,6 @@
       latitude: 25.1019882
       longitude: 121.5493368
     time: "25/11/2025 06:42"
-    description: ""
-  - coordinates:
-      latitude: 25.102056
-      longitude: 121.5492841
-    time: "25/11/2025 06:57"
     description: ""
   - coordinates:
       latitude: 25.0975406
@@ -5896,24 +3046,9 @@
     time: "25/11/2025 07:44"
     description: ""
   - coordinates:
-      latitude: 25.0708058
-      longitude: 121.5193511
-    time: "25/11/2025 07:44"
-    description: ""
-  - coordinates:
       latitude: 25.0720743
       longitude: 121.5244268
     time: "25/11/2025 08:05"
-    description: ""
-  - coordinates:
-      latitude: 25.0718935
-      longitude: 121.5247031
-    time: "25/11/2025 08:23"
-    description: ""
-  - coordinates:
-      latitude: 25.071889
-      longitude: 121.524853
-    time: "25/11/2025 08:28"
     description: ""
   - coordinates:
       latitude: 25.0718961
@@ -5921,19 +3056,9 @@
     time: "25/11/2025 08:41"
     description: ""
   - coordinates:
-      latitude: 25.0718745
-      longitude: 121.5248844
-    time: "25/11/2025 09:18"
-    description: ""
-  - coordinates:
       latitude: 25.0724266
       longitude: 121.5245013
     time: "25/11/2025 09:33"
-    description: ""
-  - coordinates:
-      latitude: 25.0728579
-      longitude: 121.524448
-    time: "25/11/2025 09:49"
     description: ""
   - coordinates:
       latitude: 25.0718051
@@ -5971,24 +3096,9 @@
     time: "25/11/2025 11:08"
     description: ""
   - coordinates:
-      latitude: 25.0341195
-      longitude: 121.5647727
-    time: "25/11/2025 11:13"
-    description: ""
-  - coordinates:
       latitude: 25.0337171
       longitude: 121.5647184
     time: "25/11/2025 11:29"
-    description: ""
-  - coordinates:
-      latitude: 25.0337599
-      longitude: 121.5646793
-    time: "25/11/2025 11:45"
-    description: ""
-  - coordinates:
-      latitude: 25.0339779
-      longitude: 121.5647423
-    time: "25/11/2025 12:03"
     description: ""
   - coordinates:
       latitude: 25.036052
@@ -6056,11 +3166,6 @@
     time: "25/11/2025 13:36"
     description: ""
   - coordinates:
-      latitude: 25.0508707
-      longitude: 121.5770796
-    time: "25/11/2025 13:37"
-    description: ""
-  - coordinates:
       latitude: 25.050302
       longitude: 121.5730043
     time: "25/11/2025 14:07"
@@ -6095,151 +3200,11 @@
       longitude: 121.5315706
     time: "25/11/2025 15:24"
     description: ""
-  - coordinates:
-      latitude: 25.0507069
-      longitude: 121.5316156
-    time: "25/11/2025 15:27"
-    description: ""
-  - coordinates:
-      latitude: 25.050691
-      longitude: 121.5316168
-    time: "25/11/2025 15:37"
-    description: ""
-  - coordinates:
-      latitude: 25.0506679
-      longitude: 121.5316031
-    time: "25/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506748
-      longitude: 121.5315989
-    time: "25/11/2025 15:52"
-    description: ""
-  - coordinates:
-      latitude: 25.0506866
-      longitude: 121.5316041
-    time: "25/11/2025 15:57"
-    description: ""
-  - coordinates:
-      latitude: 25.0507011
-      longitude: 121.5316221
-    time: "25/11/2025 15:57"
-    description: ""
-  - coordinates:
-      latitude: 25.0506714
-      longitude: 121.5315971
-    time: "25/11/2025 16:12"
-    description: ""
-  - coordinates:
-      latitude: 25.050675
-      longitude: 121.5316234
-    time: "25/11/2025 16:12"
-    description: ""
-  - coordinates:
-      latitude: 25.0506733
-      longitude: 121.5316019
-    time: "25/11/2025 16:27"
-    description: ""
-  - coordinates:
-      latitude: 25.0506724
-      longitude: 121.5316011
-    time: "25/11/2025 16:43"
-    description: ""
-  - coordinates:
-      latitude: 25.0506883
-      longitude: 121.5316183
-    time: "25/11/2025 16:52"
-    description: ""
-  - coordinates:
-      latitude: 25.0506731
-      longitude: 121.5316009
-    time: "25/11/2025 17:07"
-    description: ""
-  - coordinates:
-      latitude: 25.0506735
-      longitude: 121.5315918
-    time: "25/11/2025 17:22"
-    description: ""
-  - coordinates:
-      latitude: 25.0506803
-      longitude: 121.5315962
-    time: "25/11/2025 17:38"
-    description: ""
-  - coordinates:
-      latitude: 25.0506998
-      longitude: 121.5315921
-    time: "25/11/2025 23:07"
-    description: ""
-  - coordinates:
-      latitude: 25.0506761
-      longitude: 121.5315985
-    time: "25/11/2025 23:10"
-    description: ""
-  - coordinates:
-      latitude: 25.05068
-      longitude: 121.5315988
-    time: "25/11/2025 23:23"
-    description: ""
-  - coordinates:
-      latitude: 25.0506836
-      longitude: 121.5316014
-    time: "25/11/2025 23:25"
-    description: ""
-  - coordinates:
-      latitude: 25.05068
-      longitude: 121.5316044
-    time: "25/11/2025 23:38"
-    description: ""
-  - coordinates:
-      latitude: 25.0506683
-      longitude: 121.5315999
-    time: "25/11/2025 23:40"
-    description: ""
-  - coordinates:
-      latitude: 25.050712
-      longitude: 121.5316157
-    time: "25/11/2025 23:53"
-    description: ""
-  - coordinates:
-      latitude: 25.0506818
-      longitude: 121.5316023
-    time: "25/11/2025 23:56"
-    description: ""
 2025-11-26:
   - coordinates:
       latitude: 25.0507362
       longitude: 121.5315758
     time: "26/11/2025 00:13"
-    description: ""
-  - coordinates:
-      latitude: 25.0506731
-      longitude: 121.5315912
-    time: "26/11/2025 00:28"
-    description: ""
-  - coordinates:
-      latitude: 25.050676
-      longitude: 121.5315935
-    time: "26/11/2025 00:43"
-    description: ""
-  - coordinates:
-      latitude: 25.0506798
-      longitude: 121.5315942
-    time: "26/11/2025 00:58"
-    description: ""
-  - coordinates:
-      latitude: 25.0506847
-      longitude: 121.5315942
-    time: "26/11/2025 01:31"
-    description: ""
-  - coordinates:
-      latitude: 25.0509263
-      longitude: 121.5316357
-    time: "26/11/2025 01:47"
-    description: ""
-  - coordinates:
-      latitude: 25.050925
-      longitude: 121.5316306
-    time: "26/11/2025 02:02"
     description: ""
   - coordinates:
       latitude: 25.0505545
@@ -6277,54 +3242,9 @@
     time: "26/11/2025 03:11"
     description: ""
   - coordinates:
-      latitude: 25.0509427
-      longitude: 121.5184435
-    time: "26/11/2025 03:26"
-    description: ""
-  - coordinates:
-      latitude: 25.0507788
-      longitude: 121.5184655
-    time: "26/11/2025 03:33"
-    description: ""
-  - coordinates:
-      latitude: 25.0508379
-      longitude: 121.518551
-    time: "26/11/2025 03:52"
-    description: ""
-  - coordinates:
-      latitude: 25.0507063
-      longitude: 121.5186347
-    time: "26/11/2025 04:09"
-    description: ""
-  - coordinates:
-      latitude: 25.0506474
-      longitude: 121.5187215
-    time: "26/11/2025 04:27"
-    description: ""
-  - coordinates:
-      latitude: 25.0507247
-      longitude: 121.5190009
-    time: "26/11/2025 04:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506477
-      longitude: 121.519328
-    time: "26/11/2025 05:00"
-    description: ""
-  - coordinates:
       latitude: 25.0520507
       longitude: 121.5126093
     time: "26/11/2025 05:14"
-    description: ""
-  - coordinates:
-      latitude: 25.0520544
-      longitude: 121.5126107
-    time: "26/11/2025 05:15"
-    description: ""
-  - coordinates:
-      latitude: 25.051852
-      longitude: 121.5126394
-    time: "26/11/2025 05:30"
     description: ""
   - coordinates:
       latitude: 25.0538419
@@ -6344,11 +3264,6 @@
   - coordinates:
       latitude: 25.05274858
       longitude: 121.5065071
-    time: "26/11/2025 06:17"
-    description: ""
-  - coordinates:
-      latitude: 25.0526826
-      longitude: 121.5064867
     time: "26/11/2025 06:17"
     description: ""
   - coordinates:
@@ -6380,11 +3295,6 @@
       latitude: 25.0373897
       longitude: 121.5000087
     time: "26/11/2025 07:18"
-    description: ""
-  - coordinates:
-      latitude: 25.0373956
-      longitude: 121.5000075
-    time: "26/11/2025 07:20"
     description: ""
   - coordinates:
       latitude: 25.0367933
@@ -6432,11 +3342,6 @@
     time: "26/11/2025 08:53"
     description: ""
   - coordinates:
-      latitude: 25.0444535
-      longitude: 121.5169828
-    time: "26/11/2025 09:19"
-    description: ""
-  - coordinates:
       latitude: 25.04041138
       longitude: 121.5152595
     time: "26/11/2025 09:26"
@@ -6457,24 +3362,9 @@
     time: "26/11/2025 09:50"
     description: ""
   - coordinates:
-      latitude: 25.035276
-      longitude: 121.5212251
-    time: "26/11/2025 10:05"
-    description: ""
-  - coordinates:
-      latitude: 25.0353542
-      longitude: 121.5212933
-    time: "26/11/2025 10:05"
-    description: ""
-  - coordinates:
       latitude: 25.0348325
       longitude: 121.5222776
     time: "26/11/2025 10:20"
-    description: ""
-  - coordinates:
-      latitude: 25.034768
-      longitude: 121.5221981
-    time: "26/11/2025 10:36"
     description: ""
   - coordinates:
       latitude: 25.0323896
@@ -6492,11 +3382,6 @@
     time: "26/11/2025 11:07"
     description: ""
   - coordinates:
-      latitude: 25.0336741
-      longitude: 121.5300621
-    time: "26/11/2025 11:23"
-    description: ""
-  - coordinates:
       latitude: 25.0522855
       longitude: 121.5329682
     time: "26/11/2025 11:40"
@@ -6506,366 +3391,11 @@
       longitude: 121.5315996
     time: "26/11/2025 11:55"
     description: ""
-  - coordinates:
-      latitude: 25.0506623
-      longitude: 121.5316023
-    time: "26/11/2025 11:59"
-    description: ""
-  - coordinates:
-      latitude: 25.0506732
-      longitude: 121.5315944
-    time: "26/11/2025 12:17"
-    description: ""
-  - coordinates:
-      latitude: 25.0506725
-      longitude: 121.5315965
-    time: "26/11/2025 12:41"
-    description: ""
-  - coordinates:
-      latitude: 25.0506784
-      longitude: 121.5315958
-    time: "26/11/2025 13:04"
-    description: ""
-  - coordinates:
-      latitude: 25.0506736
-      longitude: 121.5316078
-    time: "26/11/2025 13:19"
-    description: ""
-  - coordinates:
-      latitude: 25.0506857
-      longitude: 121.531598
-    time: "26/11/2025 13:34"
-    description: ""
-  - coordinates:
-      latitude: 25.0506736
-      longitude: 121.5316016
-    time: "26/11/2025 13:50"
-    description: ""
-  - coordinates:
-      latitude: 25.0506781
-      longitude: 121.531597
-    time: "26/11/2025 13:58"
-    description: ""
-  - coordinates:
-      latitude: 25.0506882
-      longitude: 121.5316243
-    time: "26/11/2025 14:13"
-    description: ""
-  - coordinates:
-      latitude: 25.0506817
-      longitude: 121.5315861
-    time: "26/11/2025 14:13"
-    description: ""
-  - coordinates:
-      latitude: 25.0508188
-      longitude: 121.5317641
-    time: "26/11/2025 14:28"
-    description: ""
-  - coordinates:
-      latitude: 25.0506723
-      longitude: 121.5316075
-    time: "26/11/2025 14:32"
-    description: ""
-  - coordinates:
-      latitude: 25.0506883
-      longitude: 121.531607
-    time: "26/11/2025 14:43"
-    description: ""
-  - coordinates:
-      latitude: 25.0506693
-      longitude: 121.5315991
-    time: "26/11/2025 14:55"
-    description: ""
-  - coordinates:
-      latitude: 25.0506827
-      longitude: 121.5316
-    time: "26/11/2025 14:59"
-    description: ""
-  - coordinates:
-      latitude: 25.050678
-      longitude: 121.5315985
-    time: "26/11/2025 15:14"
-    description: ""
-  - coordinates:
-      latitude: 25.0506527
-      longitude: 121.5315992
-    time: "26/11/2025 15:29"
-    description: ""
-  - coordinates:
-      latitude: 25.0506647
-      longitude: 121.5316022
-    time: "26/11/2025 15:44"
-    description: ""
-  - coordinates:
-      latitude: 25.0506526
-      longitude: 121.5316006
-    time: "26/11/2025 16:00"
-    description: ""
-  - coordinates:
-      latitude: 25.0506584
-      longitude: 121.5315945
-    time: "26/11/2025 16:15"
-    description: ""
-  - coordinates:
-      latitude: 25.0506723
-      longitude: 121.5316093
-    time: "26/11/2025 16:23"
-    description: ""
-  - coordinates:
-      latitude: 25.0506833
-      longitude: 121.5316013
-    time: "26/11/2025 16:38"
-    description: ""
-  - coordinates:
-      latitude: 25.0506572
-      longitude: 121.5315992
-    time: "26/11/2025 16:53"
-    description: ""
-  - coordinates:
-      latitude: 25.05066
-      longitude: 121.5316043
-    time: "26/11/2025 17:09"
-    description: ""
-  - coordinates:
-      latitude: 25.0506659
-      longitude: 121.531606
-    time: "26/11/2025 17:24"
-    description: ""
-  - coordinates:
-      latitude: 25.050675
-      longitude: 121.5316045
-    time: "26/11/2025 17:39"
-    description: ""
-  - coordinates:
-      latitude: 25.0506814
-      longitude: 121.5316151
-    time: "26/11/2025 17:54"
-    description: ""
-  - coordinates:
-      latitude: 25.0506801
-      longitude: 121.531599
-    time: "26/11/2025 18:10"
-    description: ""
-  - coordinates:
-      latitude: 25.0506712
-      longitude: 121.5315979
-    time: "26/11/2025 18:25"
-    description: ""
-  - coordinates:
-      latitude: 25.0506651
-      longitude: 121.5315914
-    time: "26/11/2025 18:40"
-    description: ""
-  - coordinates:
-      latitude: 25.050671
-      longitude: 121.5315936
-    time: "26/11/2025 18:55"
-    description: ""
-  - coordinates:
-      latitude: 25.0506799
-      longitude: 121.5315983
-    time: "26/11/2025 19:11"
-    description: ""
-  - coordinates:
-      latitude: 25.0506674
-      longitude: 121.5315931
-    time: "26/11/2025 19:26"
-    description: ""
-  - coordinates:
-      latitude: 25.0506714
-      longitude: 121.5316062
-    time: "26/11/2025 19:41"
-    description: ""
-  - coordinates:
-      latitude: 25.0506645
-      longitude: 121.5316002
-    time: "26/11/2025 19:57"
-    description: ""
-  - coordinates:
-      latitude: 25.050658
-      longitude: 121.5315979
-    time: "26/11/2025 20:12"
-    description: ""
-  - coordinates:
-      latitude: 25.0506707
-      longitude: 121.5316127
-    time: "26/11/2025 20:27"
-    description: ""
-  - coordinates:
-      latitude: 25.0506637
-      longitude: 121.5315948
-    time: "26/11/2025 20:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506777
-      longitude: 121.5316044
-    time: "26/11/2025 20:57"
-    description: ""
-  - coordinates:
-      latitude: 25.0506737
-      longitude: 121.5316027
-    time: "26/11/2025 21:13"
-    description: ""
-  - coordinates:
-      latitude: 25.0506921
-      longitude: 121.5315981
-    time: "26/11/2025 21:28"
-    description: ""
-  - coordinates:
-      latitude: 25.0506763
-      longitude: 121.5316136
-    time: "26/11/2025 21:43"
-    description: ""
-  - coordinates:
-      latitude: 25.050672
-      longitude: 121.5316048
-    time: "26/11/2025 21:59"
-    description: ""
-  - coordinates:
-      latitude: 25.0506593
-      longitude: 121.5315979
-    time: "26/11/2025 22:14"
-    description: ""
-  - coordinates:
-      latitude: 25.0506638
-      longitude: 121.5315944
-    time: "26/11/2025 22:29"
-    description: ""
-  - coordinates:
-      latitude: 25.0506645
-      longitude: 121.5316212
-    time: "26/11/2025 22:44"
-    description: ""
-  - coordinates:
-      latitude: 25.0506778
-      longitude: 121.5316037
-    time: "26/11/2025 23:00"
-    description: ""
-  - coordinates:
-      latitude: 25.0506723
-      longitude: 121.5315977
-    time: "26/11/2025 23:02"
-    description: ""
-  - coordinates:
-      latitude: 25.0506739
-      longitude: 121.5315974
-    time: "26/11/2025 23:17"
-    description: ""
-  - coordinates:
-      latitude: 25.0506684
-      longitude: 121.5315962
-    time: "26/11/2025 23:35"
-    description: ""
-  - coordinates:
-      latitude: 25.050664
-      longitude: 121.5316117
-    time: "26/11/2025 23:46"
-    description: ""
-  - coordinates:
-      latitude: 25.0506613
-      longitude: 121.5315976
-    time: "26/11/2025 23:51"
-    description: ""
 2025-11-27:
   - coordinates:
       latitude: 25.0506776
       longitude: 121.5315913
     time: "27/11/2025 00:06"
-    description: ""
-  - coordinates:
-      latitude: 25.0506884
-      longitude: 121.5315855
-    time: "27/11/2025 00:12"
-    description: ""
-  - coordinates:
-      latitude: 25.0506711
-      longitude: 121.5315907
-    time: "27/11/2025 00:21"
-    description: ""
-  - coordinates:
-      latitude: 25.0506673
-      longitude: 121.5315911
-    time: "27/11/2025 00:23"
-    description: ""
-  - coordinates:
-      latitude: 25.0506675
-      longitude: 121.5315972
-    time: "27/11/2025 00:25"
-    description: ""
-  - coordinates:
-      latitude: 25.050699
-      longitude: 121.5315913
-    time: "27/11/2025 00:30"
-    description: ""
-  - coordinates:
-      latitude: 25.0506774
-      longitude: 121.5315909
-    time: "27/11/2025 01:23"
-    description: ""
-  - coordinates:
-      latitude: 25.0506307
-      longitude: 121.5315981
-    time: "27/11/2025 01:50"
-    description: ""
-  - coordinates:
-      latitude: 25.050721
-      longitude: 121.5315947
-    time: "27/11/2025 01:50"
-    description: ""
-  - coordinates:
-      latitude: 25.0507938
-      longitude: 121.5315815
-    time: "27/11/2025 02:10"
-    description: ""
-  - coordinates:
-      latitude: 25.0507938
-      longitude: 121.5315815
-    time: "27/11/2025 02:13"
-    description: ""
-  - coordinates:
-      latitude: 25.050674
-      longitude: 121.531598
-    time: "27/11/2025 02:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506724
-      longitude: 121.5316014
-    time: "27/11/2025 02:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506993
-      longitude: 121.531588
-    time: "27/11/2025 02:42"
-    description: ""
-  - coordinates:
-      latitude: 25.0506668
-      longitude: 121.5316039
-    time: "27/11/2025 02:44"
-    description: ""
-  - coordinates:
-      latitude: 25.0506689
-      longitude: 121.5316005
-    time: "27/11/2025 02:58"
-    description: ""
-  - coordinates:
-      latitude: 25.050697
-      longitude: 121.5316049
-    time: "27/11/2025 02:59"
-    description: ""
-  - coordinates:
-      latitude: 25.0506878
-      longitude: 121.5315983
-    time: "27/11/2025 03:05"
-    description: ""
-  - coordinates:
-      latitude: 25.0506742
-      longitude: 121.5315884
-    time: "27/11/2025 03:14"
-    description: ""
-  - coordinates:
-      latitude: 25.0506768
-      longitude: 121.5315887
-    time: "27/11/2025 03:23"
     description: ""
   - coordinates:
       latitude: 25.0497019
@@ -6938,11 +3468,6 @@
     time: "27/11/2025 05:10"
     description: ""
   - coordinates:
-      latitude: 25.0822812
-      longitude: 121.2374867
-    time: "27/11/2025 05:10"
-    description: ""
-  - coordinates:
       latitude: 25.0813628
       longitude: 121.2371891
     time: "27/11/2025 05:27"
@@ -6953,34 +3478,9 @@
     time: "27/11/2025 05:42"
     description: ""
   - coordinates:
-      latitude: 25.0843878
-      longitude: 121.2382077
-    time: "27/11/2025 05:59"
-    description: ""
-  - coordinates:
-      latitude: 25.0843914
-      longitude: 121.2382564
-    time: "27/11/2025 06:15"
-    description: ""
-  - coordinates:
-      latitude: 25.0843501
-      longitude: 121.2381804
-    time: "27/11/2025 06:32"
-    description: ""
-  - coordinates:
       latitude: 22.3079671
       longitude: 114.1727486
     time: "27/11/2025 13:21"
-    description: ""
-  - coordinates:
-      latitude: 22.3077682
-      longitude: 114.1725431
-    time: "27/11/2025 13:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3079479
-      longitude: 114.1726987
-    time: "27/11/2025 13:45"
     description: ""
   - coordinates:
       latitude: 22.3076778
@@ -6991,61 +3491,6 @@
       latitude: 22.3079443
       longitude: 114.1727306
     time: "27/11/2025 14:15"
-    description: ""
-  - coordinates:
-      latitude: 22.307591
-      longitude: 114.1725122
-    time: "27/11/2025 14:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3078162
-      longitude: 114.1724781
-    time: "27/11/2025 15:26"
-    description: ""
-  - coordinates:
-      latitude: 22.3080098
-      longitude: 114.1727722
-    time: "27/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 22.3078864
-      longitude: 114.172608
-    time: "27/11/2025 16:27"
-    description: ""
-  - coordinates:
-      latitude: 22.307895
-      longitude: 114.1727314
-    time: "27/11/2025 16:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3078482
-      longitude: 114.1724836
-    time: "27/11/2025 17:14"
-    description: ""
-  - coordinates:
-      latitude: 22.3078282
-      longitude: 114.1724854
-    time: "27/11/2025 17:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3078569
-      longitude: 114.172461
-    time: "27/11/2025 19:35"
-    description: ""
-  - coordinates:
-      latitude: 22.3078242
-      longitude: 114.1724854
-    time: "27/11/2025 22:54"
-    description: ""
-  - coordinates:
-      latitude: 22.3078096
-      longitude: 114.1724635
-    time: "27/11/2025 23:09"
-    description: ""
-  - coordinates:
-      latitude: 22.3077561
-      longitude: 114.17254
-    time: "27/11/2025 23:24"
     description: ""
 2025-11-28:
   - coordinates:
@@ -7064,34 +3509,9 @@
     time: "28/11/2025 00:45"
     description: ""
   - coordinates:
-      latitude: 22.3080156
-      longitude: 114.1727675
-    time: "28/11/2025 02:19"
-    description: ""
-  - coordinates:
-      latitude: 22.3079605
-      longitude: 114.1726546
-    time: "28/11/2025 03:49"
-    description: ""
-  - coordinates:
       latitude: 22.3066259
       longitude: 114.1720981
     time: "28/11/2025 04:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3065643
-      longitude: 114.1721506
-    time: "28/11/2025 04:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3065985
-      longitude: 114.1723784
-    time: "28/11/2025 04:36"
-    description: ""
-  - coordinates:
-      latitude: 22.3065897
-      longitude: 114.1722798
-    time: "28/11/2025 04:37"
     description: ""
   - coordinates:
       latitude: 22.3060741
@@ -7119,11 +3539,6 @@
     time: "28/11/2025 04:45"
     description: ""
   - coordinates:
-      latitude: 22.3032825
-      longitude: 114.1753949
-    time: "28/11/2025 04:45"
-    description: ""
-  - coordinates:
       latitude: 22.3035332
       longitude: 114.1742363
     time: "28/11/2025 04:46"
@@ -7147,16 +3562,6 @@
       latitude: 22.3029919
       longitude: 114.1769326
     time: "28/11/2025 04:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3028047
-      longitude: 114.1772272
-    time: "28/11/2025 04:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3027739
-      longitude: 114.1772932
-    time: "28/11/2025 04:49"
     description: ""
   - coordinates:
       latitude: 22.3029089
@@ -7194,16 +3599,6 @@
     time: "28/11/2025 04:59"
     description: ""
   - coordinates:
-      latitude: 22.3018184
-      longitude: 114.1773515
-    time: "28/11/2025 05:23"
-    description: ""
-  - coordinates:
-      latitude: 22.3019137
-      longitude: 114.1774619
-    time: "28/11/2025 05:36"
-    description: ""
-  - coordinates:
       latitude: 22.3025275
       longitude: 114.1775978
     time: "28/11/2025 06:02"
@@ -7214,11 +3609,6 @@
     time: "28/11/2025 06:19"
     description: ""
   - coordinates:
-      latitude: 22.3015822
-      longitude: 114.1771021
-    time: "28/11/2025 06:21"
-    description: ""
-  - coordinates:
       latitude: 22.3006956
       longitude: 114.1763391
     time: "28/11/2025 06:25"
@@ -7227,11 +3617,6 @@
       latitude: 22.30115853
       longitude: 114.1766463
     time: "28/11/2025 06:26"
-    description: ""
-  - coordinates:
-      latitude: 22.30096036
-      longitude: 114.1768565
-    time: "28/11/2025 06:27"
     description: ""
   - coordinates:
       latitude: 22.3003235
@@ -7251,11 +3636,6 @@
   - coordinates:
       latitude: 22.2983019
       longitude: 114.1756587
-    time: "28/11/2025 06:31"
-    description: ""
-  - coordinates:
-      latitude: 22.2986265
-      longitude: 114.1755582
     time: "28/11/2025 06:31"
     description: ""
   - coordinates:
@@ -7284,69 +3664,9 @@
     time: "28/11/2025 06:44"
     description: ""
   - coordinates:
-      latitude: 22.2934005
-      longitude: 114.1721263
-    time: "28/11/2025 06:46"
-    description: ""
-  - coordinates:
-      latitude: 22.2935924
-      longitude: 114.1720685
-    time: "28/11/2025 06:46"
-    description: ""
-  - coordinates:
-      latitude: 22.2935021
-      longitude: 114.1713541
-    time: "28/11/2025 06:50"
-    description: ""
-  - coordinates:
-      latitude: 22.2934512
-      longitude: 114.1718597
-    time: "28/11/2025 06:54"
-    description: ""
-  - coordinates:
-      latitude: 22.2936429
-      longitude: 114.1719234
-    time: "28/11/2025 07:04"
-    description: ""
-  - coordinates:
-      latitude: 22.2935596
-      longitude: 114.1718775
-    time: "28/11/2025 07:04"
-    description: ""
-  - coordinates:
-      latitude: 22.2936359
-      longitude: 114.1716067
-    time: "28/11/2025 07:14"
-    description: ""
-  - coordinates:
-      latitude: 22.2934445
-      longitude: 114.1718626
-    time: "28/11/2025 07:29"
-    description: ""
-  - coordinates:
-      latitude: 22.2934697
-      longitude: 114.171921
-    time: "28/11/2025 07:32"
-    description: ""
-  - coordinates:
-      latitude: 22.2934822
-      longitude: 114.1718799
-    time: "28/11/2025 07:37"
-    description: ""
-  - coordinates:
       latitude: 22.2936393
       longitude: 114.1723844
     time: "28/11/2025 07:39"
-    description: ""
-  - coordinates:
-      latitude: 22.29347
-      longitude: 114.1721443
-    time: "28/11/2025 07:45"
-    description: ""
-  - coordinates:
-      latitude: 22.2934858
-      longitude: 114.1720246
-    time: "28/11/2025 07:51"
     description: ""
   - coordinates:
       latitude: 22.2948762
@@ -7359,19 +3679,9 @@
     time: "28/11/2025 08:04"
     description: ""
   - coordinates:
-      latitude: 22.2932989
-      longitude: 114.1715198
-    time: "28/11/2025 08:04"
-    description: ""
-  - coordinates:
       latitude: 22.2932473
       longitude: 114.1717697
     time: "28/11/2025 08:04"
-    description: ""
-  - coordinates:
-      latitude: 22.2933037
-      longitude: 114.171534
-    time: "28/11/2025 08:05"
     description: ""
   - coordinates:
       latitude: 22.293623
@@ -7399,44 +3709,14 @@
     time: "28/11/2025 08:10"
     description: ""
   - coordinates:
-      latitude: 22.2933811
-      longitude: 114.1739749
-    time: "28/11/2025 08:11"
-    description: ""
-  - coordinates:
       latitude: 22.293127
       longitude: 114.1748764
     time: "28/11/2025 08:13"
     description: ""
   - coordinates:
-      latitude: 22.2931981
-      longitude: 114.1744674
-    time: "28/11/2025 08:15"
-    description: ""
-  - coordinates:
-      latitude: 22.2931659
-      longitude: 114.1748573
-    time: "28/11/2025 08:15"
-    description: ""
-  - coordinates:
-      latitude: 22.2934918
-      longitude: 114.1751605
-    time: "28/11/2025 08:16"
-    description: ""
-  - coordinates:
       latitude: 22.2954745
       longitude: 114.1762935
     time: "28/11/2025 08:22"
-    description: ""
-  - coordinates:
-      latitude: 22.2953517
-      longitude: 114.1762196
-    time: "28/11/2025 08:23"
-    description: ""
-  - coordinates:
-      latitude: 22.2956823
-      longitude: 114.1766661
-    time: "28/11/2025 08:24"
     description: ""
   - coordinates:
       latitude: 22.29675503
@@ -7449,16 +3729,6 @@
     time: "28/11/2025 08:28"
     description: ""
   - coordinates:
-      latitude: 22.2972934
-      longitude: 114.1752214
-    time: "28/11/2025 08:30"
-    description: ""
-  - coordinates:
-      latitude: 22.2969222
-      longitude: 114.1755636
-    time: "28/11/2025 08:30"
-    description: ""
-  - coordinates:
       latitude: 22.2974471
       longitude: 114.1742277
     time: "28/11/2025 08:31"
@@ -7466,11 +3736,6 @@
   - coordinates:
       latitude: 22.2969083
       longitude: 114.1743966
-    time: "28/11/2025 08:31"
-    description: ""
-  - coordinates:
-      latitude: 22.29727211
-      longitude: 114.174403
     time: "28/11/2025 08:31"
     description: ""
   - coordinates:
@@ -7484,39 +3749,9 @@
     time: "28/11/2025 08:33"
     description: ""
   - coordinates:
-      latitude: 22.2982791
-      longitude: 114.173535
-    time: "28/11/2025 08:33"
-    description: ""
-  - coordinates:
-      latitude: 22.2981916
-      longitude: 114.1735447
-    time: "28/11/2025 08:34"
-    description: ""
-  - coordinates:
-      latitude: 22.2983074
-      longitude: 114.1739368
-    time: "28/11/2025 08:34"
-    description: ""
-  - coordinates:
-      latitude: 22.2982144
-      longitude: 114.1738203
-    time: "28/11/2025 08:35"
-    description: ""
-  - coordinates:
       latitude: 22.2995446
       longitude: 114.1738335
     time: "28/11/2025 08:38"
-    description: ""
-  - coordinates:
-      latitude: 22.2995068
-      longitude: 114.1734046
-    time: "28/11/2025 08:39"
-    description: ""
-  - coordinates:
-      latitude: 22.2993871
-      longitude: 114.1734722
-    time: "28/11/2025 08:39"
     description: ""
   - coordinates:
       latitude: 22.29999945
@@ -7529,16 +3764,6 @@
     time: "28/11/2025 08:40"
     description: ""
   - coordinates:
-      latitude: 22.3001338
-      longitude: 114.1736186
-    time: "28/11/2025 08:41"
-    description: ""
-  - coordinates:
-      latitude: 22.2998499
-      longitude: 114.1736772
-    time: "28/11/2025 08:44"
-    description: ""
-  - coordinates:
       latitude: 22.2993138
       longitude: 114.1734678
     time: "28/11/2025 08:45"
@@ -7549,54 +3774,14 @@
     time: "28/11/2025 08:51"
     description: ""
   - coordinates:
-      latitude: 22.299863
-      longitude: 114.173662
-    time: "28/11/2025 08:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3000725
-      longitude: 114.1738372
-    time: "28/11/2025 08:59"
-    description: ""
-  - coordinates:
-      latitude: 22.2998622
-      longitude: 114.1736498
-    time: "28/11/2025 08:59"
-    description: ""
-  - coordinates:
-      latitude: 22.2998455
-      longitude: 114.1736953
-    time: "28/11/2025 09:04"
-    description: ""
-  - coordinates:
-      latitude: 22.3002051
-      longitude: 114.1738673
-    time: "28/11/2025 09:08"
-    description: ""
-  - coordinates:
       latitude: 22.2998729
       longitude: 114.1731997
     time: "28/11/2025 09:08"
     description: ""
   - coordinates:
-      latitude: 22.2996472
-      longitude: 114.1734197
-    time: "28/11/2025 09:09"
-    description: ""
-  - coordinates:
       latitude: 22.299478
       longitude: 114.1734903
     time: "28/11/2025 09:09"
-    description: ""
-  - coordinates:
-      latitude: 22.2994877
-      longitude: 114.1736745
-    time: "28/11/2025 09:10"
-    description: ""
-  - coordinates:
-      latitude: 22.299168
-      longitude: 114.1735406
-    time: "28/11/2025 09:10"
     description: ""
   - coordinates:
       latitude: 22.2985778
@@ -7624,19 +3809,9 @@
     time: "28/11/2025 09:13"
     description: ""
   - coordinates:
-      latitude: 22.2976936
-      longitude: 114.1728832
-    time: "28/11/2025 09:13"
-    description: ""
-  - coordinates:
       latitude: 22.297158
       longitude: 114.1723324
     time: "28/11/2025 09:14"
-    description: ""
-  - coordinates:
-      latitude: 22.2968729
-      longitude: 114.1722818
-    time: "28/11/2025 09:16"
     description: ""
   - coordinates:
       latitude: 22.2967035
@@ -7649,29 +3824,9 @@
     time: "28/11/2025 09:18"
     description: ""
   - coordinates:
-      latitude: 22.2975358
-      longitude: 114.1722059
-    time: "28/11/2025 09:19"
-    description: ""
-  - coordinates:
-      latitude: 22.2973857
-      longitude: 114.1722502
-    time: "28/11/2025 09:19"
-    description: ""
-  - coordinates:
       latitude: 22.3048028
       longitude: 114.1717597
     time: "28/11/2025 09:21"
-    description: ""
-  - coordinates:
-      latitude: 22.3047129
-      longitude: 114.1717207
-    time: "28/11/2025 09:22"
-    description: ""
-  - coordinates:
-      latitude: 22.3051292
-      longitude: 114.1716621
-    time: "28/11/2025 09:23"
     description: ""
   - coordinates:
       latitude: 22.3057667
@@ -7689,26 +3844,6 @@
     time: "28/11/2025 09:27"
     description: ""
   - coordinates:
-      latitude: 22.3078058
-      longitude: 114.1725433
-    time: "28/11/2025 09:28"
-    description: ""
-  - coordinates:
-      latitude: 22.3078414
-      longitude: 114.1724712
-    time: "28/11/2025 09:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3080012
-      longitude: 114.1727709
-    time: "28/11/2025 10:01"
-    description: ""
-  - coordinates:
-      latitude: 22.3078437
-      longitude: 114.1724956
-    time: "28/11/2025 10:16"
-    description: ""
-  - coordinates:
       latitude: 22.3056662
       longitude: 114.1663229
     time: "28/11/2025 10:43"
@@ -7717,16 +3852,6 @@
       latitude: 22.305171
       longitude: 114.1663076
     time: "28/11/2025 10:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3050661
-      longitude: 114.1663349
-    time: "28/11/2025 10:45"
-    description: ""
-  - coordinates:
-      latitude: 22.3049582
-      longitude: 114.1663348
-    time: "28/11/2025 10:45"
     description: ""
   - coordinates:
       latitude: 22.2956325
@@ -7742,16 +3867,6 @@
       latitude: 22.3304608
       longitude: 114.1993576
     time: "28/11/2025 10:59"
-    description: ""
-  - coordinates:
-      latitude: 22.3303647
-      longitude: 114.1992858
-    time: "28/11/2025 10:59"
-    description: ""
-  - coordinates:
-      latitude: 22.330435
-      longitude: 114.1992751
-    time: "28/11/2025 11:00"
     description: ""
   - coordinates:
       latitude: 22.3300342
@@ -7789,19 +3904,9 @@
     time: "28/11/2025 11:11"
     description: ""
   - coordinates:
-      latitude: 22.32430086
-      longitude: 114.1961647
-    time: "28/11/2025 11:12"
-    description: ""
-  - coordinates:
       latitude: 22.3239731
       longitude: 114.1960779
     time: "28/11/2025 11:13"
-    description: ""
-  - coordinates:
-      latitude: 22.3239859
-      longitude: 114.196143
-    time: "28/11/2025 11:15"
     description: ""
   - coordinates:
       latitude: 22.3238634
@@ -7812,41 +3917,6 @@
       latitude: 22.3223105
       longitude: 114.1971867
     time: "28/11/2025 11:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3224039
-      longitude: 114.1973636
-    time: "28/11/2025 11:46"
-    description: ""
-  - coordinates:
-      latitude: 22.3223408
-      longitude: 114.1972206
-    time: "28/11/2025 12:11"
-    description: ""
-  - coordinates:
-      latitude: 22.322313
-      longitude: 114.1971997
-    time: "28/11/2025 12:35"
-    description: ""
-  - coordinates:
-      latitude: 22.3223423
-      longitude: 114.1972159
-    time: "28/11/2025 12:47"
-    description: ""
-  - coordinates:
-      latitude: 22.3222919
-      longitude: 114.1971893
-    time: "28/11/2025 13:03"
-    description: ""
-  - coordinates:
-      latitude: 22.3223278
-      longitude: 114.1972195
-    time: "28/11/2025 13:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3223154
-      longitude: 114.1972231
-    time: "28/11/2025 14:58"
     description: ""
   - coordinates:
       latitude: 22.3224346
@@ -7876,11 +3946,6 @@
   - coordinates:
       latitude: 22.3270255
       longitude: 114.1964275
-    time: "28/11/2025 15:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3273006
-      longitude: 114.1966029
     time: "28/11/2025 15:11"
     description: ""
   - coordinates:
@@ -7924,16 +3989,6 @@
     time: "28/11/2025 15:38"
     description: ""
   - coordinates:
-      latitude: 22.3057737
-      longitude: 114.1680255
-    time: "28/11/2025 15:39"
-    description: ""
-  - coordinates:
-      latitude: 22.305746
-      longitude: 114.1682398
-    time: "28/11/2025 15:39"
-    description: ""
-  - coordinates:
       latitude: 22.3055747
       longitude: 114.1685735
     time: "28/11/2025 15:40"
@@ -7944,29 +3999,9 @@
     time: "28/11/2025 15:40"
     description: ""
   - coordinates:
-      latitude: 22.3052626
-      longitude: 114.1692428
-    time: "28/11/2025 15:41"
-    description: ""
-  - coordinates:
       latitude: 22.3054906
       longitude: 114.1702722
     time: "28/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 22.30529857
-      longitude: 114.1701795
-    time: "28/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 22.30517264
-      longitude: 114.1703996
-    time: "28/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 22.3054426
-      longitude: 114.1703901
-    time: "28/11/2025 15:43"
     description: ""
   - coordinates:
       latitude: 22.3053891
@@ -7979,21 +4014,6 @@
     time: "28/11/2025 15:50"
     description: ""
   - coordinates:
-      latitude: 22.3054402
-      longitude: 114.1703012
-    time: "28/11/2025 16:06"
-    description: ""
-  - coordinates:
-      latitude: 22.3054465
-      longitude: 114.170328
-    time: "28/11/2025 16:13"
-    description: ""
-  - coordinates:
-      latitude: 22.305438
-      longitude: 114.1703684
-    time: "28/11/2025 16:14"
-    description: ""
-  - coordinates:
       latitude: 22.305605
       longitude: 114.1707651
     time: "28/11/2025 16:17"
@@ -8001,11 +4021,6 @@
   - coordinates:
       latitude: 22.3055272
       longitude: 114.1713022
-    time: "28/11/2025 16:18"
-    description: ""
-  - coordinates:
-      latitude: 22.30543214
-      longitude: 114.1715099
     time: "28/11/2025 16:18"
     description: ""
   - coordinates:
@@ -8024,21 +4039,6 @@
     time: "28/11/2025 16:41"
     description: ""
   - coordinates:
-      latitude: 22.3079269
-      longitude: 114.172695
-    time: "28/11/2025 16:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3074813
-      longitude: 114.1724743
-    time: "28/11/2025 17:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3078622
-      longitude: 114.1725216
-    time: "28/11/2025 17:26"
-    description: ""
-  - coordinates:
       latitude: 22.3075884
       longitude: 114.1731532
     time: "28/11/2025 17:41"
@@ -8048,26 +4048,11 @@
       longitude: 114.1724771
     time: "28/11/2025 17:57"
     description: ""
-  - coordinates:
-      latitude: 22.3078456
-      longitude: 114.172507
-    time: "28/11/2025 18:12"
-    description: ""
 2025-11-29:
   - coordinates:
       latitude: 22.3079931
       longitude: 114.1727478
     time: "29/11/2025 00:45"
-    description: ""
-  - coordinates:
-      latitude: 22.3078316
-      longitude: 114.172424
-    time: "29/11/2025 01:36"
-    description: ""
-  - coordinates:
-      latitude: 22.3078006
-      longitude: 114.1724407
-    time: "29/11/2025 01:50"
     description: ""
   - coordinates:
       latitude: 22.3075291
@@ -8080,16 +4065,6 @@
     time: "29/11/2025 02:32"
     description: ""
   - coordinates:
-      latitude: 22.30537512
-      longitude: 114.1688325
-    time: "29/11/2025 02:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3056901
-      longitude: 114.1688175
-    time: "29/11/2025 02:33"
-    description: ""
-  - coordinates:
       latitude: 22.3059922
       longitude: 114.1675923
     time: "29/11/2025 02:34"
@@ -8098,11 +4073,6 @@
       latitude: 22.3050352
       longitude: 114.1663249
     time: "29/11/2025 02:38"
-    description: ""
-  - coordinates:
-      latitude: 22.3049232
-      longitude: 114.1663232
-    time: "29/11/2025 02:39"
     description: ""
   - coordinates:
       latitude: 22.3060053
@@ -8155,11 +4125,6 @@
     time: "29/11/2025 03:46"
     description: ""
   - coordinates:
-      latitude: 22.3767623
-      longitude: 114.1856396
-    time: "29/11/2025 03:55"
-    description: ""
-  - coordinates:
       latitude: 22.3768361
       longitude: 114.1854291
     time: "29/11/2025 04:03"
@@ -8170,19 +4135,9 @@
     time: "29/11/2025 04:29"
     description: ""
   - coordinates:
-      latitude: 22.3772856
-      longitude: 114.1858232
-    time: "29/11/2025 04:34"
-    description: ""
-  - coordinates:
       latitude: 22.3771485
       longitude: 114.1852754
     time: "29/11/2025 04:49"
-    description: ""
-  - coordinates:
-      latitude: 22.3768379
-      longitude: 114.1855174
-    time: "29/11/2025 05:00"
     description: ""
   - coordinates:
       latitude: 22.3769476
@@ -8210,69 +4165,14 @@
     time: "29/11/2025 05:16"
     description: ""
   - coordinates:
-      latitude: 22.3803269
-      longitude: 114.1875449
-    time: "29/11/2025 05:17"
-    description: ""
-  - coordinates:
-      latitude: 22.3803533
-      longitude: 114.1875679
-    time: "29/11/2025 05:22"
-    description: ""
-  - coordinates:
-      latitude: 22.3803605
-      longitude: 114.187562
-    time: "29/11/2025 05:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3803069
-      longitude: 114.1875537
-    time: "29/11/2025 05:27"
-    description: ""
-  - coordinates:
-      latitude: 22.3803433
-      longitude: 114.1875577
-    time: "29/11/2025 05:28"
-    description: ""
-  - coordinates:
-      latitude: 22.380315
-      longitude: 114.1874787
-    time: "29/11/2025 05:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3802851
-      longitude: 114.1875669
-    time: "29/11/2025 05:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3805538
-      longitude: 114.1877063
-    time: "29/11/2025 05:31"
-    description: ""
-  - coordinates:
       latitude: 22.3814665
       longitude: 114.1882774
     time: "29/11/2025 05:34"
     description: ""
   - coordinates:
-      latitude: 22.3811752
-      longitude: 114.1881865
-    time: "29/11/2025 05:36"
-    description: ""
-  - coordinates:
-      latitude: 22.3812287
-      longitude: 114.1882069
-    time: "29/11/2025 05:38"
-    description: ""
-  - coordinates:
       latitude: 22.3808896
       longitude: 114.1881518
     time: "29/11/2025 05:49"
-    description: ""
-  - coordinates:
-      latitude: 22.3806631
-      longitude: 114.1881618
-    time: "29/11/2025 05:50"
     description: ""
   - coordinates:
       latitude: 22.3819992
@@ -8300,11 +4200,6 @@
     time: "29/11/2025 05:57"
     description: ""
   - coordinates:
-      latitude: 22.3731394
-      longitude: 114.1784993
-    time: "29/11/2025 05:57"
-    description: ""
-  - coordinates:
       latitude: 22.3373429
       longitude: 114.1756634
     time: "29/11/2025 06:01"
@@ -8315,19 +4210,9 @@
     time: "29/11/2025 06:04"
     description: ""
   - coordinates:
-      latitude: 22.3368654
-      longitude: 114.1765784
-    time: "29/11/2025 06:07"
-    description: ""
-  - coordinates:
       latitude: 22.3242526
       longitude: 114.1684249
     time: "29/11/2025 06:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3242134
-      longitude: 114.1684394
-    time: "29/11/2025 06:12"
     description: ""
   - coordinates:
       latitude: 22.3125348
@@ -8335,68 +4220,13 @@
     time: "29/11/2025 06:14"
     description: ""
   - coordinates:
-      latitude: 22.3124073
-      longitude: 114.1708141
-    time: "29/11/2025 06:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3125788
-      longitude: 114.1708019
-    time: "29/11/2025 06:16"
-    description: ""
-  - coordinates:
-      latitude: 22.3124433
-      longitude: 114.170845
-    time: "29/11/2025 06:17"
-    description: ""
-  - coordinates:
-      latitude: 22.312677
-      longitude: 114.1708109
-    time: "29/11/2025 06:18"
-    description: ""
-  - coordinates:
-      latitude: 22.3121049
-      longitude: 114.1707544
-    time: "29/11/2025 06:19"
-    description: ""
-  - coordinates:
       latitude: 22.31178283
       longitude: 114.1706686
     time: "29/11/2025 06:22"
     description: ""
   - coordinates:
-      latitude: 22.3117605
-      longitude: 114.1708685
-    time: "29/11/2025 06:23"
-    description: ""
-  - coordinates:
-      latitude: 22.3117102
-      longitude: 114.1710753
-    time: "29/11/2025 06:24"
-    description: ""
-  - coordinates:
-      latitude: 22.3117626
-      longitude: 114.1708114
-    time: "29/11/2025 06:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3119271
-      longitude: 114.1706036
-    time: "29/11/2025 06:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3115781
-      longitude: 114.1710043
-    time: "29/11/2025 06:29"
-    description: ""
-  - coordinates:
       latitude: 22.3107294
       longitude: 114.1709445
-    time: "29/11/2025 06:31"
-    description: ""
-  - coordinates:
-      latitude: 22.31050217
-      longitude: 114.1710024
     time: "29/11/2025 06:31"
     description: ""
   - coordinates:
@@ -8405,19 +4235,9 @@
     time: "29/11/2025 06:33"
     description: ""
   - coordinates:
-      latitude: 22.31011565
-      longitude: 114.1710844
-    time: "29/11/2025 06:33"
-    description: ""
-  - coordinates:
       latitude: 22.3090874
       longitude: 114.1711335
     time: "29/11/2025 06:34"
-    description: ""
-  - coordinates:
-      latitude: 22.3092867
-      longitude: 114.1715019
-    time: "29/11/2025 06:36"
     description: ""
   - coordinates:
       latitude: 22.3081965
@@ -8430,26 +4250,6 @@
     time: "29/11/2025 06:59"
     description: ""
   - coordinates:
-      latitude: 22.3075987
-      longitude: 114.1724561
-    time: "29/11/2025 07:00"
-    description: ""
-  - coordinates:
-      latitude: 22.3077626
-      longitude: 114.1723743
-    time: "29/11/2025 07:04"
-    description: ""
-  - coordinates:
-      latitude: 22.3077286
-      longitude: 114.1723178
-    time: "29/11/2025 07:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3076506
-      longitude: 114.1724551
-    time: "29/11/2025 07:06"
-    description: ""
-  - coordinates:
       latitude: 22.3075551
       longitude: 114.1735304
     time: "29/11/2025 07:45"
@@ -8460,49 +4260,9 @@
     time: "29/11/2025 07:50"
     description: ""
   - coordinates:
-      latitude: 22.3077674
-      longitude: 114.1729106
-    time: "29/11/2025 08:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3078729
-      longitude: 114.1725233
-    time: "29/11/2025 08:20"
-    description: ""
-  - coordinates:
       latitude: 22.3090023
       longitude: 114.1710955
     time: "29/11/2025 08:57"
-    description: ""
-  - coordinates:
-      latitude: 22.3089752
-      longitude: 114.17122
-    time: "29/11/2025 09:00"
-    description: ""
-  - coordinates:
-      latitude: 22.3089306
-      longitude: 114.1712145
-    time: "29/11/2025 09:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3090265
-      longitude: 114.1711503
-    time: "29/11/2025 09:07"
-    description: ""
-  - coordinates:
-      latitude: 22.30915887
-      longitude: 114.171078
-    time: "29/11/2025 09:08"
-    description: ""
-  - coordinates:
-      latitude: 22.3090215
-      longitude: 114.1709703
-    time: "29/11/2025 09:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3089262
-      longitude: 114.1711864
-    time: "29/11/2025 09:12"
     description: ""
   - coordinates:
       latitude: 22.308684
@@ -8520,11 +4280,6 @@
     time: "29/11/2025 09:15"
     description: ""
   - coordinates:
-      latitude: 22.3087389
-      longitude: 114.170988
-    time: "29/11/2025 09:16"
-    description: ""
-  - coordinates:
       latitude: 22.30846587
       longitude: 114.1704397
     time: "29/11/2025 09:23"
@@ -8535,29 +4290,9 @@
     time: "29/11/2025 09:24"
     description: ""
   - coordinates:
-      latitude: 22.3078928
-      longitude: 114.1704379
-    time: "29/11/2025 09:24"
-    description: ""
-  - coordinates:
-      latitude: 22.3075863
-      longitude: 114.1703317
-    time: "29/11/2025 09:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3072772
-      longitude: 114.1706284
-    time: "29/11/2025 09:26"
-    description: ""
-  - coordinates:
       latitude: 22.30672752
       longitude: 114.1699748
     time: "29/11/2025 09:28"
-    description: ""
-  - coordinates:
-      latitude: 22.3067338
-      longitude: 114.1699993
-    time: "29/11/2025 09:29"
     description: ""
   - coordinates:
       latitude: 22.3062537
@@ -8565,24 +4300,9 @@
     time: "29/11/2025 09:30"
     description: ""
   - coordinates:
-      latitude: 22.3060497
-      longitude: 114.1702156
-    time: "29/11/2025 09:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3061185
-      longitude: 114.1701051
-    time: "29/11/2025 09:31"
-    description: ""
-  - coordinates:
       latitude: 22.3057269
       longitude: 114.170554
     time: "29/11/2025 09:33"
-    description: ""
-  - coordinates:
-      latitude: 22.30591595
-      longitude: 114.1708593
-    time: "29/11/2025 09:34"
     description: ""
   - coordinates:
       latitude: 22.3064841
@@ -8590,19 +4310,9 @@
     time: "29/11/2025 09:35"
     description: ""
   - coordinates:
-      latitude: 22.3067673
-      longitude: 114.1714579
-    time: "29/11/2025 09:36"
-    description: ""
-  - coordinates:
       latitude: 22.3077637
       longitude: 114.1715825
     time: "29/11/2025 09:38"
-    description: ""
-  - coordinates:
-      latitude: 22.3081546
-      longitude: 114.1714163
-    time: "29/11/2025 09:39"
     description: ""
   - coordinates:
       latitude: 22.3085514
@@ -8620,11 +4330,6 @@
     time: "29/11/2025 09:47"
     description: ""
   - coordinates:
-      latitude: 22.3077413
-      longitude: 114.1725025
-    time: "29/11/2025 10:02"
-    description: ""
-  - coordinates:
       latitude: 22.3084122
       longitude: 114.171718
     time: "29/11/2025 10:04"
@@ -8635,19 +4340,9 @@
     time: "29/11/2025 10:05"
     description: ""
   - coordinates:
-      latitude: 22.3086514
-      longitude: 114.1709059
-    time: "29/11/2025 10:08"
-    description: ""
-  - coordinates:
       latitude: 22.3083073
       longitude: 114.1714909
     time: "29/11/2025 10:13"
-    description: ""
-  - coordinates:
-      latitude: 22.30848043
-      longitude: 114.171835
-    time: "29/11/2025 10:14"
     description: ""
   - coordinates:
       latitude: 22.3080756
@@ -8665,11 +4360,6 @@
     time: "29/11/2025 10:16"
     description: ""
   - coordinates:
-      latitude: 22.3077934
-      longitude: 114.1724369
-    time: "29/11/2025 10:17"
-    description: ""
-  - coordinates:
       latitude: 22.30837386
       longitude: 114.1718044
     time: "29/11/2025 10:25"
@@ -8685,39 +4375,9 @@
     time: "29/11/2025 10:30"
     description: ""
   - coordinates:
-      latitude: 22.31134959
-      longitude: 114.1709887
-    time: "29/11/2025 10:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3115613
-      longitude: 114.1710792
-    time: "29/11/2025 10:32"
-    description: ""
-  - coordinates:
-      latitude: 22.3116946
-      longitude: 114.1708967
-    time: "29/11/2025 10:32"
-    description: ""
-  - coordinates:
-      latitude: 22.3117268
-      longitude: 114.170824
-    time: "29/11/2025 10:33"
-    description: ""
-  - coordinates:
-      latitude: 22.3117513
-      longitude: 114.1708073
-    time: "29/11/2025 10:34"
-    description: ""
-  - coordinates:
       latitude: 22.3119161
       longitude: 114.1708563
     time: "29/11/2025 10:35"
-    description: ""
-  - coordinates:
-      latitude: 22.3123209
-      longitude: 114.1708359
-    time: "29/11/2025 10:37"
     description: ""
   - coordinates:
       latitude: 22.3103968
@@ -8735,19 +4395,9 @@
     time: "29/11/2025 10:45"
     description: ""
   - coordinates:
-      latitude: 22.31638
-      longitude: 114.1876303
-    time: "29/11/2025 10:46"
-    description: ""
-  - coordinates:
       latitude: 22.3258636
       longitude: 114.1911785
     time: "29/11/2025 10:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3256683
-      longitude: 114.1909387
-    time: "29/11/2025 10:49"
     description: ""
   - coordinates:
       latitude: 22.32388228
@@ -8775,11 +4425,6 @@
     time: "29/11/2025 11:10"
     description: ""
   - coordinates:
-      latitude: 22.3221613
-      longitude: 114.1981848
-    time: "29/11/2025 11:11"
-    description: ""
-  - coordinates:
       latitude: 22.4460741
       longitude: 114.034457
     time: "29/11/2025 11:12"
@@ -8788,16 +4433,6 @@
       latitude: 22.3221436
       longitude: 114.1981677
     time: "29/11/2025 11:12"
-    description: ""
-  - coordinates:
-      latitude: 22.3223576
-      longitude: 114.1982112
-    time: "29/11/2025 11:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3223599
-      longitude: 114.1981973
-    time: "29/11/2025 11:17"
     description: ""
   - coordinates:
       latitude: 22.3226608
@@ -8810,46 +4445,6 @@
     time: "29/11/2025 11:29"
     description: ""
   - coordinates:
-      latitude: 22.3222884
-      longitude: 114.1972052
-    time: "29/11/2025 11:48"
-    description: ""
-  - coordinates:
-      latitude: 22.3223114
-      longitude: 114.1972227
-    time: "29/11/2025 11:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3223384
-      longitude: 114.1972414
-    time: "29/11/2025 12:03"
-    description: ""
-  - coordinates:
-      latitude: 22.3223235
-      longitude: 114.1972214
-    time: "29/11/2025 12:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3223157
-      longitude: 114.1972137
-    time: "29/11/2025 12:07"
-    description: ""
-  - coordinates:
-      latitude: 22.3224088
-      longitude: 114.1972374
-    time: "29/11/2025 13:05"
-    description: ""
-  - coordinates:
-      latitude: 22.322321
-      longitude: 114.1972216
-    time: "29/11/2025 13:20"
-    description: ""
-  - coordinates:
-      latitude: 22.3221359
-      longitude: 114.1972395
-    time: "29/11/2025 13:36"
-    description: ""
-  - coordinates:
       latitude: 22.3223475
       longitude: 114.1981937
     time: "29/11/2025 13:56"
@@ -8858,21 +4453,6 @@
       latitude: 22.3223201
       longitude: 114.1972145
     time: "29/11/2025 14:02"
-    description: ""
-  - coordinates:
-      latitude: 22.3223234
-      longitude: 114.1971973
-    time: "29/11/2025 15:04"
-    description: ""
-  - coordinates:
-      latitude: 22.3222847
-      longitude: 114.1972212
-    time: "29/11/2025 15:07"
-    description: ""
-  - coordinates:
-      latitude: 22.3223471
-      longitude: 114.197231
-    time: "29/11/2025 15:08"
     description: ""
   - coordinates:
       latitude: 22.321867
@@ -8895,24 +4475,9 @@
     time: "29/11/2025 15:23"
     description: ""
   - coordinates:
-      latitude: 22.3258185
-      longitude: 114.1909633
-    time: "29/11/2025 15:24"
-    description: ""
-  - coordinates:
       latitude: 22.309391
       longitude: 114.1826346
     time: "29/11/2025 15:28"
-    description: ""
-  - coordinates:
-      latitude: 22.3097653
-      longitude: 114.1826491
-    time: "29/11/2025 15:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3092224
-      longitude: 114.1827089
-    time: "29/11/2025 15:30"
     description: ""
   - coordinates:
       latitude: 22.3080333
@@ -8925,19 +4490,9 @@
     time: "29/11/2025 15:37"
     description: ""
   - coordinates:
-      latitude: 22.3120649
-      longitude: 114.1707563
-    time: "29/11/2025 15:39"
-    description: ""
-  - coordinates:
       latitude: 22.31146
       longitude: 114.1711971
     time: "29/11/2025 15:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3114683
-      longitude: 114.1711016
-    time: "29/11/2025 15:41"
     description: ""
   - coordinates:
       latitude: 22.3119257
@@ -8945,34 +4500,9 @@
     time: "29/11/2025 15:41"
     description: ""
   - coordinates:
-      latitude: 22.3119059
-      longitude: 114.1706968
-    time: "29/11/2025 15:42"
-    description: ""
-  - coordinates:
       latitude: 22.3116537
       longitude: 114.1712541
     time: "29/11/2025 15:42"
-    description: ""
-  - coordinates:
-      latitude: 22.31131552
-      longitude: 114.1712742
-    time: "29/11/2025 15:43"
-    description: ""
-  - coordinates:
-      latitude: 22.3119185
-      longitude: 114.170971
-    time: "29/11/2025 15:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3117692
-      longitude: 114.1710904
-    time: "29/11/2025 15:45"
-    description: ""
-  - coordinates:
-      latitude: 22.3117339
-      longitude: 114.1708269
-    time: "29/11/2025 15:45"
     description: ""
   - coordinates:
       latitude: 22.3124632
@@ -9015,19 +4545,9 @@
     time: "29/11/2025 15:55"
     description: ""
   - coordinates:
-      latitude: 22.30834333
-      longitude: 114.17128
-    time: "29/11/2025 15:56"
-    description: ""
-  - coordinates:
       latitude: 22.307911
       longitude: 114.1715424
     time: "29/11/2025 15:59"
-    description: ""
-  - coordinates:
-      latitude: 22.3082033
-      longitude: 114.1713325
-    time: "29/11/2025 16:00"
     description: ""
   - coordinates:
       latitude: 22.3084506
@@ -9040,21 +4560,6 @@
     time: "29/11/2025 16:02"
     description: ""
   - coordinates:
-      latitude: 22.3078016
-      longitude: 114.172713
-    time: "29/11/2025 16:04"
-    description: ""
-  - coordinates:
-      latitude: 22.3078391
-      longitude: 114.1724641
-    time: "29/11/2025 16:04"
-    description: ""
-  - coordinates:
-      latitude: 22.307778
-      longitude: 114.1724669
-    time: "29/11/2025 16:19"
-    description: ""
-  - coordinates:
       latitude: 22.3075946
       longitude: 114.1735239
     time: "29/11/2025 16:19"
@@ -9063,76 +4568,6 @@
       latitude: 22.3078417
       longitude: 114.1724576
     time: "29/11/2025 16:35"
-    description: ""
-  - coordinates:
-      latitude: 22.3078955
-      longitude: 114.1725541
-    time: "29/11/2025 17:41"
-    description: ""
-  - coordinates:
-      latitude: 22.3076236
-      longitude: 114.172503
-    time: "29/11/2025 17:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3080115
-      longitude: 114.1727738
-    time: "29/11/2025 18:12"
-    description: ""
-  - coordinates:
-      latitude: 22.307854
-      longitude: 114.1724553
-    time: "29/11/2025 18:27"
-    description: ""
-  - coordinates:
-      latitude: 22.307993
-      longitude: 114.1727562
-    time: "29/11/2025 18:42"
-    description: ""
-  - coordinates:
-      latitude: 22.3078041
-      longitude: 114.1724765
-    time: "29/11/2025 18:58"
-    description: ""
-  - coordinates:
-      latitude: 22.3080119
-      longitude: 114.1727628
-    time: "29/11/2025 19:13"
-    description: ""
-  - coordinates:
-      latitude: 22.3078707
-      longitude: 114.1725322
-    time: "29/11/2025 19:29"
-    description: ""
-  - coordinates:
-      latitude: 22.307746
-      longitude: 114.1724867
-    time: "29/11/2025 19:44"
-    description: ""
-  - coordinates:
-      latitude: 22.308011
-      longitude: 114.1727708
-    time: "29/11/2025 19:59"
-    description: ""
-  - coordinates:
-      latitude: 22.3075307
-      longitude: 114.1725215
-    time: "29/11/2025 20:15"
-    description: ""
-  - coordinates:
-      latitude: 22.3078445
-      longitude: 114.1724469
-    time: "29/11/2025 20:30"
-    description: ""
-  - coordinates:
-      latitude: 22.3076764
-      longitude: 114.1725132
-    time: "29/11/2025 20:45"
-    description: ""
-  - coordinates:
-      latitude: 22.307866
-      longitude: 114.1724783
-    time: "29/11/2025 23:20"
     description: ""
 2025-11-30:
   - coordinates:
@@ -9146,54 +4581,14 @@
     time: "30/11/2025 01:36"
     description: ""
   - coordinates:
-      latitude: 22.3078486
-      longitude: 114.1724634
-    time: "30/11/2025 01:51"
-    description: ""
-  - coordinates:
-      latitude: 22.3078427
-      longitude: 114.1725037
-    time: "30/11/2025 02:19"
-    description: ""
-  - coordinates:
       latitude: 22.3088501
       longitude: 114.1713358
     time: "30/11/2025 02:34"
     description: ""
   - coordinates:
-      latitude: 22.3087953
-      longitude: 114.1711441
-    time: "30/11/2025 02:36"
-    description: ""
-  - coordinates:
-      latitude: 22.3089075
-      longitude: 114.171189
-    time: "30/11/2025 02:37"
-    description: ""
-  - coordinates:
-      latitude: 22.3088215
-      longitude: 114.1711639
-    time: "30/11/2025 02:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3088833
-      longitude: 114.171186
-    time: "30/11/2025 02:44"
-    description: ""
-  - coordinates:
       latitude: 22.3101049
       longitude: 114.170106
     time: "30/11/2025 02:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3098422
-      longitude: 114.1699722
-    time: "30/11/2025 02:53"
-    description: ""
-  - coordinates:
-      latitude: 22.3103667
-      longitude: 114.17004
-    time: "30/11/2025 02:55"
     description: ""
   - coordinates:
       latitude: 22.3017654
@@ -9206,16 +4601,6 @@
     time: "30/11/2025 03:13"
     description: ""
   - coordinates:
-      latitude: 22.3010125
-      longitude: 114.1591969
-    time: "30/11/2025 03:13"
-    description: ""
-  - coordinates:
-      latitude: 22.3009708
-      longitude: 114.1591391
-    time: "30/11/2025 03:17"
-    description: ""
-  - coordinates:
       latitude: 22.3011504
       longitude: 114.1591275
     time: "30/11/2025 03:18"
@@ -9226,34 +4611,9 @@
     time: "30/11/2025 03:21"
     description: ""
   - coordinates:
-      latitude: 22.3013466
-      longitude: 114.1588895
-    time: "30/11/2025 03:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3012899
-      longitude: 114.1588487
-    time: "30/11/2025 03:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3014946
-      longitude: 114.1589142
-    time: "30/11/2025 03:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3012945
-      longitude: 114.1587409
-    time: "30/11/2025 04:01"
-    description: ""
-  - coordinates:
       latitude: 22.3016105
       longitude: 114.1591406
     time: "30/11/2025 04:18"
-    description: ""
-  - coordinates:
-      latitude: 22.3014004
-      longitude: 114.1595321
-    time: "30/11/2025 04:35"
     description: ""
   - coordinates:
       latitude: 22.3010234
@@ -9269,16 +4629,6 @@
       latitude: 22.3003502
       longitude: 114.1588357
     time: "30/11/2025 05:31"
-    description: ""
-  - coordinates:
-      latitude: 22.3007151
-      longitude: 114.1589919
-    time: "30/11/2025 05:46"
-    description: ""
-  - coordinates:
-      latitude: 22.3002192
-      longitude: 114.1592037
-    time: "30/11/2025 06:04"
     description: ""
   - coordinates:
       latitude: 22.3010899
@@ -9311,21 +4661,6 @@
     time: "30/11/2025 07:31"
     description: ""
   - coordinates:
-      latitude: 22.3022252
-      longitude: 114.1668766
-    time: "30/11/2025 07:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3022231
-      longitude: 114.166887
-    time: "30/11/2025 08:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3020638
-      longitude: 114.1671427
-    time: "30/11/2025 08:58"
-    description: ""
-  - coordinates:
       latitude: 22.30431425
       longitude: 114.1699206
     time: "30/11/2025 09:08"
@@ -9341,31 +4676,6 @@
     time: "30/11/2025 09:28"
     description: ""
   - coordinates:
-      latitude: 22.3076865
-      longitude: 114.1725076
-    time: "30/11/2025 09:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3079195
-      longitude: 114.1725818
-    time: "30/11/2025 09:43"
-    description: ""
-  - coordinates:
-      latitude: 22.3077678
-      longitude: 114.1726023
-    time: "30/11/2025 09:50"
-    description: ""
-  - coordinates:
-      latitude: 22.307739
-      longitude: 114.1724648
-    time: "30/11/2025 09:58"
-    description: ""
-  - coordinates:
-      latitude: 22.3079902
-      longitude: 114.1727456
-    time: "30/11/2025 10:14"
-    description: ""
-  - coordinates:
       latitude: 22.3075841
       longitude: 114.1734935
     time: "30/11/2025 10:20"
@@ -9374,41 +4684,6 @@
       latitude: 22.3079005
       longitude: 114.1727137
     time: "30/11/2025 10:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3075558
-      longitude: 114.17257
-    time: "30/11/2025 10:35"
-    description: ""
-  - coordinates:
-      latitude: 22.3078174
-      longitude: 114.1724576
-    time: "30/11/2025 10:44"
-    description: ""
-  - coordinates:
-      latitude: 22.3075979
-      longitude: 114.1724961
-    time: "30/11/2025 10:50"
-    description: ""
-  - coordinates:
-      latitude: 22.3079966
-      longitude: 114.172749
-    time: "30/11/2025 11:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3075685
-      longitude: 114.1725397
-    time: "30/11/2025 11:21"
-    description: ""
-  - coordinates:
-      latitude: 22.3077183
-      longitude: 114.172541
-    time: "30/11/2025 11:36"
-    description: ""
-  - coordinates:
-      latitude: 22.307857
-      longitude: 114.1724184
-    time: "30/11/2025 11:51"
     description: ""
   - coordinates:
       latitude: 22.3094324
@@ -9441,21 +4716,6 @@
     time: "30/11/2025 13:07"
     description: ""
   - coordinates:
-      latitude: 22.3189836
-      longitude: 114.1698625
-    time: "30/11/2025 13:22"
-    description: ""
-  - coordinates:
-      latitude: 22.3189828
-      longitude: 114.1698772
-    time: "30/11/2025 13:38"
-    description: ""
-  - coordinates:
-      latitude: 22.318949
-      longitude: 114.1699451
-    time: "30/11/2025 13:53"
-    description: ""
-  - coordinates:
       latitude: 22.3101376
       longitude: 114.1710168
     time: "30/11/2025 14:13"
@@ -9471,11 +4731,6 @@
     time: "30/11/2025 14:20"
     description: ""
   - coordinates:
-      latitude: 22.3079735
-      longitude: 114.1727387
-    time: "30/11/2025 14:30"
-    description: ""
-  - coordinates:
       latitude: 22.3078787
       longitude: 114.1730061
     time: "30/11/2025 14:35"
@@ -9484,46 +4739,6 @@
       latitude: 22.3077751
       longitude: 114.1724838
     time: "30/11/2025 14:45"
-    description: ""
-  - coordinates:
-      latitude: 22.3078283
-      longitude: 114.1724548
-    time: "30/11/2025 14:50"
-    description: ""
-  - coordinates:
-      latitude: 22.3076804
-      longitude: 114.172504
-    time: "30/11/2025 15:00"
-    description: ""
-  - coordinates:
-      latitude: 22.3078498
-      longitude: 114.1725305
-    time: "30/11/2025 15:05"
-    description: ""
-  - coordinates:
-      latitude: 22.3078091
-      longitude: 114.1724819
-    time: "30/11/2025 15:21"
-    description: ""
-  - coordinates:
-      latitude: 22.3077858
-      longitude: 114.1724882
-    time: "30/11/2025 15:23"
-    description: ""
-  - coordinates:
-      latitude: 22.3078313
-      longitude: 114.172476
-    time: "30/11/2025 15:36"
-    description: ""
-  - coordinates:
-      latitude: 22.3079601
-      longitude: 114.1727216
-    time: "30/11/2025 15:51"
-    description: ""
-  - coordinates:
-      latitude: 22.3079824
-      longitude: 114.172742
-    time: "30/11/2025 16:06"
     description: ""
   - coordinates:
       latitude: 22.3075561
@@ -9536,144 +4751,14 @@
     time: "30/11/2025 16:37"
     description: ""
   - coordinates:
-      latitude: 22.3077667
-      longitude: 114.1724896
-    time: "30/11/2025 16:52"
-    description: ""
-  - coordinates:
-      latitude: 22.3078212
-      longitude: 114.1725248
-    time: "30/11/2025 17:07"
-    description: ""
-  - coordinates:
-      latitude: 22.3078405
-      longitude: 114.1724206
-    time: "30/11/2025 17:22"
-    description: ""
-  - coordinates:
-      latitude: 22.3077467
-      longitude: 114.1724703
-    time: "30/11/2025 17:38"
-    description: ""
-  - coordinates:
-      latitude: 22.3078465
-      longitude: 114.1725192
-    time: "30/11/2025 17:53"
-    description: ""
-  - coordinates:
-      latitude: 22.3079734
-      longitude: 114.1727513
-    time: "30/11/2025 18:08"
-    description: ""
-  - coordinates:
       latitude: 22.3075542
       longitude: 114.1735451
     time: "30/11/2025 18:23"
     description: ""
   - coordinates:
-      latitude: 22.3075622
-      longitude: 114.1735409
-    time: "30/11/2025 18:39"
-    description: ""
-  - coordinates:
-      latitude: 22.3075583
-      longitude: 114.1735388
-    time: "30/11/2025 18:54"
-    description: ""
-  - coordinates:
       latitude: 22.3076028
       longitude: 114.1724927
     time: "30/11/2025 19:09"
-    description: ""
-  - coordinates:
-      latitude: 22.3078195
-      longitude: 114.1724124
-    time: "30/11/2025 19:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3078489
-      longitude: 114.1724118
-    time: "30/11/2025 19:40"
-    description: ""
-  - coordinates:
-      latitude: 22.3078524
-      longitude: 114.172468
-    time: "30/11/2025 19:55"
-    description: ""
-  - coordinates:
-      latitude: 22.3078686
-      longitude: 114.1724895
-    time: "30/11/2025 20:10"
-    description: ""
-  - coordinates:
-      latitude: 22.3078223
-      longitude: 114.1724517
-    time: "30/11/2025 20:25"
-    description: ""
-  - coordinates:
-      latitude: 22.3078426
-      longitude: 114.1724194
-    time: "30/11/2025 20:41"
-    description: ""
-  - coordinates:
-      latitude: 22.3078757
-      longitude: 114.1724102
-    time: "30/11/2025 20:56"
-    description: ""
-  - coordinates:
-      latitude: 22.3077989
-      longitude: 114.1724779
-    time: "30/11/2025 21:11"
-    description: ""
-  - coordinates:
-      latitude: 22.3077883
-      longitude: 114.1724024
-    time: "30/11/2025 21:26"
-    description: ""
-  - coordinates:
-      latitude: 22.3078556
-      longitude: 114.172418
-    time: "30/11/2025 21:42"
-    description: ""
-  - coordinates:
-      latitude: 22.3078619
-      longitude: 114.1723599
-    time: "30/11/2025 21:57"
-    description: ""
-  - coordinates:
-      latitude: 22.3078043
-      longitude: 114.1724413
-    time: "30/11/2025 22:12"
-    description: ""
-  - coordinates:
-      latitude: 22.307697
-      longitude: 114.172423
-    time: "30/11/2025 22:28"
-    description: ""
-  - coordinates:
-      latitude: 22.3075239
-      longitude: 114.1724042
-    time: "30/11/2025 22:43"
-    description: ""
-  - coordinates:
-      latitude: 22.3078538
-      longitude: 114.1723728
-    time: "30/11/2025 22:58"
-    description: ""
-  - coordinates:
-      latitude: 22.3077596
-      longitude: 114.1724824
-    time: "30/11/2025 23:13"
-    description: ""
-  - coordinates:
-      latitude: 22.3076977
-      longitude: 114.1725052
-    time: "30/11/2025 23:29"
-    description: ""
-  - coordinates:
-      latitude: 22.3077328
-      longitude: 114.1728006
-    time: "30/11/2025 23:44"
     description: ""
   - coordinates:
       latitude: 22.3076651

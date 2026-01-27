@@ -33,19 +33,83 @@ fs.createReadStream('scripts/geo.csv')
       groupedByDate[date].push(location);
     });
     
-    // Create the YAML front matter
+    // Function to calculate distance between two coordinates in meters (Haversine formula)
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371e3; // Earth's radius in meters
+      const φ1 = lat1 * Math.PI / 180;
+      const φ2 = lat2 * Math.PI / 180;
+      const Δφ = (lat2 - lat1) * Math.PI / 180;
+      const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+      const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      return R * c; // Distance in meters
+    }
     
+    // Function to parse time string to comparable format
+    function parseTime(timeStr) {
+      // Format: "20/11/2025 02:41"
+      const [datePart, timePart] = timeStr.split(' ');
+      const [day, month, year] = datePart.split('/');
+      const [hour, minute] = timePart.split(':');
+      return new Date(year, month - 1, day, hour, minute);
+    }
+    
+    // Function to filter locations that are too close
+    function filterCloseLocations(locations, minDistance = 50) {
+      if (locations.length === 0) return [];
+      
+      // Sort by time first
+      locations.sort((a, b) => parseTime(a.time) - parseTime(b.time));
+      
+      const filtered = [locations[0]]; // Always keep the first location
+      
+      for (let i = 1; i < locations.length; i++) {
+        const lastKept = filtered[filtered.length - 1];
+        const current = locations[i];
+        
+        const distance = getDistance(
+          lastKept.latitude,
+          lastKept.longitude,
+          current.latitude,
+          current.longitude
+        );
+        
+        // Only keep if distance is greater than minimum distance
+        if (distance >= minDistance) {
+          filtered.push(current);
+        }
+      }
+      
+      return filtered;
+    }
+    
+    // Create the YAML content
     let yamlContent = "";
+    let totalOriginal = 0;
+    let totalFiltered = 0;
+    
     // Iterate through each date
     Object.keys(groupedByDate).sort().forEach((date) => {
       const [day, month, year] = date.split("/");
       let datestr = year + "-" + month + "-" + day;
 
+      // Filter locations for this date (minimum 50 meters apart)
+      const originalCount = groupedByDate[date].length;
+      const filteredLocations = filterCloseLocations(groupedByDate[date], 50);
+      
+      totalOriginal += originalCount;
+      totalFiltered += filteredLocations.length;
+      
+      console.log(`${datestr}: ${originalCount} -> ${filteredLocations.length} locations (removed ${originalCount - filteredLocations.length})`);
 
       yamlContent += `${datestr}:\n`;
       
-      // Add all locations for this date
-      groupedByDate[date].forEach((location) => {
+      // Add all filtered locations for this date
+      filteredLocations.forEach((location) => {
         yamlContent += `  - coordinates:\n`;
         yamlContent += `      latitude: ${location.latitude}\n`;
         yamlContent += `      longitude: ${location.longitude}\n`;
@@ -53,10 +117,12 @@ fs.createReadStream('scripts/geo.csv')
         yamlContent += `    description: "${location.description}"\n`;
       });
     });
+    
+    console.log(`\nTotal: ${totalOriginal} -> ${totalFiltered} locations (removed ${totalOriginal - totalFiltered})`);
       
-    // Write to markdown file
+    // Write to YAML file
     fs.writeFileSync('scripts/locations.yml', yamlContent);
-    console.log('Markdown file created: scripts/locations.yml');
+    console.log('YAML file created: scripts/locations.yml');
   })
   .on('error', (error) => {
     console.error('Error reading CSV file:', error);
