@@ -12,6 +12,7 @@ import {
 } from "../../../../utils/updateDayReferences";
 import { GeoDataService } from "@/lib/geoService";
 import MapWrapper from "@/app/_components/map/map-wrapper";
+import { WeekDataService } from "@/lib/weekService";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -49,6 +50,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       post.frontmatter.date,
     );
 
+    const week = await WeekDataService.getWeekForDay(post.frontmatter.day);
+
+    
+
     return (
       <div className="max-h-screen bg-background flex flex-col">
         <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
@@ -62,16 +67,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             frontmatter={post.frontmatter}
             previousPost={previousPost}
             nextPost={nextPost}
+            locations={locations}
+            week={week}
           />
-
-          <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">My Travel Map</h1>
-            <div className="w-full">
-              {" "}
-              {/* Ensure width is defined */}
-              <MapWrapper locations={locations} />
-            </div>
-          </div>
 
           {/* Tags */}
           <div className="pt-2">

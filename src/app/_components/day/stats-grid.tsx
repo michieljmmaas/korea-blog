@@ -81,7 +81,7 @@ const StatsGrid = ({ stats, location }: StatsGridProps) => {
                 </div>
 
                 <div className="text-center p-1 md:p-2 bg-surface-secondary rounded-lg flex items-center justify-center gap-1 steps-bg">
-                    <div className="text-xs md:text-lg font-bold text-text-primary">{stats.steps.toLocaleString()}</div>
+                    <div className="text-xs md:text-lg font-bold text-text-primary">{stats.steps.toLocaleString('en-US')}</div>
                     {/* Mobile: sm size, Desktop: lg size */}
                     <div className="md:hidden">
                         <IconFactory
