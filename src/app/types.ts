@@ -107,3 +107,16 @@ export interface Goal {
   completed: boolean;
   link: string;
 }
+
+export interface GeoData {
+  [date: string]: GeoLocation[];
+}
+
+export interface GeoLocation {
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
+  time: boolean;
+  description: Date;
+}
