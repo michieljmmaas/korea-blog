@@ -19,11 +19,39 @@ fs.createReadStream('scripts/geo.csv')
   .on('end', () => {
     console.log('CSV file successfully processed');
     
-    // Group locations by date
+    // Timezone offset: Taiwan is UTC+8, Netherlands is UTC+1 (winter) or UTC+2 (summer)
+    // Assuming the data was recorded in Taiwan time but stored as Dutch time
+    // We need to add 7 hours (or 6 hours during Dutch summer time)
+    const TIMEZONE_OFFSET_HOURS = 7; // Adjust this if needed
+    
+    // Adjust timestamps for timezone
+    locations.forEach((location) => {
+      // Parse the original time
+      const [datePart, timePart] = location.time.split(' ');
+      const [day, month, year] = datePart.split('/').map(Number);
+      const [hour, minute] = timePart.split(':').map(Number);
+      
+      // Create date object and add timezone offset
+      const originalDate = new Date(year, month - 1, day, hour, minute);
+      originalDate.setHours(originalDate.getHours() + TIMEZONE_OFFSET_HOURS);
+      
+      // Format back to string with corrected time
+      const correctedDay = String(originalDate.getDate()).padStart(2, '0');
+      const correctedMonth = String(originalDate.getMonth() + 1).padStart(2, '0');
+      const correctedYear = originalDate.getFullYear();
+      const correctedHour = String(originalDate.getHours()).padStart(2, '0');
+      const correctedMinute = String(originalDate.getMinutes()).padStart(2, '0');
+      
+      location.time = `${correctedDay}/${correctedMonth}/${correctedYear} ${correctedHour}:${correctedMinute}`;
+    });
+    
+    console.log(`Applied timezone offset of +${TIMEZONE_OFFSET_HOURS} hours`);
+    
+    // Group locations by date (using corrected timestamps)
     const groupedByDate = {};
     
     locations.forEach((location) => {
-      // Extract date from time string (format: "20/11/2025 02:41")
+      // Extract date from corrected time string
       const date = location.time.split(' ')[0];
       
       if (!groupedByDate[date]) {
