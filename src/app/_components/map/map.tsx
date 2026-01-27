@@ -1,13 +1,8 @@
 "use client";
 
-import {
-  MapContainer,
-  TileLayer,
-  Polyline,
-  Marker,
-  Popup,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
+import { useEffect } from "react";
 import { GeoLocation } from "@/app/types";
 
 // Fix the default icon issue
@@ -22,6 +17,51 @@ L.Icon.Default.mergeOptions({
 interface MapComponentProps {
   locations: GeoLocation[];
 }
+
+// Component to add animated path
+function AnimatedPath({ positions }: { positions: [number, number][] }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!map || positions.length < 2) return;
+
+    let antPath: any = null;
+
+    // Load the ant-path library
+    const script = document.createElement("script");
+    script.src =
+      "https://unpkg.com/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.js";
+    script.async = true;
+
+    script.onload = () => {
+      // Create animated ant path
+      antPath = (L as any).polyline.antPath(positions, {
+        color: "#0088ff",
+        weight: 4,
+        opacity: 0.6,
+        delay: 3000,
+        dashArray: [10, 20],
+        pulseColor: "#FFFFFF",
+      });
+
+      antPath.addTo(map);
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      if (antPath && map) {
+        map.removeLayer(antPath);
+      }
+      if (script.parentNode) {
+        document.head.removeChild(script);
+      }
+    };
+  }, [map, positions]);
+
+  return null;
+}
+
 
 export default function MapComponent({ locations }: MapComponentProps) {
   if (locations.length === 0) {
@@ -48,7 +88,7 @@ export default function MapComponent({ locations }: MapComponentProps) {
     <div style={{ height: "600px", width: "100%" }}>
       <MapContainer
         center={[centerLat, centerLng]}
-        zoom={6}
+        zoom={10}
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%" }}
         className="rounded-lg z-0"
@@ -58,36 +98,33 @@ export default function MapComponent({ locations }: MapComponentProps) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Polyline
-          positions={pathCoordinates}
-          color="blue"
-          weight={3}
-          opacity={0.7}
-        />
+        <AnimatedPath positions={pathCoordinates} />
 
-        {locations.map((location, index) => (
-          <Marker
-            key={index}
-            position={[
-              location.coordinates.latitude,
-              location.coordinates.longitude,
-            ]}
-          >
-            <Popup>
-              <div>
-                <strong>{location.description}</strong>
-                <br />
-                {index}
-                <br />
-                {location.time.toLocaleTimeString("nl-NL", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })}
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        {locations.map(
+          (location, index) =>
+            location.description !== "" && 
+          (
+              <Marker
+                key={index}
+                position={[
+                  location.coordinates.latitude,
+                  location.coordinates.longitude,
+                ]}
+              >
+                <Popup>
+                  <div>
+                    <strong>{location.description}</strong>
+                    <br />
+                    {location.time.toLocaleTimeString("nl-NL", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: false,
+                    })}
+                  </div>
+                </Popup>
+              </Marker>
+            ),
+        )}
       </MapContainer>
     </div>
   );
