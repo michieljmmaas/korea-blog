@@ -7,6 +7,7 @@ import "./globals.css";
 import Container from "./_components/layout/container";
 import Header from "./_components/layout/header";
 import "yet-another-react-lightbox/styles.css";
+import 'leaflet/dist/leaflet.css';
 
 const inter = Inter({ subsets: ["latin"] });
 

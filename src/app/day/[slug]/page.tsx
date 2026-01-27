@@ -1,12 +1,17 @@
 import DayInfoTable from "@/app/_components/day/day-info-table";
 import ImageCarousel from "@/app/_components/common/image-carousel";
-import { getBlogPost, getAdjacentPosts } from '../../../lib/dayService';
-import markdownToHtml from '@/lib/markdownToHtml';
+import { getBlogPost, getAdjacentPosts } from "../../../lib/dayService";
+import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
 import { Draft } from "@/app/_components/common/draft";
-import { createForDay } from '../../../../utils/createImageMap';
-import { processBlogReferences, processDayReferences } from "../../../../utils/updateDayReferences";
+import { createForDay } from "../../../../utils/createImageMap";
+import {
+  processBlogReferences,
+  processDayReferences,
+} from "../../../../utils/updateDayReferences";
+import { GeoDataService } from "@/lib/geoService";
+import MapWrapper from "@/app/_components/map/map-wrapper";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -19,33 +24,37 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
     const post = await getBlogPost(slug);
 
-
     if (!post) {
-      return (<Draft />)
+      return <Draft />;
     }
 
     if (post.frontmatter.draft === true) {
-      return (<Draft />)
+      return <Draft />;
     }
 
-    const photos = post.frontmatter.photos.map((name: string) => `days/${post.frontmatter.date}/${name}`);
+    const photos = post.frontmatter.photos.map(
+      (name: string) => `days/${post.frontmatter.date}/${name}`,
+    );
 
     const map = createForDay(post.frontmatter);
 
     const dayContent = await processDayReferences(post.content);
     const processedContent = await processBlogReferences(dayContent);
     const content = await markdownToHtml(processedContent || "", map);
-    const { previousPost, nextPost } = await getAdjacentPosts(post.frontmatter.day);
+    const { previousPost, nextPost } = await getAdjacentPosts(
+      post.frontmatter.day,
+    );
+
+    const locations = await GeoDataService.getLocationsByDate(
+      post.frontmatter.date,
+    );
 
     return (
       <div className="max-h-screen bg-background flex flex-col">
         <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
           {/* Image Carousel */}
           <div className="py-6">
-            <ImageCarousel
-              images={photos}
-              alt="Travel photos from Seoul"
-            />
+            <ImageCarousel images={photos} alt="Travel photos from Seoul" />
           </div>
 
           {/* Day Info Table */}
@@ -54,6 +63,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             previousPost={previousPost}
             nextPost={nextPost}
           />
+
+          <div className="container mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">My Travel Map</h1>
+            <div className="w-full">
+              {" "}
+              {/* Ensure width is defined */}
+              <MapWrapper locations={locations} />
+            </div>
+          </div>
 
           {/* Tags */}
           <div className="pt-2">
@@ -68,12 +86,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
     );
   } catch (e: any) {
-    return (<Draft />)
+    return <Draft />;
   }
-};
+}
 
 export async function generateStaticParams() {
-  const { getAllBlogPostSlugs } = await import('../../../lib/dayService');
+  const { getAllBlogPostSlugs } = await import("../../../lib/dayService");
   const slugs = await getAllBlogPostSlugs();
 
   return slugs.map((slug) => ({
