@@ -117,7 +117,7 @@ export interface GeoLocation {
     latitude: number;
     longitude: number;
   };
-  time: Date;
+  time: string;
   description: string;
   index: number;
 }

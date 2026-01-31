@@ -132,11 +132,11 @@ export class GeoDataService {
    * Parse time string to Date object
    * @param timeStr - Time string in format "DD/MM/YYYY HH:MM"
    */
-  private static parseTimeString(timeStr: string): Date {
+  private static parseTimeString(timeStr: string): string {
     // Format: "20/11/2025 02:41"
     const [datePart, timePart] = timeStr.split(" ");
     const [day, month, year] = datePart.split("/").map(Number);
     const [hour, minute] = timePart.split(":").map(Number);
-    return new Date(year, month - 1, day, hour, minute);
+    return new Date(year, month - 1, day, hour, minute).toISOString();
   }
 }
