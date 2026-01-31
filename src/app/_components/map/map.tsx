@@ -121,7 +121,7 @@ export default function MapComponent({ locations }: MapComponentProps) {
                   {debug && (<><strong>{location.index}</strong> <br /></>)}
                   <strong>{location.description}</strong>
                   <br />
-                  {location.time.toLocaleTimeString("nl-NL", {
+                  {new Date(location.time).toLocaleTimeString("nl-NL", {
                     hour: "2-digit",
                     minute: "2-digit",
                     hour12: false,
