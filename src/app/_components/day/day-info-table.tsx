@@ -1,32 +1,31 @@
 'use client';
 
 import { useState } from "react";
-import { DayFrontmatter, CityLocation, PostLinkInfo, GeoLocation } from "../../types";
+import { DayFrontmatter, CityLocation, PostLinkInfo } from "../../types";
 import ArrowButton from "../common/arrow-button";
 import { LocationSticker } from "../common/location-sticker";
 import StatsGrid from "./stats-grid";
 import HeaderLink from "../layout/Link";
-import MapWrapper from "@/app/_components/map/map-wrapper";
-import { MapIcon } from "lucide-react"; 
+import { MapIcon } from "lucide-react";
+import MapWithData from "../map/map-with-data";
 
 interface DayInfoTableProps {
     frontmatter: DayFrontmatter;
     previousPost: PostLinkInfo | null;
     nextPost: PostLinkInfo | null;
-    locations: GeoLocation[];
     week: any;
 }
 
-export default function DayInfoTable({ 
-    frontmatter, 
-    previousPost, 
-    nextPost, 
-    locations, 
-    week 
+export default function DayInfoTable({
+    frontmatter,
+    previousPost,
+    nextPost,
+    week
 }: DayInfoTableProps) {
     const [isMapOpen, setIsMapOpen] = useState(false);
     const { location, date, stats } = frontmatter;
-    const hasLocations = locations && locations.length > 0;
+    const hasLocations = frontmatter.day > 55;
+
 
     const weekLink = week ? (
         <HeaderLink
@@ -40,7 +39,7 @@ export default function DayInfoTable({
     return (
         /* The main container should NOT have grid-rows-[0fr] */
         <div className="flex flex-col border border-border rounded-lg bg-white sticky top-2 z-10 shadow-sm">
-            
+
             {/* 1. VISIBLE INFO AREA (Always visible) */}
             <div className="w-full">
                 {/* Desktop Layout */}
@@ -53,11 +52,10 @@ export default function DayInfoTable({
                     </div>
 
                     {hasLocations && (
-                        <button 
+                        <button
                             onClick={() => setIsMapOpen(!isMapOpen)}
-                            className={`flex items-center gap-2 px-4 py-1.5 rounded-full transition-all text-sm font-medium ${
-                                isMapOpen ? "bg-blue-600 text-white" : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                            }`}
+                            className={`flex items-center gap-2 px-4 py-1.5 rounded-full transition-all text-sm font-medium ${isMapOpen ? "bg-blue-600 text-white" : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+                                }`}
                         >
                             <MapIcon size={16} />
                             {isMapOpen ? "Hide Map" : "Show Map"}
@@ -80,7 +78,7 @@ export default function DayInfoTable({
                         <LocationSticker location={location} />
                     </div>
                     {hasLocations && (
-                        <button 
+                        <button
                             onClick={() => setIsMapOpen(!isMapOpen)}
                             className="w-full flex items-center justify-center gap-2 py-2 rounded-md bg-slate-100 text-sm font-medium"
                         >
@@ -97,16 +95,15 @@ export default function DayInfoTable({
             </div>
 
             {/* 2. COLLAPSIBLE MAP AREA (Only this part slides) */}
-            <div 
-                className={`grid transition-all duration-500 ease-in-out ${
-                    isMapOpen ? "grid-rows-[1fr] opacity-100 border-t" : "grid-rows-[0fr] opacity-0"
-                }`}
+            <div
+                className={`grid transition-all duration-500 ease-in-out ${isMapOpen ? "grid-rows-[1fr] opacity-100 border-t" : "grid-rows-[0fr] opacity-0"
+                    }`}
             >
                 <div className="overflow-hidden">
                     <div className="p-4 bg-slate-50 h-[400px] md:h-[650px]">
                         {/* Only mount the MapWrapper when open to save memory, 
                             or keep it mounted if you want instant toggling */}
-                        {isMapOpen && <MapWrapper locations={locations} />}
+                        {isMapOpen && hasLocations && <MapWithData date={frontmatter.date} />}
                     </div>
                 </div>
             </div>
