@@ -89,6 +89,8 @@ export default function MapComponent({ locations }: MapComponentProps) {
   const centerLat = locations.reduce((sum, loc) => sum + loc.coordinates.latitude, 0) / locations.length;
   const centerLng = locations.reduce((sum, loc) => sum + loc.coordinates.longitude, 0) / locations.length;
 
+  let debug = false;
+
   return (
     <div className="h-[400px] md:h-[600px] w-full">
       <MapContainer
@@ -109,13 +111,14 @@ export default function MapComponent({ locations }: MapComponentProps) {
         <AnimatedPath positions={pathCoordinates} />
 
         {locations.map((location, index) => 
-          location.description !== "" && (
+          ((location.description !== "") || (debug)) && (
             <Marker
               key={index}
               position={[location.coordinates.latitude, location.coordinates.longitude]}
             >
               <Popup>
                 <div>
+                  {debug && (<><strong>{location.index}</strong> <br /></>)}
                   <strong>{location.description}</strong>
                   <br />
                   {location.time.toLocaleTimeString("nl-NL", {

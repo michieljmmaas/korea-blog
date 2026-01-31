@@ -119,4 +119,5 @@ export interface GeoLocation {
   };
   time: Date;
   description: string;
+  index: number;
 }
