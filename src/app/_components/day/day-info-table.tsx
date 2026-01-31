@@ -103,7 +103,7 @@ export default function DayInfoTable({
                     <div className="p-4 bg-slate-50 h-[400px] md:h-[650px]">
                         {/* Only mount the MapWrapper when open to save memory, 
                             or keep it mounted if you want instant toggling */}
-                        {isMapOpen && hasLocations && <MapWithData date={frontmatter.date} />}
+                        {isMapOpen && hasLocations && <MapWithData slug={frontmatter.date} />}
                     </div>
                 </div>
             </div>

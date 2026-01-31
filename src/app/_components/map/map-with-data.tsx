@@ -1,23 +1,26 @@
 'use client';
 
-import { fetchLocations } from '@/app/actions/get-locations';
 import { GeoLocation } from '@/app/types';
 import { useState, useEffect } from 'react';
 import MapWrapper from './map-wrapper';
 
 interface MapWithDataProps {
-  date: string;
+  slug: string;
 }
 
-export default function MapWithData({ date }: MapWithDataProps) {
+export default function MapWithData({ slug }: MapWithDataProps) {
   const [locations, setLocations] = useState<GeoLocation[] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadMapData = async () => {
       try {
-        const data = await fetchLocations(date);
-        setLocations(data);
+        const response = await fetch(`/api/locations/${slug}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          setLocations(data.locations);
+        }
       } catch (error) {
         console.error('Failed to load locations:', error);
       } finally {
@@ -26,7 +29,7 @@ export default function MapWithData({ date }: MapWithDataProps) {
     };
 
     loadMapData();
-  }, [date]);
+  }, [slug]);
 
   if (loading) {
     return (
