@@ -1,9 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import { parseMarkdown } from '../../utils/markdownParser';
-import { BlogPost, BlogPostFrontmatter, WeekData } from '@/app/types';
-import { getAllPosts } from './api';
-
+import fs from "fs";
+import path from "path";
+import { parseMarkdown } from "../../utils/markdownParser";
+import { BlogPost, BlogPostFrontmatter, WeekData } from "@/app/types";
 
 function formatDate(dateString: string): Date {
   return new Date(dateString);
@@ -14,15 +12,15 @@ function formatDate(dateString: string): Date {
  */
 export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
+    const blogPostsDir = path.join(process.cwd(), "content/blogs");
     const files = fs.readdirSync(blogPostsDir);
-    const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
+    const markdownFiles = files.filter((file: string) => file.endsWith(".md"));
 
     const posts: BlogPost[] = [];
 
     for (const file of markdownFiles) {
       const filePath = path.join(blogPostsDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const fileContent = fs.readFileSync(filePath, "utf8");
       const { frontmatter, content } = parseMarkdown(fileContent);
 
       const blogFrontmatter = frontmatter as BlogPostFrontmatter;
@@ -33,7 +31,7 @@ export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
           frontmatter: blogFrontmatter,
           content,
           fileName: file,
-          slug: blogFrontmatter.slug
+          slug: blogFrontmatter.slug,
         });
       }
     }
@@ -47,7 +45,7 @@ export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
 
     return posts;
   } catch (error) {
-    console.error('Error reading blog posts:', error);
+    console.error("Error reading blog posts:", error);
     return [];
   }
 }
@@ -57,15 +55,15 @@ export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
  */
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
+    const blogPostsDir = path.join(process.cwd(), "content/blogs");
 
     // Try to find file by slug in frontmatter
     const files = fs.readdirSync(blogPostsDir);
-    const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
+    const markdownFiles = files.filter((file: string) => file.endsWith(".md"));
 
     for (const file of markdownFiles) {
       const filePath = path.join(blogPostsDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const fileContent = fs.readFileSync(filePath, "utf8");
       const { frontmatter, content } = parseMarkdown(fileContent);
 
       const blogFrontmatter = frontmatter as BlogPostFrontmatter;
@@ -75,7 +73,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
           frontmatter: blogFrontmatter,
           content,
           fileName: file,
-          slug: blogFrontmatter.slug
+          slug: blogFrontmatter.slug,
         };
       }
     }
@@ -106,9 +104,33 @@ export async function getMostRecentBlogPost(): Promise<BlogPost | null> {
 
     return sortedPosts[0];
   } catch (error) {
-    console.error('Error getting most recent blog post:', error);
+    console.error("Error getting most recent blog post:", error);
     return null;
   }
+}
+
+/**
+ * Get random blogpost
+ */
+export async function getRandomBlogpost(current: string | null): Promise<BlogPost> {
+  const allBlogPosts = getAllBlogPostSlugs();
+  return allBlogPosts.then((data) => {
+    let ind = Math.floor(Math.random() * data.length);
+
+    let blogpostSlug = data[ind];
+
+    while (blogpostSlug === current) {
+      ind = Math.floor(Math.random() * data.length);
+      blogpostSlug = data[ind];
+    }
+
+      return getBlogPost(blogpostSlug).then(data => {
+          if (!data) {
+              throw Error("no data");
+          }
+          return data;
+      });
+  });
 }
 
 /**
@@ -116,15 +138,15 @@ export async function getMostRecentBlogPost(): Promise<BlogPost | null> {
  */
 export async function getAllBlogPostSlugs(): Promise<string[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/blogs');
+    const blogPostsDir = path.join(process.cwd(), "content/blogs");
     const files = fs.readdirSync(blogPostsDir);
-    const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
+    const markdownFiles = files.filter((file: string) => file.endsWith(".md"));
 
     const slugs: string[] = [];
 
     for (const file of markdownFiles) {
       const filePath = path.join(blogPostsDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const fileContent = fs.readFileSync(filePath, "utf8");
       const { frontmatter } = parseMarkdown(fileContent);
 
       const blogFrontmatter = frontmatter as BlogPostFrontmatter;
@@ -133,7 +155,7 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
 
     return slugs;
   } catch (error) {
-    console.error('Error reading blog posts directory:', error);
+    console.error("Error reading blog posts directory:", error);
     return [];
   }
 }
@@ -141,12 +163,15 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
 export async function getBlogpostsForWeek(week: WeekData): Promise<BlogPost[]> {
   const allBlogPosts = await getAllRelevantBlogPosts();
   const dates = week.days;
-  const otherPosts = allBlogPosts.filter(post => dates.includes(post.frontmatter.publishdate));
+  const otherPosts = allBlogPosts.filter((post) =>
+    dates.includes(post.frontmatter.publishdate),
+  );
   return otherPosts.slice(0, 2);
 }
 
-
-export async function getRelatedBlogPosts(currentPost: BlogPost): Promise<BlogPost[]> {
+export async function getRelatedBlogPosts(
+  currentPost: BlogPost,
+): Promise<BlogPost[]> {
   try {
     const currentTags = currentPost.frontmatter.tags || [];
 
@@ -156,13 +181,15 @@ export async function getRelatedBlogPosts(currentPost: BlogPost): Promise<BlogPo
 
     // Get all published posts except the current one
     const allPosts = await getAllRelevantBlogPosts();
-    const otherPosts = allPosts.filter(post => post.slug !== currentPost.slug);
+    const otherPosts = allPosts.filter(
+      (post) => post.slug !== currentPost.slug,
+    );
 
     // Find posts with matching tags
-    const relatedPosts = otherPosts.filter(post => {
+    const relatedPosts = otherPosts.filter((post) => {
       const postTags = post.frontmatter.tags || [];
       // Check if there's at least one matching tag
-      return postTags.some(tag => currentTags.includes(tag));
+      return postTags.some((tag) => currentTags.includes(tag));
     });
 
     // If we have 2 or fewer related posts, return them all
@@ -173,9 +200,8 @@ export async function getRelatedBlogPosts(currentPost: BlogPost): Promise<BlogPo
     // If we have more than 2, randomly select 2
     const shuffled = relatedPosts.sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 2);
-
   } catch (error) {
-    console.error('Error getting related blog posts:', error);
+    console.error("Error getting related blog posts:", error);
     return [];
   }
 }

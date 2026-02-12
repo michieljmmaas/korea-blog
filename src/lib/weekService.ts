@@ -41,6 +41,21 @@ export class WeekDataService {
         }
     }
 
+    static async getRandomWeek(current: number | null): Promise<WeekData> {
+        let random = Math.floor(Math.random() * 11);
+
+        while (random === current) 
+            random = Math.floor(Math.random() * 11);{
+        }
+
+        return this.getWeekById(random).then(data => {
+            if (!data) {
+                throw Error("no data");
+            }
+            return data;
+        });
+    }
+
     /**
      * Get all available weeks
      */

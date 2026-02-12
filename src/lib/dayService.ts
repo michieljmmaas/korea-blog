@@ -1,29 +1,28 @@
-import { DayFrontmatter, TripDay } from '@/app/types';
-import fs from 'fs';
-import path from 'path';
-import { parseMarkdown } from '../../utils/markdownParser';
+import { DayFrontmatter, TripDay } from "@/app/types";
+import fs from "fs";
+import path from "path";
+import { parseMarkdown } from "../../utils/markdownParser";
 
 function formatDate(date: Date): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split("T")[0];
 }
 
-
 export async function getBlogPosts(): Promise<TripDay[]> {
-  const blogPostsDir = path.join(process.cwd(), 'content/days');
+  const blogPostsDir = path.join(process.cwd(), "content/days");
 
   try {
     const files = fs.readdirSync(blogPostsDir);
-    const markdownFiles = files.filter((file: string) => file.endsWith('.md'));
+    const markdownFiles = files.filter((file: string) => file.endsWith(".md"));
 
     const days: TripDay[] = [];
 
     for (const file of markdownFiles) {
       const filePath = path.join(blogPostsDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const fileContent = fs.readFileSync(filePath, "utf8");
       const { frontmatter, content } = parseMarkdown(fileContent);
 
       // Extract date from filename (YYYY-MM-DD.md)
-      const dateString = file.replace('.md', '');
+      const dateString = file.replace(".md", "");
       const date = new Date(dateString);
 
       if (!isNaN(date.getTime())) {
@@ -31,15 +30,15 @@ export async function getBlogPosts(): Promise<TripDay[]> {
           day: frontmatter.day,
           date: date,
           formattedDate: formatDate(date),
-          fullDate: date.toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+          fullDate: date.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           }),
           frontmatter: frontmatter as DayFrontmatter,
           content: content,
-          fileName: file
+          fileName: file,
         });
       }
     }
@@ -49,7 +48,7 @@ export async function getBlogPosts(): Promise<TripDay[]> {
 
     return days;
   } catch (error) {
-    console.error('Error reading blog posts:', error);
+    console.error("Error reading blog posts:", error);
 
     return [];
   }
@@ -62,23 +61,35 @@ export interface BlogPost {
   slug: string;
 }
 
-export async function getBlogPostsForDates(dates: string[]): Promise<DayFrontmatter[]> {
+export async function getBlogPostsForDates(
+  dates: string[],
+): Promise<DayFrontmatter[]> {
   return Promise.all(
     dates.map(async (day) => {
-      return getBlogPost(day).then(data => data.frontmatter);
-    }));
+      return getBlogPost(day).then((data) => data.frontmatter);
+    }),
+  );
 }
 
 export async function getBlogForNumber(index: number): Promise<DayFrontmatter> {
   const slugs = await getAllBlogPostSlugs();
   const slug = slugs[index];
-  return getBlogPost(slug).then(data => data.frontmatter);
+  return getBlogPost(slug).then((data) => data.frontmatter);
 }
 
+export async function getRandomDay(current: number | null): Promise<TripDay> {
+  let random = Math.floor(Math.random() * 71);
+
+  while (random === current) {
+    Math.floor(Math.random() * 71);;
+  }
+
+  return getBlogPosts().then((data) => data[random]);
+}
 
 export async function getBlogPost(slug: string): Promise<BlogPost> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/days');
+    const blogPostsDir = path.join(process.cwd(), "content/days");
     const fileName = `${slug}.md`;
     const filePath = path.join(blogPostsDir, fileName);
 
@@ -87,14 +98,14 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
       throw new Error("Post does not exist");
     }
 
-    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const fileContent = fs.readFileSync(filePath, "utf8");
     const { frontmatter, content } = parseMarkdown(fileContent);
 
     return {
       frontmatter: frontmatter as DayFrontmatter,
       content,
       fileName,
-      slug
+      slug,
     };
   } catch (error) {
     throw new Error("Error reading blog post");
@@ -104,14 +115,14 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
 
 export async function getAllBlogPostSlugs(): Promise<string[]> {
   try {
-    const blogPostsDir = path.join(process.cwd(), 'content/days');
+    const blogPostsDir = path.join(process.cwd(), "content/days");
     const files = fs.readdirSync(blogPostsDir);
 
     return files
-      .filter(file => file.endsWith('.md'))
-      .map(file => file.replace('.md', ''));
+      .filter((file) => file.endsWith(".md"))
+      .map((file) => file.replace(".md", ""));
   } catch (error) {
-    console.error('Error reading blog posts directory:', error);
+    console.error("Error reading blog posts directory:", error);
     return [];
   }
 }
@@ -124,7 +135,7 @@ export async function getLatestDay(): Promise<TripDay | null> {
     const days = await getBlogPosts();
 
     // Filter out drafts and find the one with highest date
-    const publishedDays = days.filter(day => day.frontmatter.draft === false);
+    const publishedDays = days.filter((day) => day.frontmatter.draft === false);
 
     if (publishedDays.length === 0) {
       return null;
@@ -135,7 +146,7 @@ export async function getLatestDay(): Promise<TripDay | null> {
       return current.date > latest.date ? current : latest;
     });
   } catch (error) {
-    console.error('Error getting latest day:', error);
+    console.error("Error getting latest day:", error);
     return null;
   }
 }
@@ -155,7 +166,7 @@ export async function getAdjacentPosts(currentDay: number): Promise<{
         posts.push({
           day: post.frontmatter.day,
           slug,
-          title: post.frontmatter.title
+          title: post.frontmatter.title,
         });
       }
     }
@@ -163,14 +174,15 @@ export async function getAdjacentPosts(currentDay: number): Promise<{
     // Sort by day
     posts.sort((a, b) => a.day - b.day);
 
-    const currentIndex = posts.findIndex(post => post.day === currentDay);
+    const currentIndex = posts.findIndex((post) => post.day === currentDay);
 
     return {
       previousPost: currentIndex > 0 ? posts[currentIndex - 1] : null,
-      nextPost: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+      nextPost:
+        currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null,
     };
   } catch (error) {
-    console.error('Error getting adjacent posts:', error);
+    console.error("Error getting adjacent posts:", error);
     return { previousPost: null, nextPost: null };
   }
 }
