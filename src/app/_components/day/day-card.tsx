@@ -1,6 +1,6 @@
 // DayCard.tsx
 import { TripDay } from '@/app/types';
-import { ImageKitImage } from '../common/image-kit-image';
+import Image from 'next/image';
 import { LocationSticker } from '../common/location-sticker';
 import IconFactory from '../common/icon-factory';
 import StatsGrid from './stats-grid';
@@ -14,18 +14,17 @@ interface DayCardProps {
 
 export default function DayCard({ day }: DayCardProps) {
     const { frontmatter } = day;
-    const imageSource = "days/" + day.formattedDate + "/" + day.frontmatter.thumbnail;
     const link = "/day/" + day.formattedDate;
 
     return (
         <BaseCard href={link}>
             <CardImage>
-                <ImageKitImage
-                    source={imageSource}
-                    alt={frontmatter.title}
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, 50vw"
+               <Image
+                    src={`/thumbnails/days-frontpage/${frontmatter.date}.webp`}
+                    alt={frontmatter.date}
+                    fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     priority={false}
                 />
             </CardImage>
