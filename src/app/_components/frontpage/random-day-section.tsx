@@ -1,42 +1,35 @@
 // app/_components/random-day-section.tsx
-'use client';
+"use client";
 
-import { useState, useTransition, ReactNode } from 'react';
-import DayCard from '../day/day-card';
-import { TripDay } from '@/app/types';
+import { useState, useTransition, ReactNode } from "react";
+import DayCard from "../day/day-card";
+import { TripDay } from "@/app/types";
 
 interface RandomDaySectionProps {
   initialDay: TripDay;
-  fetchNewDay: (current: number|null) => Promise<TripDay>;
+  fetchNewDay: (current: number | null) => Promise<TripDay>;
   linkComponent: ReactNode;
 }
 
-export default function RandomDaySection({ 
+export default function RandomDaySection({
   initialDay,
   fetchNewDay,
-  linkComponent
+  linkComponent,
 }: RandomDaySectionProps) {
   const [post, setPost] = useState(initialDay);
   const [isPending, startTransition] = useTransition();
   const [isAnimating, setIsAnimating] = useState(false);
-  const [dataReady, setDataReady] = useState(false);
 
   const handleRefresh = () => {
     setIsAnimating(true);
-    setDataReady(false);
     startTransition(async () => {
       const newPost = await fetchNewDay(post?.day ?? null);
       setPost(newPost);
-      setDataReady(true);
     });
   };
 
-  const handleAnimationIteration = () => {
-    // When one full rotation completes, check if data is ready
-    if (dataReady) {
-      setIsAnimating(false);
-      setDataReady(false);
-    }
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
   };
 
   return (
@@ -59,23 +52,20 @@ export default function RandomDaySection({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={`transition-transform duration-25 ${
-              isAnimating
-                ? 'animate-spin' 
-                : 'group-hover:rotate-45'
+            className={`transition-transform duration-500 ${
+              isAnimating ? "rotate-360" : "group-hover:rotate-90"
             }`}
-            onAnimationIteration={handleAnimationIteration}
+            style={{ transform: isAnimating ? "rotate(360deg)" : undefined }}
+            onTransitionEnd={handleAnimationEnd}
           >
-            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2" />
           </svg>
         </button>
       </div>
       <div className="flex-1">
         <DayCard day={post} />
       </div>
-      <div className="pt-4 mt-auto">
-        {linkComponent}
-      </div>
+      <div className="pt-4 mt-auto">{linkComponent}</div>
     </div>
   );
 }

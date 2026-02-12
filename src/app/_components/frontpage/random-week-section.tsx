@@ -19,24 +19,17 @@ export default function RandomWeekSection({
   const [post, setPost] = useState(initialWeek);
   const [isPending, startTransition] = useTransition();
   const [isAnimating, setIsAnimating] = useState(false);
-  const [dataReady, setDataReady] = useState(false);
 
   const handleRefresh = () => {
     setIsAnimating(true);
-    setDataReady(false);
     startTransition(async () => {
       const newPost = await fetchNewWeek(post?.index ?? null);
       setPost(newPost);
-      setDataReady(true);
     });
   };
 
-  const handleAnimationIteration = () => {
-    // When one full rotation completes, check if data is ready
-    if (dataReady) {
-      setIsAnimating(false);
-      setDataReady(false);
-    }
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
   };
 
   return (
@@ -59,10 +52,11 @@ export default function RandomWeekSection({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={`transition-transform duration-25 ${
-              isAnimating ? "animate-spin" : "group-hover:rotate-45"
+            className={`transition-transform duration-500 ${
+              isAnimating ? "rotate-360" : "group-hover:rotate-90"
             }`}
-            onAnimationIteration={handleAnimationIteration}
+            style={{ transform: isAnimating ? "rotate(360deg)" : undefined }}
+            onTransitionEnd={handleAnimationEnd}
           >
             <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2" />
           </svg>
