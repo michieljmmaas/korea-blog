@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "thumbnails": "tsx scripts/generate-thumbnails.ts",
+    "download-all": "tsx scripts/download-pictures.ts",
     "extract-stats": "node scripts/extract-stats.js",
     "watch": "next dev --turbopack"
   },
