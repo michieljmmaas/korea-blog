@@ -3,7 +3,7 @@
       latitude: 22.6159627
       longitude: 120.3064648
     time: "20/11/2025 09:41"
-    description: ""
+    description: "Hotel location"
     index: 0
   - coordinates:
       latitude: 22.6154662
@@ -39,7 +39,7 @@
       latitude: 22.6269125
       longitude: 120.2869526
     time: "20/11/2025 10:41"
-    description: ""
+    description: "Kaohsiung History Museum"
     index: 6
   - coordinates:
       latitude: 22.6260121
@@ -63,13 +63,13 @@
       latitude: 22.6211749
       longitude: 120.2878529
     time: "20/11/2025 12:42"
-    description: ""
+    description: "Lunch"
     index: 10
   - coordinates:
       latitude: 22.6177523
       longitude: 120.2886402
     time: "20/11/2025 13:23"
-    description: ""
+    description: "Kaohsiung Music Center"
     index: 11
   - coordinates:
       latitude: 22.6178333
@@ -81,7 +81,7 @@
       latitude: 22.6189698
       longitude: 120.2827607
     time: "20/11/2025 13:39"
-    description: ""
+    description: "Pier 2"
     index: 13
   - coordinates:
       latitude: 22.6203349
@@ -141,14 +141,8 @@
       latitude: 22.6562676
       longitude: 120.2862689
     time: "20/11/2025 15:47"
-    description: ""
+    description: "Kaohsiung Fine Arts Center"
     index: 23
-  - coordinates:
-      latitude: 22.6567206
-      longitude: 120.286242
-    time: "20/11/2025 16:08"
-    description: ""
-    index: 24
   - coordinates:
       latitude: 22.660984
       longitude: 120.288527
@@ -171,7 +165,7 @@
       latitude: 22.6806595
       longitude: 120.2924801
     time: "20/11/2025 17:43"
-    description: ""
+    description: "Lotus Pond"
     index: 28
   - coordinates:
       latitude: 22.6822319
@@ -243,7 +237,7 @@
       latitude: 22.6659808
       longitude: 120.2998263
     time: "20/11/2025 19:51"
-    description: ""
+    description: "Ruifeng Street Market"
     index: 40
   - coordinates:
       latitude: 22.6664451
@@ -610,8 +604,8 @@
   - coordinates:
       latitude: 22.6155975
       longitude: 120.3067844
-    time: "22/11/2025 06:48"
-    description: ""
+    time: "22/11/2025 08:15"
+    description: "Leaving for the day"
     index: 0
   - coordinates:
       latitude: 22.6136212
@@ -629,31 +623,19 @@
       latitude: 22.6099466
       longitude: 120.3016535
     time: "22/11/2025 10:38"
-    description: ""
+    description: "Public Library"
     index: 3
-  - coordinates:
-      latitude: 22.6078148
-      longitude: 120.2983014
-    time: "22/11/2025 10:51"
-    description: ""
-    index: 4
   - coordinates:
       latitude: 22.6077265
       longitude: 120.297424
     time: "22/11/2025 10:53"
-    description: ""
+    description: "Exhibition Center"
     index: 5
-  - coordinates:
-      latitude: 22.6107301
-      longitude: 120.2936625
-    time: "22/11/2025 11:02"
-    description: ""
-    index: 6
   - coordinates:
       latitude: 22.6106885
       longitude: 120.2943617
     time: "22/11/2025 11:08"
-    description: ""
+    description: "Cruise Port"
     index: 7
   - coordinates:
       latitude: 22.6194537
@@ -677,7 +659,7 @@
       latitude: 22.6194521
       longitude: 120.2701657
     time: "22/11/2025 11:54"
-    description: ""
+    description: "Ferry"
     index: 11
   - coordinates:
       latitude: 22.6137589
@@ -695,7 +677,7 @@
       latitude: 22.6119044
       longitude: 120.2678853
     time: "22/11/2025 12:28"
-    description: ""
+    description: "Lunch"
     index: 14
   - coordinates:
       latitude: 22.611529
@@ -707,7 +689,7 @@
       latitude: 22.6153081
       longitude: 120.2653266
     time: "22/11/2025 13:21"
-    description: ""
+    description: "Mount Cihou"
     index: 16
   - coordinates:
       latitude: 22.6128245
@@ -734,16 +716,10 @@
     description: ""
     index: 20
   - coordinates:
-      latitude: 22.6009286
-      longitude: 120.2747818
-    time: "22/11/2025 14:13"
-    description: ""
-    index: 21
-  - coordinates:
       latitude: 22.6011109
       longitude: 120.2741581
     time: "22/11/2025 14:24"
-    description: ""
+    description: "Shell Museum"
     index: 22
   - coordinates:
       latitude: 22.5960172
@@ -761,7 +737,7 @@
       latitude: 22.5610338
       longitude: 120.3042657
     time: "22/11/2025 15:04"
-    description: ""
+    description: "Way  too far"
     index: 25
   - coordinates:
       latitude: 22.5761853
@@ -803,7 +779,7 @@
       latitude: 22.6101094
       longitude: 120.2678375
     time: "22/11/2025 16:43"
-    description: ""
+    description: "Watching the sun set"
     index: 32
   - coordinates:
       latitude: 22.6114408
@@ -821,20 +797,8 @@
       latitude: 22.6193515
       longitude: 120.2695672
     time: "22/11/2025 17:51"
-    description: ""
+    description: "Got the ferry back"
     index: 35
-  - coordinates:
-      latitude: 22.6213683
-      longitude: 120.2738385
-    time: "22/11/2025 18:01"
-    description: ""
-    index: 36
-  - coordinates:
-      latitude: 22.6213095
-      longitude: 120.2748088
-    time: "22/11/2025 18:03"
-    description: ""
-    index: 37
   - coordinates:
       latitude: 22.6313164
       longitude: 120.3040882
@@ -851,7 +815,19 @@
       latitude: 22.615381
       longitude: 120.3068557
     time: "22/11/2025 18:41"
-    description: ""
+    description: "Back in the hotel"
+    index: 40
+  - coordinates:
+      latitude: 22.624483
+      longitude: 120.301432
+    time: "22/11/2025 20:54"
+    description: "Hotel Indigo - Rooftop bar"
+    index: 40
+  - coordinates:
+      latitude: 22.615381
+      longitude: 120.3069
+    time: "22/11/2025 23:23"
+    description: "Going to bed"
     index: 40
 2025-11-23:
   - coordinates:
@@ -5581,7 +5557,6 @@
     time: "04/12/2025 22:19"
     description: ""
     index: 170
-2025-12-05:
   - coordinates:
       latitude: 52.3130228
       longitude: 4.7613302
@@ -5726,7 +5701,6 @@
     time: "05/12/2025 13:51"
     description: ""
     index: 23
-2025-12-06:
   - coordinates:
       latitude: 52.0429213
       longitude: 4.3102501
