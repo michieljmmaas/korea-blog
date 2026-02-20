@@ -508,7 +508,7 @@
       latitude: 22.6311365
       longitude: 120.3019778
     time: "21/11/2025 16:39"
-    description: ""
+    description: "Dome of Light"
     index: 38
   - coordinates:
       latitude: 22.630826
@@ -834,19 +834,19 @@
       latitude: 22.6155516
       longitude: 120.3068099
     time: "23/11/2025 05:58"
-    description: ""
+    description: "Awake"
     index: 0
   - coordinates:
       latitude: 22.9029356
       longitude: 120.2973133
     time: "23/11/2025 09:10"
-    description: ""
+    description: "In the train"
     index: 1
   - coordinates:
       latitude: 23.3572259
       longitude: 120.3275212
     time: "23/11/2025 09:26"
-    description: ""
+    description: "Catching the bus"
     index: 2
   - coordinates:
       latitude: 23.4260886
@@ -882,7 +882,7 @@
       latitude: 23.512169
       longitude: 120.8035024
     time: "23/11/2025 13:09"
-    description: ""
+    description: "Arrived at Alisan"
     index: 8
   - coordinates:
       latitude: 23.5123631
@@ -912,7 +912,7 @@
       latitude: 23.5106794
       longitude: 120.8047315
     time: "23/11/2025 15:28"
-    description: ""
+    description: "Leaving to explore the park"
     index: 13
   - coordinates:
       latitude: 23.5144844
@@ -936,7 +936,7 @@
       latitude: 23.5189205
       longitude: 120.8140999
     time: "23/11/2025 16:01"
-    description: ""
+    description: "Two Sister's Pond"
     index: 17
   - coordinates:
       latitude: 23.5169753
@@ -960,7 +960,7 @@
       latitude: 23.5107741
       longitude: 120.8046476
     time: "23/11/2025 16:55"
-    description: ""
+    description: "Back to the hub"
     index: 21
   - coordinates:
       latitude: 23.5121191
@@ -979,7 +979,7 @@
       latitude: 23.5099709
       longitude: 120.804629
     time: "24/11/2025 05:01"
-    description: ""
+    description: "At the station"
     index: 1
   - coordinates:
       latitude: 23.5134616
@@ -1003,20 +1003,14 @@
       latitude: 23.5101507
       longitude: 120.8230087
     time: "24/11/2025 05:47"
-    description: ""
+    description: "Final stop"
     index: 5
   - coordinates:
       latitude: 23.5061579
       longitude: 120.8238606
     time: "24/11/2025 06:04"
-    description: ""
+    description: "Watching the sun rise"
     index: 6
-  - coordinates:
-      latitude: 23.4783186
-      longitude: 120.8518683
-    time: "24/11/2025 07:13"
-    description: ""
-    index: 7
   - coordinates:
       latitude: 23.5073835
       longitude: 120.8230675
@@ -1069,7 +1063,7 @@
       latitude: 23.5049978
       longitude: 120.803373
     time: "24/11/2025 09:04"
-    description: ""
+    description: "Biggest Tree"
     index: 16
   - coordinates:
       latitude: 23.5101962
@@ -1099,13 +1093,13 @@
       latitude: 23.516727
       longitude: 120.8082071
     time: "24/11/2025 09:52"
-    description: ""
+    description: "Three Generation's Tree"
     index: 21
   - coordinates:
       latitude: 23.5190537
       longitude: 120.8072536
     time: "24/11/2025 10:08"
-    description: ""
+    description: "Tree Top Boardwalk"
     index: 22
   - coordinates:
       latitude: 23.5176267
@@ -1135,13 +1129,13 @@
       latitude: 23.51196616
       longitude: 120.803294
     time: "24/11/2025 11:55"
-    description: ""
+    description: "Checking out"
     index: 27
   - coordinates:
       latitude: 23.5085756
       longitude: 120.8014818
-    time: "24/11/2025 12:10"
-    description: ""
+    time: "24/11/2025 13:34"
+    description: "Taking the bus back"
     index: 28
   - coordinates:
       latitude: 23.50516613
@@ -1240,28 +1234,16 @@
     description: ""
     index: 44
   - coordinates:
-      latitude: 23.46083
-      longitude: 120.2995466
-    time: "24/11/2025 16:03"
-    description: ""
-    index: 45
-  - coordinates:
       latitude: 23.4586605
       longitude: 120.3231476
     time: "24/11/2025 16:18"
     description: ""
     index: 46
   - coordinates:
-      latitude: 23.4601089
-      longitude: 120.3237959
-    time: "24/11/2025 16:57"
-    description: ""
-    index: 47
-  - coordinates:
       latitude: 23.4595317
       longitude: 120.3239029
     time: "24/11/2025 17:08"
-    description: ""
+    description: "Train to Taipei"
     index: 48
   - coordinates:
       latitude: 23.4876591
@@ -1399,7 +1381,7 @@
       latitude: 25.0475823
       longitude: 121.5157675
     time: "24/11/2025 18:31"
-    description: ""
+    description: "Arrived at Taipei Station"
     index: 71
   - coordinates:
       latitude: 25.0567125
@@ -1442,7 +1424,7 @@
       latitude: 25.1018764
       longitude: 121.5485519
     time: "25/11/2025 10:25"
-    description: ""
+    description: "Palace Museum"
     index: 4
   - coordinates:
       latitude: 25.1023978
@@ -1535,16 +1517,10 @@
     description: ""
     index: 19
   - coordinates:
-      latitude: 25.07079
-      longitude: 121.5193561
-    time: "25/11/2025 14:44"
-    description: ""
-    index: 20
-  - coordinates:
       latitude: 25.0720743
       longitude: 121.5244268
     time: "25/11/2025 15:05"
-    description: ""
+    description: "Taipei Fine Arts Museum"
     index: 21
   - coordinates:
       latitude: 25.0718961
@@ -1598,7 +1574,7 @@
       latitude: 25.0342955
       longitude: 121.5647798
     time: "25/11/2025 18:08"
-    description: ""
+    description: "Taipei 101"
     index: 30
   - coordinates:
       latitude: 25.0337171
@@ -1640,7 +1616,7 @@
       latitude: 25.0069768
       longitude: 121.5585043
     time: "25/11/2025 19:48"
-    description: ""
+    description: "Oops. wrong way!"
     index: 37
   - coordinates:
       latitude: 25.0335133
@@ -1682,7 +1658,7 @@
       latitude: 25.050867
       longitude: 121.5770676
     time: "25/11/2025 20:36"
-    description: ""
+    description: "Raohe Street Market"
     index: 44
   - coordinates:
       latitude: 25.050302
