@@ -86,16 +86,16 @@ export default function MapComponent({ locations }: MapComponentProps) {
     (loc) => [loc.coordinates.latitude, loc.coordinates.longitude] as [number, number]
   );
 
-  const centerLat = locations.reduce((sum, loc) => sum + loc.coordinates.latitude, 0) / locations.length;
-  const centerLng = locations.reduce((sum, loc) => sum + loc.coordinates.longitude, 0) / locations.length;
+  // const centerLat = locations.reduce((sum, loc) => sum + loc.coordinates.latitude, 0) / locations.length;
+  // const centerLng = locations.reduce((sum, loc) => sum + loc.coordinates.longitude, 0) / locations.length;
 
   let debug = false;
 
   return (
     <div className="h-[400px] md:h-[600px] w-full">
       <MapContainer
-        center={[centerLat, centerLng]}
-        zoom={10}
+        center={[locations[0].coordinates.latitude, locations[0].coordinates.longitude]}
+        zoom={13}
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%" }}
         className="rounded-lg z-0"

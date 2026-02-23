@@ -1707,7 +1707,7 @@
       latitude: 25.0506731
       longitude: 121.5316009
     time: "26/11/2025 00:07"
-    description: ""
+    description: "Start of the day"
     index: 0
   - coordinates:
       latitude: 25.0505545
@@ -1737,7 +1737,7 @@
       latitude: 25.0451653
       longitude: 121.5229989
     time: "26/11/2025 09:53"
-    description: ""
+    description: "MOCA Taipei"
     index: 5
   - coordinates:
       latitude: 25.0498443
@@ -1755,7 +1755,7 @@
       latitude: 25.0520507
       longitude: 121.5126093
     time: "26/11/2025 12:14"
-    description: ""
+    description: "Lunch"
     index: 8
   - coordinates:
       latitude: 25.0538419
@@ -1809,7 +1809,7 @@
       latitude: 25.0369209
       longitude: 121.5000459
     time: "26/11/2025 14:03"
-    description: ""
+    description: "Lungshan Temple"
     index: 17
   - coordinates:
       latitude: 25.0373897
@@ -1839,7 +1839,7 @@
       latitude: 25.042178
       longitude: 121.5071247
     time: "26/11/2025 15:06"
-    description: ""
+    description: "Red House"
     index: 22
   - coordinates:
       latitude: 25.0453921
@@ -1887,7 +1887,7 @@
       latitude: 25.035775
       longitude: 121.5188245
     time: "26/11/2025 16:39"
-    description: ""
+    description: "Chiang Kai-shek Memorial"
     index: 30
   - coordinates:
       latitude: 25.0353218
@@ -1929,7 +1929,7 @@
       latitude: 25.0506707
       longitude: 121.5315996
     time: "26/11/2025 18:55"
-    description: ""
+    description: "Stuffing my face at the hotel"
     index: 37
 2025-11-27:
   - coordinates:
@@ -2011,60 +2011,30 @@
     description: ""
     index: 12
   - coordinates:
-      latitude: 25.0815149
-      longitude: 121.2389573
-    time: "27/11/2025 11:55"
-    description: ""
-    index: 13
-  - coordinates:
-      latitude: 25.0823228
-      longitude: 121.2374753
-    time: "27/11/2025 12:10"
-    description: ""
-    index: 14
-  - coordinates:
-      latitude: 25.0813628
-      longitude: 121.2371891
-    time: "27/11/2025 12:27"
-    description: ""
-    index: 15
-  - coordinates:
       latitude: 25.0840111
       longitude: 121.2379956
-    time: "27/11/2025 12:42"
-    description: ""
+    time: "27/11/2025 13:30"
+    description: "Boarding"
     index: 16
   - coordinates:
-      latitude: 22.3079671
-      longitude: 114.1727486
-    time: "27/11/2025 20:21"
-    description: ""
-    index: 17
+      latitude: 22.3098202
+      longitude: 113.9175524
+    time: "27/11/2025 16:33"
+    description: "Arrived in Hong Kong"
+    index: 15
   - coordinates:
-      latitude: 22.3076778
-      longitude: 114.1733493
-    time: "27/11/2025 21:00"
-    description: ""
-    index: 18
-  - coordinates:
-      latitude: 22.3079443
-      longitude: 114.1727306
-    time: "27/11/2025 21:15"
-    description: ""
+      latitude: 22.3077
+      longitude: 114.1725
+    time: "27/11/2025 18:15"
+    description: "At the hotel"
     index: 19
+  - coordinates:
+      latitude: 22.30672752
+      longitude: 114.1699748
+    time: "29/11/2025 19:15"
+    description: "Dinner at Temple Street"
+    index: 49
 2025-11-28:
-  - coordinates:
-      latitude: 22.3078482
-      longitude: 114.1724836
-    time: "28/11/2025 00:14"
-    description: ""
-    index: 0
-  - coordinates:
-      latitude: 22.3075624
-      longitude: 114.1735502
-    time: "28/11/2025 07:30"
-    description: ""
-    index: 1
   - coordinates:
       latitude: 22.3079791
       longitude: 114.1727116
@@ -2075,7 +2045,7 @@
       latitude: 22.3066259
       longitude: 114.1720981
     time: "28/11/2025 11:15"
-    description: ""
+    description: "'Breakfast'"
     index: 3
   - coordinates:
       latitude: 22.3060741
@@ -2102,12 +2072,6 @@
     description: ""
     index: 7
   - coordinates:
-      latitude: 22.3031818
-      longitude: 114.1751214
-    time: "28/11/2025 11:45"
-    description: ""
-    index: 8
-  - coordinates:
       latitude: 22.3035332
       longitude: 114.1742363
     time: "28/11/2025 11:46"
@@ -2126,125 +2090,17 @@
     description: ""
     index: 11
   - coordinates:
-      latitude: 22.3027489
-      longitude: 114.1774304
-    time: "28/11/2025 11:47"
-    description: ""
-    index: 12
-  - coordinates:
-      latitude: 22.3029919
-      longitude: 114.1769326
-    time: "28/11/2025 11:48"
-    description: ""
-    index: 13
-  - coordinates:
-      latitude: 22.3029089
-      longitude: 114.1774227
-    time: "28/11/2025 11:50"
-    description: ""
-    index: 14
-  - coordinates:
-      latitude: 22.3015021
-      longitude: 114.1787154
-    time: "28/11/2025 11:51"
-    description: ""
-    index: 15
-  - coordinates:
-      latitude: 22.3026053
-      longitude: 114.1783311
-    time: "28/11/2025 11:51"
-    description: ""
-    index: 16
-  - coordinates:
-      latitude: 22.3015005
-      longitude: 114.1782681
-    time: "28/11/2025 11:52"
-    description: ""
-    index: 17
-  - coordinates:
-      latitude: 22.3005386
-      longitude: 114.1777314
-    time: "28/11/2025 11:53"
-    description: ""
-    index: 18
-  - coordinates:
-      latitude: 22.3011457
-      longitude: 114.1773208
-    time: "28/11/2025 11:56"
-    description: ""
-    index: 19
-  - coordinates:
-      latitude: 22.3016907
-      longitude: 114.1771314
-    time: "28/11/2025 11:59"
-    description: ""
-    index: 20
-  - coordinates:
-      latitude: 22.3025275
-      longitude: 114.1775978
-    time: "28/11/2025 13:02"
-    description: ""
-    index: 21
-  - coordinates:
       latitude: 22.301592
       longitude: 114.1770971
     time: "28/11/2025 13:19"
-    description: ""
+    description: "Hong Kong Museum of History"
     index: 22
-  - coordinates:
-      latitude: 22.3006956
-      longitude: 114.1763391
-    time: "28/11/2025 13:25"
-    description: ""
-    index: 23
-  - coordinates:
-      latitude: 22.30115853
-      longitude: 114.1766463
-    time: "28/11/2025 13:26"
-    description: ""
-    index: 24
-  - coordinates:
-      latitude: 22.3003235
-      longitude: 114.1762238
-    time: "28/11/2025 13:29"
-    description: ""
-    index: 25
-  - coordinates:
-      latitude: 22.2995681
-      longitude: 114.1756352
-    time: "28/11/2025 13:29"
-    description: ""
-    index: 26
-  - coordinates:
-      latitude: 22.2990894
-      longitude: 114.1755931
-    time: "28/11/2025 13:30"
-    description: ""
-    index: 27
-  - coordinates:
-      latitude: 22.2983019
-      longitude: 114.1756587
-    time: "28/11/2025 13:31"
-    description: ""
-    index: 28
-  - coordinates:
-      latitude: 22.2987732
-      longitude: 114.175561
-    time: "28/11/2025 13:32"
-    description: ""
-    index: 29
   - coordinates:
       latitude: 22.296773
       longitude: 114.1754461
     time: "28/11/2025 13:34"
     description: ""
     index: 30
-  - coordinates:
-      latitude: 22.302166
-      longitude: 114.176592
-    time: "28/11/2025 13:36"
-    description: ""
-    index: 31
   - coordinates:
       latitude: 22.2940341
       longitude: 114.1722071
@@ -2255,20 +2111,8 @@
       latitude: 22.2936511
       longitude: 114.1717912
     time: "28/11/2025 13:44"
-    description: ""
+    description: "Hong Kong Museum of Art"
     index: 33
-  - coordinates:
-      latitude: 22.2936393
-      longitude: 114.1723844
-    time: "28/11/2025 14:39"
-    description: ""
-    index: 34
-  - coordinates:
-      latitude: 22.2948762
-      longitude: 114.1714849
-    time: "28/11/2025 15:03"
-    description: ""
-    index: 35
   - coordinates:
       latitude: 22.2933165
       longitude: 114.1710848
@@ -2294,22 +2138,10 @@
     description: ""
     index: 39
   - coordinates:
-      latitude: 22.2934266
-      longitude: 114.1735466
-    time: "28/11/2025 15:09"
-    description: ""
-    index: 40
-  - coordinates:
-      latitude: 22.2931004
-      longitude: 114.1744062
-    time: "28/11/2025 15:10"
-    description: ""
-    index: 41
-  - coordinates:
       latitude: 22.2930914
       longitude: 114.1736554
     time: "28/11/2025 15:10"
-    description: ""
+    description: "Avenue of the Stars"
     index: 42
   - coordinates:
       latitude: 22.293127
@@ -2330,29 +2162,11 @@
     description: ""
     index: 45
   - coordinates:
-      latitude: 22.29708852
-      longitude: 114.1755174
-    time: "28/11/2025 15:28"
-    description: ""
-    index: 46
-  - coordinates:
       latitude: 22.2974471
       longitude: 114.1742277
     time: "28/11/2025 15:31"
     description: ""
     index: 47
-  - coordinates:
-      latitude: 22.2969083
-      longitude: 114.1743966
-    time: "28/11/2025 15:31"
-    description: ""
-    index: 48
-  - coordinates:
-      latitude: 22.2974186
-      longitude: 114.1744519
-    time: "28/11/2025 15:32"
-    description: ""
-    index: 49
   - coordinates:
       latitude: 22.2979704
       longitude: 114.1736525
@@ -2375,14 +2189,8 @@
       latitude: 22.3000567
       longitude: 114.1740587
     time: "28/11/2025 15:40"
-    description: ""
+    description: "Eating Goose"
     index: 53
-  - coordinates:
-      latitude: 22.2993138
-      longitude: 114.1734678
-    time: "28/11/2025 15:45"
-    description: ""
-    index: 54
   - coordinates:
       latitude: 22.2999761
       longitude: 114.1737712
@@ -2390,59 +2198,11 @@
     description: ""
     index: 55
   - coordinates:
-      latitude: 22.2998729
-      longitude: 114.1731997
-    time: "28/11/2025 16:08"
-    description: ""
-    index: 56
-  - coordinates:
-      latitude: 22.299478
-      longitude: 114.1734903
-    time: "28/11/2025 16:09"
-    description: ""
-    index: 57
-  - coordinates:
       latitude: 22.2985778
       longitude: 114.173658
     time: "28/11/2025 16:11"
     description: ""
     index: 58
-  - coordinates:
-      latitude: 22.2978057
-      longitude: 114.1739684
-    time: "28/11/2025 16:12"
-    description: ""
-    index: 59
-  - coordinates:
-      latitude: 22.2981999
-      longitude: 114.1730623
-    time: "28/11/2025 16:12"
-    description: ""
-    index: 60
-  - coordinates:
-      latitude: 22.2972004
-      longitude: 114.1736801
-    time: "28/11/2025 16:13"
-    description: ""
-    index: 61
-  - coordinates:
-      latitude: 22.297604
-      longitude: 114.1732068
-    time: "28/11/2025 16:13"
-    description: ""
-    index: 62
-  - coordinates:
-      latitude: 22.297158
-      longitude: 114.1723324
-    time: "28/11/2025 16:14"
-    description: ""
-    index: 63
-  - coordinates:
-      latitude: 22.2967035
-      longitude: 114.1722324
-    time: "28/11/2025 16:17"
-    description: ""
-    index: 64
   - coordinates:
       latitude: 22.29724
       longitude: 114.1722903
@@ -2471,8 +2231,14 @@
       latitude: 22.3079028
       longitude: 114.1724356
     time: "28/11/2025 16:27"
-    description: ""
+    description: "Prepping of the MAMA"
     index: 69
+  - coordinates:
+      latitude: 22.3054178
+      longitude: 114.1717905
+    time: "28/11/2025 17:43"
+    description: ""
+    index: 71
   - coordinates:
       latitude: 22.3056662
       longitude: 114.1663229
@@ -2561,20 +2327,14 @@
       latitude: 22.3223105
       longitude: 114.1971867
     time: "28/11/2025 18:33"
-    description: ""
+    description: "MAMA - Day 1"
     index: 84
   - coordinates:
       latitude: 22.3224346
       longitude: 114.1982034
     time: "28/11/2025 22:01"
-    description: ""
+    description: "Heading back to the hotel"
     index: 85
-  - coordinates:
-      latitude: 22.3221837
-      longitude: 114.1993153
-    time: "28/11/2025 22:02"
-    description: ""
-    index: 86
   - coordinates:
       latitude: 22.323533
       longitude: 114.1967177
@@ -2709,22 +2469,10 @@
     index: 108
 2025-11-29:
   - coordinates:
-      latitude: 22.3074813
-      longitude: 114.1724743
-    time: "29/11/2025 00:11"
-    description: ""
-    index: 0
-  - coordinates:
-      latitude: 22.3075884
-      longitude: 114.1731532
-    time: "29/11/2025 00:41"
-    description: ""
-    index: 1
-  - coordinates:
       latitude: 22.3078121
       longitude: 114.1724771
-    time: "29/11/2025 00:57"
-    description: ""
+    time: "29/11/2025 9:02"
+    description: "Waking up"
     index: 2
   - coordinates:
       latitude: 22.3056303
@@ -2796,38 +2544,8 @@
       latitude: 22.3765864
       longitude: 114.1855295
     time: "29/11/2025 10:15"
-    description: ""
+    description: "Hong Kong Heritage Museum"
     index: 14
-  - coordinates:
-      latitude: 22.3769461
-      longitude: 114.1859091
-    time: "29/11/2025 10:46"
-    description: ""
-    index: 15
-  - coordinates:
-      latitude: 22.3768361
-      longitude: 114.1854291
-    time: "29/11/2025 11:03"
-    description: ""
-    index: 16
-  - coordinates:
-      latitude: 22.3768686
-      longitude: 114.1859578
-    time: "29/11/2025 11:29"
-    description: ""
-    index: 17
-  - coordinates:
-      latitude: 22.3771485
-      longitude: 114.1852754
-    time: "29/11/2025 11:49"
-    description: ""
-    index: 18
-  - coordinates:
-      latitude: 22.3769476
-      longitude: 114.1857338
-    time: "29/11/2025 12:01"
-    description: ""
-    index: 19
   - coordinates:
       latitude: 22.3779736
       longitude: 114.1860876
@@ -2922,14 +2640,8 @@
       latitude: 22.31178283
       longitude: 114.1706686
     time: "29/11/2025 13:22"
-    description: ""
+    description: "My first Mixue drink"
     index: 35
-  - coordinates:
-      latitude: 22.3107294
-      longitude: 114.1709445
-    time: "29/11/2025 13:31"
-    description: ""
-    index: 36
   - coordinates:
       latitude: 22.3099608
       longitude: 114.1710523
@@ -2943,58 +2655,16 @@
     description: ""
     index: 38
   - coordinates:
-      latitude: 22.3081965
-      longitude: 114.1717867
+      latitude: 22.3078121
+      longitude: 114.1724771
     time: "29/11/2025 13:39"
     description: ""
     index: 39
   - coordinates:
-      latitude: 22.3077622
-      longitude: 114.1724501
-    time: "29/11/2025 13:59"
-    description: ""
-    index: 40
-  - coordinates:
-      latitude: 22.3075551
-      longitude: 114.1735304
-    time: "29/11/2025 14:45"
-    description: ""
-    index: 41
-  - coordinates:
-      latitude: 22.3079592
-      longitude: 114.1726632
-    time: "29/11/2025 14:50"
-    description: ""
-    index: 42
-  - coordinates:
-      latitude: 22.3090023
-      longitude: 114.1710955
-    time: "29/11/2025 15:57"
-    description: ""
-    index: 43
-  - coordinates:
-      latitude: 22.308684
-      longitude: 114.1718369
-    time: "29/11/2025 16:13"
-    description: ""
-    index: 44
-  - coordinates:
-      latitude: 22.308261
-      longitude: 114.1715525
-    time: "29/11/2025 16:13"
-    description: ""
-    index: 45
-  - coordinates:
-      latitude: 22.3086871
-      longitude: 114.1709501
-    time: "29/11/2025 16:15"
-    description: ""
-    index: 46
-  - coordinates:
       latitude: 22.30846587
       longitude: 114.1704397
     time: "29/11/2025 16:23"
-    description: ""
+    description: "Laundromat"
     index: 47
   - coordinates:
       latitude: 22.307635
@@ -3027,82 +2697,16 @@
     description: ""
     index: 52
   - coordinates:
-      latitude: 22.3077637
-      longitude: 114.1715825
-    time: "29/11/2025 16:38"
+      latitude: 22.3078121
+      longitude: 114.1724771
+    time: "29/11/2025 16:35"
     description: ""
     index: 53
-  - coordinates:
-      latitude: 22.3085514
-      longitude: 114.1709329
-    time: "29/11/2025 16:40"
-    description: ""
-    index: 54
-  - coordinates:
-      latitude: 22.3080673
-      longitude: 114.171506
-    time: "29/11/2025 16:44"
-    description: ""
-    index: 55
-  - coordinates:
-      latitude: 22.3078571
-      longitude: 114.1724111
-    time: "29/11/2025 16:47"
-    description: ""
-    index: 56
-  - coordinates:
-      latitude: 22.3084122
-      longitude: 114.171718
-    time: "29/11/2025 17:04"
-    description: ""
-    index: 57
-  - coordinates:
-      latitude: 22.3085397
-      longitude: 114.1709199
-    time: "29/11/2025 17:05"
-    description: ""
-    index: 58
-  - coordinates:
-      latitude: 22.3083073
-      longitude: 114.1714909
-    time: "29/11/2025 17:13"
-    description: ""
-    index: 59
-  - coordinates:
-      latitude: 22.3080756
-      longitude: 114.1722377
-    time: "29/11/2025 17:15"
-    description: ""
-    index: 60
-  - coordinates:
-      latitude: 22.30835
-      longitude: 114.1716733
-    time: "29/11/2025 17:15"
-    description: ""
-    index: 61
-  - coordinates:
-      latitude: 22.30813532
-      longitude: 114.1725021
-    time: "29/11/2025 17:16"
-    description: ""
-    index: 62
-  - coordinates:
-      latitude: 22.30837386
-      longitude: 114.1718044
-    time: "29/11/2025 17:25"
-    description: ""
-    index: 63
-  - coordinates:
-      latitude: 22.3088088
-      longitude: 114.171361
-    time: "29/11/2025 17:27"
-    description: ""
-    index: 64
   - coordinates:
       latitude: 22.3113737
       longitude: 114.1708602
     time: "29/11/2025 17:30"
-    description: ""
+    description: "My second Mixue drink"
     index: 65
   - coordinates:
       latitude: 22.3119161
@@ -3159,53 +2763,11 @@
     description: ""
     index: 74
   - coordinates:
-      latitude: 22.3221678
-      longitude: 114.1982039
-    time: "29/11/2025 18:10"
-    description: ""
-    index: 75
-  - coordinates:
-      latitude: 22.4460741
-      longitude: 114.034457
-    time: "29/11/2025 18:12"
-    description: ""
-    index: 76
-  - coordinates:
-      latitude: 22.3221436
-      longitude: 114.1981677
-    time: "29/11/2025 18:12"
-    description: ""
-    index: 77
-  - coordinates:
-      latitude: 22.3226608
-      longitude: 114.1982092
-    time: "29/11/2025 18:18"
-    description: ""
-    index: 78
-  - coordinates:
       latitude: 22.3223379
       longitude: 114.197224
     time: "29/11/2025 18:29"
-    description: ""
+    description: "MAMA - Day 2"
     index: 79
-  - coordinates:
-      latitude: 22.3223475
-      longitude: 114.1981937
-    time: "29/11/2025 20:56"
-    description: ""
-    index: 80
-  - coordinates:
-      latitude: 22.3223201
-      longitude: 114.1972145
-    time: "29/11/2025 21:02"
-    description: ""
-    index: 81
-  - coordinates:
-      latitude: 22.321867
-      longitude: 114.1983841
-    time: "29/11/2025 22:09"
-    description: ""
-    index: 82
   - coordinates:
       latitude: 22.3216417
       longitude: 114.196109
@@ -3231,41 +2793,11 @@
     description: ""
     index: 86
   - coordinates:
-      latitude: 22.3080333
-      longitude: 114.1848582
-    time: "29/11/2025 22:34"
-    description: ""
-    index: 87
-  - coordinates:
       latitude: 22.3122642
       longitude: 114.1708688
     time: "29/11/2025 22:37"
-    description: ""
+    description: "My third Mixue drink"
     index: 88
-  - coordinates:
-      latitude: 22.31146
-      longitude: 114.1711971
-    time: "29/11/2025 22:40"
-    description: ""
-    index: 89
-  - coordinates:
-      latitude: 22.3119257
-      longitude: 114.1705956
-    time: "29/11/2025 22:41"
-    description: ""
-    index: 90
-  - coordinates:
-      latitude: 22.3116537
-      longitude: 114.1712541
-    time: "29/11/2025 22:42"
-    description: ""
-    index: 91
-  - coordinates:
-      latitude: 22.3124632
-      longitude: 114.1706811
-    time: "29/11/2025 22:49"
-    description: ""
-    index: 92
   - coordinates:
       latitude: 22.3093089
       longitude: 114.1712312
@@ -3273,71 +2805,17 @@
     description: ""
     index: 93
   - coordinates:
-      latitude: 22.3074124
-      longitude: 114.1715155
-    time: "29/11/2025 22:53"
-    description: ""
-    index: 94
-  - coordinates:
-      latitude: 22.30910794
-      longitude: 114.1713688
-    time: "29/11/2025 22:53"
-    description: ""
-    index: 95
-  - coordinates:
-      latitude: 22.3105278
-      longitude: 114.1712534
-    time: "29/11/2025 22:54"
-    description: ""
-    index: 96
-  - coordinates:
-      latitude: 22.3085087
-      longitude: 114.1712585
-    time: "29/11/2025 22:54"
-    description: ""
-    index: 97
-  - coordinates:
-      latitude: 22.3078928
-      longitude: 114.1717594
-    time: "29/11/2025 22:55"
-    description: ""
-    index: 98
-  - coordinates:
-      latitude: 22.308389
-      longitude: 114.1710194
-    time: "29/11/2025 22:55"
-    description: ""
-    index: 99
-  - coordinates:
       latitude: 22.307911
       longitude: 114.1715424
     time: "29/11/2025 22:59"
     description: ""
     index: 100
   - coordinates:
-      latitude: 22.3084506
-      longitude: 114.1712641
-    time: "29/11/2025 23:01"
-    description: ""
-    index: 101
-  - coordinates:
       latitude: 22.3078486
       longitude: 114.1724196
     time: "29/11/2025 23:02"
     description: ""
     index: 102
-  - coordinates:
-      latitude: 22.3075946
-      longitude: 114.1735239
-    time: "29/11/2025 23:19"
-    description: ""
-    index: 103
-  - coordinates:
-      latitude: 22.3078417
-      longitude: 114.1724576
-    time: "29/11/2025 23:35"
-    description: ""
-    index: 104
 2025-11-30:
   - coordinates:
       latitude: 22.3078955
