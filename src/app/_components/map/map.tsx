@@ -5,7 +5,6 @@ import L from "leaflet";
 import { useEffect } from "react";
 import { GeoLocation } from "@/app/types";
 
-// Fix the default icon issue
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
@@ -17,22 +16,41 @@ interface MapComponentProps {
   locations: GeoLocation[];
 }
 
-/**
- * Fixes the map rendering issue when inside a collapsible container.
- * It waits for the CSS transition (500ms) to finish before telling Leaflet to recalculate.
- */
+function createNumberedIcon(number: number, color: string): L.DivIcon {
+  return L.divIcon({
+    className: "",
+    html: `
+      <div style="
+        background: ${color};
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: sans-serif;
+        border: 2px solid white;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      ">${number}</div>
+    `,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -16],
+  });
+}
+
 function MapResizer() {
   const map = useMap();
   useEffect(() => {
-    const timer = setTimeout(() => {
-      map.invalidateSize();
-    }, 500); 
+    const timer = setTimeout(() => map.invalidateSize(), 500);
     return () => clearTimeout(timer);
   }, [map]);
   return null;
 }
 
-// Component to add animated path
 function AnimatedPath({ positions }: { positions: [number, number][] }) {
   const map = useMap();
 
@@ -82,13 +100,12 @@ export default function MapComponent({ locations }: MapComponentProps) {
     );
   }
 
+
   const pathCoordinates = locations.map(
     (loc) => [loc.coordinates.latitude, loc.coordinates.longitude] as [number, number]
   );
 
-  // const centerLat = locations.reduce((sum, loc) => sum + loc.coordinates.latitude, 0) / locations.length;
-  // const centerLng = locations.reduce((sum, loc) => sum + loc.coordinates.longitude, 0) / locations.length;
-
+  let count = 0;
   let debug = false;
 
   return (
@@ -105,32 +122,45 @@ export default function MapComponent({ locations }: MapComponentProps) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* This fixes the "thin line" / gray map issue after sliding open */}
         <MapResizer />
-        
         <AnimatedPath positions={pathCoordinates} />
 
-        {locations.map((location, index) => 
-          ((location.description !== "") || (debug)) && (
+        {locations.map((location, index) => {
+          if (!debug && !location.description) {
+            return;
+          }
+          count++;
+
+          if (debug) {
+            count = location.index;
+          }
+
+
+          const color = "#0088ff";
+          const icon = createNumberedIcon(count, color);
+
+          return (
             <Marker
               key={index}
               position={[location.coordinates.latitude, location.coordinates.longitude]}
+              icon={icon}
             >
-              <Popup>
-                <div>
-                  {debug && (<><strong>{location.index}</strong> <br /></>)}
-                  <strong>{location.description}</strong>
-                  <br />
-                  {new Date(location.time).toLocaleTimeString("nl-NL", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })}
-                </div>
-              </Popup>
+              {location.description !== "" && (
+                <Popup>
+                  <div>
+                    <strong>{location.description}</strong>
+                    <br />
+                    {new Date(location.time).toLocaleTimeString("nl-NL", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: false,
+                    })}
+                  </div>
+                </Popup>
+              )}
             </Marker>
-          )
-        )}
+          );
+        })}
       </MapContainer>
     </div>
   );

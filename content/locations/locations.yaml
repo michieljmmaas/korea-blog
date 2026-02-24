@@ -1360,18 +1360,6 @@
     description: ""
     index: 67
   - coordinates:
-      latitude: 25.03868466
-      longitude: 121.2412435
-    time: "24/11/2025 18:14"
-    description: ""
-    index: 68
-  - coordinates:
-      latitude: 25.04730159
-      longitude: 121.3257657
-    time: "24/11/2025 18:16"
-    description: ""
-    index: 69
-  - coordinates:
       latitude: 25.0131267
       longitude: 121.2147843
     time: "24/11/2025 18:23"
@@ -1707,7 +1695,7 @@
       latitude: 25.0506731
       longitude: 121.5316009
     time: "26/11/2025 00:07"
-    description: "Start of the day"
+    description: ""
     index: 0
   - coordinates:
       latitude: 25.0505545
@@ -2189,7 +2177,7 @@
       latitude: 22.3000567
       longitude: 114.1740587
     time: "28/11/2025 15:40"
-    description: ""
+    description: "Eating Goose"
     index: 53
   - coordinates:
       latitude: 22.2999761
