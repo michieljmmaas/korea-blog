@@ -3700,7 +3700,7 @@
   - coordinates:
       latitude: 37.4574417
       longitude: 126.4477758
-    time: "04/12/2025 13:59"
+    time: "04/12/2025 14:59"
     description: "Arrived in Incheon"
     index: 23
   - coordinates:
@@ -3892,7 +3892,7 @@
   - coordinates:
       latitude: 37.4674847
       longitude: 126.4327254
-    time: "04/12/2025 19:40"
+    time: "04/12/2025 20:40"
     description: "Got to Terminal 2"
     index: 117
   - coordinates:
@@ -4018,13 +4018,13 @@
   - coordinates:
       latitude: 37.4657807
       longitude: 126.4305177
-    time: "04/12/2025 22:19"
+    time: "04/12/2025 23:19"
     description: "Bye Bye Korea!"
     index: 170
   - coordinates:
       latitude: 52.3130228
       longitude: 4.7613302
-    time: "05/12/2025 4:17"
+    time: "05/12/2025 5:17"
     description: "Back in the Netherlands"
     index: 0
   - coordinates:
@@ -4084,6 +4084,6 @@
   - coordinates:
       latitude: 52.03865867
       longitude: 4.31207187
-    time: "05/12/2025 5:48"
+    time: "05/12/2025 6:48"
     description: "Home, sweet home!"
     index: 22
