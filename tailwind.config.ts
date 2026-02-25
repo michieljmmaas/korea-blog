@@ -10,12 +10,16 @@ const config: Config = {
   safelist: [
     // Pattern matching for background colors
     {
-      pattern: /bg-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber)-(100|300|400|500|600|800)/,
+      pattern: /bg-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber|lime|teal)-(100|300|400|500|600|800)/,
     },
     // Pattern matching for text colors
     {
-      pattern: /text-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber)-(100|300|400|500|600|800)/,
-    }
+      pattern: /text-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber|lime|teal)-(100|300|400|500|600|800)/,
+    },
+    // Pattern matching for border colors (used for location indicators)
+    {
+      pattern: /border-(indigo|purple|blue|red|green|emerald|orange|gray|yellow|amber|lime|teal)-(400|500|600)(\/40)?/,
+    },
   ],
   theme: {
     extend: {
@@ -49,10 +53,10 @@ const config: Config = {
       },
       container: {
         center: true,
-        padding: '1.25rem', // px-5
+        padding: '1.25rem',
         screens: {
           sm: '640px',
-          md: '800px',   // wider than default
+          md: '800px',
           lg: '1200px',
           xl: '1400px',
           '2xl': '1600px',
@@ -70,6 +74,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  
 };
+
 export default config;

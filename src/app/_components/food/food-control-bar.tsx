@@ -21,7 +21,7 @@ export const ALL_LOCATIONS: CityLocation[] = [
 ];
 
 const SORT_OPTIONS: { label: string; value: SortOption; icon: React.ReactNode }[] = [
-    { label: 'A–Z', value: 'alpha', icon: <ArrowDownAZ className="w-3.5 h-3.5" /> },
+    { label: 'A-Z', value: 'alpha', icon: <ArrowDownAZ className="w-3.5 h-3.5" /> },
     { label: 'Best first', value: 'best', icon: <Star className="w-3.5 h-3.5" /> },
     { label: 'Worst first', value: 'worst', icon: <TrendingDown className="w-3.5 h-3.5" /> },
 ];

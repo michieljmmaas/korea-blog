@@ -63,7 +63,7 @@ export const FoodCategory = ({ category, foods, isLast = false, initiallyExpande
                 <div className="pb-4 px-4">
                     <div className="space-y-2">
                         {foods.map((food, foodIndex) => (
-                            <FoodItem food={food} key={foodIndex} />
+                            <FoodItem food={food} key={foodIndex} showLocationBorder/>
                         ))}
                     </div>
                 </div>

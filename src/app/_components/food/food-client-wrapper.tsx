@@ -89,7 +89,6 @@ function applyGrouping(foods: Food[], groupOptions: GroupOptions): NestedGroup {
     return { mode: 'flat', data: foods };
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
 
 export function FoodClientWrapper({ foods }: FoodClientWrapperProps) {
     const [activeLocations, setActiveLocations] = useState<Set<CityLocation>>(
