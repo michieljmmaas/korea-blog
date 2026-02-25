@@ -129,7 +129,7 @@ export function FoodClientWrapper({ foods }: FoodClientWrapperProps) {
                     foods={cat.foods}
                     isLast={i === nested.data.length - 1}
                     initiallyExpanded={false}
-                    alwaysExpanded
+                    alwaysExpanded={false}
                 />
             ))}
 

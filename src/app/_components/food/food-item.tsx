@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Star, CheckCircle2, Circle, Trophy, ThumbsDown } from "lucide-react";
+import { ChevronDown, Star, Trophy, ThumbsDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Food, CityLocation } from "@/app/types";
 import CroppedImageWithModal from "../common/cropped-image-with-modal";
@@ -10,20 +10,28 @@ import { getLocationBorderColor } from "../../../../utils/locationColors";
 const isBest = (rating: number) => rating >= 6;
 const isWorst = (rating: number) => rating === 0;
 
+/** Extracts the first grapheme (handles multi-codepoint emoji like 🍜) */
+function firstGrapheme(str: string): string {
+  return [...(new Intl.Segmenter().segment(str))][0]?.segment ?? '';
+}
+
 export const FoodItem = ({
   food,
+  showLocationBorder = true,
 }: {
   food: Food;
+  showLocationBorder?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const best = isBest(food.rating);
   const worst = isWorst(food.rating);
 
+  const categoryEmoji = firstGrapheme(food.category);
+
   const renderStars = (rating: number) => {
     const clampedRating = Math.min(rating, 5);
-    const count = 5;
-    return Array.from({ length: count }, (_, i) => (
+    return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
         className={cn(
@@ -42,10 +50,8 @@ export const FoodItem = ({
     if (food.review) setIsOpen(!isOpen);
   };
 
-  let showLocationBorder = true;
-
   return (
-   <div
+    <div
       className={cn(
         "transition-all duration-400 rounded-lg overflow-hidden border",
         showLocationBorder
@@ -64,24 +70,18 @@ export const FoodItem = ({
         onClick={toggleOpen}
       >
         <div className="flex items-center gap-3">
-          {food.tried ? (
-            <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
-          ) : (
-            <Circle className="h-5 w-5 text-muted-foreground flex-shrink-0" />
-          )}
+          {/* Category emoji replacing the checked/unchecked circle */}
+          <span className="text-xl leading-none flex-shrink-0" title={food.category}>
+            {categoryEmoji}
+          </span>
 
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              {best && (
-                <Trophy className="h-3.5 w-3.5 text-amber-500 shrink-0" />
-              )}
-              {worst && (
-                <ThumbsDown className="h-3.5 w-3.5 text-neutral-400 shrink-0" />
-              )}
+              {best && <Trophy className="h-3.5 w-3.5 text-amber-500 shrink-0" />}
+              {worst && <ThumbsDown className="h-3.5 w-3.5 text-neutral-400 shrink-0" />}
               <h3
                 className={cn(
-                  "font-medium",
-                  food.tried ? "text-green-600" : "text-foreground",
+                  "font-medium text-foreground",
                   best && "text-amber-700 dark:text-amber-400",
                   worst && "text-neutral-400"
                 )}
@@ -91,8 +91,7 @@ export const FoodItem = ({
               {food.phoneticName && (
                 <span
                   className={cn(
-                    "text-xs italic",
-                    food.tried ? "text-green-600" : "text-muted-foreground",
+                    "text-xs italic text-muted-foreground",
                     best && "text-amber-600 dark:text-amber-500",
                     worst && "text-neutral-400"
                   )}
