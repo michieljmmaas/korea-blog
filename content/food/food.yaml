@@ -212,7 +212,7 @@
   rating: 4
   image: crab
   location: Seoul
-  category: 🐟 Fish
+  category: 🐟 Seafood
   review: 'The actually crab was great, but getting out of the shell is the problem.'
 - nativeName: 탕후루
   phoneticName: Tanghulu
@@ -250,7 +250,7 @@
   rating: 3
   image: sannakji
   location: Seoul
-  category: 🐟 Fish
+  category: 🐟 Seafood
   review: 'It came out all wriggly, which was the most interesting part. The taste itself was really chewing, and eating it was hard because it kept getting stuck on the plate. 2 Starts for the taste, 1 star of the experience.'
 - nativeName: 낙지볶음
   phoneticName: Nakji-bokkeum
@@ -259,7 +259,7 @@
   rating: 4
   image: nakji-bokkeum
   location: Seoul
-  category: 🐟 Fish
+  category: 🐟 Seafood
   review: 'It was nice, but the texture was get strange after a while (served with 비빔밥)'
 - nativeName: 짬뽕
   phoneticName: Jjamppong
@@ -268,7 +268,7 @@
   rating: 5
   image: jjampong
   location: Seoul
-  category: 🐟 Fish
+  category: 🐟 Seafood
   review: 'This was amazingly good! I tried making it at home once, but this so much better. Perfect spice level, not too fishy!'
 - nativeName: 소세지빵
   phoneticName: Soseji Bbang
@@ -360,7 +360,7 @@
   rating: 5
   image: bbq
   location: Seoul
-  category: 🐷 Pork 
+  category: 🥩 Meat
   review: "This was really delicious! I had many different dishes and they were all great!"
 
 - nativeName: 김치두부
@@ -651,7 +651,7 @@
   rating: 3
   image: tw-char
   location: Taiwan
-  category: 🥩 Meat
+  category: 🐷 Pork
   review: 'Nice, but a bit pricy for me. Also I think it works better as part of a meal, not stand alone.'
 
 - nativeName: 叉燒包
@@ -731,7 +731,7 @@
   rating: 3
   image: tw-kung-pao
   location: Taiwan
-  category: 🥩 Meat
+  category: 🐔 Chicken
   review: 'This was a bit watery too watery for my taste. The spice was also no spread, only in the peppers.'
 
 - nativeName: 火鍋
@@ -751,7 +751,7 @@
   rating: 2
   image: tw-three-cup
   location: Taiwan
-  category: 🥩 Meat
+  category: 🐔 Chicken
   review: "This wasn't all that special, and maybe even tasted a bit burnt? There was also entire to much bones left on the meat for me to enjoy it."
 
 - nativeName: 哈密瓜麵包
@@ -842,7 +842,7 @@
   rating: 4
   image: hk-yellow-chicken
   location: Hong Kong
-  category: 🥩 Meat
+  category: 🐔 Chicken
   review: 'This was nice. The ginger and curry sauce were a nice touch. The meat was cold though, which was strange.'
 
 - nativeName: 蛋撻
@@ -902,7 +902,7 @@
   rating: 5
   image: hk-ice
   location: Hong Kong
-  category: 🍦 Dessert
+  category: 🍨 Dessert
   review: "Very nice and light. And for only €0,50 it's a steal!"
 
 - nativeName: 煲仔飯
@@ -1003,7 +1003,7 @@
   rating: 3
   image: almond-cookie
   location: Macau
-  category: 🍪 Snack
+  category: 🍞 Bakery
   review: "A bit sandy and crumbly, but the big pieces of almond were a nice touch."
 
 - nativeName: 奶茶
@@ -1013,7 +1013,7 @@
   rating: 2
   image: milktea
   location: Macau
-  category: 🧋 Beverage
+  category: 🧋 Drinks
   review: "Lactose-free milk with a strong English tea syrup and bubble tea pearls. Not really my favorite, but to be fair I don’t usually like beverages that much."
 
 - nativeName: 葡式蛋撻
@@ -1023,7 +1023,7 @@
   rating: 2
   image: egg-tart
   location: Macau
-  category: 🥧 Pastry
+  category: 🍞 Bakery
   review: "I thought this would taste like Pastei de Nata with a sweet custard filling, but instead it had an eggy filling that made it taste more like a sweet omelette."
 
 - nativeName: 非洲鶏
@@ -1043,7 +1043,7 @@
   rating: 3
   image: mooncake
   location: Macau
-  category: 🥧 Pastry
+  category: 🍞 Bakery
   review: 'I had one with greenbean paste, and another with lotus seeds. Both strong flavors. Not really my style, but I see the potential. (I tried some with a jam like filling too, those were much better)'
 - nativeName: 流沙包
   phoneticName: Liúshā Bāo
