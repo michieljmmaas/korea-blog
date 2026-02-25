@@ -5,17 +5,15 @@ import { ChevronDown, Star, CheckCircle2, Circle, Trophy, ThumbsDown } from "luc
 import { cn } from "@/lib/utils";
 import { Food, CityLocation } from "@/app/types";
 import CroppedImageWithModal from "../common/cropped-image-with-modal";
-import { getLocationBorderColor, getLocationColor } from "../../../../utils/locationColors";
+import { getLocationBorderColor } from "../../../../utils/locationColors";
 
 const isBest = (rating: number) => rating >= 6;
 const isWorst = (rating: number) => rating === 0;
 
 export const FoodItem = ({
   food,
-  showLocationBorder = false,
 }: {
   food: Food;
-  showLocationBorder?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,6 +41,8 @@ export const FoodItem = ({
   const toggleOpen = () => {
     if (food.review) setIsOpen(!isOpen);
   };
+
+  let showLocationBorder = true;
 
   return (
    <div

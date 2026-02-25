@@ -4,44 +4,28 @@ import { useMemo, useState } from 'react';
 import { Food, LocationCategoryGroupedFoods } from '@/app/types';
 import { FoodLocation } from './food-location';
 import { FoodCategory } from './food-category';
-import {
-    FoodControlBar,
-    SortOption,
-    GroupOptions,
-    ALL_LOCATIONS,
-} from './food-control-bar';
+import { FoodControlBar, SortOption, GroupOptions, ALL_LOCATIONS } from './food-control-bar';
 import { CityLocation } from '@/app/types';
+
+export type GroupingMode = 'location+type' | 'location' | 'type' | 'flat';
 
 interface FoodClientWrapperProps {
     foods: Food[];
 }
 
-// ── Sorting ──────────────────────────────────────────────────────────────────
-
 function applySort(foods: Food[], sortBy: SortOption): Food[] {
     return [...foods].sort((a, b) => {
         if (sortBy === 'best') return b.rating - a.rating;
         if (sortBy === 'worst') return a.rating - b.rating;
-        // alpha
-        return a.nativeName.localeCompare(b.nativeName);
+        return a.phoneticName.localeCompare(b.phoneticName);
     });
 }
 
-// ── Grouping ─────────────────────────────────────────────────────────────────
-
-/**
- * Returns a nested structure depending on which grouping flags are active.
- *
- * byLocation + byType → location > category > foods
- * byLocation only     → location > foods (single "all" category per location)
- * byType only         → category > foods
- * neither             → one flat list
- */
 type NestedGroup =
     | { mode: 'location+type'; data: LocationCategoryGroupedFoods[] }
-    | { mode: 'location'; data: { location: string; foods: Food[] }[] }
-    | { mode: 'type'; data: { category: string; foods: Food[] }[] }
-    | { mode: 'flat'; data: Food[] };
+    | { mode: 'location';      data: { location: string; foods: Food[] }[] }
+    | { mode: 'type';          data: { category: string; foods: Food[] }[] }
+    | { mode: 'flat';          data: Food[] };
 
 function applyGrouping(foods: Food[], groupOptions: GroupOptions): NestedGroup {
     const { byLocation, byType } = groupOptions;
@@ -89,15 +73,9 @@ function applyGrouping(foods: Food[], groupOptions: GroupOptions): NestedGroup {
     return { mode: 'flat', data: foods };
 }
 
-
 export function FoodClientWrapper({ foods }: FoodClientWrapperProps) {
-    const [activeLocations, setActiveLocations] = useState<Set<CityLocation>>(
-        new Set(ALL_LOCATIONS)
-    );
-    const [groupOptions, setGroupOptions] = useState<GroupOptions>({
-        byLocation: true,
-        byType: false,
-    });
+    const [activeLocations, setActiveLocations] = useState<Set<CityLocation>>(new Set(ALL_LOCATIONS));
+    const [groupOptions, setGroupOptions] = useState<GroupOptions>({ byLocation: true, byType: true });
     const [sortBy, setSortBy] = useState<SortOption>('alpha');
 
     function handleLocationToggle(location: CityLocation) {
@@ -113,16 +91,10 @@ export function FoodClientWrapper({ foods }: FoodClientWrapperProps) {
     }
 
     const nested = useMemo(() => {
-        const filtered = foods.filter((f) =>
-            activeLocations.has(f.location as CityLocation)
-        );
+        const filtered = foods.filter((f) => activeLocations.has(f.location as CityLocation));
         const sorted = applySort(filtered, sortBy);
         return applyGrouping(sorted, groupOptions);
     }, [foods, activeLocations, sortBy, groupOptions]);
-
-    // Whether to show a location-coloured border on individual food cards.
-    // Only meaningful when not grouping by location (location is already obvious from the header).
-    const showLocationBorder = !groupOptions.byLocation;
 
     return (
         <div>
@@ -135,45 +107,39 @@ export function FoodClientWrapper({ foods }: FoodClientWrapperProps) {
                 onSortChange={setSortBy}
             />
 
-            {nested.mode === 'location+type' && (
-                nested.data.map((loc) => (
-                    <FoodLocation key={loc.location} locationData={loc} showLocationBorder/>
-                ))
-            )}
+            {/* location+type: FoodLocation renders FoodCategory as collapsible (initiallyExpanded=false, alwaysExpanded=false) */}
+            {nested.mode === 'location+type' && nested.data.map((loc) => (
+                <FoodLocation key={loc.location} locationData={loc} mode="location+type" />
+            ))}
 
-            {nested.mode === 'location' && (
-                nested.data.map((loc) => (
-                    <FoodLocation
-                        key={loc.location}
-                        locationData={{
-                            location: loc.location,
-                            categories: [{ category: '', foods: loc.foods }],
-                        }}
-                        showLocationBorder
-                    />
-                ))
-            )}
+            {/* location: FoodLocation renders FoodCategory as alwaysExpanded */}
+            {nested.mode === 'location' && nested.data.map((loc) => (
+                <FoodLocation
+                    key={loc.location}
+                    locationData={{ location: loc.location, categories: [{ category: '', foods: loc.foods }] }}
+                    mode="location"
+                />
+            ))}
 
-            {nested.mode === 'type' && (
-                nested.data.map((cat, i) => (
-                    <FoodCategory
-                        key={cat.category}
-                        category={cat.category}
-                        foods={cat.foods}
-                        isLast={i === nested.data.length - 1}
-                        initiallyExpanded
-                        showLocationBorder={showLocationBorder}
-                    />
-                ))
-            )}
+            {/* type: FoodCategory is alwaysExpanded (no chevron, shows tried count) */}
+            {nested.mode === 'type' && nested.data.map((cat, i) => (
+                <FoodCategory
+                    key={cat.category}
+                    category={cat.category}
+                    foods={cat.foods}
+                    isLast={i === nested.data.length - 1}
+                    initiallyExpanded={false}
+                    alwaysExpanded
+                />
+            ))}
 
+            {/* flat: single alwaysExpanded FoodCategory, no header title */}
             {nested.mode === 'flat' && (
                 <FoodCategory
                     category=""
                     foods={nested.data}
                     isLast
-                    initiallyExpanded
-                    showLocationBorder={showLocationBorder}
+                    alwaysExpanded
                 />
             )}
         </div>
