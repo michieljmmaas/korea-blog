@@ -20,6 +20,7 @@ interface FoodCategoryProps {
     foods: Food[];
     isLast?: boolean;
     initiallyExpanded?: boolean;
+    showLocationBorder: boolean;
 }
 
 export const FoodCategory = ({ category, foods, isLast = false, initiallyExpanded = true }: FoodCategoryProps) => {

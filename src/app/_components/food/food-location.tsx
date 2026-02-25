@@ -10,9 +10,10 @@ import { LocationSticker } from '../common/location-sticker';
 interface LocationProps {
   locationData: LocationCategoryGroupedFoods;
   initiallyCollapsed?: boolean;
+  showLocationBorder: boolean;
 }
 
-export const FoodLocation = ({ locationData, initiallyCollapsed = true }: LocationProps) => {
+export const FoodLocation = ({ locationData, initiallyCollapsed, showLocationBorder = true }: LocationProps) => {
   const [isOpen, setIsOpen] = useState(!initiallyCollapsed);
 
   const toggleOpen = () => setIsOpen(!isOpen);
@@ -63,6 +64,7 @@ export const FoodLocation = ({ locationData, initiallyCollapsed = true }: Locati
               foods={category.foods}
               isLast={index === locationData.categories.length - 1}
               initiallyExpanded={false}
+              showLocationBorder
             />
           ))}
         </div>

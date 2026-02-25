@@ -1,13 +1,7 @@
 import { FoodService } from "@/lib/foodService";
-import { FoodLocation } from "../_components/food/food-location";
+import { FoodClientWrapper } from "../_components/food/food-client-wrapper";
 
 export default async function Food() {
-    const foods = await FoodService.getAllFoodsGrouped();
-
-
-    return <div>
-        {foods.map((locationGroupedFoods) => (
-            <FoodLocation key={locationGroupedFoods.location} locationData={locationGroupedFoods} />
-        ))}
-    </div>
+    const foods = await FoodService.getAllFoods();
+    return <FoodClientWrapper foods={foods} />;
 }
