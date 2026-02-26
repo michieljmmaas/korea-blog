@@ -6,7 +6,7 @@ publishdate: '2025-09-25'
 draft: false
 photos: []
 thumb: thumb
-tags: ["Information"]
+tags: ["INFORMATION"]
 ---
 
 This blog is mainly for myself—a place to look back on my trip and reminisce about all the exciting things I did.  

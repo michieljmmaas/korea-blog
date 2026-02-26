@@ -4,7 +4,7 @@ title: What it's like to stay in a Capsule Hotel in Tokyo
 description: A once in a lifetime experience - never again
 publishdate: '2025-11-09'
 draft: false
-tags: ['tokyo', 'experience']
+tags: ['TOKYO', 'EXPERIENCE']
 thumb: quad
 photos: ['quad', "shower", "view", "sleep", "suit", "locker", "hotel"]
 ---

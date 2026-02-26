@@ -4,7 +4,7 @@ title: My Hotel - Mangrove
 description: My home for the next 8 weeks
 publishdate: '2025-10-02'
 draft: false
-tags: ["Information"]
+tags: ["INFORMATION"]
 thumb: thumb
 photos: ["map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
 ---

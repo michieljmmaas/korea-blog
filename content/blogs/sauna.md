@@ -4,7 +4,7 @@ title: 찜질방
 description: A relaxing night at the sauna
 publishdate: '2025-10-14'
 draft: false
-tags: ['culture']
+tags: ['EXPERIENCE']
 thumb: relax
 photos: ["relax", "bath", "cantine", "inside", "food", "egg"]
 ---

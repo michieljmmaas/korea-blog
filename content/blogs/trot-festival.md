@@ -4,7 +4,7 @@ title: Trot Music Festival
 description: A song contest with authentic Korean culture
 publishdate: '2025-10-25'
 draft: false
-tags: ['culture', 'highlight']
+tags: ['CULTURE', 'EXPERIENCE']
 thumb: thumb
 photos: ["thumb", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "pro"]
 ---

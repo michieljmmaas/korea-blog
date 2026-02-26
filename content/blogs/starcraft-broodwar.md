@@ -4,7 +4,7 @@ title: ASL Season 20 - Finals (sNoW vs. soma)
 description: 'A Starcraft: Broodwar match at the top level'
 publishdate: '2025-10-26'
 draft: false
-tags: ['culture', 'highlight']
+tags: ['CULTURE', 'HIGHLIGHT']
 thumb: thumb
 photos: ["thumb", "win", "ending", "group", "fanart", "players", "1", "2", "3", "4", "5", "6"]
 ---
