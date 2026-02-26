@@ -7,10 +7,11 @@ const tagConfig = {
     // Location tags (order: 1)
     "japan": { color: "purple", category: "location", order: 1 },
     "seoul": { color: "blue", category: "location", order: 1 },
-    "busan": { color: "red", category: "location", order: 1 },
     "taiwan": { color: "green", category: "location", order: 1 },
-    "hong kong": { color: "emerald", category: "location", order: 1 },
-    "nederland": { color: "orange", category: "location", order: 1 },
+    "hong-kong": { color: "lime", category: "location", order: 1 },
+    "netherlands": { color: "orange", category: "location", order: 1 },
+    "macau": { color: "amber", category: "location", order: 1 },
+
 
     // Example: Topic tags (order: 2) - add more as needed
     // "food": { color: "yellow", category: "topic", order: 2 },
