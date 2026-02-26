@@ -1,10 +1,14 @@
 [
   {
     "id": 1,
-    "tags": ["arrival", "jet-lag"]
+    "tags": []
   },
   {
-    "id": 12,
-    "tags": ["digital-nomad", "ramyeon"]
+    "id": 2,
+    "tags": ["travel"]
+  },
+   {
+    "id": 70,
+    "tags": ["travel"]
   }
 ]

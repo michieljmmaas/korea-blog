@@ -133,24 +133,36 @@ function loadTagSeed() {
 
 // ── Core ──────────────────────────────────────────────────────────────────────
 
-function processFile(filePath, tagSeed) {
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const parts = splitMarkdown(raw);
+/**
+ * Pre-loads frontmatter for every file so cross-day rules (like travel)
+ * can look at neighbouring days.
+ * Returns an array of { filePath, fm, parts } sorted by filename (= date order).
+ */
+function loadAllPosts(files) {
+  return files.map(file => {
+    const filePath = path.join(CONFIG.contentDir, file);
+    const raw = fs.readFileSync(filePath, 'utf8');
+    const parts = splitMarkdown(raw);
+    const fm = parts ? parseFrontmatter(parts.frontmatter) : null;
+    return { filePath, file, fm, parts };
+  });
+}
 
-  if (!parts) {
-    console.warn(`  ⚠️  No frontmatter found in ${path.basename(filePath)}, skipping.`);
+function processPost(post, tagSeed, context = {}) {
+  const { filePath, file, fm, parts } = post;
+
+  if (!parts || !fm) {
+    console.warn(`  ⚠️  No frontmatter found in ${file}, skipping.`);
     return false;
   }
-
-  const fm = parseFrontmatter(parts.frontmatter);
 
   // Start from empty set if --reset, otherwise keep existing tags
   const existingTags = RESET ? [] : (Array.isArray(fm.tags) ? fm.tags : []);
   const tagSet = new Set(existingTags);
 
-  // Apply rules
+  // Apply rules — passing context (prevDay/nextDay) for cross-post rules
   for (const rule of TAG_RULES) {
-    const added = rule.apply(fm);
+    const added = rule.apply(fm, context);
     added.forEach(t => tagSet.add(t));
   }
 
@@ -192,18 +204,25 @@ function run() {
     .filter(f => f.endsWith('.md'))
     .sort();
 
+  // Pre-load all posts so cross-day rules can access neighbours
+  const posts = loadAllPosts(files);
+
   let changed = 0;
   let unchanged = 0;
 
-  for (const file of files) {
-    const filePath = path.join(CONFIG.contentDir, file);
-    const result = processFile(filePath, tagSeed);
+  for (let i = 0; i < posts.length; i++) {
+    const context = {
+      prevDay: posts[i - 1]?.fm ?? null,
+      nextDay: posts[i + 1]?.fm ?? null,
+    };
+
+    const result = processPost(posts[i], tagSeed, context);
 
     if (result) {
       const arrow = result.old.length
         ? `[${result.old.join(', ')}] → [${result.new.join(', ')}]`
         : `→ [${result.new.join(', ')}]`;
-      console.log(`  ${DRY_RUN ? '👀' : '✅'} ${file}  ${arrow}`);
+      console.log(`  ${DRY_RUN ? '👀' : '✅'} ${posts[i].file}  ${arrow}`);
       changed++;
     } else {
       unchanged++;
