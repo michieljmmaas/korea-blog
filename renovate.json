@@ -3,10 +3,12 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch"],
+      "commitMessageSuffix": "[deploy]",
       "automerge": true
     },
     {
       "matchUpdateTypes": ["major"],
+      "commitMessageSuffix": "[deploy]",
       "enabled": false
     }
   ]
