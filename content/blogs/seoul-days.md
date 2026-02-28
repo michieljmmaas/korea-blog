@@ -4,7 +4,7 @@ title: My favorite days in Seoul
 description: Looking back at the last 8 weeks
 publishdate: '2025-11-18'
 draft: false
-tags: ['HIGHLIGHT', 'EXPERIENCE']
+tags: ['highlight', 'experience']
 thumb: best
 photos: ['best', "trot", "game", "stage", "summit", "matrix"]
 ---

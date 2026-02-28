@@ -4,7 +4,7 @@ title: An Ode to the Convience Store Kimbap
 description: It was there, when I was at my lowest 
 publishdate: '2025-11-06'
 draft: false
-tags: ['FUNNY', 'CULTURE']
+tags: ['funny', 'culture']
 thumb: kimbap
 photos: []
 ---

@@ -4,7 +4,7 @@ title: TWICE in Macau
 description: Seeing TWICE live
 publishdate: '2025-09-28'
 draft: false
-tags: ['TWICE', 'K-POP']
+tags: ['twice', 'k-pop', 'macau']
 thumb: wide
 photos: ["stage", "wide", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "mina", "nayeon", "end"]
 ---

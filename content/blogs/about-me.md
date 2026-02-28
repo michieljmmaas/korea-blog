@@ -4,7 +4,7 @@ title: About me
 description: A little bit about me
 publishdate: '2025-09-25'
 draft: false
-tags: ["INFORMATION"]
+tags: ["information"]
 thumb: "pic"
 photos: ["pic"]
 ---

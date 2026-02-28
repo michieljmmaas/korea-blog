@@ -4,7 +4,7 @@ title: 금지
 description: "The forbiden fruit tastes the sweetest"
 publishdate: "2025-10-09"
 draft: false
-tags: ["FUNNY", 'CULTURE']
+tags: ["funny", 'culture']
 thumb: "6"
 photos:
   [

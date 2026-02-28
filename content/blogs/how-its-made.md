@@ -5,7 +5,7 @@ description: The tools I used to build this custom blog from scratch.
 publishdate: '2025-09-25'
 draft: false
 photos: ["foo", "bar"]
-tags: ["PROGAMMING", "INFORMATION"]
+tags: ["programming", "information"]
 thumb: thumb
 ---
 
