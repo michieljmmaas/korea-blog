@@ -14,8 +14,12 @@
       "matchUpdateTypes": [
         "major"
       ],
-      "commitMessageSuffix": "[deploy]",
       "enabled": false
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "commitMessageSuffix": "[deploy]",
+    "automerge": true
+  }
 }
