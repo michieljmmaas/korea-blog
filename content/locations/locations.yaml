@@ -4061,29 +4061,5 @@
       latitude: 52.3092615
       longitude: 4.7619439
     time: "05/12/2025 13:05"
-    description: ""
-    index: 14
-  - coordinates:
-      latitude: 52.3073596
-      longitude: 4.7558162
-    time: "05/12/2025 13:13"
-    description: ""
-    index: 19
-  - coordinates:
-      latitude: 52.3078335
-      longitude: 4.756765
-    time: "05/12/2025 13:18"
-    description: ""
-    index: 20
-  - coordinates:
-      latitude: 52.1879963
-      longitude: 4.6036788
-    time: "05/12/2025 13:29"
-    description: ""
-    index: 21
-  - coordinates:
-      latitude: 52.03865867
-      longitude: 4.31207187
-    time: "05/12/2025 6:48"
     description: "Home, sweet home!"
-    index: 22
+    index: 14
