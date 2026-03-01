@@ -29,7 +29,7 @@ I’m still experimenting with the format for these posts, but I’m sure it’l
 A lot has happened over the past week — here are some of my favorite highlights.  
 
 ### TWICE Concert in Macau
-On <Sat> I saw TWICE live in Macau! It took a fair bit of travel and sweat to get there, but the concert itself was worth it. I even wrote a full blogpost about the whole experience — you can read it here <Blog twice-in-macau desc="TWICE in Macau">.
+On <Sat link="the-concert"> I saw TWICE live in Macau! It took a fair bit of travel and sweat to get there, but the concert itself was worth it. I even wrote a full blogpost about the whole experience — you can read it here <Blog twice-in-macau desc="TWICE in Macau">.
 
 <Img singing desc="What is Love?">  
 
@@ -49,7 +49,7 @@ It’s a relief to be able to keep exercising here. I’m so used to my gym and 
 <Img gym desc="The temple of Iron">  
 
 ### MMCA
-On <Thu> I visited the National Museum of Modern and Contemporary Art (MMCA). I joined a guided tour and heard some fascinating stories about the works on display — definitely a highlight of the week.  
+On <Thu link="national-museum-of-modern-and-contemporary-art"> I visited the National Museum of Modern and Contemporary Art (MMCA). I joined a guided tour and heard some fascinating stories about the works on display — definitely a highlight of the week.  
 
 <Img wall desc="'Sam-ra-man-ssang' by Kang Ikjoong">  
 

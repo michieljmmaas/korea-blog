@@ -48,7 +48,7 @@ It’s really satisfying to see all that study time paying off.
 <Img haircut desc="I can even make small talk at the hairdresser">  
 
 ### Meeting New People
-Travelling solo can make it hard to meet new people, but this week I had some fun interactions with kind strangers. On <Sat> I went on a date with a Korean girl at a **포장마차** (pojangmacha — Korean street food tent), which was such a cool experience. Then again on <Wed> I went for K-BBQ with a friend I met at the Digital Nomads Drinks event.  
+Travelling solo can make it hard to meet new people, but this week I had some fun interactions with kind strangers. On <Sat link="a-date"> I went on a date with a Korean girl at a **포장마차** (pojangmacha — Korean street food tent), which was such a cool experience. Then again on <Wed link="dinner-with-a-friend"> I went for K-BBQ with a friend I met at the Digital Nomads Drinks event.  
 
 I enjoy solitude, but it can’t beat having a fun evening with good company.  
 

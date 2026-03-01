@@ -25,9 +25,9 @@ This is already the **fourth week** I’ve been here! So far, I’ve seen TWICE 
 Last week was packed, but I had an amazing time! Let’s go over some highlights.  
 
 ### TWICE Anniversary Celebrations
-On <Mon>, TWICE celebrated their 10th debut anniversary. For the occasion, they organized a whole range of events — most of which I managed to attend. I watched their Anniversary Eve livestream on <Sun>, went to their movie on <Mon>, and visited their pop-up store on <Wed>.  
+On <Mon>, TWICE celebrated their 10th debut anniversary. For the occasion, they organized a whole range of events — most of which I managed to attend. I watched their Anniversary Eve livestream on <Sun link="anniversarys-eve">, went to their movie on <Mon link="twice-movie">, and visited their pop-up store on <Wed link="twice-pop-up-store">.  
 
-Then, on <Sat>, I had the incredible opportunity to attend their special 10th anniversary fan meeting. It was such an unforgettable experience — [I wrote a full blog post about it here](../blogs/fanmeeting)!  
+Then, on <Sat link="twice-fanmeeting-10ve-universe">, I had the incredible opportunity to attend their special 10th anniversary fan meeting. It was such an unforgettable experience — <Blog fanmeeting desc="I wrote a full blog post about it here">!  
 
 Being in Seoul for this celebration really felt like living every ONCE’s dream. Now that the festivities are over and they’re heading back on tour, expect a bit more of my usual “daily life” posts — though rest assured, their songs are still playing on loop every day.  
 
@@ -50,16 +50,16 @@ I’ve gotten good at spotting single portions on menus, and I don’t feel awkw
 ### Having Friends
 Having friends helps a lot with eating out too! So far, I think I’ve got *two*!  
 
-I met **Katherine** at the Digital Nomads drinks event on <Day 14>, and she happens to live in the same hotel. We’ve gone out for dinner twice already and are planning to make it a weekly tradition. We keep each other posted during the week and share tips for things to do around Seoul. We’re planning a trip to **Lotte World** on Sunday (<Day 31>).  
+I met **Katherine** at the Digital Nomads drinks event on <Day 14 link="going-out-for-drinks">, and she happens to live in the same hotel. We’ve gone out for dinner twice already and are planning to make it a weekly tradition. We keep each other posted during the week and share tips for things to do around Seoul. We’re planning a trip to **Lotte World** on Sunday (<Day 31>).  
 
-Then, on <Tue>, I had a **Bumble date** with Sooyeon. The evening turned into a fun, in-depth conversation about Korean culture. I got to ask all the questions I’d been holding onto since arriving, and learned a ton. She even invited me to join her and some friends for a theme park trip next Monday (<Day 32>)!  
+Then, on <Tue link="culture-exchange">, I had a **Bumble date** with Sooyeon. The evening turned into a fun, in-depth conversation about Korean culture. I got to ask all the questions I’d been holding onto since arriving, and learned a ton. She even invited me to join her and some friends for a theme park trip next Monday (<Day 32>)!  
 
 <Img sooyeon desc="My mom really liked this picture, so here it is again!">
 
 ### Doing My Democratic Duty
 All week I’ve been listening to podcasts, interviews, and debates about the Dutch elections. I’m a bit of a politics nerd, so it’s been such a treat to follow along. While programming I’ve been mixing work and and politcs all week.  
 
-I wrote about who I’m voting for ([Daniëlle Hirsch — #23 for GroenLinks-PvdA](https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/danielle-hirsch-2/)) on <Sun> and dropped off my ballot at the Dutch Embassy on <Mon>, which I thoroughly enjoyed doing.  
+I wrote about who I’m voting for ([Daniëlle Hirsch — #23 for GroenLinks-PvdA](https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/danielle-hirsch-2/)) on <Sun link="just-me-saving-democracy-from-populism"> and dropped off my ballot at the Dutch Embassy on <Mon link="putting-in-my-vote">, which I thoroughly enjoyed doing.  
 
 <Img voting desc="I filled in my ballot with a red pen of course!">
 
@@ -71,7 +71,7 @@ I’ve been having *terrible* luck with tickets this trip (with one glorious exc
 
 It’s not that I’m late — I set reminders, alarms, and sit ready at the exact moment they go live. But still, no luck so far.  
 
-For the StarCraft tournament, I’ll try asking nicely if I can enter without a ticket and just stand in the back (I read online that the sometimes let people do that). If that doesn’t work, I still have the StarCraft exhibtions match on <Day 35> (I did get tickets for that one). I’ll also try to get MAMA tickets from a reseller, but I am kind worried about a repeat of last time.  
+For the StarCraft tournament, I’ll try asking nicely if I can enter without a ticket and just stand in the back (I read online that the sometimes let people do that). If that doesn’t work, I still have the StarCraft exhibtions match on <Day 35 link="the-starcraft-legend-match"> (I did get tickets for that one). I’ll also try to get MAMA tickets from a reseller, but I am kind worried about a repeat of last time.  
 
 <Img tickets desc="Sigh">
 

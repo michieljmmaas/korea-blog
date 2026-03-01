@@ -18,7 +18,7 @@ icons: []
 thumb: desk
 ---
 ## Back to Work
-This week started off with some more touristy things — visiting Suwon on <Sat> and a few museums on <Sun>. But starting from <Tue>, it was back to the office. I’m finding my familiar rhythm again, which is really helping me settle in here.  
+This week started off with some more touristy things — visiting Suwon on <Sat> and a few museums on <Sun link="leeum-museum-of-art">. But starting from <Tue>, it was back to the office. I’m finding my familiar rhythm again, which is really helping me settle in here.  
 
 ## The Peaks
 Let’s go over the highs (and lows) of the past week.  
@@ -34,7 +34,7 @@ On <Sat>, I went to Suwon — a city known for the remnants of its old fortress.
 <Img tv desc="'Matrix' by Nam June Paik">  
 
 ### The Art Museums Here Are Amazing
-On <Sun>, I visited the Leeum Museum of Art, which had some incredible pieces. In the first gallery alone they had a Rodin, a Rothko, and a beautiful Clyfford painting. Combined with the *Nam June Paik Art Center* from <Sat>, I’ve already seen some fantastic art. I still have a few more museums on my list to visit while I’m in Seoul — and if these two are any indication, I’m in for a treat.  
+On <Sun link="leeum-museum-of-art">, I visited the Leeum Museum of Art, which had some incredible pieces. In the first gallery alone they had a Rodin, a Rothko, and a beautiful Clyfford painting. Combined with the *Nam June Paik Art Center* from <Sat link="nam-june-paik-art-center">, I’ve already seen some fantastic art. I still have a few more museums on my list to visit while I’m in Seoul — and if these two are any indication, I’m in for a treat.  
 
 <Img rodin desc="'The Burghers of Calais' by Rodin">  
 
@@ -44,7 +44,7 @@ Now that I’ve started working here, I’m finding it easier to keep a healthy 
 <Img gym desc="Flex">  
 
 ### Meeting New People
-On <Thu>, I went to an event for digital nomads, hoping to meet some friendly people — and I did! I met a few that I’m hoping to stay in touch with while I’m here. It felt great to talk to people face-to-face instead of through a screen, and I also got some great tips on how to meet more people later on.  
+On <Thu link="going-out-for-drinks">, I went to an event for digital nomads, hoping to meet some friendly people — and I did! I met a few that I’m hoping to stay in touch with while I’m here. It felt great to talk to people face-to-face instead of through a screen, and I also got some great tips on how to meet more people later on.  
 
 <Img drinks desc="Cheers!">  
 
@@ -62,7 +62,7 @@ I’ve gone to a few restaurants by myself, but it’s just not as fun as going 
 <Img ramyeon desc="Boy dinner">  
 
 ### Skipping My Hike Because of Rain
-I had planned to go on a hike on <Sat>, but the weather had other ideas. I’ve done enough hiking to know I’d rather skip it than do it in the rain. Luckily, I’m here for two months, so I can easily reschedule. I still made a good day of it by visiting the Leeum Museum of Art instead!  
+I had planned to go on a hike on <Sun>, but the weather had other ideas. I’ve done enough hiking to know I’d rather skip it than do it in the rain. Luckily, I’m here for two months, so I can easily reschedule. I still made a good day of it by visiting the Leeum Museum of Art instead!  
 
 <Img rain desc="Rain-check on this one">  
 

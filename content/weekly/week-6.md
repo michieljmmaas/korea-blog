@@ -26,19 +26,19 @@ Let’s start with my favorite moments from the week.
 
 ### Time to Contemplate
 
-On <Sat>, I finally took some time to rest and reflect. This trip isn’t just about having fun — it’s also about looking back at the past ten years and thinking ahead to the next decade. I finally managed to sit down, write, and put some of those thoughts into words. Being here has made me more in tune with my emotions, and it’s helped me think about what I truly value.  
+On <Sat link="창경궁-changgyeonggung">, I finally took some time to rest and reflect. This trip isn’t just about having fun — it’s also about looking back at the past ten years and thinking ahead to the next decade. I finally managed to sit down, write, and put some of those thoughts into words. Being here has made me more in tune with my emotions, and it’s helped me think about what I truly value.  
 
 <Img view desc="And with a view!">
 
 ### Halloween!
 
-It was Halloween on <Fri>, and I tried to make the most of it! My original plan was to go to a big party, but I bailed pretty quickly to meet up with Katherine instead. We spent the night wandering through Itaewon, checking out costumes, doing a bit of dancing, playing arcade games, and ending the night with some free pizza.  
+It was Halloween on <Fri link="getting-ready-for-halloween">, and I tried to make the most of it! My original plan was to go to a big party, but I bailed pretty quickly to meet up with Katherine instead. We spent the night wandering through Itaewon, checking out costumes, doing a bit of dancing, playing arcade games, and ending the night with some free pizza.  
 
 <Img outfit desc="I even brought a costume!">
 
 ### Reliving Memories in Myeongdong
 
-On <Sat>, I visited Myeongdong — the neighborhood where my Airbnb was during my first trip to Seoul. It was surprisingly nostalgic walking those familiar streets, seeing how much had changed, and visiting the same shops. I even stopped by the 7-Eleven where we used to buy kimbap and soju every night, hoping to see the friendly cashier from back then. Unfortunately, she wasn’t working that day, but maybe I’ll try again before I leave.  
+On <Sat link="명동-myeongdong">, I visited Myeongdong — the neighborhood where my Airbnb was during my first trip to Seoul. It was surprisingly nostalgic walking those familiar streets, seeing how much had changed, and visiting the same shops. I even stopped by the 7-Eleven where we used to buy kimbap and soju every night, hoping to see the friendly cashier from back then. Unfortunately, she wasn’t working that day, but maybe I’ll try again before I leave.  
 
 <Img seoul-old desc="How it started">
 

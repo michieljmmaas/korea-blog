@@ -44,7 +44,7 @@ Checkout all the foods I ate at the [Food](/food) tab.
 ## My Least Favorite Cultural Sight - Shibuya Scramble
 Shibuya Scramble is a busy intersection in the center of Tokyo. That’s just it: civil infrastructure. What made it interesting was that so many locals used it. But because of the recent spike in tourism in Japan, this zebra crossing has turned into a tourist hotspot. No sane local would still use it for their daily commute.
 
-When I got there (on <Day 44>), it was so busy that I had to wait three cycles just to cross it. A road intersection!
+When I got there (on <Day 44 desc="shibuya-scramble">), it was so busy that I had to wait three cycles just to cross it. A road intersection!
 
 What makes it even worse are all the people rushing to the center before the lights turn green, with their video cameras ready to film themselves being engulfed in a sea of other tourists doing the exact same thing. Then they stay after the lights turn red again because they are too busy taking pictures, causing dangerous situations.
 
@@ -91,7 +91,7 @@ The metro and train were great though. No complaints there!
 
 
 ## The Most Sucker Tax Paid - NVidea Gamer Festival
-On <Day 35> I attended the NVidea Gamer Festival, a celebration marking 25 years of NVidea doing business in South Korea. There was a Taekwondo performance, an exhibition match between two StarCraft pros, and a performance by my second favorite K-pop act, LE SSERAFIM (which is mainly why I went).
+On <Day 35 link="the-performances"> I attended the NVidea Gamer Festival, a celebration marking 25 years of NVidea doing business in South Korea. There was a Taekwondo performance, an exhibition match between two StarCraft pros, and a performance by my second favorite K-pop act, LE SSERAFIM (which is mainly why I went).
 
 They said it would start at 16:00, so I arrived on time. Only to learn that this was the start of the merch booth, and the actual performances would begin at 19:00. So I killed some time in the nearby mall and returned later.
 
@@ -101,7 +101,7 @@ I then had to sit through three hours of ads, giveaways, and an appearance by Je
 
 
 ## My Least Favorite Museum - Hong Kong Museum of History
-On <Day 64> I visited the Hong Kong Museum of History. I was expecting a display of the rich history of Hong Kong and to learn more about the culture. When I arrived, I learned that half of the museum was being renovated, but there was a special exhibit on “National Security” I could attend.
+On <Day 64 link="hong-kong-museum-of-history"> I visited the Hong Kong Museum of History. I was expecting a display of the rich history of Hong Kong and to learn more about the culture. When I arrived, I learned that half of the museum was being renovated, but there was a special exhibit on “National Security” I could attend.
 
 The exhibition was about the pro-democracy protests that took place in 2019. But it wasn’t about their goals. It focused on how mean and unpatriotic these “thugs” were. They had a 30-minute-long video meticulously detailing all the bad things these hooligans did. When the video ended, you entered the next hall, where there was a giant Chinese flag.
 

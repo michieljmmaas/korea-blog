@@ -32,13 +32,13 @@ These were my favorite parts of the past week.
 
 ### Doing a Photoshoot
 
-I spent <Sat> doing a photoshoot. I wanted to capture my trip in a triptych, showing my appreciation of Korean culture, my time spent working, and my wanderlust here. It took some time to get comfortable, but we eventually found a groove I was happy with. I’m still waiting on the edited pictures, but I’m sure they’ll turn out great. I’m just happy I at least have some photos of myself here.
+I spent <Sat link="picture-day"> doing a photoshoot. I wanted to capture my trip in a triptych, showing my appreciation of Korean culture, my time spent working, and my wanderlust here. It took some time to get comfortable, but we eventually found a groove I was happy with. I’m still waiting on the edited pictures, but I’m sure they’ll turn out great. I’m just happy I at least have some photos of myself here.
 
 <Img collage desc="These are some of the pictures I asked to be edited">
 
 ### No Feelings of Regret
 
-I spent my <Tue> evening — my final night in Seoul — thinking about my time here. I thought of some things I missed out on or things I maybe would have done differently, but every time I thought of something, I had a reason why it didn’t happen (tickets were sold out, schedules didn’t align, it just didn’t work out).
+I spent my <Tue link="ending-on-a-high-note"> evening — my final night in Seoul — thinking about my time here. I thought of some things I missed out on or things I maybe would have done differently, but every time I thought of something, I had a reason why it didn’t happen (tickets were sold out, schedules didn’t align, it just didn’t work out).
 
 If I had really wanted to do those things, my trip would have looked quite a bit different. And honestly, I don’t think I would have wanted to change any of it.
 

@@ -1,4 +1,4 @@
-import { getBlogForNumber, getBlogPost as getDayPost, getBlogPostsForDates } from "@/lib/dayService";
+import { getBlogForNumber, getBlogPostsForDates } from "@/lib/dayService";
 import { getBlogPost } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
@@ -116,11 +116,9 @@ export async function processWeekDayTags(
             const baseHref  = `${basePath}${date}`;
 
             if (linkSlug) {
-                const post = await getDayPost(date);
-                const headingText = post ? headingTextForSlug(post.content, linkSlug) : null;
                 return {
                     original,
-                    replacement: dayLink(`${baseHref}#${linkSlug}`, headingText ?? label, hoverInfo),
+                    replacement: dayLink(`${baseHref}#${linkSlug}`, label, hoverInfo),
                 };
             }
 
@@ -163,17 +161,15 @@ export async function processDayReferences(
             const dayNum = parseInt(dayNumStr, 10);
 
             try {
-                const { frontmatter, content: dayContent } = await getBlogForNumber(dayNum);
+                const frontmatter = await getBlogForNumber(dayNum);
 
                 const hoverInfo = serializeDayInfo(frontmatter);
                 const baseHref  = `${basePath}${frontmatter.date}`;
 
                 if (linkSlug) {
                     // Anchor link — resolve heading text for the label
-                    const headingText = headingTextForSlug(dayContent, linkSlug);
-                    const label = headingText ?? frontmatter.date;
                     const href  = `${baseHref}#${linkSlug}`;
-                    return { original, replacement: dayLink(href, label, hoverInfo) };
+                    return { original, replacement: dayLink(href, frontmatter.date, hoverInfo) };
                 } else {
                     // Plain day link
                     return { original, replacement: dayLink(baseHref, frontmatter.date, hoverInfo) };

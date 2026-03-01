@@ -24,22 +24,22 @@ I've never been to New York, but I think Hong Kong is the closest thing to it. T
 I’m talking about the best things from the past week.
 
 ### MAMA
-The main reason I went to Hong Kong was to attend MAMA. It was a two-day festival, with a show on <Fri> and another on <Sat>. The shows were spectacular, and it was cool catching a glimpse behind the scenes. I wasn’t familiar with all the acts performing, but the crazed fan girls around me pulled me right into it.
+The main reason I went to Hong Kong was to attend MAMA. It was a two-day festival, with a show on <Fri link="mama---day-1"> and another on <Sat link="mama---day-2">. The shows were spectacular, and it was cool catching a glimpse behind the scenes. I wasn’t familiar with all the acts performing, but the crazed fan girls around me pulled me right into it.
 
 <Img winter desc="Everyone say thank you to Winter!">
 
 ### M+
-On <Sun> I went to M+. One of the better modern art museums I visited on this trip. The art was great and really engaging. I think they were renovating a wing, which is too bad because I would’ve loved to see that one too. To think I almost skipped this place is a shame.
+On <Sun link="m"> I went to M+. One of the better modern art museums I visited on this trip. The art was great and really engaging. I think they were renovating a wing, which is too bad because I would’ve loved to see that one too. To think I almost skipped this place is a shame.
 
 <Img 17 desc="Some cheeky critiques were still allowed">
 
 ### Cantonese Opera
-After visiting M+ on <Sun> I had a Cantonese Opera Experience. It was really interesting learning about this art form. They made it super accessible, and it was great getting a small glimpse into the culture.
+After visiting M+ on <Sun link="xiqu-cantonese-opera-experience"> I had a Cantonese Opera Experience. It was really interesting learning about this art form. They made it super accessible, and it was great getting a small glimpse into the culture.
 
 <Img 20 desc="Too bad I only have a few pictures">
 
 ### The City Scape
-Another thing I loved was the cityscape. The giant skyscrapers made you feel so small, and the neon signs gave off so much atmosphere. I can see where Ridley Scott got the inspiration for *Blade Runner*. This was captured best on <Mon> when I visited Victoria Peak and got some great views.
+Another thing I loved was the cityscape. The giant skyscrapers made you feel so small, and the neon signs gave off so much atmosphere. I can see where Ridley Scott got the inspiration for *Blade Runner*. This was captured best on <Mon link="victoria-peak"> when I visited Victoria Peak and got some great views.
 
 <Img 26 desc="Would you look at that!">
 

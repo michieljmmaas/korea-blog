@@ -58,7 +58,7 @@ The exhibition continued upstairs.
 <Img 21 desc="This car is not street legal.">
 <Img 6 desc="Art by Tatsuo Miyajima; these displays count up in unsynced intervals but never display 0">
 
-Tatsuo Miyajima makes a lot of work like this. I saw him again on <Day 56> and <Day 66> and recognized him immediately. 
+Tatsuo Miyajima makes a lot of work like this. I saw him again on <Day 56> and <Day 66 link="permanent-exhibition"> and recognized him immediately. 
 
 
 ### Museum in Museum

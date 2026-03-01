@@ -73,11 +73,11 @@ export async function getBlogPostsForDates(
 
 export async function getBlogForNumber(
   index: number
-): Promise<{ frontmatter: DayFrontmatter; content: string }> {
+): Promise<DayFrontmatter> {
   const slugs = await getAllBlogPostSlugs();
   const slug = slugs[index];
   const data = await getBlogPost(slug);
-  return { frontmatter: data.frontmatter, content: data.content };
+  return data.frontmatter;
 }
 
 export async function getRandomDay(current: number | null): Promise<TripDay> {

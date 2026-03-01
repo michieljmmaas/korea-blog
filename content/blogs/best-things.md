@@ -24,8 +24,8 @@ I love modern art, and I got to see a lot of it on my trip. Of all the museums I
 
 Honorable mentions: 
 - Nam Jun Paik Art Center: <Day 9 link="nam-june-paik-art-center">
-- The National Art Center – NITTEN: <Day 45>
-- Taipei Fine Arts Museum: <Day 61>
+- The National Art Center – NITTEN: <Day 45 link="the-national-art-center--nitten">
+- Taipei Fine Arts Museum: <Day 61 link="taipei-fine-arts-museum">
 
 <Img arario desc="Some of my favorite pieces I saw there.">
 
@@ -33,12 +33,12 @@ Honorable mentions:
 ## My Favorite Piece of Art - Love after Death
 This amazing 47-minute-long multimedia display by Korakrit Arunanondchai has to be my favorite piece of art I saw all trip. The film was projected on a screen, and with certain lighting tricks and music they elevated it even further. Every five minutes I was impressed by how a new element transformed the display using sound, lighting, and video. I was fascinated by it.
 
-It was displayed at the Taipei Fine Arts Museum that I visited on <Day 61>.
+It was displayed at the Taipei Fine Arts Museum that I visited on <Day 61 link="taipei-fine-arts-museum">.
 
 Honorable mentions: 
-- Matrix - Nam Jun Paik Art - <Day 9>
-- The Burghers of Calais - (Rodin) - <Day 10>
-- Great Wave off Kanagawa (replica) - (Hokusai) - <Day 44>
+- Matrix - Nam Jun Paik Art - <Day 9 link="nam-june-paik-art-center">
+- The Burghers of Calais - (Rodin) - <Day 10 link="modern-art">
+- Great Wave off Kanagawa (replica) - (Hokusai) - <Day 44 link="hokusai-museum">
 
 <Img art desc="You have to see it in motion to really appreciate it!">
 
@@ -47,8 +47,8 @@ Honorable mentions:
 The food over there is amazing. It is tasty, affordable, and everywhere. But of all the things I ate, I have to say that I liked the roast geese I had in Hong Kong the most. The skin was crispy and the meat was really juicy. I especially like the fact that there is one less goose in the world because I ate this one. You can check out all my food reviews on the [Food](/food) tab.
 
 Honorable mentions: 
-- Tenkazushi - <Day 44>
-- Beef Noodle Soup - <Day 56>
+- Tenkazushi - <Day 44 link="tenkazushi">
+- Beef Noodle Soup - <Day 56 link="kaohsiung-pier">
 - Gimbap (everywhere)
 
 
@@ -88,8 +88,8 @@ If you are ever in Taiwan, I highly recommend it! Or you can read my blogpost wi
 On <Day 20> I went to get my haircut. The hairdresser knew no English, but that didn’t matter. It was a great test of my Korean, which I have studied for the past five years. I was able to keep up with some small talk and explain what style I wanted. I even had a lesson about this exact situation, and it was the first time learning any language that it actually came up in real life! I even got some restaurant recommendations out of it.
 
 Honorable mentions:
-- A date with a Korean girl: <Day 16>
-- Language exchange: <Day 22>
+- A date with a Korean girl: <Day 16 desc="a-date">
+- Language exchange: <Day 22 desc="language-exchange">
 
 <Img hairdresser desc="한국스타일 주세요!">
 
@@ -98,7 +98,7 @@ Honorable mentions:
 I left for the trip by myself and tried hard to meet new people. I was very lucky to meet Katherine during my stay in Seoul. We met up multiple times to have dinner together or go to a theme park. I loved talking to her, because she was so different from me in many ways. The more we hung out, the longer and more interesting the conversations got. My favorite has to be the one we had on <Day 40>. I had a stressful day at the office, and hanging out with her made it much better. After getting some 치맥, we went to the balcony of our hotel and talked until it got too cold to stay outside.
 
 Honorable mentions:
-- Culture exchange with a Bumble "date": <Day 26>
+- Culture exchange with a Bumble "date": <Day 26 link="culture-exchange">
 - Lotte World with Katherine & an e-sports final with strangers: <Day 31>
 - Everland with strangers: <Day 32>
 

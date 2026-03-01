@@ -24,11 +24,11 @@ As I’m writing this, I’ve officially reached the halfway point of my trip—
 Let’s look at all the fun stuff I’ve done over the past week.  
 
 ### ASL Season 20 – Finals
-One of my favorite things from this week was definitely attending the *StarCraft: Brood War* finals on <Sun>. Seeing an e-sports match has been on my bucket list for so long, and finally getting to watch one live—after initially missing out on tickets—was an amazing experience.  
+One of my favorite things from this week was definitely attending the *StarCraft: Brood War* finals on <Sun link="asl-season-20--finals">. Seeing an e-sports match has been on my bucket list for so long, and finally getting to watch one live—after initially missing out on tickets—was an amazing experience.  
 
 From the spectacular level of play, to the crowd reactions, to the friendly people I met while waiting in line—it was a blast.  
 
-You should read the blog post I wrote about it! [Link here!](../blogs/starcraft-broodwar)
+You should read the blog post I wrote about it! <Blog starcraft-broodwar desc="Link here!">.
 
 <Img starcraft desc="Game on!">
 
@@ -40,9 +40,9 @@ Then on <Mon>, I joined a ragtag group of people going to Everland. I spent the 
 <Img rollercoaster desc="Wheeee!!!">
 
 ### Trot Music Festival
-Another highlight was the random Trot Music Festival I stumbled upon on <Sat>. There was a singing competition for locals, with participants of all different skill levels. I had a blast people-watching and clapping along to the performances.  
+Another highlight was the random Trot Music Festival I stumbled upon on <Sat link="trot-singing-competition">. There was a singing competition for locals, with participants of all different skill levels. I had a blast people-watching and clapping along to the performances.  
 
-I wrote a blog post about all the characters I saw there—you should read it! [Link here!](../blogs/trot-festival)
+I wrote a blog post about all the characters I saw there—you should read it! <Blog trot-festival desc="Link here!">.
 
 <Img festival desc="Foot loose!">
 

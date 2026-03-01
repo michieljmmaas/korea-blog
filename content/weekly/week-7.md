@@ -23,24 +23,24 @@ I spent the majority of the week in Tokyo visiting shrines, eating sushi, and no
 I had a lot of fun in Tokyo, so let me tell you what I enjoyed most!
 
 ### Sushi
-The food in Japan is excellent — from convenience-store snacks to street-side bites to full restaurant dishes. But the meal I loved the most was the sushi at Tenkazushi on <Sat>, my dad’s favorite spot in Shibuya. The fish was incredibly fresh and the service was top-notch. I also discovered a new love for Anago sushi — so much so that they just kept serving it to me without even asking.
+The food in Japan is excellent — from convenience-store snacks to street-side bites to full restaurant dishes. But the meal I loved the most was the sushi at Tenkazushi on <Sat link="tenkazushi">, my dad’s favorite spot in Shibuya. The fish was incredibly fresh and the service was top-notch. I also discovered a new love for Anago sushi — so much so that they just kept serving it to me without even asking.
 
 <Img 17 desc="I had to make it a nice even 20 plates to make the currency conversion easier">
 
 ### NITTEN
-I had unbelievable luck walking into the National Art Center Tokyo on <Sun> while they were hosting NITTEN — a massive open-call art exhibition featuring over 3,000 artworks. There were several categories, like Western-style painting, sculpture, and calligraphy. I started off examining every piece carefully, but after realizing the sheer scale of the show, I picked up the pace.
+I had unbelievable luck walking into the National Art Center Tokyo on <Sun link="the-national-art-center--nitten"> while they were hosting NITTEN — a massive open-call art exhibition featuring over 3,000 artworks. There were several categories, like Western-style painting, sculpture, and calligraphy. I started off examining every piece carefully, but after realizing the sheer scale of the show, I picked up the pace.
 
 I really enjoyed the grandeur, the variety, and the quality of the work. I was a bit sad I didn’t have the energy to see the entire exhibition, but everything I did see was fantastic.
 
 <Img 19 desc="So in this picture you can see about 1% of of the exhibition.">
 
 ### Hokusai Museum
-I was disappointed that the National Museum didn’t have any of the famous ukiyo-e woodblock prints on display, so on <Sat> I visited a museum dedicated entirely to Hokusai. Even though they only had a replica of *The Great Wave off Kanagawa*, it was still incredible to see. I spent an unreasonable amount of time studying it up close, taking in every detail. I also learned more about the art form and the artist, which made me appreciate the work even more.
+I was disappointed that the National Museum didn’t have any of the famous ukiyo-e woodblock prints on display, so on <Sat link="hokusai-museum"> I visited a museum dedicated entirely to Hokusai. Even though they only had a replica of *The Great Wave off Kanagawa*, it was still incredible to see. I spent an unreasonable amount of time studying it up close, taking in every detail. I also learned more about the art form and the artist, which made me appreciate the work even more.
 
 <Img 11 desc="Only after seeing it like this did I finally allow myself to buy a souvenir of it.">
 
 ### Bonsai
-I adore the art of bonsai — the serenity they give off and the years of care they require. On <Fri> I visited a small greenery that had several on display. I strolled through the aisles admiring the miniature trees like they were tiny works of art.
+I adore the art of bonsai — the serenity they give off and the years of care they require. On <Fri link="tokyo-bonsai"> I visited a small greenery that had several on display. I strolled through the aisles admiring the miniature trees like they were tiny works of art.
 
 <Img 8 desc="They can even bear fruit!">
 
