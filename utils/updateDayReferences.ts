@@ -2,27 +2,21 @@ import { getBlogForNumber } from "@/lib/dayService";
 import twemoji from "twemoji";
 
 /**
- * Processes <Day X> references in markdown/HTML content and converts them to links
- * 
- * @param content - The markdown or HTML string to process
- * @param basePath - Optional base path for the links (defaults to "../day/")
- * @returns The processed content with Day references converted to links
+ * Processes <Day X> references in markdown/HTML content and converts them to links.
+ * Each element carries a `data-day-info` attribute (URL-encoded JSON) consumed by
+ * DayLinkWithTooltip to render a hover preview using the real DayCard component.
  */
 export async function processDayReferences(
     content: string,
     basePath: string = "../day/"
 ): Promise<string> {
-    // Regular expression to match <Day X> where X is one or more digits
     const dayPattern = /<Day\s+(\d+)>/g;
-
-    // Find all matches first
     const matches = Array.from(content.matchAll(dayPattern));
 
     if (matches.length === 0) {
         return content;
     }
 
-    // Process all matches asynchronously
     const replacements = await Promise.all(
         matches.map(async (match) => {
             const dayNum = parseInt(match[1], 10);
@@ -31,38 +25,40 @@ export async function processDayReferences(
                 const dayData = await getBlogForNumber(dayNum);
 
                 if (!dayData) {
-                    // Day not found - show as non-clickable
                     return {
                         original: match[0],
-                        replacement: `<span class="dayLink">Day ${dayNum}</span>`
+                        replacement: `<span class="dayLink">Day ${dayNum}</span>`,
                     };
                 }
 
-                if (dayData.draft === false) {
-                    // Published day - clickable link
-                    return {
-                        original: match[0],
-                        replacement: `<a href="${basePath}${dayData.date}" class="dayLink">${dayData.date}</a>`
-                    };
-                } else {
-                    // Draft day - non-clickable span
-                    return {
-                        original: match[0],
-                        replacement: `<span class="dayLink">${dayData.date}</span>`
-                    };
-                }
-            } catch (error) {
-                console.warn(`Failed to get blog data for day ${dayNum}:`, error);
-                // Fallback to non-clickable span if database call fails
+                const hoverInfo = encodeURIComponent(
+                    JSON.stringify({
+                        date:          dayData.date,
+                        formattedDate: dayData.date,
+                        day:           dayData.day,
+                        title:         dayData.title,
+                        description:   dayData.description,
+                        icon:          dayData.icon,
+                        location:      dayData.location,
+                        stats:         dayData.stats,
+                    })
+                );
+
                 return {
                     original: match[0],
-                    replacement: `<span class="dayLink">Day ${dayNum}</span>`
+                    replacement: `<a href="${basePath}${dayData.date}" class="dayLink" data-day-info="${hoverInfo}">${dayData.date}</a>`,
+                };
+
+            } catch (error) {
+                console.warn(`Failed to get blog data for day ${dayNum}:`, error);
+                return {
+                    original: match[0],
+                    replacement: `<span class="dayLink">Day ${dayNum}</span>`,
                 };
             }
         })
     );
 
-    // Apply all replacements
     let result = content;
     for (const { original, replacement } of replacements) {
         result = result.replace(original, replacement);
@@ -71,9 +67,8 @@ export async function processDayReferences(
     const withFlags = twemoji.parse(result, {
         folder: "svg",
         ext: ".svg",
-        className: "emoji-flag"
+        className: "emoji-flag",
     });
-
 
     return withFlags;
 }
