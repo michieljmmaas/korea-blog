@@ -1,4 +1,4 @@
-import { getBlogForNumber, getBlogPostsForDates } from "@/lib/dayService";
+import { getBlogForNumber, getBlogPost as getDayPost, getBlogPostsForDates } from "@/lib/dayService";
 import { getBlogPost } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
@@ -57,44 +57,81 @@ function dayLink(href: string, label: string, hoverInfo: string): string {
 // ─── Week day tags (<Fri>, <Sat>, …) ─────────────────────────────────────────
 
 const WEEK_DAY_TAGS = [
-    { tag: '<Fri>', label: 'Friday',    index: 0 },
-    { tag: '<Sat>', label: 'Saturday',  index: 1 },
-    { tag: '<Sun>', label: 'Sunday',    index: 2 },
-    { tag: '<Mon>', label: 'Monday',    index: 3 },
-    { tag: '<Tue>', label: 'Tuesday',   index: 4 },
-    { tag: '<Wed>', label: 'Wednesday', index: 5 },
-    { tag: '<Thu>', label: 'Thursday',  index: 6 },
+    { tag: 'Fri', label: 'Friday',    index: 0 },
+    { tag: 'Sat', label: 'Saturday',  index: 1 },
+    { tag: 'Sun', label: 'Sunday',    index: 2 },
+    { tag: 'Mon', label: 'Monday',    index: 3 },
+    { tag: 'Tue', label: 'Tuesday',   index: 4 },
+    { tag: 'Wed', label: 'Wednesday', index: 5 },
+    { tag: 'Thu', label: 'Thursday',  index: 6 },
 ] as const;
 
 /**
- * Replaces <Fri>…<Thu> tags with day links that include hover tooltip data.
+ * Replaces <Fri>…<Thu> and <Fri link="slug">…<Thu link="slug"> tags with day
+ * links that include hover tooltip data. When a link slug is present the label
+ * becomes the matching ## heading text from that day's markdown.
  */
 export async function processWeekDayTags(
     content: string,
     week: WeekData,
     basePath: string = "../day/"
 ): Promise<string> {
-    const dayPosts = await getBlogPostsForDates(week.days);
+    // Single pattern that matches all weekday tags with an optional link attribute
+    // e.g. <Fri>, <Sat link="some-heading">, <Thu link="morning-hike">
+    const weekTagPattern = /<(Fri|Sat|Sun|Mon|Tue|Wed|Thu)(?:\s+link="([^"]+)")?>/g;
+    const matches = Array.from(content.matchAll(weekTagPattern));
 
+    if (matches.length === 0) return content;
+
+    // Fetch all days upfront
+    const dayPosts = await getBlogPostsForDates(week.days);
     const dayByDate = new Map<string, DayFrontmatter>(
         dayPosts.map((d) => [d.date, d])
     );
 
+    const tagToIndex: Record<string, number> = {
+        Fri: 0, Sat: 1, Sun: 2, Mon: 3, Tue: 4, Wed: 5, Thu: 6,
+    };
+    const tagToLabel: Record<string, string> = {
+        Fri: 'Friday', Sat: 'Saturday', Sun: 'Sunday', Mon: 'Monday',
+        Tue: 'Tuesday', Wed: 'Wednesday', Thu: 'Thursday',
+    };
+
+    const replacements = await Promise.all(
+        matches.map(async (match) => {
+            const [original, tag, linkSlug] = match;
+            const index = tagToIndex[tag];
+            const label = tagToLabel[tag];
+            const date  = week.days[index];
+            const frontmatter = date ? dayByDate.get(date) : undefined;
+
+            if (!frontmatter || !date) {
+                return {
+                    original,
+                    replacement: `<a href="${basePath}${date ?? ''}" class="dayLink">${label}</a>`,
+                };
+            }
+
+            const hoverInfo = serializeDayInfo(frontmatter);
+            const baseHref  = `${basePath}${date}`;
+
+            if (linkSlug) {
+                const post = await getDayPost(date);
+                const headingText = post ? headingTextForSlug(post.content, linkSlug) : null;
+                return {
+                    original,
+                    replacement: dayLink(`${baseHref}#${linkSlug}`, headingText ?? label, hoverInfo),
+                };
+            }
+
+            return { original, replacement: dayLink(baseHref, label, hoverInfo) };
+        })
+    );
+
     let result = content;
-
-    for (const { tag, label, index } of WEEK_DAY_TAGS) {
-        if (!result.includes(tag)) continue;
-
-        const date = week.days[index];
-        const day  = date ? dayByDate.get(date) : undefined;
-
-        const replacement = day
-            ? dayLink(`${basePath}${date}`, label, serializeDayInfo(day))
-            : `<a href="${basePath}${date ?? ""}" class="dayLink">${label}</a>`;
-
-        result = result.replaceAll(tag, replacement);
+    for (const { original, replacement } of replacements) {
+        result = result.replace(original, replacement);
     }
-
     return result;
 }
 

@@ -31,7 +31,7 @@ At the summit, things got surprisingly emotional for me. Reaching the top of tha
 <Img view desc="What a view">  
 
 ### Arario Museum
-On <Fri> I visited the **ARARIO Museum – In Space**, which is in Seoul. It had an impressive collection of contemporary art, and the building itself had a really unique atmosphere. I took a ton of pictures, and I’d love to dedicate a separate post just to that visit once I find the time.  
+On <Fri link="arario-museum--in-space"> I visited the **ARARIO Museum – In Space**, which is in Seoul. It had an impressive collection of contemporary art, and the building itself had a really unique atmosphere. I took a ton of pictures, and I’d love to dedicate a separate post just to that visit once I find the time.  
 
 <Img arario desc="The centerpiece of the ARARIO collection">  
 
