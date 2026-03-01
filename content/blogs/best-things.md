@@ -23,7 +23,7 @@ My favorite day has to be <Day 17>. That day I climbed to the top of Bukhansan. 
 I love modern art, and I got to see a lot of it on my trip. Of all the museums I visited, the **ARARIO Museum – In Space** has to be my favorite. The name is a bit confusing, as it is actually located in Seoul. The collection was excellent, and the building itself added a great atmosphere. I wrote a blogpost about it that you can read here: <Blog arario desc="ARARIO Museum in Space">
 
 Honorable mentions: 
-- Nam Jun Paik Art Center: <Day 9>
+- Nam Jun Paik Art Center: <Day 9 link="nam-june-paik-art-center">
 - The National Art Center – NITTEN: <Day 45>
 - Taipei Fine Arts Museum: <Day 61>
 

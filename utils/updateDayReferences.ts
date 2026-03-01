@@ -3,6 +3,36 @@ import { getBlogPost } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
 
+// ─── Heading utilities ────────────────────────────────────────────────────────
+
+/**
+ * Converts a heading string to the same slug format rehype-slug uses
+ * (matches github-slugger: lowercase, strip non-word chars, spaces → hyphens)
+ */
+function slugifyHeading(text: string): string {
+    return text
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-");
+}
+
+/**
+ * Given raw markdown content and an anchor slug, returns the matching ## heading
+ * text, or null if no match is found. Only searches ## (h2) headings.
+ */
+function headingTextForSlug(content: string, slug: string): string | null {
+    const headingRegex = /^##\s+(.+)$/gm;
+    let match;
+    while ((match = headingRegex.exec(content)) !== null) {
+        const headingText = match[1].trim();
+        if (slugifyHeading(headingText) === slug) {
+            return headingText;
+        }
+    }
+    return null;
+}
+
 // ─── Shared helpers ───────────────────────────────────────────────────────────
 
 function serializeDayInfo(day: DayFrontmatter): string {
@@ -38,17 +68,14 @@ const WEEK_DAY_TAGS = [
 
 /**
  * Replaces <Fri>…<Thu> tags with day links that include hover tooltip data.
- * Drop-in async replacement for the inline `simpleReplace` function in the week page.
  */
 export async function processWeekDayTags(
     content: string,
     week: WeekData,
     basePath: string = "../day/"
 ): Promise<string> {
-    // Fetch all days for the week in one call
     const dayPosts = await getBlogPostsForDates(week.days);
 
-    // Build a date → TripDay lookup
     const dayByDate = new Map<string, DayFrontmatter>(
         dayPosts.map((d) => [d.date, d])
     );
@@ -71,16 +98,22 @@ export async function processWeekDayTags(
     return result;
 }
 
-// ─── <Day X> references ───────────────────────────────────────────────────────
+// ─── <Day X> and <Day X link="..."> references ───────────────────────────────
 
 /**
- * Processes <Day X> references and converts them to links with hover data.
+ * Processes <Day X> and <Day X link="anchor-slug"> references.
+ *
+ * Without link:  renders as the day's date, links to the day page.
+ * With link:     renders as the matching ## heading text (e.g. "Evening walk"),
+ *                links to the day page scrolled to that section (#anchor-slug).
+ *                Falls back to the date if the heading slug isn't found.
  */
 export async function processDayReferences(
     content: string,
     basePath: string = "../day/"
 ): Promise<string> {
-    const dayPattern = /<Day\s+(\d+)>/g;
+    // Matches both <Day 12> and <Day 12 link="some-section">
+    const dayPattern = /<Day\s+(\d+)(?:\s+link="([^"]+)")?>/g;
     const matches = Array.from(content.matchAll(dayPattern));
 
     if (matches.length === 0) {
@@ -89,40 +122,30 @@ export async function processDayReferences(
 
     const replacements = await Promise.all(
         matches.map(async (match) => {
-            const dayNum = parseInt(match[1], 10);
+            const [original, dayNumStr, linkSlug] = match;
+            const dayNum = parseInt(dayNumStr, 10);
 
             try {
-                const dayData = await getBlogForNumber(dayNum);
+                const { frontmatter, content: dayContent } = await getBlogForNumber(dayNum);
 
-                if (!dayData) {
-                    return {
-                        original: match[0],
-                        replacement: `<span class="dayLink">Day ${dayNum}</span>`,
-                    };
+                const hoverInfo = serializeDayInfo(frontmatter);
+                const baseHref  = `${basePath}${frontmatter.date}`;
+
+                if (linkSlug) {
+                    // Anchor link — resolve heading text for the label
+                    const headingText = headingTextForSlug(dayContent, linkSlug);
+                    const label = headingText ?? frontmatter.date;
+                    const href  = `${baseHref}#${linkSlug}`;
+                    return { original, replacement: dayLink(href, label, hoverInfo) };
+                } else {
+                    // Plain day link
+                    return { original, replacement: dayLink(baseHref, frontmatter.date, hoverInfo) };
                 }
-
-                const hoverInfo = encodeURIComponent(
-                    JSON.stringify({
-                        date:          dayData.date,
-                        formattedDate: dayData.date,
-                        day:           dayData.day,
-                        title:         dayData.title,
-                        description:   dayData.description,
-                        icon:          dayData.icon,
-                        location:      dayData.location,
-                        stats:         dayData.stats,
-                    })
-                );
-
-                return {
-                    original: match[0],
-                    replacement: `<a href="${basePath}${dayData.date}" class="dayLink" data-day-info="${hoverInfo}">${dayData.date}</a>`,
-                };
 
             } catch (error) {
                 console.warn(`Failed to get blog data for day ${dayNum}:`, error);
                 return {
-                    original: match[0],
+                    original,
                     replacement: `<span class="dayLink">Day ${dayNum}</span>`,
                 };
             }
@@ -210,7 +233,7 @@ export async function processBlogReferences(
 // ─── Utilities ────────────────────────────────────────────────────────────────
 
 export function extractDayNumbers(content: string): number[] {
-    const dayPattern = /<Day\s+(\d+)>/g;
+    const dayPattern = /<Day\s+(\d+)(?:\s+link="[^"]+")?>/g;
     const dayNumbers = new Set<number>();
     let match;
     while ((match = dayPattern.exec(content)) !== null) {
@@ -233,7 +256,7 @@ export async function processDayReferencesWithCallback(
     content: string,
     replaceFn: (dayNumber: number) => Promise<string>
 ): Promise<string> {
-    const dayPattern = /<Day\s+(\d+)>/g;
+    const dayPattern = /<Day\s+(\d+)(?:\s+link="[^"]+")?>/g;
     const matches = Array.from(content.matchAll(dayPattern));
     if (matches.length === 0) return content;
 
@@ -252,7 +275,7 @@ export async function processDayReferencesWithCallback(
 }
 
 export function hasDayReferences(content: string): boolean {
-    return /<Day\s+(\d+)>/.test(content);
+    return /<Day\s+\d+(?:\s+link="[^"]+")?>/. test(content);
 }
 
 export function hasBlogReferences(content: string): boolean {

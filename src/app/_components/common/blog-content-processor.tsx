@@ -128,6 +128,31 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
                 mountedComponentsRef.current.push({ element: container, root });
             });
 
+            // ── Anchor scroll ─────────────────────────────────────────────────
+            // The browser tries to scroll to the hash before this content exists
+            // in the DOM. Now that innerHTML is set, do it ourselves.
+            // We use a ResizeObserver so that as images above the target load in
+            // and push content down, we keep re-scrolling to the correct position.
+            const hash = window.location.hash;
+            if (hash) {
+                const target = contentRef.current.querySelector<HTMLElement>(hash);
+                if (target) {
+                    const scrollToTarget = () => {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    };
+
+                    // Initial scroll
+                    requestAnimationFrame(scrollToTarget);
+
+                    // Re-scroll whenever the content container changes size
+                    const observer = new ResizeObserver(scrollToTarget);
+                    observer.observe(contentRef.current);
+
+                    // Stop correcting after 3s — all images should be loaded by then
+                    setTimeout(() => observer.disconnect(), 3000);
+                }
+            }
+
         }, 10);
 
         return () => {

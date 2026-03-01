@@ -5,11 +5,11 @@ import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import { ImageMapping } from "../../utils/createImageMap";
 
 function processCustomImages(markdown: string, imageMapping: ImageMapping): string {
-  // Updated regex to capture desc attribute
   const imgRegex = /<Img\s+([\w-]+)(?:\s+(portrait|landscape))?(?:\s+alt="([^"]*)")?(?:\s+desc="([^"]*)")?\s*\/?>/g;
 
   return markdown.replace(imgRegex, (match, photoIdStr, orientation, altText, description) => {
@@ -26,7 +26,6 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
     const alt = altText || imageData.alt;
     const orientationClass = usePortrait ? 'portrait' : 'landscape';
 
-    // Generate a placeholder div with data attributes for React component replacement
     return `<div 
       class="modal-image-placeholder" 
       data-src="${imageUrl}" 
@@ -42,14 +41,13 @@ export default async function markdownToHtml(
   markdown: string,
   imageMapping: ImageMapping,
 ) {
-  // Process custom image tags
   let processedMarkdown = processCustomImages(markdown, imageMapping);
 
-  // Process markdown with HTML support and GFM features (tables, strikethrough, etc.)
   const result = await remark()
-    .use(remarkGfm) // Add this for tables, strikethrough, task lists, etc.
+    .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(rehypeSlug)   // adds id="..." to all headings based on their text
     .use(rehypeStringify)
     .process(processedMarkdown);
 
