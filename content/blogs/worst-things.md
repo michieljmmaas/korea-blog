@@ -11,7 +11,7 @@ tags: ["ranking"]
 
 My trip wasn't all daisies and rainbows, there were also some stinkers. I thought it would be fun to highlight those as well.
 
-This post is the counterpart of <Blog best-things="My Top 10">.
+This post is the counterpart of <Blog best-things desc="My Top 10">.
 
 
 ## My Worst Day - Missing Tickets for the Second TWICE Concert in Macau
