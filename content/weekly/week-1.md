@@ -29,7 +29,7 @@ I’m still experimenting with the format for these posts, but I’m sure it’l
 A lot has happened over the past week — here are some of my favorite highlights.  
 
 ### TWICE Concert in Macau
-On <Sat> I saw TWICE live in Macau! It took a fair bit of travel and sweat to get there, but the concert itself was worth it. I even wrote a full blogpost about the whole experience — you can read it here ([--> link](http://localhost:3000/blogs/twice-in-macau)).  
+On <Sat> I saw TWICE live in Macau! It took a fair bit of travel and sweat to get there, but the concert itself was worth it. I even wrote a full blogpost about the whole experience — you can read it here <Blog twice-in-macau desc="TWICE in Macau">.
 
 <Img singing desc="What is Love?">  
 

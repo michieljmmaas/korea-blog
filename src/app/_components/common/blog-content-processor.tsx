@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import SingleImageWithModal from './single-image-with-modal';
 import { DayHoverData, DayLinkWithTooltip } from '../day/day-link-with-tooltip';
+import { BlogHoverData, BlogLinkWithTooltip } from '../blog/blog-link-with-tooltip';
 
 interface BlogContentProcessorProps {
     htmlContent: string;
@@ -94,6 +95,35 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
                 const root = createRoot(container);
                 root.render(
                     <DayLinkWithTooltip data={data} href={href} label={label} />
+                );
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Blog links ────────────────────────────────────────────────────
+            const blogLinks = contentRef.current.querySelectorAll<HTMLAnchorElement>(
+                'a.dayLink[data-blog-info]'
+            );
+
+            blogLinks.forEach((el) => {
+                const raw = el.getAttribute('data-blog-info');
+                if (!raw) return;
+
+                let data: BlogHoverData;
+                try {
+                    data = JSON.parse(decodeURIComponent(raw));
+                } catch {
+                    return;
+                }
+
+                const href = el.getAttribute('href') ?? `/blogs/${data.slug}`;
+                const label = el.textContent ?? data.title;
+
+                const container = document.createElement('span');
+                el.parentNode?.replaceChild(container, el);
+
+                const root = createRoot(container);
+                root.render(
+                    <BlogLinkWithTooltip data={data} href={href} label={label} />
                 );
                 mountedComponentsRef.current.push({ element: container, root });
             });

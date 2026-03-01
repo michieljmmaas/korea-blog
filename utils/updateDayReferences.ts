@@ -1,4 +1,5 @@
 import { getBlogForNumber } from "@/lib/dayService";
+import { getBlogPost } from "@/lib/blogService";
 import twemoji from "twemoji";
 
 /**
@@ -74,32 +75,72 @@ export async function processDayReferences(
 }
 
 /**
- * Processes <Blog {slug} desc="Text for hyperlink"> references and converts them to links
- * 
- * @param content - The markdown or HTML string to process
- * @param basePath - Optional base path for the links (defaults to "/blogs/")
- * @returns The processed content with Blog references converted to links
+ * Processes <Blog {slug} desc="Text for hyperlink"> references and converts them to links.
+ * Each link carries a `data-blog-info` attribute (URL-encoded JSON) consumed by
+ * BlogLinkWithTooltip to render a hover preview using the real BlogPostCard component.
  */
-export function processBlogReferences(
+export async function processBlogReferences(
     content: string,
     basePath: string = "/blogs/"
-): string {
-    // Regular expression to match <Blog {slug} desc="description text">
+): Promise<string> {
     const blogPattern = /<Blog\s+([^\s]+)\s+desc="([^"]+)">/g;
+    const matches = Array.from(content.matchAll(blogPattern));
 
-    const result = content.replace(blogPattern, (match, slug, description) => {
-        return `<a href="${basePath}${slug}" class="dayLink">${description}</a>`;
-    });
+    if (matches.length === 0) {
+        return content;
+    }
+
+    const replacements = await Promise.all(
+        matches.map(async (match) => {
+            const [original, slug, description] = match;
+
+            try {
+                const post = await getBlogPost(slug);
+
+                if (!post) {
+                    // Blog not found - still link, just no hover data
+                    return {
+                        original,
+                        replacement: `<a href="${basePath}${slug}" class="dayLink">${description}</a>`,
+                    };
+                }
+
+                const hoverInfo = encodeURIComponent(
+                    JSON.stringify({
+                        slug:        post.slug,
+                        title:       post.frontmatter.title,
+                        description: post.frontmatter.description,
+                        publishdate: post.frontmatter.publishdate,
+                        tags:        post.frontmatter.tags,
+                        thumb:       post.frontmatter.thumb,
+                    })
+                );
+
+                return {
+                    original,
+                    replacement: `<a href="${basePath}${slug}" class="dayLink" data-blog-info="${hoverInfo}">${description}</a>`,
+                };
+
+            } catch (error) {
+                console.warn(`Failed to get blog post data for slug "${slug}":`, error);
+                return {
+                    original,
+                    replacement: `<a href="${basePath}${slug}" class="dayLink">${description}</a>`,
+                };
+            }
+        })
+    );
+
+    let result = content;
+    for (const { original, replacement } of replacements) {
+        result = result.replace(original, replacement);
+    }
 
     return result;
 }
 
 /**
  * Extracts all day numbers from <Day X> references in the content
- * Useful for batch processing or validation
- * 
- * @param content - The content to scan for day references
- * @returns Array of unique day numbers found
  */
 export function extractDayNumbers(content: string): number[] {
     const dayPattern = /<Day\s+(\d+)>/g;
@@ -115,9 +156,6 @@ export function extractDayNumbers(content: string): number[] {
 
 /**
  * Extracts all blog references from the content
- * 
- * @param content - The content to scan for blog references
- * @returns Array of objects containing slug and description
  */
 export function extractBlogReferences(content: string): Array<{ slug: string; description: string }> {
     const blogPattern = /<Blog\s+([^\s]+)\s+desc="([^"]+)">/g;
@@ -125,22 +163,12 @@ export function extractBlogReferences(content: string): Array<{ slug: string; de
     let match;
 
     while ((match = blogPattern.exec(content)) !== null) {
-        blogRefs.push({
-            slug: match[1],
-            description: match[2]
-        });
+        blogRefs.push({ slug: match[1], description: match[2] });
     }
 
     return blogRefs;
 }
 
-/**
- * Advanced processor that allows custom replacement logic for each day reference
- * 
- * @param content - The content to process
- * @param replaceFn - Custom async function that takes a day number and returns the replacement string
- * @returns The processed content
- */
 export async function processDayReferencesWithCallback(
     content: string,
     replaceFn: (dayNumber: number) => Promise<string>
@@ -156,10 +184,7 @@ export async function processDayReferencesWithCallback(
         matches.map(async (match) => {
             const dayNum = parseInt(match[1], 10);
             const replacement = await replaceFn(dayNum);
-            return {
-                original: match[0],
-                replacement
-            };
+            return { original: match[0], replacement };
         })
     );
 
@@ -171,24 +196,10 @@ export async function processDayReferencesWithCallback(
     return result;
 }
 
-/**
- * Validates if day references exist in the content
- * 
- * @param content - The content to check
- * @returns Boolean indicating if any day references were found
- */
 export function hasDayReferences(content: string): boolean {
-    const dayPattern = /<Day\s+(\d+)>/;
-    return dayPattern.test(content);
+    return /<Day\s+(\d+)>/.test(content);
 }
 
-/**
- * Validates if blog references exist in the content
- * 
- * @param content - The content to check
- * @returns Boolean indicating if any blog references were found
- */
 export function hasBlogReferences(content: string): boolean {
-    const blogPattern = /<Blog\s+([^\s]+)\s+desc="[^"]+">/;
-    return blogPattern.test(content);
+    return /<Blog\s+([^\s]+)\s+desc="[^"]+">/.test(content);
 }

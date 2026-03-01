@@ -9,7 +9,7 @@ import { createForWeek } from '../../../../utils/createImageMap';
 import { WeekData } from "@/app/types";
 import RelatedPosts from "@/app/_components/blog/related-posts";
 import { getBlogpostsForWeek } from "@/lib/blogService";
-import { processDayReferences } from "../../../../utils/updateDayReferences";
+import { processBlogReferences, processDayReferences } from "../../../../utils/updateDayReferences";
 
 
 
@@ -60,8 +60,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const weekReplaced = simpleReplace(week.content || "", week);
   const processedContent = await processDayReferences(weekReplaced);
+  const processedBlogs = await processBlogReferences(processedContent);
 
-  const content = await markdownToHtml(processedContent || "", imageMapping);
+  const content = await markdownToHtml(processedBlogs || "", imageMapping);
   const dayPosts = await getBlogPostsForDates(week.days);
   const relatedPosts = await getBlogpostsForWeek(week);
 
