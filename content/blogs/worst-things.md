@@ -44,7 +44,7 @@ Checkout all the foods I ate at the [Food](/food) tab.
 ## My Least Favorite Cultural Sight - Shibuya Scramble
 Shibuya Scramble is a busy intersection in the center of Tokyo. That’s just it: civil infrastructure. What made it interesting was that so many locals used it. But because of the recent spike in tourism in Japan, this zebra crossing has turned into a tourist hotspot. No sane local would still use it for their daily commute.
 
-When I got there (on <Day 44 desc="shibuya-scramble">), it was so busy that I had to wait three cycles just to cross it. A road intersection!
+When I got there (on <Day 44 link="shibuya-scramble">), it was so busy that I had to wait three cycles just to cross it. A road intersection!
 
 What makes it even worse are all the people rushing to the center before the lights turn green, with their video cameras ready to film themselves being engulfed in a sea of other tourists doing the exact same thing. Then they stay after the lights turn red again because they are too busy taking pictures, causing dangerous situations.
 

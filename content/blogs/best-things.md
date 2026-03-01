@@ -88,8 +88,8 @@ If you are ever in Taiwan, I highly recommend it! Or you can read my blogpost wi
 On <Day 20> I went to get my haircut. The hairdresser knew no English, but that didn’t matter. It was a great test of my Korean, which I have studied for the past five years. I was able to keep up with some small talk and explain what style I wanted. I even had a lesson about this exact situation, and it was the first time learning any language that it actually came up in real life! I even got some restaurant recommendations out of it.
 
 Honorable mentions:
-- A date with a Korean girl: <Day 16 desc="a-date">
-- Language exchange: <Day 22 desc="language-exchange">
+- A date with a Korean girl: <Day 16 link="a-date">
+- Language exchange: <Day 22 link="language-exchange">
 
 <Img hairdresser desc="한국스타일 주세요!">
 
