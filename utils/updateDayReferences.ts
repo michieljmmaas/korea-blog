@@ -1,11 +1,80 @@
-import { getBlogForNumber } from "@/lib/dayService";
+import { getBlogForNumber, getBlogPostsForDates } from "@/lib/dayService";
 import { getBlogPost } from "@/lib/blogService";
+import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
 
+// ─── Shared helpers ───────────────────────────────────────────────────────────
+
+function serializeDayInfo(day: DayFrontmatter): string {
+    return encodeURIComponent(
+        JSON.stringify({
+            date:          day.date,
+            formattedDate: day.date,
+            day:           day.day,
+            title:         day.title,
+            description:   day.description,
+            icon:          day.icon,
+            location:      day.location,
+            stats:         day.stats,
+        })
+    );
+}
+
+function dayLink(href: string, label: string, hoverInfo: string): string {
+    return `<a href="${href}" class="dayLink" data-day-info="${hoverInfo}">${label}</a>`;
+}
+
+// ─── Week day tags (<Fri>, <Sat>, …) ─────────────────────────────────────────
+
+const WEEK_DAY_TAGS = [
+    { tag: '<Fri>', label: 'Friday',    index: 0 },
+    { tag: '<Sat>', label: 'Saturday',  index: 1 },
+    { tag: '<Sun>', label: 'Sunday',    index: 2 },
+    { tag: '<Mon>', label: 'Monday',    index: 3 },
+    { tag: '<Tue>', label: 'Tuesday',   index: 4 },
+    { tag: '<Wed>', label: 'Wednesday', index: 5 },
+    { tag: '<Thu>', label: 'Thursday',  index: 6 },
+] as const;
+
 /**
- * Processes <Day X> references in markdown/HTML content and converts them to links.
- * Each element carries a `data-day-info` attribute (URL-encoded JSON) consumed by
- * DayLinkWithTooltip to render a hover preview using the real DayCard component.
+ * Replaces <Fri>…<Thu> tags with day links that include hover tooltip data.
+ * Drop-in async replacement for the inline `simpleReplace` function in the week page.
+ */
+export async function processWeekDayTags(
+    content: string,
+    week: WeekData,
+    basePath: string = "../day/"
+): Promise<string> {
+    // Fetch all days for the week in one call
+    const dayPosts = await getBlogPostsForDates(week.days);
+
+    // Build a date → TripDay lookup
+    const dayByDate = new Map<string, DayFrontmatter>(
+        dayPosts.map((d) => [d.date, d])
+    );
+
+    let result = content;
+
+    for (const { tag, label, index } of WEEK_DAY_TAGS) {
+        if (!result.includes(tag)) continue;
+
+        const date = week.days[index];
+        const day  = date ? dayByDate.get(date) : undefined;
+
+        const replacement = day
+            ? dayLink(`${basePath}${date}`, label, serializeDayInfo(day))
+            : `<a href="${basePath}${date ?? ""}" class="dayLink">${label}</a>`;
+
+        result = result.replaceAll(tag, replacement);
+    }
+
+    return result;
+}
+
+// ─── <Day X> references ───────────────────────────────────────────────────────
+
+/**
+ * Processes <Day X> references and converts them to links with hover data.
  */
 export async function processDayReferences(
     content: string,
@@ -74,10 +143,10 @@ export async function processDayReferences(
     return withFlags;
 }
 
+// ─── <Blog slug desc="…"> references ─────────────────────────────────────────
+
 /**
- * Processes <Blog {slug} desc="Text for hyperlink"> references and converts them to links.
- * Each link carries a `data-blog-info` attribute (URL-encoded JSON) consumed by
- * BlogLinkWithTooltip to render a hover preview using the real BlogPostCard component.
+ * Processes <Blog {slug} desc="…"> references and converts them to links with hover data.
  */
 export async function processBlogReferences(
     content: string,
@@ -98,7 +167,6 @@ export async function processBlogReferences(
                 const post = await getBlogPost(slug);
 
                 if (!post) {
-                    // Blog not found - still link, just no hover data
                     return {
                         original,
                         replacement: `<a href="${basePath}${slug}" class="dayLink">${description}</a>`,
@@ -139,33 +207,25 @@ export async function processBlogReferences(
     return result;
 }
 
-/**
- * Extracts all day numbers from <Day X> references in the content
- */
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
 export function extractDayNumbers(content: string): number[] {
     const dayPattern = /<Day\s+(\d+)>/g;
-    const dayNumbers: Set<number> = new Set();
+    const dayNumbers = new Set<number>();
     let match;
-
     while ((match = dayPattern.exec(content)) !== null) {
         dayNumbers.add(parseInt(match[1], 10));
     }
-
     return Array.from(dayNumbers).sort((a, b) => a - b);
 }
 
-/**
- * Extracts all blog references from the content
- */
 export function extractBlogReferences(content: string): Array<{ slug: string; description: string }> {
     const blogPattern = /<Blog\s+([^\s]+)\s+desc="([^"]+)">/g;
     const blogRefs: Array<{ slug: string; description: string }> = [];
     let match;
-
     while ((match = blogPattern.exec(content)) !== null) {
         blogRefs.push({ slug: match[1], description: match[2] });
     }
-
     return blogRefs;
 }
 
@@ -175,24 +235,19 @@ export async function processDayReferencesWithCallback(
 ): Promise<string> {
     const dayPattern = /<Day\s+(\d+)>/g;
     const matches = Array.from(content.matchAll(dayPattern));
-
-    if (matches.length === 0) {
-        return content;
-    }
+    if (matches.length === 0) return content;
 
     const replacements = await Promise.all(
-        matches.map(async (match) => {
-            const dayNum = parseInt(match[1], 10);
-            const replacement = await replaceFn(dayNum);
-            return { original: match[0], replacement };
-        })
+        matches.map(async (match) => ({
+            original:    match[0],
+            replacement: await replaceFn(parseInt(match[1], 10)),
+        }))
     );
 
     let result = content;
     for (const { original, replacement } of replacements) {
         result = result.replace(original, replacement);
     }
-
     return result;
 }
 
