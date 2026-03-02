@@ -7,6 +7,7 @@ import StatsGrid from './stats-grid';
 import BaseCard from '../common/cards/base-card';
 import { CardContent } from '../common/cards/card-content';
 import { CardImage } from '../common/cards/card-image';
+import TagList from '../blog/tag-list';
 
 interface DayCardProps {
     day: TripDay;
@@ -19,7 +20,7 @@ export default function DayCard({ day }: DayCardProps) {
     return (
         <BaseCard href={link}>
             <CardImage>
-               <Image
+                <Image
                     src={`/thumbnails/days-frontpage/${frontmatter.date}.webp`}
                     alt={frontmatter.date}
                     fill
@@ -45,6 +46,10 @@ export default function DayCard({ day }: DayCardProps) {
                 <p className="text-gray-600 text-sm leading-relaxed line-clamp-1 mb-4 flex-1 ">
                     {frontmatter.description}
                 </p>
+
+                <div className="mt-auto pb-5">
+                    <TagList tags={frontmatter.tags.slice(0, 3)} />
+                </div>
 
                 {/* Stats Grid at bottom */}
                 <div className="mt-auto">

@@ -17,6 +17,7 @@ export interface DayHoverData {
     icon: string;
     location: CityLocation;
     stats: TripDay["frontmatter"]["stats"];
+    tags: string[];
 }
 
 function hoverDataToTripDay(data: DayHoverData): TripDay {
@@ -39,7 +40,7 @@ function hoverDataToTripDay(data: DayHoverData): TripDay {
             draft: false,
             dayOfWeek: "",
             photos: [],
-            tags: [],
+            tags: data.tags,
             thumbnail: "",
             coordinates: { lat: null, lng: null },
             work: false,

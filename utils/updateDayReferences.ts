@@ -46,6 +46,7 @@ function serializeDayInfo(day: DayFrontmatter): string {
             icon:          day.icon,
             location:      day.location,
             stats:         day.stats,
+            tags:         day.tags,
         })
     );
 }
