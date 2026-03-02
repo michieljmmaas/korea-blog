@@ -3,36 +3,6 @@ import { getBlogPost } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
 
-// ─── Heading utilities ────────────────────────────────────────────────────────
-
-/**
- * Converts a heading string to the same slug format rehype-slug uses
- * (matches github-slugger: lowercase, strip non-word chars, spaces → hyphens)
- */
-function slugifyHeading(text: string): string {
-    return text
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, "")
-        .trim()
-        .replace(/\s+/g, "-");
-}
-
-/**
- * Given raw markdown content and an anchor slug, returns the matching ## heading
- * text, or null if no match is found. Only searches ## (h2) headings.
- */
-function headingTextForSlug(content: string, slug: string): string | null {
-    const headingRegex = /^##\s+(.+)$/gm;
-    let match;
-    while ((match = headingRegex.exec(content)) !== null) {
-        const headingText = match[1].trim();
-        if (slugifyHeading(headingText) === slug) {
-            return headingText;
-        }
-    }
-    return null;
-}
-
 // ─── Shared helpers ───────────────────────────────────────────────────────────
 
 function serializeDayInfo(day: DayFrontmatter): string {
@@ -54,18 +24,6 @@ function serializeDayInfo(day: DayFrontmatter): string {
 function dayLink(href: string, label: string, hoverInfo: string): string {
     return `<a href="${href}" class="dayLink" data-day-info="${hoverInfo}">${label}</a>`;
 }
-
-// ─── Week day tags (<Fri>, <Sat>, …) ─────────────────────────────────────────
-
-const WEEK_DAY_TAGS = [
-    { tag: 'Fri', label: 'Friday',    index: 0 },
-    { tag: 'Sat', label: 'Saturday',  index: 1 },
-    { tag: 'Sun', label: 'Sunday',    index: 2 },
-    { tag: 'Mon', label: 'Monday',    index: 3 },
-    { tag: 'Tue', label: 'Tuesday',   index: 4 },
-    { tag: 'Wed', label: 'Wednesday', index: 5 },
-    { tag: 'Thu', label: 'Thursday',  index: 6 },
-] as const;
 
 /**
  * Replaces <Fri>…<Thu> and <Fri link="slug">…<Thu link="slug"> tags with day
@@ -264,7 +222,6 @@ export async function processBlogReferences(
     return result;
 }
 
-// ─── Utilities ────────────────────────────────────────────────────────────────
 
 export function extractDayNumbers(content: string): number[] {
     const dayPattern = /<Day\s+(\d+)(?:\s+link="[^"]+")?>/g;
