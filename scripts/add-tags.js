@@ -148,7 +148,7 @@ function loadAllPosts(files) {
   });
 }
 
-function processPost(post, tagSeed, context = {}) {
+function processPost(post, tagSeed) {
   const { filePath, file, fm, parts } = post;
 
   if (!parts || !fm) {
@@ -160,9 +160,8 @@ function processPost(post, tagSeed, context = {}) {
   const existingTags = RESET ? [] : (Array.isArray(fm.tags) ? fm.tags : []);
   const tagSet = new Set(existingTags);
 
-  // Apply rules — passing context (prevDay/nextDay) for cross-post rules
   for (const rule of TAG_RULES) {
-    const added = rule.apply(fm, context);
+    const added = rule.apply(fm);
     added.forEach(t => tagSet.add(t));
   }
 
@@ -211,12 +210,7 @@ function run() {
   let unchanged = 0;
 
   for (let i = 0; i < posts.length; i++) {
-    const context = {
-      prevDay: posts[i - 1]?.fm ?? null,
-      nextDay: posts[i + 1]?.fm ?? null,
-    };
-
-    const result = processPost(posts[i], tagSeed, context);
+    const result = processPost(posts[i], tagSeed);
 
     if (result) {
       const arrow = result.old.length

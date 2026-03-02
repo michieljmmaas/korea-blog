@@ -107,29 +107,20 @@ const TAG_RULES = [
         },
     },
 
-        {
+    {
         name: 'short',
         apply: (fm) => fm.photos.length <= 3 ? ['short'] : [],
     },
-
-    // Location tags (normalised to lowercase kebab-case)
     {
-        name: 'location tag',
+        name: 'travel days',
         apply: (fm) => {
-            if (!fm.location || fm.location.trim() === '') return [];
-            return [fm.location.trim().toLowerCase().replace(/\s+/g, '-')];
-        },
-    },
+            let seed = [0, 1, 2, 4, 42, 47, 55, 63, 70];
 
-    // Travel day — moving to a different location the next day
-    {
-        name: 'travel day',
-        apply: (fm, { nextDay } = { prevDay: null, nextDay: null }) => {
-            if (!nextDay) return [];
-            if (!fm.location || !nextDay.location) return [];
-            const current = fm.location.trim().toLowerCase();
-            const next = nextDay.location.trim().toLowerCase();
-            return current !== next ? ['travel'] : [];
+            if (seed.includes(fm.day) === true) {
+                return ['travel'];
+            } else {
+                return [];
+            }
         },
     },
 ];
