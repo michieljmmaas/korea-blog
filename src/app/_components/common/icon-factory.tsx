@@ -5,6 +5,7 @@ import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tok
 import kimbapTaiwanIcon from "../../../../public/assets/blog/svg-icons/kimbap-taiwan.svg";
 import kimbapHongKongIcon from "../../../../public/assets/blog/svg-icons/boba.svg";
 import kimbapNetherlandsIcon from "../../../../public/assets/blog/svg-icons/kimbap-netherlands.svg";
+import kimbapFull from "../../../../public/assets/blog/svg-icons/snacks.svg";
 import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import culturalIcon from "../../../../public/assets/blog/svg-icons/cultural.svg";
 import stepsIcon from "../../../../public/assets/blog/svg-icons/steps.svg";
@@ -115,6 +116,7 @@ interface IconFactoryProps {
   className?: string;
   customWidth?: number;
   customHeight?: number;
+  fullData?: boolean;
 }
 
 export default function IconFactory({
@@ -127,9 +129,14 @@ export default function IconFactory({
   className,
   customWidth,
   customHeight,
+  fullData = false,
 }: IconFactoryProps) {
   // Get the appropriate icon path
   const getIconPath = (): string | null => {
+    if (fullData && name === "kimbap") {
+      return kimbapFull;
+    }
+
     // Check if it's a location-specific icon and location is provided
     if (location && LOCATION_SPECIFIC_ICONS[name]) {
       const locationPath = LOCATION_SPECIFIC_ICONS[name][location];

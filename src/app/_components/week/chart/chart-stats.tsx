@@ -45,10 +45,12 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({
 }) => {
     const foodName = getFoodName(location) + " Eaten";
 
+    let snackName = showFullData ? "Snacks Eaten" : foodName;
+
     const statsConfig: StatConfig[] = [
         {
             key: 'kimbap',
-            label: foodName,
+            label: snackName,
             color: '#f8333c',
             bgColor: 'kimbap-bg',
             textColor: 'kimbap-text',
@@ -115,6 +117,7 @@ const StatsSummaryCards: React.FC<StatsSummaryCardsProps> = ({
                                 size="lg"
                                 titleMode="stat"
                                 location={location}
+                                fullData={showFullData}
                             />
                             <span className="text-2xl font-bold">
                                 {stat.key === 'steps' ? value.toLocaleString() : value}
