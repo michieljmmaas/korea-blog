@@ -54,6 +54,9 @@ export default function DayCard({ day }: DayCardProps) {
                 {/* Stats Grid at bottom */}
                 <div className="mt-auto">
                     <StatsGrid stats={frontmatter.stats} location={frontmatter.location} />
+                    <div className="text-xs text-gray-500 mt-2 text-center">
+                        Score: {frontmatter.score}
+                    </div>
                 </div>
             </CardContent>
         </BaseCard>

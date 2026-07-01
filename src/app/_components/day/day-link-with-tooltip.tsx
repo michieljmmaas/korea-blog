@@ -18,6 +18,7 @@ export interface DayHoverData {
     location: CityLocation;
     stats: TripDay["frontmatter"]["stats"];
     tags: string[];
+    score: number;
 }
 
 function hoverDataToTripDay(data: DayHoverData): TripDay {
@@ -43,6 +44,7 @@ function hoverDataToTripDay(data: DayHoverData): TripDay {
             tags: data.tags,
             thumbnail: "",
             coordinates: { lat: null, lng: null },
+            score: data.score,
             work: false,
         },
     };

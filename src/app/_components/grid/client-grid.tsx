@@ -43,6 +43,8 @@ function getMetricValue(day: TripDay, metric: SortMetricType): number {
       return day.frontmatter.photos?.length ?? 0;
     case 'description':
       return day.frontmatter.description?.length ?? 0;
+    case 'score':
+      return day.frontmatter.score ?? 0;
   }
 }
 

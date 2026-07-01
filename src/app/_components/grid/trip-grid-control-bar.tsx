@@ -6,7 +6,7 @@ import { Tag, Search, X, ArrowUp, ArrowDown } from 'lucide-react';
 import { getLocationColor } from '../../../../utils/locationColors';
 import IconFactory from '../common/icon-factory';
 
-export type SortMetric = 'kimbap' | 'worked' | 'cultural' | 'steps' | 'photos' | 'description' | null;
+export type SortMetric = 'kimbap' | 'worked' | 'cultural' | 'steps' | 'photos' | 'description' | 'score' | null;
 export type SortDirection = 'asc' | 'desc';
 
 export const ALL_LOCATIONS: CityLocation[] = [
@@ -82,10 +82,11 @@ export function TripGridControlBar({
   onClearSort,
 }: TripGridControlBarProps) {
   const SORT_OPTIONS = [
-    { label: 'Kimbap', value: 'kimbap' as const },
-    { label: 'Worked', value: 'worked' as const },
-    { label: 'Cultural', value: 'cultural' as const },
-    { label: 'Steps', value: 'steps' as const },
+    { label: 'Score', value: 'score' as const },
+    { label: 'Snacks', value: 'kimbap' as const },
+    { label: 'Hours Worked', value: 'worked' as const },
+    { label: 'Cultural Sights', value: 'cultural' as const },
+    { label: 'Steps taken', value: 'steps' as const },
     { label: 'Photos', value: 'photos' as const },
     { label: 'Text length', value: 'description' as const },
   ];

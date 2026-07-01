@@ -8,6 +8,7 @@
     "download-all": "tsx scripts/download-pictures.ts",
     "thumbnails-front-page": "tsx scripts/generate-thumbnails-frontpage.ts",
     "extract-stats": "node scripts/extract-stats.js",
+    "score": "node scripts/calculate-score.js",
     "watch": "next dev --turbopack"
   },
   "dependencies": {

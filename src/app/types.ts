@@ -32,6 +32,7 @@ export interface DayFrontmatter {
     worked: number;
     steps: number;
   }
+  score: number;
   work: boolean;
 }
 
