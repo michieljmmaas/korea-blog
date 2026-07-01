@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { DayFrontmatter, CityLocation, PostLinkInfo } from "../../types";
+import { DayFrontmatter, CityLocation, PostLinkInfo, GeoLocation } from "../../types";
 import ArrowButton from "../common/arrow-button";
 import { LocationSticker } from "../common/location-sticker";
 import StatsGrid from "./stats-grid";
@@ -14,17 +14,19 @@ interface DayInfoTableProps {
     previousPost: PostLinkInfo | null;
     nextPost: PostLinkInfo | null;
     week: any;
+    locations: GeoLocation[];
 }
 
 export default function DayInfoTable({
     frontmatter,
     previousPost,
     nextPost,
-    week
+    week,
+    locations
 }: DayInfoTableProps) {
     const [isMapOpen, setIsMapOpen] = useState(false);
     const { location, date, stats } = frontmatter;
-    const hasLocations = frontmatter.day > 55;
+    const hasLocations = locations.length > 0;
 
 
     const weekLink = week ? (
@@ -101,9 +103,9 @@ export default function DayInfoTable({
             >
                 <div className="overflow-hidden">
                     <div className="p-4 bg-slate-50 h-[400px] md:h-[650px]">
-                        {/* Only mount the MapWrapper when open to save memory, 
+                        {/* Only mount the MapWithData when open to save memory,
                             or keep it mounted if you want instant toggling */}
-                        {isMapOpen && hasLocations && <MapWithData slug={frontmatter.date} />}
+                        {isMapOpen && hasLocations && <MapWithData locations={locations} />}
                     </div>
                 </div>
             </div>

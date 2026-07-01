@@ -11,6 +11,7 @@ import {
   processDayReferences,
 } from "../../../../utils/updateDayReferences";
 import { WeekDataService } from "@/lib/weekService";
+import { GeoDataService } from "@/lib/geoService";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -45,6 +46,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     );
 
     const week = await WeekDataService.getWeekForDay(post.frontmatter.day);
+    const locations = await GeoDataService.getLocationsByDate(post.frontmatter.date);
 
     return (
       <div className="max-h-screen bg-background flex flex-col">
@@ -60,6 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             previousPost={previousPost}
             nextPost={nextPost}
             week={week}
+            locations={locations}
           />
 
           {/* Tags */}

@@ -8,15 +8,22 @@ const GEODATA_FILE = path.join(
   "content/locations/locations.yaml",
 );
 
+let cachedGeoData: GeoData | null = null;
+
 export class GeoDataService {
   /**
-   * Get all geodata from the YAML file
+   * Get all geodata from the YAML file (cached)
    */
   static async getAllGeoData(): Promise<GeoData> {
+    if (cachedGeoData !== null) {
+      return cachedGeoData;
+    }
+
     try {
       // Check if file exists
       if (!fs.existsSync(GEODATA_FILE)) {
-        return {};
+        cachedGeoData = {};
+        return cachedGeoData;
       }
 
       const fileContent = fs.readFileSync(GEODATA_FILE, "utf8");
@@ -42,9 +49,11 @@ export class GeoDataService {
           sortedData[key] = processedData[key];
         });
 
+      cachedGeoData = sortedData;
       return sortedData;
     } catch (error) {
       console.error("Error reading geodata file:", error);
+      cachedGeoData = {};
       return {};
     }
   }
