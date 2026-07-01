@@ -18,6 +18,19 @@ export const ALL_LOCATIONS: CityLocation[] = [
   'Hong Kong',
 ];
 
+export const ALL_TAGS: string[] = [
+  'k-pop',
+  'work',
+  '30K-day',
+  'Adventure',
+  'MAP',
+  'TWICE',
+  'Social',
+  'Travel',
+  'MAMA',
+  'SHORT',
+];
+
 const ACTIVE =
   'bg-neutral-900 text-white border-neutral-900 dark:bg-white dark:text-neutral-900 dark:border-white';
 const INACTIVE =
@@ -51,14 +64,11 @@ interface TripGridControlBarProps {
   onSearchChange: (q: string) => void;
   // tags
   allTags: string[];
-  activeTags: Set<string>;
+  tagFilters: Map<string, 'include' | 'exclude'>;
   onTagToggle: (tag: string) => void;
   // locations
   activeLocations: Set<CityLocation>;
   onLocationToggle: (loc: CityLocation) => void;
-  // icons
-  activeIcons: Set<'work' | 'music'>;
-  onIconToggle: (icon: 'work' | 'music') => void;
   // sort
   sortMetric: SortMetric;
   sortDirection: SortDirection;
@@ -70,12 +80,10 @@ export function TripGridControlBar({
   searchQuery,
   onSearchChange,
   allTags,
-  activeTags,
+  tagFilters,
   onTagToggle,
   activeLocations,
   onLocationToggle,
-  activeIcons,
-  onIconToggle,
   sortMetric,
   sortDirection,
   onSortMetricClick,
@@ -117,23 +125,6 @@ export function TripGridControlBar({
           })}
         </div>
 
-        {/* Icons */}
-        <div className="flex items-center gap-1 flex-shrink-0">
-          <ControlButton
-            active={activeIcons.has('work')}
-            onClick={() => onIconToggle('work')}
-          >
-            <IconFactory name="work" size="xs" titleMode="info" />
-            Work
-          </ControlButton>
-          <ControlButton
-            active={activeIcons.has('music')}
-            onClick={() => onIconToggle('music')}
-          >
-            <IconFactory name="music" size="xs" titleMode="info" />
-            Music
-          </ControlButton>
-        </div>
       </div>
 
       <div className="border-t border-border" />
@@ -146,15 +137,34 @@ export function TripGridControlBar({
         </span>
         <div className="flex flex-wrap gap-2">
           {allTags.map((tag) => {
-            const isActive = activeTags.has(tag);
+            const filterMode = tagFilters.get(tag);
+            const isWorkTag = tag === 'work';
+            const isKpopTag = tag === 'k-pop';
+            const isInclude = filterMode === 'include';
+            const isExclude = filterMode === 'exclude';
+
             return (
-              <ControlButton
+              <button
                 key={tag}
-                active={isActive}
                 onClick={() => onTagToggle(tag)}
+                className={cn(
+                  'flex items-center gap-1.5 px-2.5 py-1.5 border rounded-md text-xs font-mono uppercase tracking-wide transition-all',
+                  isInclude
+                    ? ACTIVE
+                    : isExclude
+                      ? 'text-neutral-600 border-neutral-300 dark:text-neutral-400 dark:border-neutral-700'
+                      : INACTIVE
+                )}
+                style={isExclude ? {
+                  backgroundImage: 'repeating-linear-gradient(45deg, #f5f5f5, #f5f5f5 10px, #e5e5e5 10px, #e5e5e5 20px)',
+                  backgroundPosition: '0 0'
+                } : undefined}
+                title={isExclude ? 'Excluded (click to remove)' : isInclude ? 'Included (click to exclude)' : 'Unselected (click to include)'}
               >
+                {isWorkTag && <IconFactory name="work" size="xs" titleMode="info" />}
+                {isKpopTag && <IconFactory name="music" size="xs" titleMode="info" />}
                 {tag}
-              </ControlButton>
+              </button>
             );
           })}
         </div>

@@ -110,12 +110,12 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
       </div>
 
       <div className="text-m text-gray-300 mt-1">
-        Score: {dayInfo.score}
+        <p className='truncate'>{dayInfo.description}</p>
       </div>
 
-      {/* <div className="text-xs text-gray-400 mt-1">
+      <div className="text-xs text-gray-400 mt-1">
         Score: {dayInfo.score}
-      </div> */}
+      </div>
       {/* Tooltip arrow */}
       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
     </div>

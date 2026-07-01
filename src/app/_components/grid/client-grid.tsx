@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { TripDay, CityLocation } from '../../types';
 import TripGrid from './trip-grid';
-import { TripGridControlBar, SortMetric, SortDirection, ALL_LOCATIONS } from './trip-grid-control-bar';
+import { TripGridControlBar, SortMetric, SortDirection, ALL_LOCATIONS, ALL_TAGS } from './trip-grid-control-bar';
 
 interface ClientGridProps {
   days: TripDay[];
@@ -18,18 +18,28 @@ function matchesSearch(day: TripDay, query: string): boolean {
 
 function passesFilters(
   day: TripDay,
-  tags: Set<string>,
-  locations: Set<CityLocation>,
-  icons: Set<string>
+  tagFilters: Map<string, 'include' | 'exclude'>,
+  locations: Set<CityLocation>
 ): boolean {
   const fm = day.frontmatter;
-  const passesTags = tags.size === 0 || fm.tags?.some((t) => tags.has(t));
+
+  // Collect include and exclude tags (normalized to lowercase)
+  const includeTags = Array.from(tagFilters.entries())
+    .filter(([, mode]) => mode === 'include')
+    .map(([tag]) => tag.toLowerCase());
+  const excludeTags = Array.from(tagFilters.entries())
+    .filter(([, mode]) => mode === 'exclude')
+    .map(([tag]) => tag.toLowerCase());
+
+  // Include filter: if any include tags, day must have at least one (case-insensitive)
+  const passesInclude = includeTags.length === 0 || fm.tags?.some((t) => includeTags.includes(t.toLowerCase()));
+
+  // Exclude filter: day must not have any exclude tags (case-insensitive)
+  const passesExclude = excludeTags.length === 0 || !fm.tags?.some((t) => excludeTags.includes(t.toLowerCase()));
+
   const passesLocation = locations.has(fm.location);
-  const passesIcons =
-    icons.size === 0 ||
-    [...icons].some((i) => (i === 'work' ? fm.work : fm.icon === 'music'));
-  // Combine filters with AND across categories, OR within each category
-  return passesTags && passesLocation && passesIcons;
+
+  return passesInclude && passesExclude && passesLocation;
 }
 
 function getMetricValue(day: TripDay, metric: SortMetricType): number {
@@ -65,20 +75,27 @@ export default function ClientGrid({ days }: ClientGridProps) {
 
   // Filter/sort state
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
+  const [tagFilters, setTagFilters] = useState<Map<string, 'include' | 'exclude'>>(new Map());
   const [activeLocations, setActiveLocations] = useState<Set<CityLocation>>(
     new Set(ALL_LOCATIONS)
   );
-  const [activeIcons, setActiveIcons] = useState<Set<'work' | 'music'>>(new Set());
   const [sortMetric, setSortMetric] = useState<SortMetric>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
 
-  // Derive all tags from the days
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    processedDays.forEach((day) => day.frontmatter.tags?.forEach((t) => tags.add(t)));
-    return Array.from(tags).sort();
+  // Derive additional tags from the days (those not in ALL_TAGS, case-insensitive)
+  const allTagsWithExtra = useMemo(() => {
+    const allTagsSetLower = new Set(ALL_TAGS.map((t) => t.toLowerCase()));
+    const extraTags = new Set<string>();
+    processedDays.forEach((day) => {
+      day.frontmatter.tags?.forEach((tag) => {
+        if (!allTagsSetLower.has(tag.toLowerCase())) {
+          extraTags.add(tag);
+        }
+      });
+    });
+    return [...ALL_TAGS, ...Array.from(extraTags).sort()];
   }, [processedDays]);
+
 
   // Main filtering and sorting pipeline
   const { visibleDays, isOrderedMode } = useMemo(() => {
@@ -87,7 +104,7 @@ export default function ClientGrid({ days }: ClientGridProps) {
       day: d,
       passes:
         matchesSearch(d, searchQuery) &&
-        passesFilters(d, activeTags, activeLocations, activeIcons),
+        passesFilters(d, tagFilters, activeLocations),
     }));
 
     if (!isOrdered) {
@@ -102,7 +119,7 @@ export default function ClientGrid({ days }: ClientGridProps) {
       visibleDays: sorted.map((day) => ({ day, passes: true })),
       isOrderedMode: true,
     };
-  }, [processedDays, searchQuery, activeTags, activeLocations, activeIcons, sortMetric, sortDirection]);
+  }, [processedDays, searchQuery, tagFilters, activeLocations, sortMetric, sortDirection]);
 
   function handleLocationToggle(location: CityLocation) {
     setActiveLocations((prev) => {
@@ -113,17 +130,16 @@ export default function ClientGrid({ days }: ClientGridProps) {
   }
 
   function handleTagToggle(tag: string) {
-    setActiveTags((prev) => {
-      const next = new Set(prev);
-      next.has(tag) ? next.delete(tag) : next.add(tag);
-      return next;
-    });
-  }
-
-  function handleIconToggle(icon: 'work' | 'music') {
-    setActiveIcons((prev) => {
-      const next = new Set(prev);
-      next.has(icon) ? next.delete(icon) : next.add(icon);
+    setTagFilters((prev) => {
+      const next = new Map(prev);
+      const current = next.get(tag);
+      if (current === 'include') {
+        next.set(tag, 'exclude');
+      } else if (current === 'exclude') {
+        next.delete(tag);
+      } else {
+        next.set(tag, 'include');
+      }
       return next;
     });
   }
@@ -147,13 +163,11 @@ export default function ClientGrid({ days }: ClientGridProps) {
       <TripGridControlBar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        allTags={allTags}
-        activeTags={activeTags}
+        allTags={allTagsWithExtra}
+        tagFilters={tagFilters}
         onTagToggle={handleTagToggle}
         activeLocations={activeLocations}
         onLocationToggle={handleLocationToggle}
-        activeIcons={activeIcons}
-        onIconToggle={handleIconToggle}
         sortMetric={sortMetric}
         sortDirection={sortDirection}
         onSortMetricClick={handleSortMetricClick}

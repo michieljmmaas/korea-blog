@@ -25,7 +25,7 @@ const matter = require('gray-matter');
 const WEIGHTS = {
   cultural: 20,
   steps: 15,
-  photos: 8,
+  photos: 10,
   textLength: 12,
 };
 
@@ -53,7 +53,22 @@ function computeScore(frontmatter, bodyContent) {
   const textLength = (bodyContent.length / NORMALIZE.textLength) * WEIGHTS.textLength;
 
   const total = cultural + steps + photos + textLength;
-  return Math.round(total * 10) / 10; // round to 1 decimal
+
+  return {
+    total: Math.round(total * 10) / 10,
+    breakdown: {
+      cultural: Math.round(cultural * 10) / 10,
+      steps: Math.round(steps * 10) / 10,
+      photos: Math.round(photos * 10) / 10,
+      textLength: Math.round(textLength * 10) / 10,
+    },
+    raw: {
+      culturalCount: fm.stats?.cultural ?? 0,
+      stepsCount: fm.stats?.steps ?? 0,
+      photosCount: fm.photos?.length ?? 0,
+      textLengthChars: bodyContent.length,
+    }
+  };
 }
 
 // ── Frontmatter manipulation (surgical, no reformatting) ─────────────────────
@@ -102,6 +117,7 @@ function run() {
 
   let changed = 0;
   let unchanged = 0;
+  const allScores = [];
 
   for (const file of files) {
     const filePath = path.join(CONFIG.contentDir, file);
@@ -119,24 +135,83 @@ function run() {
       continue;
     }
 
-    const newScore = computeScore(fm, bodyContent);
+    const scoreData = computeScore(fm, bodyContent);
+    const newScore = scoreData.total;
     const oldScore = fm.score;
 
-    // Only write if score changed
-    if (oldScore === newScore) {
+    // Store score info for later display
+    allScores.push({
+      file,
+      filePath,
+      parts,
+      oldScore,
+      newScore,
+      scoreData,
+      changed: oldScore !== newScore
+    });
+
+    // Track changes for summary
+    if (oldScore !== newScore) {
+      changed++;
+    } else {
       unchanged++;
-      continue;
     }
+  }
 
-    if (!DRY_RUN) {
-      const updatedFrontmatter = updateScoreInYaml(parts.frontmatter, newScore);
-      const updatedFile = `---\n${updatedFrontmatter}\n---\n${parts.body}`;
-      fs.writeFileSync(filePath, updatedFile, 'utf8');
-    }
+  // Sort all scores by newScore descending (highest first)
+  allScores.sort((a, b) => b.newScore - a.newScore);
 
+  // Display all scores sorted by value (highest to lowest)
+  console.log(`📈 All scores (sorted highest to lowest):\n`);
+  for (const scoreEntry of allScores) {
+    const { file, oldScore, newScore, scoreData, changed: hasChanged } = scoreEntry;
     const arrow = oldScore !== undefined ? `${oldScore} → ${newScore}` : `→ ${newScore}`;
-    console.log(`  ${DRY_RUN ? '👀' : '✅'} ${file}  ${arrow}`);
-    changed++;
+    const breakdown = `[cultural: ${scoreData.breakdown.cultural}, steps: ${scoreData.breakdown.steps}, photos: ${scoreData.breakdown.photos}, text: ${scoreData.breakdown.textLength}]`;
+    const marker = hasChanged ? (DRY_RUN ? '👀' : '✅') : '  ';
+    console.log(`  ${marker} ${file}  ${arrow}`);
+    console.log(`     ${breakdown}`);
+  }
+
+  // Write changes if any
+  if (changed > 0) {
+    console.log(`\n💾 Writing changes...`);
+    for (const scoreEntry of allScores) {
+      if (scoreEntry.changed && !DRY_RUN) {
+        const updatedFrontmatter = updateScoreInYaml(scoreEntry.parts.frontmatter, scoreEntry.newScore);
+        const updatedFile = `---\n${updatedFrontmatter}\n---\n${scoreEntry.parts.body}`;
+        fs.writeFileSync(scoreEntry.filePath, updatedFile, 'utf8');
+      }
+    }
+
+    // Show summary of changes with position changes
+    console.log(`\n📝 Changes made:\n`);
+    const changedFiles = allScores.filter(s => s.changed);
+
+    // Build position maps
+    const oldRanking = allScores
+      .filter(s => s.oldScore !== undefined)
+      .sort((a, b) => b.oldScore - a.oldScore)
+      .map(s => s.file);
+    const newRanking = allScores.sort((a, b) => b.newScore - a.newScore).map(s => s.file);
+
+    const oldPosition = new Map(oldRanking.map((file, idx) => [file, idx + 1]));
+    const newPosition = new Map(newRanking.map((file, idx) => [file, idx + 1]));
+
+    // Show only changes where position actually changed
+    for (const scoreEntry of changedFiles) {
+      const { file, oldScore, newScore, scoreData } = scoreEntry;
+      const oldPos = oldPosition.get(file) || '?';
+      const newPos = newPosition.get(file) || '?';
+
+      // Skip if position didn't actually change
+      if (oldPos === newPos) continue;
+
+      const arrow = oldScore !== undefined ? `${oldScore} → ${newScore}` : `→ ${newScore}`;
+      const posChange = `(position ${oldPos} → ${newPos})`;
+      const breakdown = `[cultural: ${scoreData.breakdown.cultural}, steps: ${scoreData.breakdown.steps}, photos: ${scoreData.breakdown.photos}, text: ${scoreData.breakdown.textLength}]`;
+      console.log(`  ${file}  ${arrow}  ${posChange}`);
+      console.log(`     ${breakdown}`);
+    }
   }
 
   console.log(`\n📊 Summary:`);
