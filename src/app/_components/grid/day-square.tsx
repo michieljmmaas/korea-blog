@@ -11,6 +11,7 @@ interface DaySquareProps {
   dayInfo?: DayFrontmatter;
   isEmpty?: boolean;
   thumbnailSrc?: string;
+  isDimmed?: boolean;
 }
 
 // Icon configuration type
@@ -21,7 +22,7 @@ interface IconConfig {
   size?: number; // Size in pixels, defaults to 16
 }
 
-const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false }) => {
+const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false, isDimmed = false }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -159,16 +160,14 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         <div className={`
         w-full h-20
         ${locationColor}
-        rounded-sm 
-        shadow-sm 
+        rounded-sm
+        shadow-sm
         p-0.5
-        flex 
+        flex
         flex-col
         overflow-hidden
-        ${isDraft
-            ? 'opacity-50 hover:opacity-60 cursor-not-allowed'
-            : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1 cursor-pointer'
-          }
+        ${isDraft ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+        ${isDimmed ? 'opacity-50' : isDraft ? '' : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1'}
       `}>
 
           {/* Main content area with relative positioning for overlay icons */}
@@ -200,7 +199,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         </div>
       </Link>
 
-      {isHovered && publishedToolTip}
+      {isHovered && !isDimmed && publishedToolTip}
     </div>
   );
 };

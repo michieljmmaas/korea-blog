@@ -1,68 +1,88 @@
-// components/TripGrid.tsx
 import { TripDay } from '../../types';
 import DaySquare from './day-square';
 import WeekdayHeaders from './weekday-headers';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface TripGridProps {
-  days: TripDay[];
+  days: { day: TripDay; passes: boolean }[];
+  isOrderedMode: boolean;
 }
 
-const TripGrid: React.FC<TripGridProps> = ({ days }) => {
-  // Create grid starting from Monday, with Thursday as first trip day
-  const createWeekGrid = () => {
-    const grid: (TripDay | null)[][] = [];
-    let currentWeek: (TripDay | null)[] = [];
-    
-    // Thursday is day 3 (0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday)
-    const startDayOfWeek = 3;
-    
-    // Fill empty days at the beginning of first week (Mon, Tue, Wed)
-    for (let i = 0; i < startDayOfWeek; i++) {
-      currentWeek.push(null);
-    }
-    
-    // Add all trip days
-    days.forEach((day) => {
-      currentWeek.push(day);
-      
-      // If week is complete (7 days), start new week
-      if (currentWeek.length === 7) {
-        grid.push([...currentWeek]);
-        currentWeek = [];
-      }
-    });
-    
-    // Fill remaining empty days in last week if needed
-    while (currentWeek.length > 0 && currentWeek.length < 7) {
-      currentWeek.push(null);
-    }
-    
-    if (currentWeek.length > 0) {
-      grid.push(currentWeek);
-    }
-    
-    return grid;
-  };
+type CellData =
+  | { kind: 'empty'; key: string }
+  | { kind: 'day'; key: string; day: TripDay; isDimmed: boolean };
 
-  const weekGrid = createWeekGrid();
+function buildDefaultModeCells(days: { day: TripDay; passes: boolean }[]): CellData[] {
+  const THURSDAY_OFFSET = 3;
+  const leadingBlanks: CellData[] = Array.from(
+    { length: THURSDAY_OFFSET },
+    (_, i) => ({ kind: 'empty' as const, key: `empty-${i}` })
+  );
+  const dayCells: CellData[] = days.map(({ day, passes }) => ({
+    kind: 'day' as const,
+    key: day.frontmatter.date,
+    day,
+    isDimmed: !passes,
+  }));
+  return [...leadingBlanks, ...dayCells];
+}
+
+function buildOrderedModeCells(days: TripDay[]): CellData[] {
+  return days.map((day) => ({
+    kind: 'day' as const,
+    key: day.frontmatter.date,
+    day,
+    isDimmed: false,
+  }));
+}
+
+function EmptyCell() {
+  return <div className="w-full h-20 bg-gray-100 rounded-sm border border-gray-200" />;
+}
+
+const TripGrid: React.FC<TripGridProps> = ({ days, isOrderedMode }) => {
+  let cells: CellData[];
+
+  if (isOrderedMode) {
+    const orderedDays = days.filter((d) => d.passes).map((d) => d.day);
+    cells = buildOrderedModeCells(orderedDays);
+  } else {
+    cells = buildDefaultModeCells(days);
+  }
 
   return (
-    <div className="bg-white border border-border rounded-lg p-2">
-      <WeekdayHeaders />
-      
-      <div className="space-y-1">
-        {weekGrid.map((week, weekIndex) => (
-          <div key={weekIndex} className="grid grid-cols-7 gap-1">
-            {week.map((dayInfo, dayIndex) => (
-              <DaySquare
-                key={`${weekIndex}-${dayIndex}`}
-                dayInfo={dayInfo?.frontmatter || undefined}
-                isEmpty={!dayInfo}
-                thumbnailSrc={`/thumbnails/days/${dayInfo?.frontmatter.date}.webp`}
-              />
+    <div>
+      {!isOrderedMode && <WeekdayHeaders />}
+
+      <div className="bg-white border border-border rounded-lg p-2">
+        <div className="grid grid-cols-7 gap-1">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {cells.map((cell) => (
+              <motion.div
+                key={cell.key}
+                layout
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{
+                  opacity: cell.kind === 'day' && cell.isDimmed ? 0.6 : 1,
+                  scale: 1,
+                }}
+                exit={{ opacity: 0, scale: 0.85 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 30, mass: 0.7 }}
+              >
+                {cell.kind === 'empty' ? (
+                  <EmptyCell />
+                ) : (
+                  <DaySquare
+                    dayInfo={cell.day.frontmatter}
+                    isEmpty={false}
+                    thumbnailSrc={`/thumbnails/days/${cell.day.frontmatter.date}.webp`}
+                    isDimmed={cell.isDimmed}
+                  />
+                )}
+              </motion.div>
             ))}
-          </div>
-        ))}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

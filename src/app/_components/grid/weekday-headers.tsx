@@ -18,7 +18,7 @@ const WeekdayHeaders: React.FC<WeekdayHeadersProps> = ({ startDay = 'MON' }) => 
   ];
 
   return (
-    <div className="grid grid-cols-7 gap-0 mb-4">
+    <div className="grid grid-cols-7 gap-0 mb-1">
       {weekdays.map((day) => (
         <div key={day} className={`w-16 text-xs text-center font-semibold text-gray-600 py-2`}>
           {day}
