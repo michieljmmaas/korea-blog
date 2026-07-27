@@ -5,6 +5,7 @@ import { createRoot, Root } from 'react-dom/client';
 import SingleImageWithModal from './single-image-with-modal';
 import { DayHoverData, DayLinkWithTooltip } from '../day/day-link-with-tooltip';
 import { BlogHoverData, BlogLinkWithTooltip } from '../blog/blog-link-with-tooltip';
+import FinanceCharts from '../finance/finance-charts';
 
 interface BlogContentProcessorProps {
     htmlContent: string;
@@ -125,6 +126,18 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
                 root.render(
                     <BlogLinkWithTooltip data={data} href={href} label={label} />
                 );
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Finance charts ────────────────────────────────────────────────
+            const financeChartsPlaceholders = contentRef.current.querySelectorAll('.finance-charts-placeholder');
+
+            financeChartsPlaceholders.forEach((placeholder) => {
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<FinanceCharts />);
                 mountedComponentsRef.current.push({ element: container, root });
             });
 

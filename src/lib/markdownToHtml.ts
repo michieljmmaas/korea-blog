@@ -37,11 +37,16 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
   });
 }
 
+function processFinanceCharts(markdown: string): string {
+  return markdown.replace(/<FinanceCharts\s*\/?>/g, '<div class="finance-charts-placeholder"></div>');
+}
+
 export default async function markdownToHtml(
   markdown: string,
   imageMapping: ImageMapping,
 ) {
   let processedMarkdown = processCustomImages(markdown, imageMapping);
+  processedMarkdown = processFinanceCharts(processedMarkdown);
 
   const result = await remark()
     .use(remarkGfm)

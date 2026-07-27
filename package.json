@@ -9,6 +9,7 @@
     "thumbnails-front-page": "tsx scripts/generate-thumbnails-frontpage.ts",
     "extract-stats": "node scripts/extract-stats.js",
     "score": "node scripts/calculate-score.js",
+    "finance-data": "node scripts/extract-finance-data.js",
     "watch": "next dev --turbopack"
   },
   "dependencies": {
@@ -21,6 +22,8 @@
     "clsx": "^2.1.0",
     "csv": "^6.4.1",
     "csv-parser": "^3.2.0",
+    "d3": "^7.9.0",
+    "d3-sankey": "^0.12.3",
     "date-fns": "^4.0.0",
     "dotenv": "^17.2.1",
     "gray-matter": "^4.0.3",
@@ -50,12 +53,15 @@
     "yet-another-react-lightbox": "^3.25.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/d3-sankey": "^0.12.5",
     "@types/js-yaml": "^4.0.9",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20.14.8",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0",
     "autoprefixer": "^10.4.19",
+    "playwright": "^1.62.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "tsx": "^4.20.3",

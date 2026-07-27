@@ -1,0 +1,3024 @@
+{
+  "transactions": [
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht AMS - INC",
+      "amount": 1073.95
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Mangrove Seoul",
+      "amount": 1684.86
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht Japan",
+      "amount": 386.99
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Hotel Japan",
+      "amount": 294.26
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht naar Taiwan",
+      "amount": 86.88
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht Hong Kong",
+      "amount": 75.64
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Hotel Hong Kong",
+      "amount": 1015.52
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht HK INC",
+      "amount": 116.56
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Vlucht Macao",
+      "amount": 175.57
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Hotel Macao",
+      "amount": 174.54
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Kpop",
+      "subcategory": "Concert",
+      "item": "TWICE - This is For - Macao 2",
+      "amount": 417.85
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Gear",
+      "item": "USB Stick",
+      "amount": 29.9
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Gear",
+      "item": "Packing Cubes",
+      "amount": 32.95
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Gear",
+      "item": "Adapter",
+      "amount": 18.99
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Gear",
+      "item": "Sticker papier",
+      "amount": 17.99
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Admin",
+      "subcategory": "Visum",
+      "item": "K-ETA",
+      "amount": 6.51
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Flight",
+      "subcategory": "International",
+      "item": "Stoelen KLM vlucht",
+      "amount": 57.98
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash opnamen voor tijdens de trip",
+      "amount": 195.68
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Kosten cash opname",
+      "amount": 7.82
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Play Money",
+      "category": "Kpop",
+      "subcategory": "Concert",
+      "item": "TWICE Fanmeeting",
+      "amount": 58.12
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU - Eerste dag",
+      "amount": 3.44
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "SIM",
+      "item": "SIM Kaart",
+      "amount": 66.87
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lotaria tijdens TWICE ticket",
+      "amount": 4.69
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Airport Train",
+      "item": "Airport train ticket",
+      "amount": 7.97
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Verzorging",
+      "category": "Kpop",
+      "subcategory": "Merch",
+      "item": "TWICE Merch",
+      "amount": 78.77
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Macao eerste withdraw",
+      "amount": 32.82
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Macao eerste withdraw admin",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Snacks in Airport CU",
+      "amount": 6.09
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Macao tweede withdraw",
+      "amount": 54.7
+    },
+    {
+      "locatie": "Macau",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Macao tweede withdraw admin",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU Ontbijt voor Macao",
+      "amount": 1.68
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU snacks terug van Macao",
+      "amount": 5.41
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Macao vlucht terug avond eten",
+      "amount": 7.77
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Eten eerste keer",
+      "amount": 33.14
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Hotel Supplies",
+      "item": "Kleren hangers etc",
+      "amount": 20
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience Store - CU",
+      "amount": 2.87
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience Store GS25",
+      "amount": 4.49
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience Store 7-11",
+      "amount": 3.93
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience Store - Emart Chicken",
+      "amount": 4.05
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Hangang - Chicken",
+      "amount": 16.49
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "National Museum - Tiger magneet",
+      "amount": 3.74
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Dora Bowl na Seoul Museum",
+      "amount": 14.6
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Kaartje Gyeongbukgung",
+      "amount": 1.86
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Emart na Gyeongbukgung",
+      "amount": 2.61
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU met batterijen",
+      "amount": 9.94
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Seoul Museum kaartje",
+      "amount": 3.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "GS25 Terugweg van Eten",
+      "amount": 3.81
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Boodschappen Emart 2",
+      "amount": 27.49
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Hotel Supplies",
+      "item": "Plantjes en Laundry baket",
+      "amount": 15
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Travel Material",
+      "subcategory": "Verzorging",
+      "item": "Deodorant",
+      "amount": 7.52
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU",
+      "amount": 3
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Transport",
+      "item": "Trien kaartje naar Suwon",
+      "amount": 5.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lunch in Suwon",
+      "amount": 10.35
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Kaartje Suwon museum",
+      "amount": 1.22
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten na Suwon - 7-11",
+      "amount": 4.08
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU voor regen hike",
+      "amount": 2.01
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Lotte Mart na regen Hike",
+      "amount": 19.77
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "GS25 voor lunch met regen",
+      "amount": 2.74
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Avond eten na Leeum Museum",
+      "amount": 2.86
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Leeum Museum Entree",
+      "amount": 12.18
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Tijger sleutelhanger Leeum",
+      "amount": 7.31
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten 6 october - 7-11",
+      "amount": 4.66
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten 7 oktober - 7-11",
+      "amount": 4.86
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten 7 oktober - 7-11",
+      "amount": 8.35
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten 8 oktober - CU",
+      "amount": 3.05
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Eten 8 oktober - 7-11",
+      "amount": 6.09
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Bar",
+      "item": "Biertje bij borrel",
+      "amount": 3.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU voor ontbijt",
+      "amount": 5.3
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Boodschappen in de avond",
+      "amount": 16.37
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Solo dinner bestellen",
+      "amount": 8.1
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 met extra protein bars",
+      "amount": 11.4
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Play Money",
+      "category": "Kpop",
+      "subcategory": "Album",
+      "item": "TWICE Album",
+      "amount": 11.78
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 voor ontbijt",
+      "amount": 4.74
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Kaartje Ilmin Moon Museum",
+      "amount": 5.61
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Buddae Jiggae na hike",
+      "amount": 12.46
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience store run - 7-11",
+      "amount": 5.3
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience store run - CU",
+      "amount": 7.73
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "GS25 na spa",
+      "amount": 4.28
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Lunch CU met protein bars",
+      "amount": 10.54
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Kosten geld opname",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Spa",
+      "item": "Cash voor massage",
+      "amount": 33.6
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Spa",
+      "item": "Entry voor Spa",
+      "amount": 9.92
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Eten in de SPA",
+      "amount": 8.06
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Verzorging",
+      "category": "Verzorging",
+      "subcategory": "Kapper",
+      "item": "Kapper",
+      "amount": 13.64
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Date",
+      "item": "Noon date token",
+      "amount": 3.69
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Boodschappen Ha-mo-ni mart 1",
+      "amount": 26.46
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 lunch",
+      "amount": 3.77
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 avond eten",
+      "amount": 9.78
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Blauwe tijger sleutelhanger",
+      "amount": 4.56
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU voor ontbijt",
+      "amount": 4.2
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mapo Tofu",
+      "amount": 7.91
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Grote lunch voor fanmeeting",
+      "amount": 6.8
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU Lunch",
+      "amount": 5.75
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Paris Baguette",
+      "amount": 4.39
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "Gym",
+      "item": "Gym membership",
+      "amount": 61.81
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Kpop",
+      "subcategory": "Movie",
+      "item": "TWICE Movie Ticket",
+      "amount": 15.45
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Jjampong lunch",
+      "amount": 6.8
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Bibimbap dinner",
+      "amount": 6.68
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Fishcakes snack",
+      "amount": 6.49
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience store lunch - CU",
+      "amount": 3.83
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 In de avond protein bars",
+      "amount": 5.19
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Cafe na bossam",
+      "amount": 8.04
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Bossam Sooyeon dinner",
+      "amount": 24.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU Lunch",
+      "amount": 2.91
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Cafe",
+      "item": "Starbucks om te wachten",
+      "amount": 7.04
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Play Money",
+      "category": "Kpop",
+      "subcategory": "Merch",
+      "item": "TWICE Merch in popup store",
+      "amount": 42.51
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Buldalk met Katherine",
+      "amount": 20.95
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Boodschappen - mayonaise en bananen",
+      "amount": 12.4
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Lunch",
+      "amount": 5.18
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "GS25 voor morgen",
+      "amount": 2.78
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Jajamyeon",
+      "amount": 4.23
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Lotte World Ticket",
+      "amount": 28.75
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Bokkeum Rice",
+      "amount": 5.54
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Bananen",
+      "amount": 2.15
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Chicken Pizza Mom's Taste",
+      "amount": 14.72
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Museum Kaartje Baussaint",
+      "amount": 18.89
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Dinner DDP",
+      "amount": 7.97
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Souvenier Convience Store - GS25",
+      "amount": 5.21
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lottaria Lunch Lotte World",
+      "amount": 5.27
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU Op dag van Lotte World",
+      "amount": 4.29
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Burgerking Post Starcraft",
+      "amount": 8.22
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Everland Ticket",
+      "amount": 38.03
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Pho in Everland",
+      "amount": 12.27
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU",
+      "amount": 4.54
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11",
+      "amount": 3.81
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Tangsuyuk",
+      "amount": 6.75
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Moms Touch Lunch",
+      "amount": 6.39
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Jokbal",
+      "amount": 30.09
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Kpop",
+      "subcategory": "MAMA",
+      "item": "MAMA Ticket 1",
+      "amount": 414.79
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Voor lunch + bars",
+      "amount": 9.46
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Boodschappen Halmone Mart",
+      "amount": 13.61
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lunch Nasi",
+      "amount": 6.62
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Kalguksu voor Nvidea Event",
+      "amount": 8.66
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Burger King Dinner",
+      "amount": 5.1
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lunch in Kimbap place",
+      "amount": 7.16
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Club",
+      "item": "Toegang tot de Itaewon Club",
+      "amount": 24.9
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Biertje in Lit Lounge",
+      "amount": 4.36
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 in Myeongdong",
+      "amount": 3.23
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Play Money",
+      "category": "Kpop",
+      "subcategory": "Album",
+      "item": "Kpop Albums Myeongdong",
+      "amount": 21.76
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Slecht Bokkeumbap Dinner",
+      "amount": 13.68
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Isaac Toast",
+      "amount": 3.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Paris Baguette Breakfast",
+      "amount": 6.09
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Ultra Convenience Store",
+      "amount": 12.43
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Meer Tokens voor Ultra Convience Store",
+      "amount": 3.11
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Voor lunch",
+      "amount": 6.65
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Supermarket Goodmorning Mart",
+      "amount": 6.96
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Realistaie dinner",
+      "amount": 6.84
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Kpop",
+      "subcategory": "MAMA",
+      "item": "MAMA Ticket 2",
+      "amount": 440.89
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Gamja Tang",
+      "amount": 7.46
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Fried Chicken Dinner",
+      "amount": 22.69
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Burger King Dinner",
+      "amount": 7.34
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Two Some Place voor vertrek",
+      "amount": 7.9
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Admin",
+      "item": "Iets op de airport?",
+      "amount": 0.41
+    },
+    {
+      "locatie": "Netherlands",
+      "budgetType": "Nomad",
+      "category": "Travel Material",
+      "subcategory": "SIM",
+      "item": "Saily E-Sim",
+      "amount": 27.21
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash Withdraw",
+      "amount": 116.11
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Train",
+      "item": "Treinkaartje",
+      "amount": 2.96
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash Withdraw Admin",
+      "amount": 4.64
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Hands voor Mariska",
+      "amount": 9.66
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Manga",
+      "amount": 6.36
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Tokyo National Museum",
+      "amount": 9.83
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11",
+      "amount": 3.12
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Family Mart",
+      "amount": 1.79
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Katsu Curry",
+      "amount": 5.03
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Breakfast",
+      "item": "Shimbashi Breakfast Izakaya",
+      "amount": 5.21
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Hokusai Museum",
+      "amount": 8.68
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "National Museum Tokyo",
+      "amount": 2.89
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Tenkazushi 1",
+      "amount": 19.68
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Hokusai Souvenier",
+      "amount": 4.05
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Shibuya Crossing View",
+      "amount": 11.46
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience Store Bars - 7-11",
+      "amount": 4.05
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Yakisoba Restaurant",
+      "amount": 12.86
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Nieuw Hotel",
+      "amount": 174.48
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Nuzu Museum",
+      "amount": 9.26
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Family Mart",
+      "amount": 3.76
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Family Mart",
+      "amount": 3.74
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Omuraisu",
+      "amount": 6.54
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Tenkazushi 2",
+      "amount": 18.87
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Yoasobi Souvenier",
+      "amount": 4.01
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Tokyo Tower Ticket",
+      "amount": 8.68
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Pasty Lunch",
+      "amount": 6.94
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Family Mart dinner",
+      "amount": 6.16
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Breakfast",
+      "item": "Ontbijt met Pastries",
+      "amount": 5.59
+    },
+    {
+      "locatie": "Tokyo",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Airport Okinomiyaki",
+      "amount": 4.43
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Geland Convience Store 7-11",
+      "amount": 2.56
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Geland Convience Store CU",
+      "amount": 3.72
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "item": "Good Morning Mart",
+      "amount": 3.83
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Twosome place lunch",
+      "amount": 7.77
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Dinner bij Kimbap place",
+      "amount": 10.63
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11",
+      "amount": 3.58
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Kimchi Jiggae",
+      "amount": 3.91
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Dinner",
+      "item": "Kimchi Jiggae",
+      "amount": 5.44
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Lunch",
+      "item": "Isaac Toast lunch",
+      "amount": 2.54
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 33.64
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Photoshoot",
+      "item": "Photoshoot cash",
+      "amount": 306.89
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 12.27
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 32.91
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU",
+      "amount": 2.97
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Souveniertjes voor iedereen",
+      "amount": 74.37
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Misc",
+      "subcategory": "Error",
+      "item": "Foutief trein kaartje",
+      "amount": 9.77
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Luggage",
+      "item": "Nannybag - opslaan baggage",
+      "amount": 68.94
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "CU",
+      "amount": 3.04
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 63.34
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Kimbap Lunch",
+      "amount": 6.99
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Carrot cake met Katherine",
+      "amount": 4.8
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 56.7
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Hotel Kaoshiung",
+      "amount": 195.18
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Metro",
+      "item": "Trein vanaf vliegveld",
+      "amount": 0.71
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Convience store Taiwan Day 1 - 7-11",
+      "amount": 4.25
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Museum of Fine Arts Kaartje",
+      "amount": 2.55
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Pier 2 Kaartje",
+      "amount": 1.7
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Kaoshiung day 2",
+      "amount": 5.36
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Dumplings voor Fine Arts",
+      "amount": 4.26
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Family mart",
+      "amount": 2.1
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Hsiung Yun Kaoshiung",
+      "amount": 5.69
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Tasje",
+      "amount": 0.03
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Eten",
+      "amount": 3.49
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Geld opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 85.17
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Bike",
+      "item": "Youbike",
+      "amount": 0.57
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Bike",
+      "item": "Youbike",
+      "amount": 1.13
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Bar",
+      "item": "TWICE Cocktails",
+      "amount": 12.45
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 met zonnebrand",
+      "amount": 12.57
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 snack",
+      "amount": 1.16
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Mister Donut",
+      "amount": 4.33
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Hotel",
+      "amount": 101.88
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Train",
+      "item": "Trein kaartje",
+      "amount": 11.18
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Bus",
+      "item": "Klook",
+      "amount": 13.44
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mosburger",
+      "amount": 3.4
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash",
+      "amount": 56.6
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash opname",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Lunch in Alisan",
+      "amount": 7.92
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 in Alisan",
+      "amount": 19.89
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Late Checkout",
+      "item": "Late Checkout",
+      "amount": 11.32
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Train",
+      "item": "Treinkaartje naar Taipei",
+      "amount": 29.57
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Wang Group Taipei dinner",
+      "amount": 10.58
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mosburger lunch",
+      "amount": 6.79
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Lunch",
+      "amount": 3.62
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Hotel",
+      "subcategory": "Accommodation",
+      "item": "Taipei Hotel",
+      "amount": 229.23
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "7-11 Lunch",
+      "amount": 3.16
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Popeyes",
+      "amount": 5.28
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "National Palace",
+      "amount": 9.89
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Ticket",
+      "item": "Taipei Financial Center",
+      "amount": 16.95
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Bike",
+      "item": "Youbike",
+      "amount": 0.28
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Sleutelhanger",
+      "amount": 7.06
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Din Tai Fung",
+      "amount": 24.57
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mac Donalds Lunch",
+      "amount": 5.93
+    },
+    {
+      "locatie": "Taiwan",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 voor vertrek",
+      "amount": 2.12
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Luggage",
+      "item": "Extra hand bagage op vlucht",
+      "amount": 17.53
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Airport 7-11",
+      "amount": 5.28
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Bus",
+      "item": "Bus ticket",
+      "amount": 4.63
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 91.4
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opname",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "MacDonalds Post MAMA",
+      "amount": 6.63
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "MacDonalds Post MAMA",
+      "amount": 5.86
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Goose lunch",
+      "amount": 20.17
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Opera",
+      "item": "Kaartjes voor Opera",
+      "amount": 38.75
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Pizza",
+      "amount": 19.11
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Eten MAMA",
+      "amount": 12.25
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Döner Post MAMA",
+      "amount": 6.58
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 90.75
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "M+ Ticket",
+      "amount": 21.55
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Tram",
+      "item": "Kaartje voor Tram",
+      "amount": 14.49
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Hong Kong sleutelhanger",
+      "amount": 2.27
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Congee avond eten",
+      "amount": 19.74
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Maritime Museum",
+      "amount": 5.56
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Pre Hike",
+      "amount": 14.58
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "7-11 Op Top Veronica",
+      "amount": 7.2
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 45.37
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mango Drankje",
+      "amount": 3.4
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Broodjes voor hiking",
+      "amount": 8.98
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "item": "Circle K Voor Hike",
+      "amount": 3.62
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Jockey Club food",
+      "amount": 17.53
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "KFC",
+      "amount": 5.77
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Cafe Coral",
+      "amount": 6.67
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Transport",
+      "subcategory": "Luggage",
+      "item": "Hand Baggage",
+      "amount": 17.6
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Mac Donalds Ontbijt",
+      "amount": 7.92
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "item": "Cash",
+      "amount": 45.23
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "item": "Cash opnamen",
+      "amount": 4.5
+    },
+    {
+      "locatie": "Hong Kong",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Museum",
+      "item": "Kaartje Palace Museum",
+      "amount": 7.92
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Kimbap",
+      "amount": 7.52
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Katsu",
+      "amount": 8.42
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Saldo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "item": "Tacobell",
+      "amount": 7.76
+    },
+    {
+      "locatie": "Seoul",
+      "budgetType": "Nomad",
+      "category": "Tourist",
+      "subcategory": "Souvenir",
+      "item": "Drank voor Baas",
+      "amount": 16.75
+    }
+  ],
+  "hierarchy": {
+    "name": "Trip",
+    "children": [
+      {
+        "name": "Seoul",
+        "value": 5017.07,
+        "children": [
+          {
+            "name": "Hotel",
+            "value": 1684.86,
+            "children": [
+              {
+                "name": "Accommodation",
+                "value": 1684.86,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 1073.95,
+            "children": [
+              {
+                "name": "International",
+                "value": 1073.95,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Food",
+            "value": 857.02,
+            "children": [
+              {
+                "name": "Restaurant",
+                "value": 400.32,
+                "count": 41
+              },
+              {
+                "name": "Convenience Store",
+                "value": 244.06,
+                "count": 51
+              },
+              {
+                "name": "Groceries",
+                "value": 162.18,
+                "count": 10
+              },
+              {
+                "name": "Lunch",
+                "value": 34.87,
+                "count": 6
+              },
+              {
+                "name": "Cafe",
+                "value": 7.04,
+                "count": 1
+              },
+              {
+                "name": "Dinner",
+                "value": 5.44,
+                "count": 1
+              },
+              {
+                "name": "Bar",
+                "value": 3.11,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Tourist",
+            "value": 616.03,
+            "children": [
+              {
+                "name": "Photoshoot",
+                "value": 306.89,
+                "count": 1
+              },
+              {
+                "name": "Souvenir",
+                "value": 109.84,
+                "count": 6
+              },
+              {
+                "name": "Ticket",
+                "value": 66.78,
+                "count": 2
+              },
+              {
+                "name": "Museum",
+                "value": 55.3,
+                "count": 7
+              },
+              {
+                "name": "Spa",
+                "value": 43.52,
+                "count": 2
+              },
+              {
+                "name": "Club",
+                "value": 24.9,
+                "count": 1
+              },
+              {
+                "name": "Transport",
+                "value": 5.11,
+                "count": 1
+              },
+              {
+                "name": "Date",
+                "value": 3.69,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Cash",
+            "value": 363.66,
+            "children": [
+              {
+                "name": "Withdraw",
+                "value": 325.57,
+                "count": 4
+              },
+              {
+                "name": "Admin",
+                "value": 38.09,
+                "count": 6
+              }
+            ]
+          },
+          {
+            "name": "Travel Material",
+            "value": 171.2,
+            "children": [
+              {
+                "name": "SIM",
+                "value": 66.87,
+                "count": 1
+              },
+              {
+                "name": "Gym",
+                "value": 61.81,
+                "count": 1
+              },
+              {
+                "name": "Hotel Supplies",
+                "value": 35,
+                "count": 2
+              },
+              {
+                "name": "Verzorging",
+                "value": 7.52,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Kpop",
+            "value": 149.62,
+            "children": [
+              {
+                "name": "Concert",
+                "value": 58.12,
+                "count": 1
+              },
+              {
+                "name": "Merch",
+                "value": 42.51,
+                "count": 1
+              },
+              {
+                "name": "Album",
+                "value": 33.54,
+                "count": 2
+              },
+              {
+                "name": "Movie",
+                "value": 15.45,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Transport",
+            "value": 77.32,
+            "children": [
+              {
+                "name": "Luggage",
+                "value": 68.94,
+                "count": 1
+              },
+              {
+                "name": "Airport Train",
+                "value": 7.97,
+                "count": 1
+              },
+              {
+                "name": "Admin",
+                "value": 0.41,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Verzorging",
+            "value": 13.64,
+            "children": [
+              {
+                "name": "Kapper",
+                "value": 13.64,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Misc",
+            "value": 9.77,
+            "children": [
+              {
+                "name": "Error",
+                "value": 9.77,
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hong Kong",
+        "value": 2655.74,
+        "children": [
+          {
+            "name": "Hotel",
+            "value": 1015.52,
+            "children": [
+              {
+                "name": "Accommodation",
+                "value": 1015.52,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Kpop",
+            "value": 855.68,
+            "children": [
+              {
+                "name": "MAMA",
+                "value": 855.68,
+                "count": 2
+              }
+            ]
+          },
+          {
+            "name": "Cash",
+            "value": 290.75,
+            "children": [
+              {
+                "name": "Withdraw",
+                "value": 272.75,
+                "count": 4
+              },
+              {
+                "name": "Admin",
+                "value": 18,
+                "count": 4
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 192.2,
+            "children": [
+              {
+                "name": "International",
+                "value": 192.2,
+                "count": 2
+              }
+            ]
+          },
+          {
+            "name": "Food",
+            "value": 171.29,
+            "children": [
+              {
+                "name": "Restaurant",
+                "value": 140.61,
+                "count": 13
+              },
+              {
+                "name": "Convenience Store",
+                "value": 30.68,
+                "count": 4
+              }
+            ]
+          },
+          {
+            "name": "Tourist",
+            "value": 90.54,
+            "children": [
+              {
+                "name": "Opera",
+                "value": 38.75,
+                "count": 1
+              },
+              {
+                "name": "Museum",
+                "value": 35.03,
+                "count": 3
+              },
+              {
+                "name": "Tram",
+                "value": 14.49,
+                "count": 1
+              },
+              {
+                "name": "Souvenir",
+                "value": 2.27,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Transport",
+            "value": 39.76,
+            "children": [
+              {
+                "name": "Luggage",
+                "value": 35.13,
+                "count": 2
+              },
+              {
+                "name": "Bus",
+                "value": 4.63,
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tokyo",
+        "value": 1162.09,
+        "children": [
+          {
+            "name": "Hotel",
+            "value": 468.74,
+            "children": [
+              {
+                "name": "Accommodation",
+                "value": 468.74,
+                "count": 2
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 386.99,
+            "children": [
+              {
+                "name": "International",
+                "value": 386.99,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Cash",
+            "value": 120.75,
+            "children": [
+              {
+                "name": "Withdraw",
+                "value": 116.11,
+                "count": 1
+              },
+              {
+                "name": "Admin",
+                "value": 4.64,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Food",
+            "value": 107.77,
+            "children": [
+              {
+                "name": "Restaurant",
+                "value": 56.44,
+                "count": 4
+              },
+              {
+                "name": "Convenience Store",
+                "value": 22.62,
+                "count": 6
+              },
+              {
+                "name": "Lunch",
+                "value": 17.91,
+                "count": 3
+              },
+              {
+                "name": "Breakfast",
+                "value": 10.8,
+                "count": 2
+              }
+            ]
+          },
+          {
+            "name": "Tourist",
+            "value": 74.88,
+            "children": [
+              {
+                "name": "Ticket",
+                "value": 29.97,
+                "count": 3
+              },
+              {
+                "name": "Souvenir",
+                "value": 24.08,
+                "count": 4
+              },
+              {
+                "name": "Museum",
+                "value": 20.83,
+                "count": 3
+              }
+            ]
+          },
+          {
+            "name": "Transport",
+            "value": 2.96,
+            "children": [
+              {
+                "name": "Train",
+                "value": 2.96,
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Taiwan",
+        "value": 1080.44,
+        "children": [
+          {
+            "name": "Hotel",
+            "value": 537.61,
+            "children": [
+              {
+                "name": "Accommodation",
+                "value": 526.29,
+                "count": 3
+              },
+              {
+                "name": "Late Checkout",
+                "value": 11.32,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Cash",
+            "value": 211.97,
+            "children": [
+              {
+                "name": "Withdraw",
+                "value": 146.37,
+                "count": 3
+              },
+              {
+                "name": "Admin",
+                "value": 65.6,
+                "count": 3
+              }
+            ]
+          },
+          {
+            "name": "Food",
+            "value": 148.95,
+            "children": [
+              {
+                "name": "Restaurant",
+                "value": 77.58,
+                "count": 10
+              },
+              {
+                "name": "Convenience Store",
+                "value": 58.92,
+                "count": 11
+              },
+              {
+                "name": "Bar",
+                "value": 12.45,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 86.88,
+            "children": [
+              {
+                "name": "International",
+                "value": 86.88,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Transport",
+            "value": 56.88,
+            "children": [
+              {
+                "name": "Train",
+                "value": 40.75,
+                "count": 2
+              },
+              {
+                "name": "Bus",
+                "value": 13.44,
+                "count": 1
+              },
+              {
+                "name": "Bike",
+                "value": 1.98,
+                "count": 3
+              },
+              {
+                "name": "Metro",
+                "value": 0.71,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Tourist",
+            "value": 38.15,
+            "children": [
+              {
+                "name": "Ticket",
+                "value": 16.95,
+                "count": 1
+              },
+              {
+                "name": "Museum",
+                "value": 14.14,
+                "count": 3
+              },
+              {
+                "name": "Souvenir",
+                "value": 7.06,
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Macau",
+        "value": 943.25,
+        "children": [
+          {
+            "name": "Kpop",
+            "value": 496.62,
+            "children": [
+              {
+                "name": "Concert",
+                "value": 417.85,
+                "count": 1
+              },
+              {
+                "name": "Merch",
+                "value": 78.77,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 175.57,
+            "children": [
+              {
+                "name": "International",
+                "value": 175.57,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Hotel",
+            "value": 174.54,
+            "children": [
+              {
+                "name": "Accommodation",
+                "value": 174.54,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Cash",
+            "value": 96.52,
+            "children": [
+              {
+                "name": "Withdraw",
+                "value": 87.52,
+                "count": 2
+              },
+              {
+                "name": "Admin",
+                "value": 9,
+                "count": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Netherlands",
+        "value": 191.53,
+        "children": [
+          {
+            "name": "Travel Material",
+            "value": 127.04,
+            "children": [
+              {
+                "name": "Gear",
+                "value": 99.83,
+                "count": 4
+              },
+              {
+                "name": "SIM",
+                "value": 27.21,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "value": 57.98,
+            "children": [
+              {
+                "name": "International",
+                "value": 57.98,
+                "count": 1
+              }
+            ]
+          },
+          {
+            "name": "Admin",
+            "value": 6.51,
+            "children": [
+              {
+                "name": "Visum",
+                "value": 6.51,
+                "count": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "convenienceStores": [
+    {
+      "name": "7-Eleven",
+      "value": 200.11,
+      "count": 35
+    },
+    {
+      "name": "CU",
+      "value": 96.31,
+      "count": 21
+    },
+    {
+      "name": "GS25",
+      "value": 23.31,
+      "count": 6
+    },
+    {
+      "name": "Family Mart",
+      "value": 17.55,
+      "count": 5
+    },
+    {
+      "name": "E-Mart",
+      "value": 6.66,
+      "count": 2
+    },
+    {
+      "name": "Circle K",
+      "value": 3.62,
+      "count": 1
+    }
+  ],
+  "summary": {
+    "total": 11050.12,
+    "transactionCount": 289,
+    "biggestPurchase": {
+      "item": "Mangrove Seoul",
+      "amount": 1684.86,
+      "locatie": "Seoul"
+    }
+  }
+}
