@@ -1,27 +1,37 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import { FinanceData } from './types';
+import { FinanceData, FinanceTreemapData } from './types';
 import FinanceStatTiles from './finance-stat-tiles';
-import FinanceTreemap from './finance-treemap';
+import FinanceTreemapSection from './finance-treemap-section';
+import FinanceTreemapLegacy from './finance-treemap-legacy';
 import FinanceSankey from './finance-sankey';
 import FinancePie from './finance-pie';
 import { getLocationColorHex } from '../../../../utils/locationColors';
 
 const FinanceCharts = () => {
     const [data, setData] = useState<FinanceData | null>(null);
+    const [treemapData, setTreemapData] = useState<FinanceTreemapData | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         let cancelled = false;
 
-        fetch('/finance-data.json')
-            .then((res) => {
+        Promise.all([
+            fetch('/finance-data.json').then((res) => {
                 if (!res.ok) throw new Error('Failed to load finance data');
                 return res.json();
-            })
-            .then((json: FinanceData) => {
-                if (!cancelled) setData(json);
+            }),
+            fetch('/finance-treemap-data.json').then((res) => {
+                if (!res.ok) throw new Error('Failed to load finance treemap data');
+                return res.json();
+            }),
+        ])
+            .then(([json, treemapJson]: [FinanceData, FinanceTreemapData]) => {
+                if (!cancelled) {
+                    setData(json);
+                    setTreemapData(treemapJson);
+                }
             })
             .catch((err: Error) => {
                 if (!cancelled) setError(err.message);
@@ -40,7 +50,7 @@ const FinanceCharts = () => {
         );
     }
 
-    if (!data) {
+    if (!data || !treemapData) {
         return (
             <div className="w-full h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg text-gray-500 dark:text-gray-400">
                 Loading spending data...
@@ -66,8 +76,9 @@ const FinanceCharts = () => {
                 ))}
             </div>
 
-            <FinanceTreemap hierarchy={data.hierarchy} />
-            <FinanceSankey hierarchy={data.hierarchy} />
+            <FinanceTreemapSection data={treemapData} />
+            <FinanceTreemapLegacy hierarchy={data.hierarchy} />
+            {/* <FinanceSankey hierarchy={data.hierarchy} /> */}
             <FinancePie data={data.convenienceStores} />
         </div>
     );

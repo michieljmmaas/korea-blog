@@ -10,6 +10,7 @@
     "extract-stats": "node scripts/extract-stats.js",
     "score": "node scripts/calculate-score.js",
     "finance-data": "node scripts/extract-finance-data.js",
+    "finance-treemap-data": "node scripts/extract-finance-treemap-data.js",
     "watch": "next dev --turbopack"
   },
   "dependencies": {

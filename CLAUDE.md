@@ -24,6 +24,7 @@ npm run download-all              # download all source pictures from ImageKit (
 npm run extract-stats             # rebuild public/blog-stats.json from content/days frontmatter
 npm run score                     # recompute the per-day `score` field in content/days/*.md (scripts/calculate-score.js; supports --dry-run)
 npm run finance-data               # rebuild public/finance-data.json from content/finance/finance.csv
+npm run finance-treemap-data       # rebuild public/finance-treemap-data.json (location/category/total only, used by the treemap)
 ```
 
 There is no lint script and no test suite configured — `npm run build` (which runs `tsc` via Next.js) is the only correctness check available. CI (`.github/workflows/ci.yml`) runs `npm audit --audit-level=high` and `npm run build` on every PR.
@@ -42,7 +43,7 @@ Content lives entirely under `content/`, one directory per section:
 - `content/weekly/week-N.md` — one file per week, aggregates days.
 - `content/blogs/*.md` — standalone topical posts (not tied to a specific day), identified by a `slug` in frontmatter rather than filename.
 - `content/food/food.yaml`, `content/goals/goals.yaml`, `content/locations/locations.yaml` — flat YAML data files (foods tried, trip goals, GPS location log), not Markdown.
-- `content/finance/finance.csv` — raw expense export; `scripts/extract-finance-data.js` normalizes it (location aliases, convenience-store classification) into `public/finance-data.json`, which the finance charts read at runtime.
+- `content/finance/finance.csv` — raw expense export; `scripts/extract-finance-data.js` normalizes it (location aliases, convenience-store classification) into `public/finance-data.json`, which the convenience-store pie chart reads at runtime. `scripts/extract-finance-treemap-data.js` reads the same CSV independently and collapses it down to a flat `{location, category, total}` list (categories folded into a small fixed set, plus a manually-added Salary entry) in `public/finance-treemap-data.json`, which the treemap reads. The two scripts' location-alias tables and category groupings must be kept in sync by hand — there's no shared normalization layer.
 
 Data-access for content lives in `src/lib/*Service.ts` (`blogService.ts`, `dayService.ts`, `weekService.ts`, `foodService.ts`, `geoService.ts`, `goalService.ts`). Each reads directly from `content/` with `fs.readFileSync` + `gray-matter` (Markdown) or `js-yaml` (YAML) — there's no shared repository abstraction, so follow the existing per-domain pattern rather than introducing a generic content layer. `GeoDataService` module-level-caches its parsed data; the others do not.
 
