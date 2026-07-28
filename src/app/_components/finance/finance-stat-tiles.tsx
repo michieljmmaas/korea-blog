@@ -11,10 +11,6 @@ const FinanceStatTiles = ({ summary }: FinanceStatTilesProps) => {
             value: `€${summary.total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
         },
         {
-            label: 'Transactions',
-            value: summary.transactionCount.toLocaleString('en-US'),
-        },
-        {
             label: 'Biggest purchase',
             value: `€${summary.biggestPurchase.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
             sub: `${summary.biggestPurchase.item} · ${summary.biggestPurchase.locatie}`,

@@ -11,6 +11,9 @@
     "score": "node scripts/calculate-score.js",
     "finance-data": "node scripts/extract-finance-data.js",
     "finance-treemap-data": "node scripts/extract-finance-treemap-data.js",
+    "finance-treemap-hierarchy-data": "node scripts/extract-finance-treemap-hierarchy-data.js",
+    "finance-treemap-hierarchy-reseed": "node scripts/generate-finance-treemap-hierarchy.js",
+    "fin-dom": "npm run finance-treemap-hierarchy-reseed && npm run finance-treemap-hierarchy-data",
     "watch": "next dev --turbopack"
   },
   "dependencies": {

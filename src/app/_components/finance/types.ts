@@ -32,6 +32,20 @@ export interface FinanceTreemapData {
     categories: string[];
 }
 
+export interface FinanceTreemapHierarchyEntry {
+    location: string;
+    category: string;
+    subcategory: string;
+    total: number;
+    count: number;
+}
+
+export interface FinanceTreemapHierarchyData {
+    entries: FinanceTreemapHierarchyEntry[];
+    locations: string[];
+    categories: string[];
+}
+
 export interface FinanceData {
     transactions: FinanceTransaction[];
     hierarchy: FinanceHierarchyNode;

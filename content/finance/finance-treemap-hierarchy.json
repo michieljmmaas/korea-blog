@@ -1,0 +1,448 @@
+{
+  "entries": [
+    {
+      "location": "Hong Kong",
+      "category": "Hotel",
+      "subcategory": "Hotel - Hong Kong",
+      "total": 1015.52
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Flight",
+      "subcategory": "Flight - Hong Kong <-> Seoul",
+      "total": 134.16
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Flight",
+      "subcategory": "Flight Taipei <-> Hong Kong",
+      "total": 93.17
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "total": 272.75
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "total": 18
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "total": 140.61
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "total": 30.68
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Tourism",
+      "subcategory": "Attractions",
+      "total": 53.24
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Tourism",
+      "subcategory": "Museums",
+      "total": 35.03
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Tourism",
+      "subcategory": "Souvenirs",
+      "total": 2.27
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Kpop",
+      "subcategory": "MAMA - Day 2",
+      "total": 440.89
+    },
+    {
+      "location": "Hong Kong",
+      "category": "Kpop",
+      "subcategory": "MAMA - Day 1",
+      "total": 414.79
+    },
+    {
+      "location": "Macau",
+      "category": "Hotel",
+      "subcategory": "Hotel Macao",
+      "total": 174.54
+    },
+    {
+      "location": "Macau",
+      "category": "Flight",
+      "subcategory": "Flight Seoul <-> Macao",
+      "total": 175.57
+    },
+    {
+      "location": "Macau",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "total": 87.52
+    },
+    {
+      "location": "Macau",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "total": 9
+    },
+    {
+      "location": "Macau",
+      "category": "Kpop",
+      "subcategory": "TWICE - This is For - Macao",
+      "total": 417.85
+    },
+    {
+      "location": "Macau",
+      "category": "Kpop",
+      "subcategory": "Merch",
+      "total": 78.77
+    },
+    {
+      "location": "Seoul",
+      "category": "Hotel",
+      "subcategory": "Hotel - Mangrove",
+      "total": 1684.86
+    },
+    {
+      "location": "Seoul",
+      "category": "Flight",
+      "subcategory": "Flight Amsterdam <-> Seoul",
+      "total": 1131.93
+    },
+    {
+      "location": "Seoul",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "total": 325.57
+    },
+    {
+      "location": "Seoul",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "total": 38.09
+    },
+    {
+      "location": "Seoul",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "total": 447.67
+    },
+    {
+      "location": "Seoul",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "total": 251.58
+    },
+    {
+      "location": "Seoul",
+      "category": "Food",
+      "subcategory": "Groceries",
+      "total": 162.18
+    },
+    {
+      "location": "Seoul",
+      "category": "Food",
+      "subcategory": "Bar",
+      "total": 24.9
+    },
+    {
+      "location": "Seoul",
+      "category": "Tourism",
+      "subcategory": "Photoshoot",
+      "total": 306.89
+    },
+    {
+      "location": "Seoul",
+      "category": "Tourism",
+      "subcategory": "Souvenirs",
+      "total": 109.84
+    },
+    {
+      "location": "Seoul",
+      "category": "Tourism",
+      "subcategory": "Themeparks",
+      "total": 66.78
+    },
+    {
+      "location": "Seoul",
+      "category": "Tourism",
+      "subcategory": "Museums",
+      "total": 55.3
+    },
+    {
+      "location": "Seoul",
+      "category": "Tourism",
+      "subcategory": "Spa",
+      "total": 43.52
+    },
+    {
+      "location": "Seoul",
+      "category": "Transport",
+      "subcategory": "Luggage Storage",
+      "total": 68.94
+    },
+    {
+      "location": "Seoul",
+      "category": "Transport",
+      "subcategory": "Train",
+      "total": 13.08
+    },
+    {
+      "location": "Seoul",
+      "category": "Kpop",
+      "subcategory": "TWICE Fanmeeting",
+      "total": 58.12
+    },
+    {
+      "location": "Seoul",
+      "category": "Kpop",
+      "subcategory": "Merch",
+      "total": 42.51
+    },
+    {
+      "location": "Seoul",
+      "category": "Kpop",
+      "subcategory": "Albums",
+      "total": 33.54
+    },
+    {
+      "location": "Seoul",
+      "category": "Kpop",
+      "subcategory": "TWICE Movie Ticket",
+      "total": 15.45
+    },
+    {
+      "location": "Seoul",
+      "category": "Miscellaneous",
+      "subcategory": "SIM Card",
+      "total": 66.87
+    },
+    {
+      "location": "Seoul",
+      "category": "Miscellaneous",
+      "subcategory": "Gym Membership",
+      "total": 61.81
+    },
+    {
+      "location": "Seoul",
+      "category": "Miscellaneous",
+      "subcategory": "Hotel Supplies",
+      "total": 35
+    },
+    {
+      "location": "Seoul",
+      "category": "Miscellaneous",
+      "subcategory": "Haircut",
+      "total": 13.64
+    },
+    {
+      "location": "Seoul",
+      "category": "Miscellaneous",
+      "subcategory": "Visa",
+      "total": 6.51
+    },
+    {
+      "location": "Taiwan",
+      "category": "Hotel",
+      "subcategory": "Hotel - Taipei",
+      "total": 229.23
+    },
+    {
+      "location": "Taiwan",
+      "category": "Hotel",
+      "subcategory": "Hotel - Kaoshiung",
+      "total": 195.18
+    },
+    {
+      "location": "Taiwan",
+      "category": "Hotel",
+      "subcategory": "Hotel - Alisan",
+      "total": 113.2
+    },
+    {
+      "location": "Taiwan",
+      "category": "Flight",
+      "subcategory": "Flight INC -> KHH",
+      "total": 86.88
+    },
+    {
+      "location": "Taiwan",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "total": 198.47
+    },
+    {
+      "location": "Taiwan",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "total": 13.5
+    },
+    {
+      "location": "Taiwan",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "total": 77.58
+    },
+    {
+      "location": "Taiwan",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "total": 58.92
+    },
+    {
+      "location": "Taiwan",
+      "category": "Food",
+      "subcategory": "Bar",
+      "total": 12.45
+    },
+    {
+      "location": "Taiwan",
+      "category": "Tourism",
+      "subcategory": "Attractions",
+      "total": 16.95
+    },
+    {
+      "location": "Taiwan",
+      "category": "Tourism",
+      "subcategory": "Museums",
+      "total": 14.14
+    },
+    {
+      "location": "Taiwan",
+      "category": "Tourism",
+      "subcategory": "Souvenirs",
+      "total": 7.06
+    },
+    {
+      "location": "Taiwan",
+      "category": "Transport",
+      "subcategory": "Train",
+      "total": 40.75
+    },
+    {
+      "location": "Taiwan",
+      "category": "Transport",
+      "subcategory": "Bus",
+      "total": 13.44
+    },
+    {
+      "location": "Taiwan",
+      "category": "Transport",
+      "subcategory": "Bike",
+      "total": 1.98
+    },
+    {
+      "location": "Taiwan",
+      "category": "Miscellaneous",
+      "subcategory": "Lost Train Ticket",
+      "total": 9.77
+    },
+    {
+      "location": "Tokyo",
+      "category": "Hotel",
+      "subcategory": "Hotel - Capsule Hotel",
+      "total": 294.26
+    },
+    {
+      "location": "Tokyo",
+      "category": "Hotel",
+      "subcategory": "Hotel - New Hotel Japan",
+      "total": 174.48
+    },
+    {
+      "location": "Tokyo",
+      "category": "Flight",
+      "subcategory": "Flight Seoul <-> Tokyo",
+      "total": 386.99
+    },
+    {
+      "location": "Tokyo",
+      "category": "Cash",
+      "subcategory": "Withdraw",
+      "total": 116.11
+    },
+    {
+      "location": "Tokyo",
+      "category": "Cash",
+      "subcategory": "Admin",
+      "total": 4.64
+    },
+    {
+      "location": "Tokyo",
+      "category": "Food",
+      "subcategory": "Restaurant",
+      "total": 85.15
+    },
+    {
+      "location": "Tokyo",
+      "category": "Food",
+      "subcategory": "Convenience Store",
+      "total": 22.62
+    },
+    {
+      "location": "Tokyo",
+      "category": "Tourism",
+      "subcategory": "Museums",
+      "total": 30.66
+    },
+    {
+      "location": "Tokyo",
+      "category": "Tourism",
+      "subcategory": "Souvenirs",
+      "total": 24.08
+    },
+    {
+      "location": "Tokyo",
+      "category": "Tourism",
+      "subcategory": "Attractions",
+      "total": 20.14
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Miscellaneous",
+      "subcategory": "Packing Cubes",
+      "total": 32.95
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Miscellaneous",
+      "subcategory": "USB Stick",
+      "total": 29.9
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Miscellaneous",
+      "subcategory": "Roaming data",
+      "total": 27.21
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Miscellaneous",
+      "subcategory": "Universal Power Adapter",
+      "total": 18.99
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Miscellaneous",
+      "subcategory": "Sticker Paper",
+      "total": 17.99
+    },
+    {
+      "location": "Trip-wide",
+      "category": "Salary",
+      "subcategory": "Salary",
+      "total": 4000
+    }
+  ]
+}

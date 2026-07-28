@@ -16,6 +16,7 @@ function getLocationColorToken(location: CityLocation | string): string {
     if (loc.includes('taiwan') || loc.includes('taipei')) return 'green';
     if (loc.includes('hong kong')) return 'lime';
     if (loc.includes('nederland') || loc.includes('netherlands') || loc.includes('amsterdam') || loc.includes('rotterdam')) return 'orange';
+    if (loc === 'trip-wide') return 'orange';
 
     return 'gray';
 }
