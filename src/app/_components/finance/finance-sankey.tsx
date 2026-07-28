@@ -3,17 +3,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { sankey, sankeyLinkHorizontal, sankeyJustify } from 'd3-sankey';
-import { FinanceHierarchyNode } from './types';
+import { FinanceTreemapHierarchyEntry } from './types';
 import { getLocationColorHex } from '../../../../utils/locationColors';
+import { getCategoryColorHex } from '../../../../utils/financeCategoryColors';
 
 interface FinanceSankeyProps {
-    hierarchy: FinanceHierarchyNode;
+    entries: FinanceTreemapHierarchyEntry[];
 }
 
 interface RawNode {
     id: string;
     name: string;
     kind: 'location' | 'category' | 'subcategory';
+    // Category name backing this node's color — set on category and
+    // subcategory nodes so both shades derive from the same category.
+    category?: string;
 }
 
 interface RawLink {
@@ -34,43 +38,55 @@ const WIDTH = 928;
 const HEIGHT = 1400;
 const MIN_LABEL_HEIGHT = 9;
 
-// Locatie -> Category -> SubCategory, flattened into two link stages. Every
+// Location -> Category -> Subcategory, flattened into two link stages. Every
 // link (including category->subcategory) keeps its originating `locatie` so
 // the whole diagram — not just the first column — reads by location color.
-function buildGraph(hierarchy: FinanceHierarchyNode) {
+// Category and subcategory nodes are shared across locations (same category
+// name from different locations collapses into one node in that column), so
+// a category/subcategory's node total is its trip-wide sum, fed by
+// location-colored links.
+function buildGraph(entries: FinanceTreemapHierarchyEntry[]) {
     const nodes = new Map<string, RawNode>();
     const links: RawLink[] = [];
 
-    for (const locNode of hierarchy.children ?? []) {
-        const locId = `loc:${locNode.name}`;
-        if (!nodes.has(locId)) nodes.set(locId, { id: locId, name: locNode.name, kind: 'location' });
+    const locCatTotals = new Map<string, number>();
+    for (const entry of entries) {
+        const key = `${entry.location}||${entry.category}`;
+        locCatTotals.set(key, (locCatTotals.get(key) ?? 0) + entry.total);
+    }
 
-        for (const catNode of locNode.children ?? []) {
-            const catId = `cat:${catNode.name}`;
-            if (!nodes.has(catId)) nodes.set(catId, { id: catId, name: catNode.name, kind: 'category' });
+    const addedLocCatLinks = new Set<string>();
 
-            links.push({ source: locId, target: catId, value: catNode.value, locatie: locNode.name });
+    for (const entry of entries) {
+        const locId = `loc:${entry.location}`;
+        if (!nodes.has(locId)) nodes.set(locId, { id: locId, name: entry.location, kind: 'location' });
 
-            for (const subNode of catNode.children ?? []) {
-                const subId = `sub:${catNode.name}::${subNode.name}`;
-                if (!nodes.has(subId)) {
-                    nodes.set(subId, { id: subId, name: `${catNode.name} · ${subNode.name}`, kind: 'subcategory' });
-                }
-                links.push({ source: catId, target: subId, value: subNode.value, locatie: locNode.name });
-            }
+        const catId = `cat:${entry.category}`;
+        if (!nodes.has(catId)) nodes.set(catId, { id: catId, name: entry.category, kind: 'category', category: entry.category });
+
+        const locCatKey = `${entry.location}||${entry.category}`;
+        if (!addedLocCatLinks.has(locCatKey)) {
+            addedLocCatLinks.add(locCatKey);
+            links.push({ source: locId, target: catId, value: locCatTotals.get(locCatKey)!, locatie: entry.location });
         }
+
+        const subId = `sub:${entry.category}::${entry.subcategory}`;
+        if (!nodes.has(subId)) {
+            nodes.set(subId, { id: subId, name: `${entry.category} · ${entry.subcategory}`, kind: 'subcategory', category: entry.category });
+        }
+        links.push({ source: catId, target: subId, value: entry.total, locatie: entry.location });
     }
 
     return { nodes: Array.from(nodes.values()), links };
 }
 
-const FinanceSankey = ({ hierarchy }: FinanceSankeyProps) => {
+const FinanceSankey = ({ entries }: FinanceSankeyProps) => {
     const svgRef = useRef<SVGSVGElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [tooltip, setTooltip] = useState<TooltipState | null>(null);
     const [focusId, setFocusId] = useState<string | null>(null);
 
-    const graph = useMemo(() => buildGraph(hierarchy), [hierarchy]);
+    const graph = useMemo(() => buildGraph(entries), [entries]);
 
     useEffect(() => {
         if (!svgRef.current) return;
@@ -160,7 +176,7 @@ const FinanceSankey = ({ hierarchy }: FinanceSankeyProps) => {
         nodeSel.append('rect')
             .attr('width', (d: any) => d.x1 - d.x0)
             .attr('height', (d: any) => Math.max(1, d.y1 - d.y0))
-            .attr('fill', (d: any) => (d.kind === 'location' ? getLocationColorHex(d.name) : '#6b7280'))
+            .attr('fill', (d: any) => (d.kind === 'location' ? getLocationColorHex(d.name) : getCategoryColorHex(d.category)))
             .attr('opacity', (d: any) => (highlighted ? (isNodeHighlighted(d, highlighted) ? 1 : 0.25) : 1));
 
         nodeSel.append('text')

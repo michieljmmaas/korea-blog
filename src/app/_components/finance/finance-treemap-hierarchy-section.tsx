@@ -10,6 +10,7 @@ import { getCategoryColorHex } from '../../../../utils/financeCategoryColors';
 
 interface FinanceTreemapHierarchySectionProps {
     data: FinanceTreemapHierarchyData;
+    totalSpent: number;
 }
 
 type GroupBy = 'location' | 'category';
@@ -19,7 +20,7 @@ const ACTIVE =
 const INACTIVE =
     'bg-transparent text-neutral-400 border-neutral-200 hover:text-neutral-900 hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-400 dark:hover:text-white opacity-60 hover:opacity-100';
 
-const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySectionProps) => {
+const FinanceTreemapHierarchySection = ({ data, totalSpent }: FinanceTreemapHierarchySectionProps) => {
     const [groupBy, setGroupBy] = useState<GroupBy>('location');
     const [selectedLocations, setSelectedLocations] = useState<Set<string>>(() => new Set(data.locations));
     // Salary is filtered out to start — it's income, not spending.
@@ -51,10 +52,10 @@ const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySection
     };
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
             <div className="flex items-center justify-between flex-wrap gap-2">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
-                    Spending breakdown <span className="font-normal text-gray-400">(location / category / subcategory)</span>
+                    Spending breakdown
                 </h3>
                 <div
                     role="group"
@@ -79,7 +80,7 @@ const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySection
                 </div>
             </div>
 
-            <div className="flex flex-col gap-2 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
+            <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 shrink-0">Locations</span>
                     {data.locations.map((name) => {
@@ -135,6 +136,13 @@ const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySection
             ) : (
                 <FinanceTreemapByCategory entries={filteredEntries} title="By category" />
             )}
+
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
+                <div className="text-sm text-gray-500 dark:text-gray-400">Total spent</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-50 mt-1">
+                    €{totalSpent.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </div>
+            </div>
         </div>
     );
 };

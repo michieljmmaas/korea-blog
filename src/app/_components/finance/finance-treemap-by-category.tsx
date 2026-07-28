@@ -139,7 +139,7 @@ const FinanceTreemapByCategory = ({ entries, title }: FinanceTreemapByCategoryPr
     };
 
     return (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4">
+        <div>
             <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">{title}</h3>
                 <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 flex-wrap">

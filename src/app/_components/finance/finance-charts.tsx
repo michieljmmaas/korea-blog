@@ -2,13 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { FinanceData, FinanceTreemapData, FinanceTreemapHierarchyData } from './types';
-import FinanceStatTiles from './finance-stat-tiles';
-import FinanceTreemapSection from './finance-treemap-section';
 import FinanceTreemapHierarchySection from './finance-treemap-hierarchy-section';
-import FinanceTreemapLegacy from './finance-treemap-legacy';
-import FinanceSankey from './finance-sankey';
-import FinancePie from './finance-pie';
-import { getLocationColorHex } from '../../../../utils/locationColors';
 
 const FinanceCharts = () => {
     const [data, setData] = useState<FinanceData | null>(null);
@@ -65,29 +59,9 @@ const FinanceCharts = () => {
         );
     }
 
-    const locations = (data.hierarchy.children ?? []).map((c) => c.name);
-
     return (
-        <div className="w-full space-y-6 my-8">
-            <FinanceStatTiles summary={data.summary} />
-
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
-                {locations.map((name) => (
-                    <span key={name} className="flex items-center gap-1.5">
-                        <span
-                            className="inline-block w-2.5 h-2.5 rounded-full"
-                            style={{ backgroundColor: getLocationColorHex(name) }}
-                        />
-                        {name}
-                    </span>
-                ))}
-            </div>
-
-            {/* <FinanceTreemapSection data={treemapData} /> */}
-            <FinanceTreemapHierarchySection data={treemapHierarchyData} />
-            {/* <FinanceTreemapLegacy hierarchy={data.hierarchy} /> */}
-            {/* <FinanceSankey hierarchy={data.hierarchy} /> */}
-            <FinancePie data={data.convenienceStores} />
+        <div className="w-full my-8">
+            <FinanceTreemapHierarchySection data={treemapHierarchyData} totalSpent={data.summary.total} />
         </div>
     );
 };
