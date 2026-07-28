@@ -68,7 +68,7 @@ function simplifyCategory(rawCategory) {
 
 // Manual entries that don't come from the transaction CSV at all.
 const MANUAL_ENTRIES = [
-  { location: 'Trip-wide', category: 'Salary', subcategory: 'Salary', total: 4000 },
+  { location: 'Trip-wide', category: 'Salary', subcategory: 'Salary', total: 5000 },
 ];
 
 const round2 = (n) => Math.round(n * 100) / 100;

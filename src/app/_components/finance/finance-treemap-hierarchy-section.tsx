@@ -10,7 +10,6 @@ import { getCategoryColorHex } from '../../../../utils/financeCategoryColors';
 
 interface FinanceTreemapHierarchySectionProps {
     data: FinanceTreemapHierarchyData;
-    totalSpent: number;
 }
 
 type GroupBy = 'location' | 'category';
@@ -20,7 +19,44 @@ const ACTIVE =
 const INACTIVE =
     'bg-transparent text-neutral-400 border-neutral-200 hover:text-neutral-900 hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-400 dark:hover:text-white opacity-60 hover:opacity-100';
 
-const FinanceTreemapHierarchySection = ({ data, totalSpent }: FinanceTreemapHierarchySectionProps) => {
+// A single mechanical digit reel: a column of 0-9 slid via translateY so the
+// active digit lines up in the visible window, like an odometer / till counter.
+const RollingDigit = ({ digit, delayMs }: { digit: number; delayMs: number }) => (
+    <span className="relative inline-block h-[1em] w-[0.62em] overflow-hidden align-top">
+        <span
+            className="absolute left-0 top-0 flex flex-col transition-transform ease-out"
+            style={{ transform: `translateY(-${digit * 1}em)`, transitionDuration: '600ms', transitionDelay: `${delayMs}ms` }}
+        >
+            {Array.from({ length: 10 }, (_, i) => (
+                <span key={i} className="h-[1em] leading-[1em] text-center">{i}</span>
+            ))}
+        </span>
+    </span>
+);
+
+// Renders a euro amount as a row of rolling digit reels, so changing the
+// filters makes the subtotal spin like an old cash register instead of
+// just snapping to the new value.
+const RollingTotal = ({ value }: { value: number }) => {
+    const formatted = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    // Reversed so each character's key is its distance from the units place —
+    // stable even when the digit count changes (e.g. 999.99 -> 1,000.00).
+    const reversedChars = formatted.split('').reverse();
+
+    return (
+        <span className="inline-flex flex-row-reverse" aria-hidden="true">
+            {reversedChars.map((char, i) =>
+                /\d/.test(char) ? (
+                    <RollingDigit key={i} digit={Number(char)} delayMs={i * 30} />
+                ) : (
+                    <span key={i} className="inline-block">{char}</span>
+                )
+            )}
+        </span>
+    );
+};
+
+const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySectionProps) => {
     const [groupBy, setGroupBy] = useState<GroupBy>('location');
     const [selectedLocations, setSelectedLocations] = useState<Set<string>>(() => new Set(data.locations));
     // Salary is filtered out to start — it's income, not spending.
@@ -31,6 +67,13 @@ const FinanceTreemapHierarchySection = ({ data, totalSpent }: FinanceTreemapHier
     const filteredEntries = useMemo(
         () => data.entries.filter((e) => selectedLocations.has(e.location) && selectedCategories.has(e.category)),
         [data.entries, selectedLocations, selectedCategories]
+    );
+
+    // Only reacts to the location/category filters, not the treemap drilldown
+    // (that's local state inside FinanceTreemapByLocation/ByCategory).
+    const subtotal = useMemo(
+        () => filteredEntries.reduce((sum, e) => sum + e.total, 0),
+        [filteredEntries]
     );
 
     const toggleLocation = (name: string) => {
@@ -138,9 +181,13 @@ const FinanceTreemapHierarchySection = ({ data, totalSpent }: FinanceTreemapHier
             )}
 
             <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-                <div className="text-sm text-gray-500 dark:text-gray-400">Total spent</div>
-                <div className="text-2xl font-bold text-gray-900 dark:text-gray-50 mt-1">
-                    €{totalSpent.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                <div className="text-sm text-gray-500 dark:text-gray-400">Subtotal</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-50 mt-1 tabular-nums">
+                    <span className="sr-only">
+                        €{subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    </span>
+                    <span aria-hidden="true">€</span>
+                    <RollingTotal value={subtotal} />
                 </div>
             </div>
         </div>

@@ -61,7 +61,7 @@ const FinanceCharts = () => {
 
     return (
         <div className="w-full my-8">
-            <FinanceTreemapHierarchySection data={treemapHierarchyData} totalSpent={data.summary.total} />
+            <FinanceTreemapHierarchySection data={treemapHierarchyData} />
         </div>
     );
 };

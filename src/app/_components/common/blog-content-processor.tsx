@@ -6,6 +6,7 @@ import SingleImageWithModal from './single-image-with-modal';
 import { DayHoverData, DayLinkWithTooltip } from '../day/day-link-with-tooltip';
 import { BlogHoverData, BlogLinkWithTooltip } from '../blog/blog-link-with-tooltip';
 import FinanceCharts from '../finance/finance-charts';
+import ConvenienceStoreChart from '../finance/convenience-store-chart';
 
 interface BlogContentProcessorProps {
     htmlContent: string;
@@ -138,6 +139,18 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
 
                 const root = createRoot(container);
                 root.render(<FinanceCharts />);
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Convenience store chart ──────────────────────────────────────
+            const convenienceStoreChartPlaceholders = contentRef.current.querySelectorAll('.convenience-store-chart-placeholder');
+
+            convenienceStoreChartPlaceholders.forEach((placeholder) => {
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<ConvenienceStoreChart />);
                 mountedComponentsRef.current.push({ element: container, root });
             });
 

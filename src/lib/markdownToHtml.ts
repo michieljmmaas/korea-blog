@@ -41,12 +41,17 @@ function processFinanceCharts(markdown: string): string {
   return markdown.replace(/<FinanceCharts\s*\/?>/g, '<div class="finance-charts-placeholder"></div>');
 }
 
+function processConvenienceStoreChart(markdown: string): string {
+  return markdown.replace(/<ConvenienceStoreChart\s*\/?>/g, '<div class="convenience-store-chart-placeholder"></div>');
+}
+
 export default async function markdownToHtml(
   markdown: string,
   imageMapping: ImageMapping,
 ) {
   let processedMarkdown = processCustomImages(markdown, imageMapping);
   processedMarkdown = processFinanceCharts(processedMarkdown);
+  processedMarkdown = processConvenienceStoreChart(processedMarkdown);
 
   const result = await remark()
     .use(remarkGfm)

@@ -4,36 +4,46 @@ title: How much did it all cost?
 description: Breaking down every euro spent on the trip, by place and by category
 publishdate: '2025-12-04'
 draft: false
-tags: ['finance', 'budget', 'recap']
+tags: ['information']
 thumb: '' # TODO: pick a real header image before publishing
 photos: []
 ---
 # How much did it all cost?
 
-Somewhere between the flights, the hotels, and an unreasonable number of convenience store snacks, I lost track of what this trip actually cost. So I logged every single purchase — 289 of them — and added it all up.
+I spent a surprising amount of this trip doing 'admin'. That meant prepping for upcoming adventures, writing the blog, and — apparently my favorite hobby — updating my finances. I like to know exactly where my money goes, so I tracked every single expense in a giant spreadsheet. 289 rows deep by the time I got home.
 
-**Total: €11,050.12.**
+# Total: €16.034,61
 
-That number alone doesn't say much, so instead of just stating it, here's an interactive breakdown of where it actually went — by location, category, and down to the individual subcategory. Click around.
+That number alone doesn't say much, so instead of just throwing it at you, here's an interactive breakdown of where it actually went — by location, category, and down to the individual subcategory. Click around!
+
+Some things to note:
+* I only tracked my card expenses, not my cash spending. Most of that cash went to public transport, food, and souvenirs.
+* I took 6 weeks of unpaid leave from my job. I didn't spend that money, I just never earned it — but it's technically a cost of the trip, so it's in the data. I've toggled it off in the chart by default, since it skews the numbers pretty hard.
 
 <FinanceCharts/>
 
-## The big-ticket items
 
-Unsurprisingly, the two things that cost the most weren't the fun stuff — they were the boring logistics: **hotels (€3,881.27)** and **flights (€1,973.57)** together made up nearly half the entire budget. The single biggest line item was the Mangrove hotel in Seoul at €1,684.86, closely followed by the AMS–Incheon flight at €1,073.95.
+## What was cheaper than I thought?
 
-**Seoul alone accounts for €5,017.07** — almost half of everything — which makes sense given it's where most of the trip actually happened. Hong Kong comes in a distant second at €2,655.74, largely thanks to two MAMA tickets (€414.79 and €440.89) and a rather expensive hotel.
+Definitely the food. It's so abundant, delicious, and cheap out there. When I got back I nearly fell to my knees in the Albert Heijn when I realized I had to cook for myself again.
 
-## The K-pop tax
+I was also quite surprised by how little I spent on museums, considering how many I visited. Across (x) visits I spent a total of €135,- — about €(y) per visit. A lot of the museums I went to were either free (most of the ones in Korea) or dirt cheap.
 
-Filing under "worth it": **€1,501.92** went straight into K-pop — MAMA tickets, the TWICE concert in Macau, the fanmeeting, merch, and more albums than I'd like to admit to. If you zoom into the treemap by location, you'll see exactly how much of Macau and Hong Kong's totals were, in fact, just TWICE.
+## What was more expensive than I thought?
 
-## Everyday spending
+Looking back, I massively overpaid for the MAMA tickets. I'd already booked my flight and hotel for Hong Kong, so I guilted myself into going. I ended up paying scalpers a premium just to get in, and given how lukewarm I felt about the whole affair, I wouldn't say it was worth it.
 
-Zoom into "Food" in either chart and it becomes an ode to convenience stores — CU, GS25, 7-Eleven, Family Mart — the actual backbone of eating on this trip, next to the occasional real restaurant meal. It's the least glamorous €1,285.03 of the entire budget, and also probably the most representative of what daily life on the road actually looked like.
+The trip to Tokyo also blew past what I'd hoped to spend. That mostly came down to an expensive flight (peak tourist season, of course) and having to book a second hotel after bailing on my capsule hotel (more on that here: <Blog capsule-hotel desc="What it's like to stay in a Capsule Hotel in Tokyo">), which torpedoed my budget.
 
-Zooming in further: **€347.56** of that went straight to actual convenience stores specifically, and 7-Eleven alone took over half of it (€200.11 across 35 separate visits). CU was a distant but reliable second at €96.31. Here's exactly how that split out:
+
+## Convenience Store
+
+I spent a lot of money at convenience stores. Because of all this tracking, I can show you exactly how much I spent there, and how many times I stopped by.
+
+
+<ConvenienceStoreChart/>
+
 
 ## So, was it worth it?
 
-Yes. But now I have the receipts to prove it.
+Yes! But now I have the receipts to prove it.
