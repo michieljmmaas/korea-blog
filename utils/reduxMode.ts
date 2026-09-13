@@ -42,29 +42,6 @@ export function getReduxState(now: Date = new Date()): ReduxState {
     };
 }
 
-/**
- * Reads a `?asOf=YYYY-MM-DD` override from the URL, for manually testing redux mode at
- * different dates without touching the system clock. A date in (or before) the trip year
- * itself is bumped a year forward, so pasting an actual trip date (e.g. 2025-10-21) still
- * activates redux mode instead of being treated as "during the trip".
- */
-export function getDebugOverrideDate(): Date | null {
-    if (typeof window === "undefined") return null;
-
-    const raw = new URLSearchParams(window.location.search).get("asOf");
-    if (!raw) return null;
-
-    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw);
-    if (!match) return null;
-
-    let year = Number(match[1]);
-    const month = Number(match[2]);
-    const day = Number(match[3]);
-    if (year <= TRIP_YEAR) year = TRIP_YEAR + 1;
-
-    return new Date(year, month - 1, day);
-}
-
 /** The day post from exactly this date, N years ago. */
 export function findReduxDay(days: TripDay[], tripDateString: string): TripDay | null {
     return days.find((d) => d.frontmatter.date === tripDateString) ?? null;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import { getReduxState, getDebugOverrideDate } from '../../../../utils/reduxMode';
+import { getReduxState } from '../../../../utils/reduxMode';
 
 interface RandomSectionProps<T, K> {
   title: string;
@@ -31,7 +31,7 @@ export default function RandomSection<T, K>({
   // their own random item. A redux-mode match (also visitor-date-dependent) takes priority.
   useEffect(() => {
     if (getReduxItem) {
-      const redux = getReduxState(getDebugOverrideDate() ?? undefined);
+      const redux = getReduxState();
       if (redux.active) {
         const match = getReduxItem(items, redux.tripDateString);
         if (match) {

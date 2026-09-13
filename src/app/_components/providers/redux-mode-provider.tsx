@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { getReduxState, getDebugOverrideDate } from '../../../../utils/reduxMode';
+import { getReduxState } from '../../../../utils/reduxMode';
 
 const STORAGE_KEY = 'redux-mode-filter';
 
@@ -31,13 +31,9 @@ export function ReduxModeProvider({ children }: { children: ReactNode }) {
     const [filterOn, setFilterOn] = useState(true);
 
     useEffect(() => {
-        const overrideDate = getDebugOverrideDate();
-        const redux = getReduxState(overrideDate ?? undefined);
+        const redux = getReduxState();
         setWindowActive(redux.active);
         setTripDateString(redux.tripDateString);
-        if (overrideDate) {
-            console.info(`[Redux Mode] testing as of ${redux.tripDateString} (via ?asOf=)`, redux);
-        }
 
         const stored = window.localStorage.getItem(STORAGE_KEY);
         if (stored !== null) setFilterOn(stored === 'true');
