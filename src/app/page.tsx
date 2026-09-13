@@ -6,6 +6,8 @@ import RandomWeekSection from "./_components/frontpage/random-week-section";
 import RandomDaySection from "./_components/frontpage/random-day-section";
 import RandomBlogpostSection from "./_components/frontpage/random-blogpost-section";
 
+// Picked once at build/request time as an SSR placeholder; RandomSection re-picks
+// client-side on mount so each visitor gets their own random item.
 function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }

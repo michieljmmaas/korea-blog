@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import Container from "./_components/layout/container";
 import Header from "./_components/layout/header";
+import { ReduxModeProvider } from "./_components/providers/redux-mode-provider";
 import "yet-another-react-lightbox/styles.css";
 import 'leaflet/dist/leaflet.css';
 import { IMAGEKIT_URL_ENDPOINT } from "../../utils/imagekit";
@@ -65,22 +66,24 @@ export default function RootLayout({
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
         <ImageKitProvider urlEndpoint={IMAGEKIT_URL_ENDPOINT}>
-          <div className="grid grid-rows-[auto_1fr_auto] h-screen">
-            {/* Fixed Header */}
-            <header>
-              <Container>
-                <Header />
-              </Container>
-            </header>
+          <ReduxModeProvider>
+            <div className="grid grid-rows-[auto_1fr_auto] h-screen">
+              {/* Fixed Header */}
+              <header>
+                <Container>
+                  <Header />
+                </Container>
+              </header>
 
-            {/* Scrollable Main Content */}
-            <main id="scroll-container" className="overflow-y-auto">
+              {/* Scrollable Main Content */}
+              <main id="scroll-container" className="overflow-y-auto">
 
-              <Container>
-                {children}
-              </Container>
-            </main>
-          </div>
+                <Container>
+                  {children}
+                </Container>
+              </main>
+            </div>
+          </ReduxModeProvider>
         </ImageKitProvider>
       </body>
     </html>

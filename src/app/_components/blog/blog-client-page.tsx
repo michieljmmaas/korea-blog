@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { BlogPost } from '@/app/types';
 import { BlogFilterBar } from './blog-filter-bar';
 import BlogPostCard from './blog-post-card';
+import { useReduxMode } from '../providers/redux-mode-provider';
 
 interface BlogsClientPageProps {
     posts: BlogPost[];
@@ -20,24 +21,31 @@ function matchesSearch(post: BlogPost, query: string): boolean {
 }
 
 export function BlogsClientPage({ posts }: BlogsClientPageProps) {
+    const { hasNotHappenedYet } = useReduxMode();
     const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
     const [searchQuery, setSearchQuery] = useState('');
 
+    // Posts that haven't happened yet (Redux Mode) are hidden entirely.
+    const eligiblePosts = useMemo(
+        () => posts.filter((post) => !hasNotHappenedYet(post.frontmatter.publishdate)),
+        [posts, hasNotHappenedYet]
+    );
+
     const allTags = useMemo(() => {
         const tags = new Set<string>();
-        posts.forEach((post) => post.frontmatter.tags?.forEach((t) => tags.add(t)));
+        eligiblePosts.forEach((post) => post.frontmatter.tags?.forEach((t) => tags.add(t)));
         return Array.from(tags).sort();
-    }, [posts]);
+    }, [eligiblePosts]);
 
     const filteredPosts = useMemo(() => {
-        return posts.filter((post) => {
+        return eligiblePosts.filter((post) => {
             const passesSearch = searchQuery ? matchesSearch(post, searchQuery) : true;
             const passesTags = activeTags.size > 0
                 ? post.frontmatter.tags?.some((t) => activeTags.has(t))
                 : true;
             return passesSearch && passesTags;
         });
-    }, [posts, activeTags, searchQuery]);
+    }, [eligiblePosts, activeTags, searchQuery]);
 
     function handleTagToggle(tag: string) {
         setActiveTags((prev) => {

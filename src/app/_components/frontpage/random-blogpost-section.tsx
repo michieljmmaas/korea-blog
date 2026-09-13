@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import BlogPostCard from '../blog/blog-post-card';
 import { BlogPost } from '@/app/types';
 import RandomSection from './random-section';
+import { findReduxBlog } from '../../../../utils/reduxMode';
+import { useReduxMode } from '../providers/redux-mode-provider';
 
 interface RandomBlogpostSectionProps {
   posts: BlogPost[];
@@ -16,14 +18,18 @@ export default function RandomBlogpostSection({
   initialPost,
   linkComponent,
 }: RandomBlogpostSectionProps) {
+  const { hasNotHappenedYet } = useReduxMode();
+  const eligiblePosts = posts.filter((post) => !hasNotHappenedYet(post.frontmatter.publishdate));
+
   return (
     <RandomSection
       title="Random Blogpost"
-      items={posts}
+      items={eligiblePosts.length > 0 ? eligiblePosts : posts}
       initialItem={initialPost}
       getKey={(post) => post.slug}
       renderItem={(post) => <BlogPostCard post={post} />}
       linkComponent={linkComponent}
+      getReduxItem={findReduxBlog}
     />
   );
 }

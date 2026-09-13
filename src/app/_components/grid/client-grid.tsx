@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { TripDay, CityLocation } from '../../types';
 import TripGrid from './trip-grid';
 import { TripGridControlBar, SortMetric, SortDirection, ALL_LOCATIONS, ALL_TAGS } from './trip-grid-control-bar';
+import { useReduxMode } from '../providers/redux-mode-provider';
 
 interface ClientGridProps {
   days: TripDay[];
@@ -67,6 +68,8 @@ function compareByMetric(metric: SortMetricType, direction: SortDirection) {
 }
 
 export default function ClientGrid({ days }: ClientGridProps) {
+  const { hasNotHappenedYet } = useReduxMode();
+
   // Convert string dates back to Date objects for client-side use
   const processedDays = days.map((day) => ({
     ...day,
@@ -104,11 +107,12 @@ export default function ClientGrid({ days }: ClientGridProps) {
       day: d,
       passes:
         matchesSearch(d, searchQuery) &&
-        passesFilters(d, tagFilters, activeLocations),
+        passesFilters(d, tagFilters, activeLocations) &&
+        !hasNotHappenedYet(d.frontmatter.date),
     }));
 
     if (!isOrdered) {
-      // Default mode: keep all days, mark non-matching as filtered
+      // Default mode: keep all days, mark non-matching (including "hasn't happened yet") as dimmed
       return { visibleDays: withPassFlag, isOrderedMode: false };
     }
 
@@ -119,7 +123,7 @@ export default function ClientGrid({ days }: ClientGridProps) {
       visibleDays: sorted.map((day) => ({ day, passes: true })),
       isOrderedMode: true,
     };
-  }, [processedDays, searchQuery, tagFilters, activeLocations, sortMetric, sortDirection]);
+  }, [processedDays, searchQuery, tagFilters, activeLocations, sortMetric, sortDirection, hasNotHappenedYet]);
 
   function handleLocationToggle(location: CityLocation) {
     setActiveLocations((prev) => {

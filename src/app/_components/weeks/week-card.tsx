@@ -8,9 +8,10 @@ import Link from 'next/link';
 interface WeekCardProps {
     week: WeekData;
     priorty: boolean;
+    isDimmed?: boolean;
 }
 
-export default function WeekCard({ week, priorty }: WeekCardProps) {
+export default function WeekCard({ week, priorty, isDimmed = false }: WeekCardProps) {
     const isDraft = week.draft;
 
     // Helper function to format date range
@@ -41,7 +42,7 @@ export default function WeekCard({ week, priorty }: WeekCardProps) {
             <div className={`bg-white rounded-md shadow-lg overflow-hidden transition-transform duration-300 ${isDraft
                 ? 'opacity-60 cursor-not-allowed'
                 : 'hover:-translate-y-1 cursor-pointer'
-                }`}>
+                } ${isDimmed ? 'opacity-50 grayscale' : ''}`}>
                 {/* Full width thumbnail */}
                 <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 bg-gray-200">
                     {!isDraft && (

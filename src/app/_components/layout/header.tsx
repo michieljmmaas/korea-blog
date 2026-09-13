@@ -6,10 +6,33 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import HeaderLink from "./Link";
 import profilePicture from "../../../../public/assets/blog/profile.png";
+import { useReduxMode } from "../providers/redux-mode-provider";
+
+const ReduxBadge = ({ filterOn, onClick }: { filterOn: boolean; onClick: () => void }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    aria-pressed={filterOn}
+    title={
+      filterOn
+        ? "Redux Mode is hiding content that hasn't happened yet. Click to show everything."
+        : "Redux Mode is off. Click to hide content that hasn't happened yet."
+    }
+    className={`relative text-lg font-bold bg-clip-text text-transparent bg-[length:200%_auto] select-none transition-opacity ${filterOn ? "animate-redux-rainbow" : "opacity-40 grayscale"
+      }`}
+    style={{
+      backgroundImage:
+        "linear-gradient(90deg, #ff0000, #ff9900, #33cc33, #0099ff, #6633ff, #ff0000)",
+    }}
+  >
+    Redux
+  </button>
+);
 
 const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { windowActive, filterOn, toggleFilter } = useReduxMode();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,6 +82,7 @@ const Header = () => {
               <HeaderLink pathname={"/food"} title={"Food"} currentPathName={pathname} />
               <HeaderLink pathname={"/goals"} title={"Goals"} currentPathName={pathname} />
               <HeaderLink pathname={"/blogs/about"} title={"About"} currentPathName={pathname} />
+              {windowActive && <ReduxBadge filterOn={filterOn} onClick={toggleFilter} />}
             </nav>
           </div>
 
@@ -134,6 +158,11 @@ const Header = () => {
               >
                 About
               </Link>
+              {windowActive && (
+                <div className="py-2 px-3">
+                  <ReduxBadge filterOn={filterOn} onClick={toggleFilter} />
+                </div>
+              )}
               <Link
                 href="/food"
                 className={`text-lg font-medium py-2 px-3 rounded-lg transition-colors hover:bg-gray-100 ${pathname === "/food" ? "bg-gray-100 text-black" : "text-gray-700"}`}

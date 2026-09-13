@@ -170,7 +170,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         flex-col
         overflow-hidden
         ${isDraft ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-        ${isDimmed ? 'opacity-50' : isDraft ? '' : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1'}
+        ${isDimmed ? 'opacity-50 grayscale' : isDraft ? '' : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1'}
       `}>
 
           {/* Main content area with relative positioning for overlay icons */}

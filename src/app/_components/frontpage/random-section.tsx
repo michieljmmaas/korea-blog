@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import { getReduxState, getDebugOverrideDate } from '../../../../utils/reduxMode';
 
 interface RandomSectionProps<T, K> {
   title: string;
@@ -9,6 +10,8 @@ interface RandomSectionProps<T, K> {
   getKey: (item: T) => K;
   renderItem: (item: T) => ReactNode;
   linkComponent: ReactNode;
+  /** Given the full item list and today's trip-year date, return the redux-mode item to auto-load, if any. */
+  getReduxItem?: (items: T[], tripDateString: string) => T | null;
 }
 
 export default function RandomSection<T, K>({
@@ -18,9 +21,31 @@ export default function RandomSection<T, K>({
   getKey,
   renderItem,
   linkComponent,
+  getReduxItem,
 }: RandomSectionProps<T, K>) {
   const [item, setItem] = useState(initialItem);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // initialItem is whatever was picked at build/request time, so it's the same for every
+  // visitor until the next deploy. Re-pick client-side, after mount, so each visitor gets
+  // their own random item. A redux-mode match (also visitor-date-dependent) takes priority.
+  useEffect(() => {
+    if (getReduxItem) {
+      const redux = getReduxState(getDebugOverrideDate() ?? undefined);
+      if (redux.active) {
+        const match = getReduxItem(items, redux.tripDateString);
+        if (match) {
+          setItem(match);
+          return;
+        }
+      }
+    }
+
+    if (items.length > 0) {
+      setItem(items[Math.floor(Math.random() * items.length)]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleRefresh = () => {
     if (items.length <= 1) return;
