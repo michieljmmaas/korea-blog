@@ -112,30 +112,6 @@ export class BlogService {
   }
 
   /**
-   * Get random blogpost
-   */
-  static async getRandomBlogpost(current: string | null): Promise<BlogPost> {
-    const allBlogPosts = this.getAllBlogPostSlugs();
-    return allBlogPosts.then((data) => {
-      let ind = Math.floor(Math.random() * data.length);
-
-      let blogpostSlug = data[ind];
-
-      while (blogpostSlug === current) {
-        ind = Math.floor(Math.random() * data.length);
-        blogpostSlug = data[ind];
-      }
-
-      return this.getBlogPost(blogpostSlug).then((data) => {
-        if (!data) {
-          throw Error("no data");
-        }
-        return data;
-      });
-    });
-  }
-
-  /**
    * Get all blog post slugs
    */
   static async getAllBlogPostSlugs(): Promise<string[]> {

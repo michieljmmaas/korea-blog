@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useTransition, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 
 interface RandomSectionProps<T, K> {
   title: string;
+  items: T[];
   initialItem: T;
-  fetchNew: (current: K | null) => Promise<T>;
   getKey: (item: T) => K;
   renderItem: (item: T) => ReactNode;
   linkComponent: ReactNode;
@@ -13,22 +13,25 @@ interface RandomSectionProps<T, K> {
 
 export default function RandomSection<T, K>({
   title,
+  items,
   initialItem,
-  fetchNew,
   getKey,
   renderItem,
   linkComponent,
 }: RandomSectionProps<T, K>) {
   const [item, setItem] = useState(initialItem);
-  const [isPending, startTransition] = useTransition();
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleRefresh = () => {
+    if (items.length <= 1) return;
+
     setIsAnimating(true);
-    startTransition(async () => {
-      const newItem = await fetchNew(getKey(item));
-      setItem(newItem);
-    });
+    const currentKey = getKey(item);
+    let next = item;
+    while (getKey(next) === currentKey) {
+      next = items[Math.floor(Math.random() * items.length)];
+    }
+    setItem(next);
   };
 
   return (
@@ -37,7 +40,7 @@ export default function RandomSection<T, K>({
         <h2 className="text-lg font-semibold">{title}</h2>
         <button
           onClick={handleRefresh}
-          disabled={isPending}
+          disabled={items.length <= 1}
           className="p-2 text-gray-600 hover:text-gray-900 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors group"
           aria-label={`Load new random ${title.toLowerCase()}`}
         >

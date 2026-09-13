@@ -6,21 +6,21 @@ import { TripDay } from '@/app/types';
 import RandomSection from './random-section';
 
 interface RandomDaySectionProps {
+  days: TripDay[];
   initialDay: TripDay;
-  fetchNewDay: (current: number | null) => Promise<TripDay>;
   linkComponent: ReactNode;
 }
 
 export default function RandomDaySection({
+  days,
   initialDay,
-  fetchNewDay,
   linkComponent,
 }: RandomDaySectionProps) {
   return (
     <RandomSection
       title="Random Day"
+      items={days}
       initialItem={initialDay}
-      fetchNew={fetchNewDay}
       getKey={(day) => day.day}
       renderItem={(day) => <DayCard day={day} />}
       linkComponent={linkComponent}

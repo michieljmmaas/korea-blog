@@ -6,21 +6,21 @@ import { BlogPost } from '@/app/types';
 import RandomSection from './random-section';
 
 interface RandomBlogpostSectionProps {
+  posts: BlogPost[];
   initialPost: BlogPost;
-  fetchNewPost: (current: string | null) => Promise<BlogPost>;
   linkComponent: ReactNode;
 }
 
 export default function RandomBlogpostSection({
+  posts,
   initialPost,
-  fetchNewPost,
   linkComponent,
 }: RandomBlogpostSectionProps) {
   return (
     <RandomSection
       title="Random Blogpost"
+      items={posts}
       initialItem={initialPost}
-      fetchNew={fetchNewPost}
       getKey={(post) => post.slug}
       renderItem={(post) => <BlogPostCard post={post} />}
       linkComponent={linkComponent}

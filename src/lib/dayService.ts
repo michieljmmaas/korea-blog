@@ -77,16 +77,6 @@ export class DayService {
     return data.frontmatter;
   }
 
-  static async getRandomDay(current: number | null): Promise<TripDay> {
-    let random = Math.floor(Math.random() * 71);
-
-    while (random === current) {
-      random = Math.floor(Math.random() * 71);
-    }
-
-    return this.getBlogPosts().then((data) => data[random]);
-  }
-
   static async getBlogPost(slug: string): Promise<BlogPost> {
     try {
       const blogPostsDir = path.join(process.cwd(), "content/days");
