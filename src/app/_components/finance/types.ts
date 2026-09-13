@@ -20,18 +20,6 @@ export interface FinanceConvenienceStore {
     count: number;
 }
 
-export interface FinanceTreemapEntry {
-    location: string;
-    category: string;
-    total: number;
-}
-
-export interface FinanceTreemapData {
-    entries: FinanceTreemapEntry[];
-    locations: string[];
-    categories: string[];
-}
-
 export interface FinanceTreemapHierarchyEntry {
     location: string;
     category: string;

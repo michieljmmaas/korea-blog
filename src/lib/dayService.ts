@@ -84,7 +84,7 @@ export async function getRandomDay(current: number | null): Promise<TripDay> {
   let random = Math.floor(Math.random() * 71);
 
   while (random === current) {
-    Math.floor(Math.random() * 71);;
+    random = Math.floor(Math.random() * 71);
   }
 
   return getBlogPosts().then((data) => data[random]);

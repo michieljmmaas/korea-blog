@@ -8,7 +8,7 @@ function formatDate(dateString: string): Date {
 }
 
 /**
- * Get all relevant blog posts (not draft, sorted by ascending publish date)
+ * Get all relevant blog posts (not draft, sorted by descending publish date)
  */
 export async function getAllRelevantBlogPosts(): Promise<BlogPost[]> {
   try {
