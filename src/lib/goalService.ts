@@ -18,6 +18,7 @@ export class GoalService {
             const data = yaml.load(fileContent) as Goal[];
             return data;
         } catch (error) {
+            console.error("Error reading goals file:", error);
             return [];
         }
     }

@@ -2,9 +2,9 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
-import { getBlogPosts } from '../src/lib/dayService';
+import { DayService } from '../src/lib/dayService';
 import { WeekDataService } from '@/lib/weekService';
-import { getAllRelevantBlogPosts } from '@/lib/blogService'; // Add this import
+import { BlogService } from '@/lib/blogService';
 
 // Function to generate ImageKit URL
 const generateImageKitUrl = (imagePath: string, transformation: string = 'travel_grid_thumb'): string => {
@@ -53,7 +53,7 @@ const generateSafeFilename = (key: string): string => {
 const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
   console.log('🔄 Starting daily thumbnail downloads...');
   
-  const days = await getBlogPosts();
+  const days = await DayService.getBlogPosts();
   const dailyThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'days');
   const thumbnailMap: Record<string, string> = {};
   
@@ -157,7 +157,7 @@ const downloadWeeklyThumbnails = async (): Promise<Record<string, string>> => {
 const downloadBlogPostThumbnails = async (): Promise<Record<string, string>> => {
   console.log('🔄 Starting blog post thumbnail downloads...');
   
-  const blogPosts = await getAllRelevantBlogPosts();
+  const blogPosts = await BlogService.getAllRelevantBlogPosts();
   const blogThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'blogs');
   const thumbnailMap: Record<string, string> = {};
   

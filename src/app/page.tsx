@@ -1,6 +1,6 @@
 import { WeekDataService } from "@/lib/weekService";
-import { getRandomBlogpost } from '@/lib/blogService';
-import { getRandomDay } from '@/lib/dayService';
+import { BlogService } from '@/lib/blogService';
+import { DayService } from '@/lib/dayService';
 import { getNewRandomWeek, getNewRandomBlogpost, getNewRandomDay } from './actions/randomActions';
 import HeaderLink from "./_components/layout/Link";
 import RandomWeekSection from "./_components/frontpage/random-week-section";
@@ -9,8 +9,8 @@ import RandomBlogpostSection from "./_components/frontpage/random-blogpost-secti
 
 export default async function Index() {
   const randomWeek = await WeekDataService.getRandomWeek(null);
-  const randomBlogPost = await getRandomBlogpost(null);
-  const randomDay = await getRandomDay(null);
+  const randomBlogPost = await BlogService.getRandomBlogpost(null);
+  const randomDay = await DayService.getRandomDay(null);
 
   return (
     <div className="space-y-6">
@@ -23,7 +23,7 @@ export default async function Index() {
             <HeaderLink
               title="See more weeks --->"
               pathname="/weeks"
-              currentPathName={""} 
+              currentPathName={""}
             />
           }
         />
@@ -40,7 +40,7 @@ export default async function Index() {
               <HeaderLink
                 title="See more days --->"
                 pathname="/grid"
-                currentPathName={""} 
+                currentPathName={""}
               />
             }
           />
@@ -55,7 +55,7 @@ export default async function Index() {
               <HeaderLink
                 title="See more blogposts --->"
                 pathname="/blogs"
-                currentPathName={""} 
+                currentPathName={""}
               />
             }
           />

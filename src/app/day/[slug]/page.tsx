@@ -1,6 +1,6 @@
 import DayInfoTable from "@/app/_components/day/day-info-table";
 import ImageCarousel from "@/app/_components/common/image-carousel";
-import { getBlogPost, getAdjacentPosts } from "../../../lib/dayService";
+import { DayService } from "../../../lib/dayService";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
@@ -22,7 +22,7 @@ interface BlogPostPageProps {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   try {
-    const post = await getBlogPost(slug);
+    const post = await DayService.getBlogPost(slug);
 
     if (!post) {
       return <Draft />;
@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const dayContent = await processDayReferences(post.content);
     const processedContent = await processBlogReferences(dayContent);
     const content = await markdownToHtml(processedContent || "", map);
-    const { previousPost, nextPost } = await getAdjacentPosts(
+    const { previousPost, nextPost } = await DayService.getAdjacentPosts(
       post.frontmatter.day,
     );
 
@@ -83,8 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { getAllBlogPostSlugs } = await import("../../../lib/dayService");
-  const slugs = await getAllBlogPostSlugs();
+  const slugs = await DayService.getAllBlogPostSlugs();
 
   return slugs.map((slug) => ({
     slug: slug,

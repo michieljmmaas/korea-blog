@@ -1,5 +1,5 @@
-import { getBlogForNumber, getBlogPostsForDates } from "@/lib/dayService";
-import { getBlogPost } from "@/lib/blogService";
+import { DayService } from "@/lib/dayService";
+import { BlogService } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
 
@@ -44,7 +44,7 @@ export async function processWeekDayTags(
     if (matches.length === 0) return content;
 
     // Fetch all days upfront
-    const dayPosts = await getBlogPostsForDates(week.days);
+    const dayPosts = await DayService.getBlogPostsForDates(week.days);
     const dayByDate = new Map<string, DayFrontmatter>(
         dayPosts.map((d) => [d.date, d])
     );
@@ -121,7 +121,7 @@ export async function processDayReferences(
             const dayNum = parseInt(dayNumStr, 10);
 
             try {
-                const frontmatter = await getBlogForNumber(dayNum);
+                const frontmatter = await DayService.getBlogForNumber(dayNum);
 
                 const hoverInfo = serializeDayInfo(frontmatter);
                 const baseHref  = `${basePath}${frontmatter.date}`;
@@ -180,7 +180,7 @@ export async function processBlogReferences(
             const [original, slug, description] = match;
 
             try {
-                const post = await getBlogPost(slug);
+                const post = await BlogService.getBlogPost(slug);
 
                 if (!post) {
                     return {

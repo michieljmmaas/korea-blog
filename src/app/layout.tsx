@@ -1,13 +1,15 @@
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import cn from "classnames";
+import { ImageKitProvider } from "@imagekit/next";
+import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import Container from "./_components/layout/container";
 import Header from "./_components/layout/header";
 import "yet-another-react-lightbox/styles.css";
 import 'leaflet/dist/leaflet.css';
+import { IMAGEKIT_URL_ENDPOINT } from "../../utils/imagekit";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -62,23 +64,24 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <div className="grid grid-rows-[auto_1fr_auto] h-screen">
-          {/* Fixed Header */}
-          <header>
-            <Container>
-              <Header />
-            </Container>
-          </header>
+        <ImageKitProvider urlEndpoint={IMAGEKIT_URL_ENDPOINT}>
+          <div className="grid grid-rows-[auto_1fr_auto] h-screen">
+            {/* Fixed Header */}
+            <header>
+              <Container>
+                <Header />
+              </Container>
+            </header>
 
-          {/* Scrollable Main Content */}
-          <main id="scroll-container" className="overflow-y-auto">
+            {/* Scrollable Main Content */}
+            <main id="scroll-container" className="overflow-y-auto">
 
-            <Container>
-              {children}
-            </Container>
-          </main>
-        </div>
-
+              <Container>
+                {children}
+              </Container>
+            </main>
+          </div>
+        </ImageKitProvider>
       </body>
     </html>
   );

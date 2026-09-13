@@ -2,7 +2,7 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
-import { getBlogPosts } from '../src/lib/dayService';
+import { DayService } from '../src/lib/dayService';
 
 // Function to generate ImageKit URL
 const generateImageKitUrl = (imagePath: string, transformation: string = 'blog_card_thumb'): string => {
@@ -51,7 +51,7 @@ const generateSafeFilename = (key: string): string => {
 const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
   console.log('🔄 Starting daily thumbnail downloads...');
   
-  const days = await getBlogPosts();
+  const days = await DayService.getBlogPosts();
   const dailyThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'days-frontpage');
   const thumbnailMap: Record<string, string> = {};
   

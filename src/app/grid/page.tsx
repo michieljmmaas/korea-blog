@@ -1,8 +1,8 @@
-import { getBlogPosts } from '../../lib/dayService';
+import { DayService } from '../../lib/dayService';
 import ClientGrid from '../_components/grid/client-grid';
 
 export default async function TripGridPage() {
-  const days = await getBlogPosts();
+  const days = await DayService.getBlogPosts();
 
   // Convert dates to strings for client component
   const serializedDays = days.map(day => ({

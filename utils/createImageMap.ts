@@ -1,4 +1,5 @@
 import { BlogPostFrontmatter, DayFrontmatter, WeekData } from "@/app/types";
+import { IMAGEKIT_URL_ENDPOINT } from "./imagekit";
 
 export interface ImageMapping {
   [photoId: string]: {
@@ -10,7 +11,7 @@ export interface ImageMapping {
 
 // ImageKit configuration
 const IMAGEKIT_CONFIG = {
-  endpoint: 'https://ik.imagekit.io/yyahqsrfe',
+  endpoint: IMAGEKIT_URL_ENDPOINT,
   // Named transformations - you'll need to create these in your ImageKit dashboard
   transformations: {
     // Portrait: max width 700px, maintain aspect ratio, format optimization
