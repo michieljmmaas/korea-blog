@@ -49,7 +49,7 @@ const RollingTotal = ({ value }: { value: number }) => {
                 /\d/.test(char) ? (
                     <RollingDigit key={i} digit={Number(char)} delayMs={i * 30} />
                 ) : (
-                    <span key={i} className="inline-block">{char}</span>
+                    <span key={i} className="inline-block h-[1em] leading-[1em] text-center">{char}</span>
                 )
             )}
         </span>
@@ -186,8 +186,10 @@ const FinanceTreemapHierarchySection = ({ data }: FinanceTreemapHierarchySection
                     <span className="sr-only">
                         €{subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </span>
-                    <span aria-hidden="true">€</span>
-                    <RollingTotal value={subtotal} />
+                    <span aria-hidden="true" className="inline-flex items-start">
+                        <span className="inline-block h-[1em] leading-[1em] text-center">€</span>
+                        <RollingTotal value={subtotal} />
+                    </span>
                 </div>
             </div>
         </div>
