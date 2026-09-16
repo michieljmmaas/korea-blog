@@ -7,6 +7,7 @@ import { DayHoverData, DayLinkWithTooltip } from '../day/day-link-with-tooltip';
 import { BlogHoverData, BlogLinkWithTooltip } from '../blog/blog-link-with-tooltip';
 import FinanceCharts from '../finance/finance-charts';
 import ConvenienceStoreChart from '../finance/convenience-store-chart';
+import CompareTable from '../blog/location-comparison-table';
 
 interface BlogContentProcessorProps {
     htmlContent: string;
@@ -151,6 +152,21 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
 
                 const root = createRoot(container);
                 root.render(<ConvenienceStoreChart />);
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Compare tables ────────────────────────────────────────────────
+            const compareTablePlaceholders = contentRef.current.querySelectorAll<HTMLElement>('.compare-table-placeholder');
+
+            compareTablePlaceholders.forEach((placeholder) => {
+                const type = placeholder.getAttribute('data-type');
+                if (!type) return;
+
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<CompareTable type={type} />);
                 mountedComponentsRef.current.push({ element: container, root });
             });
 

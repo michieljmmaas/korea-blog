@@ -6,7 +6,7 @@ publishdate: '2025-10-02'
 draft: false
 tags: ["information"]
 thumb: thumb
-photos: ["map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
+photos: ["hotel", "map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
 ---
 
 It’s been a week since I checked into my hotel, **Mangrove Sinseol**. I’ll be staying here for the full eight weeks I’m in Seoul. In this post, I’ll show you my room, the amenities, and where the hotel is located on the map.  

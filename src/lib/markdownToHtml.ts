@@ -45,6 +45,12 @@ function processConvenienceStoreChart(markdown: string): string {
   return markdown.replace(/<ConvenienceStoreChart\s*\/?>/g, '<div class="convenience-store-chart-placeholder"></div>');
 }
 
+function processCompareTable(markdown: string): string {
+  return markdown.replace(/<CompareTable\s+type="([\w-]+)"\s*\/?>/g, (_match, type) => {
+    return `<div class="compare-table-placeholder" data-type="${type}"></div>`;
+  });
+}
+
 export default async function markdownToHtml(
   markdown: string,
   imageMapping: ImageMapping,
@@ -52,6 +58,7 @@ export default async function markdownToHtml(
   let processedMarkdown = processCustomImages(markdown, imageMapping);
   processedMarkdown = processFinanceCharts(processedMarkdown);
   processedMarkdown = processConvenienceStoreChart(processedMarkdown);
+  processedMarkdown = processCompareTable(processedMarkdown);
 
   const result = await remark()
     .use(remarkGfm)
