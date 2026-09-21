@@ -86,20 +86,7 @@ Every photo ID below is a placeholder — none of these exist on ImageKit yet. U
 
 ## photoshoot
 
-- [ ] Thumbnail — `neon-1` (shared with the photo below)
-- [ ] `fitting` — Getting into character
-- [ ] `hanbok-1` — Trying very hard to look like I do this every day
-- [ ] `hanbok-2` — The grounds really do the work here
-- [ ] `hanbok-3` — Worth the sore cheeks
-- [ ] `office-1` — This is genuinely what my "office" looked like most days
-- [ ] `office-2` — The skyline did most of the heavy lifting here too
-- [ ] `office-3` — Pretending to work, not pretending to enjoy the view
-- [ ] `neon-1` — Blade Runner 2025
-- [ ] `neon-2` — Trying to look like I belong in this chaos
-- [ ] `neon-3` — One of the narrower alleys
-- [ ] `neon-4` — The last shot of the day, and my favorite
-- [ ] `bts` — Behind the scenes, looking a lot less glamorous
-- [ ] Full edited gallery for the closing section (`{Full edited gallery to go here...}`) — count and IDs still to be decided
+- [ ] Framed picture
 
 ## comparing-the-locations
 
@@ -130,3 +117,9 @@ Every photo ID below is a placeholder — none of these exist on ImageKit yet. U
 - [ ] `biggest-tree` — The biggest tree in the park
 - [ ] `mammoth-stump` — This stump looks like a woolly mammoth
 - [ ] `three-generation-tree` — Three trees that grew on top of each other
+
+
+## How Much did it all cost
+- [ ] Thumbnail 
+- [ ] Pictures
+- [ ] More calculations and insights

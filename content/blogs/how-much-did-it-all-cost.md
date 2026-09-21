@@ -3,7 +3,7 @@ slug: how-much-did-it-all-cost
 title: How much did it all cost?
 description: Breaking down every euro spent on the trip, by place and by category
 publishdate: '2025-12-04'
-draft: false
+draft: true
 tags: ['information']
 thumb: '' # TODO: pick a real header image before publishing
 photos: []

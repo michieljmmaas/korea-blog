@@ -3,7 +3,7 @@ slug: mama
 title: MAMA
 description: Two days, an arena full of lightsticks, and some very silly trophies
 publishdate: '2025-12-08'
-draft: false
+draft: true
 tags: ['k-pop', 'highlight', 'photodump']
 thumb: crowd
 photos: ['crowd', 'tickets', 'lightsticks', 'super-junior', 'aespa', 'trophy']

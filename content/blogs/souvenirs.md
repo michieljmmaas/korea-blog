@@ -3,7 +3,7 @@ slug: souvenirs
 title: Souvenirs - Oh the Memories
 description: All the physical (and not-so-physical) things I brought home
 publishdate: '2025-12-10'
-draft: false
+draft: true
 tags: ['highlight', 'photodump']
 thumb: collage
 photos: ['keyrings', 'crests', 'items-stand', 'collage', 'picture-frame', 'frame-build']

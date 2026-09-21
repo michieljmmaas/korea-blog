@@ -3,7 +3,7 @@ slug: one-year-later
 title: One Year Later
 description: Looking back on the trip, and on the year since
 publishdate: '2026-12-04'
-draft: false
+draft: true
 tags: ['reflection', 'highlight']
 thumb: thumb
 photos: ['amsterdam']
