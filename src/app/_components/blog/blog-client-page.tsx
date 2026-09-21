@@ -2,22 +2,13 @@
 
 import { useState, useMemo } from 'react';
 import { BlogPost } from '@/app/types';
+import { createBlogSearch } from '@/lib/blogSearch';
 import { BlogFilterBar } from './blog-filter-bar';
 import BlogPostCard from './blog-post-card';
 import { useReduxMode } from '../providers/redux-mode-provider';
 
 interface BlogsClientPageProps {
     posts: BlogPost[];
-}
-
-function matchesSearch(post: BlogPost, query: string): boolean {
-    const q = query.toLowerCase();
-    const { title, description, tags } = post.frontmatter;
-    return (
-        title?.toLowerCase().includes(q) ||
-        description?.toLowerCase().includes(q) ||
-        tags?.some((t) => t.toLowerCase().includes(q))
-    );
 }
 
 export function BlogsClientPage({ posts }: BlogsClientPageProps) {
@@ -37,15 +28,20 @@ export function BlogsClientPage({ posts }: BlogsClientPageProps) {
         return Array.from(tags).sort();
     }, [eligiblePosts]);
 
+    // Full-text index over titles, descriptions, tags and post bodies
+    const blogSearch = useMemo(() => createBlogSearch(eligiblePosts), [eligiblePosts]);
+    const hasQuery = searchQuery.trim() !== '';
+    const searchMatches = useMemo(() => blogSearch.search(searchQuery), [blogSearch, searchQuery]);
+
     const filteredPosts = useMemo(() => {
         return eligiblePosts.filter((post) => {
-            const passesSearch = searchQuery ? matchesSearch(post, searchQuery) : true;
+            const passesSearch = !hasQuery || searchMatches.has(post.slug);
             const passesTags = activeTags.size > 0
                 ? post.frontmatter.tags?.some((t) => activeTags.has(t))
                 : true;
             return passesSearch && passesTags;
         });
-    }, [eligiblePosts, activeTags, searchQuery]);
+    }, [eligiblePosts, activeTags, hasQuery, searchMatches]);
 
     function handleTagToggle(tag: string) {
         setActiveTags((prev) => {

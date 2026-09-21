@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { TripDay, CityLocation } from '../../types';
+import { createDaySearch, DaySearchHit } from '@/lib/daySearch';
 import TripGrid from './trip-grid';
 import { TripGridControlBar, SortMetric, SortDirection, ALL_LOCATIONS, ALL_TAGS } from './trip-grid-control-bar';
 import { useReduxMode } from '../providers/redux-mode-provider';
@@ -11,11 +12,6 @@ interface ClientGridProps {
 }
 
 type SortMetricType = Exclude<SortMetric, null>;
-
-function matchesSearch(day: TripDay, query: string): boolean {
-  if (!query) return true;
-  return day.frontmatter.description?.toLowerCase().includes(query.toLowerCase()) ?? false;
-}
 
 function passesFilters(
   day: TripDay,
@@ -43,7 +39,7 @@ function passesFilters(
   return passesInclude && passesExclude && passesLocation;
 }
 
-function getMetricValue(day: TripDay, metric: SortMetricType): number {
+function getMetricValue(day: TripDay, metric: SortMetricType, hits: Map<string, DaySearchHit>): number {
   switch (metric) {
     case 'kimbap':
     case 'worked':
@@ -56,12 +52,14 @@ function getMetricValue(day: TripDay, metric: SortMetricType): number {
       return day.frontmatter.description?.length ?? 0;
     case 'score':
       return day.frontmatter.score ?? 0;
+    case 'relevance':
+      return hits.get(day.frontmatter.date)?.score ?? 0;
   }
 }
 
-function compareByMetric(metric: SortMetricType, direction: SortDirection) {
+function compareByMetric(metric: SortMetricType, direction: SortDirection, hits: Map<string, DaySearchHit>) {
   return (a: TripDay, b: TripDay) => {
-    const diff = getMetricValue(a, metric) - getMetricValue(b, metric);
+    const diff = getMetricValue(a, metric, hits) - getMetricValue(b, metric, hits);
     const primary = direction === 'desc' ? -diff : diff;
     return primary !== 0 ? primary : a.day - b.day;
   };
@@ -71,10 +69,10 @@ export default function ClientGrid({ days }: ClientGridProps) {
   const { hasNotHappenedYet } = useReduxMode();
 
   // Convert string dates back to Date objects for client-side use
-  const processedDays = days.map((day) => ({
-    ...day,
-    date: new Date(day.date as any),
-  }));
+  const processedDays = useMemo(
+    () => days.map((day) => ({ ...day, date: new Date(day.date as any) })),
+    [days]
+  );
 
   // Filter/sort state
   const [searchQuery, setSearchQuery] = useState('');
@@ -99,14 +97,22 @@ export default function ClientGrid({ days }: ClientGridProps) {
     return [...ALL_TAGS, ...Array.from(extraTags).sort()];
   }, [processedDays]);
 
+  // Full-text index over titles, descriptions, locations, tags and post bodies
+  const daySearch = useMemo(() => createDaySearch(processedDays), [processedDays]);
+  const hasQuery = searchQuery.trim() !== '';
+  const searchHits = useMemo(() => daySearch.search(searchQuery), [daySearch, searchQuery]);
+
+  // "Relevance" only exists while there's a query; without one, fall back to the default view
+  const effectiveSortMetric = sortMetric === 'relevance' && !hasQuery ? null : sortMetric;
 
   // Main filtering and sorting pipeline
   const { visibleDays, isOrderedMode } = useMemo(() => {
-    const isOrdered = sortMetric !== null;
+    const isOrdered = effectiveSortMetric !== null;
     const withPassFlag = processedDays.map((d) => ({
       day: d,
+      hit: searchHits.get(d.frontmatter.date),
       passes:
-        matchesSearch(d, searchQuery) &&
+        (!hasQuery || searchHits.has(d.frontmatter.date)) &&
         passesFilters(d, tagFilters, activeLocations) &&
         !hasNotHappenedYet(d.frontmatter.date),
     }));
@@ -117,13 +123,10 @@ export default function ClientGrid({ days }: ClientGridProps) {
     }
 
     // Ordered mode: filter out non-matching, then sort
-    const filtered = withPassFlag.filter((x) => x.passes).map((x) => x.day);
-    const sorted = [...filtered].sort(compareByMetric(sortMetric, sortDirection));
-    return {
-      visibleDays: sorted.map((day) => ({ day, passes: true })),
-      isOrderedMode: true,
-    };
-  }, [processedDays, searchQuery, tagFilters, activeLocations, sortMetric, sortDirection, hasNotHappenedYet]);
+    const compare = compareByMetric(effectiveSortMetric, sortDirection, searchHits);
+    const sorted = withPassFlag.filter((x) => x.passes).sort((a, b) => compare(a.day, b.day));
+    return { visibleDays: sorted, isOrderedMode: true };
+  }, [processedDays, searchHits, hasQuery, tagFilters, activeLocations, effectiveSortMetric, sortDirection, hasNotHappenedYet]);
 
   function handleLocationToggle(location: CityLocation) {
     setActiveLocations((prev) => {
@@ -172,7 +175,7 @@ export default function ClientGrid({ days }: ClientGridProps) {
         onTagToggle={handleTagToggle}
         activeLocations={activeLocations}
         onLocationToggle={handleLocationToggle}
-        sortMetric={sortMetric}
+        sortMetric={effectiveSortMetric}
         sortDirection={sortDirection}
         onSortMetricClick={handleSortMetricClick}
         onClearSort={handleClearSort}

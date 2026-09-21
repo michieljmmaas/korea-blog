@@ -34,6 +34,8 @@ These were my favorite parts of the past week.
 
 I spent <Sat link="picture-day"> doing a photoshoot. I wanted to capture my trip in a triptych, showing my appreciation of Korean culture, my time spent working, and my wanderlust here. It took some time to get comfortable, but we eventually found a groove I was happy with. I’m still waiting on the edited pictures, but I’m sure they’ll turn out great. I’m just happy I at least have some photos of myself here.
 
+**Update:** The final pictures are in! <Blog photoshoot desc="You can see them on this blogpost!">
+
 <Img collage desc="These are some of the pictures I asked to be edited">
 
 ### No Feelings of Regret

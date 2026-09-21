@@ -19,6 +19,7 @@ export interface DayHoverData {
     stats: TripDay["frontmatter"]["stats"];
     tags: string[];
     score: number;
+    rank: number;
 }
 
 function hoverDataToTripDay(data: DayHoverData): TripDay {
@@ -45,6 +46,7 @@ function hoverDataToTripDay(data: DayHoverData): TripDay {
             thumbnail: "",
             coordinates: { lat: null, lng: null },
             score: data.score,
+            rank: data.rank,
             work: false,
         },
     };
@@ -119,7 +121,7 @@ export function DayLinkWithTooltip({ data, href, label }: DayLinkWithTooltipProp
                 transform: visible ? "translateY(0) scale(1)" : "translateY(4px) scale(0.97)",
             }}
         >
-            <DayCard day={hoverDataToTripDay(data)} />
+            <DayCard day={hoverDataToTripDay(data)} dateAsTitle />
         </div>,
         document.body
     );

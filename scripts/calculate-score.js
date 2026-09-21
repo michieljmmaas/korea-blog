@@ -4,7 +4,9 @@
  * calculate-score.js
  *
  * Computes a 'score' for each day based on cultural activity, walking distance,
- * photo count, and text length (how much was written that day).
+ * photo count, and text length (how much was written that day). Also writes a
+ * 'rank' (1 = highest score; ties share a rank, e.g. 1, 1, 3) so the UI doesn't
+ * have to recompute it on every render.
  *
  * The WEIGHTS and NORMALIZE constants below are tweakable — adjust them to
  * change how much each metric contributes to the final score. Re-run the script
@@ -84,16 +86,16 @@ function splitMarkdown(raw) {
 }
 
 /**
- * Replace or append the score line in a YAML frontmatter string.
- * If a score line exists, replace it. Otherwise, append before the end.
+ * Replace or append a top-level `key: value` line in a YAML frontmatter string.
+ * If the key exists, replace its line. Otherwise, append at the end.
  */
-function updateScoreInYaml(yaml, score) {
-  // If score line exists, replace it
-  if (/^score\s*:/m.test(yaml)) {
-    return yaml.replace(/^score\s*:.*$/m, `score: ${score}`);
+function updateYamlField(yaml, key, value) {
+  const pattern = new RegExp(`^${key}\\s*:.*$`, 'm');
+  if (pattern.test(yaml)) {
+    return yaml.replace(pattern, `${key}: ${value}`);
   }
   // Otherwise append (with a newline before it if the YAML doesn't end with newline)
-  return yaml + (yaml.endsWith('\n') ? '' : '\n') + `score: ${score}`;
+  return yaml + (yaml.endsWith('\n') ? '' : '\n') + `${key}: ${value}`;
 }
 
 // ── Main logic ──────────────────────────────────────────────────────────────
@@ -139,36 +141,44 @@ function run() {
     const newScore = scoreData.total;
     const oldScore = fm.score;
 
-    // Store score info for later display
+    // Store score info for later display (rank and `changed` are filled in below)
     allScores.push({
       file,
       filePath,
       parts,
       oldScore,
       newScore,
+      oldRank: fm.rank,
+      newRank: undefined,
       scoreData,
-      changed: oldScore !== newScore
+      changed: false
     });
-
-    // Track changes for summary
-    if (oldScore !== newScore) {
-      changed++;
-    } else {
-      unchanged++;
-    }
   }
 
   // Sort all scores by newScore descending (highest first)
   allScores.sort((a, b) => b.newScore - a.newScore);
 
+  // Standard competition ranking: ties share a rank (1, 1, 3, ...)
+  allScores.forEach((entry, idx) => {
+    const prev = allScores[idx - 1];
+    entry.newRank = prev && prev.newScore === entry.newScore ? prev.newRank : idx + 1;
+    // A rank can shift even when this day's own score didn't
+    entry.changed = entry.oldScore !== entry.newScore || entry.oldRank !== entry.newRank;
+    if (entry.changed) {
+      changed++;
+    } else {
+      unchanged++;
+    }
+  });
+
   // Display all scores sorted by value (highest to lowest)
   console.log(`📈 All scores (sorted highest to lowest):\n`);
   for (const scoreEntry of allScores) {
-    const { file, oldScore, newScore, scoreData, changed: hasChanged } = scoreEntry;
+    const { file, oldScore, newScore, newRank, scoreData, changed: hasChanged } = scoreEntry;
     const arrow = oldScore !== undefined ? `${oldScore} → ${newScore}` : `→ ${newScore}`;
     const breakdown = `[cultural: ${scoreData.breakdown.cultural}, steps: ${scoreData.breakdown.steps}, photos: ${scoreData.breakdown.photos}, text: ${scoreData.breakdown.textLength}]`;
     const marker = hasChanged ? (DRY_RUN ? '👀' : '✅') : '  ';
-    console.log(`  ${marker} ${file}  ${arrow}`);
+    console.log(`  ${marker} ${file}  ${arrow}  (rank ${newRank})`);
     console.log(`     ${breakdown}`);
   }
 
@@ -177,7 +187,8 @@ function run() {
     console.log(`\n💾 Writing changes...`);
     for (const scoreEntry of allScores) {
       if (scoreEntry.changed && !DRY_RUN) {
-        const updatedFrontmatter = updateScoreInYaml(scoreEntry.parts.frontmatter, scoreEntry.newScore);
+        let updatedFrontmatter = updateYamlField(scoreEntry.parts.frontmatter, 'score', scoreEntry.newScore);
+        updatedFrontmatter = updateYamlField(updatedFrontmatter, 'rank', scoreEntry.newRank);
         const updatedFile = `---\n${updatedFrontmatter}\n---\n${scoreEntry.parts.body}`;
         fs.writeFileSync(scoreEntry.filePath, updatedFile, 'utf8');
       }
@@ -187,27 +198,17 @@ function run() {
     console.log(`\n📝 Changes made:\n`);
     const changedFiles = allScores.filter(s => s.changed);
 
-    // Build position maps
-    const oldRanking = allScores
-      .filter(s => s.oldScore !== undefined)
-      .sort((a, b) => b.oldScore - a.oldScore)
-      .map(s => s.file);
-    const newRanking = allScores.sort((a, b) => b.newScore - a.newScore).map(s => s.file);
-
-    const oldPosition = new Map(oldRanking.map((file, idx) => [file, idx + 1]));
-    const newPosition = new Map(newRanking.map((file, idx) => [file, idx + 1]));
-
     // Show only changes where position actually changed
     for (const scoreEntry of changedFiles) {
-      const { file, oldScore, newScore, scoreData } = scoreEntry;
-      const oldPos = oldPosition.get(file) || '?';
-      const newPos = newPosition.get(file) || '?';
+      const { file, oldScore, newScore, oldRank, newRank, scoreData } = scoreEntry;
+      const oldPos = oldRank ?? '?';
+      const newPos = newRank;
 
       // Skip if position didn't actually change
       if (oldPos === newPos) continue;
 
       const arrow = oldScore !== undefined ? `${oldScore} → ${newScore}` : `→ ${newScore}`;
-      const posChange = `(position ${oldPos} → ${newPos})`;
+      const posChange = `(rank ${oldPos} → ${newPos})`;
       const breakdown = `[cultural: ${scoreData.breakdown.cultural}, steps: ${scoreData.breakdown.steps}, photos: ${scoreData.breakdown.photos}, text: ${scoreData.breakdown.textLength}]`;
       console.log(`  ${file}  ${arrow}  ${posChange}`);
       console.log(`     ${breakdown}`);

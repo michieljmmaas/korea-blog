@@ -22,7 +22,7 @@ npm run thumbnails                # regenerate day/week thumbnail images (script
 npm run thumbnails-front-page      # regenerate front-page thumbnails
 npm run download-all              # download all source pictures from ImageKit (scripts/download-pictures.ts)
 npm run extract-stats             # rebuild public/blog-stats.json from content/days frontmatter
-npm run score                     # recompute the per-day `score` field in content/days/*.md (scripts/calculate-score.js; supports --dry-run)
+npm run score                     # recompute the per-day `score` and `rank` fields in content/days/*.md (scripts/calculate-score.js; supports --dry-run)
 npm run finance-data               # rebuild public/finance-data.json from content/finance/finance.csv
 npm run finance-treemap-hierarchy-data    # rebuild public/finance-treemap-hierarchy-data.json from content/finance/finance-treemap-hierarchy.json
 npm run finance-treemap-hierarchy-reseed  # DANGER: regenerates content/finance/finance-treemap-hierarchy.json from finance.csv, overwriting any hand corrections made in it
@@ -40,7 +40,7 @@ There is no lint script and no test suite configured — `npm run build` (which 
 
 Content lives entirely under `content/`, one directory per section:
 
-- `content/days/YYYY-MM-DD.md` — one file per day of the trip. Frontmatter includes `day` (sequential number), `location` (a `CityLocation`), `photos` (array of photo IDs, referenced from the body via `<Img id .../>`), `stats` (kimbap/commits/cultural/worked/steps — hand-entered), and a computed `score` (written by `npm run score`, don't hand-edit it).
+- `content/days/YYYY-MM-DD.md` — one file per day of the trip. Frontmatter includes `day` (sequential number), `location` (a `CityLocation`), `photos` (array of photo IDs, referenced from the body via `<Img id .../>`), `stats` (kimbap/commits/cultural/worked/steps — hand-entered), and computed `score` and `rank` (1 = highest score, ties share a rank; both written by `npm run score`, don't hand-edit them — rerun the script after adding or editing days so ranks stay current).
 - `content/weekly/week-N.md` — one file per week, aggregates days.
 - `content/blogs/*.md` — standalone topical posts (not tied to a specific day), identified by a `slug` in frontmatter rather than filename.
 - `content/food/food.yaml`, `content/goals/goals.yaml`, `content/locations/locations.yaml` — flat YAML data files (foods tried, trip goals, GPS location log), not Markdown.
