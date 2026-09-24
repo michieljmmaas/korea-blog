@@ -6,6 +6,7 @@
     "start": "next start",
     "thumbnails": "tsx scripts/generate-thumbnails.ts",
     "download-all": "tsx scripts/download-pictures.ts",
+    "strip-file-extensions": "tsx scripts/strip-file-extensions.ts",
     "thumbnails-front-page": "tsx scripts/generate-thumbnails-frontpage.ts",
     "extract-stats": "node scripts/extract-stats.js",
     "score": "node scripts/calculate-score.js",
