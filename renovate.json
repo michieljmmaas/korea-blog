@@ -2,22 +2,9 @@
   "extends": [
     "config:recommended"
   ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "commitMessageSuffix": "[deploy]",
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "enabled": false
-    }
-  ],
-  "lockFileMaintenance": {
+  "enabled": false,
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
     "enabled": true,
     "commitMessageSuffix": "[deploy]",
     "automerge": true
