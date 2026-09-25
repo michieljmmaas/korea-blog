@@ -2,14 +2,6 @@
 
 Drafted from `blog-sample.md`. General note: every `<Img ...>` tag below references a photo ID that doesn't exist on ImageKit yet — none of these are real uploads, just descriptive placeholders I picked so the text reads naturally. They all need real photos sourced and uploaded under `/blogs/{slug}/` before the pages will render images instead of broken placeholders.
 
-## MAMA (`content/blogs/mama.md`)
-
-- [ ] Pick and upload real photos to ImageKit under `/blogs/mama/` — replace placeholder IDs (`crowd`, `tickets`, `lightsticks`, `super-junior`, `aespa`, `trophy`) with real ones, and add more for the closing "photo dump"
-- [ ] Double-check the awards list against what MAMA 2025 actually handed out, if you want it 100% accurate rather than "close enough from memory"
-- [ ] Fill in the actual ticket-resale story (platform used, how much extra you paid) — I kept it vague since the outline didn't have specifics
-- [ ] Decide on final `publishdate` (currently placeholder `2025-12-08`)
-- [ ] Set `draft: false` when ready
-
 ## Souvenirs (`content/blogs/souvenirs.md`)
 
 - [ ] The "Photoshoot" section is now just a short teaser linking to the dedicated `photoshoot.md` post (see below) — reread the teaser paragraph for tone
@@ -22,13 +14,6 @@ Drafted from `blog-sample.md`. General note: every `<Img ...>` tag below referen
 - [ ] Decide on final `publishdate` (currently placeholder `2025-12-10`)
 - [ ] Set `draft: false` when ready
 
-## Picture Day (`content/blogs/photoshoot.md`)
-
-- [ ] This is the big one for photos: it's meant to be the actual dump of the final edited set, so it needs way more real images than the 12 placeholders I stubbed in (`fitting`, `hanbok-1/2/3`, `office-1/2/3`, `neon-1/2/3/4`, `bts`) — add/remove `<Img>` tags to match however many keepers you actually pick
-- [ ] Upload the real photos to `/blogs/photoshoot/`
-- [ ] Consider swapping the `{Full edited gallery to go here...}` placeholder at the end for either more `<Img>` tags or a proper gallery component if one exists
-- [ ] Decide on final `publishdate` (currently placeholder `2025-12-09`, set to land just before `souvenirs.md`)
-- [ ] Set `draft: false` when ready
 
 ## Comparing the Locations (`content/blogs/comparing-the-locations.md`)
 
@@ -49,30 +34,11 @@ Drafted from `blog-sample.md`. General note: every `<Img ...>` tag below referen
 - [ ] The "Post-Trip Pessimism" and "Next Steps" sections were fleshed out fairly directly from your notes — reread for tone, this is the most personal post of the four
 - [ ] Set `draft: false` when ready to publish
 
-## Alishan (`content/blogs/alisan.md`)
-
-This one wasn't part of the original outline — it was an existing (already `draft: false`, already live) post that was basically empty, so it got filled in the same way as the others, sourced from <Day 59> and <Day 60>.
-
-- [ ] Upload real photos to `/blogs/alisan/` — replace `arrival`, `map`, `two-sisters-pond`, `pig-trunk`, `sunrise-train`, `sunrise`, `biggest-tree`, `mammoth-stump`, `three-generation-tree`
-- [ ] This post is already live (`draft: false`) with placeholder images, since it was already published before I touched it — you may want to double check how it looks on the actual site right now
-- [ ] `thumb: sunrise` is a placeholder ID like the rest — swap for whichever real photo you want as the card thumbnail
-
 ---
 
 # Photo Checklist
 
 Every photo ID below is a placeholder — none of these exist on ImageKit yet. Upload each under `/blogs/{slug}/{id}` to match. Thumbnail is called out separately even when it reuses one of the IDs below, since that's the one used for post cards/link previews.
-
-## mama
-
-- [ ] Thumbnail — `crowd` (shared with the photo below)
-- [ ] `crowd` — 50,000 of my closest friends
-- [ ] `tickets` — The scalpers came through, eventually
-- [ ] `lightsticks` — An entire stadium doing the wave, but with light
-- [ ] `super-junior` — Twenty years and still going strong
-- [ ] `aespa` — This performance gave me a nosebleed
-- [ ] `trophy` — Acting surprised is apparently part of the choreography
-- [ ] More photos for the closing "photo dump" (`{More photos to come}`) — count and IDs still to be decided
 
 ## souvenirs
 
@@ -104,20 +70,6 @@ Every photo ID below is a placeholder — none of these exist on ImageKit yet. U
 
 - [ ] Thumbnail — currently the literal placeholder value `thumb`, not a real photo ID; pick a real header image and update `thumb:` in the frontmatter
 - [ ] `amsterdam` — Round two, this time on home turf
-
-## alisan
-
-- [ ] Thumbnail — `sunrise` (shared with the photo below)
-- [ ] `arrival` — Stepping off the bus into actual fresh air
-- [ ] `map` — I mean, look at this thing!
-- [ ] `two-sisters-pond` — One of the Two Sisters Ponds
-- [ ] `pig-trunk` — This trunk looks like a pig, they say
-- [ ] `sunrise-train` — Choo choo!
-- [ ] `sunrise` — Peekaboo!
-- [ ] `biggest-tree` — The biggest tree in the park
-- [ ] `mammoth-stump` — This stump looks like a woolly mammoth
-- [ ] `three-generation-tree` — Three trees that grew on top of each other
-
 
 ## How Much did it all cost
 - [ ] Thumbnail 
