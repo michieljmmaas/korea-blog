@@ -1,6 +1,7 @@
+import Image from 'next/image';
 import TagList from './tag-list';
 import { BlogPost } from '@/app/types';
-import { ImageKitImage } from '../common/image-kit-image';
+import { getPhotoPath } from '../../../../utils/localPhotoPath';
 
 interface BlogPostHeaderProps {
     post: BlogPost;
@@ -16,17 +17,17 @@ export default function BlogPostHeader({ post }: BlogPostHeaderProps) {
         day: 'numeric'
     });
 
-    const source = "/blogs/" + post.slug + "/" + post.frontmatter.thumb;
+    const source = getPhotoPath('display', `blogs/${post.slug}`, post.frontmatter.thumb);
 
     return (
         <header className="w-full">
             {/* Thumbnail Image */}
             <div className="relative w-full h-96 overflow-hidden rounded rounded-md">
-                <ImageKitImage
+                <Image
                     alt='header'
-                    source={source}
+                    src={source}
                     priority={true}
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 896px'  // Change this line
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 896px'
                     fill={true}
                     className="object-cover"
                 />

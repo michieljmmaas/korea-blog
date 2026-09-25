@@ -6,7 +6,7 @@ publishdate: '2025-12-06'
 draft: false
 tags: ['information']
 thumb: t3
-photos: ['store', 'nature', 'legal-tender', 'public-transit', 'people-culture', 'museums', 'street-food', 'accommodation']
+photos: ['store', 'nature', 'legal-tender', 'public-transit', 'people-culture', 'museums', 'street-food']
 ---
 
 I spent time in four different places on this trip: Korea, Japan, Taiwan, and Hong Kong. I figured it'd be fun to compare them head-to-head across a bunch of random categories, based purely on my own experience. I'm leaving Macao out of this one — that whole side trip felt like such a fever dream that it doesn't really fit next to the others.

@@ -6,15 +6,13 @@ publishdate: '2025-10-02'
 draft: false
 tags: ["information"]
 thumb: thumb
-photos: ["hotel", "map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
+photos: ["map", "basement", "layout", "now", "empty", "cube", "gym", "bathroom", "laundry", "view", "lounge", "kitchen"]
 ---
 
 It’s been a week since I checked into my hotel, **Mangrove Sinseol**. I’ll be staying here for the full eight weeks I’m in Seoul. In this post, I’ll show you my room, the amenities, and where the hotel is located on the map.  
 
 ## The Hotel
 The hotel is called **Mangrove**. They have multiple locations across the country, and I’m staying at their branch in Sinseol.  
-
-<Img hotel>  
 
 ## The Room
 I have a *Single* room on the 10th floor. It manages to fit a bed, closet, desk, small chair, and bathroom into about ~15m². That might sound tiny, but there are plenty of shelves and drawers to store all your stuff.  

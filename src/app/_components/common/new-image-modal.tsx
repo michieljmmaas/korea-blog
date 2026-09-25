@@ -3,7 +3,6 @@
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
-import { IMAGEKIT_URL_ENDPOINT } from "../../../../utils/imagekit";
 
 interface ImageModalProps {
   images: string[];
@@ -23,35 +22,10 @@ const ImageModal = ({
   alt = "Image"
 }: ImageModalProps) => {
 
-  // Convert image paths to ImageKit URLs with transformations
-  const getImageKitUrl = (path: string, width: number, quality: number) => {
-    // Ensure path starts with / for proper URL construction
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-    return `${IMAGEKIT_URL_ENDPOINT}${normalizedPath}?tr=w-${width},q-${quality},f-auto`;
-  };
-
-  // Prepare slides for YARL with progressive loading
+  // images are already local display-tier paths (public/photos/display/...)
   const slides = images.map((image, index) => ({
-    src: getImageKitUrl(image, 1600, 90), // High quality for main view
+    src: image,
     alt: `${alt} ${index + 1}`,
-    // Provide smaller version for faster initial load
-    srcSet: [
-      {
-        src: getImageKitUrl(image, 800, 75),
-        width: 800,
-        height: 600,
-      },
-      {
-        src: getImageKitUrl(image, 1200, 80),
-        width: 1200,
-        height: 900,
-      },
-      {
-        src: getImageKitUrl(image, 1600, 90),
-        width: 1600,
-        height: 1200,
-      },
-    ],
   }));
 
   return (

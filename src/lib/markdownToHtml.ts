@@ -21,10 +21,9 @@ function processCustomImages(markdown: string, imageMapping: ImageMapping): stri
       return `<-- Image ${photoId} not found - Please tell me about it -->`;
     }
 
-    const usePortrait = orientation === 'portrait';
-    const imageUrl = usePortrait ? imageData.portrait : imageData.landscape;
+    const imageUrl = imageData.display;
     const alt = altText || imageData.alt;
-    const orientationClass = usePortrait ? 'portrait' : 'landscape';
+    const orientationClass = orientation === 'portrait' ? 'portrait' : 'landscape';
 
     return `<div 
       class="modal-image-placeholder" 

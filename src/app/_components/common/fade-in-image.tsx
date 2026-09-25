@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image } from "@imagekit/next";
+import Image from "next/image";
 
 interface FadeInImageProps {
   src: string;
@@ -7,7 +7,6 @@ interface FadeInImageProps {
   height: number;
   alt: string;
   className?: string;
-  transformation?: any;
   loading?: "lazy" | "eager";
   priority?: boolean;
 }
@@ -18,7 +17,6 @@ const FadeInImage = ({
   height,
   alt,
   className,
-  transformation,
   loading,
   priority,
 }: FadeInImageProps) => {
@@ -33,7 +31,6 @@ const FadeInImage = ({
       className={`${className} transition-opacity duration-500 ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
-      transformation={transformation}
       loading={loading}
       priority={priority}
       onLoad={() => setLoaded(true)}

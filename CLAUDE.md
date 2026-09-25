@@ -4,12 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A personal blog documenting a 10-week trip through Korea (and side trips to Japan, Taiwan, Hong Kong, Macau). There is no database or CMS — every page is rendered from Markdown/YAML files in `content/` at request/build time via Node's `fs` module, and images are hosted/transformed externally on ImageKit. Deploys go to Vercel.
+A personal blog documenting a 10-week trip through Korea (and side trips to Japan, Taiwan, Hong Kong, Macau). There is no database or CMS — every page is rendered from Markdown/YAML files in `content/` at build time via Node's `fs` module (`output: 'export'` in `next.config.js` — the whole site is a static export, no server at request time). Deploys go to **GitHub Pages**.
 
 ## Current focus & near-term plans
 
 - The trip content is winding down — most remaining work is finishing up individual blog posts (`content/blogs/`, `content/days/`) rather than new features.
-- Planned hosting migration: move from Vercel to **GitHub Pages**. GitHub Pages serves static files only, so this means the app needs to become a fully static export — no server-side rendering, no server actions/API routes at runtime. Anything currently relying on a Node server at request time (e.g. `src/lib/*Service.ts` reading `content/` via `fs` at request time, `src/app/actions/randomActions.ts` server actions) will need to move to build-time generation instead. Keep this in mind when adding features: prefer patterns that work with `next export`/static generation over ones that assume a live server.
+- The static-export migration (previously tracked here) is done: all `src/lib/*Service.ts` reads happen at build time only, all dynamic routes have `generateStaticParams`, and there are no server actions/API routes. Photos have moved off live ImageKit hosting to a local two-tier (`thumb`/`display`) pipeline — see **Images** below — so new features should keep assuming a live server, live ImageKit endpoint, or `fs` access at request time is *not* available.
 
 ## Commands
 
@@ -18,9 +18,10 @@ npm run dev                       # Next.js dev server (Turbopack)
 npm run build                     # production build (also what CI runs)
 npm run start                     # serve a production build
 
-npm run thumbnails                # regenerate day/week thumbnail images (scripts/generate-thumbnails.ts)
-npm run thumbnails-front-page      # regenerate front-page thumbnails
-npm run download-all              # download all source pictures from ImageKit (scripts/download-pictures.ts)
+npm run thumbnails                # regenerate day/week/blog entity-cover thumbnails from ImageKit (scripts/generate-thumbnails.ts)
+npm run thumbnails-front-page      # regenerate front-page day thumbnails from ImageKit
+npm run download-originals        # one-off: pull full-quality originals from ImageKit into public/photos/originals/ (scripts/download-originals.ts)
+npm run process-images             # derive public/photos/{thumb,display}/ from public/photos/originals/ via sharp (scripts/process-images.ts) — run after download-originals or after manually adding a new original
 npm run extract-stats             # rebuild public/blog-stats.json from content/days frontmatter
 npm run score                     # recompute the per-day `score` and `rank` fields in content/days/*.md (scripts/calculate-score.js; supports --dry-run)
 npm run finance-data               # rebuild public/finance-data.json from content/finance/finance.csv
@@ -30,11 +31,11 @@ npm run finance-treemap-hierarchy-reseed  # DANGER: regenerates content/finance/
 
 There is no lint script and no test suite configured — `npm run build` (which runs `tsc` via Next.js) is the only correctness check available. CI (`.github/workflows/ci.yml`) runs `npm audit --audit-level=high` and `npm run build` on every PR.
 
-`scripts/generate-thumbnails.ts`, `download-pictures.ts`, and other `.ts` scripts run via `tsx` and expect `IMAGEKIT_URL_ENDPOINT` / `IMAGE_KIT_PRIVATE_KEY` / `IMAGE_KIT_PUBLIC_KEY` env vars (see `.github/workflows/deploy-to-vercel.yml`).
+`scripts/generate-thumbnails*.ts` and `scripts/download-originals.ts` run via `tsx` and expect `IMAGEKIT_URL_ENDPOINT` / `IMAGE_KIT_PRIVATE_KEY` / `IMAGE_KIT_PUBLIC_KEY` env vars (see `.github/workflows/deploy-to-pages.yml`); `scripts/process-images.ts` is local-only and needs no ImageKit access.
 
 ## Deploy pipeline
 
-`.github/workflows/deploy-to-vercel.yml` runs on every push to `main` whose commit message contains `[deploy]` (or via manual `workflow_dispatch`). It regenerates thumbnails and stats, auto-commits any changed output, then deploys to Vercel. A push without `[deploy]` in the message will not trigger a deploy.
+`.github/workflows/deploy-to-pages.yml` runs on every push to `main` whose commit message contains `[deploy]` (or via manual `workflow_dispatch`). It regenerates entity-cover thumbnails and stats (auto-committing any changes), downloads the current photo set from the rolling `images` GitHub Release into `public/photos/` (see **Images**), runs `next build` (static export to `/out`), and deploys `/out` via `actions/upload-pages-artifact` + `actions/deploy-pages`. A push without `[deploy]` in the message will not trigger a deploy.
 
 ## Content model
 
@@ -62,7 +63,12 @@ When adding a new custom inline "component" to post bodies, follow this same two
 
 ## Images
 
-All photo assets are hosted on ImageKit (`https://ik.imagekit.io/yyahqsrfe`), not committed to the repo. `utils/createImageMap.ts` builds the ImageKit URL per photo from a convention-based path (`/days/{date}/{photoId}`, `/weeks/{index}/{photoId}`, `/blogs/{slug}/{photoId}`) plus named ImageKit transformations (`blog-portrait`, `blog-landscape`, `blog-thumb`). `scripts/download-pictures.ts` and `scripts/generate-thumbnails*.ts` are the local tooling for pulling/regenerating those.
+There are two separate image systems, both keyed off the same convention-based path (`days/{date}/{photoId}`, `weeks/{index}/{photoId}`, `blogs/{slug}/{photoId}`, `food/{imageId}`):
+
+- **Entity-cover thumbnails** (day/week/blog grid & frontpage cards) — small, committed to git under `public/thumbnails/`, regenerated from live ImageKit transforms (`travel_grid_thumb`, `week_thumb_full`, `blog_card_thumb`) by `scripts/generate-thumbnails.ts` / `generate-thumbnails-frontpage.ts`. Unchanged by the GitHub Pages migration.
+- **Per-photo tiers** (everything else: in-post `<Img>` images, day/week carousels, the lightbox, food photos, blog header) — every photo referenced anywhere (an entity's `photos[]` array, its `thumbnail`/`thumb` id, or a food `image` id) gets exactly two locally-generated files, gitignored under `public/photos/{thumb,display}/...` and shipped via a rolling GitHub Release (tag `images`, downloaded into `public/photos/` by `.github/workflows/deploy-to-pages.yml` before build) rather than committed — the full set doesn't fit comfortably in a git repo. `thumb` (~300px long edge) is only used for the carousel's thumbnail strip; `display` (~1920px long edge) is the one size used everywhere else — there is no separate transform per consumer and no multi-resolution zoom in the lightbox. `utils/localPhotoPath.ts` (`getPhotoPath`/`getPhotoPaths`) is the single place that knows this path convention; `utils/createImageMap.ts` (in-post `<Img>` tags) and the day/week pages (carousel photo arrays) both build off it.
+  - `scripts/download-originals.ts` — one-off/occasional: pulls the untransformed original for every referenced photo from ImageKit into `public/photos/originals/` (also gitignored, local-only, never shipped).
+  - `scripts/process-images.ts` — the lasting, ImageKit-free step: walks `public/photos/originals/` with `sharp` and derives `thumb`/`display` for anything not yet processed. This is what you re-run after manually dropping a new full-quality original into `public/photos/originals/...` for a new photo (once ImageKit is no longer in the loop) — then zip `public/photos/{thumb,display}/` and refresh the `images` release asset.
 
 ## Routing
 

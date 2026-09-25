@@ -6,6 +6,7 @@ import WeekInfoTable from '@/app/_components/week/week-info-table';
 import { Draft } from '@/app/_components/common/draft';
 import { DayService } from '@/lib/dayService';
 import { createForWeek } from '../../../../utils/createImageMap';
+import { getPhotoPaths } from '../../../../utils/localPhotoPath';
 import RelatedPosts from "@/app/_components/blog/related-posts";
 import { BlogService } from "@/lib/blogService";
 import { processBlogReferences, processDayReferences, processWeekDayTags } from "../../../../utils/updateDayReferences";
@@ -48,7 +49,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
   const relatedPosts = await BlogService.getBlogpostsForWeek(week);
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
 
-  const photos = week.photos.map((name: string) => `/weeks/${week.index}/${name}`);
+  const photos = week.photos.map((photoId: string) =>
+    getPhotoPaths(`weeks/${week.index}`, photoId),
+  );
 
   return (
     <div className="min-h-screen bg-background flex flex-col">

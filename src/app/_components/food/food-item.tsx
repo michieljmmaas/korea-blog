@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Food, CityLocation } from "@/app/types";
 import CroppedImageWithModal from "../common/cropped-image-with-modal";
 import { getLocationBorderColor } from "../../../../utils/locationColors";
+import { getPhotoPath } from "../../../../utils/localPhotoPath";
 
 const isBest = (rating: number) => rating >= 6;
 const isWorst = (rating: number) => rating === 0;
@@ -148,7 +149,7 @@ export const FoodItem = ({
                   <div className="relative overflow-hidden rounded-lg">
                     <div style={{ width: "100%", height: "100%", cursor: "pointer" }}>
                       <CroppedImageWithModal
-                        src={"https://ik.imagekit.io/yyahqsrfe/food/" + food.image}
+                        src={getPhotoPath("display", "food", food.image)}
                         alt={food.image}
                       />
                     </div>

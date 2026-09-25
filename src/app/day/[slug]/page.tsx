@@ -6,6 +6,7 @@ import { PostBody } from "@/app/_components/common/post-body";
 import Tags from "@/app/_components/common/tags";
 import { Draft } from "@/app/_components/common/draft";
 import { createForDay } from "../../../../utils/createImageMap";
+import { getPhotoPaths } from "../../../../utils/localPhotoPath";
 import {
   processBlogReferences,
   processDayReferences,
@@ -32,8 +33,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       return <Draft />;
     }
 
-    const photos = post.frontmatter.photos.map(
-      (name: string) => `days/${post.frontmatter.date}/${name}`,
+    const photos = post.frontmatter.photos.map((photoId: string) =>
+      getPhotoPaths(`days/${post.frontmatter.date}`, photoId),
     );
 
     const map = createForDay(post.frontmatter);

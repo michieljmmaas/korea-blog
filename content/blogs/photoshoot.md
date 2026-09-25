@@ -6,7 +6,7 @@ publishdate: '2025-11-15'
 draft: false
 tags: ['highlight', 'photodump']
 thumb: collage
-photos: ["a-1", "a-2","a-3","a-4","b-1","b-2","b-3","c-1","c-2","c-3", "collage", 'final-2', "framed"]
+photos: ["a-1", "a-2","a-3","a-4","b-1","b-2","b-3","c-1","c-2","c-3", "collage", 'actual', "set"]
 ---
 
 Nearing the end of the trip I noticed that I didn't have enough pictures of myself. I wanted a nice collage that would show me all the different things I did on this trip. I wanted it done well, so instead of just taking some selfies, I hired a professional. 
@@ -52,7 +52,7 @@ The raw shots came back a few days later, and — as it turns out — being a go
 
 I spent quite a bit of time doing some final touch-ups. I learned a lot about color theory, lighting effects and photo editing software. When I was finally satisfied I sent if of to the printers and got this big collage made, to hang right above my PC. So everytime I look up, I am reminded of my wonderful time there.
 
-<Img final-2 desc="Here is the actual image">
+<Img actual desc="Here is the actual image">
 
 <Img set desc= "Here it is framed">
 

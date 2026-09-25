@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Thumbs } from "swiper/modules";
-import { Image } from "@imagekit/next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ImageModal from "./new-image-modal";
 import FadeInImage from "./fade-in-image";
@@ -15,8 +15,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
+export interface CarouselPhoto {
+  thumb: string;
+  display: string;
+}
+
 interface SwiperImageCarouselProps {
-  images: string[];
+  images: CarouselPhoto[];
   alt?: string;
 }
 
@@ -84,16 +89,11 @@ const SwiperImageCarousel = ({
                 onClick={() => openModal(index)}
               >
                 <Image
-                  src={image}
+                  src={image.display}
                   width={800}
                   height={400}
                   alt={`${alt} ${index + 1}`}
                   className="w-full h-full object-cover rounded-lg"
-                  transformation={[
-                    {
-                      named: "carousel-optimized",
-                    },
-                  ]}
                   loading={index === 0 ? "eager" : "lazy"}
                   priority={index === 0}
                 />
@@ -146,12 +146,11 @@ const SwiperImageCarousel = ({
               }`}
             >
               <FadeInImage
-                src={image}
+                src={image.thumb}
                 width={150}
                 height={100}
                 alt={`${alt} thumbnail ${index + 1}`}
                 className="w-full h-16 sm:h-20 object-cover"
-                transformation={[{ height: "100", width: "150" }]}
                 loading="lazy"
               />
             </div>
@@ -160,7 +159,7 @@ const SwiperImageCarousel = ({
       </Swiper>
 
       <ImageModal
-        images={images}
+        images={images.map((image) => image.display)}
         currentIndex={currentModalIndex}
         isOpen={isModalOpen}
         onClose={closeModal}
