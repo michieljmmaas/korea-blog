@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 import type { BlogPost, BlogPostFrontmatter } from "@/app/types";
 import BlogPostCard from "./blog-post-card";
+import { withBasePath } from "../../../../utils/basePath";
 
 const TOOLTIP_OFFSET = 14;
 
@@ -108,7 +109,7 @@ export function BlogLinkWithTooltip({ data, href, label }: BlogLinkWithTooltipPr
     return (
         <>
             <a
-                href={href}
+                href={withBasePath(href)}
                 className="dayLink"
                 onMouseEnter={handleMouseEnter}
                 onMouseMove={handleMouseMove}

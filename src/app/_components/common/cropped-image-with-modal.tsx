@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ImageModal from "./new-image-modal";
+import { withBasePath } from "../../../../utils/basePath";
 
 interface CroppedImageWithModalProps {
   src: string;
@@ -41,7 +42,7 @@ const CroppedImageWithModal = ({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           loading="lazy"
           style={{

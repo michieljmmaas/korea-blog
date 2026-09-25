@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import StatsSummaryCards from './chart-stats';
 import { CityLocation } from '@/app/types';
+import { withBasePath } from '../../../../../utils/basePath';
 
 // Type definitions
 interface StatsData {
@@ -98,7 +99,7 @@ const VacationStatsChart: React.FC<VacationStatsChartProps> = ({ weekNumber = 1,
     useEffect(() => {
         const loadData = async (): Promise<void> => {
             try {
-                const response = await fetch('/blog-stats.json');
+                const response = await fetch(withBasePath('/blog-stats.json'));
                 if (!response.ok) {
                     throw new Error('Failed to load stats data');
                 }

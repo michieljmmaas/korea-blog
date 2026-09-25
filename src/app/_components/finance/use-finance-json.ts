@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { withBasePath } from '../../../../utils/basePath';
 
 // Fetches one of the prebuilt public/*.json finance data files, handling
 // cancellation on unmount so a slow response can't set state after the
@@ -10,7 +11,7 @@ export function useFinanceJson<T>(url: string) {
     useEffect(() => {
         let cancelled = false;
 
-        fetch(url)
+        fetch(withBasePath(url))
             .then((res) => {
                 if (!res.ok) throw new Error(`Failed to load ${url}`);
                 return res.json();

@@ -3,6 +3,7 @@
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
+import { withBasePath } from "../../../../utils/basePath";
 
 interface ImageModalProps {
   images: string[];
@@ -22,9 +23,10 @@ const ImageModal = ({
   alt = "Image"
 }: ImageModalProps) => {
 
-  // images are already local display-tier paths (public/photos/display/...)
+  // images are local display-tier paths (public/photos/display/...); the
+  // lightbox renders plain <img> internally, so basePath isn't automatic here.
   const slides = images.map((image, index) => ({
-    src: image,
+    src: withBasePath(image),
     alt: `${alt} ${index + 1}`,
   }));
 

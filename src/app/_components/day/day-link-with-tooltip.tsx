@@ -129,6 +129,9 @@ export function DayLinkWithTooltip({ data, href, label }: DayLinkWithTooltipProp
     return (
         <>
             {href
+                // day/week hrefs from updateDayReferences.ts are relative ("../day/...")
+                // by design, so they resolve correctly regardless of basePath — don't
+                // prefix them here (that would break the relative "..").
                 ? <a href={href} {...sharedProps}>{label}</a>
                 : <span {...sharedProps}>{label}</span>
             }

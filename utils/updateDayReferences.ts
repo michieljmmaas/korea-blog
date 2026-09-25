@@ -2,6 +2,7 @@ import { DayService } from "@/lib/dayService";
 import { BlogService } from "@/lib/blogService";
 import { DayFrontmatter, WeekData } from "@/app/types";
 import twemoji from "twemoji";
+import { withBasePath } from "./basePath";
 
 // ─── Shared helpers ───────────────────────────────────────────────────────────
 
@@ -205,11 +206,13 @@ export async function processBlogReferences(
     return applyReplacements(content, matches, async (match) => {
         const [, slug, description] = match;
 
+        const href = withBasePath(`${basePath}${slug}`);
+
         try {
             const post = await BlogService.getBlogPost(slug);
 
             if (!post) {
-                return `<a href="${basePath}${slug}" class="dayLink">${description}</a>`;
+                return `<a href="${href}" class="dayLink">${description}</a>`;
             }
 
             const hoverInfo = encodeURIComponent(
@@ -223,10 +226,10 @@ export async function processBlogReferences(
                 })
             );
 
-            return `<a href="${basePath}${slug}" class="dayLink" data-blog-info="${hoverInfo}">${description}</a>`;
+            return `<a href="${href}" class="dayLink" data-blog-info="${hoverInfo}">${description}</a>`;
         } catch (error) {
             console.warn(`Failed to get blog post data for slug "${slug}":`, error);
-            return `<a href="${basePath}${slug}" class="dayLink">${description}</a>`;
+            return `<a href="${href}" class="dayLink">${description}</a>`;
         }
     });
 }
