@@ -2,7 +2,7 @@
 slug: worst-things
 title: My Flop 10
 description: What I disliked the most
-publishdate: '2025-12-05'
+publishdate: '2025-12-07'
 draft: false
 photos: ["overtime", "buddah", "bus", "capsule", "china", "error", "lesserafim", "shibuja", "tofu", "prut"]
 thumb: thumb

@@ -2,7 +2,7 @@
 slug: souvenirs
 title: The Souvenirs
 description: Oh the memories~!
-publishdate: '2025-12-06'
+publishdate: '2025-12-08'
 draft: false
 tags: ['highlight']
 thumb: thumb

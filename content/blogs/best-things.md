@@ -2,7 +2,7 @@
 slug: best-things
 title: My Top 10
 description: What I loved the most
-publishdate: '2025-12-05'
+publishdate: '2025-12-07'
 draft: false
 photos: ['hairdresser', 'geese', 'hkd', 'fanmeeting', 'kathrine', 'summit', 'art', 'alisan', 'arario', 'pasmo']
 thumb: thumb
