@@ -2,15 +2,15 @@
 slug: how-much-did-it-all-cost
 title: How much did it all cost?
 description: Breaking down every euro spent on the trip, by place and by category
-publishdate: '2025-12-04'
-draft: true
+publishdate: '2025-12-06'
+draft: false
 tags: ['information']
-thumb: '' # TODO: pick a real header image before publishing
+thumb: 'won'
 photos: []
 ---
 # How much did it all cost?
 
-I spent a surprising amount of this trip doing 'admin'. That meant prepping for upcoming adventures, writing the blog, and — apparently my favorite hobby — updating my finances. I like to know exactly where my money goes, so I tracked every single expense in a giant spreadsheet. 289 rows deep by the time I got home.
+I spent a surprising amount of this trip doing 'admin'. That meant prepping for upcoming adventures, writing the blog, and updating my finances. I like to know exactly where my money goes, so I tracked every single expense in a giant spreadsheet. 289 rows deep by the time I got home.
 
 # Total: €16.034,61
 
@@ -27,7 +27,7 @@ Some things to note:
 
 Definitely the food. It's so abundant, delicious, and cheap out there. When I got back I nearly fell to my knees in the Albert Heijn when I realized I had to cook for myself again.
 
-I was also quite surprised by how little I spent on museums, considering how many I visited. Across (x) visits I spent a total of €135,- — about €(y) per visit. A lot of the museums I went to were either free (most of the ones in Korea) or dirt cheap.
+I was also quite surprised by how little I spent on museums, considering how many I visited. A lot of the museums I went to were either free (most of the ones in Korea) or dirt cheap.
 
 ## What was more expensive than I thought?
 
@@ -46,4 +46,6 @@ I spent a lot of money at convenience stores. Because of all this tracking, I ca
 
 ## So, was it worth it?
 
-Yes! But now I have the receipts to prove it.
+Like an old man once said:
+
+> You spend a lot of money on vacations, but you always come back richer

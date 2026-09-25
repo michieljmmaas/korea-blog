@@ -6,7 +6,7 @@ publishdate: '2025-12-05'
 draft: false
 photos: ['hairdresser', 'geese', 'hkd', 'fanmeeting', 'kathrine', 'summit', 'art', 'alisan', 'arario', 'pasmo']
 thumb: thumb
-tags: ["ranking"]
+tags: ["ranking", "highlight"]
 ---
 This whole trip was an amazing experience. I have so many good memories of it, and I look back on it fondly. I would like to highlight the things that I liked most.
 

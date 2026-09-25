@@ -54,6 +54,6 @@ I spent quite a bit of time doing some final touch-ups. I learned a lot about co
 
 <Img final-2 desc="Here is the actual image">
 
-<Img framed desc= "Here it is framed">
+<Img set desc= "Here it is framed">
 
 Another big shoutout to [Jazmin](https://www.instagram.com/jazzinseoul_snap/)! If you are ever in Seoul, and need a photographer, hit her up!
