@@ -33,6 +33,7 @@ export interface DayFrontmatter {
     steps: number;
   }
   score: number;
+  rank: number;
   work: boolean;
 }
 

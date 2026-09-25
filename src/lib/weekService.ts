@@ -41,21 +41,6 @@ export class WeekDataService {
         }
     }
 
-    static async getRandomWeek(current: number | null): Promise<WeekData> {
-        let random = Math.floor(Math.random() * 11);
-
-        while (random === current) 
-            random = Math.floor(Math.random() * 11);{
-        }
-
-        return this.getWeekById(random).then(data => {
-            if (!data) {
-                throw Error("no data");
-            }
-            return data;
-        });
-    }
-
     /**
      * Get all available weeks
      */
@@ -148,14 +133,12 @@ export class WeekDataService {
         try {
             const weeks = await this.getAllWeeks();
 
-            const previousWeekFind = weeks[weekIndex - 1] ?? { week: -1, draft: true, slug: "" };
-            const prevWeek = previousWeekFind && { week: previousWeekFind.index, isDraft: previousWeekFind.draft, slug: `${previousWeekFind.index}` };
-            const nextWeekFind = weeks[weekIndex + 1] ?? { week: 11, draft: true, slug: "" };;
-            const nextWeek = nextWeekFind && { week: nextWeekFind.index, isDraft: nextWeekFind.draft, slug: `${nextWeekFind.index}` };
+            const toLinkInfo = (week: WeekData | undefined): WeekLinkInfo | null =>
+                week ? { week: week.index, isDraft: week.draft, slug: `${week.index}` } : null;
 
             return {
-                previousPost: prevWeek,
-                nextPost: nextWeek,
+                previousPost: toLinkInfo(weeks[weekIndex - 1]),
+                nextPost: toLinkInfo(weeks[weekIndex + 1]),
             };
         } catch (error) {
             console.error('Error getting adjacent posts:', error);

@@ -1,5 +1,5 @@
 import { WeekDataService } from "@/lib/weekService";
-import WeekCard from "../_components/weeks/week-card";
+import WeeksListClient from "../_components/weeks/weeks-list-client";
 import { getLocationColor } from "../../../utils/locationColors";
 import { CityLocation } from "@/app/types";
 import workIcon from "../../../public/assets/blog/svg-icons/work.svg";
@@ -58,15 +58,7 @@ export default async function Weeks() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 p-2 max-w-6xl mx-auto">
-        {weekData.map((week, index) => {
-          return (
-            <div key={index}>
-              <WeekCard week={week} priorty={week.index === 0} />
-            </div>
-          );
-        })}
-      </div>
+      <WeeksListClient weeks={weekData} />
     </>
   );
 }

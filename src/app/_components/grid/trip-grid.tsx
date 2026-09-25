@@ -1,38 +1,47 @@
 import { TripDay } from '../../types';
+import { DaySearchHit } from '@/lib/daySearch';
 import DaySquare from './day-square';
 import WeekdayHeaders from './weekday-headers';
 import { motion, AnimatePresence } from 'motion/react';
 
+interface GridDay {
+  day: TripDay;
+  passes: boolean;
+  hit?: DaySearchHit;
+}
+
 interface TripGridProps {
-  days: { day: TripDay; passes: boolean }[];
+  days: GridDay[];
   isOrderedMode: boolean;
 }
 
 type CellData =
   | { kind: 'empty'; key: string }
-  | { kind: 'day'; key: string; day: TripDay; isDimmed: boolean };
+  | { kind: 'day'; key: string; day: TripDay; isDimmed: boolean; hit?: DaySearchHit };
 
-function buildDefaultModeCells(days: { day: TripDay; passes: boolean }[]): CellData[] {
+function buildDefaultModeCells(days: GridDay[]): CellData[] {
   const THURSDAY_OFFSET = 3;
   const leadingBlanks: CellData[] = Array.from(
     { length: THURSDAY_OFFSET },
     (_, i) => ({ kind: 'empty' as const, key: `empty-${i}` })
   );
-  const dayCells: CellData[] = days.map(({ day, passes }) => ({
+  const dayCells: CellData[] = days.map(({ day, passes, hit }) => ({
     kind: 'day' as const,
     key: day.frontmatter.date,
     day,
     isDimmed: !passes,
+    hit,
   }));
   return [...leadingBlanks, ...dayCells];
 }
 
-function buildOrderedModeCells(days: TripDay[]): CellData[] {
-  return days.map((day) => ({
+function buildOrderedModeCells(days: GridDay[]): CellData[] {
+  return days.map(({ day, hit }) => ({
     kind: 'day' as const,
     key: day.frontmatter.date,
     day,
     isDimmed: false,
+    hit,
   }));
 }
 
@@ -44,8 +53,7 @@ const TripGrid: React.FC<TripGridProps> = ({ days, isOrderedMode }) => {
   let cells: CellData[];
 
   if (isOrderedMode) {
-    const orderedDays = days.filter((d) => d.passes).map((d) => d.day);
-    cells = buildOrderedModeCells(orderedDays);
+    cells = buildOrderedModeCells(days.filter((d) => d.passes));
   } else {
     cells = buildDefaultModeCells(days);
   }
@@ -77,6 +85,7 @@ const TripGrid: React.FC<TripGridProps> = ({ days, isOrderedMode }) => {
                     isEmpty={false}
                     thumbnailSrc={`/thumbnails/days/${cell.day.frontmatter.date}.webp`}
                     isDimmed={cell.isDimmed}
+                    searchHit={cell.hit}
                   />
                 )}
               </motion.div>

@@ -4,10 +4,10 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import { WeekDataService } from '@/lib/weekService';
 import WeekInfoTable from '@/app/_components/week/week-info-table';
 import { Draft } from '@/app/_components/common/draft';
-import { getBlogPostsForDates } from '@/lib/dayService';
+import { DayService } from '@/lib/dayService';
 import { createForWeek } from '../../../../utils/createImageMap';
 import RelatedPosts from "@/app/_components/blog/related-posts";
-import { getBlogpostsForWeek } from "@/lib/blogService";
+import { BlogService } from "@/lib/blogService";
 import { processBlogReferences, processDayReferences, processWeekDayTags } from "../../../../utils/updateDayReferences";
 
 interface WeekPageProps {
@@ -44,8 +44,8 @@ export default async function WeekPage({ params }: WeekPageProps) {
   const processedBlogs   = await processBlogReferences(processedContent);
   const content          = await markdownToHtml(processedBlogs || "", imageMapping);
 
-  const dayPosts     = await getBlogPostsForDates(week.days);
-  const relatedPosts = await getBlogpostsForWeek(week);
+  const dayPosts     = await DayService.getBlogPostsForDates(week.days);
+  const relatedPosts = await BlogService.getBlogpostsForWeek(week);
   const { previousPost, nextPost } = await WeekDataService.getAdjacentWeeks(weekId);
 
   const photos = week.photos.map((name: string) => `/weeks/${week.index}/${name}`);

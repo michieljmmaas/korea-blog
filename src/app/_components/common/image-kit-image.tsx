@@ -1,4 +1,4 @@
-import { ImageKitProvider, Image } from "@imagekit/next";
+import { Image } from "@imagekit/next";
 
 interface Props {
     source: string;
@@ -11,28 +11,27 @@ interface Props {
     fill?: boolean; // Add this for container-filling behavior
 }
 
-export function ImageKitImage({ 
-    source, 
-    width, 
-    height, 
-    alt, 
-    priority, 
-    sizes, 
+// Relies on the <ImageKitProvider> mounted once in the root layout.
+export function ImageKitImage({
+    source,
+    width,
+    height,
+    alt,
+    priority,
+    sizes,
     className,
-    fill = false 
+    fill = false
 }: Props) {
     return (
-        <ImageKitProvider urlEndpoint="https://ik.imagekit.io/yyahqsrfe">
-            <Image
-                src={source}
-                width={fill ? undefined : width}
-                height={fill ? undefined : height}
-                fill={fill}
-                alt={alt}
-                priority={priority}
-                sizes={sizes}
-                className={className}
-            />
-        </ImageKitProvider>
+        <Image
+            src={source}
+            width={fill ? undefined : width}
+            height={fill ? undefined : height}
+            fill={fill}
+            alt={alt}
+            priority={priority}
+            sizes={sizes}
+            className={className}
+        />
     )
 }

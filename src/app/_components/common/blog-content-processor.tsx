@@ -5,6 +5,9 @@ import { createRoot, Root } from 'react-dom/client';
 import SingleImageWithModal from './single-image-with-modal';
 import { DayHoverData, DayLinkWithTooltip } from '../day/day-link-with-tooltip';
 import { BlogHoverData, BlogLinkWithTooltip } from '../blog/blog-link-with-tooltip';
+import FinanceCharts from '../finance/finance-charts';
+import ConvenienceStoreChart from '../finance/convenience-store-chart';
+import CompareTable from '../blog/location-comparison-table';
 
 interface BlogContentProcessorProps {
     htmlContent: string;
@@ -125,6 +128,45 @@ const BlogContentProcessor = ({ htmlContent, className }: BlogContentProcessorPr
                 root.render(
                     <BlogLinkWithTooltip data={data} href={href} label={label} />
                 );
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Finance charts ────────────────────────────────────────────────
+            const financeChartsPlaceholders = contentRef.current.querySelectorAll('.finance-charts-placeholder');
+
+            financeChartsPlaceholders.forEach((placeholder) => {
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<FinanceCharts />);
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Convenience store chart ──────────────────────────────────────
+            const convenienceStoreChartPlaceholders = contentRef.current.querySelectorAll('.convenience-store-chart-placeholder');
+
+            convenienceStoreChartPlaceholders.forEach((placeholder) => {
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<ConvenienceStoreChart />);
+                mountedComponentsRef.current.push({ element: container, root });
+            });
+
+            // ── Compare tables ────────────────────────────────────────────────
+            const compareTablePlaceholders = contentRef.current.querySelectorAll<HTMLElement>('.compare-table-placeholder');
+
+            compareTablePlaceholders.forEach((placeholder) => {
+                const type = placeholder.getAttribute('data-type');
+                if (!type) return;
+
+                const container = document.createElement('div');
+                placeholder.parentNode?.replaceChild(container, placeholder);
+
+                const root = createRoot(container);
+                root.render(<CompareTable type={type} />);
                 mountedComponentsRef.current.push({ element: container, root });
             });
 

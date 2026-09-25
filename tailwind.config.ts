@@ -64,11 +64,16 @@ const config: Config = {
       },
       animation: {
         shimmer: 'shimmer 1s infinite',
+        'redux-rainbow': 'redux-rainbow 3s linear infinite',
       },
       keyframes: {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        'redux-rainbow': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
         },
       },
     },

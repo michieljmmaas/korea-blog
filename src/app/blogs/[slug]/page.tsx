@@ -1,4 +1,4 @@
-import { getBlogPost, getRelatedBlogPosts } from '@/lib/blogService';
+import { BlogService } from '@/lib/blogService';
 import BlogPostHeader from '@/app/_components/blog/blog-post-header';
 import RelatedPosts from '@/app/_components/blog/related-posts';
 import { PostBody } from '@/app/_components/common/post-body';
@@ -17,7 +17,7 @@ interface BlogPostPageProps {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug } = await params;
 
-    const post = await getBlogPost(slug);
+    const post = await BlogService.getBlogPost(slug);
 
     if (!post || post.frontmatter.draft) {
         return (
@@ -26,7 +26,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
 
-    const relatedPosts = await getRelatedBlogPosts(post);
+    const relatedPosts = await BlogService.getRelatedBlogPosts(post);
     const mapping = createForBlog(post.frontmatter);
     const processedContent = await processDayReferences(post.content);
     const processedContentTwo = await processBlogReferences(processedContent);
@@ -52,8 +52,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-    const { getAllBlogPostSlugs } = await import('@/lib/blogService');
-    const slugs = await getAllBlogPostSlugs();
+    const slugs = await BlogService.getAllBlogPostSlugs();
 
     return slugs.map((slug) => ({
         slug: slug,

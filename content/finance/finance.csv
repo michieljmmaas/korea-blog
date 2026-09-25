@@ -1,0 +1,290 @@
+Locatie,BudgetType,Category,SubCategory,Item,Amount
+Seoul,Nomad,Flight,International,Vlucht AMS - INC,1073.95
+Seoul,Nomad,Hotel,Accommodation,Mangrove Seoul,1684.86
+Tokyo,Nomad,Flight,International,Vlucht Japan,386.99
+Tokyo,Nomad,Hotel,Accommodation,Hotel Japan,294.26
+Taiwan,Nomad,Flight,International,Vlucht naar Taiwan,86.88
+Hong Kong,Nomad,Flight,International,Vlucht Hong Kong,75.64
+Hong Kong,Nomad,Hotel,Accommodation,Hotel Hong Kong,1015.52
+Hong Kong,Nomad,Flight,International,Vlucht HK INC,116.56
+Macao,Nomad,Flight,International,Vlucht Macao,175.57
+Macao,Nomad,Hotel,Accommodation,Hotel Macao,174.54
+Macao,Nomad,Kpop,Concert,TWICE - This is For - Macao 2,417.85
+Nederland,Nomad,Travel Material,Gear,USB Stick,29.90
+Nederland,Nomad,Travel Material,Gear,Packing Cubes,32.95
+Nederland,Nomad,Travel Material,Gear,Adapter,18.99
+Nederland,Nomad,Travel Material,Gear,Sticker papier,17.99
+Nederland,Nomad,Admin,Visum,K-ETA,6.51
+Nederland,Nomad,Flight,International,Stoelen KLM vlucht,57.98
+Seoul,Nomad,Cash,Withdraw,Cash opnamen voor tijdens de trip,195.68
+Seoul,Nomad,Cash,Admin,Kosten cash opname,7.82
+Seoul,Play Money,Kpop,Concert,TWICE Fanmeeting,58.12
+Seoul,Saldo,Food,Convenience Store,CU - Eerste dag,3.44
+Seoul,Nomad,Travel Material,SIM,SIM Kaart,66.87
+Seoul,Saldo,Food,Restaurant,Lotaria tijdens TWICE ticket,4.69
+Seoul,Nomad,Transport,Airport Train,Airport train ticket,7.97
+Macao,Verzorging,Kpop,Merch,TWICE Merch,78.77
+Macao,Nomad,Cash,Withdraw,Macao eerste withdraw,32.82
+Macao,Nomad,Cash,Admin,Macao eerste withdraw admin,4.50
+Seoul,Saldo,Food,Convenience Store,Snacks in Airport CU,6.09
+Macao,Nomad,Cash,Withdraw,Macao tweede withdraw,54.70
+Macao,Nomad,Cash,Admin,Macao tweede withdraw admin,4.50
+Seoul,Saldo,Food,Convenience Store,CU Ontbijt voor Macao,1.68
+Seoul,Saldo,Food,Convenience Store,CU snacks terug van Macao,5.41
+Seoul,Saldo,Food,Restaurant,Macao vlucht terug avond eten,7.77
+Seoul,Saldo,Food,Groceries,Eten eerste keer,33.14
+Seoul,Nomad,Travel Material,Hotel Supplies,Kleren hangers etc,20.00
+Seoul,Saldo,Food,Convenience Store,Convience Store - CU,2.87
+Seoul,Saldo,Food,Convenience Store,Convience Store GS25,4.49
+Seoul,Saldo,Food,Convenience Store,Convience Store 7-11,3.93
+Seoul,Saldo,Food,Convenience Store,Convience Store - Emart Chicken,4.05
+Seoul,Saldo,Food,Restaurant,Hangang - Chicken,16.49
+Seoul,Nomad,Tourist,Souvenir,National Museum - Tiger magneet,3.74
+Seoul,Saldo,Food,Restaurant,Dora Bowl na Seoul Museum,14.60
+Seoul,Nomad,Tourist,Museum,Kaartje Gyeongbukgung,1.86
+Seoul,Saldo,Food,Convenience Store,Emart na Gyeongbukgung,2.61
+Seoul,Saldo,Food,Convenience Store,CU met batterijen,9.94
+Seoul,Nomad,Tourist,Museum,Seoul Museum kaartje,3.11
+Seoul,Saldo,Food,Convenience Store,GS25 Terugweg van Eten,3.81
+Seoul,Saldo,Food,Groceries,Boodschappen Emart 2,27.49
+Seoul,Nomad,Travel Material,Hotel Supplies,Plantjes en Laundry baket,15.00
+Seoul,Saldo,Travel Material,Verzorging,Deodorant,7.52
+Seoul,Saldo,Food,Convenience Store,CU,3.00
+Seoul,Nomad,Tourist,Transport,Trien kaartje naar Suwon,5.11
+Seoul,Saldo,Food,Restaurant,Lunch in Suwon,10.35
+Seoul,Nomad,Tourist,Museum,Kaartje Suwon museum,1.22
+Seoul,Saldo,Food,Convenience Store,Eten na Suwon - 7-11,4.08
+Seoul,Saldo,Food,Convenience Store,CU voor regen hike,2.01
+Seoul,Saldo,Food,Groceries,Lotte Mart na regen Hike,19.77
+Seoul,Saldo,Food,Convenience Store,GS25 voor lunch met regen,2.74
+Seoul,Saldo,Food,Convenience Store,7-11 Avond eten na Leeum Museum,2.86
+Seoul,Nomad,Tourist,Museum,Leeum Museum Entree,12.18
+Seoul,Nomad,Tourist,Souvenir,Tijger sleutelhanger Leeum,7.31
+Seoul,Saldo,Food,Convenience Store,Eten 6 october - 7-11,4.66
+Seoul,Saldo,Food,Convenience Store,Eten 7 oktober - 7-11,4.86
+Seoul,Saldo,Food,Convenience Store,Eten 7 oktober - 7-11,8.35
+Seoul,Saldo,Food,Convenience Store,Eten 8 oktober - CU,3.05
+Seoul,Saldo,Food,Convenience Store,Eten 8 oktober - 7-11,6.09
+Seoul,Saldo,Food,Bar,Biertje bij borrel,3.11
+Seoul,Saldo,Food,Convenience Store,CU voor ontbijt,5.30
+Seoul,Saldo,Food,Groceries,Boodschappen in de avond,16.37
+Seoul,Saldo,Food,Restaurant,Solo dinner bestellen,8.10
+Seoul,Saldo,Food,Convenience Store,7-11 met extra protein bars,11.40
+Seoul,Play Money,Kpop,Album,TWICE Album,11.78
+Seoul,Saldo,Food,Convenience Store,7-11 voor ontbijt,4.74
+Seoul,Nomad,Tourist,Museum,Kaartje Ilmin Moon Museum,5.61
+Seoul,Saldo,Food,Restaurant,Buddae Jiggae na hike,12.46
+Seoul,Saldo,Food,Convenience Store,Convience store run - 7-11,5.30
+Seoul,Saldo,Food,Convenience Store,Convience store run - CU,7.73
+Seoul,Saldo,Food,Convenience Store,GS25 na spa,4.28
+Seoul,Saldo,Food,Convenience Store,Lunch CU met protein bars,10.54
+Seoul,Nomad,Cash,Admin,Kosten geld opname,4.50
+Seoul,Nomad,Tourist,Spa,Cash voor massage,33.60
+Seoul,Nomad,Tourist,Spa,Entry voor Spa,9.92
+Seoul,Saldo,Food,Restaurant,Eten in de SPA,8.06
+Seoul,Verzorging,Verzorging,Kapper,Kapper,13.64
+Seoul,Nomad,Tourist,Date,Noon date token,3.69
+Seoul,Saldo,Food,Groceries,Boodschappen Ha-mo-ni mart 1,26.46
+Seoul,Saldo,Food,Convenience Store,7-11 lunch,3.77
+Seoul,Saldo,Food,Convenience Store,7-11 avond eten,9.78
+Seoul,Nomad,Tourist,Souvenir,Blauwe tijger sleutelhanger,4.56
+Seoul,Saldo,Food,Convenience Store,CU voor ontbijt,4.20
+Seoul,Saldo,Food,Restaurant,Mapo Tofu,7.91
+Seoul,Saldo,Food,Restaurant,Grote lunch voor fanmeeting,6.80
+Seoul,Saldo,Food,Convenience Store,CU Lunch,5.75
+Seoul,Saldo,Food,Convenience Store,Paris Baguette,4.39
+Seoul,Nomad,Travel Material,Gym,Gym membership,61.81
+Seoul,Nomad,Kpop,TWICE Movie Ticket,TWICE Movie Ticket,15.45
+Seoul,Saldo,Food,Restaurant,Jjampong lunch,6.80
+Seoul,Saldo,Food,Restaurant,Bibimbap dinner,6.68
+Seoul,Saldo,Food,Restaurant,Fishcakes snack,6.49
+Seoul,Saldo,Food,Convenience Store,Convience store lunch - CU,3.83
+Seoul,Saldo,Food,Convenience Store,7-11 In de avond protein bars,5.19
+Seoul,Saldo,Food,Restaurant,Cafe na bossam,8.04
+Seoul,Saldo,Food,Restaurant,Bossam Sooyeon dinner,24.11
+Seoul,Saldo,Food,Convenience Store,CU Lunch,2.91
+Seoul,Saldo,Food,Cafe,Starbucks om te wachten,7.04
+Seoul,Play Money,Kpop,Merch,TWICE Merch in popup store,42.51
+Seoul,Saldo,Food,Restaurant,Buldalk met Katherine,20.95
+Seoul,Saldo,Food,Groceries,Boodschappen - mayonaise en bananen,12.40
+Seoul,Saldo,Food,Convenience Store,7-11 Lunch,5.18
+Seoul,Saldo,Food,Convenience Store,GS25 voor morgen,2.78
+Seoul,Saldo,Food,Restaurant,Jajamyeon,4.23
+Seoul,Nomad,Tourist,Ticket,Lotte World Ticket,28.75
+Seoul,Saldo,Food,Restaurant,Bokkeum Rice,5.54
+Seoul,Saldo,Food,Groceries,Bananen,2.15
+Seoul,Saldo,Food,Restaurant,Chicken Pizza Mom's Taste,14.72
+Seoul,Nomad,Tourist,Museum,Museum Kaartje Baussaint,18.89
+Seoul,Saldo,Food,Restaurant,Dinner DDP,7.97
+Seoul,Saldo,Food,Convenience Store,Souvenier Convience Store - GS25,5.21
+Seoul,Saldo,Food,Restaurant,Lottaria Lunch Lotte World,5.27
+Seoul,Saldo,Food,Convenience Store,CU Op dag van Lotte World,4.29
+Seoul,Saldo,Food,Restaurant,Burgerking Post Starcraft,8.22
+Seoul,Nomad,Tourist,Ticket,Everland Ticket,38.03
+Seoul,Saldo,Food,Restaurant,Pho in Everland,12.27
+Seoul,Saldo,Food,Convenience Store,CU,4.54
+Seoul,Saldo,Food,Convenience Store,7-11,3.81
+Seoul,Saldo,Food,Restaurant,Tangsuyuk,6.75
+Seoul,Saldo,Food,Restaurant,Moms Touch Lunch,6.39
+Seoul,Saldo,Food,Restaurant,Jokbal,30.09
+Hong Kong,Nomad,Kpop,MAMA,MAMA Ticket 1,414.79
+Seoul,Saldo,Food,Convenience Store,7-11 Voor lunch + bars,9.46
+Seoul,Saldo,Food,Groceries,Boodschappen Halmone Mart,13.61
+Seoul,Saldo,Food,Restaurant,Lunch Nasi,6.62
+Seoul,Saldo,Food,Restaurant,Kalguksu voor Nvidea Event,8.66
+Seoul,Saldo,Food,Restaurant,Burger King Dinner,5.10
+Seoul,Saldo,Food,Restaurant,Lunch in Kimbap place,7.16
+Seoul,Nomad,Tourist,Club,Toegang tot de Itaewon Club,24.90
+Seoul,Saldo,Food,Restaurant,Biertje in Lit Lounge,4.36
+Seoul,Saldo,Food,Convenience Store,7-11 in Myeongdong,3.23
+Seoul,Play Money,Kpop,Album,Kpop Albums Myeongdong,21.76
+Seoul,Saldo,Food,Restaurant,Slecht Bokkeumbap Dinner,13.68
+Seoul,Saldo,Food,Lunch,Isaac Toast,3.11
+Seoul,Saldo,Food,Lunch,Paris Baguette Breakfast,6.09
+Seoul,Nomad,Tourist,Museum,Ultra Convenience Store,12.43
+Seoul,Nomad,Tourist,Souvenir,Meer Tokens voor Ultra Convience Store,3.11
+Seoul,Saldo,Food,Convenience Store,7-11 Voor lunch,6.65
+Seoul,Saldo,Food,Groceries,Supermarket Goodmorning Mart,6.96
+Seoul,Saldo,Food,Restaurant,Realistaie dinner,6.84
+Hong Kong,Nomad,Kpop,MAMA,MAMA Ticket 2,440.89
+Seoul,Saldo,Food,Lunch,Gamja Tang,7.46
+Seoul,Saldo,Food,Restaurant,Fried Chicken Dinner,22.69
+Seoul,Saldo,Food,Restaurant,Burger King Dinner,7.34
+Seoul,Saldo,Food,Lunch,Two Some Place voor vertrek,7.90
+Seoul,Nomad,Transport,Admin,Iets op de airport?,0.41
+Nederland,Nomad,Travel Material,SIM,Saily E-Sim,27.21
+Tokyo,Nomad,Cash,Withdraw,Cash Withdraw,116.11
+Tokyo,Nomad,Transport,Train,Treinkaartje,2.96
+Tokyo,Nomad,Cash,Admin,Cash Withdraw Admin,4.64
+Tokyo,Nomad,Tourist,Souvenir,Hands voor Mariska,9.66
+Tokyo,Nomad,Tourist,Souvenir,Manga,6.36
+Tokyo,Nomad,Tourist,Ticket,Tokyo National Museum,9.83
+Tokyo,Saldo,Food,Convenience Store,7-11,3.12
+Tokyo,Saldo,Food,Convenience Store,Family Mart,1.79
+Tokyo,Saldo,Food,Restaurant,Katsu Curry,5.03
+Tokyo,Saldo,Food,Breakfast,Shimbashi Breakfast Izakaya,5.21
+Tokyo,Nomad,Tourist,Museum,Hokusai Museum,8.68
+Tokyo,Nomad,Tourist,Museum,National Museum Tokyo,2.89
+Tokyo,Saldo,Food,Restaurant,Tenkazushi 1,19.68
+Tokyo,Nomad,Tourist,Souvenir,Hokusai Souvenier,4.05
+Tokyo,Nomad,Tourist,Ticket,Shibuya Crossing View,11.46
+Tokyo,Saldo,Food,Convenience Store,Convience Store Bars - 7-11,4.05
+Tokyo,Saldo,Food,Restaurant,Yakisoba Restaurant,12.86
+Tokyo,Nomad,Hotel,Accommodation,Nieuw Hotel,174.48
+Tokyo,Nomad,Tourist,Museum,Nuzu Museum,9.26
+Tokyo,Saldo,Food,Convenience Store,Family Mart,3.76
+Tokyo,Saldo,Food,Convenience Store,Family Mart,3.74
+Tokyo,Saldo,Food,Lunch,Omuraisu,6.54
+Tokyo,Saldo,Food,Restaurant,Tenkazushi 2,18.87
+Tokyo,Nomad,Tourist,Souvenir,Yoasobi Souvenier,4.01
+Tokyo,Nomad,Tourist,Ticket,Tokyo Tower Ticket,8.68
+Tokyo,Saldo,Food,Lunch,Pasty Lunch,6.94
+Tokyo,Saldo,Food,Convenience Store,Family Mart dinner,6.16
+Tokyo,Saldo,Food,Breakfast,Ontbijt met Pastries,5.59
+Tokyo,Saldo,Food,Lunch,Airport Okinomiyaki,4.43
+Seoul,Saldo,Food,Convenience Store,Geland Convience Store 7-11,2.56
+Seoul,Saldo,Food,Convenience Store,Geland Convience Store CU,3.72
+Seoul,Saldo,Food,Groceries,Good Morning Mart,3.83
+Seoul,Saldo,Food,Lunch,Twosome place lunch,7.77
+Seoul,Saldo,Food,Restaurant,Dinner bij Kimbap place,10.63
+Seoul,Saldo,Food,Convenience Store,7-11,3.58
+Seoul,Saldo,Food,Convenience Store,7-11 Kimchi Jiggae,3.91
+Seoul,Saldo,Food,Dinner,Kimchi Jiggae,5.44
+Seoul,Saldo,Food,Lunch,Isaac Toast lunch,2.54
+Seoul,Nomad,Cash,Withdraw,Cash,33.64
+Seoul,Nomad,Cash,Admin,Cash opnamen,4.50
+Seoul,Nomad,Tourist,Photoshoot,Photoshoot cash,306.89
+Seoul,Nomad,Cash,Admin,Cash opnamen,12.27
+Seoul,Nomad,Cash,Withdraw,Cash,32.91
+Seoul,Nomad,Cash,Admin,Cash opnamen,4.50
+Seoul,Saldo,Food,Convenience Store,CU,2.97
+Seoul,Nomad,Tourist,Souvenir,Souveniertjes voor iedereen,74.37
+Seoul,Nomad,Misc,Error,Foutief trein kaartje,9.77
+Seoul,Nomad,Transport,Luggage,Nannybag - opslaan baggage,68.94
+Seoul,Saldo,Food,Convenience Store,CU,3.04
+Seoul,Nomad,Cash,Withdraw,Cash,63.34
+Seoul,Nomad,Cash,Admin,Cash opnamen,4.50
+Seoul,Saldo,Food,Restaurant,Kimbap Lunch,6.99
+Seoul,Saldo,Food,Restaurant,Carrot cake met Katherine,4.80
+Taiwan,Nomad,Cash,Withdraw,Cash,56.70
+Taiwan,Nomad,Cash,Admin,Cash opnamen,4.50
+Taiwan,Nomad,Hotel,Accommodation,Hotel Kaoshiung,195.18
+Taiwan,Nomad,Transport,Metro,Trein vanaf vliegveld,0.71
+Taiwan,Nomad,Food,Convenience Store,Convience store Taiwan Day 1 - 7-11,4.25
+Taiwan,Nomad,Tourist,Museum,Museum of Fine Arts Kaartje,2.55
+Taiwan,Nomad,Tourist,Museum,Pier 2 Kaartje,1.70
+Taiwan,Saldo,Food,Convenience Store,7-11 Kaoshiung day 2,5.36
+Taiwan,Nomad,Food,Restaurant,Dumplings voor Fine Arts,4.26
+Taiwan,Saldo,Food,Convenience Store,Family mart,2.10
+Taiwan,Nomad,Food,Restaurant,Hsiung Yun Kaoshiung,5.69
+Taiwan,Saldo,Food,Convenience Store,7-11 Tasje,0.03
+Taiwan,Saldo,Food,Convenience Store,7-11 Eten,3.49
+Taiwan,Nomad,Cash,Admin,Geld opnamen,4.50
+Taiwan,Nomad,Cash,Withdraw,Cash,85.17
+Taiwan,Nomad,Transport,Bike,Youbike,0.57
+Taiwan,Nomad,Transport,Bike,Youbike,1.13
+Taiwan,Saldo,Food,Bar,TWICE Cocktails,12.45
+Taiwan,Saldo,Food,Convenience Store,7-11 met zonnebrand,12.57
+Taiwan,Saldo,Food,Convenience Store,7-11 snack,1.16
+Taiwan,Saldo,Food,Convenience Store,Mister Donut,4.33
+Taiwan,Nomad,Hotel,Accommodation,Hotel,101.88
+Taiwan,Nomad,Transport,Train,Trein kaartje,11.18
+Taiwan,Nomad,Transport,Bus,Klook,13.44
+Taiwan,Saldo,Food,Restaurant,Mosburger,3.40
+Taiwan,Nomad,Cash,Admin,Cash,56.60
+Taiwan,Nomad,Cash,Withdraw,Cash opname,4.50
+Taiwan,Saldo,Food,Restaurant,Lunch in Alisan,7.92
+Taiwan,Saldo,Food,Convenience Store,7-11 in Alisan,19.89
+Taiwan,Nomad,Hotel,Late Checkout,Late Checkout,11.32
+Taiwan,Nomad,Transport,Train,Treinkaartje naar Taipei,29.57
+Taiwan,Saldo,Food,Restaurant,Wang Group Taipei dinner,10.58
+Taiwan,Saldo,Food,Restaurant,Mosburger lunch,6.79
+Taiwan,Saldo,Food,Convenience Store,7-11 Lunch,3.62
+Taiwan,Nomad,Hotel,Accommodation,Taipei Hotel,229.23
+Taiwan,Saldo,Food,Restaurant,7-11 Lunch,3.16
+Taiwan,Saldo,Food,Restaurant,Popeyes,5.28
+Taiwan,Nomad,Tourist,Museum,National Palace,9.89
+Taiwan,Nomad,Tourist,Ticket,Taipei Financial Center,16.95
+Taiwan,Nomad,Transport,Bike,Youbike,0.28
+Taiwan,Nomad,Tourist,Souvenir,Sleutelhanger,7.06
+Taiwan,Saldo,Food,Restaurant,Din Tai Fung,24.57
+Taiwan,Saldo,Food,Restaurant,Mac Donalds Lunch,5.93
+Taiwan,Saldo,Food,Convenience Store,7-11 voor vertrek,2.12
+Hong Kong,Nomad,Transport,Luggage,Extra hand bagage op vlucht,17.53
+Hong Kong,Saldo,Food,Convenience Store,Airport 7-11,5.28
+Hong Kong,Nomad,Transport,Bus,Bus ticket,4.63
+Hong Kong,Nomad,Cash,Withdraw,Cash,91.40
+Hong Kong,Nomad,Cash,Admin,Cash opname,4.50
+Hong Kong,Saldo,Food,Restaurant,MacDonalds Post MAMA,6.63
+Hong Kong,Saldo,Food,Restaurant,MacDonalds Post MAMA,5.86
+Hong Kong,Saldo,Food,Restaurant,Goose lunch,20.17
+Hong Kong,Nomad,Tourist,Opera,Kaartjes voor Opera,38.75
+Hong Kong,Saldo,Food,Restaurant,Pizza,19.11
+Hong Kong,Saldo,Food,Restaurant,Eten MAMA,12.25
+Hong Kong,Saldo,Food,Restaurant,Döner Post MAMA,6.58
+Hong Kong,Nomad,Cash,Withdraw,Cash,90.75
+Hong Kong,Nomad,Cash,Admin,Cash opnamen,4.50
+Hong Kong,Nomad,Tourist,Museum,M+ Ticket,21.55
+Hong Kong,Nomad,Tourist,Tram,Kaartje voor Tram,14.49
+Hong Kong,Nomad,Tourist,Souvenir,Hong Kong sleutelhanger,2.27
+Hong Kong,Saldo,Food,Restaurant,Congee avond eten,19.74
+Hong Kong,Nomad,Tourist,Museum,Maritime Museum,5.56
+Hong Kong,Saldo,Food,Convenience Store,7-11 Pre Hike,14.58
+Hong Kong,Saldo,Food,Convenience Store,7-11 Op Top Veronica,7.20
+Hong Kong,Nomad,Cash,Withdraw,Cash,45.37
+Hong Kong,Nomad,Cash,Admin,Cash opnamen,4.50
+Hong Kong,Saldo,Food,Restaurant,Mango Drankje,3.40
+Hong Kong,Saldo,Food,Restaurant,Broodjes voor hiking,8.98
+Hong Kong,Saldo,Food,Convenience Store,Circle K Voor Hike,3.62
+Hong Kong,Saldo,Food,Restaurant,Jockey Club food,17.53
+Hong Kong,Saldo,Food,Restaurant,KFC,5.77
+Hong Kong,Saldo,Food,Restaurant,Cafe Coral,6.67
+Hong Kong,Nomad,Transport,Luggage,Hand Baggage,17.60
+Hong Kong,Saldo,Food,Restaurant,Mac Donalds Ontbijt,7.92
+Hong Kong,Nomad,Cash,Withdraw,Cash,45.23
+Hong Kong,Nomad,Cash,Admin,Cash opnamen,4.50
+Hong Kong,Nomad,Tourist,Museum,Kaartje Palace Museum,7.92
+Seoul,Saldo,Food,Restaurant,Kimbap,7.52
+Seoul,Saldo,Food,Restaurant,Katsu,8.42
+Seoul,Saldo,Food,Restaurant,Tacobell, 7.76
+Seoul,Nomad,Tourist,Souvenir,Drank voor Baas,16.75

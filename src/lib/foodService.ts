@@ -17,6 +17,7 @@ export class FoodService {
       const data = yaml.load(fileContent) as Food[];
       return data;
     } catch (error) {
+      console.error("Error reading food file:", error);
       return [];
     }
   }

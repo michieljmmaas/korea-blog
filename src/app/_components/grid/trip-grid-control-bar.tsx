@@ -6,7 +6,7 @@ import { Tag, Search, X, ArrowUp, ArrowDown } from 'lucide-react';
 import { getLocationColor } from '../../../../utils/locationColors';
 import IconFactory from '../common/icon-factory';
 
-export type SortMetric = 'kimbap' | 'worked' | 'cultural' | 'steps' | 'photos' | 'description' | 'score' | null;
+export type SortMetric = 'kimbap' | 'worked' | 'cultural' | 'steps' | 'photos' | 'description' | 'score' | 'relevance' | null;
 export type SortDirection = 'asc' | 'desc';
 
 export const ALL_LOCATIONS: CityLocation[] = [
@@ -90,6 +90,7 @@ export function TripGridControlBar({
   onClearSort,
 }: TripGridControlBarProps) {
   const SORT_OPTIONS = [
+    ...(searchQuery.trim() ? [{ label: 'Relevance', value: 'relevance' as const }] : []),
     { label: 'Score', value: 'score' as const },
     { label: 'Snacks', value: 'kimbap' as const },
     { label: 'Hours Worked', value: 'worked' as const },
@@ -211,7 +212,7 @@ export function TripGridControlBar({
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search descriptions..."
+          placeholder="Search days, places, tags and text..."
           className={cn(
             'w-full pl-8 pr-8 py-1.5 text-xs font-mono uppercase tracking-wide',
             'bg-transparent border border-neutral-200 dark:border-neutral-700 rounded-md',

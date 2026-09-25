@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { DayFrontmatter } from '../../types';
+import { DaySearchHit } from '@/lib/daySearch';
+import DayHoverCard from './day-hover-card';
 import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
 import Image from 'next/image';
@@ -12,6 +14,7 @@ interface DaySquareProps {
   isEmpty?: boolean;
   thumbnailSrc?: string;
   isDimmed?: boolean;
+  searchHit?: DaySearchHit;
 }
 
 // Icon configuration type
@@ -22,8 +25,9 @@ interface IconConfig {
   size?: number; // Size in pixels, defaults to 16
 }
 
-const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false, isDimmed = false }) => {
+const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = false, isDimmed = false, searchHit }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const squareRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   if (isEmpty) {
@@ -36,7 +40,6 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   if (!dayInfo) return null;
 
   const isDraft = dayInfo.draft;
-  const dateString = dayInfo.date;
 
   // Get the appropriate color based on location
   const locationColor = getLocationColor(dayInfo.location);
@@ -69,19 +72,13 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
 
   const icons = getIcons(dayInfo);
 
-  const renderIcons = (isTooltip: boolean = false) => {
+  const renderIcons = () => {
     if (icons.length === 0) return null;
 
-    const iconClasses = isTooltip
-      ? 'flex-shrink-0 opacity-100 brightness-0 invert' // White icons for tooltip
-      : `flex-shrink-0 ${!isDraft ? 'opacity-100 brightness-0' : 'opacity-50'}`; // Dark icons for overlay
-
-    const containerClasses = isTooltip
-      ? 'flex items-center space-x-1' // Inline for tooltip
-      : 'absolute top-1 right-1 flex items-center space-x-1 z-10'; // Positioned for overlay
+    const iconClasses = `flex-shrink-0 ${!isDraft ? 'opacity-100 brightness-0' : 'opacity-50'}`;
 
     return (
-      <div className={containerClasses}>
+      <div className="absolute top-1 right-1 flex items-center space-x-1 z-10">
         {icons.map((icon, index) => (
           <Image
             key={index}
@@ -100,26 +97,6 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
       </div>
     );
   };
-
-  const publishedToolTip = (
-    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-3 py-2 rounded text-sm whitespace-nowrap z-20 shadow-lg max-w-sm">
-      <div className="flex items-center justify-between gap-2">
-        <div className="font-medium">{dateString}</div>
-        {/* Use shared render method for tooltip icons */}
-        {icons.length > 0 && renderIcons(true)}
-      </div>
-
-      <div className="text-m text-gray-300 mt-1">
-        <p className='truncate'>{dayInfo.description}</p>
-      </div>
-
-      <div className="text-xs text-gray-400 mt-1">
-        Score: {dayInfo.score}
-      </div>
-      {/* Tooltip arrow */}
-      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-    </div>
-  );
 
   const hasImage = !isDraft && thumbnailSrc;
 
@@ -151,7 +128,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={squareRef}>
       <Link
         href={isDraft ? '#' : `/day/${dayInfo.date}`}
         className="block"
@@ -170,7 +147,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         flex-col
         overflow-hidden
         ${isDraft ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-        ${isDimmed ? 'opacity-50' : isDraft ? '' : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1'}
+        ${isDimmed ? 'opacity-50 grayscale' : isDraft ? '' : 'transition-all duration-200 hover:shadow-md hover:scale-102 hover:-translate-y-1'}
       `}>
 
           {/* Main content area with relative positioning for overlay icons */}
@@ -190,7 +167,7 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
                 </div>
               </>
             )}
-            {renderIcons(false)}
+            {renderIcons()}
           </div>
 
           {/* Bottom banner with day number only */}
@@ -202,7 +179,9 @@ const DaySquare: React.FC<DaySquareProps> = ({ dayInfo, thumbnailSrc, isEmpty = 
         </div>
       </Link>
 
-      {isHovered && !isDimmed && publishedToolTip}
+      {isHovered && !isDimmed && (
+        <DayHoverCard frontmatter={dayInfo} anchorRef={squareRef} searchHit={searchHit} />
+      )}
     </div>
   );
 };

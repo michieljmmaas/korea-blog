@@ -86,58 +86,6 @@ export class GeoDataService {
   }
 
   /**
-   * Get locations within a date range
-   * @param startDate - Start date string in format "YYYY/MM/DD"
-   * @param endDate - End date string in format "YYYY/MM/DD"
-   */
-  static async getLocationsByDateRange(
-    startDate: string,
-    endDate: string,
-  ): Promise<GeoData> {
-    try {
-      const allData = await this.getAllGeoData();
-      const filteredData: GeoData = {};
-
-      // Convert date strings to comparable format
-      const parseDate = (dateStr: string): Date => {
-        const [year, month, day] = dateStr.split("/");
-        return new Date(parseInt(year), parseInt(month), parseInt(day));
-      };
-
-      const start = parseDate(startDate);
-      const end = parseDate(endDate);
-
-      Object.keys(allData).forEach((date) => {
-        const current = parseDate(date);
-        if (current >= start && current <= end) {
-          filteredData[date] = allData[date];
-        }
-      });
-
-      return filteredData;
-    } catch (error) {
-      console.error("Error getting locations by date range:", error);
-      return {};
-    }
-  }
-
-  /**
-   * Get total number of locations across all dates
-   */
-  static async getTotalLocationCount(): Promise<number> {
-    try {
-      const allData = await this.getAllGeoData();
-      return Object.values(allData).reduce(
-        (total, locations) => total + locations.length,
-        0,
-      );
-    } catch (error) {
-      console.error("Error getting total location count:", error);
-      return 0;
-    }
-  }
-
-  /**
    * Parse time string to Date object
    * @param timeStr - Time string in format "DD/MM/YYYY HH:MM"
    */
