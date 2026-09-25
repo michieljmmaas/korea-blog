@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-// GitHub Pages serves this as a project site (michieljmmaas.github.io/korea-blog/),
-// not at the domain root, so every asset/link needs this prefix. next/image and
-// next/link add it automatically; anywhere else (plain <img>, fetch(), <link href>)
-// must go through utils/basePath.ts's withBasePath(), which reads this via the
-// NEXT_PUBLIC_BASE_PATH env var below.
-const BASE_PATH = '/korea-blog';
+// Served at the domain root (seoulo.nl), not under a /korea-blog/ subpath, so
+// no basePath is needed here. All the withBasePath()/imageLoader.ts plumbing
+// is a harmless no-op when this is empty — kept in place in case the site
+// ever moves back to a project-page URL (michieljmmaas.github.io/korea-blog/).
+const BASE_PATH = '';
 
 const nextConfig = {
   output: 'export',
