@@ -43,12 +43,21 @@ jobs:
 
       # Pull the full-size photo set (thumb + display tiers) from the rolling
       # "images" release instead of committing ~2GB of photos to the repo.
+      # The release is public (the repo is public), so the asset is an
+      # AES-256 encrypted 7z archive with encrypted headers; the password
+      # lives only in the IMAGES_ARCHIVE_PASSWORD repository secret.
       - name: Download photo release
+        env:
+          IMAGES_ARCHIVE_PASSWORD: ${{ secrets.IMAGES_ARCHIVE_PASSWORD }}
         run: |
+          if [ -z "$IMAGES_ARCHIVE_PASSWORD" ]; then
+            echo "::error::IMAGES_ARCHIVE_PASSWORD secret is not set"
+            exit 1
+          fi
           mkdir -p /tmp/images-release
-          gh release download images --pattern '*.zip' --dir /tmp/images-release --clobber
+          gh release download images --pattern '*.7z' --dir /tmp/images-release --clobber
           mkdir -p public/photos
-          unzip -o /tmp/images-release/*.zip -d public/photos
+          7z x -y -p"$IMAGES_ARCHIVE_PASSWORD" -opublic/photos /tmp/images-release/*.7z > /dev/null
 
       # Entity-cover thumbnails are cropped from the display tier downloaded
       # above; only new days/weeks/blogs get a thumbnail generated.

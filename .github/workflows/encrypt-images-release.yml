@@ -1,0 +1,61 @@
+name: Encrypt images release (one-off)
+
+# One-off migration: repacks the public photos.zip on the "images" release as
+# a password-protected photos.7z (AES-256, encrypted headers) using the
+# IMAGES_ARCHIVE_PASSWORD secret, verifies it round-trips, then deletes the
+# zip. Delete this workflow once it has run successfully.
+
+on:
+  push:
+    branches:
+      - claude/release-zip-access-control-xozmrk
+    paths:
+      - .github/workflows/encrypt-images-release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  encrypt:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      IMAGES_ARCHIVE_PASSWORD: ${{ secrets.IMAGES_ARCHIVE_PASSWORD }}
+    steps:
+      - name: Check secret
+        run: |
+          if [ -z "$IMAGES_ARCHIVE_PASSWORD" ]; then
+            echo "::error::IMAGES_ARCHIVE_PASSWORD secret is not set"
+            exit 1
+          fi
+
+      - name: Download and unpack photos.zip
+        run: |
+          mkdir -p work/zip work/src
+          gh release download images --pattern 'photos.zip' --dir work/zip
+          unzip -q work/zip/photos.zip -d work/src
+          echo "Top level of zip:"; ls work/src
+          echo "Files: $(find work/src -type f | wc -l)"
+
+      - name: Build encrypted photos.7z
+        working-directory: work/src
+        run: 7z a -mhe=on -p"$IMAGES_ARCHIVE_PASSWORD" ../photos.7z . > /dev/null
+
+      - name: Verify photos.7z round-trips
+        run: |
+          mkdir -p work/check
+          7z x -y -p"$IMAGES_ARCHIVE_PASSWORD" -owork/check work/photos.7z > /dev/null
+          diff -r work/src work/check
+          if 7z l -pwrong-password work/photos.7z > /dev/null 2>&1; then
+            echo "::error::archive listing succeeded with a wrong password; headers are not encrypted"
+            exit 1
+          fi
+          ls -l work/zip/photos.zip work/photos.7z
+
+      - name: Upload photos.7z and delete photos.zip
+        run: |
+          gh release upload images work/photos.7z --clobber
+          gh release delete-asset images photos.zip -y
+          gh release view images --json assets --jq '.assets[] | "\(.name) \(.size)"'
