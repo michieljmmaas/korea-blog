@@ -24,9 +24,6 @@ jobs:
     if: contains(github.event.head_commit.message, '[deploy]') || github.event_name == 'workflow_dispatch'
 
     env:
-      IMAGEKIT_URL_ENDPOINT: ${{ secrets.IMAGEKIT_URL_ENDPOINT }}
-      IMAGE_KIT_PRIVATE_KEY: ${{ secrets.IMAGE_KIT_PRIVATE_KEY }}
-      IMAGE_KIT_PUBLIC_KEY: ${{ secrets.IMAGE_KIT_PUBLIC_KEY }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -44,11 +41,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Static content update steps (entity-cover thumbnails only; still ImageKit-sourced)
+      # Pull the full-size photo set (thumb + display tiers) from the rolling
+      # "images" release instead of committing ~2GB of photos to the repo.
+      - name: Download photo release
+        run: |
+          mkdir -p /tmp/images-release
+          gh release download images --pattern '*.zip' --dir /tmp/images-release --clobber
+          mkdir -p public/photos
+          unzip -o /tmp/images-release/*.zip -d public/photos
+
+      # Entity-cover thumbnails are cropped from the display tier downloaded
+      # above; only new days/weeks/blogs get a thumbnail generated.
       - name: Generate thumbnails
         id: static-generate-thumbnails
         continue-on-error: false
-        run: npm run thumbnails && npm run thumbnails-front-page
+        run: npm run thumbnails
 
       - name: Update stats
         id: static-update-stats
@@ -60,15 +67,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'Update thumbnails and/or chart data'
-
-      # Pull the full-size photo set (thumb + display tiers) from the rolling
-      # "images" release instead of committing ~2GB of photos to the repo.
-      - name: Download photo release
-        run: |
-          mkdir -p /tmp/images-release
-          gh release download images --pattern '*.zip' --dir /tmp/images-release --clobber
-          mkdir -p public/photos
-          unzip -o /tmp/images-release/*.zip -d public/photos
 
       - name: Build static export
         run: npm run build
