@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pages: write
+  actions: write  # delete the github-pages artifact after deploying
   id-token: write
 
 concurrency:
@@ -95,3 +96,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # The github-pages artifact is the whole built site, photos included,
+      # and on a public repo any signed-in GitHub user can download it as one
+      # zip from the run page. Pages doesn't need it once deployed, so delete
+      # it (and any left over from earlier runs).
+      - name: Delete Pages artifacts
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh api --paginate "repos/$GH_REPO/actions/artifacts?name=github-pages" \
+            --jq '.artifacts[] | select(.expired == false) | .id' |
+            while read -r id; do
+              gh api -X DELETE "repos/$GH_REPO/actions/artifacts/$id"
+              echo "Deleted artifact $id"
+            done
