@@ -2,10 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-// The lasting, ImageKit-free image pipeline: walks public/photos/originals/
-// (populated either by scripts/download-originals.ts, or by hand-dropping a
-// new full-quality photo in the matching days/{date}, weeks/{index},
-// blogs/{slug} or food path) and derives the two fixed tiers the site
+// The image pipeline: walks public/photos/originals/ (populated by
+// hand-dropping a full-quality photo in the matching days/{date},
+// weeks/{index}, blogs/{slug} or food path) and derives the two fixed tiers the site
 // actually serves, skipping anything already processed.
 //
 // Run this after adding new originals. It only touches files that don't

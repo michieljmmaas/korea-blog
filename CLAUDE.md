@@ -9,7 +9,7 @@ A personal blog documenting a 10-week trip through Korea (and side trips to Japa
 ## Current focus & near-term plans
 
 - The trip content is winding down — most remaining work is finishing up individual blog posts (`content/blogs/`, `content/days/`) rather than new features.
-- The static-export migration (previously tracked here) is done: all `src/lib/*Service.ts` reads happen at build time only, all dynamic routes have `generateStaticParams`, and there are no server actions/API routes. Photos have moved off live ImageKit hosting to a local two-tier (`thumb`/`display`) pipeline — see **Images** below — so new features should keep assuming a live server, live ImageKit endpoint, or `fs` access at request time is *not* available.
+- The static-export migration (previously tracked here) is done: all `src/lib/*Service.ts` reads happen at build time only, all dynamic routes have `generateStaticParams`, and there are no server actions/API routes. Photos are served from a local two-tier (`thumb`/`display`) pipeline (ImageKit is no longer used anywhere) — see **Images** below — so new features should keep assuming a live server, external image service, or `fs` access at request time is *not* available.
 
 ## Commands
 
@@ -18,10 +18,8 @@ npm run dev                       # Next.js dev server (Turbopack)
 npm run build                     # production build (also what CI runs)
 npm run start                     # serve a production build
 
-npm run thumbnails                # regenerate day/week/blog entity-cover thumbnails from ImageKit (scripts/generate-thumbnails.ts)
-npm run thumbnails-front-page      # regenerate front-page day thumbnails from ImageKit
-npm run download-originals        # one-off: pull full-quality originals from ImageKit into public/photos/originals/ (scripts/download-originals.ts)
-npm run process-images             # derive public/photos/{thumb,display}/ from public/photos/originals/ via sharp (scripts/process-images.ts) — run after download-originals or after manually adding a new original
+npm run thumbnails                # generate missing day/week/blog/front-page entity-cover thumbnails from public/photos/display/ via sharp (scripts/generate-thumbnails.ts; --force regenerates all)
+npm run process-images             # derive public/photos/{thumb,display}/ from public/photos/originals/ via sharp (scripts/process-images.ts) — run after adding a new original
 npm run extract-stats             # rebuild public/blog-stats.json from content/days frontmatter
 npm run score                     # recompute the per-day `score` and `rank` fields in content/days/*.md (scripts/calculate-score.js; supports --dry-run)
 npm run finance-data               # rebuild public/finance-data.json from content/finance/finance.csv
@@ -31,11 +29,11 @@ npm run finance-treemap-hierarchy-reseed  # DANGER: regenerates content/finance/
 
 There is no lint script and no test suite configured — `npm run build` (which runs `tsc` via Next.js) is the only correctness check available. CI (`.github/workflows/ci.yml`) runs `npm audit --audit-level=high` and `npm run build` on every PR.
 
-`scripts/generate-thumbnails*.ts` and `scripts/download-originals.ts` run via `tsx` and expect `IMAGEKIT_URL_ENDPOINT` / `IMAGE_KIT_PRIVATE_KEY` / `IMAGE_KIT_PUBLIC_KEY` env vars (see `.github/workflows/deploy-to-pages.yml`); `scripts/process-images.ts` is local-only and needs no ImageKit access.
+`scripts/generate-thumbnails.ts` and `scripts/process-images.ts` run via `tsx` and need no external services — only the local photo files.
 
 ## Deploy pipeline
 
-`.github/workflows/deploy-to-pages.yml` runs on every push to `main` whose commit message contains `[deploy]` (or via manual `workflow_dispatch`). It regenerates entity-cover thumbnails and stats (auto-committing any changes), downloads the current photo set from the rolling `images` GitHub Release into `public/photos/` (see **Images**), runs `next build` (static export to `/out`), and deploys `/out` via `actions/upload-pages-artifact` + `actions/deploy-pages`. A push without `[deploy]` in the message will not trigger a deploy.
+`.github/workflows/deploy-to-pages.yml` runs on every push to `main` whose commit message contains `[deploy]` (or via manual `workflow_dispatch`). It downloads the current photo set from the rolling `images` GitHub Release into `public/photos/` (see **Images**), generates entity-cover thumbnails for any new days/weeks/blogs from it and rebuilds stats (auto-committing any changes), runs `next build` (static export to `/out`), and deploys `/out` via `actions/upload-pages-artifact` + `actions/deploy-pages`. A push without `[deploy]` in the message will not trigger a deploy.
 
 ## Content model
 
@@ -65,10 +63,9 @@ When adding a new custom inline "component" to post bodies, follow this same two
 
 There are two separate image systems, both keyed off the same convention-based path (`days/{date}/{photoId}`, `weeks/{index}/{photoId}`, `blogs/{slug}/{photoId}`, `food/{imageId}`):
 
-- **Entity-cover thumbnails** (day/week/blog grid & frontpage cards) — small, committed to git under `public/thumbnails/`, regenerated from live ImageKit transforms (`travel_grid_thumb`, `week_thumb_full`, `blog_card_thumb`) by `scripts/generate-thumbnails.ts` / `generate-thumbnails-frontpage.ts`. Unchanged by the GitHub Pages migration.
+- **Entity-cover thumbnails** (day/week/blog grid & frontpage cards) — small fixed-size center crops (days 200×150, front-page days and blogs 400×300, weeks 1200×400), committed to git under `public/thumbnails/`, generated by `scripts/generate-thumbnails.ts` from the entity's cover photo in the `display` tier. It skips thumbnails that already exist (`--force` to regenerate), so in the deploy workflow it only produces thumbnails for new entities.
 - **Per-photo tiers** (everything else: in-post `<Img>` images, day/week carousels, the lightbox, food photos, blog header) — every photo referenced anywhere (an entity's `photos[]` array, its `thumbnail`/`thumb` id, or a food `image` id) gets exactly two locally-generated files, gitignored under `public/photos/{thumb,display}/...` and shipped via a rolling GitHub Release (tag `images`, downloaded into `public/photos/` by `.github/workflows/deploy-to-pages.yml` before build) rather than committed — the full set doesn't fit comfortably in a git repo. `thumb` (~300px long edge) is only used for the carousel's thumbnail strip; `display` (~1920px long edge) is the one size used everywhere else — there is no separate transform per consumer and no multi-resolution zoom in the lightbox. `utils/localPhotoPath.ts` (`getPhotoPath`/`getPhotoPaths`) is the single place that knows this path convention; `utils/createImageMap.ts` (in-post `<Img>` tags) and the day/week pages (carousel photo arrays) both build off it.
-  - `scripts/download-originals.ts` — one-off/occasional: pulls the untransformed original for every referenced photo from ImageKit into `public/photos/originals/` (also gitignored, local-only, never shipped).
-  - `scripts/process-images.ts` — the lasting, ImageKit-free step: walks `public/photos/originals/` with `sharp` and derives `thumb`/`display` for anything not yet processed. This is what you re-run after manually dropping a new full-quality original into `public/photos/originals/...` for a new photo (once ImageKit is no longer in the loop) — then zip `public/photos/{thumb,display}/` and refresh the `images` release asset.
+  - `scripts/process-images.ts` walks `public/photos/originals/` (gitignored, local-only, never shipped) with `sharp` and derives `thumb`/`display` for anything not yet processed. Re-run it after dropping a new full-quality original into `public/photos/originals/...`, then zip `public/photos/{thumb,display}/` and refresh the `images` release asset.
 
 ## Routing
 

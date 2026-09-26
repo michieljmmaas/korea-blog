@@ -1,267 +1,134 @@
-import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
-import { DayService } from '../src/lib/dayService';
+import sharp from 'sharp';
+import { DayService } from '@/lib/dayService';
 import { WeekDataService } from '@/lib/weekService';
 import { BlogService } from '@/lib/blogService';
+import { getPhotoPath } from '../utils/localPhotoPath';
 
-// Function to generate ImageKit URL
-const generateImageKitUrl = (imagePath: string, transformation: string = 'travel_grid_thumb'): string => {
-  const baseUrl = process.env.IMAGEKIT_URL_ENDPOINT;
-  if (!baseUrl) {
-    throw new Error('IMAGEKIT_URL_ENDPOINT environment variable is required');
-  }
-  
-  return `${baseUrl}/tr:n-${transformation}/${imagePath}`;
-};
+// Entity-cover thumbnails (day grid, frontpage day cards, week banners, blog
+// cards). Each is a fixed-size center crop of the entity's cover photo, cut
+// from the local `display` tier (public/photos/display/, see
+// scripts/process-images.ts) and committed under public/thumbnails/.
+//
+// Existing thumbnails are skipped, so this only does work for new entities.
+// Pass --force to regenerate everything (e.g. after changing a cover photo).
 
-// Download image from URL and save locally
-const downloadImage = async (url: string, filepath: string): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(filepath);
-    
-    https.get(url, (response) => {
-      if (response.statusCode !== 200) {
-        reject(new Error(`Failed to download ${url}: ${response.statusCode}`));
-        return;
-      }
-      
-      response.pipe(file);
-      
-      file.on('finish', () => {
-        file.close();
-        resolve();
-      });
-      
-      file.on('error', (err) => {
-        fs.unlink(filepath, () => {}); // Delete partial file
-        reject(err);
-      });
-    }).on('error', (err) => {
-      reject(err);
-    });
-  });
-};
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+const THUMBNAILS_DIR = path.join(PUBLIC_DIR, 'thumbnails');
 
-// Generate safe filename from date/slug
-const generateSafeFilename = (key: string): string => {
-  return key.replace(/[^a-zA-Z0-9-]/g, '-') + '.webp';
-};
-
-// Download daily thumbnails
-const downloadDailyThumbnails = async (): Promise<Record<string, string>> => {
-  console.log('🔄 Starting daily thumbnail downloads...');
-  
-  const days = await DayService.getBlogPosts();
-  const dailyThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'days');
-  const thumbnailMap: Record<string, string> = {};
-  
-  // Ensure daily thumbnails directory exists
-  if (!fs.existsSync(dailyThumbnailsDir)) {
-    fs.mkdirSync(dailyThumbnailsDir, { recursive: true });
-  }
-  
-  // Process each blog post
-  for (const post of days) {
-    if (post.frontmatter.draft === false) {
-      const dateString = post.frontmatter.date;
-      const imageLocation = "days/" + dateString + "/" + post.frontmatter.thumbnail;
-      const safeFilename = generateSafeFilename(dateString);
-      const localPath = path.join(dailyThumbnailsDir, safeFilename);
-      const publicPath = `/thumbnails/days/${safeFilename}`;
-      
-      // Skip if file already exists (unless you want to force regenerate)
-      if (fs.existsSync(localPath)) {
-        console.log(`⏭️  Skipping daily ${dateString} (already exists)`);
-        thumbnailMap[dateString] = publicPath;
-        continue;
-      }
-      
-      try {
-        const imageUrl = generateImageKitUrl(imageLocation, 'travel_grid_thumb');
-        
-        console.log(`⬇️  Downloading daily thumbnail for ${dateString}...`);
-        await downloadImage(imageUrl, localPath);
-        
-        thumbnailMap[dateString] = publicPath;
-        console.log(`✅ Downloaded daily ${dateString}`);
-        
-        // Small delay to be nice to ImageKit
-        await new Promise(resolve => setTimeout(resolve, 100));
-        
-      } catch (error) {
-        console.error(`❌ Failed to download daily thumbnail for ${dateString}:`, error);
-        throw error;
-      }
-    }
-  }
-  
-  return thumbnailMap;
-};
-
-// Download weekly thumbnails
-const downloadWeeklyThumbnails = async (): Promise<Record<string, string>> => {
-  console.log('🔄 Starting weekly thumbnail downloads...');
-  
-  const weeks = await WeekDataService.getAllWeeks();
-  const weeklyThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'weeks');
-  const thumbnailMap: Record<string, string> = {};
-  
-  // Ensure weekly thumbnails directory exists
-  if (!fs.existsSync(weeklyThumbnailsDir)) {
-    fs.mkdirSync(weeklyThumbnailsDir, { recursive: true });
-  }
-  
-  // Process each week
-  for (const week of weeks) {
-    if (week.draft === true) {
-      continue;
-    }
-
-    const weekIndex = week.index; // Adjust property name as needed based on your week data structure
-    const imageLocation = `weeks/${weekIndex}/${week.thumb}`;
-    const filename = `${weekIndex}.webp`;
-    const localPath = path.join(weeklyThumbnailsDir, filename);
-    const publicPath = `/thumbnails/weeks/${filename}`;
-    
-    // Skip if file already exists (unless you want to force regenerate)
-    if (fs.existsSync(localPath)) {
-      console.log(`⏭️  Skipping week ${weekIndex} (already exists)`);
-      thumbnailMap[weekIndex.toString()] = publicPath;
-      continue;
-    }
-    
-    try {
-      const imageUrl = generateImageKitUrl(imageLocation, 'week_thumb_full');
-      
-      console.log(`⬇️  Downloading weekly thumbnail for week ${weekIndex}...`);
-      await downloadImage(imageUrl, localPath);
-      
-      thumbnailMap[weekIndex.toString()] = publicPath;
-      console.log(`✅ Downloaded week ${weekIndex}`);
-      
-      // Small delay to be nice to ImageKit
-      await new Promise(resolve => setTimeout(resolve, 100));
-      
-    } catch (error) {
-      console.error(`❌ Failed to download weekly thumbnail for week ${weekIndex}:`, error);
-    process.exit(1);
-    }
-  }
-  
-  return thumbnailMap;
-};
-
-// Download blog post thumbnails
-const downloadBlogPostThumbnails = async (): Promise<Record<string, string>> => {
-  console.log('🔄 Starting blog post thumbnail downloads...');
-  
-  const blogPosts = await BlogService.getAllRelevantBlogPosts();
-  const blogThumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails', 'blogs');
-  const thumbnailMap: Record<string, string> = {};
-  
-  // Ensure blog thumbnails directory exists
-  if (!fs.existsSync(blogThumbnailsDir)) {
-    fs.mkdirSync(blogThumbnailsDir, { recursive: true });
-  }
-  
-  // Process each blog post
-  for (const post of blogPosts) {
-    const slug = post.frontmatter.slug;
-    
-    // Extract image path from the thumbnail URL
-    // Assuming thumbnail is something like: "/images/thumbnails/post-1.jpg"
-    // or an ImageKit URL, we need to get the path part
-    let imageLocation = "/blogs/" + post.frontmatter.slug + "/" + post.frontmatter.thumb;
-    
-    // If it's already a local path (starts with /), extract the relative path
-    if (imageLocation.startsWith('/')) {
-      imageLocation = imageLocation.replace('/images/', '');
-    }
-    // If it's a full ImageKit URL, extract the path after the domain
-    else if (imageLocation.includes('ik.imagekit.io')) {
-      const url = new URL(imageLocation);
-      imageLocation = url.pathname.substring(1); // Remove leading slash
-    }
-    
-    const safeFilename = generateSafeFilename(slug);
-    const localPath = path.join(blogThumbnailsDir, safeFilename);
-    const publicPath = `/thumbnails/blogs/${safeFilename}`;
-    
-    // Skip if file already exists
-    if (fs.existsSync(localPath)) {
-      console.log(`⏭️  Skipping blog post ${slug} (already exists)`);
-      thumbnailMap[slug] = publicPath;
-      continue;
-    }
-    
-    try {
-      // Use the blog_card_thumb transformation
-      const imageUrl = generateImageKitUrl(imageLocation, 'blog_card_thumb');
-      
-      console.log(`⬇️  Downloading blog post thumbnail for ${slug}...`);
-      await downloadImage(imageUrl, localPath);
-      
-      thumbnailMap[slug] = publicPath;
-      console.log(`✅ Downloaded blog post ${slug}`);
-      
-      // Small delay to be nice to ImageKit
-      await new Promise(resolve => setTimeout(resolve, 100));
-      
-    } catch (error) {
-      console.error(`❌ Failed to download blog post thumbnail for ${slug}:`, error);
-    process.exit(1);
-    }
-  }
-  
-  return thumbnailMap;
-};
-
-// Main function to download all thumbnails
-const generateThumbnails = async (): Promise<void> => {
-  try {
-    const thumbnailsDir = path.join(process.cwd(), 'public', 'thumbnails');
-    
-    // Ensure main thumbnails directory exists
-    if (!fs.existsSync(thumbnailsDir)) {
-      fs.mkdirSync(thumbnailsDir, { recursive: true });
-    }
-    
-    // Download daily thumbnails
-    const dailyThumbnailMap = await downloadDailyThumbnails();
-    
-    // Download weekly thumbnails
-    const weeklyThumbnailMap = await downloadWeeklyThumbnails();
-    
-    // Download blog post thumbnails
-    const blogThumbnailMap = await downloadBlogPostThumbnails();
-    
-    // Save mapping files for quick lookups (optional)
-    const dailyMapPath = path.join(thumbnailsDir, 'daily-thumbnail-map.json');
-    const weeklyMapPath = path.join(thumbnailsDir, 'weekly-thumbnail-map.json');
-    const blogMapPath = path.join(thumbnailsDir, 'blog-thumbnail-map.json');
-    
-    fs.writeFileSync(dailyMapPath, JSON.stringify(dailyThumbnailMap, null, 2));
-    fs.writeFileSync(weeklyMapPath, JSON.stringify(weeklyThumbnailMap, null, 2));
-    fs.writeFileSync(blogMapPath, JSON.stringify(blogThumbnailMap, null, 2));
-    
-    console.log(`\n🎉 Downloaded ${Object.keys(dailyThumbnailMap).length} daily thumbnails`);
-    console.log(`🎉 Downloaded ${Object.keys(weeklyThumbnailMap).length} weekly thumbnails`);
-    console.log(`🎉 Downloaded ${Object.keys(blogThumbnailMap).length} blog post thumbnails`);
-    console.log(`📁 Daily thumbnails saved to: ${path.join(thumbnailsDir, 'days')}`);
-    console.log(`📁 Weekly thumbnails saved to: ${path.join(thumbnailsDir, 'weeks')}`);
-    console.log(`📁 Blog thumbnails saved to: ${path.join(thumbnailsDir, 'blogs')}`);
-    
-  } catch (error) {
-    console.error('❌ Error generating thumbnails:', error);
-    process.exit(1);
-  }
-};
-
-// Run if called directly
-if (require.main === module) {
-  generateThumbnails();
+interface ThumbnailSpec {
+  key: string;
+  sourcePath: string;
+  outDir: string;
+  width: number;
+  height: number;
 }
 
-export { generateThumbnails, downloadDailyThumbnails, downloadWeeklyThumbnails, downloadBlogPostThumbnails };
+const safeFilename = (key: string): string => key.replace(/[^a-zA-Z0-9-]/g, '-') + '.webp';
+
+async function renderThumbnail(spec: ThumbnailSpec, force: boolean): Promise<string> {
+  const filename = safeFilename(spec.key);
+  const outPath = path.join(THUMBNAILS_DIR, spec.outDir, filename);
+  const publicPath = `/thumbnails/${spec.outDir}/${filename}`;
+
+  if (!force && fs.existsSync(outPath)) {
+    console.log(`⏭️  Skipping ${spec.outDir}/${spec.key} (already exists)`);
+    return publicPath;
+  }
+
+  const sourceFile = path.join(PUBLIC_DIR, spec.sourcePath);
+  if (!fs.existsSync(sourceFile)) {
+    throw new Error(`Source photo not found for ${spec.outDir}/${spec.key}: ${spec.sourcePath}`);
+  }
+
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  await sharp(sourceFile)
+    .resize({ width: spec.width, height: spec.height, fit: 'cover' })
+    .webp({ quality: 80 })
+    .toFile(outPath);
+
+  console.log(`✅ Generated ${spec.outDir}/${spec.key}`);
+  return publicPath;
+}
+
+async function renderAll(specs: ThumbnailSpec[], force: boolean): Promise<Record<string, string>> {
+  const map: Record<string, string> = {};
+  for (const spec of specs) {
+    map[spec.key] = await renderThumbnail(spec, force);
+  }
+  return map;
+}
+
+async function generateThumbnails(): Promise<void> {
+  const force = process.argv.includes('--force');
+
+  const days = (await DayService.getBlogPosts()).filter((post) => post.frontmatter.draft === false);
+  const weeks = (await WeekDataService.getAllWeeks()).filter((week) => week.draft !== true);
+  const blogs = await BlogService.getAllRelevantBlogPosts();
+
+  const daySource = (date: string, photoId: string) => getPhotoPath('display', `days/${date}`, photoId);
+
+  const dailyMap = await renderAll(
+    days.map((post) => ({
+      key: post.frontmatter.date,
+      sourcePath: daySource(post.frontmatter.date, post.frontmatter.thumbnail),
+      outDir: 'days',
+      width: 200,
+      height: 150,
+    })),
+    force,
+  );
+
+  // Larger crop of the same cover photo for the frontpage day cards.
+  await renderAll(
+    days.map((post) => ({
+      key: post.frontmatter.date,
+      sourcePath: daySource(post.frontmatter.date, post.frontmatter.thumbnail),
+      outDir: 'days-frontpage',
+      width: 400,
+      height: 300,
+    })),
+    force,
+  );
+
+  const weeklyMap = await renderAll(
+    weeks.map((week) => ({
+      key: week.index.toString(),
+      sourcePath: getPhotoPath('display', `weeks/${week.index}`, week.thumb),
+      outDir: 'weeks',
+      width: 1200,
+      height: 400,
+    })),
+    force,
+  );
+
+  const blogMap = await renderAll(
+    blogs.map((post) => ({
+      key: post.frontmatter.slug,
+      sourcePath: getPhotoPath('display', `blogs/${post.frontmatter.slug}`, post.frontmatter.thumb),
+      outDir: 'blogs',
+      width: 400,
+      height: 300,
+    })),
+    force,
+  );
+
+  fs.writeFileSync(path.join(THUMBNAILS_DIR, 'daily-thumbnail-map.json'), JSON.stringify(dailyMap, null, 2));
+  fs.writeFileSync(path.join(THUMBNAILS_DIR, 'weekly-thumbnail-map.json'), JSON.stringify(weeklyMap, null, 2));
+  fs.writeFileSync(path.join(THUMBNAILS_DIR, 'blog-thumbnail-map.json'), JSON.stringify(blogMap, null, 2));
+
+  console.log(
+    `\n🎉 ${Object.keys(dailyMap).length} day, ${Object.keys(weeklyMap).length} week, ` +
+      `${Object.keys(blogMap).length} blog thumbnails up to date`,
+  );
+}
+
+if (require.main === module) {
+  generateThumbnails().catch((error) => {
+    console.error('❌ Error generating thumbnails:', error);
+    process.exit(1);
+  });
+}
+
+export { generateThumbnails };

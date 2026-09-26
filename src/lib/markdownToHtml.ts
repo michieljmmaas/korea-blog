@@ -1,5 +1,5 @@
 /**
- * Updated markdown processor with ImageKit integration, modal support, and GFM tables
+ * Markdown processor with local photo lookup, modal support, and GFM tables
  */
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
