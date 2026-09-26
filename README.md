@@ -22,5 +22,5 @@ Live at [seoulo.nl](https://seoulo.nl).
 
 ## How It Works
 1. Write or edit a Markdown file in `content/` (directly in the GitHub UI works fine)  
-2. For new photos, drop the original into `public/photos/originals/`, run `npm run process-images`, and upload the resulting `thumb`/`display` set to the `images` release  
+2. For new photos, drop the original into `public/photos/originals/`, run `npm run process-images`, and upload the resulting `thumb`/`display` set to the `images` release as a password-protected `photos.7z` (the password is the `IMAGES_ARCHIVE_PASSWORD` repo secret)  
 3. Push to `main` with `[deploy]` in the commit message — GitHub Actions downloads the photos, generates cover thumbnails for anything new, builds the static site, and deploys it to GitHub Pages  
