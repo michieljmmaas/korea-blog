@@ -107,7 +107,7 @@ export function TripGridControlBar({
     tagFilters.size + (ALL_LOCATIONS.length - activeLocations.size) + (sortMetric ? 1 : 0);
 
   return (
-    <div className="flex flex-col gap-2 mb-1 p-2 bg-card bg-white border border-border sticky top-0 z-10">
+    <div className="flex flex-col gap-2 mb-1 p-2 bg-card bg-white border border-border sticky top-0 z-20">
       <div className={cn('flex-col gap-2', filtersOpen ? 'flex' : 'hidden', 'md:flex')}>
         <div className="border-t border-border md:hidden" />
 
