@@ -2,11 +2,21 @@
   "extends": [
     "config:recommended"
   ],
-  "enabled": false,
+  "packageRules": [
+    {
+      "description": "Security fixes only: turn off regular version updates for every package. vulnerabilityAlerts below re-enables updates for vulnerable versions.",
+      "matchPackageNames": ["*"],
+      "enabled": false
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  },
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "enabled": true,
     "commitMessageSuffix": "[deploy]",
-    "automerge": true
+    "automerge": true,
+    "platformAutomerge": false
   }
 }
