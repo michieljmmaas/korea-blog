@@ -46,6 +46,6 @@ What actually pulled me out of it was going back to *doing* things: going to Ams
 
 There was so much left unfinished when I got back — mostly this blog — that it weighed on me more than it probably should have. Going through everything again this past month to finally wrap it up helped more than I expected; reliving it all reminded me why I wanted to write it down in the first place.
 
-But it also made clear what's next. My personal to-do list these days looks a little different from the one I had while traveling: get my driver's license, buy a place of my own, and, maybe, try and meet someone - so that I am Seoulo No Mo. 
+But it also made clear what's next. My personal to-do list these days looks a little different from the one I had while traveling: get my driver's license, buy a place of my own, and find a way so that I am Seoulo No Mo. 
 
 Thanks for following along, whether you read every single day post or just checked in for the highlights. This trip changed me more than I expected a ten-week vacation could, and having this whole blog to look back on makes that a lot easier to remember. I am going to relive it again with redux mode, you guys too?
