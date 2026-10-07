@@ -5,7 +5,7 @@ import { DaySearchHit } from '@/lib/daySearch';
 import DayHoverCard from './day-hover-card';
 import { getLocationColor } from '../../../../utils/locationColors';
 import { CameraOff } from 'lucide-react';
-import Image from 'next/image';
+import Image from '../common/app-image';
 import workIcon from "../../../../public/assets/blog/svg-icons/work.svg";
 import musicIcon from "../../../../public/assets/blog/svg-icons/music.svg";
 

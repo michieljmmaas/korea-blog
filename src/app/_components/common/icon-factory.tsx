@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from './app-image';
 
 import kimbapIcon from "../../../../public/assets/blog/svg-icons/kimbap.svg";
 import kimbapTokyoIcon from "../../../../public/assets/blog/svg-icons/kimbap-tokyo.svg";

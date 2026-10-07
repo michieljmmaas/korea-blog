@@ -1,6 +1,6 @@
 // DayCard.tsx
 import { DayFrontmatter, TripDay } from '@/app/types';
-import Image from 'next/image';
+import Image from '../common/app-image';
 import { LocationSticker } from '../common/location-sticker';
 import IconFactory from '../common/icon-factory';
 import StatsGrid from './stats-grid';

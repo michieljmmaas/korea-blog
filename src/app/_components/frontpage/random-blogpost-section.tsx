@@ -30,6 +30,7 @@ export default function RandomBlogpostSection({
       renderItem={(post) => <BlogPostCard post={post} />}
       linkComponent={linkComponent}
       getReduxItem={findReduxBlog}
+      imageAreaClassName="h-64"
     />
   );
 }

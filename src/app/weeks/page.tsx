@@ -4,7 +4,7 @@ import { getLocationColor } from "../../../utils/locationColors";
 import { CityLocation } from "@/app/types";
 import workIcon from "../../../public/assets/blog/svg-icons/work.svg";
 import musicIcon from "../../../public/assets/blog/svg-icons/music.svg";
-import Image from "next/image";
+import Image from "../_components/common/app-image";
 
 export default async function Weeks() {
   const weekData = await WeekDataService.getAllWeeks();

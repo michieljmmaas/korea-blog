@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useLayoutEffect, useState, type ReactNode } from 'react';
 import { getReduxState } from '../../../../utils/reduxMode';
 
 const STORAGE_KEY = 'redux-mode-filter';
@@ -30,7 +30,10 @@ export function ReduxModeProvider({ children }: { children: ReactNode }) {
     const [tripDateString, setTripDateString] = useState('');
     const [filterOn, setFilterOn] = useState(true);
 
-    useEffect(() => {
+    // useLayoutEffect (not useEffect) so this resolves before the browser paints the initial
+    // frame, instead of visibly flashing the "everything visible" default and then jumping
+    // to the redux-filtered view a moment later.
+    useLayoutEffect(() => {
         const redux = getReduxState();
         setWindowActive(redux.active);
         setTripDateString(redux.tripDateString);

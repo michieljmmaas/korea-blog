@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '../common/app-image';
 import TagList from './tag-list';
 import { BlogPost } from '@/app/types';
 import { getPhotoPath } from '../../../../utils/localPhotoPath';

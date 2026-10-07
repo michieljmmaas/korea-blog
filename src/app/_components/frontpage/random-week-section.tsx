@@ -30,6 +30,7 @@ export default function RandomWeekSection({
       renderItem={(week) => <WeekCard week={week} priorty={true} />}
       linkComponent={linkComponent}
       getReduxItem={findReduxWeek}
+      imageAreaClassName="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80"
     />
   );
 }

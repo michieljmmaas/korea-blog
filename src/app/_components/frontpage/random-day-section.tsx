@@ -30,6 +30,7 @@ export default function RandomDaySection({
       renderItem={(day) => <DayCard day={day} />}
       linkComponent={linkComponent}
       getReduxItem={findReduxDay}
+      imageAreaClassName="h-64"
     />
   );
 }

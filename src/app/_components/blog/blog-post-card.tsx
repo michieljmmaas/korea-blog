@@ -1,6 +1,6 @@
 import { BlogPost } from '@/app/types';
 import TagList from './tag-list';
-import Image from 'next/image';
+import Image from '../common/app-image';
 import BaseCard from '../common/cards/base-card';
 import { CardImage } from '../common/cards/card-image';
 import { CardContent } from '../common/cards/card-content';

@@ -1,6 +1,6 @@
 import { WeekData } from '@/app/types';
 import { CameraOff } from 'lucide-react';
-import Image from 'next/image';
+import Image from '../common/app-image';
 import IconFactory, { IconName } from '../common/icon-factory';
 import { LocationSticker } from '../common/location-sticker';
 import Link from 'next/link';

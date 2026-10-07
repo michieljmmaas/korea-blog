@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "next/image";
+import Image from "./app-image";
 
 interface FadeInImageProps {
   src: string;
