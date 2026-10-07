@@ -1,6 +1,6 @@
 "use client"
 
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { IconButton, NextIcon, useController, useLightboxState } from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import { withBasePath } from "../../../../utils/basePath";
@@ -13,6 +13,20 @@ interface ImageModalProps {
   onIndexChange?: (index: number) => void;
   alt?: string;
 }
+
+const NextButton = ({ onClose }: { onClose: () => void }) => {
+  const { currentIndex, slides } = useLightboxState();
+  const { next } = useController();
+  const isLastSlide = currentIndex === slides.length - 1;
+
+  return (
+    <IconButton
+      label="Next"
+      icon={NextIcon}
+      onClick={isLastSlide ? onClose : () => next()}
+    />
+  );
+};
 
 const ImageModal = ({
   images,
@@ -57,12 +71,12 @@ const ImageModal = ({
         closeOnBackdropClick: true,
       }}
       carousel={{
-        finite: images.length === 1,
+        finite: true,
         preload: 1,
       }}
       render={{
         buttonPrev: images.length <= 1 ? () => null : undefined,
-        buttonNext: images.length <= 1 ? () => null : undefined,
+        buttonNext: images.length <= 1 ? () => null : () => <NextButton onClose={onClose} />,
       }}
       styles={{
         container: {

@@ -20,7 +20,7 @@ I also checked out other blogging solutions like WordPress, BearBlog, Wix, Squar
 Then I realized: I’m a trained programmer. I could just build it myself!  
 
 # The Limitations
-My project came with a few interesting requirements.  A
+My project came with a few interesting requirements.
 
 ### 1. Editable from my tablet
 I’ll have my work laptop with me on the trip, but I’d rather not use it for personal things like blogging. Instead, I plan to use my Samsung tablet. The catch is: I can’t really code on it. So editing should be limited to text writing and uploading images.  
@@ -57,7 +57,7 @@ Here’s the math:
 * ~5 images per page = 500 images  
 * 2.5 MB per image × 500 = 1.25 GB of raw images  
 
-And if I stored 3 different resolutions, the repo could easily reach ~2 GB. Every time I added new photos, Vercel would need to download the entire repo. That would exceed both their build time and data limits. Especially the building limit, which is 45 minutes a month. I want to deploy everyday, with gives me at most 90 seconds per deploy.   
+And if I stored 3 different resolutions, the repo could easily reach ~2 GB. Every time I added new photos, Vercel would need to download the entire repo. That would exceed both their build time and data limits. Especially the building limit, which is 45 minutes a month. I want to deploy everyday, which gives me at most 90 seconds per deploy.   
 
 So I needed an image hosting service that could also handle optimization.  
 

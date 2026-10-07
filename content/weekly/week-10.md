@@ -18,7 +18,7 @@ icons: []
 thumb: 21
 ---
 
-I've never been to New York, but I think Hong Kong is the closest thing to it. The huge number of skyscrapers, the distinct neighbourhoods, the crowds of people everywhere. I enjoyed my time here immensely — but of course not everything was perfect.
+I've never been to New York, but I think Hong Kong is the closest thing to it. The huge number of skyscrapers, the distinct neighborhoods, the crowds of people everywhere. I enjoyed my time here immensely — but of course not everything was perfect.
 
 ## Hills
 I’m talking about the best things from the past week.

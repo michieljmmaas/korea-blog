@@ -57,7 +57,7 @@ Then, on <Tue link="culture-exchange">, I had a **Bumble date** with Sooyeon. Th
 <Img sooyeon desc="My mom really liked this picture, so here it is again!">
 
 ### Doing My Democratic Duty
-All week I’ve been listening to podcasts, interviews, and debates about the Dutch elections. I’m a bit of a politics nerd, so it’s been such a treat to follow along. While programming I’ve been mixing work and and politcs all week.  
+All week I’ve been listening to podcasts, interviews, and debates about the Dutch elections. I’m a bit of a politics nerd, so it’s been such a treat to follow along. While programming I’ve been mixing work and politics all week.  
 
 I wrote about who I’m voting for ([Daniëlle Hirsch — #23 for GroenLinks-PvdA](https://groenlinkspvda.nl/onze-mensen/kandidaten-tk25/danielle-hirsch-2/)) on <Sun link="just-me-saving-democracy-from-populism"> and dropped off my ballot at the Dutch Embassy on <Mon link="putting-in-my-vote">, which I thoroughly enjoyed doing.  
 
@@ -71,7 +71,7 @@ I’ve been having *terrible* luck with tickets this trip (with one glorious exc
 
 It’s not that I’m late — I set reminders, alarms, and sit ready at the exact moment they go live. But still, no luck so far.  
 
-For the StarCraft tournament, I’ll try asking nicely if I can enter without a ticket and just stand in the back (I read online that the sometimes let people do that). If that doesn’t work, I still have the StarCraft exhibtions match on <Day 35 link="the-starcraft-legend-match"> (I did get tickets for that one). I’ll also try to get MAMA tickets from a reseller, but I am kind worried about a repeat of last time.  
+For the StarCraft tournament, I’ll try asking nicely if I can enter without a ticket and just stand in the back (I read online that they sometimes let people do that). If that doesn’t work, I still have the StarCraft exhibition match on <Day 35 link="the-starcraft-legend-match"> (I did get tickets for that one). I’ll also try to get MAMA tickets from a reseller, but I am kind of worried about a repeat of last time.  
 
 <Img tickets desc="Sigh">
 
@@ -80,7 +80,7 @@ I’m really lucky to be able to work remotely like this. In the mornings, I foc
 
 Even trickier is when I run into an issue in the morning that I can’t solve on my own. I just have to wait until everyone else wakes up before I can get feedback.  
 
-I’ve found ways to manage — like picking up smaller tasks in the meantime and communicating extra clearly — but this comming weekend the time difference will grow by another hour, which will complicate things further.  
+I’ve found ways to manage — like picking up smaller tasks in the meantime and communicating extra clearly — but this coming weekend the time difference will grow by another hour, which will complicate things further.  
 
 <Img office desc="Nothing can beat this view though">
 

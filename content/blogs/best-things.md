@@ -23,7 +23,7 @@ My favorite day has to be <Day 17>. That day I climbed to the top of Bukhansan. 
 I love modern art, and I got to see a lot of it on my trip. Of all the museums I visited, the **ARARIO Museum – In Space** has to be my favorite. The name is a bit confusing, as it is actually located in Seoul. The collection was excellent, and the building itself added a great atmosphere. I wrote a blogpost about it that you can read here: <Blog arario desc="ARARIO Museum in Space">
 
 Honorable mentions: 
-- Nam Jun Paik Art Center: <Day 9 link="nam-june-paik-art-center">
+- Nam June Paik Art Center: <Day 9 link="nam-june-paik-art-center">
 - The National Art Center – NITTEN: <Day 45 link="the-national-art-center--nitten">
 - Taipei Fine Arts Museum: <Day 61 link="taipei-fine-arts-museum">
 
@@ -36,7 +36,7 @@ This amazing 47-minute-long multimedia display by Korakrit Arunanondchai has to 
 It was displayed at the Taipei Fine Arts Museum that I visited on <Day 61 link="taipei-fine-arts-museum">.
 
 Honorable mentions: 
-- Matrix - Nam Jun Paik Art - <Day 9 link="nam-june-paik-art-center">
+- Matrix - Nam June Paik Art - <Day 9 link="nam-june-paik-art-center">
 - The Burghers of Calais - (Rodin) - <Day 10 link="modern-art">
 - Great Wave off Kanagawa (replica) - (Hokusai) - <Day 44 link="hokusai-museum">
 

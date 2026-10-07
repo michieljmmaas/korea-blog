@@ -14,7 +14,7 @@ One of my biggest goals for this trip was to see TWICE live. They are what first
 
 I saw them once before, two years ago in Berlin. Up until then, I had only ever seen them through a screen, but seeing them in person (proving that they actually exist!) was an amazing experience. Being surrounded by like-minded fans, dancing and singing along, was so much fun.  
 
-Originally, I planned to see them in Taiwan in november, but I missed out on ticket sales. I felt really down, afraid that I wouldn’t get to see them perform at all during my trip. Then I saw that they would perform in Macau, the day after I flew into Seoul. I quickly booked tickets, a flight, and a hotel. It was impulsive, but for the sake of the trip—and my own sanity—it had to be done. Opportunities to see them live are rare, so I had to grab it.  
+Originally, I planned to see them in Taiwan in November, but I missed out on ticket sales. I felt really down, afraid that I wouldn’t get to see them perform at all during my trip. Then I saw that they would perform in Macau, the day after I flew into Seoul. I quickly booked tickets, a flight, and a hotel. It was impulsive, but for the sake of the trip—and my own sanity—it had to be done. Opportunities to see them live are rare, so I had to grab it.  
 
 I had planned on going both days, but the tickets I bought for the second day never arrived (luckily I got my money back), and there wasn’t enough time left to find new ones.  
 

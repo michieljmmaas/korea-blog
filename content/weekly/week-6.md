@@ -62,7 +62,7 @@ Of course, not everything was perfect this week.
 
 ### Hard to Find Time for Important Tasks
 
-Between work and running around the city, I’ve fallen behind on my errands. I like to stay organized, but it’s been hard to find time. My trips to Taiwan and Hong Kong are comming up soon. Most of the stuff is aleady sorted — tickets booked, hotels reserved, itineraries planned — but I still want to go over everything again, and write down a few more thoughts before I go. I feel there is still so much prep I need to do, an so little time.  
+Between work and running around the city, I’ve fallen behind on my errands. I like to stay organized, but it’s been hard to find time. My trips to Taiwan and Hong Kong are coming up soon. Most of the stuff is already sorted — tickets booked, hotels reserved, itineraries planned — but I still want to go over everything again, and write down a few more thoughts before I go. I feel there is still so much prep I need to do, and so little time.  
 
 <Img late desc="Not even time for sunlight on this day">
 
@@ -70,7 +70,7 @@ Between work and running around the city, I’ve fallen behind on my errands. I 
 
 Work has been stressful lately. I’ve had a few setbacks, tough feedback, and a few unexpected time sinks. I only have three more workdays left here, and it’s going to be a challenge to wrap everything up in time. The long hours and overtime haven’t done much for my mood — but leaving loose ends before my holiday would probably feel worse.  
 
-<Img office desc="I should look up from you screen more">
+<Img office desc="I should look up from your screen more">
 
 ## Things to Look Forward To
 

@@ -56,9 +56,11 @@ const ICON_STYLES: Record<Tier, string> = {
 interface ScoreBadgeProps {
     score: number;
     rank: number;
+    // Rank only, no score — for tight spots like the mobile day-info bar.
+    compact?: boolean;
 }
 
-export default function ScoreBadge({ score, rank }: ScoreBadgeProps) {
+export default function ScoreBadge({ score, rank, compact = false }: ScoreBadgeProps) {
     const tier = getTier(rank);
     const Icon = tier === "top" ? Trophy : Medal;
     const verdict =
@@ -68,15 +70,22 @@ export default function ScoreBadge({ score, rank }: ScoreBadgeProps) {
         <div
             className={cn(
                 // Fixed width + tabular numbers so the badge (and everything beside it) never shifts between cards
-                "inline-flex w-24 shrink-0 items-center justify-center gap-1 rounded-lg border px-2 py-0.5 text-xs font-medium tabular-nums",
+                "inline-flex shrink-0 items-center justify-center gap-1 rounded-lg border px-2 py-0.5 text-xs font-medium tabular-nums",
+                compact ? "w-12" : "w-24",
                 TIER_STYLES[tier]
             )}
             title={`Score ${score}, ranked #${rank}${verdict}`}
         >
             <Icon className={cn("h-3.5 w-3.5 shrink-0", ICON_STYLES[tier])} />
-            {/* Fixed-width slots (3 digits of score, "(NN)" of rank) so the icon and numbers don't shift when the score has fewer digits */}
-            <span className="w-[3ch] text-right">{Math.round(score)}</span>
-            <span className="w-[4ch] text-left opacity-70">({rank})</span>
+            {compact ? (
+                <span className="w-[3ch] text-left opacity-70">#{rank}</span>
+            ) : (
+                <>
+                    {/* Fixed-width slots (3 digits of score, "(NN)" of rank) so the icon and numbers don't shift when the score has fewer digits */}
+                    <span className="w-[3ch] text-right">{Math.round(score)}</span>
+                    <span className="w-[4ch] text-left opacity-70">({rank})</span>
+                </>
+            )}
         </div>
     );
 }

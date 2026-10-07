@@ -65,7 +65,7 @@ After a night like that, I like to take a nice shower. Too bad there were **no p
 
 I checked the instructions on the leaflet that I was given upon checking in, and went down. About six other guys were washing up next to me. I was the only foreigner. Normally, when I don’t know what to do, I just look at the people around me and copy them — which is a bit inappropriate for a bathhouse.
 
-So I sat on a small plastic stool, used the shower head, and cleaned myself. After that, I waded into the artificial hot spring and felt like I recouped some of my hours spent awake. Then I dried off, used the complementary hair products, and headed upstairs.
+So I sat on a small plastic stool, used the shower head, and cleaned myself. After that, I waded into the artificial hot spring and felt like I recouped some of my hours spent awake. Then I dried off, used the complimentary hair products, and headed upstairs.
 
 <Img shower desc="A super normal bathing experience for locals, but a challenge for me.">
 

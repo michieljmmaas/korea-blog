@@ -1,7 +1,7 @@
 ---
 slug: forbidden
 title: 금지
-description: "The forbiden fruit tastes the sweetest"
+description: "The forbidden fruit tastes the sweetest"
 publishdate: "2025-10-09"
 draft: false
 tags: ["funny", 'culture']
@@ -80,4 +80,4 @@ Some signs don’t forbid anything, but their English translations can be quite 
 
 <Img 1 desc="I found this one in Macau, but it still counts!">
 
-<Img zombie desc="This was I found in Japan, but I thought was would fit here too!">
+<Img zombie desc="This one I found in Japan, but I thought was would fit here too!">

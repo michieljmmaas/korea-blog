@@ -1,7 +1,7 @@
 ---
 slug: photoshoot
 title: Picture Day
-description: The final edits of my photoshooot.
+description: The final edits of my photoshoot.
 publishdate: '2025-11-15'
 draft: false
 tags: ['highlight', 'photodump']
@@ -29,18 +29,18 @@ We rented a traditional Hanbok and went to Gyeongbokgung for the first shoot. It
 
 ## Working Remotely — My in my Office
 
-For the "work" set we took picutres in the lounge at my hotel — great views, and the most honest depiction of what my day-to-day actually looked like out here. We started later than planned, which turned out to be a lucky break: we caught the sunset and the skyline lighting up right on cue.
+For the "work" set we took pictures in the lounge at my hotel — great views, and the most honest depiction of what my day-to-day actually looked like out here. We started later than planned, which turned out to be a lucky break: we caught the sunset and the skyline lighting up right on cue.
 
 Jazmin told me to "pretend to work." I ended up actually working on this blog instead, which made the whole thing feel a lot less staged.
 
-<Img b-3 desc="This is me, writing this actualy caption">
+<Img b-3 desc="This is me, writing this actual caption">
 <Img b-1 desc="I had to edit out my phone from my pocket. You can't see it anymore right?">
 <Img b-2 desc="business daddy">
 
 
 ## Adventuring — Neon Streets of Euljiro
 
-The final set was supposed to symbolise my going on adventures here. I wore my most touristy outfit, and got back on the metro.  Euljiro's narrow alleys and constant foot traffic made it tricky to grab a clean shot. But it's exactly the atmosphere I wanted! The neons signs really made it pop!
+The final set was supposed to symbolise my going on adventures here. I wore my most touristy outfit, and got back on the metro. Euljiro's narrow alleys and constant foot traffic made it tricky to grab a clean shot. But it's exactly the atmosphere I wanted! The neon signs really made it pop!
 
 <Img c-1 desc="I hardly opened that box during the trip.">
 <Img c-2 desc="Bladerunner 2025">
@@ -50,10 +50,10 @@ The final set was supposed to symbolise my going on adventures here. I wore my m
 
 The raw shots came back a few days later, and — as it turns out — being a good model is a lot harder than it looks. Half of them had me squinting into the sun, mid-blink, or standing like I'd never used my own limbs before. It's a strange thing, seeing yourself the way someone else's camera sees you, a mirror only ever shows you one angle. Once the final pictures came back I was elated! The editing made the scenes really pop!
 
-I spent quite a bit of time doing some final touch-ups. I learned a lot about color theory, lighting effects and photo editing software. When I was finally satisfied I sent if of to the printers and got this big collage made, to hang right above my PC. So everytime I look up, I am reminded of my wonderful time there.
+I spent quite a bit of time doing some final touch-ups. I learned a lot about color theory, lighting effects and photo editing software. When I was finally satisfied I sent it off to the printers and got this big collage made, to hang right above my PC. So every time I look up, I am reminded of my wonderful time there.
 
 <Img actual desc="Here is the actual image">
 
-<Img set desc= "Here it is framed">
+<Img set desc="Here it is framed">
 
 Another big shoutout to [Jazmin](https://www.instagram.com/jazzinseoul_snap/)! If you are ever in Seoul, and need a photographer, hit her up!

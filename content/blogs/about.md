@@ -54,8 +54,8 @@ You can find them in the **Goals** section.
 - <Day 11> - Chuseok (Korean Thanksgiving) 🍂 🇰🇷
 - <Day 23> - TWICE Fanmeeting 🎶 🧡 🩷
 - <Day 34> - Dutch election day 🗳️ 🇳🇱
-- <Day 36> - Halloween  🎃 🕷️
-- <Day 43> - Start of my trip to Japan  🇯🇵 🍣
+- <Day 36> - Halloween 🎃 🕷️
+- <Day 43> - Start of my trip to Japan 🇯🇵 🍣
 - <Day 55> - Start of my trip to Taiwan 🇹🇼 🏞️
 - <Day 63> - Start of my trip to Hong Kong 🇭🇰 🌆
-- <Day 64> and <Day 65> - MAMA (Kpop festial) 🎶 🏆
+- <Day 64> and <Day 65> - MAMA (Kpop festival) 🎶 🏆

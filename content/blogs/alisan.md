@@ -15,7 +15,7 @@ Because I was travelling from the Kaohsiung (the south) to Taipei City (the nort
 
 This blogpost is mostly a photo dump of all the pictures I took while I was there. You can read more about my actual experience in my daily posts (<Day 59> and <Day 60>).
 
-<Img thumb-2 desc="Some hightlights">
+<Img thumb-2 desc="Some highlights">
 
 ## About Alisan
 The _Alishan National Forest Recreation Area_ is located in the southern part of Taiwan. It is famed for its beautiful nature, serene views and breathtaking sunrise. The whole area is around 415 square kilometers, but the best place, where I visited, only covers 14 square kilometers. The area is well maintained and most walking areas have wooden decks or paved roads. The whole place is also serviced with a bunch of cute trains that run between stations. The rangers made a pretty map to display it all, which is pretty hard to read. When you visit, because you should, I just recommend following the signs and let it all surprise you. 
@@ -39,7 +39,7 @@ Once you get out of the bus there is a small hub with some hotels, restaurants a
 
 
 ## Photodump
-From here on out, I am just going to dump my favorite photo's in chronological order.
+From here on out, I am just going to dump my favorite photos in chronological order.
 
 <Img 1 desc="Fresh Air">
 <Img 2>

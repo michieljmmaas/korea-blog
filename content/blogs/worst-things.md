@@ -27,7 +27,7 @@ Considering this was my worst day of the trip, everything else was pretty good!
 
 
 ## My Least Liked Food - Stinky Tofu
-I tried a lot of different foods while I was in Asia. From wriggling octopus and mystery stews, to  pig feet and radish cake. Most of them were delicious. But there was one dish I particularly disliked: **Stinky Tofu**.
+I tried a lot of different foods while I was in Asia. From wriggling octopus and mystery stews, to pig feet and radish cake. Most of them were delicious. But there was one dish I particularly disliked: **Stinky Tofu**.
 
 They serve this at street markets in Taiwan. The smell, like dirt socks, can be experienced from five stalls away. It is fried fermented tofu. It has a very sour taste, and the texture is airy and crunchy. I got some boba tea to wash it down, which was definitely needed. I only managed to eat one of the three pieces served to me before I had to bow out.
 
@@ -48,7 +48,7 @@ When I got there (on <Day 44 link="shibuya-scramble">), it was so busy that I ha
 
 What makes it even worse are all the people rushing to the center before the lights turn green, with their video cameras ready to film themselves being engulfed in a sea of other tourists doing the exact same thing. Then they stay after the lights turn red again because they are too busy taking pictures, causing dangerous situations.
 
-The whole magic of this location is gone. What made it interesting to me was that locals used it, now it is only tourist. It is a truly sad sight.
+The whole magic of this location is gone. What made it interesting to me was that locals used it, now it is only tourists. It is a truly sad sight.
 
 > “My house shall be called a house of prayer,” but you have made it a “den of thieves.” — Matthew 21:13
 > 
@@ -90,12 +90,12 @@ The metro and train were great though. No complaints there!
 <Img bus desc="Sorry, I don't have any pictures of Taiwanese buses myself.">
 
 
-## The Most Sucker Tax Paid - NVidea Gamer Festival
-On <Day 35 link="the-performances"> I attended the NVidea Gamer Festival, a celebration marking 25 years of NVidea doing business in South Korea. There was a Taekwondo performance, an exhibition match between two StarCraft pros, and a performance by my second favorite K-pop act, LE SSERAFIM (which is mainly why I went).
+## The Most Sucker Tax Paid - NVIDIA Gamer Festival
+On <Day 35 link="the-performances"> I attended the NVIDIA Gamer Festival, a celebration marking 25 years of NVIDIA doing business in South Korea. There was a Taekwondo performance, an exhibition match between two StarCraft pros, and a performance by my second favorite K-pop act, LE SSERAFIM (which is mainly why I went).
 
 They said it would start at 16:00, so I arrived on time. Only to learn that this was the start of the merch booth, and the actual performances would begin at 19:00. So I killed some time in the nearby mall and returned later.
 
-I then had to sit through three hours of ads, giveaways, and an appearance by Jensen Huang (the CEO of NVidea), only to get three songs by LE SSERAFIM...
+I then had to sit through three hours of ads, giveaways, and an appearance by Jensen Huang (the CEO of NVIDIA), only to get three songs by LE SSERAFIM...
 
 <Img lesserafim desc="At least I got to see them live!">
 

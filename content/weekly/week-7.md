@@ -32,7 +32,7 @@ I had unbelievable luck walking into the National Art Center Tokyo on <Sun link=
 
 I really enjoyed the grandeur, the variety, and the quality of the work. I was a bit sad I didn’t have the energy to see the entire exhibition, but everything I did see was fantastic.
 
-<Img 19 desc="So in this picture you can see about 1% of of the exhibition.">
+<Img 19 desc="So in this picture you can see about 1% of the exhibition.">
 
 ### Hokusai Museum
 I was disappointed that the National Museum didn’t have any of the famous ukiyo-e woodblock prints on display, so on <Sat link="hokusai-museum"> I visited a museum dedicated entirely to Hokusai. Even though they only had a replica of *The Great Wave off Kanagawa*, it was still incredible to see. I spent an unreasonable amount of time studying it up close, taking in every detail. I also learned more about the art form and the artist, which made me appreciate the work even more.
@@ -44,7 +44,7 @@ I adore the art of bonsai — the serenity they give off and the years of care t
 
 <Img 8 desc="They can even bear fruit!">
 
-### Breaking Through the Mountian of Work
+### Breaking Through the Mountain of Work
 After coming back from Tokyo, I felt a bit overwhelmed. There’s still so much I want to do here, and not enough time left. But after two productive days of work on <Thu>, I finally felt the mountain shift — like there was some light at the end of the tunnel. That lifted a huge weight off my shoulders and gave me some of the energy I desperately needed.
 
 <Img 28 desc="I even found time to work out!">

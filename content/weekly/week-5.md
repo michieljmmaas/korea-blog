@@ -18,7 +18,7 @@ icons: []
 thumb: thumb
 ---
 ## At the Halfway Point
-As I’m writing this, I’ve officially reached the halfway point of my trip—five weeks done, five to go. With the last two spent traveling, The end feels both far away and close at the same time.  
+As I’m writing this, I’ve officially reached the halfway point of my trip—five weeks done, five to go. With the last two spent traveling, the end feels both far away and close at the same time.  
 
 ## The Peaks
 Let’s look at all the fun stuff I’ve done over the past week.  
@@ -69,9 +69,9 @@ My sleep schedule has been pretty bad lately. I’ve had lots of fun events to a
 <Img fireworks desc="Watching the fireworks was nice, but the two-hour commute back meant I didn’t get to bed until midnight.">
 
 ### Losing That Edge
-I’ve had this strange feeling lately, like I’m slowly running out of things to be surprised by. The little details that used to make Seoul feel magical—tthe culture, the convience stores even just hearing the language around me—now feel more normal. There’s still a lot I want to do while I am here, but the excitement isn’t as sharp anymore. It’s not bad, just different. I guess I’ve started to settle into the rhythm here, and that early rush of discovery is wearing off.
+I’ve had this strange feeling lately, like I’m slowly running out of things to be surprised by. The little details that used to make Seoul feel magical—the culture, the convenience stores, even just hearing the language around me—now feel more normal. There’s still a lot I want to do while I am here, but the excitement isn’t as sharp anymore. It’s not bad, just different. I guess I’ve started to settle into the rhythm here, and that early rush of discovery is wearing off.
 
-I think the lack of sleep plays a big part in in too—like it usually does when I’m feeling off.  
+I think the lack of sleep plays a big part in it too—like it usually does when I’m feeling off.  
 
 <Img desk desc="Also—and I never thought I’d say this—but I’m getting pretty tired of convenience store gimbaps.">
 
@@ -79,7 +79,7 @@ But maybe that’s not a bad thing. If I left still craving more, I’d probably
 
 
 ## What’s Next?
-Next week I'll be mostly busy with work, but there are still a few highlights to look forward to.
+Next week I’ll be mostly busy with work, but there are still a few highlights to look forward to.
 
 - <Day 36>: **Halloween party** in Itaewon
 - <Day 37>: Shrine Festival

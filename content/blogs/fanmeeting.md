@@ -70,7 +70,7 @@ The show itself was filled with:
 - Many heartfelt messages  
 
 ## Act I - The Hits
-They started with [TWICE SONG](https://www.youtube.com/watch?v=YdeeXDO--cs), which isn’t really a song as much as a mnemonic device to remember their names. It was originally created for a TV show they were part of, joking about how many members they had. Every fan in attendence knew the lyrics by heart.  
+They started with [TWICE SONG](https://www.youtube.com/watch?v=YdeeXDO--cs), which isn’t really a song as much as a mnemonic device to remember their names. It was originally created for a TV show they were part of, joking about how many members they had. Every fan in attendance knew the lyrics by heart.  
 
 <Img 1 desc="Starting your 10th year anniversary show with this song is such a flex.">
 
@@ -97,7 +97,7 @@ Fans were also allowed to submit photos of their own TWICE memories. They showed
 
 <Img 6 desc="The banners span the whole decade!">
 
-After that, they performed *BDZ*, originally made for their Japanese discography but later translated into Korean because of it's popularity. They followed it up with *Knock Knock*, which starts with an improv section, this time used to wish ourselves a happy 10th anniversary.  
+After that, they performed *BDZ*, originally made for their Japanese discography but later translated into Korean because of its popularity. They followed it up with *Knock Knock*, which starts with an improv section, this time used to wish ourselves a happy 10th anniversary.  
 
 <Img 7 desc="The crowd goes wild!">
 
@@ -139,7 +139,7 @@ After the video package, the members came back for a fan walk, circling the gymn
 
 They greeted fans, waved to friends and family in the crowd, and returned to the stage while performing *Going Crazy* and *Truth*.  
 
-After they got back on stage they highlighted some of the best consplayers there on the jumbotron.  
+After they got back on stage they highlighted some of the best cosplayers there on the jumbotron.  
 
 TWICE expressed their love for ONCE. Nayeon asked the crowd, "If you are reincarnated, would you be a ONCE again?" A hysterical fan shouted: "I will live forever, and I will be a ONCE forever!" The spotlight shone on him as he poured his heart out.  
 
@@ -166,7 +166,7 @@ Fans shouted *ENCORE!* again, so they performed *Going Crazy* once more and fina
 <Img 17 desc="Bye, bye!">
 
 ## Act VIII - The Sweet Gift
-After the show, it took some time for people to leave. Fans were still in bliss, taking pictures with the stage and chatting with cosplayers who had become mini-celebrities in the mean-time.  
+After the show, it took some time for people to leave. Fans were still in bliss, taking pictures with the stage and chatting with cosplayers who had become mini-celebrities in the meantime.  
 
 Upon leaving, all fans were given a cinnamon roll and a drink packet—a simple but kind gesture.  
 
@@ -178,9 +178,9 @@ Outside, fans were crying, hugging, and singing together. Some arranged their li
 <Img 19 desc="Like an occult ritual for summoning TWICE">
 
 # How Did I Experience It?
-A year ago, I watched the livestream of their 9th anniversary. Nearing the end, Jihyo said: "And those watching on Beyond LIVE, you should come too!" I responded, "Yes, I will!" I had dreamed of this trip for so long, but at the time of saying that I didn’t even know if I could make it happen, let alone get tickets for this very event. I had carefully planned my visit to coincide with their 10th anniversary, hoping for a chance to attend. This was the thing I actually wanted most out of the trip, but I was too scared to say it out loud because of the opportunity of missing out. 
+A year ago, I watched the livestream of their 9th anniversary. Nearing the end, Jihyo said: "And those watching on Beyond LIVE, you should come too!" I responded, "Yes, I will!" I had dreamed of this trip for so long, but at the time of saying that I didn’t even know if I could make it happen, let alone get tickets for this very event. I had carefully planned my visit to coincide with their 10th anniversary, hoping for a chance to attend. This was the thing I actually wanted most out of the trip, but I was too scared to say it out loud because of the fear of missing out. 
 
-I never expected to feel so emotional. During the video package showing the last 10 years, While watching the video package chronicling their last ten years, I realized that this fanmeeting wasn’t just TWICE’s milestone—it was mine too. Their struggles, triumphs, and joy over the past decade paralleled my one life experiences. They had unknowingly guided me through hard times and filled my life with incredible joy, hope, and inspiration.  
+I never expected to feel so emotional. During the video package showing the last 10 years, While watching the video package chronicling their last ten years, I realized that this fanmeeting wasn’t just TWICE’s milestone—it was mine too. Their struggles, triumphs, and joy over the past decade paralleled my own life experiences. They had unknowingly guided me through hard times and filled my life with incredible joy, hope, and inspiration.  
 
 Walking back to the metro, I kept thinking of what Jihyo said a year ago: "You should come too!". I had. Finally, the dream I had quietly held in my heart had come true.
 

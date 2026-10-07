@@ -6,7 +6,7 @@
   image: hotdog
   location: Seoul
   category: 🍢 Street Food
-  review: 'Pretty good, but a bit dry. Maybe a 4 with mayonaise, but they only had mustard and ketchup.'
+  review: 'Pretty good, but a bit dry. Maybe a 4 with mayonnaise, but they only had mustard and ketchup.'
 - nativeName: 감자핫도그
   phoneticName: Gamja-Hatdogeu
   description: Korean-style corn dog, with fries stuck to it
@@ -133,7 +133,7 @@
   location: Seoul
   category: 🍢 Street Food
   review: 'I was expecting very little, but this was a delight!  The filling was tender and sweet, and the skin was the perfect amount of chewy'
-- nativeName:  돼지고기 김치볶음
+- nativeName: 돼지고기 김치볶음
   phoneticName: Dwaejigogi Kimchi Bokkeum
   description: Pork Belly Kimchi Stir Fry
   tried: true
@@ -159,7 +159,7 @@
   image: bo-ssam
   location: Seoul
   category: 🐷 Pork
-  review: 'The porkbelly was really good, way different from what I make at hope. Even the side dishes were top notch!'
+  review: 'The porkbelly was really good, way different from what I make at home. Even the side dishes were top notch!'
 - nativeName: 탕수육
   phoneticName: Tangsuyuk
   description: Sweet and sour pork
@@ -177,7 +177,7 @@
   image: feet
   location: Seoul
   category: 🐔 Chicken
-  review: 'It is a novelty, but too much cartelige for me.'
+  review: 'It is a novelty, but too much cartilage for me.'
 - nativeName: 닭갈비
   phoneticName: Dakgalbi
   description: Stir-fried chicken with vegetables
@@ -186,7 +186,7 @@
   image: chicken-galbi
   location: Seoul
   category: 🐔 Chicken
-  review: 'This is surprisingly similar to how I make my Togpokki at home, which is a completely different dish. It was good tough, but I was missching some more carbs in here.'
+  review: 'This is surprisingly similar to how I make my Togpokki at home, which is a completely different dish. It was good though, but I was missing some more carbs in here.'
 - nativeName: 치킨
   phoneticName: Chikin
   description: Korean fried chicken
@@ -204,7 +204,7 @@
   image: kkanpungi
   location: Seoul
   category: 🐔 Chicken
-  review: 'This tasted okay, very similar to what I one made at home. One of the pieces was cold in the middle, raising my suspicion or frozen chicken, which turned off the meal.'
+  review: 'This tasted okay, very similar to what I once made at home. One of the pieces was cold in the middle, raising my suspicion of frozen chicken, which turned off the meal.'
 - nativeName: 간장게장
   phoneticName: Ganjang Gejang
   description: Soy sauce marinated crab
@@ -213,7 +213,7 @@
   image: crab
   location: Seoul
   category: 🐟 Seafood
-  review: 'The actually crab was great, but getting out of the shell is the problem.'
+  review: 'The actual crab was great, but getting out of the shell is the problem.'
 - nativeName: 탕후루
   phoneticName: Tanghulu
   description: Fruit skewers coated in a crisp sugar glaze
@@ -232,7 +232,7 @@
   image: sweet-chick
   location: Seoul
   category: 🍢 Street Food
-  review: "The cicken was crispy, and ricecakes chewy, and the sauce was delicious. I could have gone a little spicier, but this was great!"
+  review: "The chicken was crispy, and rice cakes chewy, and the sauce was delicious. I could have gone a little spicier, but this was great!"
 
 - nativeName: 소떡소떡
   phoneticName: So-tteok So-tteok
@@ -242,7 +242,7 @@
   image: so-teok
   location: Seoul
   category: 🍢 Street Food
-  review: "This is as good as chewy rices cakes, sausages and sweet sauce can be, pretty good!"
+  review: "This is as good as chewy rice cakes, sausages and sweet sauce can be, pretty good!"
 - nativeName: 산낙지
   phoneticName: San-nakji
   description: Live octopus
@@ -251,7 +251,7 @@
   image: sannakji
   location: Seoul
   category: 🐟 Seafood
-  review: 'It came out all wriggly, which was the most interesting part. The taste itself was really chewing, and eating it was hard because it kept getting stuck on the plate. 2 Starts for the taste, 1 star of the experience.'
+  review: 'It came out all wriggly, which was the most interesting part. The taste itself was really chewy, and eating it was hard because it kept getting stuck on the plate. 2 stars for the taste, 1 star for the experience.'
 - nativeName: 낙지볶음
   phoneticName: Nakji-bokkeum
   description: Spicy stir-fried octopus
@@ -260,7 +260,7 @@
   image: nakji-bokkeum
   location: Seoul
   category: 🐟 Seafood
-  review: 'It was nice, but the texture was get strange after a while (served with 비빔밥)'
+  review: 'It was nice, but the texture got strange after a while (served with 비빔밥)'
 - nativeName: 짬뽕
   phoneticName: Jjamppong
   description: Spicy seafood noodle soup
@@ -290,13 +290,13 @@
   review: "They taste okay, but I don't crave them like when I open a bag of Lay's Chips."
 - nativeName: 바나나 우유
   phoneticName: Banana Uyoo
-  description: Sweet banana-flavored milk, one of Korea’s most beloved drinks
+  description: Sweet banana-flavored milk, one of Korea's most beloved drinks
   tried: true
   rating: 1
   image: banana-milk
   location: Seoul
   category: 🍢 Street Food
-  review: "Some how both the milk and the banana flavor are artificial. It was hard to finish actually."
+  review: "Somehow both the milk and the banana flavor are artificial. It was hard to finish actually."
 - nativeName: 소세지어묵
   phoneticName: Soseji Eomuk
   description: Fishcake wrapped sausage, a common Korean street food skewer
@@ -323,7 +323,7 @@
   image: kalguksu
   location: Seoul
   category: 🍜 Noodles
-  review: "This is a simple comfort dish. But has it was quite plane, and I have no nostaligia for it, so I wasn't all the impressive."
+  review: "This is a simple comfort dish. But it was quite plain, and I have no nostalgia for it, so I wasn't all that impressed."
 - nativeName: 비빔밥
   phoneticName: Bibimbap
   description: Rice with vegetables and egg
@@ -332,7 +332,7 @@
   image: bbb-2
   location: Seoul
   category: 🍚 Rice
-  review: 'This was a Jeonju Bibimbap, a regional specialy, and it was very good indeed.'
+  review: 'This was a Jeonju Bibimbap, a regional specialty, and it was very good indeed.'
 - nativeName: 찜질방 계란
   phoneticName: Jjimjilbang Gyeran
   description: Korean sauna eggs slow-cooked in hot stones, resulting in a smoky flavor and brown shell
@@ -351,7 +351,7 @@
   image: galbi-tang
   location: Seoul
   category: 🍲 Soup
-  review: "This was amazing! Pretty hard to get the meat of the bones, but the broth was amazing"
+  review: "This was amazing! Pretty hard to get the meat off the bones, but the broth was amazing"
 
 - nativeName: 고기구이
   phoneticName: Gogi Gui
@@ -425,7 +425,7 @@
   image: ginseng-soup
   location: Seoul
   category: 🍲 Soup
-  review: "This was okay. It is classified as a health dish so it had some Interesting ingredients (raw ginger root, jujube and walnuts), which maybe leaned to much into it's presumtive healing abbilities."
+  review: "This was okay. It is classified as a health dish so it had some interesting ingredients (raw ginger root, jujube and walnuts), which maybe leaned too much into its presumptive healing abilities."
 - nativeName: 감자탕
   phoneticName: Gamjatang
   description: Pork bone soup with potatoes
@@ -434,7 +434,7 @@
   image: gamja-tang
   location: Seoul
   category: 🍲 Soup
-  review: 'This was actually 뼈해장국밥, but it is close enough. It tastesd pretty good. Steamy, spicy and filled with umami. The worst part was trying to get the meat of the bones.'
+  review: 'This was actually 뼈해장국밥, but it is close enough. It tasted pretty good. Steamy, spicy and filled with umami. The worst part was trying to get the meat off the bones.'
 - nativeName: たこやき
   phoneticName: Takoyaki
   description: Octopus balls, a popular street snack
@@ -443,7 +443,7 @@
   image: takoyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: 'The balls were more squishy than I expected them to be. Also the brownsauce + mayonaise + bonito flakes left a bad taste in my mouth that lasted for way too long.'
+  review: 'The balls were more squishy than I expected them to be. Also the brown sauce + mayonnaise + bonito flakes left a bad taste in my mouth that lasted for way too long.'
 - nativeName: やきとり
   phoneticName: Yakitori
   description: Grilled chicken skewers
@@ -452,7 +452,7 @@
   image: yakkitori
   location: Tokyo
   category: 🍢 Street Food
-  review: 'Probably my fault for getting them from the convience store, but I was not that impressed.'
+  review: 'Probably my fault for getting them from the convenience store, but I was not that impressed.'
 - nativeName: おこのみやき
   phoneticName: Okonomiyaki
   description: Savory pancake with toppings
@@ -461,7 +461,7 @@
   image: okinomiyaki
   location: Tokyo
   category: 🍢 Street Food
-  review: 'There is somehting about the combination of the brown sauce, the mayonaise and the bonito flake that my tongue does not like. Once I scraped it off, it tasted fine.'
+  review: 'There is something about the combination of the brown sauce, the mayonnaise and the bonito flake that my tongue does not like. Once I scraped it off, it tasted fine.'
 - nativeName: ぎょうざ
   phoneticName: Gyoza
   description: Japanese pan-fried dumplings
@@ -470,7 +470,7 @@
   image: gyoza-ramen
   location: Tokyo
   category: 🍢 Street Food
-  review: 'These were really good! I can taste that they were fresh. Would have like a little more crush tough'
+  review: 'These were really good! I can taste that they were fresh. Would have liked a little more crunch though'
 - nativeName: すし
   phoneticName: Sushi
   description: Vinegared rice with raw or cooked fish
@@ -518,7 +518,7 @@
   image: yakisoba
   location: Tokyo
   category: 🍜 Noodles
-  review: "This was great, especially with the beer! Juicy meat, crunchy cabbage and a smokey sauce. I had the classic problem with a noodles dish where all the goodies sink to the bottom. If it was mixed better, this could have been a 5!"
+  review: "This was great, especially with the beer! Juicy meat, crunchy cabbage and a smoky sauce. I had the classic problem with a noodle dish where all the goodies sink to the bottom. If it was mixed better, this could have been a 5!"
 
 - nativeName: カツ丼
   phoneticName: Katsudon
@@ -528,7 +528,7 @@
   image: katsu-don
   location: Tokyo
   category: 🍚 Rice
-  review: 'This was freaking great! The sauce, the crushy side of the katsu, with the soft egg. Yes please!'
+  review: 'This was freaking great! The sauce, the crunchy side of the katsu, with the soft egg. Yes please!'
 - nativeName: カツサンド
   phoneticName: Katsu Sando
   description: Deep-fried pork cutlet sandwich with soft white bread and tangy sauce
@@ -546,7 +546,7 @@
   image: katsu
   location: Tokyo
   category: 🍚 Rice
-  review: "I was missing the vegetables in the curry, this made it little to simple for me. The cutlet was great though!"
+  review: "I was missing the vegetables in the curry, this made it a little too simple for me. The cutlet was great though!"
 - nativeName: うなぎごはん
   phoneticName: Unagi Gohan
   description: Grilled eel glazed with sweet soy sauce served over rice
@@ -555,7 +555,7 @@
   image: unagi
   location: Tokyo
   category: 🍚 Rice
-  review: "I love unagi, so this was a treat! I splurged on the larger piece, and it was definitly worth it!"
+  review: "I love unagi, so this was a treat! I splurged on the larger piece, and it was definitely worth it!"
 - nativeName: ラーメン
   phoneticName: Ramen
   description: Noodle soup with various broths and toppings
@@ -582,11 +582,11 @@
   image: tw-beef-soup
   location: Taiwan
   category: 🍜 Noodles
-  review: 'This was divine. Rich flavour, nice sized portion. Definitly worth the wait!'
+  review: 'This was divine. Rich flavour, nice sized portion. Definitely worth the wait!'
 - nativeName: 滷肉飯
   phoneticName: Lǔròu Fàn
   description: Braised pork over rice
-  tried: ture
+  tried: true
   rating: 3
   image: braised-beef-rice
   location: Taiwan
@@ -612,7 +612,7 @@
   image: scallion-pancakes
   location: Taiwan
   category: 🍢 Street Food
-  review: 'These were amazing. Great texture, and good seasoning. I kept comming back to these.'
+  review: 'These were amazing. Great texture, and good seasoning. I kept coming back to these.'
 
 - nativeName: 珍珠奶茶
   phoneticName: Zhēnzhū Nǎichá
@@ -662,7 +662,7 @@
   image: tw-long-bao
   location: Taiwan
   category: 🍢 Street Food
-  review: 'This had some flavours I did not like. Corriander and some kind of picadily sauce, and the bun was to moist. No Thank you!'
+  review: 'This had some flavours I did not like. Coriander and some kind of piccalilli sauce, and the bun was too moist. No thank you!'
 
 - nativeName: 紫米飯糰
   phoneticName: Zǐmǐ Fàntuán
@@ -682,7 +682,7 @@
   image: tw-chick
   location: Taiwan
   category: 🍢 Street Food
-  review: 'It is just fried chicken, with some seasoning. Mine was a bit cold, and had to much bones in it.'
+  review: 'It is just fried chicken, with some seasoning. Mine was a bit cold, and had too much bone in it.'
 
 - nativeName: 地瓜球
   phoneticName: Dìguāqiú
@@ -692,7 +692,7 @@
   image: tw-balls
   location: Taiwan
   category: 🍢 Street Food
-  review: 'Airy, chewy and sweet. Better than I expected, but I think it needs some sauce or powder sugar.'
+  review: 'Airy, chewy and sweet. Better than I expected, but I think it needs some sauce or powdered sugar.'
 
 - nativeName: 糖醋魚
   phoneticName: Tángcù Yú
@@ -722,7 +722,7 @@
   image: tw-donut
   location: Taiwan
   category: 🍞 Bakery
-  review: 'A little to mushy, for my taste. I thought it would be more airy. Maybe I got the wrong flavour?'
+  review: 'A little too mushy, for my taste. I thought it would be more airy. Maybe I got the wrong flavour?'
 
 - nativeName: 宮保雞丁
   phoneticName: Gōngbǎo Jīdīng
@@ -732,7 +732,7 @@
   image: tw-kung-pao
   location: Taiwan
   category: 🐔 Chicken
-  review: 'This was a bit watery too watery for my taste. The spice was also no spread, only in the peppers.'
+  review: 'This was a bit too watery for my taste. The spice was also not spread, only in the peppers.'
 
 - nativeName: 火鍋
   phoneticName: Huǒguō
@@ -742,7 +742,7 @@
   image: tw-hot-pot
   location: Taiwan
   category: 🍲 Hot Pot
-  review: 'This was fine. I did not know what half the things were, and it was quite a bit of work to cook everything my self. But in the end I had a nice stew, that I filled with rice. This was also in Alisan, so maybe I would have liked it more in the city?'
+  review: 'This was fine. I did not know what half the things were, and it was quite a bit of work to cook everything myself. But in the end I had a nice stew, that I filled with rice. This was also in Alishan, so maybe I would have liked it more in the city?'
 
 - nativeName: 三杯雞
   phoneticName: Sānbēi Jī
@@ -752,7 +752,7 @@
   image: tw-three-cup
   location: Taiwan
   category: 🐔 Chicken
-  review: "This wasn't all that special, and maybe even tasted a bit burnt? There was also entire to much bones left on the meat for me to enjoy it."
+  review: "This wasn't all that special, and maybe even tasted a bit burnt? There was also entirely too much bone left on the meat for me to enjoy it."
 
 - nativeName: 哈密瓜麵包
   phoneticName: Hāmìguā Miànbāo
@@ -762,7 +762,7 @@
   image: tw-melon-bread
   location: Taiwan
   category: 🍞 Bakery
-  review: 'This was nice, fresh out of the oven with some butter. It was crunch, but maybe a little to warm to enjoy the flavors well? It was not that much better from what I had from the convience store.'
+  review: 'This was nice, fresh out of the oven with some butter. It was crunchy, but maybe a little too warm to enjoy the flavors well? It was not that much better from what I had from the convenience store.'
 
 - nativeName: 臭豆腐
   phoneticName: Chòudòufu
@@ -782,7 +782,7 @@
   image: tw-raddish-cake
   location: Taiwan
   category: 🍳 Breakfast
-  review: "Nice and filling, and the radish is not too overwhelming. It is really dense, and it is straight to the point. This portion was maybe a little to big."
+  review: "Nice and filling, and the radish is not too overwhelming. It is really dense, and it is straight to the point. This portion was maybe a little too big."
 
 - nativeName: 蛋餅夾油條
   phoneticName: Dànbǐng Jiā Yóutiáo
@@ -792,7 +792,7 @@
   image: tw-egg-crepe
   location: Taiwan
   category: 🍳 Breakfast
-  review: 'Not entirely sure how to eat this, as it is way too big to fit into you mouth. So I had to unroll it and eat it, and the it is way less special. Just a thin omelette and fried airy breadsticks.'
+  review: 'Not entirely sure how to eat this, as it is way too big to fit into your mouth. So I had to unroll it and eat it, and then it is way less special. Just a thin omelette and fried airy breadsticks.'
 
 - nativeName: 鼎泰豐
   phoneticName: Dǐng Tài Fēng
@@ -802,7 +802,7 @@
   image: tw-dtf
   location: Taiwan
   category: 🍽️ Restaurant
-  review: "It is good, but I feel like I've had better. Maybe the restaurant experience is better, as this was just a little to wet for me at part. It is also pretty price compared to other foods here."
+  review: "It is good, but I feel like I've had better. Maybe the restaurant experience is better, as this was just a little too wet for me in part. It is also pretty pricey compared to other foods here."
 
 
 - nativeName: 雲吞湯
@@ -813,7 +813,7 @@
   image: hk-wonton
   location: Hong Kong
   category: 🍜 Noodles
-  review: "I felt the noodles were a little to tough, and the wonton's them selves didn't add too much. But the borth was great!"
+  review: "I felt the noodles were a little too tough, and the wontons themselves didn't add too much. But the broth was great!"
 
 - nativeName: 燒鵝
   phoneticName: Sio-gô
@@ -823,7 +823,7 @@
   image: tw-goose
   location: Hong Kong
   category: 🥩 Meat
-  review: 'This was really nice! The skin was crispy, and the meat really juicy. Bonus point for there killing geese!'
+  review: 'This was really nice! The skin was crispy, and the meat really juicy. Bonus point for killing geese!'
 
 - nativeName: 蜜雪冰城珍珠奶茶
   phoneticName: Bi̍t-seh-peng-siâ chin-chu-ling-tê
@@ -833,11 +833,11 @@
   image: hk-mix-tea
   location: Hong Kong
   category: 🧋 Drinks
-  review: 'This was delicous, and at an unbeatable price point! Be carefull with the caffience though.'
+  review: 'This was delicious, and at an unbeatable price point! Be careful with the caffeine though.'
 
 - nativeName: 白切雞
   phoneticName: Pe̍h-chhiat-ke
-  description: “Yellow chicken” / white-cut chicken
+  description: "Yellow chicken" / white-cut chicken
   tried: true
   rating: 4
   image: hk-yellow-chicken
@@ -863,7 +863,7 @@
   image: hk-bun
   location: Hong Kong
   category: 🍞 Bakery
-  review: "Too much bread, and not enough meat. The meat wasn't that good eaither" 
+  review: "Too much bread, and not enough meat. The meat wasn't that good either"
 
 - nativeName: 柚子蜜
   phoneticName: Iū-chí-bi̍t
@@ -873,7 +873,7 @@
   image: hk-pomello-tea
   location: Hong Kong
   category: 🧋 Drinks
-  review: 'This was pretty nice too! A little bitter, but that still very fruity!'
+  review: 'This was pretty nice too! A little bitter, but still very fruity!'
 
 - nativeName: 點心
   phoneticName: Tiám-sim
@@ -883,7 +883,7 @@
   image: hk-dimsum
   location: Hong Kong
   category: 🥟 Dim Sum
-  review: "This was okay. I forgot we got food, and I had lunch before this, so I wans't all that hungry. It was also a bit soggy, from sitting there for a while. It had a meat bun, which was okay, soup dupmling, with was a bit squishy, and a jelly that was entirely too big."
+  review: "This was okay. I forgot we got food, and I had lunch before this, so I wasn't all that hungry. It was also a bit soggy, from sitting there for a while. It had a meat bun, which was okay, a soup dumpling, which was a bit squishy, and a jelly that was entirely too big."
 
 - nativeName: 雞蛋仔
   phoneticName: Koe-tàn-á
@@ -933,7 +933,7 @@
   image: mango-sago
   location: Hong Kong
   category: 🧋 Drinks
-  review: "This had a Michelin fieldguide star, but it was just bitter and weird. Not my style."
+  review: "This had a Michelin guide star, but it was just bitter and weird. Not my style."
 
 - nativeName: 腸粉
   phoneticName: Chiâⁿ-hún
@@ -953,7 +953,7 @@
   image: hk-congee
   location: Hong Kong
   category: 🍲 Soup
-  review: "This restaurant also had many Michelin nods, but this was not it. It was hot and flavourless. I tried added some condiments, but that made it worse. I order the one with eel, but the eel was not deboned, so I couldn't eat this. Not much to write home about."
+  review: "This restaurant also had many Michelin nods, but this was not it. It was hot and flavourless. I tried adding some condiments, but that made it worse. I ordered the one with eel, but the eel was not deboned, so I couldn't eat this. Not much to write home about."
 
 - nativeName: 咖喱魚蛋
   phoneticName: Ka-lê hû-tàn
@@ -963,7 +963,7 @@
   image: hk-fish-balls
   location: Hong Kong
   category: 🍢 Street Food
-  review: "This was pretty borning. Frozen and deepfried, with out of the bottle sauce."
+  review: "This was pretty boring. Frozen and deep-fried, with out-of-the-bottle sauce."
 
 - nativeName: 叉燒飯
   phoneticName: Chha-sio-pn̄g
@@ -982,7 +982,7 @@
   image: hk-macmac
   location: Hong Kong
   category: 🍳 Breakfast
-  review: 'This was surprisingly good! I tought the Macaroni would be borning, but the soup had a nice tang!'
+  review: 'This was surprisingly good! I thought the macaroni would be boring, but the soup had a nice tang!'
 
 
 
@@ -1014,7 +1014,7 @@
   image: milktea
   location: Macau
   category: 🧋 Drinks
-  review: "Lactose-free milk with a strong English tea syrup and bubble tea pearls. Not really my favorite, but to be fair I don’t usually like beverages that much."
+  review: "Lactose-free milk with a strong English tea syrup and bubble tea pearls. Not really my favorite, but to be fair I don't usually like beverages that much."
 
 - nativeName: 葡式蛋撻
   phoneticName: Portuguese Egg Tart

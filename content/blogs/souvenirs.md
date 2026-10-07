@@ -13,7 +13,7 @@ I picked up a lot of good souvenirs on this trip. Some of them are physical obje
 
 ## Key Rings
 
-As many of you know, I collect keyrings. I did my best to score a few good ones everywhere I went. By the end bought 19 key rings in total. 
+As many of you know, I collect keyrings. I did my best to score a few good ones everywhere I went. By the end I bought 19 key rings in total. 
 
 <Img keyrings desc="A friend made all those cute Lovely's!">
 
@@ -40,7 +40,7 @@ I also put together a one-minute vlog of the entire trip. It's the thing I show 
 
 ## Trinkets
 
-I picked up a trinkets on my side trips to Japan, Taiwan, and Hong Kong. I got a wooden postcard of Hokusai's masterwork, a wooden foodcart from Taiwan and a seal from Hong Kong. I built a little display stand myself out of some wood so I'd actually have somewhere to put them all.
+I picked up trinkets on my side trips to Japan, Taiwan, and Hong Kong. I got a wooden postcard of Hokusai's masterwork, a wooden foodcart from Taiwan and a seal from Hong Kong. I built a little display stand myself out of some wood so I'd actually have somewhere to put them all.
 
 <Img stand desc="On my thingy-majig shelf, next to my other doo-dads.">
 
@@ -52,7 +52,7 @@ I kept every plane ticket, museum booklet, map, receipt and odd piece of papier 
 
 ## Kpop wall
 
-On the inside door of my closet I keep a collection of kpop memoribilia. These are mostly posts and album cut out that I frame. On my trip I collected some more stuff, so I everything so that I could fit it all. I added the 'Spaghetti' album, the TWICE poster that I bought on <Day 16>, some photo's from <Blog fanmeeting desc="TWICE's fanmeeting">. This should last me a while.
+On the inside door of my closet I keep a collection of kpop memorabilia. These are mostly posters and album cutouts that I frame. On my trip I collected some more stuff, so rearraged everything so that I could fit it all. I added the 'Spaghetti' album, the TWICE poster that I bought on <Day 16>, some photos from <Blog fanmeeting desc="TWICE's fanmeeting">. This should last me a while.
 
 <Img wall desc="This door is closed when guests come over.">
 
@@ -68,6 +68,6 @@ I also designed and 3D printed a custom frame for it. The code and the frame fil
 
 ## Personal Growth
 
-Above all the physical stuff, what I'll actually keep with me the longest is how much this trip changed me. I set out with a list of goals for this trip, and I hit pretty much every one of them. Finding my groove in a foreign country, getting to practice my Korean with natives, and getting celebration the end of my twenties. 
+Above all the physical stuff, what I'll actually keep with me the longest is how much this trip changed me. I set out with a list of goals for this trip, and I hit pretty much every one of them. Finding my groove in a foreign country, getting to practice my Korean with natives, and celebrating the end of my twenties. 
 
-Those memories are don't fit on a keyring, but they are the souvenir I'm proudest of.
+Those memories don't fit on a keyring, but they are the souvenir I'm proudest of.

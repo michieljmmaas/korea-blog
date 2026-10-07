@@ -22,7 +22,7 @@ Pickled radish adding that perfect amount of crunch.
 You can eat it cold, lukewarm, or hot,\
 With a squeeze of mayo, or maybe not.\
 But leave it too long in the refrigerator,\
-And it turns from joy to a sad immitator.
+And it turns from joy to a sad imitator.
 
 But then I tried a fresh kimbap, handmade and neat,\
 my taste buds gasped — “Where have you been?” \

@@ -5,9 +5,11 @@ import { DayFrontmatter, CityLocation, PostLinkInfo, GeoLocation } from "../../t
 import ArrowButton from "../common/arrow-button";
 import { LocationSticker } from "../common/location-sticker";
 import StatsGrid from "./stats-grid";
+import ScoreBadge from "./score-badge";
 import HeaderLink from "../layout/Link";
 import { MapIcon } from "lucide-react";
 import MapWithData from "../map/map-with-data";
+import { useReduxMode } from "../providers/redux-mode-provider";
 
 interface DayInfoTableProps {
     frontmatter: DayFrontmatter;
@@ -25,9 +27,16 @@ export default function DayInfoTable({
     locations
 }: DayInfoTableProps) {
     const [isMapOpen, setIsMapOpen] = useState(false);
-    const { location, date, stats } = frontmatter;
+    const { location, date, stats, score, rank } = frontmatter;
     const hasLocations = locations.length > 0;
+    const { hasNotHappenedYet } = useReduxMode();
+    const nextDisabled = !nextPost || hasNotHappenedYet(nextPost.slug);
 
+
+    const scrollToTop = (e: React.MouseEvent) => {
+        if ((e.target as HTMLElement).closest('button, a')) return;
+        document.getElementById('scroll-container')?.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     const weekLink = week ? (
         <HeaderLink
@@ -43,7 +52,7 @@ export default function DayInfoTable({
         <div className="flex flex-col border border-border rounded-lg bg-white sticky top-2 z-10 shadow-sm">
 
             {/* 1. VISIBLE INFO AREA (Always visible) */}
-            <div className="w-full">
+            <div className="w-full cursor-pointer" onClick={scrollToTop}>
                 {/* Desktop Layout */}
                 <div className="hidden md:flex gap-6 py-4 items-center px-4">
                     <ArrowButton direction="left" slug={previousPost?.slug} disabled={!previousPost} />
@@ -51,6 +60,7 @@ export default function DayInfoTable({
                         {weekLink}
                         <span className="text-text-primary font-mono text-base">{date}</span>
                         <LocationSticker location={location} />
+                        <ScoreBadge score={score} rank={rank} />
                     </div>
 
                     {hasLocations && (
@@ -67,17 +77,20 @@ export default function DayInfoTable({
                     <div className="flex-1 flex items-center justify-end">
                         <StatsGrid stats={stats} location={frontmatter.location as CityLocation} />
                     </div>
-                    <ArrowButton direction="right" slug={nextPost?.slug} disabled={!nextPost} />
+                    <ArrowButton direction="right" slug={nextPost?.slug} disabled={nextDisabled} />
                 </div>
 
                 {/* Mobile Layout */}
                 <div className="md:hidden p-4 space-y-4">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            {weekLink}
-                            <span className="text-text-primary font-mono text-sm">{date}</span>
+                    <div className="flex items-center gap-2">
+                        <ArrowButton direction="left" slug={previousPost?.slug} disabled={!previousPost} />
+                        <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+                            <div className="shrink-0">{weekLink}</div>
+                            <span className="text-text-primary font-mono text-sm truncate min-w-0">{date}</span>
+                            <div className="shrink-0"><LocationSticker location={location} /></div>
+                            <ScoreBadge score={score} rank={rank} compact />
                         </div>
-                        <LocationSticker location={location} />
+                        <ArrowButton direction="right" slug={nextPost?.slug} disabled={nextDisabled} />
                     </div>
                     {hasLocations && (
                         <button
@@ -89,10 +102,6 @@ export default function DayInfoTable({
                         </button>
                     )}
                     <StatsGrid stats={stats} location={frontmatter.location} />
-                    <div className="flex justify-between gap-4 pt-2">
-                        <ArrowButton direction="left" slug={previousPost?.slug} disabled={!previousPost} />
-                        <ArrowButton direction="right" slug={nextPost?.slug} disabled={!nextPost} />
-                    </div>
                 </div>
             </div>
 

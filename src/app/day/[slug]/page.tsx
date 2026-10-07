@@ -1,5 +1,6 @@
 import DayInfoTable from "@/app/_components/day/day-info-table";
 import ImageCarousel from "@/app/_components/common/image-carousel";
+import { ScrollToTop } from "@/app/_components/common/scroll-to-top";
 import { DayService } from "../../../lib/dayService";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/_components/common/post-body";
@@ -50,8 +51,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const locations = await GeoDataService.getLocationsByDate(post.frontmatter.date);
 
     return (
-      <div className="max-h-screen bg-background flex flex-col">
-        <main className="flex-1 flex flex-col min-h-0 px-6 pb-6">
+      <div className="bg-background">
+        <ScrollToTop />
+        <main className="px-6 pb-6">
           {/* Image Carousel */}
           <div className="py-6">
             <ImageCarousel images={photos} alt="Travel photos from Seoul" />
