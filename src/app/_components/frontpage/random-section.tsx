@@ -69,7 +69,17 @@ export default function RandomSection<T, K>({
     setImagesLoaded(false);
 
     const el = containerRef.current;
-    const imgs = el ? Array.from(el.querySelectorAll('img')) : [];
+    // Skip imgs that aren't rendered (e.g. the md:hidden / hidden md:block icon pairs in
+    // the stats grid): a lazy, display:none <img> never starts loading, so waiting on it
+    // would always run into the timeout below.
+    const imgs = el
+      ? Array.from(el.querySelectorAll('img')).filter((img) => img.getClientRects().length > 0)
+      : [];
+    // The card sits behind the skeleton and may be below the fold, where loading="lazy"
+    // images would not start downloading until scrolled to — fetch them right away.
+    imgs.forEach((img) => {
+      img.loading = 'eager';
+    });
     if (imgs.length === 0) {
       setImagesLoaded(true);
       return;
