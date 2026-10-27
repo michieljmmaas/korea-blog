@@ -1,5 +1,9 @@
 name: CI
-on: [pull_request]
+on:
+  pull_request:
+  schedule:
+    # Weekly, so advisories published while the repo is idle still surface.
+    - cron: '0 6 * * 1'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,5 +14,6 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npm audit --audit-level=high
+      # Dev-only tooling (tailwind, postcss, ...) isn't shipped in the static export.
+      - run: npm audit --omit=dev --audit-level=high
       - run: npm run build

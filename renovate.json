@@ -9,12 +9,19 @@
       "enabled": false
     }
   ],
+  "rangeStrategy": "in-range-only",
   "lockFileMaintenance": {
-    "enabled": false
+    "enabled": true,
+    "schedule": ["before 5am on the first day of the month"],
+    "automerge": true,
+    "platformAutomerge": false,
+    "commitMessageSuffix": "[deploy]"
   },
   "osvVulnerabilityAlerts": true,
+  "transitiveRemediation": true,
   "vulnerabilityAlerts": {
     "enabled": true,
+    "groupName": "security updates",
     "commitMessageSuffix": "[deploy]",
     "automerge": true,
     "platformAutomerge": false
